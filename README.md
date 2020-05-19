@@ -1,3 +1,9 @@
+![CI](https://github.com/microsoft/essex-alpha-build-infra/workflows/CI/badge.svg?branch=master)
+
+# essex-alpha-build-infra
+
+This project contains build infrastructure for the Project Essex Alpha team.
+
 # Contributing
 
 This project welcomes contributions and suggestions. Most contributions require you to agree to a
