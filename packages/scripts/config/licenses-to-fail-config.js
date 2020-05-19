@@ -2,6 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+const fs = require('fs')
+const cwd = process.cwd()
+const licensesPath = process.join(cwd, 'allowedLicenses.js')
+const extraLicenses = fs.existsSync(licensesPath) ? require(licensesPath) : []
+
 module.exports = {
 	allowedLicenses: [
 		'MIT',
@@ -20,6 +25,7 @@ module.exports = {
 		'CC-BY-2.0',
 		'CC-BY-3.0',
 		'CC-BY-4.0',
+		...extraLicenses,
 	],
 	warnOnUnknown: true,
 }
