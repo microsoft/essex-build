@@ -1,0 +1,31 @@
+{
+	"name": "@essex/eslint-plugin",
+	"version": "6.5.1",
+	"main": "lib/index.js",
+	"license": "MIT",
+	"prettier": "@essex/prettier-config",
+	"scripts": {
+		"build": "tsc",
+		"clean": "rimraf lib"
+	},
+	"dependencies": {
+		"@essex/eslint-plugin": "^6.5.1",
+		"@essex/prettier-config": "^6.5.1",
+		"@typescript-eslint/eslint-plugin": "^2.33.0",
+		"@typescript-eslint/parser": "^2.33.0",
+		"babel-eslint": "^10.1.0",
+		"eslint": "^7.0.0",
+		"eslint-config-prettier": "^6.11.0",
+		"eslint-config-react-app": "^5.2.1",
+		"eslint-plugin-flowtype": "^4.7.0",
+		"eslint-plugin-header": "^3.0.0",
+		"eslint-plugin-import": "^2.20.2",
+		"eslint-plugin-jest": "^23.11.0",
+		"eslint-plugin-jsx-a11y": "^6.2.3",
+		"eslint-plugin-local-rules": "^0.1.1",
+		"eslint-plugin-prettier": "^3.1.3",
+		"eslint-plugin-react": "^7.20.0",
+		"eslint-plugin-react-hooks": "^4.0.2",
+		"prettier": "^2.0.5"
+	}
+}

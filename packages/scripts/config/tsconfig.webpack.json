@@ -1,0 +1,12 @@
+{
+	/**
+	 * TypeScript configuration for webpack bundling. This is usually more liberal
+	 * than configuration for ilbraries
+	 */
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"resolveJsonModule": true
+	}
+}

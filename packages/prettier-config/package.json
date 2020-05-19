@@ -1,0 +1,6 @@
+{
+	"name": "@essex/prettier-config",
+	"version": "6.5.1",
+	"main": "index.js",
+	"license": "MIT"
+}
