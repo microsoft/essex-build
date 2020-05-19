@@ -3,8 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 const fs = require('fs')
+const path = require('path')
 const cwd = process.cwd()
-const licensesPath = process.join(cwd, 'allowedLicenses.js')
+const licensesPath = path.join(cwd, 'allowedLicenses.js')
 const extraLicenses = fs.existsSync(licensesPath) ? require(licensesPath) : []
 
 module.exports = {
