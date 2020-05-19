@@ -6,10 +6,10 @@ name: CI
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
-    
+    branches: [master]
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -37,7 +37,7 @@ jobs:
           key: ${{ runner.os }}-${{ matrix.node-version }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-${{ matrix.node-version }}-yarn-
-            
+
       - uses: actions/cache@v1
         name: Cache node_modules
         id: cache-node-modules
@@ -46,7 +46,7 @@ jobs:
           key: ${{ runner.os }}-${{ matrix.node-version }}-nodemodules-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-${{ matrix.node-version }}-nodemodules-
-            
+
       - uses: actions/cache@v1
         name: Cache scripts node_modules
         id: cache-scripts-node-modules
@@ -66,6 +66,11 @@ jobs:
 
       - run: yarn test
         name: Execute Tests
+        env:
+          CI: true
+
+      - run: yarn audit
+        name: Audit Dpendencies
         env:
           CI: true
 
