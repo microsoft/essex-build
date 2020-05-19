@@ -32,6 +32,7 @@ Additional build tooling is wired in via invoking `essex`. Check out the availab
 Scripts are invoked via the `essex` CLI tool. Commands are in the form `essex <commmand> <options>`.<br/>
 To view detailed options, run `essex <command> --help` or `essex --help`
 
+- [audit](./docs/audit.md)
 - [build](./docs/build.md)
 - [build-storybook](./docs/build_storybook.md)
 - [bundle](./docs/bundle.md)
