@@ -69,23 +69,24 @@ jobs:
         env:
           CI: true
 
-      - run: yarn audit
-        name: Audit Dpendencies
+      - run: yarn audit_dependencies
+        if: success() && matrix.node-version == '14.x'
+        name: Audit Dependencies
         env:
           CI: true
+#      - name: Publish coverage to codecov.io
+#        uses: codecov/codecov-action@v1.0.3
+#        if: success() && matrix.node-version == '14.x'
+#        with:
+#          token: ${{ secrets.CODECOV_TOKEN }}
 
-      - name: Publish coverage to codecov.io
-        uses: codecov/codecov-action@v1.0.3
-        if: success() && matrix.node-version == '14.x'
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-  # auto-merge:
-  #   name: Auto-Merge Dependabot PRs
-  #   runs-on: ubuntu-latest
-  #   needs:
-  #     - build
-  #   steps:
-  #     - name: auto-merge
-  #       uses: ridedott/dependabot-auto-merge-action@master
-  #       with:
-  #         GITHUB_TOKEN: ${{ secrets.AUTOMERGE_PAT }}
+# auto-merge:
+#   name: Auto-Merge Dependabot PRs
+#   runs-on: ubuntu-latest
+#   needs:
+#     - build
+#   steps:
+#     - name: auto-merge
+#       uses: ridedott/dependabot-auto-merge-action@master
+#       with:
+#         GITHUB_TOKEN: ${{ secrets.AUTOMERGE_PAT }}

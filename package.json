@@ -13,6 +13,7 @@
 		"publish_packages": "lerna publish --registry https://pkgs.dev.azure.com/msrp-essex/_packaging/essex-npm/npm/registry/",
 		"release": "run-s build publish_packages",
 		"lint": "node ./packages/scripts/lib/index.js lint --docs --strict",
+		"audit_dependencies": "audit-ci -h -p yarn",
 		"test": "run-s build lint test_packages"
 	},
 	"workspaces": {
@@ -27,6 +28,7 @@
 		}
 	},
 	"devDependencies": {
+		"audit-ci": "^3.0.0",
 		"crlf": "^1.1.1",
 		"lerna": "^3.20.2",
 		"npm-run-all": "^4.1.5",
