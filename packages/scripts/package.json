@@ -43,7 +43,7 @@
 		"babel-loader": "^8.1.0",
 		"cache-loader": "^4.1.0",
 		"colors": "^1.4.0",
-		"commander": "^5.0.0",
+		"commander": "^5.1.0",
 		"commitlint": "^8.3.5",
 		"core-js": "^3.6.5",
 		"cross-spawn": "^7.0.2",
@@ -80,8 +80,5 @@
 	"devDependencies": {
 		"pretty-quick": "^2.0.1",
 		"typescript": "^3.9.2"
-	},
-	"resolutions": {
-		"commander": "4.1.1"
 	}
 }
