@@ -32,7 +32,7 @@ jobs:
           CI: true
 
       - run: yarn audit_dependencies
-        if: success() && matrix.node-version == '14.x'
+        if: success() && ${{ matrix.node-version }} == '14.x'
         name: Audit Dependencies
         env:
           CI: true
