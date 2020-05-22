@@ -32,16 +32,16 @@ jobs:
           CI: true
 
       - run: yarn audit_dependencies
-        if: success() && ${{ matrix.node-version }} == '14.x'
+        if: success() && matrix.node-version == '14.x'
         name: Audit Dependencies
         env:
           CI: true
 
-     - name: Publish coverage to codecov.io
-       uses: codecov/codecov-action@v1.0.3
-       if: success() && matrix.node-version == '14.x'
-       with:
-         token: ${{ secrets.CODECOV_TOKEN }}
+      - name: Publish coverage to codecov.io
+        uses: codecov/codecov-action@v1.0.3
+        if: success() && matrix.node-version == '14.x'
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
 
   auto-merge:
     name: Auto-Merge Dependabot PRs
@@ -50,6 +50,7 @@ jobs:
       - build
     steps:
       - name: auto-merge
+        if: ${{github.actor}} == 'dependabot-preview[bot]'
         uses: ridedott/dependabot-auto-merge-action@master
         with:
           GITHUB_TOKEN: ${{ secrets.AUTOMERGE_PAT }}
