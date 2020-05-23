@@ -1,5 +1,6 @@
 {
 	"name": "@essex/eslint-plugin",
+	"private": false,
 	"version": "7.0.1",
 	"main": "lib/index.js",
 	"license": "MIT",
@@ -27,6 +28,5 @@
 		"eslint-plugin-react": "^7.20.0",
 		"eslint-plugin-react-hooks": "^4.0.2",
 		"prettier": "^2.0.5"
-	},
-	"gitHead": "607a66b88e0695b840fa40975fb28f1defd373ff"
+	}
 }
