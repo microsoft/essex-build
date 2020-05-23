@@ -5,6 +5,9 @@
 import { getProjectPath, getEssexScriptsPathSync } from './paths'
 import { exists } from 'fs'
 
+/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+export type PackageJson = any
+
 /**
  * package.json path of the client. This is expected to exist.
  */
@@ -66,7 +69,7 @@ export const getBabelCjsConfigPath = (): Promise<string> =>
 		getEssexScriptsPathSync(BABEL_CJS_FILENAME),
 	) as Promise<string>
 
-export function getPackageJSON(): Promise<object> {
+export function getPackageJSON(): Promise<PackageJson> {
 	return getPackageJsonPath().then(pkgPath => {
 		return new Promise(resolve => {
 			exists(pkgPath, is => {
