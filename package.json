@@ -10,7 +10,7 @@
 		"clean": "lerna run clean --stream",
 		"build": "lerna run build --stream",
 		"test_packages": "lerna run test --stream",
-		"publish_packages": "lerna publish --registry https://pkgs.dev.azure.com/msrp-essex/_packaging/essex-npm/npm/registry/",
+		"publish_packages": "lerna publish",
 		"release": "run-s build publish_packages",
 		"lint": "node ./packages/scripts/lib/index.js lint --docs --strict",
 		"audit_dependencies": "node ./packages/scripts/lib/index.js audit",
