@@ -1,7 +1,7 @@
 {
 	"name": "@essex/prettier-config",
+	"private": false,
 	"version": "7.0.1",
 	"main": "index.js",
-	"license": "MIT",
-	"gitHead": "607a66b88e0695b840fa40975fb28f1defd373ff"
+	"license": "MIT"
 }

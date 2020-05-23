@@ -1,9 +1,9 @@
 {
 	"name": "@essex/eslint-config",
 	"version": "7.0.1",
+	"private": false,
 	"license": "MIT",
 	"dependencies": {
 		"@essex/eslint-plugin": "^7.0.1"
-	},
-	"gitHead": "607a66b88e0695b840fa40975fb28f1defd373ff"
+	}
 }
