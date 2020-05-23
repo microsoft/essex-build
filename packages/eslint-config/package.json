@@ -1,8 +1,8 @@
 {
 	"name": "@essex/eslint-config",
-	"version": "6.5.1",
+	"version": "7.0.0",
 	"license": "MIT",
 	"dependencies": {
-		"@essex/eslint-plugin": "^6.5.1"
+		"@essex/eslint-plugin": "^7.0.0"
 	}
 }
