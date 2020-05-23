@@ -5,6 +5,7 @@
 	"main": "lib/index.js",
 	"license": "MIT",
 	"prettier": "@essex/prettier-config",
+	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
 	"scripts": {
 		"build": "tsc",
 		"clean": "rimraf lib"
