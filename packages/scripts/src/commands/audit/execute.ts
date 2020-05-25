@@ -18,7 +18,7 @@ export async function execute(options: AuditCommandOptions): Promise<number> {
 	const runs: Array<RunArg | RunArg[]> = []
 	runs.push([
 		// Audit CVEs
-		{ exec: 'audit-ci', args: ['-h', '-c'] },
+		{ exec: 'audit-ci', args: ['-h'] },
 
 		// Check Licenses
 		{ exec: 'license-to-fail', args: [licenseConfig] },
