@@ -69,3 +69,7 @@ https
 msrc
 audit-ci
 CVEs
+config
+whitelist
+whitelisted
+json

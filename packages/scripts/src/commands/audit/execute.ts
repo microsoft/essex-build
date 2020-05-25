@@ -5,10 +5,7 @@
 import { RunArg, runSequential } from '../../utils'
 import { resolve } from 'path'
 
-const auditCiConfig = resolve(
-	__dirname,
-	'../../../config/.audit-ci.json'
-)
+const auditCiConfig = resolve(__dirname, '../../../config/.audit-ci.json')
 
 const licenseConfig = resolve(
 	__dirname,
