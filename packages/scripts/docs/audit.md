@@ -6,11 +6,17 @@ Performs static dependency analysis
 
 The following checks are performed when this command is invoked.
 
-- ## audit-ci -h -c
+- ## audit-ci --config <.audit-ci.json path>
 
   ### Purpose
 
-  This tool will check for CVEs on any dependencies of the project. Any dependency with a **high** or **critical** level CVE will emit an error.
+  This tool will check for CVEs on any dependencies of the project. Any dependency with a **high** or **critical** level CVE that have not been [whitelisted](https://github.com/IBM/audit-ci#options) will emit an error.
+
+  When possible, use the following whitelist priority to minimize whitelist surface area:
+  
+  1. `path-whitelist`
+  1. `advisories`
+  1. `whitelist`
 
 - ## license-to-fail
 
