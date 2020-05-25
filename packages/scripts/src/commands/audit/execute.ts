@@ -5,6 +5,11 @@
 import { RunArg, runSequential } from '../../utils'
 import { resolve } from 'path'
 
+const auditCiConfig = resolve(
+	__dirname,
+	'../../../config/.audit-ci.json'
+)
+
 const licenseConfig = resolve(
 	__dirname,
 	'../../../config/licenses-to-fail-config.js',
@@ -18,7 +23,7 @@ export async function execute(options: AuditCommandOptions): Promise<number> {
 	const runs: Array<RunArg | RunArg[]> = []
 	runs.push([
 		// Audit CVEs
-		{ exec: 'audit-ci', args: ['-h', '-c'] },
+		{ exec: 'audit-ci', args: ['--config', auditCiConfig] },
 
 		// Check Licenses
 		{ exec: 'license-to-fail', args: [licenseConfig] },
