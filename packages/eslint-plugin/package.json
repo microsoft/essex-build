@@ -11,7 +11,6 @@
 		"clean": "rimraf lib"
 	},
 	"dependencies": {
-		"@essex/eslint-plugin": "^7.0.3",
 		"@essex/prettier-config": "^7.0.3",
 		"babel-eslint": "^10.1.0",
 		"eslint": "^7.0.0",
