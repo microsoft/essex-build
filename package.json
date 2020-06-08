@@ -12,20 +12,19 @@
 		"test_packages": "lerna run test --stream",
 		"publish_packages": "lerna publish",
 		"release": "run-s build publish_packages",
-		"lint": "node ./packages/scripts/lib/index.js lint --docs --strict",
-		"audit_dependencies": "node ./packages/scripts/lib/index.js audit",
-		"test": "run-s build lint test_packages"
+		"lint": "essex lint --docs --strict",
+		"audit_dependencies": "essex audit",
+		"ci": "run-s lint build test_packages"
 	},
 	"workspaces": {
 		"packages": [
 			"packages/*"
-		],
-		"nohoist": ["**"]
+		]
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "node ./packages/scripts/lib/index.js pre-commit",
-			"commit-msg": "node ./packages/scripts/lib/index.js commit-msg"
+			"pre-commit": "essex pre-commit",
+			"commit-msg": "essex commit-msg"
 		}
 	},
 	"devDependencies": {
