@@ -6,7 +6,7 @@ Performs static dependency analysis
 
 The following checks are performed when this command is invoked.
 
-- ## audit-ci -h -c
+- ## audit-ci -h
 
   ### Purpose
 
