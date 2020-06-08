@@ -8,13 +8,13 @@
 	],
 	"scripts": {
 		"clean": "lerna run clean --stream",
-		"build": "lerna run build --stream",
+		"build_packages": "lerna run build --stream",
 		"test_packages": "lerna run test --stream",
 		"publish_packages": "lerna publish",
 		"release": "run-s build publish_packages",
 		"lint": "essex lint --docs --strict",
 		"audit_dependencies": "essex audit",
-		"ci": "run-s build ci test_packages"
+		"ci": "run-s build lint test_packages"
 	},
 	"workspaces": {
 		"packages": [
