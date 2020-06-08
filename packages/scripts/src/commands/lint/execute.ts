@@ -31,6 +31,7 @@ const jobs: Record<string, RunArg> = {
 			'--ignore-numbers',
 			'**/*.md',
 			'!**/node_modules/**/*.md',
+			'!CHANGELOG.md',
 		],
 	},
 }
