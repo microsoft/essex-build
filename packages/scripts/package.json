@@ -10,7 +10,7 @@
 	"scripts": {
 		"build:typescript": "tsc",
 		"build:crlf": "crlf --set=LF \"lib/**/*.js\"",
-		"build:perms": "chmod +x lib/index.js",
+		"build:perms": "shx chmod +x lib/index.js",
 		"build": "run-s build:typescript build:crlf build:perms",
 		"clean": "rimraf lib"
 	},
