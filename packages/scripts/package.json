@@ -10,7 +10,7 @@
 	"scripts": {
 		"build:typescript": "tsc",
 		"build:crlf": "crlf --set=LF \"lib/**/*.js\"",
-		"build:perms": "chmod +x lib/index.js",
+		"build:perms": "shx chmod +x lib/index.js",
 		"build": "run-s build:typescript build:crlf build:perms",
 		"clean": "rimraf lib"
 	},
@@ -81,7 +81,13 @@
 		"webpack-dev-server": "^3.10.3"
 	},
 	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^3.0.0",
+		"@typescript-eslint/parser": "^3.0.0",
 		"pretty-quick": "^2.0.1",
 		"typescript": "^3.9.2"
+	},
+	"peerDependencies": {
+		"@typescript-eslint/eslint-plugin": ">= 3.0.0",
+		"@typescript-eslint/parser": ">= 3.0.0"
 	}
 }
