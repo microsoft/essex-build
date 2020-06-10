@@ -9,14 +9,16 @@ The following checks are performed when this command is invoked.
 - ## audit-ci --config <.audit-ci.json path>
 
   ### Purpose
-
+<!--alex disable whitelist-->
+<!--alex disable whitelisted-->
   This tool will check for CVEs on any dependencies of the project. Any dependency with a **high** or **critical** level CVE that have not been [whitelisted](https://github.com/IBM/audit-ci#options) will emit an error.
 
-  When possible, use the following whitelist priority to minimize whitelist surface area:
-
+  When possible, use the following priority to minimize whitelist coverage:
   1. `path-whitelist`
   1. `advisories`
   1. `whitelist`
+<!--alex enable whitelist-->
+<!--alex enable whitelisted-->
 
 - ## license-to-fail
 
