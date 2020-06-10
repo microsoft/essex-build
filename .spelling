@@ -70,6 +70,5 @@ msrc
 audit-ci
 CVEs
 config
-whitelist
-whitelisted
+allowlist
 json
