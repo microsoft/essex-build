@@ -13,7 +13,7 @@
 		"publish_packages": "lerna publish",
 		"release": "run-s build publish_packages",
 		"lint": "node ./packages/scripts/lib/index.js lint --docs --strict",
-		"audit_dependencies": "node ./packages/scripts/lib/index.js audit",
+		"audit_dependencies": "cross-env DEBUG=* node ./packages/scripts/lib/index.js audit",
 		"ci": "run-s build lint test"
 	},
 	"workspaces": {
@@ -28,13 +28,14 @@
 		}
 	},
 	"devDependencies": {
+		"@essex/scripts": "^7.0.3",
 		"@typescript-eslint/eslint-plugin": "^3.0.0",
 		"@typescript-eslint/parser": "^3.0.0",
-		"@essex/scripts": "^7.0.3",
 		"crlf": "^1.1.1",
-		"shx": "^0.3.2",
+		"cross-env": "^7.0.2",
 		"lerna": "^3.20.2",
 		"npm-run-all": "^4.1.5",
+		"shx": "^0.3.2",
 		"typescript": "^3.9.2"
 	}
 }
