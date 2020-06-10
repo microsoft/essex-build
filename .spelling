@@ -69,3 +69,6 @@ https
 msrc
 audit-ci
 CVEs
+config
+allowlist
+json
