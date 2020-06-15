@@ -1,4 +1,4 @@
-![CI](https://github.com/microsoft/essex-alpha-build-infra/workflows/CI/badge.svg?branch=master)
+![CI](https://github.com/microsoft/essex-alpha-build-infra/workflows/CI/badge.svg?branch=main)
 
 # essex-alpha-build-infra
 
