@@ -12,7 +12,7 @@
 		"test": "lerna run test --stream",
 		"publish_packages": "lerna publish",
 		"release": "run-s build publish_packages",
-		"lint": "node ./packages/scripts/lib/index.js lint --docs --strict",
+		"lint": "cross-env DEBUG=essex* node ./packages/scripts/lib/index.js lint --docs --strict",
 		"audit_dependencies": "cross-env DEBUG=* node ./packages/scripts/lib/index.js audit",
 		"ci": "run-s build lint test"
 	},
