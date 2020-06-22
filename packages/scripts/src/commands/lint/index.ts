@@ -13,6 +13,7 @@ export default function lint(program: Command): void {
 		.option('--docs', 'performs documentation linting steps')
 		.option('--staged', 'only do git-stage verifications')
 		.option('--strict', 'strict linting, warnings will cause failure')
+		.option('--spelling-ignore <files>', 'ignore spelling on a glob')
 		.action(async (options: LintCommandOptions = {}) => {
 			const code = await execute(options)
 			process.exit(code)

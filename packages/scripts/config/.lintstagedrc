@@ -3,6 +3,6 @@
     "pretty-quick --staged"
   ],
   "**/*.{js,jsx,ts,tsx}": [
-    "essex lint --fix --staged"
+    "node ./packages/scripts/lib/index.js lint --fix --staged"
   ]
 }
