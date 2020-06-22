@@ -1,7 +1,7 @@
 {
 	"name": "@essex/scripts",
 	"private": false,
-	"version": "7.1.0",
+	"version": "7.2.0",
 	"description": "A set of scripts to make a essex javascript engineer's life easier",
 	"main": "lib/index.js",
 	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
