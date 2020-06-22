@@ -43,7 +43,7 @@
 		"cache-loader": "^4.1.0",
 		"colors": "^1.4.0",
 		"commander": "^5.1.0",
-		"commitlint": "^8.3.5",
+		"commitlint": "^9.0.1",
 		"core-js": "^3.6.5",
 		"cross-spawn": "^7.0.2",
 		"css-loader": "^3.5.2",
