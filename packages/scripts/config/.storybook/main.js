@@ -56,8 +56,8 @@ module.exports = {
 				{
 					loader: require.resolve('ts-loader'),
 					options: {
-            configFile: join(process.cwd(), 'tsconfig.json'),
-            transpileOnly: true,
+						configFile: join(process.cwd(), 'tsconfig.json'),
+						transpileOnly: true,
 					},
 				},
 				{
@@ -86,13 +86,7 @@ module.exports = {
 			exclude: [/node_modules/],
 			enforce: 'pre',
 		})
-		config.plugins.push(
-			new ForkTsCheckerWebpackPlugin({
-				checkSyntacticErrors: true,
-				tsconfig: join(process.cwd(), 'tsconfig.json'),
-				useTypescriptIncrementalApi: true,
-			}),
-		)
+		config.plugins.push(new ForkTsCheckerWebpackPlugin())
 		return config
 	},
 }
