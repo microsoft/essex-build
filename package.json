@@ -12,9 +12,10 @@
 		"test": "lerna run test --stream",
 		"publish_packages": "lerna publish",
 		"release": "run-s build publish_packages",
-		"lint": "cross-env DEBUG=essex* node ./packages/scripts/lib/index.js lint --docs --strict",
-		"audit_dependencies": "cross-env DEBUG=* node ./packages/scripts/lib/index.js audit",
-		"git_is_clean": "node ./packages/scripts/lib/index.js git_is_clean",
+		"lint": "node ./packages/scripts/lib/index.js lint --docs --strict",
+		"prettify": "node ./packages/scripts/lib/index.js prettify",
+		"audit_dependencies": "node ./packages/scripts/lib/index.js audit",
+		"git_is_clean": "node ./packages/scripts/lib/index.js git-is-clean",
 		"ci": "run-s build lint test git_is_clean"
 	},
 	"workspaces": {
