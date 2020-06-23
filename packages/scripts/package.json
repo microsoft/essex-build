@@ -38,6 +38,7 @@
 		"@storybook/react": "^5.3.18",
 		"@types/jest": "^26.0.0",
 		"alex": "^8.1.1",
+		"at-least-node": "^1.0.0",
 		"audit-ci": "^3.0.0",
 		"babel-loader": "^8.1.0",
 		"cache-loader": "^4.1.0",
