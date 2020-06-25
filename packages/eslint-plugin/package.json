@@ -1,7 +1,7 @@
 {
 	"name": "@essex/eslint-plugin",
 	"private": false,
-	"version": "7.3.1",
+	"version": "7.3.2",
 	"main": "lib/index.js",
 	"license": "MIT",
 	"prettier": "@essex/prettier-config",
@@ -11,7 +11,7 @@
 		"clean": "rimraf lib"
 	},
 	"dependencies": {
-		"@essex/prettier-config": "^7.3.1",
+		"@essex/prettier-config": "^7.3.2",
 		"babel-eslint": "^10.1.0",
 		"eslint": "^7.0.0",
 		"eslint-config-prettier": "^6.11.0",
