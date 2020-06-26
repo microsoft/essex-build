@@ -51,7 +51,8 @@ export function execute({
 			})
 		})
 	} catch (err) {
-		return Promise.resolve({ code: 12345 })
+		console.log(`error spawning process ${exec}`, err)
+		return Promise.resolve({ code: 99999 })
 	}
 }
 
