@@ -15,7 +15,11 @@ export function subtaskSuccess(text: string): void {
 	console.log(`    ✔ ${text}`.green)
 }
 
-export function debug(text: string, ...args: any[]): void {
+export function debug(
+	text: string,
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	...args: any[]
+): void {
 	debugLog(text, ...args)
 }
 
