@@ -7,7 +7,7 @@
 		"Chris Trevino <chtrevin@microsoft.com>"
 	],
 	"scripts": {
-		"clean": "lerna run clean --stream",
+		"clean": "lerna run clean --stream --parallel",
 		"build": "lerna run build --stream",
 		"test": "lerna run test --stream",
 		"publish_packages": "lerna publish",
