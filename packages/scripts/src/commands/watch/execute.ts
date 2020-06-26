@@ -12,7 +12,7 @@ import {
 	getWebpackConfigPath,
 } from '../../utils'
 import { BundleMode } from '../build/execute'
-import { RunArg, runSequential } from '@essex/shellrunner'
+import { Job, run } from '@essex/shellrunner'
 
 export interface WatchCommandOptions {
 	verbose?: boolean
@@ -45,7 +45,7 @@ export async function execute({
 		fileExists(webpackConfigPath!),
 	])
 
-	const runs: RunArg[] = []
+	const runs: Job[] = []
 	// TypeScript Execution
 	let babelInputDir = 'lib'
 	if (tsConfigExists) {
@@ -110,5 +110,6 @@ export async function execute({
 		})
 	}
 
-	return runSequential(runs)
+	const result = await run(runs)
+	return result.code
 }

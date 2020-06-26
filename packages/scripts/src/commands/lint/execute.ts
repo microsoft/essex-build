@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { RunArg, runParallel } from '@essex/shellrunner'
+import { Job, run } from '@essex/shellrunner'
 import { getEslintJob } from './getEslintJob'
 
 export interface LintCommandOptions {
@@ -13,17 +13,17 @@ export interface LintCommandOptions {
 	spellingIgnore?: string
 }
 
-const PRETTY_QUICK_JOB: RunArg = {
+const PRETTY_QUICK_JOB: Job = {
 	exec: 'pretty-quick',
 	args: ['--check'],
 }
 
-const TONAL_LINTING_JOB: RunArg = {
+const TONAL_LINTING_JOB: Job = {
 	exec: 'alex',
 	args: ['.'],
 }
 
-const SPELL_CHECK_JOB = (spellingIgnore: string | undefined): RunArg => {
+const SPELL_CHECK_JOB = (spellingIgnore: string | undefined): Job => {
 	const args = [
 		'--report',
 		'--en-us',
@@ -52,12 +52,13 @@ export async function execute({
 }: LintCommandOptions): Promise<number> {
 	const eslint = await getEslintJob(fix, strict)
 
-	const toRun: RunArg[] = [eslint]
+	const toRun: Job[] = [eslint]
 	if (!staged) {
 		toRun.push(PRETTY_QUICK_JOB)
 		if (docs) {
 			toRun.push(TONAL_LINTING_JOB, SPELL_CHECK_JOB(spellingIgnore))
 		}
 	}
-	return runParallel(...toRun)
+	const { code } = await run(...toRun)
+	return code
 }

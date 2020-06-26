@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { getStorybookConfigPath } from '../../utils'
-import { runSequential } from '@essex/shellrunner'
+import { run } from '@essex/shellrunner'
 
 export interface BuildStorybookCommandOptions {
 	verbose: boolean
@@ -19,8 +19,9 @@ export async function execute({
 		args.push('--quiet')
 	}
 
-	return runSequential({
+	const { code } = await run({
 		exec: 'build-storybook',
 		args,
 	})
+	return code
 }
