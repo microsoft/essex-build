@@ -88,6 +88,7 @@
 	},
 	"peerDependencies": {
 		"@typescript-eslint/eslint-plugin": ">= 3.0.0",
-		"@typescript-eslint/parser": ">= 3.0.0"
+		"@typescript-eslint/parser": ">= 3.0.0",
+		"husky": ">= 4"
 	}
 }
