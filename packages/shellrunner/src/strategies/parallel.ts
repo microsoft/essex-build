@@ -11,12 +11,13 @@ import { single } from './single'
  * @param jobs the jobs to run
  */
 export async function parallel(...jobs: Job[]): Promise<JobResult> {
-	log.debug('--running parallel jobs--')
+	log.debug('--running parallel jobs!--')
 	for (const job of jobs) {
 		log.printJob(job)
 	}
 	log.debug('-------------------------')
 	const results = await Promise.all(jobs.map(job => single(job)))
-	const code = Math.max(...results.map(r => r.code))
+	const codes = results.map(r => r.code)
+	const code = Math.max(...codes)
 	return { code }
 }

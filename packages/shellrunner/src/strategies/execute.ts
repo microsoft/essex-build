@@ -21,46 +21,51 @@ export function execute({
 	codeMap = {},
 	toConsole = true,
 }: Job): Promise<JobResult> {
-	const options = getInitialSpawnOptions()
-	if (!toConsole) {
-		delete options.stdio
-	}
+	const options = getInitialSpawnOptions(toConsole)
 	if (exec === 'yarn') {
 		scrubEnvVars(options.env || {})
 	}
 
-	const spawned = spawn(exec, args, options) as ChildProcess
-	let output = ''
-	let error = ''
-	if (!toConsole) {
-		if (spawned && spawned.stdout && spawned.stderr) {
-			spawned.stdout.on('data', data => (output += data.toString()))
-			spawned.stderr.on('data', data => (error += data.toString()))
-		}
-	}
-
-	return new Promise<JobResult>(resolve => {
-		spawned.on('close', code => {
-			if (codeMap[code] != null) {
-				return codeMap[code]
+	try {
+		const spawned = spawn(exec, args, options) as ChildProcess
+		let output = ''
+		let error = ''
+		if (!toConsole) {
+			if (spawned && spawned.stdout && spawned.stderr) {
+				spawned.stdout.on('data', data => (output += data.toString()))
+				spawned.stderr.on('data', data => (error += data.toString()))
 			}
-			resolve({
-				output,
-				error,
-				code,
+		}
+
+		return new Promise<JobResult>((resolve, reject) => {
+			spawned.on('error', err => reject(err))
+			spawned.on('close', code => {
+				if (codeMap[code] != null) {
+					return codeMap[code]
+				}
+				resolve({
+					output,
+					error,
+					code,
+				})
 			})
 		})
-	})
+	} catch (err) {
+		return Promise.resolve({ code: 12345 })
+	}
 }
 
-function getInitialSpawnOptions(): SpawnOptions {
+function getInitialSpawnOptions(toConsole: boolean): SpawnOptions {
+	const cwd = process.cwd()
+	const stdio = toConsole ? 'inherit' : undefined
+	const hoistedPath = getHoistedPath()
 	return {
-		cwd: process.cwd(),
+		cwd,
 		env: {
 			...process.env,
-			PATH: getHoistedPath(),
+			PATH: hoistedPath,
 		},
-		stdio: 'inherit',
+		stdio,
 	} as SpawnOptions
 }
 
