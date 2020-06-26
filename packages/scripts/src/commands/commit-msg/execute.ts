@@ -4,7 +4,7 @@
  */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { getConfigPath } from '../../utils'
-import { runSequential } from '../../jobrunner'
+import { runSequential } from '@essex/shellrunner'
 
 export async function execute(): Promise<number> {
 	const commitLintPath = await getConfigPath('commitlint.config.js')!

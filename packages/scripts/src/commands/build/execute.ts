@@ -7,7 +7,7 @@ import {
 	getRollupConfigPath,
 	getWebpackConfigPath,
 } from '../../utils'
-import { RunArg, runSequential } from '../../jobrunner'
+import { RunArg, runSequential } from '@essex/shellrunner'
 import { tmpdir } from 'os'
 import { exists, writeFileSync } from 'fs'
 import { join } from 'path'

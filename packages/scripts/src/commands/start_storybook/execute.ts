@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { getStorybookConfigPath } from '../../utils'
-import { runSequential } from '../../jobrunner'
+import { runSequential } from '@essex/shellrunner'
 
 export interface StartStorybookCommandOptions {
 	verbose: boolean

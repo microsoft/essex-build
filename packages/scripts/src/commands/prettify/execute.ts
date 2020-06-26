@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { runSequential, RunArg } from '../../jobrunner'
+import { runSequential, RunArg } from '@essex/shellrunner'
 
 export interface PrettierCommandOptions {
 	verbose: boolean
