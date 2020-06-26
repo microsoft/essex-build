@@ -4,6 +4,9 @@
  */
 import { runSequential } from '../../utils'
 
+/**
+ * Verifies that there are no active changes in the git index
+ */
 export async function execute(): Promise<number> {
 	return runSequential([
 		{
