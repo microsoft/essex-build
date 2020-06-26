@@ -1487,7 +1487,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/config-conventional@npm:^9.0.1":
+"@commitlint/config-conventional@npm:^9.1.0":
   version: 9.1.0
   resolution: "@commitlint/config-conventional@npm:9.1.0"
   dependencies:
@@ -1787,7 +1787,7 @@ __metadata:
   resolution: "@essex/alpha-build-utils@workspace:."
   dependencies:
     husky: ^4.2.5
-    lerna: ^3.20.2
+    lerna: ^3.22.1
     npm-run-all: ^4.1.5
   languageName: unknown
   linkType: soft
@@ -1847,7 +1847,7 @@ __metadata:
     "@babel/plugin-proposal-optional-chaining": ^7.10.3
     "@babel/plugin-transform-react-jsx": ^7.10.3
     "@babel/preset-env": ^7.10.3
-    "@commitlint/config-conventional": ^9.0.1
+    "@commitlint/config-conventional": ^9.1.0
     "@essex/eslint-config": ^7.3.2
     "@essex/prettier-config": ^7.3.2
     "@essex/shellrunner": ^7.3.2
@@ -1870,12 +1870,12 @@ __metadata:
     cache-loader: ^4.1.0
     colors: ^1.4.0
     commander: ^5.1.0
-    commitlint: ^9.0.1
+    commitlint: ^9.1.0
     core-js: ^3.6.5
     crlf: ^1.1.1
     cross-spawn: ^7.0.3
     css-loader: ^3.6.0
-    debug: ^4.1.1
+    debug: ^4.2.0
     eslint: ^7.3.1
     fork-ts-checker-webpack-plugin: ^5.0.5
     glob: ^7.1.6
@@ -1922,12 +1922,12 @@ __metadata:
   resolution: "@essex/shellrunner@workspace:packages/shellrunner"
   dependencies:
     "@types/debug": ^4.1.5
-    "@types/node": ^14.0.12
+    "@types/node": ^14.0.14
     colors: ^1.4.0
-    cross-spawn: ^7.0.2
-    debug: ^4.1.1
+    cross-spawn: ^7.0.3
+    debug: ^4.2.0
     rimraf: ^3.0.2
-    typescript: ^3.9.2
+    typescript: ^3.9.5
   languageName: unknown
   linkType: soft
 
@@ -4258,7 +4258,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>= 8, @types/node@npm:^14.0.12, @types/node@npm:^14.0.14":
+"@types/node@npm:*, @types/node@npm:>= 8, @types/node@npm:^14.0.14":
   version: 14.0.14
   resolution: "@types/node@npm:14.0.14"
   checksum: 0a2072aa7de32e6535ce6bc7383965fc0a4b7bbf6d76f69027db72e86381921c820a8a2173f75fa210d9fb3286c707079d3804ef33c76a065bcb890858e50ee9
@@ -7417,7 +7417,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commitlint@npm:^9.0.1":
+"commitlint@npm:^9.1.0":
   version: 9.1.0
   resolution: "commitlint@npm:9.1.0"
   dependencies:
@@ -8254,7 +8254,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:^4.0.0, debug@npm:^4.0.1, debug@npm:^4.1.0, debug@npm:^4.1.1":
+"debug@npm:^4.0.0, debug@npm:^4.0.1, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.2.0":
   version: 4.2.0
   resolution: "debug@npm:4.2.0"
   dependencies:
@@ -13850,7 +13850,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"lerna@npm:^3.20.2":
+"lerna@npm:^3.22.1":
   version: 3.22.1
   resolution: "lerna@npm:3.22.1"
   dependencies:
@@ -21439,7 +21439,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"typescript@^3.9.2, typescript@^3.9.5":
+typescript@^3.9.5:
   version: 3.9.5
   resolution: "typescript@npm:3.9.5"
   bin:
@@ -21449,7 +21449,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^3.9.2#builtin<compat/typescript>, typescript@patch:typescript@^3.9.5#builtin<compat/typescript>":
+"typescript@patch:typescript@^3.9.5#builtin<compat/typescript>":
   version: 3.9.5
   resolution: "typescript@patch:typescript@npm%3A3.9.5#builtin<compat/typescript>::version=3.9.5&hash=64df9d"
   bin:
