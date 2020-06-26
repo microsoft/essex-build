@@ -3,9 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { SpawnOptions, ChildProcess } from 'child_process'
-import { join } from 'path'
-import { platform } from 'os'
 import { Job, JobResult } from '../types'
+import { getHoistedPath } from './geHoistedPath'
 
 /* eslint-disable-next-line @typescript-eslint/no-var-requires */
 const spawn = require('cross-spawn')
@@ -22,27 +21,12 @@ export function execute({
 	codeMap = {},
 	toConsole = true,
 }: Job): Promise<JobResult> {
-	const sep = platform().indexOf('win') === 0 ? ';' : ':'
-	const options = {
-		cwd: process.cwd(),
-		env: {
-			...process.env,
-			PATH: `${join(process.cwd(), 'node_modules', '.bin')}${sep}${
-				process.env.PATH
-			}`,
-		},
-	} as SpawnOptions
-	if (toConsole) {
-		options.stdio = 'inherit'
+	const options = getInitialSpawnOptions()
+	if (!toConsole) {
+		delete options.stdio
 	}
 	if (exec === 'yarn') {
-		const newEnv = { ...process.env }
-		Object.keys(newEnv).forEach(name => {
-			if (name.startsWith('npm_')) {
-				delete newEnv[name]
-			}
-		})
-		options.env = newEnv
+		scrubEnvVars(options.env || {})
 	}
 
 	const spawned = spawn(exec, args, options) as ChildProcess
@@ -66,5 +50,24 @@ export function execute({
 				code,
 			})
 		})
+	})
+}
+
+function getInitialSpawnOptions(): SpawnOptions {
+	return {
+		cwd: process.cwd(),
+		env: {
+			...process.env,
+			PATH: getHoistedPath(),
+		},
+		stdio: 'inherit',
+	} as SpawnOptions
+}
+
+function scrubEnvVars(env: Record<string, string | undefined>): void {
+	Object.keys(env).forEach(envVar => {
+		if (envVar.startsWith('npm_')) {
+			delete env[envVar]
+		}
 	})
 }
