@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { runSequential, RunArg } from '../../utils'
+import { runSequential, RunArg } from '../../jobrunner'
 
 export interface PrettierCommandOptions {
 	verbose: boolean
@@ -20,5 +20,5 @@ export async function execute({
 		run.args.push('--verbose')
 	}
 
-	return await runSequential([run])
+	return await runSequential(run)
 }

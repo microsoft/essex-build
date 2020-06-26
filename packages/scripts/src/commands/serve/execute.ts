@@ -3,8 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { BundleMode } from '../build/execute'
-import { getWebpackBundleConfigPath, RunArg, runParallel } from '../../utils'
+import { getWebpackBundleConfigPath } from '../../utils'
 import { getWebpackArgs } from '../../utils/webpack'
+import { RunArg, runParallel } from '../../jobrunner'
 
 export interface ServeCommandOptions {
 	mode: BundleMode

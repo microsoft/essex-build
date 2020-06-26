@@ -3,7 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { run, getProjectPath, log, getEssexScriptsPathSync } from '../../utils'
+import { getProjectPath, log, getEssexScriptsPathSync } from '../../utils'
+import { run } from '../../jobrunner'
 
 export interface TestCommandOptions {
 	verbose?: boolean
@@ -63,6 +64,6 @@ export async function execute({
 		log.info('jest arguments: ', args)
 	}
 
-	const result = await run({ exec: 'jest', args }, verbose)
+	const result = await run({ exec: 'jest', args, toConsole: verbose })
 	return result.code
 }
