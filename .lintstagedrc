@@ -1,0 +1,8 @@
+{
+  "**/*": [
+    "pretty-quick --staged"
+  ],
+  "**/*.{js,jsx,ts,tsx}": [
+    "node ./packages/scripts/lib/index.js lint --fix --staged"
+  ]
+}
