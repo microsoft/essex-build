@@ -8,12 +8,9 @@ import * as log from '../log'
 
 export async function single(job: Job): Promise<JobResult> {
 	const { exec, id } = job
-	let code = 0
-	const result = await execute(job)
-	const subCode = result.code
+	const { code } = await execute(job)
 	log.printJob(job)
-	if (subCode > 0) {
-		code = subCode
+	if (code > 0) {
 		log.subtaskFail(`${exec}${id ? `[${id}]` : ''} failed`)
 	} else {
 		log.subtaskSuccess(`${exec}${id ? `[${id}]` : ''} passed`)

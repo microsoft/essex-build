@@ -5,6 +5,7 @@
 import { platform } from 'os'
 import { join, resolve } from 'path'
 import { existsSync } from 'fs'
+import * as log from '../log'
 
 const sep = platform().indexOf('win') === 0 ? ';' : ':'
 
@@ -14,8 +15,10 @@ const sep = platform().indexOf('win') === 0 ? ';' : ':'
  */
 export function getHoistedPath(): string {
 	const currentPath = process.env.PATH
-	const nmBins = getNodeModulesBinPaths()
-	return [...nmBins, currentPath].join(sep)
+	const binPaths = getNodeModulesBinPaths()
+	const result = [...binPaths, currentPath].join(sep)
+	log.debug('hoisted path:', result)
+	return result
 }
 
 function getNodeModulesBinPaths(): string[] {
@@ -27,7 +30,7 @@ function getNodeModulesBinPaths(): string[] {
 		if (existsSync(current)) {
 			result.push(current)
 		}
-		const parent = resolve(current, '..')
+		const parent = resolve(curDir, '..')
 
 		// If we bottom out in the fs, stop recursing
 		if (parent === curDir) {

@@ -24,5 +24,5 @@ export function debug(
 }
 
 export function printJob(job: Job): void {
-	debug(`executing: [${job.exec} ${job.args.join(' ')}]`)
+	debugLog(`Job@[${[job.exec, ...job.args].join(' ')}`)
 }
