@@ -2,7 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { runSequential, getStorybookConfigPath } from '../../utils'
+import { getStorybookConfigPath } from '../../utils'
+import { run } from '@essex/shellrunner'
 
 export interface StartStorybookCommandOptions {
 	verbose: boolean
@@ -18,10 +19,9 @@ export async function execute({
 		args.push('--quiet')
 	}
 
-	return runSequential([
-		{
-			exec: 'start-storybook',
-			args,
-		},
-	])
+	const result = await run({
+		exec: 'start-storybook',
+		args,
+	})
+	return result.code
 }

@@ -10,5 +10,7 @@ export async function execute(files: string[]): Promise<number> {
 		.filter(f => !!f)
 		.map(f => rm(f!))
 	const results = await Promise.all(promises)
-	return results.reduce((prev, curr) => prev + curr, 0)
+	return results.reduce(sum, 0)
 }
+
+const sum = (a: number, b: number) => a + b

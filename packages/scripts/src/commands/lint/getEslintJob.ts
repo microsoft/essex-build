@@ -5,10 +5,10 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import {
 	getConfigPath,
-	RunArg,
 	getProjectPath,
 	getEssexScriptsPathSync,
 } from '../../utils'
+import { Job } from '@essex/shellrunner'
 
 async function getEslintArgs(
 	configPath: string,
@@ -35,11 +35,11 @@ async function getEslintArgs(
 export async function getEslintJob(
 	fix: boolean,
 	strict: boolean,
-): Promise<RunArg> {
+): Promise<Job> {
 	const configPath = await getConfigPath(
 		'.eslintrc',
 		strict ? '.eslintrc-release' : '.eslintrc-experiment',
 	)
 	const args = await getEslintArgs(configPath!, fix, strict)
-	return { exec: 'eslint', args }
+	return { exec: 'eslint', args, codeMap: { 2: 0 } }
 }

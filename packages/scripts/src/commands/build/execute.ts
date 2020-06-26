@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import {
-	RunArg,
 	log,
-	runSequential,
 	getTsConfigJsonPath,
 	getBabelEsmConfigPath,
 	getBabelCjsConfigPath,
 	getRollupConfigPath,
 	getWebpackConfigPath,
 } from '../../utils'
+import { Job, run } from '@essex/shellrunner'
 import { tmpdir } from 'os'
 import { exists, writeFileSync } from 'fs'
 import { join } from 'path'
@@ -56,8 +55,8 @@ export async function execute(config: BuildCommandOptions): Promise<number> {
 		fileExists(webpackConfigPath!),
 	])
 
-	const runs: Array<RunArg | RunArg[]> = []
-	let runTypedoc: RunArg | undefined
+	const runs: Array<Job | Job[]> = []
+	let runTypedoc: Job | undefined
 	let typedocTsConfigPath: string | undefined
 	if (tsConfigExists && config.docs) {
 		const [job, path] = await getDocumentationJob(pkgJson, tsConfigJsonPath)
@@ -124,7 +123,7 @@ export async function execute(config: BuildCommandOptions): Promise<number> {
 	])
 
 	// Add bundle actions in parallel
-	const bundleActions: RunArg[] = []
+	const bundleActions: Job[] = []
 
 	// Rollup Bundle
 	if (rollupExists) {
@@ -145,27 +144,24 @@ export async function execute(config: BuildCommandOptions): Promise<number> {
 	}
 
 	if (runTypedoc) {
-		// typedoc can be run in parallel to tsc+babel
-		return Promise.all([runSequential(runs), runSequential([runTypedoc])]).then(
-			([a, b]) => {
-				// when typedoc is finished, clean up the temp file
-				return runSequential([
-					{
-						exec: 'rimraf',
-						args: [typedocTsConfigPath],
-					},
-				]).then(c => Math.max(a, b, c))
-			},
-		)
+		// typedoc can be run in parallel to tsc+babel sequence
+		return Promise.all([run(...runs), run(runTypedoc)]).then(([a, b]) => {
+			// when typedoc is finished, clean up the temp file
+			return run({
+				exec: 'rimraf',
+				args: [typedocTsConfigPath],
+			}).then(c => Math.max(a.code, b.code, c.code))
+		})
 	} else {
-		return runSequential(runs)
+		const { code } = await run(...runs)
+		return code
 	}
 }
 
 async function getDocumentationJob(
 	pkgJson: any,
 	tsConfigJsonPath: string,
-): Promise<[RunArg, string]> {
+): Promise<[Job, string]> {
 	const { name, title } = pkgJson
 	const readmePath = join(process.cwd(), 'README.md')
 	const readmeExists = await fileExists(readmePath)

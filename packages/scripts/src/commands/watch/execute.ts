@@ -4,16 +4,15 @@
  */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import {
-	RunArg,
 	getTsConfigJsonPath,
 	getBabelEsmConfigPath,
 	getBabelCjsConfigPath,
 	getRollupConfigPath,
-	runSequential,
 	fileExists,
 	getWebpackConfigPath,
 } from '../../utils'
 import { BundleMode } from '../build/execute'
+import { Job, run } from '@essex/shellrunner'
 
 export interface WatchCommandOptions {
 	verbose?: boolean
@@ -46,7 +45,7 @@ export async function execute({
 		fileExists(webpackConfigPath!),
 	])
 
-	const runs: RunArg[] = []
+	const runs: Job[] = []
 	// TypeScript Execution
 	let babelInputDir = 'lib'
 	if (tsConfigExists) {
@@ -111,5 +110,6 @@ export async function execute({
 		})
 	}
 
-	return runSequential([runs])
+	const result = await run(runs)
+	return result.code
 }

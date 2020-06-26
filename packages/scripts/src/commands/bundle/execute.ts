@@ -3,8 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { BundleMode } from '../build/execute'
-import { getWebpackBundleConfigPath, RunArg, runParallel } from '../../utils'
+import { getWebpackBundleConfigPath } from '../../utils'
 import { getWebpackArgs } from '../../utils/webpack'
+import { Job, run } from '@essex/shellrunner'
 
 export interface BundleCommandOptions {
 	mode: BundleMode
@@ -13,7 +14,7 @@ export interface BundleCommandOptions {
 }
 
 export async function execute(config: BundleCommandOptions): Promise<number> {
-	const runs: Array<RunArg> = []
+	const runs: Array<Job> = []
 	const webpackConfigPath = await getWebpackBundleConfigPath()
 
 	runs.push({
@@ -21,5 +22,6 @@ export async function execute(config: BundleCommandOptions): Promise<number> {
 		args: getWebpackArgs(webpackConfigPath, config),
 	})
 
-	return runParallel(...runs)
+	const { code } = await run(runs)
+	return code
 }
