@@ -1,0 +1,6 @@
+{
+    "hooks": {
+        "pre-commit": "node ./packages/scripts/lib/index.js pre-commit",
+        "commit-msg": "node ./packages/scripts/lib/index.js commit-msg"
+    }
+}

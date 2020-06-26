@@ -23,14 +23,7 @@
 			"packages/*"
 		]
 	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "node ./packages/scripts/lib/index.js pre-commit",
-			"commit-msg": "node ./packages/scripts/lib/index.js commit-msg"
-		}
-	},
 	"devDependencies": {
-		"@essex/scripts": "^7.0.3",
 		"@typescript-eslint/eslint-plugin": "^3.0.0",
 		"@typescript-eslint/parser": "^3.0.0",
 		"crlf": "^1.1.1",

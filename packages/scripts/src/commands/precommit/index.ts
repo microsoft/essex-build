@@ -11,7 +11,10 @@ export default function preCommit(program: Command): void {
 		.description('execute pre-commit tasks (for husky hook)')
 		.action(async () => {
 			const configPath = await getConfigPath('.lintstagedrc')
-			const { code } = await run('lint-staged', ['-c', configPath])
+			const { code } = await run({
+				exec: 'lint-staged',
+				args: ['-c', configPath],
+			})
 			process.exit(code)
 		})
 }

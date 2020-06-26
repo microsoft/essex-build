@@ -63,6 +63,6 @@ export async function execute({
 		log.info('jest arguments: ', args)
 	}
 
-	const result = await run('jest', args, verbose)
+	const result = await run({ exec: 'jest', args }, verbose)
 	return result.code
 }
