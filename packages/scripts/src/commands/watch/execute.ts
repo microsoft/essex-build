@@ -12,7 +12,7 @@ import {
 	getWebpackConfigPath,
 } from '../../utils'
 import { BundleMode } from '../build/execute'
-import { RunArg, runSequential } from '../../jobrunner'
+import { RunArg, runSequential } from '@essex/shellrunner'
 
 export interface WatchCommandOptions {
 	verbose?: boolean

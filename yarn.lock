@@ -1786,15 +1786,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/alpha-build-utils@workspace:."
   dependencies:
-    "@typescript-eslint/eslint-plugin": ^3.0.0
-    "@typescript-eslint/parser": ^3.0.0
-    crlf: ^1.1.1
-    cross-env: ^7.0.2
     husky: ^4.2.5
     lerna: ^3.20.2
     npm-run-all: ^4.1.5
-    shx: ^0.3.2
-    typescript: ^3.9.2
   languageName: unknown
   linkType: soft
 
@@ -1811,26 +1805,27 @@ __metadata:
   resolution: "@essex/eslint-plugin@workspace:packages/eslint-plugin"
   dependencies:
     "@essex/prettier-config": ^7.3.2
-    "@types/node": ^14.0.12
-    "@typescript-eslint/eslint-plugin": ^3.0.0
-    "@typescript-eslint/parser": ^3.0.0
+    "@types/node": ^14.0.14
+    "@typescript-eslint/eslint-plugin": ^3.4.0
+    "@typescript-eslint/parser": 3.4.0
     babel-eslint: ^10.1.0
-    eslint: ^7.0.0
+    eslint: ^7.3.1
     eslint-config-prettier: ^6.11.0
     eslint-config-react-app: ^5.2.1
-    eslint-plugin-flowtype: ^5.1.0
+    eslint-plugin-flowtype: ^5.1.3
     eslint-plugin-header: ^3.0.0
-    eslint-plugin-import: ^2.20.2
-    eslint-plugin-jest: ^23.11.0
-    eslint-plugin-jsx-a11y: ^6.2.3
+    eslint-plugin-import: ^2.21.2
+    eslint-plugin-jest: ^23.17.1
+    eslint-plugin-jsx-a11y: ^6.3.1
     eslint-plugin-local-rules: ^0.1.1
-    eslint-plugin-prettier: ^3.1.3
+    eslint-plugin-prettier: ^3.1.4
     eslint-plugin-react: ^7.20.0
-    eslint-plugin-react-hooks: ^4.0.2
+    eslint-plugin-react-hooks: ^4.0.4
     prettier: ^2.0.5
+    typescript: ^3.9.5
   peerDependencies:
-    "@typescript-eslint/eslint-plugin": ">= 3.0.0"
-    "@typescript-eslint/parser": ">= 3.0.0"
+    "@typescript-eslint/eslint-plugin": ">= 3.4.0"
+    "@typescript-eslint/parser": ">= 3.4.0"
   languageName: unknown
   linkType: soft
 
@@ -1855,6 +1850,7 @@ __metadata:
     "@commitlint/config-conventional": ^9.0.1
     "@essex/eslint-config": ^7.3.2
     "@essex/prettier-config": ^7.3.2
+    "@essex/shellrunner": ^7.3.2
     "@storybook/addon-a11y": ^5.3.18
     "@storybook/addon-actions": ^5.3.18
     "@storybook/addon-docs": ^5.3.18
@@ -1876,6 +1872,7 @@ __metadata:
     commander: ^5.1.0
     commitlint: ^9.0.1
     core-js: ^3.6.5
+    crlf: ^1.1.1
     cross-spawn: ^7.0.2
     css-loader: ^3.5.2
     debug: ^4.1.1
@@ -1893,12 +1890,14 @@ __metadata:
     mini-css-extract-plugin: ^0.9.0
     mkdirp: ^1.0.4
     node-sass: ^4.13.1
+    npm-run-all: ^4.1.5
     prettier: ^2.0.4
     pretty-quick: ^2.0.1
     react-docgen-typescript-loader: ^3.7.2
     regenerator-runtime: ^0.13.5
     rimraf: ^3.0.2
     sass-loader: ^8.0.2
+    shx: ^0.3.2
     style-loader: ^1.1.4
     topo-sort: ^1.0.0
     ts-jest: ^26.0.0
@@ -1915,6 +1914,20 @@ __metadata:
   bin:
     essex: ./lib/index.js
     essex-scripts: ./lib/index.js
+  languageName: unknown
+  linkType: soft
+
+"@essex/shellrunner@^7.3.2, @essex/shellrunner@workspace:packages/shellrunner":
+  version: 0.0.0-use.local
+  resolution: "@essex/shellrunner@workspace:packages/shellrunner"
+  dependencies:
+    "@types/debug": ^4.1.5
+    "@types/node": ^14.0.12
+    colors: ^1.4.0
+    cross-spawn: ^7.0.2
+    debug: ^4.1.1
+    rimraf: ^3.0.2
+    typescript: ^3.9.2
   languageName: unknown
   linkType: soft
 
@@ -4245,7 +4258,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>= 8, @types/node@npm:^14.0.12":
+"@types/node@npm:*, @types/node@npm:>= 8, @types/node@npm:^14.0.12, @types/node@npm:^14.0.14":
   version: 14.0.14
   resolution: "@types/node@npm:14.0.14"
   checksum: 0a2072aa7de32e6535ce6bc7383965fc0a4b7bbf6d76f69027db72e86381921c820a8a2173f75fa210d9fb3286c707079d3804ef33c76a065bcb890858e50ee9
@@ -4464,7 +4477,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^3.0.0":
+"@typescript-eslint/eslint-plugin@npm:^3.0.0, @typescript-eslint/eslint-plugin@npm:^3.4.0":
   version: 3.4.0
   resolution: "@typescript-eslint/eslint-plugin@npm:3.4.0"
   dependencies:
@@ -4513,7 +4526,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^3.0.0":
+"@typescript-eslint/parser@npm:3.4.0, @typescript-eslint/parser@npm:^3.0.0":
   version: 3.4.0
   resolution: "@typescript-eslint/parser@npm:3.4.0"
   dependencies:
@@ -7917,18 +7930,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cross-env@npm:^7.0.2":
-  version: 7.0.2
-  resolution: "cross-env@npm:7.0.2"
-  dependencies:
-    cross-spawn: ^7.0.1
-  bin:
-    cross-env: src/bin/cross-env.js
-    cross-env-shell: src/bin/cross-env-shell.js
-  checksum: 624d638db3b4b6b221f32238aeb6785b865365bf41154f01d46a23b6d78f807ca5588a3b32e9af5f17384b866fed3752d0e3ecf8c4a8cfca2935d363d27ba058
-  languageName: node
-  linkType: hard
-
 "cross-spawn@npm:6.0.5, cross-spawn@npm:^6.0.0, cross-spawn@npm:^6.0.5":
   version: 6.0.5
   resolution: "cross-spawn@npm:6.0.5"
@@ -7963,7 +7964,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cross-spawn@npm:^7.0.0, cross-spawn@npm:^7.0.1, cross-spawn@npm:^7.0.2, cross-spawn@npm:^7.0.3":
+"cross-spawn@npm:^7.0.0, cross-spawn@npm:^7.0.2, cross-spawn@npm:^7.0.3":
   version: 7.0.3
   resolution: "cross-spawn@npm:7.0.3"
   dependencies:
@@ -9303,7 +9304,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-flowtype@npm:^5.1.0":
+"eslint-plugin-flowtype@npm:^5.1.3":
   version: 5.1.3
   resolution: "eslint-plugin-flowtype@npm:5.1.3"
   dependencies:
@@ -9324,7 +9325,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-import@npm:^2.20.2":
+"eslint-plugin-import@npm:^2.21.2":
   version: 2.21.2
   resolution: "eslint-plugin-import@npm:2.21.2"
   dependencies:
@@ -9347,7 +9348,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jest@npm:^23.11.0":
+"eslint-plugin-jest@npm:^23.17.1":
   version: 23.17.1
   resolution: "eslint-plugin-jest@npm:23.17.1"
   dependencies:
@@ -9358,7 +9359,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jsx-a11y@npm:^6.2.3":
+"eslint-plugin-jsx-a11y@npm:^6.3.1":
   version: 6.3.1
   resolution: "eslint-plugin-jsx-a11y@npm:6.3.1"
   dependencies:
@@ -9386,7 +9387,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-prettier@npm:^3.1.3":
+"eslint-plugin-prettier@npm:^3.1.4":
   version: 3.1.4
   resolution: "eslint-plugin-prettier@npm:3.1.4"
   dependencies:
@@ -9398,7 +9399,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-hooks@npm:^4.0.2":
+"eslint-plugin-react-hooks@npm:^4.0.4":
   version: 4.0.4
   resolution: "eslint-plugin-react-hooks@npm:4.0.4"
   peerDependencies:
@@ -9464,7 +9465,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^7.0.0":
+"eslint@npm:^7.0.0, eslint@npm:^7.3.1":
   version: 7.3.1
   resolution: "eslint@npm:7.3.1"
   dependencies:
@@ -21438,7 +21439,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-typescript@^3.9.2:
+"typescript@^3.9.2, typescript@^3.9.5":
   version: 3.9.5
   resolution: "typescript@npm:3.9.5"
   bin:
@@ -21448,7 +21449,7 @@ typescript@^3.9.2:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^3.9.2#builtin<compat/typescript>":
+"typescript@patch:typescript@^3.9.2#builtin<compat/typescript>, typescript@patch:typescript@^3.9.5#builtin<compat/typescript>":
   version: 3.9.5
   resolution: "typescript@patch:typescript@npm%3A3.9.5#builtin<compat/typescript>::version=3.9.5&hash=64df9d"
   bin:

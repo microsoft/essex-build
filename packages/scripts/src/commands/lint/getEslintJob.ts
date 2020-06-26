@@ -5,10 +5,10 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import {
 	getConfigPath,
-	RunArg,
 	getProjectPath,
 	getEssexScriptsPathSync,
 } from '../../utils'
+import { RunArg } from '@essex/shellrunner'
 
 async function getEslintArgs(
 	configPath: string,

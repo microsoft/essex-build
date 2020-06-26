@@ -5,7 +5,7 @@
 import { BundleMode } from '../build/execute'
 import { getWebpackBundleConfigPath } from '../../utils'
 import { getWebpackArgs } from '../../utils/webpack'
-import { RunArg, runParallel } from '../../jobrunner'
+import { RunArg, runParallel } from '@essex/shellrunner'
 
 export interface BundleCommandOptions {
 	mode: BundleMode

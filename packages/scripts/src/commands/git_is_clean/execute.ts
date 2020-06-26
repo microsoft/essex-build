@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { runSequential } from '../../jobrunner'
+import { runSequential } from '@essex/shellrunner'
 
 /**
  * Verifies that there are no active changes in the git index.

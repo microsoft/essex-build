@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { getConfigPath } from '../../utils'
-import { runSequential } from '../../jobrunner'
+import { runSequential } from '@essex/shellrunner'
 import { Command } from 'commander'
 
 export default function preCommit(program: Command): void {

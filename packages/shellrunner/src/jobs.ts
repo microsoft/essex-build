@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import * as log from '../utils/log'
+import * as log from './log'
 import * as debug from 'debug'
 import { RunArg } from './types'
 import { run } from './run'
