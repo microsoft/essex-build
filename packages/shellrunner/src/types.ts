@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-export interface RunArg {
+export interface Job {
 	id?: string
 	exec: string
 	args: unknown[]
@@ -21,7 +21,7 @@ export interface RunArg {
 /**
  * The result of a job run
  */
-export interface RunResult {
+export interface JobResult {
 	output?: string
 	error?: string
 	code: number

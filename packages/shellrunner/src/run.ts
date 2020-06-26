@@ -2,69 +2,22 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { SpawnOptions, ChildProcess } from 'child_process'
-import { join } from 'path'
-import { platform } from 'os'
-import { RunArg, RunResult } from './types'
-
-/* eslint-disable-next-line @typescript-eslint/no-var-requires */
-const spawn = require('cross-spawn')
+import { parallel, single } from './strategies'
+import { Job, JobResult } from './types'
 
 /**
- * Runs the given executable with the given args
- * @param exec The executable
- * @param args The args to the executable
- * @param toConsole If the output should be written to the console
+ * Runs a series of jobs.
+ * Each argument is run in sequence, if the argument is an array, that array is run in parallel.
+ * @param runs The jobs to run
  */
-export function run({
-	exec,
-	args,
-	codeMap = {},
-	toConsole = true,
-}: RunArg): Promise<RunResult> {
-	const sep = platform().indexOf('win') === 0 ? ';' : ':'
-	const options = {
-		cwd: process.cwd(),
-		env: {
-			...process.env,
-			PATH: `${join(process.cwd(), 'node_modules', '.bin')}${sep}${
-				process.env.PATH
-			}`,
-		},
-	} as SpawnOptions
-	if (toConsole) {
-		options.stdio = 'inherit'
-	}
-	if (exec === 'yarn') {
-		const newEnv = { ...process.env }
-		Object.keys(newEnv).forEach(name => {
-			if (name.startsWith('npm_')) {
-				delete newEnv[name]
-			}
-		})
-		options.env = newEnv
-	}
-
-	const spawned = spawn(exec, args, options) as ChildProcess
-	let output = ''
-	let error = ''
-	if (!toConsole) {
-		if (spawned && spawned.stdout && spawned.stderr) {
-			spawned.stdout.on('data', data => (output += data.toString()))
-			spawned.stderr.on('data', data => (error += data.toString()))
+export async function run(...jobs: Array<Job | Job[]>): Promise<JobResult> {
+	let code = 0
+	for (const job of jobs) {
+		const result = await (Array.isArray(job) ? parallel(...job) : single(job))
+		code = result.code
+		if (code !== 0) {
+			break
 		}
 	}
-
-	return new Promise<RunResult>(resolve => {
-		spawned.on('close', code => {
-			if (codeMap[code] != null) {
-				return codeMap[code]
-			}
-			resolve({
-				output,
-				error,
-				code,
-			})
-		})
-	})
+	return { code }
 }

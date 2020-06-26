@@ -8,7 +8,7 @@ import {
 	getProjectPath,
 	getEssexScriptsPathSync,
 } from '../../utils'
-import { RunArg } from '@essex/shellrunner'
+import { Job } from '@essex/shellrunner'
 
 async function getEslintArgs(
 	configPath: string,
@@ -35,7 +35,7 @@ async function getEslintArgs(
 export async function getEslintJob(
 	fix: boolean,
 	strict: boolean,
-): Promise<RunArg> {
+): Promise<Job> {
 	const configPath = await getConfigPath(
 		'.eslintrc',
 		strict ? '.eslintrc-release' : '.eslintrc-experiment',

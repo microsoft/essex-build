@@ -5,7 +5,7 @@
 import { BundleMode } from '../build/execute'
 import { getWebpackBundleConfigPath } from '../../utils'
 import { getWebpackArgs } from '../../utils/webpack'
-import { RunArg, runParallel } from '@essex/shellrunner'
+import { Job, run } from '@essex/shellrunner'
 
 export interface ServeCommandOptions {
 	mode: BundleMode
@@ -14,7 +14,7 @@ export interface ServeCommandOptions {
 }
 
 export async function execute(config: ServeCommandOptions): Promise<number> {
-	const runs: Array<RunArg> = []
+	const runs: Array<Job> = []
 	const webpackConfigPath = await getWebpackBundleConfigPath()
 
 	runs.push({
@@ -22,5 +22,6 @@ export async function execute(config: ServeCommandOptions): Promise<number> {
 		args: getWebpackArgs(webpackConfigPath, config),
 	})
 
-	return runParallel(...runs)
+	const result = await run(runs)
+	return result.code
 }
