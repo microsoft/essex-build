@@ -1,6 +1,5 @@
 {
 	"name": "@essex/scripts",
-	"private": false,
 	"version": "7.3.2",
 	"description": "A set of scripts to make a essex javascript engineer's life easier",
 	"main": "lib/index.js",

@@ -3,6 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { SpawnOptions, ChildProcess } from 'child_process'
+import { join } from 'path'
+import { platform } from 'os'
 import * as log from './log'
 import * as debug from 'debug'
 
@@ -23,12 +25,18 @@ export interface RunResult {
  * @param toConsole If the output should be written to the console
  */
 export function run(
-	exec: string,
-	args: unknown[],
+	{ exec, args }: RunArg,
 	toConsole = true,
 ): Promise<RunResult> {
+	const sep = platform().indexOf('win') === 0 ? ';' : ':'
 	const options = {
 		cwd: process.cwd(),
+		env: {
+			...process.env,
+			PATH: `${join(process.cwd(), 'node_modules', '.bin')}${sep}${
+				process.env.PATH
+			}`,
+		},
 	} as SpawnOptions
 	if (toConsole) {
 		options.stdio = 'inherit'
@@ -68,8 +76,8 @@ export function run(
 }
 
 export interface RunArg {
-	exec: string
 	id?: string
+	exec: string
 	args: unknown[]
 }
 
@@ -81,7 +89,7 @@ function printJob(job: RunArg): void {
 async function executeJob(job: RunArg): Promise<number> {
 	const { exec, id, args } = job
 	let code = 0
-	const result = await run(exec, args)
+	const result = await run({ exec, args })
 	const subCode = result.code
 	printJob(job)
 	if (subCode > 0) {

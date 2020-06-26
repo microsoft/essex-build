@@ -1,6 +1,5 @@
 {
 	"name": "@essex/eslint-plugin",
-	"private": false,
 	"version": "7.3.2",
 	"main": "lib/index.js",
 	"license": "MIT",
