@@ -1911,6 +1911,7 @@ __metadata:
   peerDependencies:
     "@typescript-eslint/eslint-plugin": ">= 3.0.0"
     "@typescript-eslint/parser": ">= 3.0.0"
+    husky: ">= 4"
   bin:
     essex: ./lib/index.js
     essex-scripts: ./lib/index.js
