@@ -4,7 +4,7 @@
  */
 import { SpawnOptions, ChildProcess } from 'child_process'
 import { Job, JobResult } from '../types'
-import { getHoistedPath } from './geHoistedPath'
+import { getHoistedPath } from './getHoistedPath'
 
 /* eslint-disable-next-line @typescript-eslint/no-var-requires */
 const spawn = require('cross-spawn')
