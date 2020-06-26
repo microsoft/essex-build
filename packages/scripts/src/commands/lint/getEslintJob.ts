@@ -41,5 +41,5 @@ export async function getEslintJob(
 		strict ? '.eslintrc-release' : '.eslintrc-experiment',
 	)
 	const args = await getEslintArgs(configPath!, fix, strict)
-	return { exec: 'eslint', args }
+	return { exec: 'eslint', args, codeMap: { 2: 0 } }
 }

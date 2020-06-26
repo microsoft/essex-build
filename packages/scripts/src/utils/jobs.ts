@@ -25,7 +25,7 @@ export interface RunResult {
  * @param toConsole If the output should be written to the console
  */
 export function run(
-	{ exec, args }: RunArg,
+	{ exec, args, codeMap = {} }: RunArg,
 	toConsole = true,
 ): Promise<RunResult> {
 	const sep = platform().indexOf('win') === 0 ? ';' : ':'
@@ -63,8 +63,8 @@ export function run(
 
 	return new Promise<RunResult>(resolve => {
 		spawned.on('close', code => {
-			if (exec === 'eslint' && code === 2) {
-				code = 0
+			if (codeMap[code] != null) {
+				return codeMap[code]
 			}
 			resolve({
 				output,
@@ -79,6 +79,7 @@ export interface RunArg {
 	id?: string
 	exec: string
 	args: unknown[]
+	codeMap?: Record<number, number>
 }
 
 function printJob(job: RunArg): void {
