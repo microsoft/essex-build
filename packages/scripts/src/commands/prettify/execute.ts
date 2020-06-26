@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { runSequential, RunArg } from '../../utils'
+import { run, Job } from '@essex/shellrunner'
 
 export interface PrettierCommandOptions {
 	verbose: boolean
@@ -11,14 +11,15 @@ export interface PrettierCommandOptions {
 export async function execute({
 	verbose,
 }: PrettierCommandOptions): Promise<number> {
-	const run: RunArg = {
+	const job: Job = {
 		exec: 'pretty-quick',
 		args: [],
 	}
 
 	if (verbose) {
-		run.args.push('--verbose')
+		job.args.push('--verbose')
 	}
 
-	return await runSequential([run])
+	const result = await run(job)
+	return result.code
 }
