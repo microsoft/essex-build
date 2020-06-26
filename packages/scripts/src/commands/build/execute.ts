@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import {
-	RunArg,
 	log,
-	runSequential,
 	getTsConfigJsonPath,
 	getBabelEsmConfigPath,
 	getBabelCjsConfigPath,
 	getRollupConfigPath,
 	getWebpackConfigPath,
 } from '../../utils'
+import { RunArg, runSequential } from '../../jobrunner'
 import { tmpdir } from 'os'
 import { exists, writeFileSync } from 'fs'
 import { join } from 'path'
@@ -146,19 +145,18 @@ export async function execute(config: BuildCommandOptions): Promise<number> {
 
 	if (runTypedoc) {
 		// typedoc can be run in parallel to tsc+babel
-		return Promise.all([runSequential(runs), runSequential([runTypedoc])]).then(
-			([a, b]) => {
-				// when typedoc is finished, clean up the temp file
-				return runSequential([
-					{
-						exec: 'rimraf',
-						args: [typedocTsConfigPath],
-					},
-				]).then(c => Math.max(a, b, c))
-			},
-		)
+		return Promise.all([
+			runSequential(...runs),
+			runSequential(runTypedoc),
+		]).then(([a, b]) => {
+			// when typedoc is finished, clean up the temp file
+			return runSequential({
+				exec: 'rimraf',
+				args: [typedocTsConfigPath],
+			}).then(c => Math.max(a, b, c))
+		})
 	} else {
-		return runSequential(runs)
+		return runSequential(...runs)
 	}
 }
 

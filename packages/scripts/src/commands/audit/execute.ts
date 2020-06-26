@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { RunArg, runSequential } from '../../utils'
+import { RunArg, runSequential } from '../../jobrunner'
 import { resolve } from 'path'
 
 const auditCiConfig = resolve(__dirname, '../../../config/.audit-ci.js')

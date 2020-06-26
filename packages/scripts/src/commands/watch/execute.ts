@@ -4,16 +4,15 @@
  */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import {
-	RunArg,
 	getTsConfigJsonPath,
 	getBabelEsmConfigPath,
 	getBabelCjsConfigPath,
 	getRollupConfigPath,
-	runSequential,
 	fileExists,
 	getWebpackConfigPath,
 } from '../../utils'
 import { BundleMode } from '../build/execute'
+import { RunArg, runSequential } from '../../jobrunner'
 
 export interface WatchCommandOptions {
 	verbose?: boolean
@@ -111,5 +110,5 @@ export async function execute({
 		})
 	}
 
-	return runSequential([runs])
+	return runSequential(runs)
 }

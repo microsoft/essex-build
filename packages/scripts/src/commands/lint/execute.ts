@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { RunArg, runParallel } from '../../utils'
+import { RunArg, runParallel } from '../../jobrunner'
 import { getEslintJob } from './getEslintJob'
 
 export interface LintCommandOptions {
