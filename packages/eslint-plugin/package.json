@@ -1,6 +1,6 @@
 {
 	"name": "@essex/eslint-plugin",
-	"version": "7.4.0-alpha.1",
+	"version": "7.4.0-alpha.2",
 	"main": "lib/index.js",
 	"license": "MIT",
 	"prettier": "@essex/prettier-config",
