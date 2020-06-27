@@ -16,6 +16,12 @@ export interface Job {
 	 * Whether output should be redirected to the current process stdio. default=true
 	 */
 	toConsole?: boolean
+
+	/**
+	 * If true, executes the task using npx. If a string array is provided, these are
+	 * installed in the temporary npx environment
+	 */
+	npx?: boolean | string[]
 }
 
 /**

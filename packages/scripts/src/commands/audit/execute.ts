@@ -19,10 +19,10 @@ export interface AuditCommandOptions {
 export async function execute(options: AuditCommandOptions): Promise<number> {
 	const { code } = await run(
 		// Audit CVEs
-		{ exec: 'audit-ci', args: ['--config', auditCiConfig] },
+		{ exec: 'audit-ci', args: ['--config', auditCiConfig], npx: true },
 
 		// Check Licenses
-		{ exec: 'license-to-fail', args: [licenseConfig] },
+		{ exec: 'license-to-fail', args: [licenseConfig], npx: true },
 	)
 	return code
 }

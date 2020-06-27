@@ -19,6 +19,7 @@ export function execute({
 	exec,
 	args,
 	codeMap = {},
+	npx,
 	toConsole = true,
 }: Job): Promise<JobResult> {
 	const options = getInitialSpawnOptions(toConsole)
@@ -27,7 +28,9 @@ export function execute({
 	}
 
 	try {
-		const spawned = spawn(exec, args, options) as ChildProcess
+		const spawned = npx
+			? spawn('npx', ['-q', ...npxPackages(npx), exec, ...args], options) as ChildProcess 
+			: spawn(exec, args, options) as ChildProcess
 		let output = ''
 		let error = ''
 		if (!toConsole) {
@@ -76,4 +79,13 @@ function scrubEnvVars(env: Record<string, string | undefined>): void {
 			delete env[envVar]
 		}
 	})
+}
+
+function npxPackages(npx: boolean | string[]): string[] {
+	if (!Array.isArray(npx)) {
+		return []
+	} 
+	const result: string[] = []
+	npx.forEach(p => result.push('-p', p))
+	return result
 }
