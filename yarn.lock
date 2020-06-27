@@ -1789,6 +1789,7 @@ __metadata:
     husky: ^4.2.5
     lerna: ^3.22.1
     npm-run-all: ^4.1.5
+    typescript: ^3.9.5
   languageName: unknown
   linkType: soft
 
@@ -1856,6 +1857,7 @@ __metadata:
     "@storybook/react": ^5.3.19
     "@types/debug": ^4.1.5
     "@types/gulp": ^4.0.6
+    "@types/gulp-babel": ^6.1.29
     "@types/gulp-debug": ^2.0.31
     "@types/jest": ^26.0.3
     "@types/node": ^14.0.14
@@ -4172,6 +4174,15 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: 5e2ec610a96de2a7b13ee1e071a31a225b68df07880f80f1112a3540299288d943c69c0f1114a60480aa137d424333392c11732969f14b964c1c419fae48a6f0
+  languageName: node
+  linkType: hard
+
+"@types/gulp-babel@npm:^6.1.29":
+  version: 6.1.29
+  resolution: "@types/gulp-babel@npm:6.1.29"
+  dependencies:
+    "@types/node": "*"
+  checksum: fdb9ca36fa8907bc3c4d193455b2e75b95e43dd6d6b498463ec131e23def3dd9283371692ed72c57bae08f65aa74ccaf4cdcde1b6d1054cce0cd236903669615
   languageName: node
   linkType: hard
 

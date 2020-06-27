@@ -5,14 +5,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import {
 	log,
-	getTsConfigJsonPath,
-	getBabelEsmConfigPath,
-	getBabelCjsConfigPath,
-	getRollupConfigPath,
-	getWebpackConfigPath,
 } from '../../utils'
-import { Job, run } from '@essex/shellrunner'
-import { tmpdir } from 'os'
 import { exists, writeFileSync, fstat, existsSync } from 'fs'
 import { join } from 'path'
 import { getWebpackArgs } from '../../utils/webpack'
@@ -22,6 +15,7 @@ import * as dbg from 'gulp-debug'
 import * as babel from 'gulp-babel'
 import * as through2 from 'through2'
 import { streamToPromise } from '../../utils/streamToPromise'
+import { babelCjs, babelEsm } from '../../config/babel-config'
 
 export enum BundleMode {
 	production = 'production',
@@ -36,26 +30,81 @@ export interface BuildCommandOptions {
 	mode?: BundleMode
 }
 
-const fileExists = (file: string): Promise<boolean> =>
-	new Promise(resolve => exists(file, is => resolve(is)))
+const tsConfigFile = join(process.cwd(), 'tsconfig.json')
+
+/*
+ * A:                          B: typedoc
+ * - [tsc, tsc types ]
+ * - [babel-esm, babel-cjs]
+ * - [rollup, webpack]
+ */
 
 export async function execute(config: BuildCommandOptions): Promise<number> {
-	const { verbose, env } = config
-	const tsConfigFile = join(process.cwd(), 'tsconfig.json')
-	if (!existsSync(tsConfigFile)) {
-		log.error('tsconfig.json must exist in source folder')
+	const { verbose = false, env } = config
+	const useTypeScript = existsSync(tsConfigFile)
+	try {
+		if (useTypeScript) {
+			await Promise.all([
+				compileTypescript(verbose).then(() => log.subtaskSuccess('tsc')),
+				emitTypings(verbose).then(() => log.subtaskSuccess('emit typings'))
+			])
+		}
+
+		const src = useTypeScript ? 'lib' : 'src'
+		await Promise.all([
+			compileBabelCjs(verbose, src).then(() => log.subtaskSuccess('babel-cjs')),
+			compileBabelEsm(verbose, src).then(() => log.subtaskSuccess('babel-esm')),
+		])
+		return 0
+	} catch (err) {
+		console.error('error running build', err)
 		return 1
 	}
+}
+
+function compileTypescript(verbose: boolean): Promise<void> {
 	const tsProject = ts.createProject(tsConfigFile)
 	const stream = gulp
-		.src(['src/**/*.ts', '!**/__tests__/**'])
+		.src(['src/**/*.ts*', '!**/__tests__/**'])
 		.pipe(tsProject())
 		.pipe(verbose ? dbg({ title: 'tsc' }) : through2.obj())
 		.pipe(gulp.dest('lib'))
-	return streamToPromise(stream).then(
-		() => 0,
-		() => 1,
-	)
+	return streamToPromise(stream)
+}
+
+async function emitTypings(verbose: boolean): Promise<void> {
+	const tsProject = ts.createProject(tsConfigFile)
+	const stream = gulp
+		.src(['src/**/*.ts*', '!**/__tests__/**'])
+		.pipe(ts({
+			moduleResolution: 'node',
+			declaration: true,
+			emitDeclarationOnly: true,
+			stripInternal: true,
+		}))
+		.pipe(verbose ? dbg({ title: 'tsc' }) : through2.obj())
+		.pipe(gulp.dest('dist/typings'))
+	return streamToPromise(stream)
+}
+
+function compileBabelEsm(verbose: boolean, src: string): Promise<void>  {
+	const stream = gulp.src([`${src}/**/*.js*`])
+	.pipe(babel(babelEsm))
+	.pipe(verbose ? dbg({ title: 'babel-esm' }) : through2.obj())
+	.pipe(gulp.dest('dist/esm'))
+	return streamToPromise(stream)
+}
+
+function compileBabelCjs(verbose: boolean, src: string): Promise<void>  {
+	const stream = gulp.src([`${src}/**/*.js*`])
+	.pipe(babel(babelCjs))
+	.pipe(verbose ? dbg({ title: 'babel-cjs' }) : through2.obj())
+	.pipe(gulp.dest('dist/cjs'))
+	return streamToPromise(stream)
+}
+
+/*
+
 	// 	const [
 	// 		tsConfigJsonPath,
 	// 		babelEsmConfigPath,
@@ -123,7 +172,7 @@ export async function execute(config: BuildCommandOptions): Promise<number> {
 	// 			args: [
 	// 				`--config-file=${babelEsmConfigPath}`,
 	// 				babelInputDir,
-	// 				'--ignore="src/**/__tests__/**"',
+	// 				'--ignore="src/* * /__tests__/**"',
 	// 				'--out-dir',
 	// 				'dist/esm',
 	// 				verbose ? '--verbose' : undefined,
@@ -135,7 +184,7 @@ export async function execute(config: BuildCommandOptions): Promise<number> {
 	// 			args: [
 	// 				`--config-file=${babelCjsConfigPath}`,
 	// 				babelInputDir,
-	// 				'--ignore="src/**/__tests__/**"',
+	// 				'--ignore="src/* * / __tests__/ **"',
 	// 				'--out-dir',
 	// 				'dist/cjs',
 	// 				verbose ? '--verbose' : undefined,
@@ -212,9 +261,9 @@ export async function execute(config: BuildCommandOptions): Promise<number> {
 	// 				'--excludeExternals',
 	// 				'--excludeNotExported',
 	// 				'--exclude',
-	// 				'**/__tests__/**',
+	// 				'** /__tests__/**',
 	// 				'--exclude',
-	// 				'**/node_modules/**',
+	// 				'** /node_modules/**',
 	// 				'--out',
 	// 				'./dist/docs',
 	// 				'--tsconfig',
@@ -224,4 +273,4 @@ export async function execute(config: BuildCommandOptions): Promise<number> {
 	// 		},
 	// 		docsTsConfigJson,
 	// 	]
-}
+	*/
