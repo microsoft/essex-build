@@ -250,11 +250,7 @@ module.exports = (env = 'development', { mode }) => {
 			...extendDevServer,
 		},
 		plugins: [
-			new ForkTsCheckerWebpackPlugin({
-				checkSyntacticErrors: true,
-				tsconfig: join(process.cwd(), 'tsconfig.json'),
-				useTypescriptIncrementalApi: true,
-			}),
+			new ForkTsCheckerWebpackPlugin(),
 			new HtmlWebpackPlugin({
 				title: getTitle(),
 				base: isDevelopment ? false : getHomePage(),

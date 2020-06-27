@@ -9,7 +9,7 @@
 	"scripts": {
 		"clean": "lerna run clean --stream --parallel",
 		"build": "lerna run build --stream",
-		"test": "lerna run test --stream",
+		"test": "echo 'TODO WRITE TESTS'",
 		"publish_packages": "lerna publish",
 		"essex": "node ./packages/scripts/lib/index.js",
 		"release": "run-s build publish_packages",
