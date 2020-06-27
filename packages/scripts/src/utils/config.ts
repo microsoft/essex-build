@@ -11,6 +11,12 @@ export type PackageJson = any
 /**
  * package.json path of the client. This is expected to exist.
  */
+export const getReadmePath = (): Promise<string> =>
+	getProjectPath('README.md', false) as Promise<string>
+
+/**
+ * package.json path of the client. This is expected to exist.
+ */
 export const getPackageJsonPath = (): Promise<string> =>
 	getProjectPath('package.json', false) as Promise<string>
 

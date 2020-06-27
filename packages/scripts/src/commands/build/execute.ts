@@ -4,18 +4,19 @@
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
 import {
-	log, getTsConfigJsonPath, getBabelEsmConfigPath, getBabelCjsConfigPath, getRollupConfigPath, getWebpackConfigPath,
+	getTsConfigJsonPath, 
+	getBabelEsmConfigPath, 
+	getBabelCjsConfigPath, 
+	getRollupConfigPath, 
+	getWebpackConfigPath,
 } from '../../utils'
-import { exists, writeFileSync, fstat, existsSync } from 'fs'
-import { join } from 'path'
-import { getWebpackArgs } from '../../utils/webpack'
-import * as gulp from 'gulp'
-import * as ts from 'gulp-typescript'
-import * as dbg from 'gulp-debug'
-import * as babel from 'gulp-babel'
-import * as through2 from 'through2'
-import { streamToPromise } from '../../utils/streamToPromise'
-import { babelCjs, babelEsm } from '../../config/babel-config'
+import {
+	compileTypescript, 
+	emitTypings, 
+	generateTypedocs,
+	babelEsm,
+	babelCjs
+} from '../../steps'
 
 export enum BundleMode {
 	production = 'production',
@@ -30,8 +31,6 @@ export interface BuildCommandOptions {
 	mode?: BundleMode
 }
 
-const tsConfigFile = join(process.cwd(), 'tsconfig.json')
-
 /*
  * A:                          B: typedoc
  * - [tsc, tsc types ]
@@ -40,7 +39,7 @@ const tsConfigFile = join(process.cwd(), 'tsconfig.json')
  */
 
 export async function execute(config: BuildCommandOptions): Promise<number> {
-	const { verbose = false, env } = config
+	const { verbose = false, env, docs, mode } = config
 	const [
 		tsConfigJsonPath,
 		babelEsmConfigPath,
@@ -55,20 +54,18 @@ export async function execute(config: BuildCommandOptions): Promise<number> {
 		getWebpackConfigPath(),
 	])
 
-	const useTypeScript = existsSync(tsConfigFile)
 	try {
-		if (useTypeScript) {
-			await Promise.all([
-				compileTypescript(verbose).then(() => log.subtaskSuccess('tsc')),
-				emitTypings(verbose).then(() => log.subtaskSuccess('emit typings'))
-			])
-		}
-
-		const src = useTypeScript ? 'lib' : 'src'
 		await Promise.all([
-			compileBabelCjs(verbose, src).then(() => log.subtaskSuccess('babel-cjs')),
-			compileBabelEsm(verbose, src).then(() => log.subtaskSuccess('babel-esm')),
+			compileTypescript(tsConfigJsonPath, verbose),
+			emitTypings(tsConfigJsonPath, verbose),
+			docs ? generateTypedocs(verbose) : Promise.resolve()
 		])
+		
+		await Promise.all([
+			babelCjs(verbose),
+			babelEsm(verbose)
+		])
+
 		return 0
 	} catch (err) {
 		console.error('error running build', err)
@@ -76,45 +73,6 @@ export async function execute(config: BuildCommandOptions): Promise<number> {
 	}
 }
 
-function compileTypescript(verbose: boolean, overrides: any = undefined): Promise<void> {
-	const tsProject = ts.createProject(tsConfigFile)
-	const stream = gulp
-		.src(['src/**/*.ts*', '!**/__tests__/**'])
-		.pipe(tsProject())
-		.pipe(verbose ? dbg({ title: 'tsc' }) : through2.obj())
-		.pipe(gulp.dest('lib'))
-	return streamToPromise(stream)
-}
-
-async function emitTypings(verbose: boolean): Promise<void> {
-	const tsProject = ts.createProject(tsConfigFile, {
-		declaration: true,
-		emitDeclarationOnly: true,
-		stripInternal: true
-	})
-	const stream = gulp
-		.src(['src/**/*.ts*', '!**/__tests__/**'])
-		.pipe(tsProject())
-		.pipe(verbose ? dbg({ title: 'typings' }) : through2.obj())
-		.pipe(gulp.dest('dist/typings'))
-	return streamToPromise(stream)
-}
-
-function compileBabelEsm(verbose: boolean, src: string): Promise<void>  {
-	const stream = gulp.src([`${src}/**/*.js*`])
-	.pipe(babel(babelEsm))
-	.pipe(verbose ? dbg({ title: 'babel-esm' }) : through2.obj())
-	.pipe(gulp.dest('dist/esm'))
-	return streamToPromise(stream)
-}
-
-function compileBabelCjs(verbose: boolean, src: string): Promise<void>  {
-	const stream = gulp.src([`${src}/**/*.js*`])
-	.pipe(babel(babelCjs))
-	.pipe(verbose ? dbg({ title: 'babel-cjs' }) : through2.obj())
-	.pipe(gulp.dest('dist/cjs'))
-	return streamToPromise(stream)
-}
 
 /*
 

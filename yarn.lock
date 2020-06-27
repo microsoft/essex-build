@@ -1884,6 +1884,7 @@ __metadata:
     gulp: ^4.0.2
     gulp-babel: ^8.0.0
     gulp-debug: ^4.0.0
+    gulp-typedoc: ^2.2.5
     gulp-typescript: ^6.0.0-alpha.1
     html-webpack-plugin: ^4.3.0
     husky: ^4.2.5
@@ -9942,7 +9943,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"event-stream@npm:4.0.1":
+"event-stream@npm:4.0.1, event-stream@npm:^4.0.1":
   version: 4.0.1
   resolution: "event-stream@npm:4.0.1"
   dependencies:
@@ -10254,7 +10255,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fancy-log@npm:^1.3.2":
+"fancy-log@npm:^1.3.2, fancy-log@npm:^1.3.3":
   version: 1.3.3
   resolution: "fancy-log@npm:1.3.3"
   dependencies:
@@ -11595,6 +11596,21 @@ fsevents@^1.2.7:
   peerDependencies:
     gulp: ">=4"
   checksum: 2fe441463219753e495acda30aab85f40e2a1ce8caf6c01d78fd2421cb467155137ad3b025703ed79a546a06b8c93fe4398be2732570ed42aaca7498e8076fb9
+  languageName: node
+  linkType: hard
+
+"gulp-typedoc@npm:^2.2.5":
+  version: 2.2.5
+  resolution: "gulp-typedoc@npm:2.2.5"
+  dependencies:
+    ansi-colors: ^4.1.1
+    event-stream: ^4.0.1
+    fancy-log: ^1.3.3
+    plugin-error: ^1.0.1
+    semver: ^7.1.3
+  peerDependencies:
+    typedoc: ">=0.3.9"
+  checksum: 7b18c8522e442f8cbc213f017d6a58a9860253cc96d5affd4a7229035b8fb6245dc94a0b916999069483020435bf60f2ac1abe2723b9dad21f56cf49946c3aea
   languageName: node
   linkType: hard
 
@@ -20189,7 +20205,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"semver@npm:7.3.2, semver@npm:7.x, semver@npm:^7.0.0, semver@npm:^7.2.1, semver@npm:^7.3.2":
+"semver@npm:7.3.2, semver@npm:7.x, semver@npm:^7.0.0, semver@npm:^7.1.3, semver@npm:^7.2.1, semver@npm:^7.3.2":
   version: 7.3.2
   resolution: "semver@npm:7.3.2"
   bin:
