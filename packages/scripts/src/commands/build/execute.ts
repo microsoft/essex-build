@@ -16,14 +16,12 @@ import { tmpdir } from 'os'
 import { exists, writeFileSync, fstat, existsSync } from 'fs'
 import { join } from 'path'
 import { getWebpackArgs } from '../../utils/webpack'
-import debug from 'debug'
 import * as gulp from 'gulp'
 import * as ts from 'gulp-typescript'
 import * as dbg from 'gulp-debug'
+import * as babel from 'gulp-babel'
 import * as through2 from 'through2'
 import { streamToPromise } from '../../utils/streamToPromise'
-
-const debugLog = debug('essex:build')
 
 export enum BundleMode {
 	production = 'production',
@@ -45,10 +43,10 @@ export async function execute(config: BuildCommandOptions): Promise<number> {
 	const { verbose, env } = config
 	const tsConfigFile = join(process.cwd(), 'tsconfig.json')
 	if (!existsSync(tsConfigFile)) {
-		throw new Error('tsconfig.json must exist in source folder')
+		log.error('tsconfig.json must exist in source folder')
+		return 1
 	}
-	const tsProject = ts.createProject(join(process.cwd(), 'tsconfig.json'))
-
+	const tsProject = ts.createProject(tsConfigFile)
 	const stream = gulp
 		.src(['src/**/*.ts', '!**/__tests__/**'])
 		.pipe(tsProject())
