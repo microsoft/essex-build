@@ -4,7 +4,7 @@
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
 import {
-	log,
+	log, getTsConfigJsonPath, getBabelEsmConfigPath, getBabelCjsConfigPath, getRollupConfigPath, getWebpackConfigPath,
 } from '../../utils'
 import { exists, writeFileSync, fstat, existsSync } from 'fs'
 import { join } from 'path'
@@ -41,6 +41,20 @@ const tsConfigFile = join(process.cwd(), 'tsconfig.json')
 
 export async function execute(config: BuildCommandOptions): Promise<number> {
 	const { verbose = false, env } = config
+	const [
+		tsConfigJsonPath,
+		babelEsmConfigPath,
+		babelCjsConfigPath,
+		rollupConfigPath,
+		webpackConfigPath,
+	] = await Promise.all([
+		getTsConfigJsonPath(),
+		getBabelEsmConfigPath(),
+		getBabelCjsConfigPath(),
+		getRollupConfigPath(),
+		getWebpackConfigPath(),
+	])
+
 	const useTypeScript = existsSync(tsConfigFile)
 	try {
 		if (useTypeScript) {
@@ -62,7 +76,7 @@ export async function execute(config: BuildCommandOptions): Promise<number> {
 	}
 }
 
-function compileTypescript(verbose: boolean): Promise<void> {
+function compileTypescript(verbose: boolean, overrides: any = undefined): Promise<void> {
 	const tsProject = ts.createProject(tsConfigFile)
 	const stream = gulp
 		.src(['src/**/*.ts*', '!**/__tests__/**'])
@@ -73,16 +87,15 @@ function compileTypescript(verbose: boolean): Promise<void> {
 }
 
 async function emitTypings(verbose: boolean): Promise<void> {
-	const tsProject = ts.createProject(tsConfigFile)
+	const tsProject = ts.createProject(tsConfigFile, {
+		declaration: true,
+		emitDeclarationOnly: true,
+		stripInternal: true
+	})
 	const stream = gulp
 		.src(['src/**/*.ts*', '!**/__tests__/**'])
-		.pipe(ts({
-			moduleResolution: 'node',
-			declaration: true,
-			emitDeclarationOnly: true,
-			stripInternal: true,
-		}))
-		.pipe(verbose ? dbg({ title: 'tsc' }) : through2.obj())
+		.pipe(tsProject())
+		.pipe(verbose ? dbg({ title: 'typings' }) : through2.obj())
 		.pipe(gulp.dest('dist/typings'))
 	return streamToPromise(stream)
 }
