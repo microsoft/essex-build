@@ -6,7 +6,9 @@ import { subtaskSuccess, subtaskFail } from '../../utils/log'
 
 const DEFAULT_ENTRY_POINT = 'src/index.ts'
 
-
+/**
+ * Generates API documentation using TypeDoc
+ */
 export async function generateTypedocs(verbose: boolean): Promise<void> {
 	const { title, name} = (await getPackageJSON()) as {title?: string, name: string}
   const readmeFile = await getReadmePath()
