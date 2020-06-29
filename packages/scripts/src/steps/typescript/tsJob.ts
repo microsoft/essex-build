@@ -1,3 +1,7 @@
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
 import * as gulp from 'gulp'
 import * as ts from 'gulp-typescript'
 import * as debug from 'gulp-debug'
@@ -34,7 +38,7 @@ export interface TsJobSpec {
 /**
  * Base TypeScript job
  */
-export function tsJob({configFile, verbose, dest, title, overrides}: TsJobSpec) {
+export function tsJob({configFile, verbose, dest, title, overrides}: TsJobSpec): Promise<void> {
   const tsProject = ts.createProject(configFile, overrides)
 	const stream = gulp
 		.src(['src/**/*.ts*', '!**/__tests__/**'])

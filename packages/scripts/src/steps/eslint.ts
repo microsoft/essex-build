@@ -1,28 +1,39 @@
-import * as gulp from 'gulp'
-const gulpEslint = require('gulp-eslint')
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
 import { existsSync } from 'fs'
 import { join } from 'path'
+/* eslint-disable-next-line @typescript-eslint/no-var-requires */
+const { ESLint } = require('eslint')
 
 const releaseConfig = join(__dirname, '../../config/.eslintrc-release')
 const experimentConfig = join(__dirname, '../../config/.eslintrc-experiment')
 const projectConfig = join(process.cwd(), '.eslintrc')
 
+const defaultIgnore = join(__dirname, '../../config/.eslintignore')
+const projectIgnore = join(process.cwd(), '.eslintignore')
+const ignorePath = existsSync(projectIgnore) ? projectIgnore: defaultIgnore
+
 export async function eslint(fix: boolean, strict: boolean): Promise<void> {
+  const pluginPath = join(__dirname, '..', '..')
   let configFile = experimentConfig
   if (existsSync(projectConfig)) {
     configFile = projectConfig
   } else if (strict) {
     configFile = releaseConfig
   }
-  gulp.src([
-      '**/*.js', 
-      '**/*.jsx', 
-      '**/*.ts', 
-      '**/*.tsx',
-       '!**/node_modules/**', 
-       '!**/lib/**', 
-       '!**/dist/**', 
-       '!**/build/**',
-       '!**/storybook-static/**'
-      ]).pipe(gulpEslint({configFile, fix}))
+
+  const linter = new ESLint({ 
+    fix, 
+    overrideConfigFile: configFile,
+    resolvePluginsRelativeTo: pluginPath,
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    ignorePath
+  })
+  const results = await linter.lintFiles(['.'])
+  await ESLint.outputFixes(results)
+  const formatter = await linter.loadFormatter("stylish");
+  const resultText = formatter.format(results);
+  console.log(resultText)
 }

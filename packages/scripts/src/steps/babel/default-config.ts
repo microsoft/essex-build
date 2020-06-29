@@ -4,6 +4,7 @@
  */
 import * as path from 'path'
 
+/* eslint-disable-next-line @typescript-eslint/no-var-requires */
 const packageJson = require(path.join(process.cwd(), 'package.json'))
 const browsers = packageJson.browserslist || ['> 0.25%, not dead']
 const useBuiltIns = packageJson.useBuiltIns || false
