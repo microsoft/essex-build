@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Job, run } from '@essex/shellrunner'
-import { getEslintJob } from './getEslintJob'
+import { eslint } from '../../steps/eslint'
 
 export interface LintCommandOptions {
 	fix?: boolean
@@ -50,15 +50,15 @@ export async function execute({
 	strict = false,
 	spellingIgnore,
 }: LintCommandOptions): Promise<number> {
-	const eslint = await getEslintJob(fix, strict)
+	await eslint(fix, strict)
 
-	const toRun: Job[] = [eslint]
-	if (!staged) {
-		toRun.push(PRETTY_QUICK_JOB)
-		if (docs) {
-			toRun.push(TONAL_LINTING_JOB, SPELL_CHECK_JOB(spellingIgnore))
-		}
-	}
-	const { code } = await run(...toRun)
-	return code
+	// const toRun: Job[] = [eslint]
+	// if (!staged) {
+	// 	toRun.push(PRETTY_QUICK_JOB)
+	// 	if (docs) {
+	// 		toRun.push(TONAL_LINTING_JOB, SPELL_CHECK_JOB(spellingIgnore))
+	// 	}
+	// }
+	// const { code } = await run(...toRun)
+	return 0
 }

@@ -11,12 +11,11 @@
 		"build": "lerna run build --stream",
 		"test": "echo 'TODO WRITE TESTS'",
 		"publish_packages": "lerna publish",
-		"essex": "node ./packages/scripts/lib/index.js",
 		"release": "run-s build publish_packages",
-		"lint": "yarn essex lint --docs --strict",
-		"prettify": "yarn essex prettify",
-		"audit_dependencies": "yarn essex audit",
-		"git_is_clean": "yarn essex git-is-clean",
+		"lint": "essex lint --docs --strict",
+		"prettify": "essex prettify",
+		"audit_dependencies": "essex audit",
+		"git_is_clean": "essex git-is-clean",
 		"ci": "run-s build lint test git_is_clean"
 	},
 	"workspaces": {
@@ -25,6 +24,7 @@
 		]
 	},
 	"devDependencies": {
+		"@essex/scripts": "portal:./packages/scripts",
 		"husky": "^4.2.5",
 		"lerna": "^3.22.1",
 		"npm-run-all": "^4.1.5",
