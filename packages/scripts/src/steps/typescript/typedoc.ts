@@ -1,8 +1,8 @@
 
 import { Application, TSConfigReader, TypeDocReader, TypeDocAndTSOptions, Options } from 'typedoc'
-import { getPackageJSON, getReadmePath } from '../utils'
 import { existsSync } from 'fs'
-import { subtaskSuccess, subtaskFail } from '../utils/log'
+import { getPackageJSON, getReadmePath } from '../../utils'
+import { subtaskSuccess, subtaskFail } from '../../utils/log'
 
 const DEFAULT_ENTRY_POINT = 'src/index.ts'
 
@@ -19,6 +19,7 @@ export async function generateTypedocs(verbose: boolean): Promise<void> {
         excludeNotExported: true,
         exclude: ['**/__tests__/**', '**/node_modules/**'],
         excludePrivate: true,
+        project: 'tsconfig.json',
         out: 'dist/docs',
         logger: 'none',
         readme: existsSync(readmeFile) ? readmeFile : undefined,

@@ -1,9 +1,9 @@
-import { babelCjs as cjs, babelEsm as esm } from '../config/babel-config'
 import * as gulp from 'gulp'
 import * as babel from 'gulp-babel'
 import * as debug from 'gulp-debug'
-import { noop } from './noop'
-import { streamToPromise } from '../utils/streamToPromise'
+import { noop } from '../noop'
+import { streamToPromise } from '../../utils/streamToPromise'
+import { babelCjs as cjs, babelEsm as esm } from './default-config'
 
 /**
  * Transpile ts output into babel esm
