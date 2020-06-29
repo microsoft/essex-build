@@ -1,9 +1,10 @@
 
-import { Application, TSConfigReader, TypeDocReader, TypeDocAndTSOptions } from 'typedoc'
+import { Application, TSConfigReader, TypeDocReader, TypeDocAndTSOptions, Options } from 'typedoc'
 import { getPackageJSON, getReadmePath } from '../utils'
 import { existsSync } from 'fs'
 import { subtaskSuccess, subtaskFail } from '../utils/log'
 
+const DEFAULT_ENTRY_POINT = 'src/index.ts'
 
 
 export async function generateTypedocs(verbose: boolean): Promise<void> {
@@ -12,7 +13,8 @@ export async function generateTypedocs(verbose: boolean): Promise<void> {
   try {
     await typedoc({
         name: title || name || 'API Documentation',
-        entryPoint: 'src/index.ts',
+        entryPoint: DEFAULT_ENTRY_POINT,
+        stripInternal: true,
         excludeExternals: true,
         excludeNotExported: true,
         exclude: ['**/__tests__/**', '**/node_modules/**'],
@@ -39,7 +41,7 @@ async function typedoc(options: Partial<TypeDocAndTSOptions>): Promise<void> {
       app.options.addReader(new TSConfigReader());
       app.options.addReader(new TypeDocReader());
       app.bootstrap(options);
-      const src = app.expandInputFiles(['src/index.ts'])
+      const src = app.expandInputFiles([DEFAULT_ENTRY_POINT])
       app.generateDocs(src, 'dist/docs')
       resolve()
     } catch (err) {
