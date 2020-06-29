@@ -1,23 +1,17 @@
+import { existsSync } from 'fs'
+import { join } from 'path'
 import * as gulp from 'gulp'
 import * as babel from 'gulp-babel'
 import * as debug from 'gulp-debug'
 import { noop } from '../noop'
 import { streamToPromise } from '../../utils/streamToPromise'
-import { babelCjs as cjs, babelEsm as esm } from './default-config'
+import { babelCjs as defaultCjs, babelEsm as defaultEsm } from './default-config'
 
-/**
- * Transpile ts output into babel esm
- * @param verbose 
- */
-export async function babelEsm(verbose: boolean): Promise<void>  {
-  const title = 'babel-esm'
-  const stream = gulp.src(['lib/**/*.js*'])
-  .pipe(babel(esm))
-  .pipe(verbose ? debug({ title }) : noop())
-  .pipe(gulp.dest('dist/esm'))
-  return streamToPromise(stream, title)
-  
-}
+const cjsOverridePath = join(process.cwd(), 'babelrc.cjs.js')
+const cjsConfig = existsSync(cjsOverridePath) ? require(cjsOverridePath) : defaultCjs
+
+const esmOverridePath = join(process.cwd(), 'babelrc.esm.js')
+const esmConfig = existsSync(esmOverridePath) ? require(esmOverridePath) : defaultEsm
 
 /**
  * Transpile ts output into babel cjs
@@ -26,8 +20,22 @@ export async function babelEsm(verbose: boolean): Promise<void>  {
 export async function babelCjs(verbose: boolean): Promise<void>  {
   const title = 'babel-cjs'
   const stream = gulp.src(['lib/**/*.js*'])
-  .pipe(babel(cjs))
+  .pipe(babel(cjsConfig))
   .pipe(verbose ? debug({ title }) : noop())
   .pipe(gulp.dest('dist/cjs'))
   await streamToPromise(stream, title)
+}
+
+
+/**
+ * Transpile ts output into babel esm
+ * @param verbose 
+ */
+export async function babelEsm(verbose: boolean): Promise<void>  {
+  const title = 'babel-esm'
+  const stream = gulp.src(['lib/**/*.js*'])
+  .pipe(babel(esmConfig))
+  .pipe(verbose ? debug({ title }) : noop())
+  .pipe(gulp.dest('dist/esm'))
+  return streamToPromise(stream, title) 
 }
