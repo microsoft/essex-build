@@ -15,8 +15,5 @@
   "devDependencies": {
     "rimraf": "^3.0.2",
     "typescript": "3.9.5"
-  },
-  "peerDependencies": {
-    "@types/node": ">= 14"
   }
 }

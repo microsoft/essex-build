@@ -1315,6 +1315,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@essex/build-step-clean@^7.4.0, @essex/build-step-clean@workspace:packages/steps/clean":
+  version: 0.0.0-use.local
+  resolution: "@essex/build-step-clean@workspace:packages/steps/clean"
+  dependencies:
+    rimraf: ^3.0.2
+    typescript: 3.9.5
+  languageName: unknown
+  linkType: soft
+
 "@essex/build-step-pretty-quick@^7.4.0, @essex/build-step-pretty-quick@workspace:packages/steps/pretty-quick":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-pretty-quick@workspace:packages/steps/pretty-quick"
@@ -1324,8 +1333,6 @@ __metadata:
     pretty-quick: ^2.0.1
     rimraf: ^3.0.2
     typescript: 3.9.5
-  peerDependencies:
-    "@types/node": ">= 14"
   languageName: unknown
   linkType: soft
 
@@ -1433,6 +1440,7 @@ __metadata:
     "@babel/plugin-proposal-optional-chaining": ^7.10.4
     "@babel/preset-env": ^7.10.4
     "@essex/build-step-babel": ^7.4.0
+    "@essex/build-step-clean": ^7.4.0
     "@essex/build-step-pretty-quick": ^7.4.0
     "@essex/build-step-typedoc": ^7.4.0
     "@essex/build-step-typescript": ^7.4.0

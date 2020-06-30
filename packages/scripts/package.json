@@ -26,6 +26,7 @@
 		"@babel/plugin-proposal-optional-chaining": "^7.10.4",
 		"@babel/preset-env": "^7.10.4",
 		"@essex/build-step-babel": "^7.4.0",
+		"@essex/build-step-clean": "^7.4.0",
 		"@essex/build-step-pretty-quick": "^7.4.0",
 		"@essex/build-step-typedoc": "^7.4.0",
 		"@essex/build-step-typescript": "^7.4.0",

@@ -2,15 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { rm } from './rm'
-
+import { clean } from '@essex/build-step-clean'
 export async function execute(files: string[]): Promise<number> {
-	const promises: Array<Promise<number>> = files
-		.filter(f => !!f)
-		.map(f => rm(f!))
-	const results = await Promise.all(promises)
-	return results.reduce(sum, 0)
+	return clean(files).then(() => 0, () => 1)
 }
 
-const sum = (a: number, b: number) => a + b
