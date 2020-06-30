@@ -12,9 +12,10 @@ import {
 } from '../../utils'
 import {
 	generateTypedocs,
-	babelEsm,
-	babelCjs
 } from '../../steps'
+import { 
+	babelEsm,
+	babelCjs} from '@essex/build-step-babel'
 import { 
 	compileTypescript, 
 	emitTypings, } from '@essex/build-step-typescript'
@@ -63,8 +64,8 @@ export async function execute(config: BuildCommandOptions): Promise<number> {
 		])
 		
 		await Promise.all([
-			babelCjs(verbose),
-			babelEsm(verbose)
+			babelCjs(verbose).then(() => subtaskSuccess('babel-cjs'), () => subtaskFail('babel-cjs')),
+			babelEsm(verbose).then(() => subtaskSuccess('babel-esm'), () => subtaskFail('babel-esm'))
 		])
 
 		return 0

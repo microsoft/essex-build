@@ -10,7 +10,6 @@ import * as debug from 'gulp-debug'
 import { noop } from '@essex/build-util-noop'
 import { streamToPromise } from '@essex/build-util-stream-to-promise'
 import { babelCjs as defaultCjs, babelEsm as defaultEsm } from './default-config'
-import { subtaskSuccess, subtaskFail } from '../../utils/log'
 
 const cjsOverridePath = join(process.cwd(), 'babelrc.cjs.js')
 const cjsConfig = existsSync(cjsOverridePath) ? require(cjsOverridePath) : defaultCjs
@@ -28,7 +27,7 @@ export async function babelCjs(verbose: boolean): Promise<void>  {
   .pipe(babel(cjsConfig))
   .pipe(verbose ? debug({ title }) : noop())
   .pipe(gulp.dest('dist/cjs'))
-  await streamToPromise(stream).then(() => subtaskSuccess('babel-cjs'), () => subtaskFail('babel-cjs'))
+  await streamToPromise(stream)
 }
 
 
@@ -42,5 +41,5 @@ export async function babelEsm(verbose: boolean): Promise<void>  {
   .pipe(babel(esmConfig))
   .pipe(verbose ? debug({ title }) : noop())
   .pipe(gulp.dest('dist/esm'))
-  return streamToPromise(stream).then(() => subtaskSuccess('babel-esm'), () => subtaskFail('babel-esm'))
+  return streamToPromise(stream)
 }
