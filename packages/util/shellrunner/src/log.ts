@@ -3,9 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import 'colors'
-import * as dbg from 'debug'
 import { Job } from './types'
-const debugLog = dbg('essex::jobs')
+const debugLog = (...args: any[]): void => console.log(...args)
 
 export function subtaskFail(text: string): void {
 	console.log(`    ✘ ${text}`.red)
