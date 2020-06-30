@@ -4,21 +4,15 @@
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
 import {
-	getTsConfigJsonPath, 
-	getBabelEsmConfigPath, 
-	getBabelCjsConfigPath, 
-	getRollupConfigPath, 
+	getTsConfigJsonPath,
+	getBabelEsmConfigPath,
+	getBabelCjsConfigPath,
+	getRollupConfigPath,
 	getWebpackConfigPath,
 } from '../../utils'
-import {
-	generateTypedocs,
-} from '../../steps'
-import { 
-	babelEsm,
-	babelCjs} from '@essex/build-step-babel'
-import { 
-	compileTypescript, 
-	emitTypings, } from '@essex/build-step-typescript'
+import { babelEsm, babelCjs } from '@essex/build-step-babel'
+import { compileTypescript, emitTypings } from '@essex/build-step-typescript'
+import { generateTypedocs } from '@essex/build-step-typedoc'
 import { subtaskSuccess, subtaskFail } from '../../utils/log'
 export enum BundleMode {
 	production = 'production',
@@ -42,30 +36,35 @@ export interface BuildCommandOptions {
 
 export async function execute(config: BuildCommandOptions): Promise<number> {
 	const { verbose = false, env, docs, mode } = config
-	const [
-		tsConfigJsonPath,
-		babelEsmConfigPath,
-		babelCjsConfigPath,
-		rollupConfigPath,
-		webpackConfigPath,
-	] = await Promise.all([
-		getTsConfigJsonPath(),
-		getBabelEsmConfigPath(),
-		getBabelCjsConfigPath(),
-		getRollupConfigPath(),
-		getWebpackConfigPath(),
-	])
+	const tsConfigJsonPath = await getTsConfigJsonPath()
 
 	try {
 		await Promise.all([
-			compileTypescript(tsConfigJsonPath, verbose).then(() => subtaskSuccess('tsc'), () => subtaskFail('tsc')),
-			emitTypings(tsConfigJsonPath, verbose).then(() => subtaskSuccess('typings'), () => subtaskFail('typings')),
-			docs ? generateTypedocs(verbose) : Promise.resolve()
+			compileTypescript(tsConfigJsonPath, verbose).then(
+				() => subtaskSuccess('tsc'),
+				() => subtaskFail('tsc'),
+			),
+			emitTypings(tsConfigJsonPath, verbose).then(
+				() => subtaskSuccess('typings'),
+				() => subtaskFail('typings'),
+			),
+			docs
+				? generateTypedocs(verbose).then(
+						() => subtaskSuccess('typedoc'),
+						() => subtaskFail('typedoc'),
+				  )
+				: Promise.resolve(),
 		])
-		
+
 		await Promise.all([
-			babelCjs(verbose).then(() => subtaskSuccess('babel-cjs'), () => subtaskFail('babel-cjs')),
-			babelEsm(verbose).then(() => subtaskSuccess('babel-esm'), () => subtaskFail('babel-esm'))
+			babelCjs(verbose).then(
+				() => subtaskSuccess('babel-cjs'),
+				() => subtaskFail('babel-cjs'),
+			),
+			babelEsm(verbose).then(
+				() => subtaskSuccess('babel-esm'),
+				() => subtaskFail('babel-esm'),
+			),
 		])
 
 		return 0
@@ -74,7 +73,6 @@ export async function execute(config: BuildCommandOptions): Promise<number> {
 		return 1
 	}
 }
-
 
 /*
 
