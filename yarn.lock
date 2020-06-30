@@ -1298,6 +1298,9 @@ __metadata:
     "@babel/preset-env": ^7.10.4
     "@essex/build-util-noop": ^7.4.0
     "@essex/build-util-stream-to-promise": ^7.4.0
+    "@types/gulp": ^4.0.6
+    "@types/gulp-babel": ^6.1.29
+    "@types/gulp-debug": ^2.0.31
     "@types/node": ^14.0.14
     gulp: ^4.0.2
     gulp-babel: ^8.0.0
@@ -1319,8 +1322,26 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/build-step-clean@workspace:packages/steps/clean"
   dependencies:
+    "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
     typescript: 3.9.5
+  languageName: unknown
+  linkType: soft
+
+"@essex/build-step-eslint@^7.4.0, @essex/build-step-eslint@workspace:packages/steps/eslint":
+  version: 0.0.0-use.local
+  resolution: "@essex/build-step-eslint@workspace:packages/steps/eslint"
+  dependencies:
+    "@essex/eslint-config": ^7.4.0
+    "@essex/eslint-plugin": ^7.4.0
+    "@types/eslint": ^7.2.0
+    "@types/node": ^14.0.14
+    eslint: ^7.3.1
+    rimraf: ^3.0.2
+    typescript: 3.9.5
+  peerDependencies:
+    "@essex/eslint-config": ">= 7.4.0"
+    "@essex/eslint-plugin": ">= 7.4.0"
   languageName: unknown
   linkType: soft
 
@@ -1389,11 +1410,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/eslint-config@workspace:packages/config/eslint-config":
+"@essex/eslint-config@^7.4.0, @essex/eslint-config@workspace:packages/config/eslint-config":
   version: 0.0.0-use.local
   resolution: "@essex/eslint-config@workspace:packages/config/eslint-config"
   dependencies:
     "@essex/eslint-plugin": ^7.4.0
+  peerDependencies:
+    "@essex/eslint-plugin": ">= 7.4.0"
   languageName: unknown
   linkType: soft
 
@@ -1401,15 +1424,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/eslint-plugin@workspace:packages/config/eslint-plugin"
   dependencies:
-    "@essex/prettier-config": ^7.4.0
     "@types/node": ^14.0.14
     "@typescript-eslint/eslint-plugin": ^3.5.0
     "@typescript-eslint/parser": ^3.5.0
     babel-eslint: ^10.1.0
     eslint: ^7.3.1
     eslint-config-prettier: ^6.11.0
-    eslint-config-react-app: ^5.2.1
-    eslint-plugin-flowtype: ^5.2.0
+    eslint-plugin-flowtype: ^2
     eslint-plugin-header: ^3.0.0
     eslint-plugin-import: ^2.22.0
     eslint-plugin-jest: ^23.17.1
@@ -1419,11 +1440,27 @@ __metadata:
     eslint-plugin-react: ^7.20.2
     eslint-plugin-react-hooks: ^4.0.5
     prettier: ^2.0.5
+    rimraf: ^3.0.2
     typescript: ^3.9.5
+  peerDependencies:
+    "@typescript-eslint/eslint-plugin": ">= 3.5.0"
+    "@typescript-eslint/parser": ">= 3.5.0"
+    babel-eslint: ">= 10.1.0"
+    eslint: ">= 7.3.1"
+    eslint-config-prettier: ">= 6.11.0"
+    eslint-plugin-flowtype: ">= 2"
+    eslint-plugin-header: ">= 3.0.0"
+    eslint-plugin-import: ">= 2.22.0"
+    eslint-plugin-jest: ">= 23.17.1"
+    eslint-plugin-jsx-a11y: ">= 6.3.1"
+    eslint-plugin-local-rules: ">= 0.1.1"
+    eslint-plugin-prettier: ">= 3.1.4"
+    eslint-plugin-react: ">= 7.20.2"
+    eslint-plugin-react-hooks: ">= 4.0.5"
   languageName: unknown
   linkType: soft
 
-"@essex/prettier-config@^7.4.0, @essex/prettier-config@workspace:packages/config/prettier-config":
+"@essex/prettier-config@workspace:packages/config/prettier-config":
   version: 0.0.0-use.local
   resolution: "@essex/prettier-config@workspace:packages/config/prettier-config"
   languageName: unknown
@@ -1441,22 +1478,37 @@ __metadata:
     "@babel/preset-env": ^7.10.4
     "@essex/build-step-babel": ^7.4.0
     "@essex/build-step-clean": ^7.4.0
+    "@essex/build-step-eslint": ^7.4.0
     "@essex/build-step-pretty-quick": ^7.4.0
     "@essex/build-step-typedoc": ^7.4.0
     "@essex/build-step-typescript": ^7.4.0
     "@essex/build-util-noop": ^7.4.0
     "@essex/build-util-stream-to-promise": ^7.4.0
+    "@essex/eslint-config": ^7.4.0
+    "@essex/eslint-plugin": ^7.4.0
     "@essex/shellrunner": ^7.4.0
-    "@types/eslint": ^7.2.0
-    "@types/gulp": ^4.0.6
-    "@types/gulp-babel": ^6.1.29
-    "@types/gulp-debug": ^2.0.31
     "@types/node": ^14.0.14
-    "@types/rimraf": ^3.0.0
-    "@types/through2": ^2.0.36
+    "@typescript-eslint/eslint-plugin": ^3.5.0
+    "@typescript-eslint/parser": ^3.5.0
+    babel-eslint: 10.1.0
+    chalk: ^4.1.0
     commander: ^5.1.0
+    core-js: ^3.6.5
     crlf: ^1.1.1
+    eslint: ^7.3.1
+    eslint-config-prettier: ^6.11.0
+    eslint-plugin-flowtype: ^5.2.0
+    eslint-plugin-header: ^3.0.0
+    eslint-plugin-import: ^2.22.0
+    eslint-plugin-jest: ^23.17.1
+    eslint-plugin-jsx-a11y: ^6.3.1
+    eslint-plugin-local-rules: ^0.1.1
+    eslint-plugin-prettier: ^3.1.4
+    eslint-plugin-react: ^7.20.2
+    eslint-plugin-react-hooks: ^4.0.5
     npm-run-all: ^4.1.5
+    prettier: ^2.0.5
+    rimraf: ^3.0.2
     shx: ^0.3.2
     typescript: ^3.9.5
   peerDependencies:
@@ -3408,7 +3460,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-eslint@npm:^10.1.0":
+"babel-eslint@npm:10.1.0, babel-eslint@npm:^10.1.0":
   version: 10.1.0
   resolution: "babel-eslint@npm:10.1.0"
   dependencies:
@@ -4094,13 +4146,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"confusing-browser-globals@npm:^1.0.9":
-  version: 1.0.9
-  resolution: "confusing-browser-globals@npm:1.0.9"
-  checksum: 319e6d15384745d3ff4a5ca0357b687e0d36a1ab29a03084e192ea12802532de0fa7319169b09e971aba6a291f8a5ca333105e0fb239ed3f6c891f13eea2bea6
-  languageName: node
-  linkType: hard
-
 "console-control-strings@npm:^1.0.0, console-control-strings@npm:~1.1.0":
   version: 1.1.0
   resolution: "console-control-strings@npm:1.1.0"
@@ -4272,6 +4317,13 @@ __metadata:
   version: 3.6.5
   resolution: "core-js-pure@npm:3.6.5"
   checksum: 91fc8e0b699d5bcb11f265ad4544d08c98096b86ad6c9b4c00109616db0aa992ceb58ea82d0dbae2a16658a7aaf2922aa6f9fc1107dc3b0055270799d0414a3f
+  languageName: node
+  linkType: hard
+
+"core-js@npm:^3.6.5":
+  version: 3.6.5
+  resolution: "core-js@npm:3.6.5"
+  checksum: 9283348dd5be2f1d07feaf90e2336b3f00a2316e3d3c6d4f789c9a67bdd4d7b08ce1c88dca4e591340130056c6b412b0b74fae039f8e259206f1073f542e4e85
   languageName: node
   linkType: hard
 
@@ -4892,25 +4944,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-react-app@npm:^5.2.1":
-  version: 5.2.1
-  resolution: "eslint-config-react-app@npm:5.2.1"
-  dependencies:
-    confusing-browser-globals: ^1.0.9
-  peerDependencies:
-    "@typescript-eslint/eslint-plugin": 2.x
-    "@typescript-eslint/parser": 2.x
-    babel-eslint: 10.x
-    eslint: 6.x
-    eslint-plugin-flowtype: 3.x || 4.x
-    eslint-plugin-import: 2.x
-    eslint-plugin-jsx-a11y: 6.x
-    eslint-plugin-react: 7.x
-    eslint-plugin-react-hooks: 1.x || 2.x
-  checksum: bb6028338a4c233568c2f9249fce0e464edbe68079bee63fedbd9c9398d534bf6e6c19d312021916198ec75e9bdce1ddb1e5a11f191ea9887a610b782b8741b9
-  languageName: node
-  linkType: hard
-
 "eslint-import-resolver-node@npm:^0.3.3":
   version: 0.3.4
   resolution: "eslint-import-resolver-node@npm:0.3.4"
@@ -4928,6 +4961,17 @@ __metadata:
     debug: ^2.6.9
     pkg-dir: ^2.0.0
   checksum: f584af176480a702eedcdb3f610797f8b8d1293c3835ed71fadb579ec28400b91ded5283729418f63d48dc27c6358bd66f2bd839614d565a1b78d3c3440ee8f7
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-flowtype@npm:^2":
+  version: 2.50.3
+  resolution: "eslint-plugin-flowtype@npm:2.50.3"
+  dependencies:
+    lodash: ^4.17.10
+  peerDependencies:
+    eslint: ">=2.0.0"
+  checksum: 528fc222fd71b06544906ff59a5ecd7413786b9c45299c01a290317c35e9a5f6d503a46d184995504e77657f96d6246c5d8601f1f33ed554807c04e1c8ad18b1
   languageName: node
   linkType: hard
 
@@ -7421,7 +7465,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.12, lodash@npm:^4.17.13, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.2.1":
+"lodash@npm:^4.17.10, lodash@npm:^4.17.12, lodash@npm:^4.17.13, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.2.1":
   version: 4.17.15
   resolution: "lodash@npm:4.17.15"
   checksum: aec3fbb7570aa67bda500b8299b1b1821d60646bede87f76a74dfcc7666ab3445267d734ec71424d70809d52ad67a1356fab5ab694a3faa1908d68e9d48f00f5

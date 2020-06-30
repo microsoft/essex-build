@@ -1,13 +1,13 @@
 // Adapted from https://github.com/azz/pretty-quick/blob/master/bin/pretty-quick.js
-const chalk = require('chalk')
-const pq = require('pretty-quick')
+import * as chalk from 'chalk'
+const pq = require('pretty-quick').default
 
 export interface PrettyQuickArgs {
 	staged?: boolean
 	check?: boolean
 	verbose?: boolean
 }
-export async function prettyQuick(args: PrettyQuickArgs): Promise<void> {
+export function prettyQuick(args: PrettyQuickArgs): Promise<void> {
 	const prettyQuickResult = pq(process.cwd(), {
 		...args,
 		onFoundSinceRevision: (scm: string, revision: string) => {
@@ -45,6 +45,7 @@ export async function prettyQuick(args: PrettyQuickArgs): Promise<void> {
 
 	if (prettyQuickResult.success) {
 		console.log('✅  Everything is awesome!')
+		return Promise.resolve()
 	} else {
 		if (prettyQuickResult.errors.indexOf('PARTIALLY_STAGED_FILE') !== -1) {
 			console.log(
@@ -62,6 +63,6 @@ export async function prettyQuick(args: PrettyQuickArgs): Promise<void> {
 				'✗ Code style issues found in the above file(s). Forgot to run Prettier?',
 			)
 		}
-		throw new Error('pretty-quick failed')
+		return Promise.reject(prettyQuickResult.errors)
 	}
 }

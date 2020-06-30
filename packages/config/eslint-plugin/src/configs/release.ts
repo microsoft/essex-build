@@ -12,7 +12,7 @@ const headerFile = existsSync(HEADER_OVERRIDE) ? HEADER_OVERRIDE : msHeader
 const jsRuleSets = [
 	/* Base Rulesets */
 	'eslint:recommended',
-	'react-app',
+	'plugin:react/recommended',
 	'plugin:jsx-a11y/recommended',
 	/* Testing Rules */
 	'plugin:jest/recommended',
@@ -38,6 +38,11 @@ export default {
 		browser: true,
 		es2020: true,
 		jest: true,
+	},
+	settings: {
+		react: {
+			version: 'detect',
+		},
 	},
 	overrides: [
 		{

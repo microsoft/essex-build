@@ -1,0 +1,25 @@
+{
+	"name": "@essex/build-step-eslint",
+	"version": "7.4.0",
+	"main": "lib/index.js",
+	"typings": "lib/index.d.ts",
+	"scripts": {
+		"clean": "rimraf dist lib",
+		"build": "tsc"
+	},
+	"dependencies": {
+		"eslint": "^7.3.1"
+	},
+	"devDependencies": {
+		"@essex/eslint-config": "^7.4.0",
+		"@essex/eslint-plugin": "^7.4.0",
+		"@types/eslint": "^7.2.0",
+		"@types/node": "^14.0.14",
+		"rimraf": "^3.0.2",
+		"typescript": "3.9.5"
+	},
+	"peerDependencies": {
+		"@essex/eslint-config": ">= 7.4.0",
+		"@essex/eslint-plugin": ">= 7.4.0"
+	}
+}
