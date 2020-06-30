@@ -1,0 +1,22 @@
+{
+  "name": "@essex/build-step-pretty-quick",
+  "version": "7.4.0",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "clean": "rimraf dist lib",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "typescript": "3.9.5"
+  },
+  "peerDependencies": {
+    "@types/node": ">= 14"
+  }
+}

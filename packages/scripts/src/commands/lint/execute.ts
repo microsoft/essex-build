@@ -3,7 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Job, run } from '@essex/shellrunner'
-import { eslint, prettyQuick } from '../../steps'
+import { prettyQuick } from '@essex/build-step-pretty-quick'
+import { eslint } from '../../steps'
 
 export interface LintCommandOptions {
 	fix?: boolean
@@ -52,7 +53,7 @@ export async function execute({
 }: LintCommandOptions): Promise<number> {
 	const eslintTask = eslint(fix, strict)
 	const prettierTask = staged ? prettyQuick({ staged: true }) : prettyQuick({ check: !fix })
-	
+
 	// const toRun: Job[] = [eslint]
 	// if (!staged) {
 	// 	toRun.push(PRETTY_QUICK_JOB)
