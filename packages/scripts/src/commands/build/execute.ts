@@ -11,13 +11,14 @@ import {
 	getWebpackConfigPath,
 } from '../../utils'
 import {
-	compileTypescript, 
-	emitTypings, 
 	generateTypedocs,
 	babelEsm,
 	babelCjs
 } from '../../steps'
-
+import { 
+	compileTypescript, 
+	emitTypings, } from '@essex/build-step-typescript'
+import { subtaskSuccess, subtaskFail } from '../../utils/log'
 export enum BundleMode {
 	production = 'production',
 	development = 'development',
@@ -56,8 +57,8 @@ export async function execute(config: BuildCommandOptions): Promise<number> {
 
 	try {
 		await Promise.all([
-			compileTypescript(tsConfigJsonPath, verbose),
-			emitTypings(tsConfigJsonPath, verbose),
+			compileTypescript(tsConfigJsonPath, verbose).then(() => subtaskSuccess('tsc'), () => subtaskFail('tsc')),
+			emitTypings(tsConfigJsonPath, verbose).then(() => subtaskSuccess('typings'), () => subtaskFail('typings')),
 			docs ? generateTypedocs(verbose) : Promise.resolve()
 		])
 		

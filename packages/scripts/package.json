@@ -25,6 +25,7 @@
 		"@babel/plugin-proposal-object-rest-spread": "^7.10.4",
 		"@babel/plugin-proposal-optional-chaining": "^7.10.4",
 		"@babel/preset-env": "^7.10.4",
+		"@essex/build-step-typescript": "^7.4.0",
 		"@essex/build-util-noop": "^7.4.0",
 		"@essex/build-util-stream-to-promise": "^7.4.0",
 		"@essex/eslint-config": "^7.4.0",
