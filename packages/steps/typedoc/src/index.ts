@@ -1,14 +1,19 @@
-
 /*!
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { Application, TSConfigReader, TypeDocReader, TypeDocAndTSOptions, Options } from 'typedoc'
+import {
+	Application,
+	TSConfigReader,
+	TypeDocReader,
+	TypeDocAndTSOptions,
+} from 'typedoc'
 import { existsSync } from 'fs'
-import { join }  from 'path'
+import { join } from 'path'
 
 const packageJsonPath = join(process.cwd(), 'package.json')
 const readmePath = join(process.cwd(), 'README.md')
+/* eslint-disable-next-line @typescript-eslint/no-var-requires */
 const packageJson = require(packageJsonPath)
 const DEFAULT_ENTRY_POINT = 'src/index.ts'
 
@@ -16,20 +21,20 @@ const DEFAULT_ENTRY_POINT = 'src/index.ts'
  * Generates API documentation using TypeDoc
  */
 export async function generateTypedocs(verbose: boolean): Promise<void> {
-	const { title, name} = packageJson
-  await typedoc({
-      name: title || name || 'API Documentation',
-      entryPoint: DEFAULT_ENTRY_POINT,
-      stripInternal: true,
-      excludeExternals: true,
-      excludeNotExported: true,
-      exclude: ['**/__tests__/**', '**/node_modules/**'],
-      excludePrivate: true,
-      project: 'tsconfig.json',
-      out: 'dist/docs',
-      logger: 'none',
-      readme: existsSync(readmePath) ? readmePath : undefined,
-  })
+	const { title, name } = packageJson
+	await typedoc({
+		name: title || name || 'API Documentation',
+		entryPoint: DEFAULT_ENTRY_POINT,
+		stripInternal: true,
+		excludeExternals: true,
+		excludeNotExported: true,
+		exclude: ['**/__tests__/**', '**/node_modules/**'],
+		excludePrivate: true,
+		project: 'tsconfig.json',
+		out: 'dist/docs',
+		logger: 'none',
+		readme: existsSync(readmePath) ? readmePath : undefined,
+	})
 }
 
 /**
@@ -37,17 +42,17 @@ export async function generateTypedocs(verbose: boolean): Promise<void> {
  * @param options TypeDoc options
  */
 async function typedoc(options: Partial<TypeDocAndTSOptions>): Promise<void> {
-  return new Promise((resolve, reject) => {
-    try {
-      const app = new Application();
-      app.options.addReader(new TSConfigReader());
-      app.options.addReader(new TypeDocReader());
-      app.bootstrap(options);
-      const src = app.expandInputFiles([DEFAULT_ENTRY_POINT])
-      app.generateDocs(src, 'dist/docs')
-      resolve()
-    } catch (err) {
-      reject(err)
-    }
-  })
+	return new Promise((resolve, reject) => {
+		try {
+			const app = new Application()
+			app.options.addReader(new TSConfigReader())
+			app.options.addReader(new TypeDocReader())
+			app.bootstrap(options)
+			const src = app.expandInputFiles([DEFAULT_ENTRY_POINT])
+			app.generateDocs(src, 'dist/docs')
+			resolve()
+		} catch (err) {
+			reject(err)
+		}
+	})
 }

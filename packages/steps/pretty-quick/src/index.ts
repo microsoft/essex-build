@@ -1,5 +1,9 @@
-// Adapted from https://github.com/azz/pretty-quick/blob/master/bin/pretty-quick.js
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
 import * as chalk from 'chalk'
+/* eslint-disable-next-line @typescript-eslint/no-var-requires */
 const pq = require('pretty-quick').default
 
 export interface PrettyQuickArgs {
