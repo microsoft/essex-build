@@ -5,8 +5,9 @@
 import * as gulp from 'gulp'
 import * as ts from 'gulp-typescript'
 import * as debug from 'gulp-debug'
-import { streamToPromise } from "../../utils/streamToPromise"
-import { noop } from '../noop'
+import { streamToPromise } from "@essex/build-util-stream-to-promise"
+import { noop } from '@essex/build-util-noop'
+import { subtaskSuccess, subtaskFail } from '../../utils/log'
 
 export interface TsJobSpec {
   /**
@@ -45,5 +46,5 @@ export function tsJob({configFile, verbose, dest, title, overrides}: TsJobSpec):
 		.pipe(tsProject())
 		.pipe(verbose ? debug({ title }) : noop())
 		.pipe(gulp.dest(dest))
-  return streamToPromise(stream, title)
+  return streamToPromise(stream).then(() => subtaskSuccess(title), () => subtaskFail(title))
 }

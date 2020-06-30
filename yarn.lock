@@ -1620,7 +1620,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-util-noop@workspace:packages/util/noop":
+"@essex/build-util-noop@^7.4.0, @essex/build-util-noop@workspace:packages/util/noop":
   version: 0.0.0-use.local
   resolution: "@essex/build-util-noop@workspace:packages/util/noop"
   dependencies:
@@ -1628,6 +1628,18 @@ __metadata:
     rimraf: ^3.0.2
     through2: ^4.0.2
     typescript: 3.9.5
+  languageName: unknown
+  linkType: soft
+
+"@essex/build-util-stream-to-promise@^7.4.0, @essex/build-util-stream-to-promise@workspace:packages/util/streamToPromise":
+  version: 0.0.0-use.local
+  resolution: "@essex/build-util-stream-to-promise@workspace:packages/util/streamToPromise"
+  dependencies:
+    "@types/node": ^14.0.14
+    rimraf: ^3.0.2
+    typescript: 3.9.5
+  peerDependencies:
+    "@types/node": ">= 14"
   languageName: unknown
   linkType: soft
 
@@ -1681,6 +1693,8 @@ __metadata:
     "@babel/plugin-proposal-object-rest-spread": ^7.10.4
     "@babel/plugin-proposal-optional-chaining": ^7.10.4
     "@babel/preset-env": ^7.10.4
+    "@essex/build-util-noop": ^7.4.0
+    "@essex/build-util-stream-to-promise": ^7.4.0
     "@essex/eslint-config": ^7.4.0
     "@essex/eslint-plugin": ^7.4.0
     "@essex/prettier-config": ^7.4.0

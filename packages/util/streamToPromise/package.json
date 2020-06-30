@@ -1,5 +1,5 @@
 {
-  "name": "@essex/build-util-noop",
+  "name": "@essex/build-util-stream-to-promise",
   "version": "7.4.0",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -7,12 +7,12 @@
     "clean": "rimraf dist lib",
     "build": "tsc"
   },
-  "dependencies": {
-    "@types/through2": "^2.0.36",
-    "through2": "^4.0.2"
-  },
   "devDependencies": {
+    "@types/node": "^14.0.14",
     "rimraf": "^3.0.2",
     "typescript": "3.9.5"
+  },
+  "peerDependencies": {
+    "@types/node": ">= 14"
   }
 }
