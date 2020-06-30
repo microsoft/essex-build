@@ -1620,6 +1620,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@essex/build-step-typescript@workspace:packages/steps/typescript":
+  version: 0.0.0-use.local
+  resolution: "@essex/build-step-typescript@workspace:packages/steps/typescript"
+  dependencies:
+    "@types/node": ^14.0.14
+    gulp: ^4.0.2
+    gulp-debug: ^4.0.0
+    gulp-typescript: ^6.0.0-alpha.1
+    rimraf: ^3.0.2
+    typescript: 3.9.5
+  peerDependencies:
+    "@types/node": ">= 14"
+  languageName: unknown
+  linkType: soft
+
 "@essex/build-util-noop@^7.4.0, @essex/build-util-noop@workspace:packages/util/noop":
   version: 0.0.0-use.local
   resolution: "@essex/build-util-noop@workspace:packages/util/noop"
