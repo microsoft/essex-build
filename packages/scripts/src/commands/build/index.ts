@@ -10,12 +10,12 @@ export default function build(program: Command): void {
 		.option(
 			'--env <env>',
 			'build environment (used by babel and webpack)',
-			'development',
+			'production',
 		)
 		.option(
 			'--mode <mode>',
 			'enable production optimization or development hints ("development" | "production" | "none")',
-			'development',
+			'production',
 		)
 		.action(async (options: BuildCommandOptions) => {
 			const code = await execute(options)

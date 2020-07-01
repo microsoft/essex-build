@@ -28,6 +28,7 @@ export async function execute({
 			() => subtaskSuccess('eslint'),
 			() => subtaskFail('eslint'),
 		)
+
 		const prettierTask = (staged
 			? prettyQuick({ staged: true })
 			: prettyQuick({ check: !fix })
@@ -36,14 +37,14 @@ export async function execute({
 			() => subtaskFail('pretty-quick'),
 		)
 
-		const tonalLintingJob = docs
+		const checkDocsTask = docs
 			? checkDocs().then(
 					() => subtaskSuccess('docs'),
 					() => subtaskFail('docs'),
 			  )
 			: Promise.resolve()
 
-		await Promise.all([eslintTask, prettierTask, tonalLintingJob])
+		await Promise.all([eslintTask, prettierTask, checkDocsTask])
 		return 0
 	} catch (err) {
 		console.error(err)
