@@ -27,46 +27,45 @@ const sassLoader = require('sass-loader')
 export interface Configuration {
 	env?: string
 	mode?: 'development' | 'production'
-	extendAliases?: (env: string, mode: string) => any
-	extendOutput?: (env: string, mode: string) => any
-	extendDevServer?: (env: string, mode: string) => any
-	extendEnvironment?: (env: string, mode: string) => any
-	extendPlugins?: (env: string, mode: string) => any
-	extendResolveModules?: (env: string, mode: string) => any
-	extendResolveLoaderModules?: (env: string, mode: string) => any
-	extendHtmlWebpackPlugin?: (env: string, mode: string) => any
+	// extends
+	aliases?: (env: string, mode: string) => any
+	output?: (env: string, mode: string) => any
+	devServer?: (env: string, mode: string) => any
+	environment?: (env: string, mode: string) => any
+	plugins?: (env: string, mode: string) => any[]
+	modules?: (env: string, mode: string) => string[]
+	loaderModules?: (env: string, mode: string) => string[]
+	htmlWebpackPlugin?: (env: string, mode: string) => any
 }
 export function configure({
 	env = 'development',
 	mode = 'development',
-	extendAliases,
-	extendOutput,
-	extendDevServer,
-	extendEnvironment,
-	extendPlugins,
-	extendResolveModules,
-	extendResolveLoaderModules,
-	extendHtmlWebpackPlugin,
+	aliases,
+	output,
+	devServer,
+	environment,
+	plugins,
+	modules,
+	loaderModules,
+	htmlWebpackPlugin,
 }: Configuration) {
 	validateConfiguration()
 	const isDevelopment = mode !== 'production'
-	const extendedAliases = extendAliases ? extendAliases(env, mode) : {}
-	const extendedOutput = extendOutput ? extendOutput(env, mode) : {}
-	const extendedDevServer = extendDevServer ? extendDevServer(env, mode) : {}
-	const extendedEnv = extendEnvironment ? extendEnvironment(env, mode) : {}
-	const extendedPlugins = extendPlugins ? extendPlugins(env, mode) : []
-	const extendedResolveModules = extendResolveModules
-		? extendResolveModules(env, mode)
+	const extendedAliases = aliases ? aliases(env, mode) : {}
+	const extendedOutput = output ? output(env, mode) : {}
+	const extendedDevServer = devServer ? devServer(env, mode) : {}
+	const extendedEnv = environment ? environment(env, mode) : {}
+	const extendedPlugins = plugins ? plugins(env, mode) : []
+	const extendedResolveModules = modules ? modules(env, mode) : []
+	const extendedResolveLoaderModules = loaderModules
+		? loaderModules(env, mode)
 		: []
-	const extendedResolveLoaderModules = extendResolveLoaderModules
-		? extendResolveLoaderModules(env, mode)
-		: []
-	const extendedHtmlWebpackPlugin = extendHtmlWebpackPlugin
-		? extendHtmlWebpackPlugin(env, mode)
+	const extendedHtmlWebpackPlugin = htmlWebpackPlugin
+		? htmlWebpackPlugin(env, mode)
 		: {}
 
-	if (extendAliases) {
-		log('extend resolve', extendAliases)
+	if (aliases) {
+		log('extend resolve', aliases)
 	}
 	if (extendedDevServer) {
 		log('extend devServer', extendedDevServer)
