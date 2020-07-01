@@ -5,6 +5,7 @@
 // import { Job, run } from '@essex/shellrunner'
 import { prettyQuick } from '@essex/build-step-pretty-quick'
 import { eslint } from '@essex/build-step-eslint'
+import { alex } from '@essex/build-step-alex'
 import { subtaskSuccess, subtaskFail } from '../../utils/log'
 
 export interface LintCommandOptions {
@@ -23,9 +24,27 @@ export async function execute({
 	spellingIgnore,
 }: LintCommandOptions): Promise<number> {
 	try {
-		const prettierTask = staged
+		const eslintTask = eslint(fix, strict).then(
+			() => subtaskSuccess('eslint'),
+			() => subtaskFail('eslint'),
+		)
+		const prettierTask = (staged
 			? prettyQuick({ staged: true })
 			: prettyQuick({ check: !fix })
+		).then(
+			() => subtaskSuccess('pretty-quick'),
+			() => subtaskFail('pretty-quick'),
+		)
+
+		const tonalLintingJob = docs
+			? alex().then(
+					() => subtaskSuccess('alex'),
+					err => {
+						console.error(err)
+						subtaskFail('alex')
+					},
+			  )
+			: Promise.resolve()
 
 		// const toRun: Job[] = [eslint]
 		// if (!staged) {
@@ -36,16 +55,7 @@ export async function execute({
 		// }
 		// const { code } = await run(...toRun)
 
-		await Promise.all([
-			eslint(fix, strict).then(
-				() => subtaskSuccess('eslint'),
-				() => subtaskFail('eslint'),
-			),
-			prettierTask.then(
-				() => subtaskSuccess('pretty-quick'),
-				() => subtaskFail('pretty-quick'),
-			),
-		])
+		await Promise.all([eslintTask, prettierTask, tonalLintingJob])
 		return 0
 	} catch (err) {
 		console.error(err)
