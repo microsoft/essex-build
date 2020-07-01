@@ -17,6 +17,12 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+const cacheLoader = require('cache-loader')
+const babelLoader = require('babel-loader')
+const tsLoader = require('ts-loader')
+const styleLoader = require('style-loader')
+const cssLoader = require('css-loader')
+const sassLoader = require('sass-loader')
 
 export interface Configuration {
 	env?: string
@@ -111,13 +117,13 @@ export function configure({
 					test: /\.tsx?$/,
 					exclude: /node_modules/,
 					use: [
-						{ loader: require.resolve('cache-loader') },
+						{ loader: cacheLoader },
 						{
-							loader: require.resolve('babel-loader'),
+							loader: babelLoader,
 							options: getBabelConfiguration(),
 						},
 						{
-							loader: require.resolve('ts-loader'),
+							loader: tsLoader,
 							options: {
 								configFile: join(process.cwd(), 'tsconfig.json'),
 								transpileOnly: true,
@@ -131,18 +137,16 @@ export function configure({
 				{
 					test: /\.module\.s(a|c)ss$/,
 					loader: [
-						isDevelopment
-							? require.resolve('style-loader')
-							: MiniCssExtractPlugin.loader,
+						isDevelopment ? styleLoader : MiniCssExtractPlugin.loader,
 						{
-							loader: require.resolve('css-loader'),
+							loader: cssLoader,
 							options: {
 								modules: true,
 								sourceMap: isDevelopment,
 							},
 						},
 						{
-							loader: require.resolve('sass-loader'),
+							loader: sassLoader,
 							options: {
 								sourceMap: isDevelopment,
 							},
@@ -156,12 +160,10 @@ export function configure({
 					test: /\.s(a|c)ss$/,
 					exclude: /\.module.(s(a|c)ss)$/,
 					loader: [
-						isDevelopment
-							? require.resolve('style-loader')
-							: MiniCssExtractPlugin.loader,
-						require.resolve('css-loader'),
+						isDevelopment ? styleLoader : MiniCssExtractPlugin.loader,
+						cssLoader,
 						{
-							loader: require.resolve('sass-loader'),
+							loader: sassLoader,
 							options: {
 								sourceMap: isDevelopment,
 							},
@@ -174,10 +176,8 @@ export function configure({
 				{
 					test: /\.css$/,
 					loader: [
-						isDevelopment
-							? require.resolve('style-loader')
-							: MiniCssExtractPlugin.loader,
-						require.resolve('css-loader'),
+						isDevelopment ? styleLoader : MiniCssExtractPlugin.loader,
+						cssLoader,
 					],
 				},
 			],
