@@ -23,8 +23,7 @@ const CONFIG_FILES = [
 	'.prettierrc',
 	'.eslintrc',
 	'.eslintignore',
-	'.alexrc',
-	'.spelling',
+	'.docsrc',
 ]
 
 export function initMonorepo(): Promise<number> {

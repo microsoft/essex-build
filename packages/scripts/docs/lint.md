@@ -46,7 +46,7 @@ The following static verification checks are performed when this command is invo
 
   ### Purpose
 
-  Alex checks for inconsiderate writing and tone in documentation files. This allows us to meet community and corporate expectations with regards to inclusivity in our documentation.
+  The docs step checks for misspelling and inconsiderate writing and tone in documentation files. This allows us to meet community and corporate expectations with regards to inclusivity in our documentation.
 
   ### Customization
 

@@ -3,29 +3,28 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
-import  {filter} from './filter'
+import { filter } from './filter'
 import personal from './personal'
 import { PassThrough } from 'stream'
 const engine = require('unified-engine')
 const unified = require('unified')
 const markdown = require('remark-parse')
-const htmlParser = require('rehype-parse')
 const frontmatter = require('remark-frontmatter')
 const english = require('retext-english')
 const remark2retext = require('remark-retext')
-const rehype2retext = require('rehype-retext')
 const report = require('vfile-reporter')
 const equality = require('retext-equality')
 const profanities = require('retext-profanities')
 const spelling = require('retext-spell')
 const englishDictionary = require('dictionary-en')
+
 /**
- * Executes the 'alex' tool for tonal linting
+ * Checks docs for tonal linting & misspellings
  */
 export async function docs() {
 	const result = await app(['.'], {})
 	if (result !== 0) {
-		throw new Error('alex reported failures')
+		throw new Error('docs reported failures')
 	}
 }
 
@@ -39,12 +38,8 @@ const textExtensions = [
 	'mkdown',
 	'ron',
 ]
-const htmlExtensions = ['htm', 'html']
 
 interface AppArgs {
-	html?: boolean
-	text?: boolean
-	diff?: boolean
 	verbose?: boolean
 	quiet?: boolean
 }
@@ -54,9 +49,9 @@ interface AppArgs {
  */
 function app(
 	input: string[],
-	{ html, text, diff, verbose, quiet }: AppArgs,
+	{ verbose, quiet }: AppArgs,
 ): Promise<number> {
-	const extensions = html ? htmlExtensions : textExtensions
+	const extensions = textExtensions
 	const defaultGlobs = [
 		'{README,readme,docs/**/,doc/**/,}*.{' + extensions.join(',') + '}',
 	]
@@ -75,7 +70,7 @@ function app(
 			{
 				processor: unified(),
 				files: globs,
-				extensions: extensions,
+				extensions,
 				configTransform: transform,
 				output: false,
 				out: false,
@@ -103,33 +98,30 @@ function app(
 	})
 
 	function transform(settings: any = {}) {
-		const retextPlugins = [
-			english,
-			[profanities, { sureness: settings.profanitySureness }],
-			[equality, { noBinary: settings.noBinary }],
-			[spelling, { dictionary: englishDictionary, ignore: settings.spelling, personal, max: 3 }],
+		const plugins: any[] = [
+			markdown,
+			[frontmatter, ['yaml', 'toml']],
+			[
+				remark2retext,
+				unified().use({
+					plugins: [
+						english,
+						[profanities, { sureness: settings.profanitySureness }],
+						[equality, { noBinary: settings.noBinary }],
+						[
+							spelling,
+							{
+								dictionary: englishDictionary,
+								ignore: settings.spelling,
+								personal,
+								max: 3,
+							},
+						],
+					],
+				}),
+			],
+			[filter, { allow: settings.allow }]
 		]
-
-		let plugins: any[] = [...retextPlugins]
-		if (html) {
-			plugins = [
-				htmlParser,
-				[rehype2retext, unified().use({ plugins: retextPlugins })],
-			]
-		} else if (!text) {
-			plugins = [
-				markdown,
-				[frontmatter, ['yaml', 'toml']],
-				[remark2retext, unified().use({ plugins: retextPlugins })],
-			]
-		}
-
-		plugins.push([filter, { allow: settings.allow }])
-
-		/* istanbul ignore if - hard to check. */
-		if (diff) {
-			plugins.push(diff)
-		}
 
 		return { plugins }
 	}

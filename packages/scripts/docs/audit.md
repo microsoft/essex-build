@@ -16,12 +16,11 @@ The following checks are performed when this command is invoked.
 
   <!--alex disable whitelist-->
   <!--alex disable whitelisted-->
-
   1. `path-whitelist`
   1. `advisories`
   1. `whitelist`
-     <!--alex enable whitelist-->
-     <!--alex enable whitelisted-->
+  <!--alex enable whitelist-->
+  <!--alex enable whitelisted-->
 
 - ## license-to-fail
 
