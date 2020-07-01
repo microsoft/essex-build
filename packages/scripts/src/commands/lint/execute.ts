@@ -5,7 +5,7 @@
 // import { Job, run } from '@essex/shellrunner'
 import { prettyQuick } from '@essex/build-step-pretty-quick'
 import { eslint } from '@essex/build-step-eslint'
-import { alex } from '@essex/build-step-alex'
+import { docs as checkDocs } from '@essex/build-step-docs'
 import { subtaskSuccess, subtaskFail } from '../../utils/log'
 
 export interface LintCommandOptions {
@@ -37,23 +37,11 @@ export async function execute({
 		)
 
 		const tonalLintingJob = docs
-			? alex().then(
-					() => subtaskSuccess('alex'),
-					err => {
-						console.error(err)
-						subtaskFail('alex')
-					},
+			? checkDocs().then(
+					() => subtaskSuccess('docs'),
+					() => subtaskFail('docs'),
 			  )
 			: Promise.resolve()
-
-		// const toRun: Job[] = [eslint]
-		// if (!staged) {
-		// 	toRun.push(PRETTY_QUICK_JOB)
-		// 	if (docs) {
-		// 		toRun.push(TONAL_LINTING_JOB, SPELL_CHECK_JOB(spellingIgnore))
-		// 	}
-		// }
-		// const { code } = await run(...toRun)
 
 		await Promise.all([eslintTask, prettierTask, tonalLintingJob])
 		return 0
@@ -62,33 +50,3 @@ export async function execute({
 		return 1
 	}
 }
-
-// const PRETTY_QUICK_JOB: any = {
-// 	exec: 'pretty-quick',
-// 	args: ['--check'],
-// }
-
-// const TONAL_LINTING_JOB: any = {
-// 	exec: 'alex',
-// 	args: ['.'],
-// }
-
-// const SPELL_CHECK_JOB = (spellingIgnore: string | undefined): any => {
-// 	const args = [
-// 		'--report',
-// 		'--en-us',
-// 		'--no-suggestions',
-// 		'--ignore-acronyms',
-// 		'--ignore-numbers',
-// 		'**/*.md',
-// 		'!**/node_modules/**/*.md',
-// 		'!CHANGELOG.md',
-// 	]
-// 	if (spellingIgnore != null) {
-// 		args.push(`!${spellingIgnore}`)
-// 	}
-// 	return {
-// 		exec: 'mdspell',
-// 		args,
-// 	}
-// }

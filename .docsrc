@@ -1,0 +1,5 @@
+{
+  "allow": ["hook", "hooks", "color", "colors", "husky", "american"],
+  "spelling": [
+  ]
+}

@@ -1,0 +1,31 @@
+{
+	"name": "@essex/build-step-docs",
+	"version": "7.4.0",
+	"main": "lib/index.js",
+	"typings": "lib/index.d.ts",
+	"scripts": {
+		"clean": "rimraf dist lib",
+		"build": "tsc"
+	},
+	"dependencies": {
+		"dictionary-en": "^3.0.1",
+		"rehype-parse": "^7.0.1",
+		"rehype-retext": "^2.0.4",
+		"remark-frontmatter": "^2.0.0",
+		"remark-message-control": "^6.0.0",
+		"remark-parse": "^8.0.2",
+		"remark-retext": "^4.0.0",
+		"retext-english": "^3.0.4",
+		"retext-equality": "^5.1.0",
+		"retext-profanities": "^6.0.0",
+		"retext-spell": "^4.0.0",
+		"unified": "^9.0.0",
+		"unified-engine": "^8.0.0",
+		"vfile-reporter": "^6.0.1"
+	},
+	"devDependencies": {
+		"@types/node": "^14.0.14",
+		"rimraf": "^3.0.2",
+		"typescript": "3.9.5"
+	}
+}

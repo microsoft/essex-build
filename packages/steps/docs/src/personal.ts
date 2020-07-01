@@ -1,8 +1,6 @@
-# markdown-spellcheck spelling configuration file
-# Format - lines beginning # are comments
-# global dictionary is at the start, file overrides afterwards
-# one word per line, to define a file override use ' - filename'
-# where filename is relative to this configuration file
+export default `
+essex
+Essex
 eslint-config
 eslintrc
 eslint-plugin
@@ -36,14 +34,12 @@ commitlint.config.js
 commitlint
 lintstagedrc
 tsconfig.json
-essex
 ruleset
 prettierrc
 package.json
 alex
 transpiling
 featureset
-mdspell
 add-ons
 addon-actions
 addon-links
@@ -71,4 +67,11 @@ audit-ci
 CVEs
 config
 allowlist
+denylist
 json
+CLI
+init
+CVE
+BYO
+formatter
+`
