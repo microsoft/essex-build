@@ -58,10 +58,14 @@ audit-ci
 `
 
 const TLAs = `
+API
+APIs
 CLI
+CLIs
 CVE
 CVEs
 CLA
+CLAs
 `
 const JARGON = `
 peerDependency
