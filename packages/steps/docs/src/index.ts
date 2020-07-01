@@ -1,3 +1,7 @@
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
 /* eslint-disable @typescript-eslint/no-var-requires */
 import  {filter} from './filter'
 import personal from './personal'
@@ -25,7 +29,7 @@ export async function docs() {
 	}
 }
 
-var textExtensions = [
+const textExtensions = [
 	'txt',
 	'text',
 	'md',
@@ -35,7 +39,7 @@ var textExtensions = [
 	'mkdown',
 	'ron',
 ]
-var htmlExtensions = ['htm', 'html']
+const htmlExtensions = ['htm', 'html']
 
 interface AppArgs {
 	html?: boolean
@@ -56,7 +60,7 @@ function app(
 	const defaultGlobs = [
 		'{README,readme,docs/**/,doc/**/,}*.{' + extensions.join(',') + '}',
 	]
-	let silentlyIgnore: boolean = false
+	let silentlyIgnore = false
 	let globs: string[]
 
 	if (input.length === 0) {
@@ -84,7 +88,7 @@ function app(
 				defaultConfig: transform(),
 			},
 			function (err: Error, code: number, result: { files: string[] }) {
-				var out = report(err || result.files, {
+				const out = report(err || result.files, {
 					verbose: verbose,
 					quiet,
 				})

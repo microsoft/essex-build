@@ -24,7 +24,7 @@ The following static verification checks are performed when this command is invo
 
   - `<rootDir>/.eslintrc`<br/>
     `<rootDir>/.eslintignore`<br/>
-    Linting configuration may be overriden by defining this file. By default the `@essex/eslint-config` preset will be used for linting. Details on that preset can be found in this repository under `packages/eslint-config`. Essex projects should have an .eslintrc file that extends from `@essex/eslint-config` and enables or disables certain rules. This ruleset disables stylistic rules, and allows prettier-based tooling to manage those.
+    Linting configuration may be overridden by defining this file. By default the `@essex/eslint-config` preset will be used for linting. Details on that preset can be found in this repository under `packages/eslint-config`. Essex projects should have an .eslintrc file that extends from `@essex/eslint-config` and enables or disables certain rules. This ruleset disables stylistic rules, and allows prettier-based tooling to manage those.
 
 - ## pretty-quick --check
 
@@ -42,7 +42,7 @@ The following static verification checks are performed when this command is invo
     "prettier": "@essex/prettier-config"
     ```
 
-- ## alex
+  - ## docs
 
   ### Purpose
 
@@ -50,24 +50,7 @@ The following static verification checks are performed when this command is invo
 
   ### Customization
 
-  - `<rootDir>/.alexrc`<br/>
-    `<rootDir>/.alexignore`<br/>
+  - `<rootDir>/.docsrc`<br/>
+    `<rootDir>/.docsignore`<br/>
 
-    Your project can specify allowed terms and ignore certain paths or filetypes by using the [Alex's configuration mechanisms](https://github.com/get-alex/alex#configuration)
-
-- ## mdspell
-
-  ### Purpose
-
-  **mdspell** performs spell-checking of Markdown documentation files.
-
-  ### Customization
-
-  - `<rootDir>**/.spelling`<br/>
-    A `.spelling` file can be defined that will define terms that are not included in the standard American dictionary. You may need to run
-
-    ```sh
-    > mdspell --en-us --ignore-acronyms --ignore-numbers --no-suggestions '**/*.md' '!**/node_modules/**/*.md'
-    ```
-
-    to initialize your dictionary. By default this tool runs in interactive mode so that it can populate a `.spelling` file.
+  .docsrc has two fields: `allow (string[])` and `spelling (string[])`
