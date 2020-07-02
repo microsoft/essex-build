@@ -4,6 +4,8 @@
  */
 import { clean } from '@essex/build-step-clean'
 export async function execute(files: string[]): Promise<number> {
-	return clean(files).then(() => 0, () => 1)
+	return clean(files).then(
+		() => 0,
+		() => 1,
+	)
 }
-

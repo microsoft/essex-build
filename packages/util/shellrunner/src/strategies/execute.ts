@@ -29,8 +29,12 @@ export function execute({
 
 	try {
 		const spawned = npx
-			? spawn('npx', ['-q', ...npxPackages(npx), exec, ...args], options) as ChildProcess 
-			: spawn(exec, args, options) as ChildProcess
+			? (spawn(
+					'npx',
+					['-q', ...npxPackages(npx), exec, ...args],
+					options,
+			  ) as ChildProcess)
+			: (spawn(exec, args, options) as ChildProcess)
 		let output = ''
 		let error = ''
 		if (!toConsole) {
@@ -84,7 +88,7 @@ function scrubEnvVars(env: Record<string, string | undefined>): void {
 function npxPackages(npx: boolean | string[]): string[] {
 	if (!Array.isArray(npx)) {
 		return []
-	} 
+	}
 	const result: string[] = []
 	npx.forEach(p => result.push('-p', p))
 	return result

@@ -6,8 +6,6 @@ import { Stream } from 'stream'
 
 export function streamToPromise(stream: Stream): Promise<void> {
 	return new Promise((resolve, reject) => {
-		stream
-		.on('finish', () => resolve())
-		.on('error', (err) => reject(err))
+		stream.on('finish', () => resolve()).on('error', err => reject(err))
 	})
 }

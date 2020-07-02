@@ -47,10 +47,7 @@ interface AppArgs {
 /**
  * Executes the CLI Application
  */
-function app(
-	input: string[],
-	{ verbose, quiet }: AppArgs,
-): Promise<number> {
+function app(input: string[], { verbose, quiet }: AppArgs): Promise<number> {
 	const extensions = textExtensions
 	const defaultGlobs = [
 		'{README,readme,docs/**/,doc/**/,}*.{' + extensions.join(',') + '}',
@@ -120,7 +117,7 @@ function app(
 					],
 				}),
 			],
-			[filter, { allow: settings.allow }]
+			[filter, { allow: settings.allow }],
 		]
 
 		return { plugins }
