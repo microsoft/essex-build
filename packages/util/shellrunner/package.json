@@ -1,6 +1,6 @@
 {
 	"name": "@essex/shellrunner",
-	"version": "8.0.0-alpha.3",
+	"version": "8.0.0-alpha.4",
 	"description": "A set of utility libraries for executing shell commands",
 	"main": "lib/index.js",
 	"types": "lib/index.d.ts",
