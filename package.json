@@ -35,6 +35,7 @@
 		"typescript": "^3.9.5"
 	},
 	"dependencies": {
+		"@commitlint/config-conventional": "^9.0.1",
 		"@commitlint/lint": "^9.0.1",
 		"@commitlint/load": "^9.0.1",
 		"@commitlint/read": "^9.0.1",

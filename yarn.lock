@@ -1274,6 +1274,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@commitlint/config-conventional@npm:^9.0.1":
+  version: 9.1.1
+  resolution: "@commitlint/config-conventional@npm:9.1.1"
+  dependencies:
+    conventional-changelog-conventionalcommits: 4.3.0
+  checksum: 2db8f76c0b95d359c1cb2089a8f825da9ec007283e9deff5230a9bdb8204cb154cbfb3863f62dfe5d2443c1b4f0ebbd7097065f9a1e357819b1b9cc37f07c9bd
+  languageName: node
+  linkType: hard
+
 "@commitlint/ensure@npm:^9.1.1":
   version: 9.1.1
   resolution: "@commitlint/ensure@npm:9.1.1"
@@ -1407,6 +1416,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/alpha-build-utils@workspace:."
   dependencies:
+    "@commitlint/config-conventional": ^9.0.1
     "@commitlint/lint": ^9.0.1
     "@commitlint/load": ^9.0.1
     "@commitlint/read": ^9.0.1
@@ -1456,24 +1466,6 @@ __metadata:
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
     typescript: 3.9.5
-  languageName: unknown
-  linkType: soft
-
-"@essex/build-step-commitlint@^8.0.0-alpha.3, @essex/build-step-commitlint@workspace:packages/steps/commitlint":
-  version: 0.0.0-use.local
-  resolution: "@essex/build-step-commitlint@workspace:packages/steps/commitlint"
-  dependencies:
-    "@commitlint/lint": ^9.0.1
-    "@commitlint/load": ^9.0.1
-    "@commitlint/read": ^9.0.1
-    "@types/lodash": ^4.14.157
-    "@types/resolve-from": ^5.0.1
-    "@types/resolve-global": ^1.0.0
-    lodash: ^4.17.15
-    resolve-from: ^5.0.0
-    resolve-global: ^1.0.0
-    rimraf: ^3.0.2
-    typescript: ^3.9.6
   languageName: unknown
   linkType: soft
 
@@ -1658,7 +1650,6 @@ __metadata:
   dependencies:
     "@essex/build-step-babel": ^8.0.0-alpha.3
     "@essex/build-step-clean": ^8.0.0-alpha.0
-    "@essex/build-step-commitlint": ^8.0.0-alpha.3
     "@essex/build-step-docs": ^8.0.0-alpha.0
     "@essex/build-step-eslint": ^8.0.0-alpha.0
     "@essex/build-step-pretty-quick": ^8.0.0-alpha.0
@@ -1702,7 +1693,6 @@ __metadata:
   dependencies:
     "@essex/build-step-babel": ^8.0.0-alpha.3
     "@essex/build-step-clean": ^8.0.0-alpha.0
-    "@essex/build-step-commitlint": ^8.0.0-alpha.3
     "@essex/build-step-docs": ^8.0.0-alpha.0
     "@essex/build-step-eslint": ^8.0.0-alpha.0
     "@essex/build-step-pretty-quick": ^8.0.0-alpha.0
@@ -2967,13 +2957,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.14.157":
-  version: 4.14.157
-  resolution: "@types/lodash@npm:4.14.157"
-  checksum: ea8d890a4d78f4690f9d8e5cb03f3581e8ea59047696e2c2114087ec471e891b3ce683e5344c9c15ea7bd9730b79e5fd808b3eff80a01741503ea59922c2bb83
-  languageName: node
-  linkType: hard
-
 "@types/minimatch@npm:*, @types/minimatch@npm:^3.0.3":
   version: 3.0.3
   resolution: "@types/minimatch@npm:3.0.3"
@@ -3015,24 +2998,6 @@ __metadata:
   version: 4.0.0
   resolution: "@types/parse-json@npm:4.0.0"
   checksum: 4a8f720afac47b474d3f2eece312340e72bc31bc9561cda37b596ce2ed218c0099765d302625bb67d659a8452a1f93d514f4863c11c7ebaf65430428687dc426
-  languageName: node
-  linkType: hard
-
-"@types/resolve-from@npm:^5.0.1":
-  version: 5.0.1
-  resolution: "@types/resolve-from@npm:5.0.1"
-  dependencies:
-    resolve-from: "*"
-  checksum: 1fd5e5760b62e602dce2b866a26dd2332efae93d75b6f0bb1dc28a9492984711a4ccbbed4fd09ad900ef08ae60ac73c5617d692de9ed54a8b1a4c47dbfd8cebc
-  languageName: node
-  linkType: hard
-
-"@types/resolve-global@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@types/resolve-global@npm:1.0.0"
-  dependencies:
-    resolve-global: "*"
-  checksum: a835e4300109dbc8fcaadf6a16d16b407ff4f61806ee569932d981c9d0a66a995c43136eacc41576f4462edf7ec2ac15766951cd3972509e0e8803a8fe9710f4
   languageName: node
   linkType: hard
 
@@ -5095,6 +5060,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"compare-func@npm:^1.3.1":
+  version: 1.3.4
+  resolution: "compare-func@npm:1.3.4"
+  dependencies:
+    array-ify: ^1.0.0
+    dot-prop: ^3.0.0
+  checksum: e433d2c27f6c010e9441d5826dd73949f60377b049ba074c7ce56d6368f58cce7c0c15893160d64aef5ffa6bb8ec493f09d451908132afc792d7b25beed07cd6
+  languageName: node
+  linkType: hard
+
 "compare-func@npm:^2.0.0":
   version: 2.0.0
   resolution: "compare-func@npm:2.0.0"
@@ -5195,6 +5170,17 @@ __metadata:
     compare-func: ^2.0.0
     q: ^1.5.1
   checksum: aecf4183da548e678341c2ff77e48b9d523e9c43a99522dc36f0b8a58fdf34bd4959f4ce341bb220634ee9f5af450d64b11b3ae743fbde2537be686b6615f7c6
+  languageName: node
+  linkType: hard
+
+"conventional-changelog-conventionalcommits@npm:4.3.0":
+  version: 4.3.0
+  resolution: "conventional-changelog-conventionalcommits@npm:4.3.0"
+  dependencies:
+    compare-func: ^1.3.1
+    lodash: ^4.17.15
+    q: ^1.5.1
+  checksum: c4cbdf170de104aa77dc607c616cc80491ce959b9f3faa0f0f64361f59dcceb380b34bb82ef0c17189e46a417c65e907fefd9e1cb279ff6b19a7549aa4d67ef0
   languageName: node
   linkType: hard
 
@@ -5943,6 +5929,15 @@ __metadata:
     no-case: ^3.0.3
     tslib: ^1.10.0
   checksum: 31e5037039fb696ed7f1da1d3f0cea5fa0ffe0523334229a2f241856411fbbb59a5a7a6f8ae1447820718797708650bd6f90836d510ec27a81694fbc006c946a
+  languageName: node
+  linkType: hard
+
+"dot-prop@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "dot-prop@npm:3.0.0"
+  dependencies:
+    is-obj: ^1.0.0
+  checksum: 4f10126783ca09bcc5d467cc5a8568e24ee588a76c5d5419b3cba7ab973f0dfb91902846601c1917492c3135813d3db54a84ba08c35ea35ccebd5082e6d733ac
   languageName: node
   linkType: hard
 
@@ -12190,13 +12185,6 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"resolve-from@npm:*, resolve-from@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "resolve-from@npm:5.0.0"
-  checksum: 0d29fc7012eb21f34d2637fa0602694f60e64c14bf5fbd5395b72f6ea5540a6906cbeef062edefc34c22fd802bfe8ae46ef936e6c4a3f1b1047390f9738dd76f
-  languageName: node
-  linkType: hard
-
 "resolve-from@npm:^3.0.0":
   version: 3.0.0
   resolution: "resolve-from@npm:3.0.0"
@@ -12211,7 +12199,14 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"resolve-global@npm:*, resolve-global@npm:^1.0.0":
+"resolve-from@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "resolve-from@npm:5.0.0"
+  checksum: 0d29fc7012eb21f34d2637fa0602694f60e64c14bf5fbd5395b72f6ea5540a6906cbeef062edefc34c22fd802bfe8ae46ef936e6c4a3f1b1047390f9738dd76f
+  languageName: node
+  linkType: hard
+
+"resolve-global@npm:^1.0.0":
   version: 1.0.0
   resolution: "resolve-global@npm:1.0.0"
   dependencies:
