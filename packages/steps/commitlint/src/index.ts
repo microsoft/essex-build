@@ -151,10 +151,6 @@ export async function commitlint(inputFlags: CommitLintArgs) {
 	}
 }
 
-function checkFromStdin(input: string[], flags: CommitLintArgs) {
-	return input.length === 0 && !checkFromRepository(flags)
-}
-
 function checkFromRepository(flags: CommitLintArgs) {
 	return checkFromHistory(flags) || checkFromEdit(flags)
 }
