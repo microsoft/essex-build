@@ -6,6 +6,10 @@ const TEAM = `
 essex
 Essex
 `
+const LEGALESE = `
+MERCHANTABILITY
+NONINFRINGEMENT
+`
 const CORP = `
 microsoft.com
 cla.opensource.microsoft.com
@@ -66,6 +70,8 @@ CVE
 CVEs
 CLA
 CLAs
+SDK
+SDKs
 `
 const JARGON = `
 peerDependency
@@ -93,6 +99,11 @@ formatter
 config
 json
 init
+README
+2D
+3D
+composable
+scalable
 `
 export default `
 ${CORP}
