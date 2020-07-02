@@ -1,6 +1,6 @@
 {
 	"name": "@essex/eslint-plugin",
-	"version": "8.0.0-alpha.6",
+	"version": "8.0.0-alpha.7",
 	"main": "lib/index.js",
 	"license": "MIT",
 	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
