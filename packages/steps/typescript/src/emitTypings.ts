@@ -5,7 +5,7 @@
 import { tsJob } from "./tsJob";
 
 /**
- * Emits typings files into dist/typings
+ * Emits typings files into dist/types
  * @param configFile The tsconfig.json path
  * @param verbose verbose mode
  */
@@ -13,7 +13,7 @@ export async function emitTypings(configFile: string, verbose: boolean): Promise
   return tsJob({
     configFile,
     verbose,
-    dest: 'dist/typings',
+    dest: 'dist/types',
     title: 'typings',
     overrides: {
       declaration: true,
