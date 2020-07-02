@@ -24,9 +24,13 @@ const baseRules = [
 	'plugin:jsx-a11y/recommended',
 	'plugin:jest/recommended',
 	'plugin:jest/style',
-	'plugin:prettier/recommended',
+	'plugin:react-hooks/recommended',
+	'plugin:import/recommended',
+	'plugin:import/typescript',
+	'plugin:@typescript-eslint/recommended',
 	'prettier',
 	'prettier/react',
+	'prettier/@typescript-eslint',
 ]
 
 const baseConfig = {
@@ -39,7 +43,7 @@ const baseConfig = {
 		'react',
 		'react-hooks',
 		'jest',
-		'prettier',
+		'@typescript-eslint',
 	],
 	extends: [...baseRules],
 	env: {
@@ -64,12 +68,6 @@ const baseConfig = {
 	overrides: [
 		{
 			files: ['**/*.ts?(x)'],
-			plugins: ['@typescript-eslint'],
-			extends: [
-				...baseRules,
-				'plugin:@typescript-eslint/recommended',
-				'prettier/@typescript-eslint',
-			],
 			parser: '@typescript-eslint/parser',
 			parserOptions: {
 				ecmaVersion: 2018,
@@ -126,15 +124,14 @@ const baseConfig = {
 				'no-useless-constructor': 'off',
 				'@typescript-eslint/no-useless-constructor': 'warn',
 				// #endregion
-
-				// #region essex rules
-				'@typescript-eslint/interface-name-prefix': 'off',
-				// #endregion
 			},
 		},
 		{
 			files: ['**/*.js?(x)'],
 			extends: [...baseRules, 'prettier/babel'],
+			rules: {
+				'@typescript-eslint/no-var-requires': 'off',
+			},
 		},
 	],
 
@@ -146,6 +143,8 @@ const baseConfig = {
 		'@essex/adjacent-await': 'warn',
 		'no-plusplus': 'off',
 		'react/prop-types': 'off',
+		'import/order': ['warn', { alphabetize: { order: 'asc' } }],
+		'@typescript-eslint/interface-name-prefix': 'off',
 		// #endregion
 
 		// #region prettier/react rules
@@ -314,31 +313,6 @@ const baseConfig = {
 		'react/react-in-jsx-scope': 'error',
 		'react/require-render-return': 'error',
 		'react/style-prop-object': 'warn',
-
-		// https://github.com/evcohen/eslint-plugin-jsx-a11y/tree/master/docs/rules
-		'jsx-a11y/accessible-emoji': 'warn',
-		'jsx-a11y/alt-text': 'warn',
-		'jsx-a11y/anchor-has-content': 'warn',
-		'jsx-a11y/anchor-is-valid': [
-			'warn',
-			{
-				aspects: ['noHref', 'invalidHref'],
-			},
-		],
-		'jsx-a11y/aria-activedescendant-has-tabindex': 'warn',
-		'jsx-a11y/aria-props': 'warn',
-		'jsx-a11y/aria-proptypes': 'warn',
-		'jsx-a11y/aria-role': ['warn', { ignoreNonDOM: true }],
-		'jsx-a11y/aria-unsupported-elements': 'warn',
-		'jsx-a11y/heading-has-content': 'warn',
-		'jsx-a11y/iframe-has-title': 'warn',
-		'jsx-a11y/img-redundant-alt': 'warn',
-		'jsx-a11y/no-access-key': 'warn',
-		'jsx-a11y/no-distracting-elements': 'warn',
-		'jsx-a11y/no-redundant-roles': 'warn',
-		'jsx-a11y/role-has-required-aria-props': 'warn',
-		'jsx-a11y/role-supports-aria-props': 'warn',
-		'jsx-a11y/scope': 'warn',
 
 		// https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks
 		'react-hooks/rules-of-hooks': 'error',

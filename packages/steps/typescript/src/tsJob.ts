@@ -3,10 +3,10 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import * as gulp from 'gulp'
-import * as ts from 'gulp-typescript'
 import * as debug from 'gulp-debug'
-import { streamToPromise } from '@essex/build-util-stream-to-promise'
+import * as ts from 'gulp-typescript'
 import { noop } from '@essex/build-util-noop'
+import { streamToPromise } from '@essex/build-util-stream-to-promise'
 
 export interface TsJobSpec {
 	/**

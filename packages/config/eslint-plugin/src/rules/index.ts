@@ -4,6 +4,8 @@
  */
 import adjacentAwait from './adjacent-await'
 
-export default {
+const rules = {
 	'adjacent-await': adjacentAwait,
 }
+
+export default rules

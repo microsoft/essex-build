@@ -2,14 +2,15 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+/* eslint-disable @essex/adjacent-await */
 import { existsSync, writeFile } from 'fs'
-import * as glob from 'glob'
 import { join, dirname } from 'path'
+import * as glob from 'glob'
+import * as mkdirp from 'mkdirp'
 import {
 	babelCjs as defaultCjs,
 	babelEsm as defaultEsm,
 } from './default-config'
-import * as mkdirp from 'mkdirp'
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { transformFileAsync } = require('@babel/core')
 

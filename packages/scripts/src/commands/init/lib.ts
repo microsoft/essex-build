@@ -3,10 +3,10 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { copyConfigFile } from './util'
+import { writeFileSync } from 'fs'
 import { join } from 'path'
 import { log } from '../../utils'
-import { writeFileSync } from 'fs'
+import { copyConfigFile } from './util'
 
 const pkgJsonPath = join(process.cwd(), 'package.json')
 const pkgJson = require(pkgJsonPath)

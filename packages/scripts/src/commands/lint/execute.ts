@@ -3,10 +3,10 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 // import { Job, run } from '@essex/shellrunner'
-import { prettyQuick } from '@essex/build-step-pretty-quick'
-import { eslint } from '@essex/build-step-eslint'
-import { docs as checkDocs } from '@essex/build-step-docs'
 import { resolveTask } from '../../utils'
+import { docs as checkDocs } from '@essex/build-step-docs'
+import { eslint } from '@essex/build-step-eslint'
+import { prettyQuick } from '@essex/build-step-pretty-quick'
 
 export interface LintCommandOptions {
 	fix?: boolean

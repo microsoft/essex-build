@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { fileExists, rootDir, log, copyFilePromise } from '../../utils'
 import { join } from 'path'
+import { fileExists, rootDir, log, copyFilePromise } from '../../utils'
 
 export function copyConfigFile(file: string): Promise<number> {
 	const scriptPath = join(rootDir, `config/${file}`)

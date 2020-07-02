@@ -13,7 +13,7 @@ function findAncestorParentedByType(node: any, type: string): any {
 	}
 }
 
-export default {
+const noAdjacentAwait = {
 	create(context: any): any {
 		const awaitAncestors = new Map()
 		const awaitExpressions = new Map()
@@ -162,3 +162,4 @@ export default {
 		}
 	},
 }
+export default noAdjacentAwait

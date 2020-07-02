@@ -9,22 +9,22 @@ import {
 	getIndexFile,
 	getBabelConfiguration,
 } from './configValues'
-import { validateConfiguration } from './validate'
-import { log } from './log'
 import { getNodeModulesPaths } from './getNodeModulesPaths'
+import { log } from './log'
+import { validateConfiguration } from './validate'
 
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { join } = require('path')
-const webpack = require('webpack')
+const babelLoader = require('babel-loader')
+const cacheLoader = require('cache-loader')
+const cssLoader = require('css-loader')
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
-const cacheLoader = require('cache-loader')
-const babelLoader = require('babel-loader')
-const tsLoader = require('ts-loader')
-const styleLoader = require('style-loader')
-const cssLoader = require('css-loader')
 const sassLoader = require('sass-loader')
+const styleLoader = require('style-loader')
+const tsLoader = require('ts-loader')
+const webpack = require('webpack')
 
 export interface Configuration {
 	env?: string

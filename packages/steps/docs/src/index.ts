@@ -3,20 +3,20 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
+import { PassThrough } from 'stream'
 import { filter } from './filter'
 import personal from './personal'
-import { PassThrough } from 'stream'
-const engine = require('unified-engine')
-const unified = require('unified')
-const markdown = require('remark-parse')
+const englishDictionary = require('dictionary-en')
 const frontmatter = require('remark-frontmatter')
-const english = require('retext-english')
+const markdown = require('remark-parse')
 const remark2retext = require('remark-retext')
-const report = require('vfile-reporter')
+const english = require('retext-english')
 const equality = require('retext-equality')
 const profanities = require('retext-profanities')
 const spelling = require('retext-spell')
-const englishDictionary = require('dictionary-en')
+const unified = require('unified')
+const engine = require('unified-engine')
+const report = require('vfile-reporter')
 
 /**
  * Checks docs for tonal linting & misspellings

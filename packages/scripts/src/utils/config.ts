@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { getProjectPath, getEssexScriptsPathSync } from './paths'
 import { exists } from 'fs'
+import { getProjectPath, getEssexScriptsPathSync } from './paths'
 
 /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
 export type PackageJson = any

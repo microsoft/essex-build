@@ -2,9 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { BundleMode } from '../build/execute'
 import { getWebpackBundleConfigPath } from '../../utils'
 import { getWebpackArgs } from '../../utils/webpack'
+import { BundleMode } from '../build/execute'
 import { Job, run } from '@essex/shellrunner'
 
 export interface ServeCommandOptions {

@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { prettyQuick } from '@essex/build-step-pretty-quick'
 import { resolveTask } from '../../utils'
+import { prettyQuick } from '@essex/build-step-pretty-quick'
 
 export interface PrettierCommandOptions {
 	verbose: boolean

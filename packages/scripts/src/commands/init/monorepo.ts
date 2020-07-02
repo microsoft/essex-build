@@ -2,9 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { copyConfigFile } from './util'
 import { log } from '../../utils'
 import { recipes } from '../recipes/recipes'
+import { copyConfigFile } from './util'
 
 const INIT_INSTRUCTIONS = `
 To utilize the essex build system, you should define scripts in your package.json file that utilize the build system. Here are some examples:

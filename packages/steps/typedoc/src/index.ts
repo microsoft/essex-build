@@ -2,14 +2,14 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { existsSync } from 'fs'
+import { join } from 'path'
 import {
 	Application,
 	TSConfigReader,
 	TypeDocReader,
 	TypeDocAndTSOptions,
 } from 'typedoc'
-import { existsSync } from 'fs'
-import { join } from 'path'
 
 const packageJsonPath = join(process.cwd(), 'package.json')
 const readmePath = join(process.cwd(), 'README.md')

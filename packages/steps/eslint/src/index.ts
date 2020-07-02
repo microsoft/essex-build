@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+/* eslint-disable @essex/adjacent-await */
 import { existsSync } from 'fs'
 import { join } from 'path'
 import { ESLint } from 'eslint'
@@ -31,7 +32,6 @@ export async function eslint(fix: boolean, strict: boolean): Promise<void> {
 		ignorePath,
 	})
 	const results = await linter.lintFiles(['.'])
-
 	await ESLint.outputFixes(results)
 	const formatter = await linter.loadFormatter('stylish')
 	const resultText = formatter.format(results)

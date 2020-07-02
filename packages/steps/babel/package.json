@@ -23,7 +23,7 @@
 		"@types/glob": "^7.1.2",
 		"@types/node": "^14.0.14",
 		"rimraf": "^3.0.2",
-		"typescript": "3.9.5"
+		"typescript": "3.9.6"
 	},
 	"peerDependencies": {
 		"@babel/core": ">= 7.10.4",

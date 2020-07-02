@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { Job, run } from '@essex/shellrunner'
 import { resolve } from 'path'
+import { Job, run } from '@essex/shellrunner'
 
 const auditCiConfig = resolve(__dirname, '../../../config/.audit-ci.js')
 

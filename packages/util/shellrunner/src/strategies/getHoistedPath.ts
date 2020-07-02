@@ -2,9 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { existsSync } from 'fs'
 import { platform } from 'os'
 import { join, resolve } from 'path'
-import { existsSync } from 'fs'
 import * as log from '../log'
 
 const sep = platform().indexOf('win') === 0 ? ';' : ':'

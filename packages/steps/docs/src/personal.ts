@@ -105,7 +105,7 @@ README
 composable
 scalable
 `
-export default `
+const dictionary = `
 ${CORP}
 ${LEGALESE}
 ${TEAM}
@@ -121,3 +121,4 @@ inclusivity
 e.g.
 BYO
 `
+export default dictionary

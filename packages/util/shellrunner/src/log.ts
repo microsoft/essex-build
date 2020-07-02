@@ -3,8 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import 'colors'
-import { Job } from './types'
 import * as dbg from 'debug'
+import { Job } from './types'
 const debugLog = dbg('essex:shellrunner')
 
 export function subtaskFail(text: string): void {

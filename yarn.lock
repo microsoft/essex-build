@@ -1426,7 +1426,7 @@ __metadata:
     eslint-plugin-jsx-a11y: ^6.3.1
     eslint-plugin-local-rules: ^0.1.1
     eslint-plugin-prettier: ^3.1.4
-    eslint-plugin-react: ^7.20.2
+    eslint-plugin-react: ^7.20.3
     eslint-plugin-react-hooks: ^4.0.5
     eslint-visitor-keys: ^1.3.0
     husky: ^4.2.5
@@ -1435,7 +1435,7 @@ __metadata:
     lodash: ^4.17.15
     npm-run-all: ^4.1.5
     prettier: ^2.0.5
-    typescript: ^3.9.5
+    typescript: ^3.9.6
   languageName: unknown
   linkType: soft
 
@@ -1456,7 +1456,7 @@ __metadata:
     glob: ^7.1.6
     mkdirp: ^1.0.4
     rimraf: ^3.0.2
-    typescript: 3.9.5
+    typescript: 3.9.6
   peerDependencies:
     "@babel/core": ">= 7.10.4"
     "@babel/plugin-proposal-class-properties": ">= 7.10.4"
@@ -1475,7 +1475,7 @@ __metadata:
     "@types/node": ^14.0.14
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
-    typescript: 3.9.5
+    typescript: 3.9.6
   languageName: unknown
   linkType: soft
 
@@ -1494,23 +1494,23 @@ __metadata:
     retext-profanities: ^6.0.0
     retext-spell: ^4.0.0
     rimraf: ^3.0.2
-    typescript: 3.9.5
+    typescript: 3.9.6
     unified: ^9.0.0
     unified-engine: ^8.0.0
     vfile-reporter: ^6.0.1
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-eslint@^8.0.0-alpha.7, @essex/build-step-eslint@workspace:packages/steps/eslint":
+"@essex/build-step-eslint@^8.0.0-alpha.8, @essex/build-step-eslint@workspace:packages/steps/eslint":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-eslint@workspace:packages/steps/eslint"
   dependencies:
-    "@essex/eslint-plugin": ^8.0.0-alpha.7
+    "@essex/eslint-plugin": ^8.0.0-alpha.8
     "@types/eslint": ^7.2.0
     "@types/node": ^14.0.14
     eslint: ^7.3.1
     rimraf: ^3.0.2
-    typescript: 3.9.5
+    typescript: 3.9.6
   languageName: unknown
   linkType: soft
 
@@ -1523,7 +1523,7 @@ __metadata:
     prettier: ^2.0.5
     pretty-quick: ^2.0.1
     rimraf: ^3.0.2
-    typescript: 3.9.5
+    typescript: 3.9.6
   languageName: unknown
   linkType: soft
 
@@ -1534,7 +1534,7 @@ __metadata:
     "@types/node": ^14.0.14
     rimraf: ^3.0.2
     typedoc: ^0.17.8
-    typescript: 3.9.5
+    typescript: 3.9.6
   peerDependencies:
     "@types/node": ">= 14"
   languageName: unknown
@@ -1553,7 +1553,7 @@ __metadata:
     gulp-debug: ^4.0.0
     gulp-typescript: ^6.0.0-alpha.1
     rimraf: ^3.0.2
-    typescript: 3.9.5
+    typescript: 3.9.6
   peerDependencies:
     "@types/node": ">= 14"
   languageName: unknown
@@ -1567,7 +1567,7 @@ __metadata:
     "@types/through2": ^2.0.36
     rimraf: ^3.0.2
     through2: ^4.0.2
-    typescript: 3.9.5
+    typescript: 3.9.6
   languageName: unknown
   linkType: soft
 
@@ -1577,7 +1577,7 @@ __metadata:
   dependencies:
     "@types/node": ^14.0.14
     rimraf: ^3.0.2
-    typescript: 3.9.5
+    typescript: 3.9.6
   peerDependencies:
     "@types/node": ">= 14"
   languageName: unknown
@@ -1587,13 +1587,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/eslint-config@workspace:packages/config/eslint-config"
   dependencies:
-    "@essex/eslint-plugin": ^8.0.0-alpha.7
+    "@essex/eslint-plugin": ^8.0.0-alpha.8
   peerDependencies:
     "@essex/eslint-plugin": ">= 8.0.0-alpha.7"
   languageName: unknown
   linkType: soft
 
-"@essex/eslint-plugin@^8.0.0-alpha.7, @essex/eslint-plugin@workspace:packages/config/eslint-plugin":
+"@essex/eslint-plugin@^8.0.0-alpha.8, @essex/eslint-plugin@workspace:packages/config/eslint-plugin":
   version: 0.0.0-use.local
   resolution: "@essex/eslint-plugin@workspace:packages/config/eslint-plugin"
   dependencies:
@@ -1611,12 +1611,11 @@ __metadata:
     eslint-plugin-jest: ^23.17.1
     eslint-plugin-jsx-a11y: ^6.3.1
     eslint-plugin-local-rules: ^0.1.1
-    eslint-plugin-prettier: ^3.1.4
-    eslint-plugin-react: ^7.20.2
+    eslint-plugin-react: ^7.20.3
     eslint-plugin-react-hooks: ^4.0.5
     prettier: ^2.0.5
     rimraf: ^3.0.2
-    typescript: ^3.9.5
+    typescript: ^3.9.6
   peerDependencies:
     eslint: ">= 7.3.1"
   languageName: unknown
@@ -1640,12 +1639,11 @@ __metadata:
     eslint-plugin-jest: ^23.17.1
     eslint-plugin-jsx-a11y: ^6.3.1
     eslint-plugin-local-rules: ^0.1.1
-    eslint-plugin-prettier: ^3.1.4
-    eslint-plugin-react: ^7.20.2
+    eslint-plugin-react: ^7.20.3
     eslint-plugin-react-hooks: ^4.0.5
     prettier: ^2.0.5
     rimraf: ^3.0.2
-    typescript: ^3.9.5
+    typescript: ^3.9.6
   peerDependencies:
     eslint: ">= 7.3.1"
   languageName: node
@@ -1665,13 +1663,13 @@ __metadata:
     "@essex/build-step-babel": ^8.0.0-alpha.7
     "@essex/build-step-clean": ^8.0.0-alpha.7
     "@essex/build-step-docs": ^8.0.0-alpha.7
-    "@essex/build-step-eslint": ^8.0.0-alpha.7
+    "@essex/build-step-eslint": ^8.0.0-alpha.8
     "@essex/build-step-pretty-quick": ^8.0.0-alpha.6
     "@essex/build-step-typedoc": ^8.0.0-alpha.0
     "@essex/build-step-typescript": ^8.0.0-alpha.7
     "@essex/build-util-noop": ^8.0.0-alpha.7
     "@essex/build-util-stream-to-promise": ^8.0.0-alpha.7
-    "@essex/eslint-plugin": ^8.0.0-alpha.7
+    "@essex/eslint-plugin": ^8.0.0-alpha.8
     "@essex/shellrunner": ^8.0.0-alpha.7
     "@essex/webpack-config": ^8.0.0-alpha.7
     "@types/node": ^14.0.14
@@ -1679,14 +1677,14 @@ __metadata:
     commander: ^5.1.0
     core-js: ^3.6.5
     crlf: ^1.1.1
-    debug: ^4.1.1
+    debug: ^4.2.0
     npm-run-all: ^4.1.5
     prettier: ^2.0.5
     regenerator-runtime: ^0.13.5
     rimraf: ^3.0.2
     shx: ^0.3.2
     supports-color: ^7.1.0
-    typescript: ^3.9.5
+    typescript: ^3.9.6
   peerDependencies:
     husky: ">= 4"
     lint-staged: ">= 10.2"
@@ -1711,13 +1709,13 @@ __metadata:
     "@essex/build-step-babel": ^8.0.0-alpha.7
     "@essex/build-step-clean": ^8.0.0-alpha.7
     "@essex/build-step-docs": ^8.0.0-alpha.7
-    "@essex/build-step-eslint": ^8.0.0-alpha.7
+    "@essex/build-step-eslint": ^8.0.0-alpha.8
     "@essex/build-step-pretty-quick": ^8.0.0-alpha.6
     "@essex/build-step-typedoc": ^8.0.0-alpha.0
     "@essex/build-step-typescript": ^8.0.0-alpha.7
     "@essex/build-util-noop": ^8.0.0-alpha.7
     "@essex/build-util-stream-to-promise": ^8.0.0-alpha.7
-    "@essex/eslint-plugin": ^8.0.0-alpha.7
+    "@essex/eslint-plugin": ^8.0.0-alpha.8
     "@essex/shellrunner": ^8.0.0-alpha.7
     "@essex/webpack-config": ^8.0.0-alpha.7
     "@types/node": ^14.0.14
@@ -1725,14 +1723,14 @@ __metadata:
     commander: ^5.1.0
     core-js: ^3.6.5
     crlf: ^1.1.1
-    debug: ^4.1.1
+    debug: ^4.2.0
     npm-run-all: ^4.1.5
     prettier: ^2.0.5
     regenerator-runtime: ^0.13.5
     rimraf: ^3.0.2
     shx: ^0.3.2
     supports-color: ^7.1.0
-    typescript: ^3.9.5
+    typescript: ^3.9.6
   peerDependencies:
     husky: ">= 4"
     lint-staged: ">= 10.2"
@@ -1757,10 +1755,10 @@ __metadata:
     "@types/node": ^14.0.14
     colors: ^1.4.0
     cross-spawn: ^7.0.3
-    debug: ^4.1.1
+    debug: ^4.2.0
     rimraf: ^3.0.2
     supports-color: ^7.1.0
-    typescript: ^3.9.5
+    typescript: ^3.9.6
   languageName: unknown
   linkType: soft
 
@@ -1774,8 +1772,8 @@ __metadata:
     babel-loader: ^8.1.0
     cache-loader: ^4.1.0
     css-loader: ^3.6.0
-    debug: ^4.1.1
-    fork-ts-checker-webpack-plugin: ^5.0.5
+    debug: ^4.2.0
+    fork-ts-checker-webpack-plugin: ^5.0.6
     html-webpack-plugin: ^4.3.0
     mini-css-extract-plugin: ^0.9.0
     rimraf: ^3.0.2
@@ -5602,7 +5600,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:^4.0.0, debug@npm:^4.0.1, debug@npm:^4.1.0, debug@npm:^4.1.1":
+"debug@npm:^4.0.0, debug@npm:^4.0.1, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.2.0":
   version: 4.2.0
   resolution: "debug@npm:4.2.0"
   dependencies:
@@ -6366,9 +6364,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react@npm:^7.20.2":
-  version: 7.20.2
-  resolution: "eslint-plugin-react@npm:7.20.2"
+"eslint-plugin-react@npm:^7.20.3":
+  version: 7.20.3
+  resolution: "eslint-plugin-react@npm:7.20.3"
   dependencies:
     array-includes: ^3.1.1
     array.prototype.flatmap: ^1.2.3
@@ -6383,7 +6381,7 @@ __metadata:
     string.prototype.matchall: ^4.0.2
   peerDependencies:
     eslint: ^3 || ^4 || ^5 || ^6 || ^7
-  checksum: 32c80f386189272f84909b6c742d058a838f429484524e8221ee76c0f25f7450668fd19ae26a651f85aa9f774da7cf1f01ee19dba7232e89d1211e887c967884
+  checksum: 00b1e5045e490515bf79912d8658cc9bba5f299a07df29e2dc4c643c15f821132a6fdade7b7525882dcf8ee37ecf1b3f93f23ad413f1bcce8b09f62e46264e09
   languageName: node
   linkType: hard
 
@@ -6985,9 +6983,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fork-ts-checker-webpack-plugin@npm:^5.0.5":
-  version: 5.0.5
-  resolution: "fork-ts-checker-webpack-plugin@npm:5.0.5"
+"fork-ts-checker-webpack-plugin@npm:^5.0.6":
+  version: 5.0.6
+  resolution: "fork-ts-checker-webpack-plugin@npm:5.0.6"
   dependencies:
     "@babel/code-frame": ^7.8.3
     chalk: ^2.4.1
@@ -6999,7 +6997,7 @@ __metadata:
     schema-utils: 1.0.0
     semver: ^5.6.0
     tapable: ^1.0.0
-  checksum: fc62aedfa0b2b98bbbedd53f3a933a3b4b2b92091d9c0e5f87f71145ce7d191e4d3c4126b33db7cec310759f6300bf062b8ced0c78701ef65dfcfe0b79c6947d
+  checksum: c1a66a0629140b40030b0b6ca330dc0bb963b8dcaadd0fb8e63abd1ba392eaa02b3752809bf605637b7db85ef7415a0e6f158e7b9127d3c2f447b7c609ef0700
   languageName: node
   linkType: hard
 
@@ -13878,17 +13876,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"typescript@3.9.5, typescript@^3.9.5":
-  version: 3.9.5
-  resolution: "typescript@npm:3.9.5"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 15618435493667083eb43dc7b36c4d3dd47fd9e9c8a14f0ac4019bbf6124b6cc518b6ed506400913db1bf50831207ee8201b5d827680076930b562923f4f18a0
-  languageName: node
-  linkType: hard
-
-typescript@^3.9.6:
+"typescript@3.9.6, typescript@^3.9.6":
   version: 3.9.6
   resolution: "typescript@npm:3.9.6"
   bin:
@@ -13898,17 +13886,7 @@ typescript@^3.9.6:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@3.9.5#builtin<compat/typescript>, typescript@patch:typescript@^3.9.5#builtin<compat/typescript>":
-  version: 3.9.5
-  resolution: "typescript@patch:typescript@npm%3A3.9.5#builtin<compat/typescript>::version=3.9.5&hash=64df9d"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 5849aa7c2d887b4d0b289530b45690fc26e606ea3719cf958dbb7f531ca1b968895bbef89b21ecb3903d5039fb047ebf6a0047ba147123060cbe1940ce5c91be
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@^3.9.6#builtin<compat/typescript>":
+"typescript@patch:typescript@3.9.6#builtin<compat/typescript>, typescript@patch:typescript@^3.9.6#builtin<compat/typescript>":
   version: 3.9.6
   resolution: "typescript@patch:typescript@npm%3A3.9.6#builtin<compat/typescript>::version=3.9.6&hash=64df9d"
   bin:
