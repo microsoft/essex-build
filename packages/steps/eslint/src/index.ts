@@ -2,24 +2,24 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import '@typescript-eslint/eslint-plugin'
+import '@typescript-eslint/parser'
+import 'babel-eslint'
+import 'eslint-config-prettier'
+import 'eslint-plugin-flowtype'
+import 'eslint-plugin-header'
+import 'eslint-plugin-import'
+import 'eslint-plugin-jest'
+import 'eslint-plugin-jsx-a11y'
+import 'eslint-plugin-prettier'
+import 'eslint-plugin-react'
+import 'eslint-plugin-react-hooks'
+import '@essex/eslint-plugin'
+import '@essex/eslint-config'
+
 import { existsSync } from 'fs'
 import { join } from 'path'
 import { ESLint } from 'eslint'
-
-require('@typescript-eslint/eslint-plugin')
-require('@typescript-eslint/parser')
-require('@essex/eslint-plugin')
-require('@essex/eslint-config')
-require('babel-eslint')
-require('eslint-config-prettier')
-require('eslint-plugin-flowtype')
-require('eslint-plugin-header')
-require('eslint-plugin-import')
-require('eslint-plugin-jest')
-require('eslint-plugin-jsx-a11y')
-require('eslint-plugin-prettier')
-require('eslint-plugin-react')
-require('eslint-plugin-react-hooks')
 
 const releaseConfig = join(__dirname, '../config/.eslintrc-release')
 const experimentConfig = join(__dirname, '../config/.eslintrc-experiment')
