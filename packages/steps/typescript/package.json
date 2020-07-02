@@ -1,27 +1,27 @@
 {
-  "name": "@essex/build-step-typescript",
-  "version": "8.0.0-alpha.3",
-  "main": "lib/index.js",
-  "typings": "lib/index.d.ts",
-  "scripts": {
-    "clean": "rimraf dist lib",
-    "build": "tsc"
-  },
-  "dependencies": {
-    "@essex/build-util-noop": "^8.0.0-alpha.0",
-    "@essex/build-util-stream-to-promise": "^8.0.0-alpha.0",
-    "gulp": "^4.0.2",
-    "gulp-debug": "^4.0.0",
-    "gulp-typescript": "^6.0.0-alpha.1"
-  },
-  "devDependencies": {
-    "@types/gulp": "^4.0.6",
-    "@types/gulp-debug": "^2.0.31",
-    "@types/node": "^14.0.14",
-    "rimraf": "^3.0.2",
-    "typescript": "3.9.5"
-  },
-  "peerDependencies": {
-    "@types/node": ">= 14"
-  }
+	"name": "@essex/build-step-typescript",
+	"version": "8.0.0-alpha.6",
+	"main": "lib/index.js",
+	"typings": "lib/index.d.ts",
+	"scripts": {
+		"clean": "rimraf dist lib",
+		"build": "tsc"
+	},
+	"dependencies": {
+		"@essex/build-util-noop": "^8.0.0-alpha.6",
+		"@essex/build-util-stream-to-promise": "^8.0.0-alpha.0",
+		"gulp": "^4.0.2",
+		"gulp-debug": "^4.0.0",
+		"gulp-typescript": "^6.0.0-alpha.1"
+	},
+	"devDependencies": {
+		"@types/gulp": "^4.0.6",
+		"@types/gulp-debug": "^2.0.31",
+		"@types/node": "^14.0.14",
+		"rimraf": "^3.0.2",
+		"typescript": "3.9.5"
+	},
+	"peerDependencies": {
+		"@types/node": ">= 14"
+	}
 }
