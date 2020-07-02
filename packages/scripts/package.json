@@ -105,5 +105,10 @@
 	},
 	"peerDependencies": {
 		"husky": ">= 4"
+	},
+	"peerDependenciesMeta": {
+		"husky": {
+			"optional": true
+		}
 	}
 }
