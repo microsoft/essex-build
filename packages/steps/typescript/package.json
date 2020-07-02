@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-typescript",
-	"version": "8.0.0-alpha.7",
+	"version": "8.0.0-alpha.9",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
 	"scripts": {
@@ -8,8 +8,8 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@essex/build-util-noop": "^8.0.0-alpha.7",
-		"@essex/build-util-stream-to-promise": "^8.0.0-alpha.7",
+		"@essex/build-util-noop": "^8.0.0-alpha.9",
+		"@essex/build-util-stream-to-promise": "^8.0.0-alpha.9",
 		"gulp": "^4.0.2",
 		"gulp-debug": "^4.0.0",
 		"gulp-typescript": "^6.0.0-alpha.1"
