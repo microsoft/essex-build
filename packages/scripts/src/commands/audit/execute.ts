@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { run } from '@essex/shellrunner'
+import { Job, run } from '@essex/shellrunner'
 import { resolve } from 'path'
 
 const auditCiConfig = resolve(__dirname, '../../../config/.audit-ci.js')
@@ -17,12 +17,23 @@ export interface AuditCommandOptions {
 }
 
 export async function execute(options: AuditCommandOptions): Promise<number> {
-	const { code } = await run(
-		// Audit CVEs
-		{ exec: 'audit-ci', args: ['--config', auditCiConfig], npx: true },
+	try {
+		const { code } = await run(checkSecurityIssues, checkLicenses)
+		return code
+	} catch (err) {
+		console.error('audit error', err)
+		return 1
+	}
+}
 
-		// Check Licenses
-		{ exec: 'license-to-fail', args: [licenseConfig], npx: true },
-	)
-	return code
+// Audit CVEs
+const checkSecurityIssues: Job = {
+	exec: 'audit-ci',
+	args: ['--config', auditCiConfig],
+	npx: true,
+}
+const checkLicenses: Job = {
+	exec: 'license-to-fail',
+	args: [licenseConfig],
+	npx: true,
 }

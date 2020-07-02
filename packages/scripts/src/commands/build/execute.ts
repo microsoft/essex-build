@@ -24,17 +24,21 @@ export interface BuildCommandOptions {
 	mode?: BundleMode
 }
 
-export function execute({
+export async function execute({
 	verbose = false,
 	env = 'production',
 	docs = false,
 	mode = BundleMode.production,
 }: BuildCommandOptions): Promise<number> {
-	return executeTypeScriptJobs(verbose, docs)
-		.then(() => executeBabelJobs(verbose))
-		.then(() => executeBundleJobs(verbose, env, mode))
-		.then(() => 0)
-		.catch(() => 1)
+	try {
+		await executeTypeScriptJobs(verbose, docs)
+		await executeBabelJobs(verbose)
+		await executeBundleJobs(verbose, env, mode)
+		return 0
+	} catch (err) {
+		console.error('build error', err)
+		return 1
+	}
 }
 
 function executeTypeScriptJobs(verbose: boolean, docs: boolean): Promise<any> {
