@@ -4,6 +4,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
+import 'supports-color'
 import { readdirSync } from 'fs'
 import { join } from 'path'
 import * as program from 'commander'

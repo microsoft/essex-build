@@ -17,7 +17,6 @@ import * as mkdirp from 'mkdirp'
  * @param verbose
  */
 export async function babelCjs(verbose: boolean): Promise<void> {
-	console.log('cjs A')
 	const cjsOverridePath = join(process.cwd(), 'babelrc.cjs.js')
 	const cjsConfig = existsSync(cjsOverridePath)
 		? require(cjsOverridePath)
@@ -39,7 +38,6 @@ export async function babelCjs(verbose: boolean): Promise<void> {
  * @param verbose
  */
 export async function babelEsm(verbose: boolean): Promise<void> {
-	console.log('ESM A')
 	const esmOverridePath = join(process.cwd(), 'babelrc.esm.js')
 	const esmConfig = existsSync(esmOverridePath)
 		? require(esmOverridePath)

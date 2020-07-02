@@ -2,13 +2,14 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+/* eslint-disable @essex/adjacent-await */
 import { existsSync } from 'fs'
 import { join, resolve } from 'path'
 import { Job, run } from '@essex/shellrunner'
 import { babelEsm, babelCjs } from '@essex/build-step-babel'
 import { compileTypescript, emitTypings } from '@essex/build-step-typescript'
 import { generateTypedocs } from '@essex/build-step-typedoc'
-import { success, fail, subtaskSuccess, subtaskFail } from '../../utils/log'
+import { fail } from '../../utils/log'
 import { getWebpackArgs } from '../../utils/webpack'
 import { resolveTask } from '../../utils'
 
@@ -33,11 +34,8 @@ export async function execute({
 }: BuildCommandOptions): Promise<number> {
 	try {
 		await executeTypeScriptJobs(verbose, docs)
-		success('typescript jobs')
 		await executeBabelJobs(verbose)
-		success('babel jobs')
 		await executeBundleJobs(verbose, env, mode)
-		success('bundler jobs')
 		return 0
 	} catch (err) {
 		fail('build error', err)

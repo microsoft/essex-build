@@ -1,6 +1,6 @@
 {
   "**/*": [
-    "pretty-quick --staged"
+    "essex prettify --staged"
   ],
   "**/*.{js,jsx,ts,tsx}": [
     "essex lint --fix --staged"

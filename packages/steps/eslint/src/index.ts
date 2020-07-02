@@ -6,6 +6,21 @@ import { existsSync } from 'fs'
 import { join } from 'path'
 import { ESLint } from 'eslint'
 
+require('@typescript-eslint/eslint-plugin')
+require('@typescript-eslint/parser')
+require('@essex/eslint-plugin')
+require('@essex/eslint-config')
+require('babel-eslint')
+require('eslint-config-prettier')
+require('eslint-plugin-flowtype')
+require('eslint-plugin-header')
+require('eslint-plugin-import')
+require('eslint-plugin-jest')
+require('eslint-plugin-jsx-a11y')
+require('eslint-plugin-prettier')
+require('eslint-plugin-react')
+require('eslint-plugin-react-hooks')
+
 const releaseConfig = join(__dirname, '../config/.eslintrc-release')
 const experimentConfig = join(__dirname, '../config/.eslintrc-experiment')
 const projectConfig = join(process.cwd(), '.eslintrc')

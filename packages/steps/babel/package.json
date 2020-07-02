@@ -19,6 +19,7 @@
 		"mkdirp": "^1.0.4"
 	},
 	"devDependencies": {
+		"@types/babel__core": "^7.1.9",
 		"@types/glob": "^7.1.2",
 		"@types/node": "^14.0.14",
 		"rimraf": "^3.0.2",

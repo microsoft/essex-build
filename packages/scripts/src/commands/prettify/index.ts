@@ -13,6 +13,7 @@ export default function prettify(program: Command): void {
 	program
 		.command('prettify')
 		.option('-v, --verbose', 'verbose output')
+		.option('--staged', 'run on staged files')
 		.action(async (options: PrettierCommandOptions) => {
 			const code = await execute(options)
 			process.exit(code)

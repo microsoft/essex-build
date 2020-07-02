@@ -12,6 +12,8 @@ import {
 import { validateConfiguration } from './validate'
 import { log } from './log'
 import { getNodeModulesPaths } from './getNodeModulesPaths'
+
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { join } = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -87,7 +89,7 @@ export function configure({
 
 	const buildPath = join(process.cwd(), 'build/')
 
-	let result = {
+	const result = {
 		mode: isDevelopment ? 'development' : 'production',
 		entry: getIndexFile(),
 		devtool: 'cheap-module-source-map',

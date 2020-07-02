@@ -4,13 +4,18 @@
  */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { getConfigPath } from '../../utils'
-import { run } from '@essex/shellrunner'
+import { commitlint } from '@essex/build-step-commitlint'
 
 export async function execute(): Promise<number> {
-	const commitLintPath = await getConfigPath('commitlint.config.js')!
-	const { code } = await run({
-		exec: 'commitlint',
-		args: ['--config', commitLintPath, '-E', 'HUSKY_GIT_PARAMS'],
-	})
-	return code
+	try {
+		const commitLintPath = await getConfigPath('commitlint.config.js')!
+		commitlint({
+			config: commitLintPath,
+			env: 'HUSKY_GIT_PARAMS',
+		})
+		return 0
+	} catch (err) {
+		console.error('error running commitlint', err)
+		return 1
+	}
 }
