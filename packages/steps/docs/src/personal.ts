@@ -107,6 +107,7 @@ scalable
 `
 export default `
 ${CORP}
+${LEGALESE}
 ${TEAM}
 ${TOOLS}
 ${JARGON}

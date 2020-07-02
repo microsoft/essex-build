@@ -7,10 +7,10 @@ const path = require('path')
 
 // https://stackoverflow.com/a/10915442
 function load(dir) {
-	fs.lstat(dir, function(err1) {
+	fs.lstat(dir, function (err1) {
 		if (!err1) {
 			// we have a directory: do a tree walk
-			fs.readdir(dir, function(err, files) {
+			fs.readdir(dir, function (err, files) {
 				if (!err) {
 					let f
 					const l = files.length

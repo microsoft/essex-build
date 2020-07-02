@@ -27,7 +27,6 @@
 		]
 	},
 	"devDependencies": {
-		"@essex/eslint-config": "portal:./packages/config/eslint-config",
 		"@essex/eslint-plugin": "portal:./packages/config/eslint-plugin",
 		"@essex/scripts": "portal:./packages/scripts",
 		"@types/node": "^14.0.14",
@@ -62,5 +61,8 @@
 		"@commitlint/read": "^9.0.1",
 		"eslint-plugin-jsx-a11y": "^6.3.1",
 		"lodash": "^4.17.15"
+	},
+	"resolutions": {
+		"@babel/types": "7.10.4"
 	}
 }

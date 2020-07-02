@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-export default {
+const experimentConfig = {
 	extends: ['plugin:@essex/base'],
 }
+export default experimentConfig

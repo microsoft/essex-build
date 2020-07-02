@@ -1252,18 +1252,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/types@npm:^7.10.1, @babel/types@npm:^7.10.3, @babel/types@npm:^7.4.4, @babel/types@npm:^7.7.0":
-  version: 7.10.3
-  resolution: "@babel/types@npm:7.10.3"
-  dependencies:
-    "@babel/helper-validator-identifier": ^7.10.3
-    lodash: ^4.17.13
-    to-fast-properties: ^2.0.0
-  checksum: 7c41a5a0e66b7ccd002cc9e395ccd269c6a1e94035193f66f021cca0880c9e999eb1a25fa363e4295a4a5b5b3653a8f5bb13bf2d0abc9e8e427ad9aaedcf1935
-  languageName: node
-  linkType: hard
-
-"@babel/types@npm:^7.10.4":
+"@babel/types@npm:7.10.4":
   version: 7.10.4
   resolution: "@babel/types@npm:7.10.4"
   dependencies:
@@ -1420,7 +1409,6 @@ __metadata:
     "@commitlint/lint": ^9.0.1
     "@commitlint/load": ^9.0.1
     "@commitlint/read": ^9.0.1
-    "@essex/eslint-config": "portal:./packages/config/eslint-config"
     "@essex/eslint-plugin": "portal:./packages/config/eslint-plugin"
     "@essex/scripts": "portal:./packages/scripts"
     "@types/node": ^14.0.14
@@ -1517,21 +1505,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/build-step-eslint@workspace:packages/steps/eslint"
   dependencies:
+    "@essex/eslint-plugin": ^8.0.0-alpha.6
     "@types/eslint": ^7.2.0
     "@types/node": ^14.0.14
-    "@typescript-eslint/eslint-plugin": ^3.5.0
-    "@typescript-eslint/parser": ^3.5.0
-    babel-eslint: ^10.1.0
     eslint: ^7.3.1
-    eslint-config-prettier: ^6.11.0
-    eslint-plugin-header: ^3.0.0
-    eslint-plugin-import: ^2.22.0
-    eslint-plugin-jest: ^23.17.1
-    eslint-plugin-jsx-a11y: ^6.3.1
-    eslint-plugin-local-rules: ^0.1.1
-    eslint-plugin-prettier: ^3.1.4
-    eslint-plugin-react: ^7.20.2
-    eslint-plugin-react-hooks: ^4.0.5
     rimraf: ^3.0.2
     typescript: 3.9.5
   languageName: unknown
@@ -1606,30 +1583,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/eslint-config@^8.0.0-alpha.6, @essex/eslint-config@workspace:packages/config/eslint-config":
-  version: 0.0.0-use.local
-  resolution: "@essex/eslint-config@workspace:packages/config/eslint-config"
-  dependencies:
-    "@essex/eslint-plugin": ^8.0.0-alpha.6
-  peerDependencies:
-    "@essex/eslint-plugin": ">= 7.4.0"
-  languageName: unknown
-  linkType: soft
-
-"@essex/eslint-config@portal:./packages/config/eslint-config::locator=%40essex%2Falpha-build-utils%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@essex/eslint-config@portal:./packages/config/eslint-config::locator=%40essex%2Falpha-build-utils%40workspace%3A."
-  dependencies:
-    "@essex/eslint-plugin": ^8.0.0-alpha.6
-  peerDependencies:
-    "@essex/eslint-plugin": ">= 7.4.0"
-  languageName: node
-  linkType: soft
-
 "@essex/eslint-plugin@^8.0.0-alpha.6, @essex/eslint-plugin@workspace:packages/config/eslint-plugin":
   version: 0.0.0-use.local
   resolution: "@essex/eslint-plugin@workspace:packages/config/eslint-plugin"
   dependencies:
+    "@babel/core": ^7.10.4
+    "@babel/types": ^7.10.4
     "@types/node": ^14.0.14
     "@typescript-eslint/eslint-plugin": ^3.5.0
     "@typescript-eslint/parser": ^3.5.0
@@ -1657,6 +1616,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/eslint-plugin@portal:./packages/config/eslint-plugin::locator=%40essex%2Falpha-build-utils%40workspace%3A."
   dependencies:
+    "@babel/core": ^7.10.4
+    "@babel/types": ^7.10.4
     "@types/node": ^14.0.14
     "@typescript-eslint/eslint-plugin": ^3.5.0
     "@typescript-eslint/parser": ^3.5.0
@@ -1690,6 +1651,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/scripts@portal:./packages/scripts::locator=%40essex%2Falpha-build-utils%40workspace%3A."
   dependencies:
+    "@babel/types": ^7.10.4
     "@essex/build-step-babel": ^8.0.0-alpha.6
     "@essex/build-step-clean": ^8.0.0-alpha.6
     "@essex/build-step-docs": ^8.0.0-alpha.0
@@ -1699,7 +1661,6 @@ __metadata:
     "@essex/build-step-typescript": ^8.0.0-alpha.6
     "@essex/build-util-noop": ^8.0.0-alpha.6
     "@essex/build-util-stream-to-promise": ^8.0.0-alpha.0
-    "@essex/eslint-config": ^8.0.0-alpha.6
     "@essex/eslint-plugin": ^8.0.0-alpha.6
     "@essex/shellrunner": ^8.0.0-alpha.4
     "@essex/webpack-config": ^8.0.0-alpha.6
@@ -1736,6 +1697,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/scripts@workspace:packages/scripts"
   dependencies:
+    "@babel/types": ^7.10.4
     "@essex/build-step-babel": ^8.0.0-alpha.6
     "@essex/build-step-clean": ^8.0.0-alpha.6
     "@essex/build-step-docs": ^8.0.0-alpha.0
@@ -1745,7 +1707,6 @@ __metadata:
     "@essex/build-step-typescript": ^8.0.0-alpha.6
     "@essex/build-util-noop": ^8.0.0-alpha.6
     "@essex/build-util-stream-to-promise": ^8.0.0-alpha.0
-    "@essex/eslint-config": ^8.0.0-alpha.6
     "@essex/eslint-plugin": ^8.0.0-alpha.6
     "@essex/shellrunner": ^8.0.0-alpha.4
     "@essex/webpack-config": ^8.0.0-alpha.6
@@ -1797,6 +1758,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/webpack-config@workspace:packages/config/webpack-config"
   dependencies:
+    "@babel/core": ^7.10.4
     "@types/debug": ^4.1.5
     "@types/node": ^14.0.14
     babel-loader: ^8.1.0

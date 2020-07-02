@@ -18,6 +18,7 @@
 		"essex-scripts": "./lib/index.js"
 	},
 	"dependencies": {
+		"@babel/types": "^7.10.4",
 		"@essex/build-step-babel": "^8.0.0-alpha.6",
 		"@essex/build-step-clean": "^8.0.0-alpha.6",
 		"@essex/build-step-docs": "^8.0.0-alpha.0",
@@ -27,7 +28,6 @@
 		"@essex/build-step-typescript": "^8.0.0-alpha.6",
 		"@essex/build-util-noop": "^8.0.0-alpha.6",
 		"@essex/build-util-stream-to-promise": "^8.0.0-alpha.0",
-		"@essex/eslint-config": "^8.0.0-alpha.6",
 		"@essex/eslint-plugin": "^8.0.0-alpha.6",
 		"@essex/shellrunner": "^8.0.0-alpha.4",
 		"@essex/webpack-config": "^8.0.0-alpha.6",

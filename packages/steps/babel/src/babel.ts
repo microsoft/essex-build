@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { existsSync, writeFile, mkdir } from 'fs'
+import { existsSync, writeFile } from 'fs'
 import * as glob from 'glob'
 import { join, dirname } from 'path'
 import {
@@ -22,7 +22,6 @@ export async function babelCjs(verbose: boolean): Promise<void> {
 	const cjsConfig = existsSync(cjsOverridePath)
 		? require(cjsOverridePath)
 		: defaultCjs
-	const title = 'babel-cjs'
 	return new Promise((resolve, reject) => {
 		glob('lib/**/*.js', {}, (err, files) => {
 			if (err) {
@@ -43,7 +42,6 @@ export async function babelEsm(verbose: boolean): Promise<void> {
 	const esmConfig = existsSync(esmOverridePath)
 		? require(esmOverridePath)
 		: defaultEsm
-	const title = 'babel-esm'
 	return new Promise((resolve, reject) => {
 		glob('lib/**/*.js', {}, (err, files) => {
 			if (err) {

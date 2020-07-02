@@ -24,7 +24,7 @@ The following static verification checks are performed when this command is invo
 
   - `<rootDir>/.eslintrc`<br/>
     `<rootDir>/.eslintignore`<br/>
-    Linting configuration may be overridden by defining this file. By default the `@essex/eslint-config` preset will be used for linting. Details on that preset can be found in this repository under `packages/eslint-config`. Essex projects should have an .eslintrc file that extends from `@essex/eslint-config` and enables or disables certain rules. This ruleset disables stylistic rules, and allows prettier-based tooling to manage those.
+    Linting configuration may be overridden by defining this file. By default the `plugin:@essex/experiment` preset will be used for linting. Details on that preset can be found in this repository under `packages/eslint-config`. Essex projects should have an .eslintrc file that extends from `@essex/experiment` and enables or disables certain rules. This ruleset disables stylistic rules, and allows prettier-based tooling to manage those.
 
 - ## pretty-quick --check
 

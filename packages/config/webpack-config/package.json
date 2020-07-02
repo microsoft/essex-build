@@ -8,6 +8,7 @@
 		"build": "tsc"
 	},
 	"dependencies": {
+		"@babel/core": "^7.10.4",
 		"babel-loader": "^8.1.0",
 		"cache-loader": "^4.1.0",
 		"css-loader": "^3.6.0",

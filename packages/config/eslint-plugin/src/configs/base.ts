@@ -2,6 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+// Based on eslint-config-react-app
+// https://github.com/facebook/create-react-app/blob/master/packages/eslint-config-react-app/index.js
 import { existsSync } from 'fs'
 import { join } from 'path'
 import { msHeader } from './msHeader'
@@ -14,11 +16,8 @@ const headerFile = existsSync(HEADER_OVERRIDE) ? HEADER_OVERRIDE : msHeader
 // This is dangerous as it hides accidentally undefined variables.
 // We blacklist the globals that we deem potentially confusing.
 // To use them, explicitly reference them, e.g. `window.name` or `window.status`.
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const restrictedGlobals = require('confusing-browser-globals')
-
-// #region Force PnP
-require('prettier')
-// #endregion
 
 const baseRules = [
 	'plugin:react/recommended',
@@ -30,7 +29,7 @@ const baseRules = [
 	'prettier/react',
 ]
 
-export default {
+const baseConfig = {
 	parser: 'babel-eslint',
 	plugins: [
 		'@essex',
@@ -345,3 +344,5 @@ export default {
 		// #endregion
 	},
 }
+
+export default baseConfig

@@ -7,10 +7,10 @@ const { readFileSync } = require('fs')
 /**
  * Takes a tslint test case file and turns it into a set of eslint compatible code segments, errors
  */
-module.exports = function(testCasePath) {
+module.exports = function (testCasePath) {
 	const errors = []
 	let code = readFileSync(testCasePath).toString()
-	code = code.replace(/(~+)\s+\[([^\]]+)\]/g, function(
+	code = code.replace(/(~+)\s+\[([^\]]+)\]/g, function (
 		instance,
 		errorHighlight,
 		message,
