@@ -4,8 +4,10 @@
  */
 import experiment from './experiment'
 import release from './release'
+import base from './base'
 
 export default {
+	base,
 	experiment,
 	release,
 }
