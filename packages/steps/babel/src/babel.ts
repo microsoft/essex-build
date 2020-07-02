@@ -2,7 +2,6 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import * as babel from '@babel/core'
 import { existsSync, writeFile, mkdir } from 'fs'
 import * as glob from 'glob'
 import { join, dirname } from 'path'
@@ -11,6 +10,7 @@ import {
 	babelEsm as defaultEsm,
 } from './default-config'
 import * as mkdirp from 'mkdirp'
+const { transformFileAsync } = require('@babel/core')
 
 /**
  * Transpile ts output into babel cjs
@@ -69,7 +69,7 @@ async function transformFile(
 	dist: string,
 ): Promise<void> {
 	const newFile = file.replace('lib', `dist/${dist}`)
-	const result = await babel.transformFileAsync(file, opts)
+	const result = await transformFileAsync(file, opts)
 	await mkdirp(dirname(newFile))
 	return new Promise((resolve, reject) => {
 		writeFile(newFile, result?.code || 'output error', {}, err => {

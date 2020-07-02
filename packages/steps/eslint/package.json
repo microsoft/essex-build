@@ -7,9 +7,11 @@
 		"clean": "rimraf dist lib",
 		"build": "tsc"
 	},
+	"files": [
+		"lib/",
+		"config/"
+	],
 	"dependencies": {
-		"@essex/eslint-config": "^8.0.0-alpha.0",
-		"@essex/eslint-plugin": "^8.0.0-alpha.0",
 		"@typescript-eslint/eslint-plugin": "^3.5.0",
 		"@typescript-eslint/parser": "^3.5.0",
 		"babel-eslint": "^10.1.0",
@@ -30,9 +32,5 @@
 		"@types/node": "^14.0.14",
 		"rimraf": "^3.0.2",
 		"typescript": "3.9.5"
-	},
-	"peerDependencies": {
-		"@essex/eslint-config": ">= 7.4.0",
-		"@essex/eslint-plugin": ">= 7.4.0"
 	}
 }
