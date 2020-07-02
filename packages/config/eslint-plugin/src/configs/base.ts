@@ -145,6 +145,7 @@ const baseConfig = {
 		'header/header': [2, headerFile],
 		'@essex/adjacent-await': 'warn',
 		'no-plusplus': 'off',
+		'react/prop-types': 'off',
 		// #endregion
 
 		// #region prettier/react rules
