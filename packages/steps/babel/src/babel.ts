@@ -10,6 +10,7 @@ import {
 	babelEsm as defaultEsm,
 } from './default-config'
 import * as mkdirp from 'mkdirp'
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { transformFileAsync } = require('@babel/core')
 
 /**
