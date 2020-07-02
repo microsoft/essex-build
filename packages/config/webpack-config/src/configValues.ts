@@ -3,9 +3,10 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { log } from './log'
-const { join } = require('path')
-const { existsSync } = require('fs')
+import { join } from 'path'
+import { existsSync } from 'fs'
 
+/* eslint-disable @typescript-eslint/no-var-requires */
 export const pkgJson = require(join(process.cwd(), 'package.json'))
 
 /**
