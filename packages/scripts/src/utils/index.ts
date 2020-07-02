@@ -6,3 +6,4 @@ import * as logger from './log'
 export const log = logger
 export * from './paths'
 export * from './config'
+export * from './promises'

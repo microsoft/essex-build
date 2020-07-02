@@ -4,7 +4,8 @@
  */
 import 'colors'
 import { Job } from './types'
-const debugLog = (...args: any[]): void => console.log(...args)
+import * as dbg from 'debug'
+const debugLog = dbg('essex:shellrunner')
 
 export function subtaskFail(text: string): void {
 	console.log(`    ✘ ${text}`.red)

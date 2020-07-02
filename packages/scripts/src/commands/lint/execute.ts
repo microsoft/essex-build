@@ -6,14 +6,13 @@
 import { prettyQuick } from '@essex/build-step-pretty-quick'
 import { eslint } from '@essex/build-step-eslint'
 import { docs as checkDocs } from '@essex/build-step-docs'
-import { subtaskSuccess, subtaskFail } from '../../utils/log'
+import { resolveTask } from '../../utils'
 
 export interface LintCommandOptions {
 	fix?: boolean
 	staged?: boolean
 	docs?: boolean
 	strict?: boolean
-	spellingIgnore?: string
 }
 
 export async function execute({
@@ -21,27 +20,16 @@ export async function execute({
 	staged = false,
 	docs = false,
 	strict = false,
-	spellingIgnore,
 }: LintCommandOptions): Promise<number> {
 	try {
-		const eslintTask = eslint(fix, strict).then(
-			() => subtaskSuccess('eslint'),
-			() => subtaskFail('eslint'),
-		)
-
+		const eslintTask = eslint(fix, strict).then(...resolveTask('eslint'))
 		const prettierTask = (staged
 			? prettyQuick({ staged: true })
 			: prettyQuick({ check: !fix })
-		).then(
-			() => subtaskSuccess('pretty-quick'),
-			() => subtaskFail('pretty-quick'),
-		)
+		).then(...resolveTask('pretty-quick'))
 
 		const checkDocsTask = docs
-			? checkDocs().then(
-					() => subtaskSuccess('docs'),
-					() => subtaskFail('docs'),
-			  )
+			? checkDocs().then(...resolveTask('check docs'))
 			: Promise.resolve()
 
 		await Promise.all([eslintTask, prettierTask, checkDocsTask])

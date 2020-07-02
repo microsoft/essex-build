@@ -8,9 +8,19 @@ import { readdirSync } from 'fs'
 import { join } from 'path'
 import * as program from 'commander'
 
-const commandDir = join(__dirname, '/commands')
+process
+	.on('unhandledRejection', (reason, p) => {
+		console.error(reason, 'Unhandled Rejection at Promise', p)
+		process.exit(1)
+	})
+	.on('uncaughtException', err => {
+		console.error(err, 'Uncaught Exception thrown')
+		process.exit(1)
+	})
 
-program.version('0.1.0')
+const { version } = require('../package.json')
+const commandDir = join(__dirname, '/commands')
+program.version(version)
 
 // Dynamically load all the commands
 const commands = readdirSync(commandDir)

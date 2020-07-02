@@ -1982,15 +1982,11 @@ __metadata:
     "@babel/plugin-proposal-object-rest-spread": ^7.10.4
     "@babel/plugin-proposal-optional-chaining": ^7.10.4
     "@babel/preset-env": ^7.10.4
-    "@essex/build-util-noop": ^8.0.0-alpha.0
-    "@essex/build-util-stream-to-promise": ^8.0.0-alpha.0
-    "@types/gulp": ^4.0.6
-    "@types/gulp-babel": ^6.1.29
-    "@types/gulp-debug": ^2.0.31
+    "@types/glob": ^7.1.2
+    "@types/mkdirp": ^1.0.1
     "@types/node": ^14.0.14
-    gulp: ^4.0.2
-    gulp-babel: ^8.0.0
-    gulp-debug: ^4.0.0
+    glob: ^7.1.6
+    mkdirp: ^1.0.4
     rimraf: ^3.0.2
     typescript: 3.9.5
   peerDependencies:
@@ -2078,12 +2074,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-typescript@^8.0.0-alpha.0, @essex/build-step-typescript@workspace:packages/steps/typescript":
+"@essex/build-step-typescript@^8.0.0-alpha.1, @essex/build-step-typescript@workspace:packages/steps/typescript":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-typescript@workspace:packages/steps/typescript"
   dependencies:
     "@essex/build-util-noop": ^8.0.0-alpha.0
     "@essex/build-util-stream-to-promise": ^8.0.0-alpha.0
+    "@types/gulp": ^4.0.6
+    "@types/gulp-debug": ^2.0.31
     "@types/node": ^14.0.14
     gulp: ^4.0.2
     gulp-debug: ^4.0.0
@@ -2306,7 +2304,7 @@ __metadata:
     "@essex/build-step-eslint": ^8.0.0-alpha.0
     "@essex/build-step-pretty-quick": ^8.0.0-alpha.0
     "@essex/build-step-typedoc": ^8.0.0-alpha.0
-    "@essex/build-step-typescript": ^8.0.0-alpha.0
+    "@essex/build-step-typescript": ^8.0.0-alpha.1
     "@essex/build-util-noop": ^8.0.0-alpha.0
     "@essex/build-util-stream-to-promise": ^8.0.0-alpha.0
     "@essex/eslint-config": ^8.0.0-alpha.0
@@ -2321,6 +2319,7 @@ __metadata:
     commander: ^5.1.0
     core-js: ^3.6.5
     crlf: ^1.1.1
+    debug: ^4.1.1
     eslint: ^7.3.1
     eslint-config-prettier: ^6.11.0
     eslint-plugin-flowtype: ^5.2.0
@@ -2338,6 +2337,9 @@ __metadata:
     typescript: ^3.9.5
   peerDependencies:
     husky: ">= 4"
+  peerDependenciesMeta:
+    husky:
+      optional: true
   bin:
     essex: ./lib/index.js
     essex-scripts: ./lib/index.js
@@ -4631,7 +4633,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/glob@npm:*, @types/glob@npm:^7.1.1":
+"@types/glob@npm:*, @types/glob@npm:^7.1.1, @types/glob@npm:^7.1.2":
   version: 7.1.2
   resolution: "@types/glob@npm:7.1.2"
   dependencies:
@@ -4647,15 +4649,6 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: 5e2ec610a96de2a7b13ee1e071a31a225b68df07880f80f1112a3540299288d943c69c0f1114a60480aa137d424333392c11732969f14b964c1c419fae48a6f0
-  languageName: node
-  linkType: hard
-
-"@types/gulp-babel@npm:^6.1.29":
-  version: 6.1.29
-  resolution: "@types/gulp-babel@npm:6.1.29"
-  dependencies:
-    "@types/node": "*"
-  checksum: fdb9ca36fa8907bc3c4d193455b2e75b95e43dd6d6b498463ec131e23def3dd9283371692ed72c57bae08f65aa74ccaf4cdcde1b6d1054cce0cd236903669615
   languageName: node
   linkType: hard
 
@@ -4779,6 +4772,15 @@ __metadata:
   version: 1.2.0
   resolution: "@types/minimist@npm:1.2.0"
   checksum: 098945c2c29df019cae250dfe614e50dab8120f4e359bd034190f931a63a23f3058764eec0d8cea3757eedd5b308ed28e4357ece9510a99380da08762f5f6635
+  languageName: node
+  linkType: hard
+
+"@types/mkdirp@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@types/mkdirp@npm:1.0.1"
+  dependencies:
+    "@types/node": "*"
+  checksum: 075e821a8fe69349a3b642f798b4632139982f039c8890b83bcd9068bfac3787dd536c9f3bb18bb3f9c68277431514b38e6c57509cdb766c8d7ebff9a1427ecb
   languageName: node
   linkType: hard
 
@@ -12047,20 +12049,6 @@ fsevents@^1.2.7:
   version: 1.0.0
   resolution: "gud@npm:1.0.0"
   checksum: 08be6bf30eb713b0e115a4676418b3805b739703956fd861710f59ce355c047102954e4d79172b180912d06794e8d94f702e9367ac6843c2fae40c8c726a4907
-  languageName: node
-  linkType: hard
-
-"gulp-babel@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "gulp-babel@npm:8.0.0"
-  dependencies:
-    plugin-error: ^1.0.1
-    replace-ext: ^1.0.0
-    through2: ^2.0.0
-    vinyl-sourcemaps-apply: ^0.2.0
-  peerDependencies:
-    "@babel/core": ^7.0.0
-  checksum: d4589095f5de3f9b823e119186966550a713d4aa5868e4efd094c84054e0864f336d5140fb9418d0b17d27c18224fc982be70e8ae53ad60c9c64915b080e817f
   languageName: node
   linkType: hard
 
@@ -20588,12 +20576,21 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"rxjs@npm:^6.4.0, rxjs@npm:^6.5.3, rxjs@npm:^6.5.5":
+"rxjs@npm:^6.4.0":
   version: 6.5.5
   resolution: "rxjs@npm:6.5.5"
   dependencies:
     tslib: ^1.9.0
   checksum: a3882e0374af8aa32459ea9219fdcf24cb5a943cdf35f50da4ded48435ec474647c315b85c3e7b703927a55689e54037538cbd24789548d07b74e4865c4adb78
+  languageName: node
+  linkType: hard
+
+"rxjs@npm:^6.5.3, rxjs@npm:^6.5.5":
+  version: 6.6.0
+  resolution: "rxjs@npm:6.6.0"
+  dependencies:
+    tslib: ^1.9.0
+  checksum: 32d733487caf42cc87bb0f93da5be400f2817f94a9f8af9580ab36f480aa553f584e0cfb4625b8321e8f9490094a510f9eb5e951a1d6219281d1eac1525d007b
   languageName: node
   linkType: hard
 
@@ -21369,7 +21366,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"source-map@npm:^0.5.0, source-map@npm:^0.5.1, source-map@npm:^0.5.6, source-map@npm:^0.5.7, source-map@npm:~0.5.1":
+"source-map@npm:^0.5.0, source-map@npm:^0.5.6, source-map@npm:^0.5.7, source-map@npm:~0.5.1":
   version: 0.5.7
   resolution: "source-map@npm:0.5.7"
   checksum: 737face96577a2184a42f141607fcc2c9db5620cb8517ae8ab3924476defa138fc26b0bab31e98cbd6f19211ecbf78400b59f801ff7a0f87aa9faa79f7433e10
@@ -23992,15 +23989,6 @@ typescript@^3.9.6:
     remove-bom-buffer: ^3.0.0
     vinyl: ^2.0.0
   checksum: 372d6f0797596bb7d86a3c86029a93f08a98816a615e418d482c77a2de95de5f65f46f6b488a56994d8dcb639b16b1e680b19e41e993479ef4729fc65cc45fb4
-  languageName: node
-  linkType: hard
-
-"vinyl-sourcemaps-apply@npm:^0.2.0":
-  version: 0.2.1
-  resolution: "vinyl-sourcemaps-apply@npm:0.2.1"
-  dependencies:
-    source-map: ^0.5.1
-  checksum: c1d826acf474831a58609e0d19f0f7e907cd6f2a347a67c2879aa44e149491f0b47449bfe906e9da54f026806196b3ac92f8ae4dfe3d3a44353baab1885a03b4
   languageName: node
   linkType: hard
 
