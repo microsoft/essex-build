@@ -17,6 +17,7 @@ msrc
 msrc.microsoft.com
 opencode@microsoft.com
 secure@microsoft.com
+PowerBI
 `
 const CONFIGS = `
 .docsrc
@@ -72,6 +73,7 @@ CLA
 CLAs
 SDK
 SDKs
+UX
 `
 const JARGON = `
 peerDependency
@@ -104,6 +106,8 @@ README
 3D
 composable
 scalable
+analytics
+Analaytics
 `
 const dictionary = `
 ${CORP}
