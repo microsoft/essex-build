@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-eslint",
-	"version": "8.0.0-alpha.10",
+	"version": "8.0.0-alpha.11",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
 	"scripts": {
@@ -12,7 +12,7 @@
 		"config/"
 	],
 	"dependencies": {
-		"@essex/eslint-plugin": "^8.0.0-alpha.10",
+		"@essex/eslint-plugin": "^8.0.0-alpha.11",
 		"eslint": "^7.4.0"
 	},
 	"devDependencies": {
