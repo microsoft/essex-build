@@ -9,7 +9,8 @@ export function webpackBuild(config: WebpackCompilerOptions): Promise<number> {
 	return new Promise((resolve, reject) => {
 		const compiler = getCompiler(config)
 		compiler.run((err: Error, stats: webpack.Stats) => {
-			if (err) {
+			console.log(stats.toString({ colors: true }))
+			if (err || stats.hasErrors()) {
 				console.error('webpack error', err)
 				resolve(1)
 			} else {
