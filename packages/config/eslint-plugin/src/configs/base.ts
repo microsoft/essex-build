@@ -225,7 +225,7 @@ const essexRules: any = {
 	'@essex/adjacent-await': 'warn',
 	'no-plusplus': 'off',
 	'react/prop-types': 'off',
-	//'import/order': ['warn', { alphabetize: { order: 'asc' } }],
+	'import/order': ['warn', { alphabetize: { order: 'asc' } }],
 	'@typescript-eslint/interface-name-prefix': 'off',
 }
 
