@@ -35,7 +35,7 @@ export async function execute({
 		await Promise.all([eslintTask, prettierTask, checkDocsTask])
 		return 0
 	} catch (err) {
-		console.error(err)
+		console.error('error linting', err)
 		return 1
 	}
 }

@@ -1439,7 +1439,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-babel@^8.0.0-alpha.7, @essex/build-step-babel@workspace:packages/steps/babel":
+"@essex/build-step-babel@^8.0.0-alpha.9, @essex/build-step-babel@workspace:packages/steps/babel":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-babel@workspace:packages/steps/babel"
   dependencies:
@@ -1468,7 +1468,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-clean@^8.0.0-alpha.7, @essex/build-step-clean@workspace:packages/steps/clean":
+"@essex/build-step-clean@^8.0.0-alpha.9, @essex/build-step-clean@workspace:packages/steps/clean":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-clean@workspace:packages/steps/clean"
   dependencies:
@@ -1479,7 +1479,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-docs@^8.0.0-alpha.7, @essex/build-step-docs@workspace:packages/steps/docs":
+"@essex/build-step-docs@^8.0.0-alpha.10, @essex/build-step-docs@workspace:packages/steps/docs":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-docs@workspace:packages/steps/docs"
   dependencies:
@@ -1501,11 +1501,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-eslint@^8.0.0-alpha.8, @essex/build-step-eslint@workspace:packages/steps/eslint":
+"@essex/build-step-eslint@^8.0.0-alpha.10, @essex/build-step-eslint@workspace:packages/steps/eslint":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-eslint@workspace:packages/steps/eslint"
   dependencies:
-    "@essex/eslint-plugin": ^8.0.0-alpha.8
+    "@essex/eslint-plugin": ^8.0.0-alpha.10
     "@types/eslint": ^7.2.0
     "@types/node": ^14.0.14
     eslint: ^7.3.1
@@ -1514,7 +1514,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-pretty-quick@^8.0.0-alpha.6, @essex/build-step-pretty-quick@workspace:packages/steps/pretty-quick":
+"@essex/build-step-pretty-quick@^8.0.0-alpha.9, @essex/build-step-pretty-quick@workspace:packages/steps/pretty-quick":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-pretty-quick@workspace:packages/steps/pretty-quick"
   dependencies:
@@ -1527,7 +1527,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-typedoc@^8.0.0-alpha.0, @essex/build-step-typedoc@workspace:packages/steps/typedoc":
+"@essex/build-step-typedoc@^8.0.0-alpha.9, @essex/build-step-typedoc@workspace:packages/steps/typedoc":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-typedoc@workspace:packages/steps/typedoc"
   dependencies:
@@ -1540,12 +1540,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-typescript@^8.0.0-alpha.7, @essex/build-step-typescript@workspace:packages/steps/typescript":
+"@essex/build-step-typescript@^8.0.0-alpha.9, @essex/build-step-typescript@workspace:packages/steps/typescript":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-typescript@workspace:packages/steps/typescript"
   dependencies:
-    "@essex/build-util-noop": ^8.0.0-alpha.7
-    "@essex/build-util-stream-to-promise": ^8.0.0-alpha.7
+    "@essex/build-util-noop": ^8.0.0-alpha.9
+    "@essex/build-util-stream-to-promise": ^8.0.0-alpha.9
     "@types/gulp": ^4.0.6
     "@types/gulp-debug": ^2.0.31
     "@types/node": ^14.0.14
@@ -1559,7 +1559,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-util-noop@^8.0.0-alpha.7, @essex/build-util-noop@workspace:packages/util/noop":
+"@essex/build-util-noop@^8.0.0-alpha.9, @essex/build-util-noop@workspace:packages/util/noop":
   version: 0.0.0-use.local
   resolution: "@essex/build-util-noop@workspace:packages/util/noop"
   dependencies:
@@ -1571,7 +1571,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-util-stream-to-promise@^8.0.0-alpha.7, @essex/build-util-stream-to-promise@workspace:packages/util/streamToPromise":
+"@essex/build-util-stream-to-promise@^8.0.0-alpha.9, @essex/build-util-stream-to-promise@workspace:packages/util/streamToPromise":
   version: 0.0.0-use.local
   resolution: "@essex/build-util-stream-to-promise@workspace:packages/util/streamToPromise"
   dependencies:
@@ -1587,13 +1587,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/eslint-config@workspace:packages/config/eslint-config"
   dependencies:
-    "@essex/eslint-plugin": ^8.0.0-alpha.8
+    "@essex/eslint-plugin": ^8.0.0-alpha.10
   peerDependencies:
     "@essex/eslint-plugin": ">= 8.0.0-alpha.7"
   languageName: unknown
   linkType: soft
 
-"@essex/eslint-plugin@^8.0.0-alpha.8, @essex/eslint-plugin@workspace:packages/config/eslint-plugin":
+"@essex/eslint-plugin@^8.0.0-alpha.10, @essex/eslint-plugin@workspace:packages/config/eslint-plugin":
   version: 0.0.0-use.local
   resolution: "@essex/eslint-plugin@workspace:packages/config/eslint-plugin"
   dependencies:
@@ -1606,11 +1606,11 @@ __metadata:
     confusing-browser-globals: ^1.0.9
     eslint: ^7.3.1
     eslint-config-prettier: ^6.11.0
+    eslint-import-resolver-node: ^0.3.4
     eslint-plugin-header: ^3.0.0
     eslint-plugin-import: ^2.22.0
     eslint-plugin-jest: ^23.17.1
     eslint-plugin-jsx-a11y: ^6.3.1
-    eslint-plugin-local-rules: ^0.1.1
     eslint-plugin-react: ^7.20.3
     eslint-plugin-react-hooks: ^4.0.5
     prettier: ^2.0.5
@@ -1634,11 +1634,11 @@ __metadata:
     confusing-browser-globals: ^1.0.9
     eslint: ^7.3.1
     eslint-config-prettier: ^6.11.0
+    eslint-import-resolver-node: ^0.3.4
     eslint-plugin-header: ^3.0.0
     eslint-plugin-import: ^2.22.0
     eslint-plugin-jest: ^23.17.1
     eslint-plugin-jsx-a11y: ^6.3.1
-    eslint-plugin-local-rules: ^0.1.1
     eslint-plugin-react: ^7.20.3
     eslint-plugin-react-hooks: ^4.0.5
     prettier: ^2.0.5
@@ -1660,18 +1660,18 @@ __metadata:
   resolution: "@essex/scripts@portal:./packages/scripts::locator=%40essex%2Falpha-build-utils%40workspace%3A."
   dependencies:
     "@babel/types": ^7.10.4
-    "@essex/build-step-babel": ^8.0.0-alpha.7
-    "@essex/build-step-clean": ^8.0.0-alpha.7
-    "@essex/build-step-docs": ^8.0.0-alpha.7
-    "@essex/build-step-eslint": ^8.0.0-alpha.8
-    "@essex/build-step-pretty-quick": ^8.0.0-alpha.6
-    "@essex/build-step-typedoc": ^8.0.0-alpha.0
-    "@essex/build-step-typescript": ^8.0.0-alpha.7
-    "@essex/build-util-noop": ^8.0.0-alpha.7
-    "@essex/build-util-stream-to-promise": ^8.0.0-alpha.7
-    "@essex/eslint-plugin": ^8.0.0-alpha.8
-    "@essex/shellrunner": ^8.0.0-alpha.7
-    "@essex/webpack-config": ^8.0.0-alpha.7
+    "@essex/build-step-babel": ^8.0.0-alpha.9
+    "@essex/build-step-clean": ^8.0.0-alpha.9
+    "@essex/build-step-docs": ^8.0.0-alpha.10
+    "@essex/build-step-eslint": ^8.0.0-alpha.10
+    "@essex/build-step-pretty-quick": ^8.0.0-alpha.9
+    "@essex/build-step-typedoc": ^8.0.0-alpha.9
+    "@essex/build-step-typescript": ^8.0.0-alpha.9
+    "@essex/build-util-noop": ^8.0.0-alpha.9
+    "@essex/build-util-stream-to-promise": ^8.0.0-alpha.9
+    "@essex/eslint-plugin": ^8.0.0-alpha.10
+    "@essex/shellrunner": ^8.0.0-alpha.9
+    "@essex/webpack-config": ^8.0.0-alpha.9
     "@types/node": ^14.0.14
     chalk: ^4.1.0
     commander: ^5.1.0
@@ -1706,18 +1706,18 @@ __metadata:
   resolution: "@essex/scripts@workspace:packages/scripts"
   dependencies:
     "@babel/types": ^7.10.4
-    "@essex/build-step-babel": ^8.0.0-alpha.7
-    "@essex/build-step-clean": ^8.0.0-alpha.7
-    "@essex/build-step-docs": ^8.0.0-alpha.7
-    "@essex/build-step-eslint": ^8.0.0-alpha.8
-    "@essex/build-step-pretty-quick": ^8.0.0-alpha.6
-    "@essex/build-step-typedoc": ^8.0.0-alpha.0
-    "@essex/build-step-typescript": ^8.0.0-alpha.7
-    "@essex/build-util-noop": ^8.0.0-alpha.7
-    "@essex/build-util-stream-to-promise": ^8.0.0-alpha.7
-    "@essex/eslint-plugin": ^8.0.0-alpha.8
-    "@essex/shellrunner": ^8.0.0-alpha.7
-    "@essex/webpack-config": ^8.0.0-alpha.7
+    "@essex/build-step-babel": ^8.0.0-alpha.9
+    "@essex/build-step-clean": ^8.0.0-alpha.9
+    "@essex/build-step-docs": ^8.0.0-alpha.10
+    "@essex/build-step-eslint": ^8.0.0-alpha.10
+    "@essex/build-step-pretty-quick": ^8.0.0-alpha.9
+    "@essex/build-step-typedoc": ^8.0.0-alpha.9
+    "@essex/build-step-typescript": ^8.0.0-alpha.9
+    "@essex/build-util-noop": ^8.0.0-alpha.9
+    "@essex/build-util-stream-to-promise": ^8.0.0-alpha.9
+    "@essex/eslint-plugin": ^8.0.0-alpha.10
+    "@essex/shellrunner": ^8.0.0-alpha.9
+    "@essex/webpack-config": ^8.0.0-alpha.9
     "@types/node": ^14.0.14
     chalk: ^4.1.0
     commander: ^5.1.0
@@ -1747,7 +1747,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/shellrunner@^8.0.0-alpha.7, @essex/shellrunner@workspace:packages/util/shellrunner":
+"@essex/shellrunner@^8.0.0-alpha.9, @essex/shellrunner@workspace:packages/util/shellrunner":
   version: 0.0.0-use.local
   resolution: "@essex/shellrunner@workspace:packages/util/shellrunner"
   dependencies:
@@ -1762,7 +1762,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/webpack-config@^8.0.0-alpha.7, @essex/webpack-config@workspace:packages/config/webpack-config":
+"@essex/webpack-config@^8.0.0-alpha.9, @essex/webpack-config@workspace:packages/config/webpack-config":
   version: 0.0.0-use.local
   resolution: "@essex/webpack-config@workspace:packages/config/webpack-config"
   dependencies:
@@ -6252,7 +6252,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-import-resolver-node@npm:^0.3.3":
+"eslint-import-resolver-node@npm:^0.3.3, eslint-import-resolver-node@npm:^0.3.4":
   version: 0.3.4
   resolution: "eslint-import-resolver-node@npm:0.3.4"
   dependencies:

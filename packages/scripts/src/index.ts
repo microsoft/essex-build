@@ -10,6 +10,10 @@ import { readdirSync } from 'fs'
 import { join } from 'path'
 import * as program from 'commander'
 
+// Force PnP's Hand
+const { dependencies } = require('../package.json')
+Object.keys(dependencies).forEach(dep => require(dep))
+
 process
 	.on('unhandledRejection', (reason, p) => {
 		console.error(reason, 'Unhandled Rejection at Promise', p)

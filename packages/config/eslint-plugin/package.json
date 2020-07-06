@@ -20,11 +20,11 @@
 		"babel-eslint": "^10.1.0",
 		"confusing-browser-globals": "^1.0.9",
 		"eslint-config-prettier": "^6.11.0",
+		"eslint-import-resolver-node": "^0.3.4",
 		"eslint-plugin-header": "^3.0.0",
 		"eslint-plugin-import": "^2.22.0",
 		"eslint-plugin-jest": "^23.17.1",
 		"eslint-plugin-jsx-a11y": "^6.3.1",
-		"eslint-plugin-local-rules": "^0.1.1",
 		"eslint-plugin-react": "^7.20.3",
 		"eslint-plugin-react-hooks": "^4.0.5",
 		"prettier": "^2.0.5"
