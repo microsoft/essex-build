@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
+import { join } from 'path'
 import {
 	getTsConfigJsonPath,
 	getBabelEsmConfigPath,
@@ -19,6 +20,11 @@ export interface WatchCommandOptions {
 	env?: string
 	mode?: BundleMode
 }
+
+const cwd = process.cwd()
+const tsConfigJsonPath = join(cwd, 'tsconfig.json')
+const rollupConfig = join(cwd, 'rollup.config.js')
+const webpackConfig = join(cwd, 'webpack.config.js')
 
 export async function execute({
 	verbose,

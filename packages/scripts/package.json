@@ -26,6 +26,7 @@
 		"@essex/build-step-pretty-quick": "^8.0.0-alpha.9",
 		"@essex/build-step-typedoc": "^8.0.0-alpha.9",
 		"@essex/build-step-typescript": "^8.0.0-alpha.9",
+		"@essex/build-step-webpack": "^8.0.0-alpha.11",
 		"@essex/build-util-noop": "^8.0.0-alpha.9",
 		"@essex/build-util-stream-to-promise": "^8.0.0-alpha.9",
 		"@essex/eslint-plugin": "^8.0.0-alpha.11",

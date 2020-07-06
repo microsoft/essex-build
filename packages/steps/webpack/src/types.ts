@@ -5,4 +5,5 @@
 export interface WebpackCompilerOptions {
 	env?: string
 	mode?: string
+	verbose?: boolean
 }

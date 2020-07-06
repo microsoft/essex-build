@@ -10,8 +10,12 @@ import { babelEsm, babelCjs } from '@essex/build-step-babel'
 import { compileTypescript, emitTypings } from '@essex/build-step-typescript'
 import { generateTypedocs } from '@essex/build-step-typedoc'
 import { fail } from '../../utils/log'
-import { getWebpackArgs } from '../../utils/webpack'
 import { resolveTask } from '../../utils'
+
+const cwd = process.cwd()
+const tsConfigJsonPath = join(cwd, 'tsconfig.json')
+const rollupConfig = join(cwd, 'rollup.config.js')
+const webpackConfig = join(cwd, 'webpack.config.js')
 
 export enum BundleMode {
 	production = 'production',
@@ -44,7 +48,6 @@ export async function execute({
 }
 
 function executeTypeScriptJobs(verbose: boolean, docs: boolean): Promise<any> {
-	const tsConfigJsonPath = join(process.cwd(), 'tsconfig.json')
 	return Promise.all([
 		compileTypescript(tsConfigJsonPath, verbose).then(...resolveTask('tsc')),
 		emitTypings(tsConfigJsonPath, verbose).then(...resolveTask('typings')),
@@ -65,23 +68,17 @@ async function executeBabelJobs(verbose: boolean): Promise<any> {
 }
 
 function executeBundleJobs(verbose: boolean, env: string, mode: string) {
-	const rollupConfig = join(process.cwd(), 'rollup.config.js')
-	const webpackConfig = join(process.cwd(), 'webpack.config.js')
+	const promises: Promise[] = []
 
-	const jobs: Job[] = []
-
-	if (existsSync(rollupConfig)) {
-		jobs.push({
-			exec: 'rollup',
-			args: ['-c', rollupConfig],
-		})
-	}
+	// if (existsSync(rollupConfig)) {
+	// 	promises.push({
+	// 		exec: 'rollup',
+	// 		args: ['-c', rollupConfig],
+	// 	})
+	// }
 	if (existsSync(webpackConfig)) {
-		jobs.push({
-			exec: 'webpack',
-			args: getWebpackArgs(webpackConfig, { env, mode, verbose }),
-		})
+		promises.push(webpackBuild({ env, mode, verbose }))
 	}
 
-	return run(jobs).then(() => null)
+	return Promise.all([promises])
 }
