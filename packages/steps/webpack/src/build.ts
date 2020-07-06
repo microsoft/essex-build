@@ -3,7 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import webpack = require('webpack')
-import { getCompiler, WebpackCompilerOptions } from './getCompiler'
+import { getCompiler } from './getCompiler'
+import { WebpackCompilerOptions } from './types'
 
 export function webpackBuild(config: WebpackCompilerOptions): Promise<number> {
 	return new Promise((resolve, reject) => {
