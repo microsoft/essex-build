@@ -17,7 +17,7 @@
 	"dependencies": {
 		"colors": "^1.4.0",
 		"cross-spawn": "^7.0.3",
-		"debug": "^4.2.0",
+		"debug": "^4.1.1",
 		"supports-color": "^7.1.0"
 	},
 	"devDependencies": {

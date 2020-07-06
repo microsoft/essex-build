@@ -34,7 +34,7 @@
 		"chalk": "^4.1.0",
 		"commander": "^5.1.0",
 		"core-js": "^3.6.5",
-		"debug": "^4.2.0",
+		"debug": "^4.1.1",
 		"prettier": "^2.0.5",
 		"regenerator-runtime": "^0.13.5",
 		"supports-color": "^7.1.0"

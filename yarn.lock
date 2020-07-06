@@ -1415,14 +1415,14 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^3.5.0
     "@typescript-eslint/experimental-utils": ^3.5.0
     "@typescript-eslint/parser": ^3.5.0
-    "@typescript-eslint/types": ^3.5.0
-    "@typescript-eslint/typescript-estree": ^3.5.0
+    "@typescript-eslint/types": ^3.6.0
+    "@typescript-eslint/typescript-estree": ^3.6.0
     babel-eslint: ^10.1.0
-    eslint: ^7.3.1
+    eslint: ^7.4.0
     eslint-config-prettier: ^6.11.0
     eslint-plugin-header: ^3.0.0
     eslint-plugin-import: ^2.22.0
-    eslint-plugin-jest: ^23.17.1
+    eslint-plugin-jest: ^23.18.0
     eslint-plugin-jsx-a11y: ^6.3.1
     eslint-plugin-local-rules: ^0.1.1
     eslint-plugin-prettier: ^3.1.4
@@ -1508,7 +1508,7 @@ __metadata:
     "@essex/eslint-plugin": ^8.0.0-alpha.10
     "@types/eslint": ^7.2.0
     "@types/node": ^14.0.14
-    eslint: ^7.3.1
+    eslint: ^7.4.0
     rimraf: ^3.0.2
     typescript: 3.9.6
   languageName: unknown
@@ -1604,12 +1604,12 @@ __metadata:
     "@typescript-eslint/parser": ^3.5.0
     babel-eslint: ^10.1.0
     confusing-browser-globals: ^1.0.9
-    eslint: ^7.3.1
+    eslint: ^7.4.0
     eslint-config-prettier: ^6.11.0
     eslint-import-resolver-node: ^0.3.4
     eslint-plugin-header: ^3.0.0
     eslint-plugin-import: ^2.22.0
-    eslint-plugin-jest: ^23.17.1
+    eslint-plugin-jest: ^23.18.0
     eslint-plugin-jsx-a11y: ^6.3.1
     eslint-plugin-react: ^7.20.3
     eslint-plugin-react-hooks: ^4.0.5
@@ -1723,7 +1723,7 @@ __metadata:
     commander: ^5.1.0
     core-js: ^3.6.5
     crlf: ^1.1.1
-    debug: ^4.2.0
+    debug: ^4.1.1
     npm-run-all: ^4.1.5
     prettier: ^2.0.5
     regenerator-runtime: ^0.13.5
@@ -1755,7 +1755,7 @@ __metadata:
     "@types/node": ^14.0.14
     colors: ^1.4.0
     cross-spawn: ^7.0.3
-    debug: ^4.2.0
+    debug: ^4.1.1
     rimraf: ^3.0.2
     supports-color: ^7.1.0
     typescript: ^3.9.6
@@ -1772,7 +1772,7 @@ __metadata:
     babel-loader: ^8.1.0
     cache-loader: ^4.1.0
     css-loader: ^3.6.0
-    debug: ^4.2.0
+    debug: ^4.1.1
     fork-ts-checker-webpack-plugin: ^5.0.6
     html-webpack-plugin: ^4.3.0
     mini-css-extract-plugin: ^0.9.0
@@ -3160,10 +3160,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/types@npm:3.5.0, @typescript-eslint/types@npm:^3.5.0":
+"@typescript-eslint/types@npm:3.5.0":
   version: 3.5.0
   resolution: "@typescript-eslint/types@npm:3.5.0"
   checksum: c4c9edbbbc5affdae2e7a92fea5ed4f1e414dffab52d34901bb74b38bec7caa79003f8c339c88931f77d7e16f28ce9b2cc11db2aef22bb4cf138254bdaec7958
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/types@npm:3.6.0, @typescript-eslint/types@npm:^3.6.0":
+  version: 3.6.0
+  resolution: "@typescript-eslint/types@npm:3.6.0"
+  checksum: 2da9710a8cf1afc02ca80788f29e2644f609b67ffaedc0bafc7afb88fd63445e44c115f6661ee1e596b74aa4bb0221b645f2cd254303b2ed08171ee94cfc5af3
   languageName: node
   linkType: hard
 
@@ -3187,7 +3194,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/typescript-estree@npm:3.5.0, @typescript-eslint/typescript-estree@npm:^3.5.0":
+"@typescript-eslint/typescript-estree@npm:3.5.0":
   version: 3.5.0
   resolution: "@typescript-eslint/typescript-estree@npm:3.5.0"
   dependencies:
@@ -3208,12 +3215,42 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@typescript-eslint/typescript-estree@npm:^3.6.0":
+  version: 3.6.0
+  resolution: "@typescript-eslint/typescript-estree@npm:3.6.0"
+  dependencies:
+    "@typescript-eslint/types": 3.6.0
+    "@typescript-eslint/visitor-keys": 3.6.0
+    debug: ^4.1.1
+    glob: ^7.1.6
+    is-glob: ^4.0.1
+    lodash: ^4.17.15
+    semver: ^7.3.2
+    tsutils: ^3.17.1
+  peerDependencies:
+    typescript: "*"
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 9e5a854af797b54248b27ef116a57e05625c8987f2bf5c43fefccf8ba7d4fe09b6c2699637b46fdc7b4d2b6d56c930c65137c875ff89ecb47abaa60e0a7065a6
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/visitor-keys@npm:3.5.0":
   version: 3.5.0
   resolution: "@typescript-eslint/visitor-keys@npm:3.5.0"
   dependencies:
     eslint-visitor-keys: ^1.1.0
   checksum: 64042963f3724f7c3793da5573c3cf1162a5fa035f9137381d12fe45e6c63d75f0800950bae7234d0324512628dc5f7ea2c798f281fafff35f0cbc3172838526
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/visitor-keys@npm:3.6.0":
+  version: 3.6.0
+  resolution: "@typescript-eslint/visitor-keys@npm:3.6.0"
+  dependencies:
+    eslint-visitor-keys: ^1.1.0
+  checksum: 2dc08e0a57dc24c44418de31c6b2db0669a92ac5ac728b9fe6e7641e649ec7f5a19c5ea0718b928239b964ee290aa12331c0915b55a4d330c0a69427ff878206
   languageName: node
   linkType: hard
 
@@ -6315,6 +6352,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-jest@npm:^23.18.0":
+  version: 23.18.0
+  resolution: "eslint-plugin-jest@npm:23.18.0"
+  dependencies:
+    "@typescript-eslint/experimental-utils": ^2.5.0
+  peerDependencies:
+    eslint: ">=5"
+  checksum: 56bb63ff745c228288407e820369587b88bb47077139f425892a3629591c5e0d28372a17cfb976e2413b748521b01df05bde196017f9dcdd79902a182828b96b
+  languageName: node
+  linkType: hard
+
 "eslint-plugin-jsx-a11y@npm:^6.3.1":
   version: 6.3.1
   resolution: "eslint-plugin-jsx-a11y@npm:6.3.1"
@@ -6464,6 +6512,52 @@ __metadata:
   bin:
     eslint: bin/eslint.js
   checksum: 5d9fd38514ffb43d0c326488bae2338861a654d507e40594f0d6b39efee5d91ec3105d5408f2add6891e8b47d512a75f06b4ce974c2d70bc6d9ae62574b31deb
+  languageName: node
+  linkType: hard
+
+"eslint@npm:^7.4.0":
+  version: 7.4.0
+  resolution: "eslint@npm:7.4.0"
+  dependencies:
+    "@babel/code-frame": ^7.0.0
+    ajv: ^6.10.0
+    chalk: ^4.0.0
+    cross-spawn: ^7.0.2
+    debug: ^4.0.1
+    doctrine: ^3.0.0
+    enquirer: ^2.3.5
+    eslint-scope: ^5.1.0
+    eslint-utils: ^2.0.0
+    eslint-visitor-keys: ^1.2.0
+    espree: ^7.1.0
+    esquery: ^1.2.0
+    esutils: ^2.0.2
+    file-entry-cache: ^5.0.1
+    functional-red-black-tree: ^1.0.1
+    glob-parent: ^5.0.0
+    globals: ^12.1.0
+    ignore: ^4.0.6
+    import-fresh: ^3.0.0
+    imurmurhash: ^0.1.4
+    is-glob: ^4.0.0
+    js-yaml: ^3.13.1
+    json-stable-stringify-without-jsonify: ^1.0.1
+    levn: ^0.4.1
+    lodash: ^4.17.14
+    minimatch: ^3.0.4
+    natural-compare: ^1.4.0
+    optionator: ^0.9.1
+    progress: ^2.0.0
+    regexpp: ^3.1.0
+    semver: ^7.2.1
+    strip-ansi: ^6.0.0
+    strip-json-comments: ^3.1.0
+    table: ^5.2.3
+    text-table: ^0.2.0
+    v8-compile-cache: ^2.0.3
+  bin:
+    eslint: bin/eslint.js
+  checksum: ef144e684ce031b045aca156439af5c5ec8a9b843613ed2948bb28ed767dc5e106d9f057a9bf93c752071b7833656bc7affa1d28daa9609c6ea59d1311f0a8de
   languageName: node
   linkType: hard
 

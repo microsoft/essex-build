@@ -13,7 +13,7 @@
 	],
 	"dependencies": {
 		"@essex/eslint-plugin": "^8.0.0-alpha.10",
-		"eslint": "^7.3.1"
+		"eslint": "^7.4.0"
 	},
 	"devDependencies": {
 		"@types/eslint": "^7.2.0",
