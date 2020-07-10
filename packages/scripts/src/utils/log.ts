@@ -17,11 +17,11 @@ export function warn(text: string, ...args: unknown[]): void {
 }
 
 export function success(text: string, ...args: unknown[]): void {
-	console.log(chalk.green(text), ...args)
+	console.log(chalk.green(`🎉 ${text}`), ...args)
 }
 
 export function fail(text: string, ...args: unknown[]): void {
-	console.log(chalk.red(text), ...args)
+	console.log(chalk.red(`🔥 ${text}`), ...args)
 }
 
 export function subtask(text: string): void {
