@@ -1,13 +1,11 @@
 /* eslint-disable @typescript-eslint/no-var-require */
 import { join } from 'path'
 import * as gulp from 'gulp'
-import * as babel from 'gulp-babel'
 import { generateTypedocs } from '@essex/build-step-typedoc'
 import { compileTypescript, emitTypings } from '@essex/build-step-typescript'
+import { babelEsm, babelCjs } from '@essex/build-step-babel'
 import { webpackBuild } from '@essex/build-step-webpack'
 import { BundleMode, BuildCommandOptions } from './types'
-import { subtaskSuccess, subtaskFail } from '../../utils/log'
-import { getBabelConfigs } from '../../config'
 import { existsSync } from 'fs'
 import { run } from '@essex/shellrunner'
 import { resolveGulpTask } from '../../utils'
@@ -24,26 +22,6 @@ export function configureTasks({
 	docs = false,
 	mode = BundleMode.production,
 }: BuildCommandOptions) {
-	const [babelEsmConfig, babelCjsConfig] = getBabelConfigs(env)
-
-	function babelEsm() {
-		return gulp
-			.src(['lib/**/*.js'])
-			.pipe(babel(babelEsmConfig))
-			.pipe(gulp.dest('dist/esm'))
-			.on('end', () => subtaskSuccess('babel-esm'))
-			.on('error', () => subtaskFail('babel-esm'))
-	}
-
-	function babelCjs() {
-		return gulp
-			.src(['lib/**/*.js'])
-			.pipe(babel(babelCjsConfig))
-			.pipe(gulp.dest('dist/cjs'))
-			.on('end', () => subtaskSuccess('babel-cjs'))
-			.on('error', () => subtaskFail('babel-cjs'))
-	}
-
 	function webpack(cb: (err?: Error) => void) {
 		if (!existsSync(webpackConfigPath)) {
 			return cb()
@@ -66,14 +44,14 @@ export function configureTasks({
 	}
 
 	const tsc = compileTypescript(tsConfigJsonPath, verbose)
-	const tscDeclarations = emitTypings(tsConfigJsonPath,verbose)
+	const tscDeclarations = emitTypings(tsConfigJsonPath, verbose)
 	const typedoc = docs ? generateTypedocs(verbose) : (cb: Function) => cb()
 
 	const build = gulp.parallel(
 		typedoc,
 		gulp.series(
 			gulp.parallel(tsc, tscDeclarations),
-			gulp.parallel(babelEsm, babelCjs),
+			gulp.parallel(babelEsm(verbose), babelCjs(verbose)),
 			gulp.parallel(webpack, rollup),
 		),
 	)

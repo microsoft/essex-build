@@ -1439,7 +1439,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-babel@^8.0.0-alpha.9, @essex/build-step-babel@workspace:packages/steps/babel":
+"@essex/build-step-babel@workspace:packages/steps/babel":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-babel@workspace:packages/steps/babel"
   dependencies:
@@ -1450,11 +1450,15 @@ __metadata:
     "@babel/plugin-proposal-optional-chaining": ^7.10.4
     "@babel/preset-env": ^7.10.4
     "@babel/types": ^7.10.4
-    "@types/glob": ^7.1.2
-    "@types/mkdirp": ^1.0.1
+    "@essex/build-util-noop": ^8.0.0-alpha.9
+    "@essex/tasklogger": ^8.0.0-alpha.9
+    "@types/gulp": ^4.0.6
+    "@types/gulp-babel": ^6.1.29
+    "@types/gulp-debug": ^2.0.31
     "@types/node": ^14.0.14
-    glob: ^7.1.6
-    mkdirp: ^1.0.4
+    gulp: ^4.0.2
+    gulp-babel: ^8.0.0
+    gulp-debug: ^4.0.0
     rimraf: ^3.0.2
     typescript: 3.9.6
   peerDependencies:
@@ -1675,14 +1679,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/scripts@portal:./packages/scripts::locator=%40essex%2Falpha-build-utils%40workspace%3A."
   dependencies:
-    "@babel/core": ^7.10.4
-    "@babel/plugin-proposal-class-properties": ^7.10.4
-    "@babel/plugin-proposal-nullish-coalescing-operator": ^7.10.4
-    "@babel/plugin-proposal-object-rest-spread": ^7.10.4
-    "@babel/plugin-proposal-optional-chaining": ^7.10.4
-    "@babel/preset-env": ^7.10.4
-    "@babel/types": ^7.10.4
-    "@essex/build-step-babel": ^8.0.0-alpha.9
     "@essex/build-step-clean": ^8.0.0-alpha.9
     "@essex/build-step-docs": ^8.0.0-alpha.10
     "@essex/build-step-eslint": ^8.0.0-alpha.11
@@ -1738,14 +1734,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/scripts@workspace:packages/scripts"
   dependencies:
-    "@babel/core": ^7.10.4
-    "@babel/plugin-proposal-class-properties": ^7.10.4
-    "@babel/plugin-proposal-nullish-coalescing-operator": ^7.10.4
-    "@babel/plugin-proposal-object-rest-spread": ^7.10.4
-    "@babel/plugin-proposal-optional-chaining": ^7.10.4
-    "@babel/preset-env": ^7.10.4
-    "@babel/types": ^7.10.4
-    "@essex/build-step-babel": ^8.0.0-alpha.9
     "@essex/build-step-clean": ^8.0.0-alpha.9
     "@essex/build-step-docs": ^8.0.0-alpha.10
     "@essex/build-step-eslint": ^8.0.0-alpha.11
@@ -2997,7 +2985,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/glob@npm:*, @types/glob@npm:^7.1.1, @types/glob@npm:^7.1.2":
+"@types/glob@npm:*, @types/glob@npm:^7.1.1":
   version: 7.1.2
   resolution: "@types/glob@npm:7.1.2"
   dependencies:
@@ -3104,15 +3092,6 @@ __metadata:
   version: 1.2.0
   resolution: "@types/minimist@npm:1.2.0"
   checksum: 098945c2c29df019cae250dfe614e50dab8120f4e359bd034190f931a63a23f3058764eec0d8cea3757eedd5b308ed28e4357ece9510a99380da08762f5f6635
-  languageName: node
-  linkType: hard
-
-"@types/mkdirp@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@types/mkdirp@npm:1.0.1"
-  dependencies:
-    "@types/node": "*"
-  checksum: 075e821a8fe69349a3b642f798b4632139982f039c8890b83bcd9068bfac3787dd536c9f3bb18bb3f9c68277431514b38e6c57509cdb766c8d7ebff9a1427ecb
   languageName: node
   linkType: hard
 
@@ -10741,7 +10720,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"mkdirp@npm:*, mkdirp@npm:^1.0.3, mkdirp@npm:^1.0.4":
+"mkdirp@npm:*, mkdirp@npm:^1.0.3":
   version: 1.0.4
   resolution: "mkdirp@npm:1.0.4"
   bin:
