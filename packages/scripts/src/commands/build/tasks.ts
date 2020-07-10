@@ -1,22 +1,27 @@
 /* eslint-disable @typescript-eslint/no-var-require */
 import { join } from 'path'
 import * as gulp from 'gulp'
-import * as debug from 'gulp-debug'
 import * as babel from 'gulp-babel'
 import * as ts from 'gulp-typescript'
-import { noop } from '@essex/build-util-noop'
 import { generateTypedocs } from '@essex/build-step-typedoc'
+import { webpackBuild } from '@essex/build-step-webpack'
 import { BundleMode, BuildCommandOptions } from './types'
+import { subtaskSuccess, subtaskFail, subtask } from '../../utils/log'
+import { createBabelConfig, getBrowsersList } from '../../config'
+import { existsSync } from 'fs'
+import { run } from '@essex/shellrunner'
 
 const cwd = process.cwd()
 /* tsconfig.json _must_ exist */
 const tsConfigJsonPath = join(cwd, 'tsconfig.json')
 const packageJsonPath = join(cwd, 'package.json')
+const webpackConfigPath = join(cwd, 'webpack.config.js')
+const rollupConfigPath = join(cwd, 'rollup.config.js')
 const packageJson = require(packageJsonPath)
 
 export function configureTasks({
-	verbose = false,
-	env = 'development',
+	verbose = true,
+	env = 'production',
 	docs = false,
 	mode = BundleMode.production,
 }: BuildCommandOptions) {
@@ -53,8 +58,9 @@ export function configureTasks({
 		return gulp
 			.src(['src/**/*.ts*', '!**/__tests__/**'])
 			.pipe(tsProject())
-			.pipe(verbose ? debug({ title: 'tsc' }) : noop())
 			.pipe(gulp.dest('lib'))
+			.on('end', () => subtaskSuccess('tsc'))
+      .on('error', () => subtaskFail('tsc'))
 	}
 
 	function emitTypings() {
@@ -63,27 +69,67 @@ export function configureTasks({
 			emitDeclarationOnly: true,
 			stripInternal: true,
 		})
-		gulp
+		return gulp
 			.src(['src/**/*.ts*', '!**/__tests__/**'])
 			.pipe(tsProject())
-			.pipe(verbose ? debug({ title: 'typing' }) : noop())
 			.pipe(gulp.dest('dist/typings'))
+      .on('end', () => subtaskSuccess('typings'))
+      .on('error', () => subtaskFail('typings'))
 	}
 
 	function babelEsm() {
-		gulp
+		return gulp
 			.src(['lib/**/*.js'])
 			.pipe(babel(babelEsmConfig))
-			.pipe(verbose ? debug({ title: 'babel-esm' }) : noop())
 			.pipe(gulp.dest('dist/esm'))
+			.on('end', () => subtaskSuccess('babel-esm'))
+      .on('error', () => subtaskFail('babel-esm'))
 	}
 
 	function babelCjs() {
-		gulp
+		return gulp
 			.src(['lib/**/*.js'])
 			.pipe(babel(babelCjsConfig))
-			.pipe(verbose ? debug({ title: 'babel-esm' }) : noop())
 			.pipe(gulp.dest('dist/cjs'))
+      .on('end', () => subtaskSuccess('babel-cjs'))
+      .on('error', () => subtaskFail('babel-cjs'))
+	}
+
+	function webpack(cb: (err?: Error) => void) {
+		if (!existsSync(webpackConfigPath)) {
+			return cb()
+		} else {
+			webpackBuild({ env, mode, verbose }).then(
+				() => {
+					subtaskSuccess('webpack')
+					cb()
+				},
+				err => {
+					subtaskFail('webpack')
+					cb(err)
+				},
+			)
+		}
+	}
+
+	function rollup(cb: (err?: Error) => void) {
+		if (!existsSync(rollupConfigPath)) {
+			return cb()
+		} else {
+			run({
+				exec: 'rollup',
+				args: ['-c', rollupConfigPath],
+			}).then(
+				() => {
+					subtaskSuccess('rollup')
+					cb()
+				},
+				err => {
+					subtaskFail('rollup')
+					cb(err)
+				},
+			)
+		}
 	}
 
 	const build = gulp.parallel(
@@ -91,49 +137,8 @@ export function configureTasks({
 		gulp.series(
 			gulp.parallel(compileTsc, emitTypings),
 			gulp.parallel(babelEsm, babelCjs),
+			gulp.parallel(webpack, rollup),
 		),
 	)
 	return build
-}
-
-function getBrowsersList(
-	env: string,
-	setting: undefined | string[] | Record<string, string[]>,
-): string[] {
-	if (setting == null) {
-		return ['> 0.25%, not dead']
-	} else if (Array.isArray(setting)) {
-		return setting
-	} else {
-		return setting[env]
-	}
-}
-
-function createBabelConfig(
-	modules: 'cjs' | 'esm',
-	browsers: string[],
-	useBuiltIns: boolean,
-	corejs: undefined | { version: number },
-): any {
-	return {
-		presets: [
-			[
-				require('@babel/preset-env'),
-				{
-					modules: modules === 'cjs' ? 'cjs' : false,
-					targets: {
-						browsers,
-					},
-					useBuiltIns,
-					corejs,
-				},
-			],
-		],
-		plugins: [
-			require('@babel/plugin-proposal-class-properties'),
-			require('@babel/plugin-proposal-object-rest-spread'),
-			require('@babel/plugin-proposal-optional-chaining'),
-			require('@babel/plugin-proposal-nullish-coalescing-operator'),
-		],
-	} as any
 }

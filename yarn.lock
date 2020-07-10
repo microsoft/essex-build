@@ -1674,6 +1674,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/scripts@portal:./packages/scripts::locator=%40essex%2Falpha-build-utils%40workspace%3A."
   dependencies:
+    "@babel/core": ^7.10.4
+    "@babel/plugin-proposal-class-properties": ^7.10.4
+    "@babel/plugin-proposal-nullish-coalescing-operator": ^7.10.4
+    "@babel/plugin-proposal-object-rest-spread": ^7.10.4
+    "@babel/plugin-proposal-optional-chaining": ^7.10.4
+    "@babel/preset-env": ^7.10.4
     "@babel/types": ^7.10.4
     "@essex/build-step-babel": ^8.0.0-alpha.9
     "@essex/build-step-clean": ^8.0.0-alpha.9
@@ -1688,6 +1694,7 @@ __metadata:
     "@essex/eslint-plugin": ^8.0.0-alpha.11
     "@essex/shellrunner": ^8.0.0-alpha.11
     "@essex/webpack-config": ^8.0.0-alpha.11
+    "@types/debug": ^4.1.5
     "@types/gulp": ^4.0.6
     "@types/gulp-babel": ^6.1.29
     "@types/gulp-debug": ^2.0.31
@@ -1749,6 +1756,7 @@ __metadata:
     "@essex/eslint-plugin": ^8.0.0-alpha.11
     "@essex/shellrunner": ^8.0.0-alpha.11
     "@essex/webpack-config": ^8.0.0-alpha.11
+    "@types/debug": ^4.1.5
     "@types/gulp": ^4.0.6
     "@types/gulp-babel": ^6.1.29
     "@types/gulp-debug": ^2.0.31

@@ -9,11 +9,6 @@ import 'regenerator-runtime/runtime'
 import { readdirSync } from 'fs'
 import { join } from 'path'
 import * as program from 'commander'
-import './tasks'
-
-// Force PnP's Hand
-const { dependencies } = require('../package.json')
-Object.keys(dependencies).forEach(dep => require(dep))
 
 process
 	.on('unhandledRejection', (reason, p) => {
