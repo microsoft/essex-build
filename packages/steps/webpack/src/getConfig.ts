@@ -4,8 +4,8 @@
  */
 import { existsSync } from 'fs'
 import { join } from 'path'
-import { WebpackCompilerOptions } from './types'
 import { configure } from '@essex/webpack-config'
+import { WebpackCompilerOptions } from './types'
 
 const webpackConfigFile = join(process.cwd(), 'webpack.config.js')
 

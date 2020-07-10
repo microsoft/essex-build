@@ -3,7 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Command } from 'commander'
-import { execute, LintCommandOptions } from './execute'
+import { execute } from './execute'
+import { LintCommandOptions } from './types'
 
 export default function lint(program: Command): void {
 	program

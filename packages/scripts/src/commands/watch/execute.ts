@@ -4,6 +4,7 @@
  */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { join } from 'path'
+import { Job, run } from '@essex/shellrunner'
 import {
 	getTsConfigJsonPath,
 	getBabelEsmConfigPath,
@@ -13,7 +14,6 @@ import {
 	getWebpackConfigPath,
 } from '../../utils'
 import { BundleMode } from '../build/types'
-import { Job, run } from '@essex/shellrunner'
 
 export interface WatchCommandOptions {
 	verbose?: boolean

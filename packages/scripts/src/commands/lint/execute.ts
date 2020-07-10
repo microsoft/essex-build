@@ -3,39 +3,19 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 // import { Job, run } from '@essex/shellrunner'
-import { resolveTask } from '../../utils'
-import { docs as checkDocs } from '@essex/build-step-docs'
-import { eslint } from '@essex/build-step-eslint'
-import { prettyQuick } from '@essex/build-step-pretty-quick'
+import { gulpExec } from '../../utils'
+import { success, fail } from '../../utils/log'
+import { configureTasks } from './tasks'
+import { LintCommandOptions } from './types'
 
-export interface LintCommandOptions {
-	fix?: boolean
-	staged?: boolean
-	docs?: boolean
-	strict?: boolean
-}
-
-export async function execute({
-	fix = false,
-	staged = false,
-	docs = false,
-	strict = false,
-}: LintCommandOptions): Promise<number> {
+export async function execute(options: LintCommandOptions): Promise<number> {
 	try {
-		const eslintTask = eslint(fix, strict).then(...resolveTask('eslint'))
-		const prettierTask = (staged
-			? prettyQuick({ staged: true })
-			: prettyQuick({ check: !fix })
-		).then(...resolveTask('pretty-quick'))
-
-		const checkDocsTask = docs
-			? checkDocs().then(...resolveTask('check docs'))
-			: Promise.resolve()
-
-		await Promise.all([eslintTask, prettierTask, checkDocsTask])
+		const lint = configureTasks(options)
+		await gulpExec(lint)
+		success('lint succeeded')
 		return 0
 	} catch (err) {
-		console.error('error linting', err)
+		fail('lint failed', err)
 		return 1
 	}
 }

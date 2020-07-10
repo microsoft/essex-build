@@ -2,11 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { noop } from '@essex/build-util-noop'
+import { streamToPromise } from '@essex/build-util-stream-to-promise'
 import * as gulp from 'gulp'
 import * as debug from 'gulp-debug'
 import * as ts from 'gulp-typescript'
-import { noop } from '@essex/build-util-noop'
-import { streamToPromise } from '@essex/build-util-stream-to-promise'
 
 export interface TsJobSpec {
 	/**

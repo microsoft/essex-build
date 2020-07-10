@@ -2,6 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-export * from './createBabelConfig'
-export * from './getBrowsersList'
-export * from './getBabelConfigs'
+export interface LintCommandOptions {
+	fix?: boolean
+	staged?: boolean
+	docs?: boolean
+	strict?: boolean
+}

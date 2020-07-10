@@ -10,7 +10,7 @@ import { subtaskSuccess, subtaskFail } from '../../utils/log'
 import { getBabelConfigs } from '../../config'
 import { existsSync } from 'fs'
 import { run } from '@essex/shellrunner'
-import { gulpReport } from '../../utils'
+import { resolveGulpTask } from '../../utils'
 
 const cwd = process.cwd()
 /* tsconfig.json _must_ exist */
@@ -28,7 +28,7 @@ export function configureTasks({
 
 	function typedoc(cb: (err?: Error) => void) {
 		if (docs) {
-			generateTypedocs(verbose).then(...gulpReport('typedoc', cb))
+			generateTypedocs(verbose).then(...resolveGulpTask('typedoc', cb))
 		} else {
 			cb()
 		}
@@ -80,7 +80,9 @@ export function configureTasks({
 		if (!existsSync(webpackConfigPath)) {
 			return cb()
 		} else {
-			webpackBuild({ env, mode, verbose }).then(...gulpReport('webpack', cb))
+			webpackBuild({ env, mode, verbose }).then(
+				...resolveGulpTask('webpack', cb),
+			)
 		}
 	}
 
@@ -91,7 +93,7 @@ export function configureTasks({
 			run({
 				exec: 'rollup',
 				args: ['-c', rollupConfigPath],
-			}).then(...gulpReport('rollup', cb))
+			}).then(...resolveGulpTask('rollup', cb))
 		}
 	}
 

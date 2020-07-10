@@ -3,8 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { getProjectPath, log, getEssexScriptsPathSync } from '../../utils'
 import { run } from '@essex/shellrunner'
+import { getProjectPath, log, getEssexScriptsPathSync } from '../../utils'
 
 export interface TestCommandOptions {
 	verbose?: boolean

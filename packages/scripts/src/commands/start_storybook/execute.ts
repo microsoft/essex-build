@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { getStorybookConfigPath } from '../../utils'
 import { run } from '@essex/shellrunner'
+import { getStorybookConfigPath } from '../../utils'
 
 export interface StartStorybookCommandOptions {
 	verbose: boolean

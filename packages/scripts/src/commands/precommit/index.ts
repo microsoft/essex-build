@@ -2,9 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { run } from '@essex/shellrunner'
 import { Command } from 'commander'
 import { getConfigPath } from '../../utils'
-import { run } from '@essex/shellrunner'
 
 export default function preCommit(program: Command): void {
 	program

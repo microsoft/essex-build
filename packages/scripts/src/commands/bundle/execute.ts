@@ -2,10 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { Job, run } from '@essex/shellrunner'
 import { getWebpackBundleConfigPath } from '../../utils'
 import { getWebpackArgs } from '../../utils/webpack'
 import { BundleMode } from '../build/types'
-import { Job, run } from '@essex/shellrunner'
 
 export interface BundleCommandOptions {
 	mode: BundleMode

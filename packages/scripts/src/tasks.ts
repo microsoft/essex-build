@@ -3,11 +3,11 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { join } from 'path'
+import { noop } from '@essex/build-util-noop'
 import * as gulp from 'gulp'
 import * as babel from 'gulp-babel'
 import * as debug from 'gulp-debug'
 import * as ts from 'gulp-typescript'
-import { noop } from '@essex/build-util-noop'
 
 const cwd = process.cwd()
 /* tsconfig.json _must_ exist */
