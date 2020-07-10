@@ -7,3 +7,4 @@ export const log = logger
 export * from './paths'
 export * from './config'
 export * from './promises'
+export * from './gulpReport'
