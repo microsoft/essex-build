@@ -17,22 +17,40 @@ const tsConfigPath = join(cwd, 'tsconfig.json')
 export function configureTasks({
 	verbose = false,
 	storybook = false,
-	env = 'production',
+	webpack = false,
+	rollup = false,
 	docs = false,
+	code = !webpack && !rollup, 
+	env = 'production',
 	mode = BundleMode.production,
 }: BuildCommandOptions) {
 	if (!existsSync(tsConfigPath)) {
 		throw new Error('tsconfig.json must exist')
 	}
 
+	const generateDocs = docs ? generateTypedocs(verbose) : noopTask
+	const buildStorybook = storybook ? storybookBuild(verbose) : noopTask
+	const buildTypings = code ? emitTypings(tsConfigPath, verbose) : noopTask
+	const compileTS = code ? compileTypescript(tsConfigPath, verbose) : noopTask
+	const compileJS = code ? gulp.parallel(babelEsm(verbose, env), babelCjs(verbose, env)) : noopTask
+	const bundleWebpack = webpack ? webpackBuild({ env, mode, verbose }) : noopTask
+	const bundleRollup = rollup ? rollupBuild : noopTask
+
 	return gulp.parallel(
-		docs ? generateTypedocs(verbose) : noopTask,
-		storybook ? storybookBuild(verbose) : noopTask,
-		emitTypings(tsConfigPath, verbose),
+		generateDocs,
+		buildStorybook,
+		buildTypings,
+		//
+		// The primary transpilation pipeline
+		//  tsc -> babel -> bundlers
+		//
 		gulp.series(
-			compileTypescript(tsConfigPath, verbose),
-			gulp.parallel(babelEsm(verbose, env), babelCjs(verbose, env)),
-			gulp.parallel(webpackBuild({ env, mode, verbose }), rollupBuild),
+			compileTS,
+			compileJS,
+			gulp.parallel(
+				bundleWebpack, 
+				bundleRollup
+			),
 		),
 	)
 }

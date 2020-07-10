@@ -1791,6 +1791,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@essex/build-step-commitlint@^8.0.0-alpha.11, @essex/build-step-commitlint@workspace:packages/steps/commitlint":
+  version: 0.0.0-use.local
+  resolution: "@essex/build-step-commitlint@workspace:packages/steps/commitlint"
+  dependencies:
+    "@essex/build-utils-gulp": ^8.0.0-alpha.11
+    "@essex/shellrunner": ^8.0.0-alpha.11
+    "@types/node": ^14.0.14
+    "@types/rimraf": ^3.0.0
+    rimraf: ^3.0.2
+    typescript: 3.9.6
+  languageName: unknown
+  linkType: soft
+
 "@essex/build-step-docs@^8.0.0-alpha.11, @essex/build-step-docs@workspace:packages/steps/docs":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-docs@workspace:packages/steps/docs"
@@ -2043,6 +2056,7 @@ __metadata:
   dependencies:
     "@essex/build-step-audit": ^8.0.0-alpha.11
     "@essex/build-step-clean": ^8.0.0-alpha.11
+    "@essex/build-step-commitlint": ^8.0.0-alpha.11
     "@essex/build-step-docs": ^8.0.0-alpha.11
     "@essex/build-step-eslint": ^8.0.0-alpha.11
     "@essex/build-step-pretty-quick": ^8.0.0-alpha.11
@@ -2100,6 +2114,7 @@ __metadata:
   dependencies:
     "@essex/build-step-audit": ^8.0.0-alpha.11
     "@essex/build-step-clean": ^8.0.0-alpha.11
+    "@essex/build-step-commitlint": ^8.0.0-alpha.11
     "@essex/build-step-docs": ^8.0.0-alpha.11
     "@essex/build-step-eslint": ^8.0.0-alpha.11
     "@essex/build-step-pretty-quick": ^8.0.0-alpha.11

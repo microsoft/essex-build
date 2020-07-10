@@ -7,8 +7,20 @@ export default function build(program: Command): void {
 		.command('build')
 		.description('builds a library package')
 		.option('-v, --verbose', 'verbose output')
-		.option('--storybook', 'builds storybook output in addition to normal build artifacts')
-		.option('--docs', 'enables documentation generation')
+		.option(
+			'-sb, --storybook',
+			'builds storybook output in addition to normal build artifacts',
+		)
+		.option(
+			'-wp, --webpack',
+			'bundles webpack output using either the base config or webpack.config.js',
+		)
+		.option(
+			'-rp, --rollup',
+			'bundles rollup output using either the base config or rollup.config.js',
+		)
+		.option('-c, --code', 'transpiles TS; necessary when --webpack or --rollup is explicitly set')
+		.option('-d, --docs', 'generates TypeDoc documentation')
 		.option(
 			'--env <env>',
 			'build environment (used by babel and webpack)',

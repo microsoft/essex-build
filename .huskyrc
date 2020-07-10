@@ -1,5 +1,6 @@
 {
     "hooks": {
-        "pre-commit": "yarn essex pre-commit"
+        "pre-commit": "yarn essex pre-commit",
+        "commit-msg": "yarn essex commit-msg"
     }
 }

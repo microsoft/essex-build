@@ -5,7 +5,7 @@
 import { docs as execDocs } from '@essex/build-step-docs'
 import { eslint } from '@essex/build-step-eslint'
 import { prettyQuick } from '@essex/build-step-pretty-quick'
-import { resolveGulpTask } from '@essex/build-utils-gulp'
+import { resolveGulpTask,  noopTask } from '@essex/build-utils-gulp'
 import * as gulp from 'gulp'
 import { LintCommandOptions } from './types'
 
@@ -27,13 +27,9 @@ export function configureTasks({
 	}
 
 	function checkDocumentation(cb: (err?: Error) => void) {
-		if (!docs) {
-			return cb()
-		} else {
-			execDocs().then(...resolveGulpTask('docs', cb))
-		}
+		execDocs().then(...resolveGulpTask('docs', cb))
 	}
 
-	const lint = gulp.parallel(checkCode, checkFormatting, checkDocumentation)
+	const lint = gulp.parallel(checkCode, checkFormatting, docs ? checkDocumentation : noopTask)
 	return lint
 }
