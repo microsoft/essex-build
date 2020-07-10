@@ -6,19 +6,12 @@
 import { fail } from '../../utils/log'
 import { configureTasks } from './tasks'
 import { BuildCommandOptions } from './types'
+import { gulpExec } from '../../utils'
 
 export async function execute(options: BuildCommandOptions): Promise<number> {
 	try {
 		const build = configureTasks(options)
-		await new Promise((resolve, reject) => {
-			build((err?: Error) => {
-				if (err) {
-					reject(err)
-				} else {
-					resolve()
-				}
-			})
-		})
+		await gulpExec(build)
 		return 0
 	} catch (err) {
 		fail('build error', err)

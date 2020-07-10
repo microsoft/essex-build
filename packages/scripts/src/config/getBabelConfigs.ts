@@ -1,4 +1,4 @@
-import { createBabelConfig } from "./createBabelConfig"\
+import { createBabelConfig } from "./createBabelConfig"
 import { join } from 'path'
 import { getBrowsersList } from "./getBrowsersList"
 
