@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
-import webpack = require('webpack')
+import * as webpack from 'webpack'
 import { getCompiler } from './getCompiler'
 import { WebpackCompilerOptions } from './types'
 

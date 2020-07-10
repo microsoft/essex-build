@@ -2,9 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { existsSync } from 'fs'
 import { join } from 'path'
-import { getNodeModulesPaths} from '@essex/build-util-hoister'
+import { getNodeModulesPaths } from '@essex/build-util-hoister'
 const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 

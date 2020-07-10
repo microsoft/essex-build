@@ -8,6 +8,8 @@
 		"build": "tsc"
 	},
 	"dependencies": {
+		"@commitlint/cli": "^9.0.1",
+		"@commitlint/config-conventional": "^9.0.1",
 		"@essex/build-utils-gulp": "^8.0.0-alpha.11",
 		"@essex/shellrunner": "^8.0.0-alpha.11"
 	},

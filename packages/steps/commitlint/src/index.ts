@@ -1,7 +1,11 @@
-import { run } from '@essex/shellrunner'
-import { resolveGulpTask, filterShellCode } from '@essex/build-utils-gulp'
-import { join } from 'path'
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
 import { existsSync } from 'fs'
+import { join } from 'path'
+import { resolveGulpTask, filterShellCode } from '@essex/build-utils-gulp'
+import { run } from '@essex/shellrunner'
 
 const cwd = process.cwd()
 const defaultConfig = join(__dirname, '../config/commitlint.config.js')
@@ -14,5 +18,5 @@ export function checkCommitMessage(cb: (err?: Error) => void) {
 		args: ['--config', configFile, '-E', 'HUSKY_GIT_PARAMS'],
 	})
 		.then(filterShellCode)
-		.then(...resolveGulpTask('rollup', cb))
+		.then(...resolveGulpTask('commitlint', cb))
 }

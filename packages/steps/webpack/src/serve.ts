@@ -2,10 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import Server = require('webpack-dev-server')
+import * as Server from 'webpack-dev-server'
 import { getCompiler } from './getCompiler'
-import { WebpackCompilerOptions } from './types'
 import { getConfig } from './getConfig'
+import { WebpackCompilerOptions } from './types'
 
 const DEFAULT_PORT = 8080
 const DEFAULT_HOST = '0.0.0.0'

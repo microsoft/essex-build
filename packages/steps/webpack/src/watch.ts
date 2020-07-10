@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import webpack = require('webpack')
+import * as webpack from 'webpack'
 import { getCompiler } from './getCompiler'
 import { WebpackCompilerOptions } from './types'
 
