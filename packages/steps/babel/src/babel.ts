@@ -3,11 +3,11 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @essex/adjacent-await */
+import { getCjsConfiguration, getEsmConfiguration } from '@essex/babel-config'
+import { noop } from '@essex/build-util-noop'
+import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
 import * as gulp from 'gulp'
 import * as babel from 'gulp-babel'
-import { getCjsConfiguration, getEsmConfiguration } from '@essex/babel-config'
-import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
-import { noop } from '@essex/build-util-noop'
 import * as debug from 'gulp-debug'
 
 /**

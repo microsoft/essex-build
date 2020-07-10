@@ -2,9 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { configureTasks } from './tasks'
 import { gulpExec } from '../../utils'
 import { success, fail } from '../../utils/log'
+import { configureTasks } from './tasks'
 
 export interface AuditCommandOptions {
 	verbose: boolean

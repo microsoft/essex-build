@@ -3,6 +3,7 @@ export interface BuildCommandOptions {
 	docs?: boolean
 	env?: string
 	mode?: BundleMode
+	storybook?: boolean
 }
 
 export enum BundleMode {

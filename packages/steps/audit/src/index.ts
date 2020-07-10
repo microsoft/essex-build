@@ -1,3 +1,7 @@
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
 import { resolve } from 'path'
 import { run } from '@essex/shellrunner'
 import { resolveGulpTask } from '@essex/tasklogger'

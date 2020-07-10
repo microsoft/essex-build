@@ -8,7 +8,6 @@ import { prettyQuick } from '@essex/build-step-pretty-quick'
 import * as gulp from 'gulp'
 import { resolveGulpTask } from '../../utils'
 import { LintCommandOptions } from './types'
-const prettier = require('gulp-prettier')
 
 export function configureTasks({
 	fix = false,

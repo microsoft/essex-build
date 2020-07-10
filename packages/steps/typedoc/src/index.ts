@@ -4,13 +4,13 @@
  */
 import { existsSync } from 'fs'
 import { join, resolve } from 'path'
+import { resolveGulpTask } from '@essex/tasklogger'
 import {
 	Application,
 	TSConfigReader,
 	TypeDocReader,
 	TypeDocAndTSOptions,
 } from 'typedoc'
-import { resolveGulpTask } from '@essex/tasklogger'
 
 const packageJsonPath = join(process.cwd(), 'package.json')
 const readmePath = join(process.cwd(), 'README.md')

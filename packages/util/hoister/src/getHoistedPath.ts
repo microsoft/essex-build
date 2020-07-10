@@ -5,7 +5,6 @@
 import { existsSync } from 'fs'
 import { platform } from 'os'
 import { join, resolve } from 'path'
-import * as log from '../log'
 
 const sep = platform().indexOf('win') === 0 ? ';' : ':'
 
@@ -17,7 +16,6 @@ export function getHoistedPath(): string {
 	const currentPath = process.env.PATH
 	const binPaths = getNodeModulesBinPaths()
 	const result = [...binPaths, currentPath].join(sep)
-	log.debug('hoisted path:', result)
 	return result
 }
 

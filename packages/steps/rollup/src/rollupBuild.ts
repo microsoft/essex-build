@@ -1,7 +1,11 @@
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
 import { existsSync } from 'fs'
+import { join } from 'path'
 import { run } from '@essex/shellrunner'
 import { resolveGulpTask } from '@essex/tasklogger'
-import { join } from 'path'
 
 const cwd = process.cwd()
 const rollupConfigPath = join(cwd, 'rollup.config.js')

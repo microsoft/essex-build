@@ -7,6 +7,7 @@ export default function build(program: Command): void {
 		.command('build')
 		.description('builds a library package')
 		.option('-v, --verbose', 'verbose output')
+		.option('--storybook', 'builds storybook output in addition to normal build artifacts')
 		.option('--docs', 'enables documentation generation')
 		.option(
 			'--env <env>',

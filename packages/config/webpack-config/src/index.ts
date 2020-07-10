@@ -9,7 +9,7 @@ import {
 	getIndexFile,
 	getBabelConfiguration,
 } from './configValues'
-import { getNodeModulesPaths } from './getNodeModulesPaths'
+import { getNodeModulesPaths } from '@essex/build-util-hoister'
 import { log } from './log'
 import { validateConfiguration } from './validate'
 

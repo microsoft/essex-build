@@ -1,7 +1,11 @@
-import { join } from 'path'
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
 import { existsSync } from 'fs'
-import { getBrowsersList } from './getBrowsersList'
+import { join } from 'path'
 import { createBabelConfig } from './createBabelConfig'
+import { getBrowsersList } from './getBrowsersList'
 
 const cwd = process.cwd()
 const packageJsonPath = join(cwd, 'package.json')
