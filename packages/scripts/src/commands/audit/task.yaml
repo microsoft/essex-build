@@ -1,8 +1,0 @@
-tasks:
-  - exec: audit-ci
-    args:
-      - --config
-      - "{{auditCiConfig}}"
-  - exec: license-to-fail
-    args:
-      - "{{licenseConfig}}"

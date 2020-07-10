@@ -5,12 +5,7 @@
 /* eslint-disable @essex/adjacent-await */
 import * as gulp from 'gulp'
 import * as babel from 'gulp-babel'
-import { existsSync } from 'fs'
-import { join } from 'path'
-import {
-	babelCjs as defaultCjs,
-	babelEsm as defaultEsm,
-} from './default-config'
+import { getCjsConfiguration, getEsmConfiguration } from '@essex/babel-config'
 import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
 import { noop } from '@essex/build-util-noop'
 import * as debug from 'gulp-debug'
@@ -19,12 +14,11 @@ import * as debug from 'gulp-debug'
  * Transpile ts output into babel cjs
  * @param verbose
  */
-export function babelCjs(verbose: boolean): () => NodeJS.ReadWriteStream {
-	const cjsOverridePath = join(process.cwd(), 'babelrc.cjs.js')
-	const cjsConfig = existsSync(cjsOverridePath)
-		? require(cjsOverridePath)
-		: defaultCjs
-
+export function babelCjs(
+	verbose: boolean,
+	env: string,
+): () => NodeJS.ReadWriteStream {
+	const cjsConfig = getCjsConfiguration(env)
 	return () =>
 		gulp
 			.src(['lib/**/*.js'])
@@ -39,11 +33,11 @@ export function babelCjs(verbose: boolean): () => NodeJS.ReadWriteStream {
  * Transpile ts output into babel esm
  * @param verbose
  */
-export function babelEsm(verbose: boolean): () => NodeJS.ReadWriteStream {
-	const esmOverridePath = join(process.cwd(), 'babelrc.esm.js')
-	const esmConfig = existsSync(esmOverridePath)
-		? require(esmOverridePath)
-		: defaultEsm
+export function babelEsm(
+	verbose: boolean,
+	env: string,
+): () => NodeJS.ReadWriteStream {
+	const esmConfig = getEsmConfiguration(env)
 	return () =>
 		gulp
 			.src(['lib/**/*.js'])
