@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-babel",
-	"version": "8.0.0-alpha.9",
+	"version": "8.0.0-alpha.11",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
 	"scripts": {
@@ -15,8 +15,8 @@
 		"@babel/plugin-proposal-optional-chaining": "^7.10.4",
 		"@babel/preset-env": "^7.10.4",
 		"@babel/types": "^7.10.4",
-		"@essex/build-util-noop": "^8.0.0-alpha.9",
-		"@essex/tasklogger": "^8.0.0-alpha.9",
+		"@essex/build-util-noop": "^8.0.0-alpha.11",
+		"@essex/tasklogger": "^8.0.0-alpha.11",
 		"gulp": "^4.0.2",
 		"gulp-babel": "^8.0.0",
 		"gulp-debug": "^4.0.0"

@@ -9,7 +9,7 @@
 	},
 	"dependencies": {
 		"@essex/shellrunner": "^8.0.0-alpha.11",
-		"@essex/tasklogger": "^8.0.0-alpha.9"
+		"@essex/tasklogger": "^8.0.0-alpha.11"
 	},
 	"devDependencies": {
 		"@types/node": "^14.0.14",

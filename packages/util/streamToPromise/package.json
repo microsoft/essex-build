@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-util-stream-to-promise",
-	"version": "8.0.0-alpha.9",
+	"version": "8.0.0-alpha.11",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
 	"scripts": {

@@ -13,6 +13,12 @@ export function rollupBuild(cb: (err?: Error) => void) {
 		run({
 			exec: 'rollup',
 			args: ['-c', rollupConfigPath],
-		}).then(...resolveGulpTask('rollup', cb))
+		})
+			.then(({ code }) => {
+				if (code !== 0) {
+					throw new Error('non-zero exit code')
+				}
+			})
+			.then(...resolveGulpTask('rollup', cb))
 	}
 }

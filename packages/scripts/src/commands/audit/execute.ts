@@ -2,15 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { resolve } from 'path'
-import { Job, run } from '@essex/shellrunner'
-
-const auditCiConfig = resolve(__dirname, '../../../config/.audit-ci.js')
-
-const licenseConfig = resolve(
-	__dirname,
-	'../../../config/licenses-to-fail-config.js',
-)
+import { configureTasks } from './tasks'
+import { gulpExec } from '../../utils'
+import { success, fail } from '../../utils/log'
 
 export interface AuditCommandOptions {
 	verbose: boolean
@@ -18,20 +12,12 @@ export interface AuditCommandOptions {
 
 export async function execute(options: AuditCommandOptions): Promise<number> {
 	try {
-		const { code } = await run(checkSecurityIssues, checkLicenses)
-		return code
+		const build = configureTasks()
+		await gulpExec(build)
+		success('audit succeeded')
+		return 0
 	} catch (err) {
-		console.error('audit error', err)
+		fail('audit failed')
 		return 1
 	}
-}
-
-// Audit CVEs
-const checkSecurityIssues: Job = {
-	exec: 'audit-ci',
-	args: ['--config', auditCiConfig],
-}
-const checkLicenses: Job = {
-	exec: 'license-to-fail',
-	args: [licenseConfig],
 }
