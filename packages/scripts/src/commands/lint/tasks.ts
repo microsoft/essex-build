@@ -27,7 +27,7 @@ export function configureTasks({
 			.src(['src/**/*', '*.js', '*.ts', '*.tsx'])
 			.pipe(
 				eslint({
-					configFile: eslintConfig,
+					configFile: eslintConfig
 				}),
 			)
 			.pipe(eslint.format())
