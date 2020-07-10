@@ -1,8 +1,12 @@
-const { addDecorator } = require('@storybook/react')
-const { withKnobs } = require('@storybook/addon-knobs')
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
 const { withA11y } = require('@storybook/addon-a11y')
-const { addParameters } = require('@storybook/react')
 const { DocsPage, DocsContainer } = require('@storybook/addon-docs/blocks')
+const { withKnobs } = require('@storybook/addon-knobs')
+const { addDecorator } = require('@storybook/react')
+const { addParameters } = require('@storybook/react')
 
 addDecorator(withKnobs)
 addDecorator(withA11y)

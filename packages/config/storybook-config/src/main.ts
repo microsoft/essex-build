@@ -1,8 +1,12 @@
-import { getNodeModulesPaths} from '@essex/build-util-hoister'
-import { join } from 'path'
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
 import { existsSync } from 'fs'
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+import { join } from 'path'
+import { getNodeModulesPaths} from '@essex/build-util-hoister'
 const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin')
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 
 function getBabelConfiguration() {
 	const overrideFile = join(process.cwd(), 'babelrc.esm.js')

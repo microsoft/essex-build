@@ -3,8 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { join } from 'path'
-import { fileExists, rootDir, copyFilePromise } from '../../utils'
 import * as log from '@essex/tasklogger'
+import { fileExists, rootDir, copyFilePromise } from '../../utils'
 
 export function copyConfigFile(file: string): Promise<number> {
 	const scriptPath = join(rootDir, `config/${file}`)

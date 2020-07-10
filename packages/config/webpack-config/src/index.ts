@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { getNodeModulesPaths } from '@essex/build-util-hoister'
 import {
 	getWdsStaticConfig,
 	getHomePage,
@@ -9,7 +10,6 @@ import {
 	getIndexFile,
 	getBabelConfiguration,
 } from './configValues'
-import { getNodeModulesPaths } from '@essex/build-util-hoister'
 import { log } from './log'
 import { validateConfiguration } from './validate'
 

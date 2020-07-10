@@ -3,8 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { resolve } from 'path'
-import { run } from '@essex/shellrunner'
 import { resolveGulpTask, filterShellCode } from '@essex/build-utils-gulp'
+import { run } from '@essex/shellrunner'
 
 const auditCiConfig = resolve(__dirname, '../config/.audit-ci.js')
 const licenseConfig = resolve(

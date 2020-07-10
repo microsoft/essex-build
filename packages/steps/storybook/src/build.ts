@@ -4,8 +4,8 @@
  */
 import { existsSync } from 'fs'
 import { join } from 'path'
-import { run } from '@essex/shellrunner'
 import { resolveGulpTask, filterShellCode } from '@essex/build-utils-gulp'
+import { run } from '@essex/shellrunner'
 
 const cwd = process.cwd()
 const defaultPath = join(__dirname, '../config/.storybook')

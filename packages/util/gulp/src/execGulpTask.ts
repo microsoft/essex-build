@@ -1,7 +1,6 @@
-/**
- * Executes a gulp task (from gulp.parallel or gulp.serial) and returns a promise
- * representing it's success
- * @param task
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
  */
 export function execGulpTask(
 	task: (cb: (err?: Error) => void) => void,
