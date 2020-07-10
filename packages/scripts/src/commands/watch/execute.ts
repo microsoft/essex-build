@@ -12,7 +12,7 @@ import {
 	fileExists,
 	getWebpackConfigPath,
 } from '../../utils'
-import { BundleMode } from '../build/execute'
+import { BundleMode } from '../build/types'
 import { Job, run } from '@essex/shellrunner'
 
 export interface WatchCommandOptions {

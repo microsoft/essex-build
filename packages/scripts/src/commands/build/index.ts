@@ -1,5 +1,6 @@
 import { Command } from 'commander'
-import { execute, BuildCommandOptions } from './execute'
+import { execute } from './execute'
+import { BuildCommandOptions } from './types'
 
 export default function build(program: Command): void {
 	program

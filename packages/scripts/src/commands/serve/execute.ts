@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { BundleMode } from '../build/execute'
+import { BundleMode } from '../build/types'
 import { webpackServe } from '@essex/build-step-webpack'
 
 export interface ServeCommandOptions {

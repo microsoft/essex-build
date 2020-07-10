@@ -4,7 +4,7 @@
  */
 import { getWebpackBundleConfigPath } from '../../utils'
 import { getWebpackArgs } from '../../utils/webpack'
-import { BundleMode } from '../build/execute'
+import { BundleMode } from '../build/types'
 import { Job, run } from '@essex/shellrunner'
 
 export interface BundleCommandOptions {
