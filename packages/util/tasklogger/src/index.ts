@@ -43,19 +43,3 @@ export function subtaskSuccess(text: string): void {
 export function subtaskComplete(): void {
 	console.log(chalk.green('      ✔ Complete'))
 }
-
-export function resolveGulpTask(
-	title: string,
-	cb: (err?: Error) => void,
-): [() => void, (err: Error) => void] {
-	return [
-		() => {
-			subtaskSuccess(title)
-			cb()
-		},
-		err => {
-			subtaskFail(title)
-			cb(err)
-		},
-	]
-}

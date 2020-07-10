@@ -7,7 +7,7 @@ import { babelEsm, babelCjs } from '@essex/build-step-babel'
 import { webpackBuild } from '@essex/build-step-webpack'
 import { rollupBuild } from '@essex/build-step-rollup'
 import { storybookBuild } from '@essex/build-step-storybook'
-import { noopTask } from '@essex/build-util-noop'
+import { noopTask } from '@essex/build-utils-gulp'
 import { BundleMode, BuildCommandOptions } from './types'
 import { existsSync } from 'fs'
 

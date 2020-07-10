@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { prettyQuick } from '@essex/build-step-pretty-quick'
-import { resolveTask } from '../../utils'
+import { resolveTask } from '@essex/build-utils-promises'
 
 export interface PrettierCommandOptions {
 	verbose: boolean

@@ -4,7 +4,8 @@
  */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { run } from '@essex/shellrunner'
-import { getProjectPath, log, getEssexScriptsPathSync } from '../../utils'
+import { getProjectPath, getEssexScriptsPathSync } from '../../utils'
+import * as log from '@essex/tasklogger'
 
 export interface TestCommandOptions {
 	verbose?: boolean

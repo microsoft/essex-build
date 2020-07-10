@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { log } from '../../utils'
+import * as log from '@essex/tasklogger'
 import { recipes } from '../recipes/recipes'
 import { copyConfigFile } from './util'
 

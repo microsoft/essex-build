@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Command } from 'commander'
-import { log } from '../../utils'
+import * as log from '@essex/tasklogger'
 import { recipes } from './recipes'
 export default function commitMsg(program: Command): void {
 	program

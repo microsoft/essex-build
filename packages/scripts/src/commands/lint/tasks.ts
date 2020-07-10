@@ -5,8 +5,8 @@
 import { docs as execDocs } from '@essex/build-step-docs'
 import { eslint } from '@essex/build-step-eslint'
 import { prettyQuick } from '@essex/build-step-pretty-quick'
+import { resolveGulpTask } from '@essex/build-utils-gulp'
 import * as gulp from 'gulp'
-import { resolveGulpTask } from '../../utils'
 import { LintCommandOptions } from './types'
 
 export function configureTasks({

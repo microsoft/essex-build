@@ -4,7 +4,7 @@
  */
 import { resolve } from 'path'
 import { run } from '@essex/shellrunner'
-import { resolveGulpTask } from '@essex/tasklogger'
+import { resolveGulpTask, filterShellCode } from '@essex/build-utils-gulp'
 
 const auditCiConfig = resolve(__dirname, '../config/.audit-ci.js')
 const licenseConfig = resolve(
@@ -17,11 +17,7 @@ export function auditSecurity(cb: (err?: Error) => void) {
 		exec: 'audit-ci',
 		args: ['--config', auditCiConfig],
   })
-  .then(({code}) => {
-    if (code !== 0) {
-      throw new Error('non-zero exit code')
-    }
-  })
+  .then(filterShellCode)
   .then(...resolveGulpTask('audit-sec', cb))
 }
 
@@ -30,10 +26,6 @@ export function auditLicenses(cb: (err?: Error) => void) {
 		exec: 'license-to-fail',
 		args: [licenseConfig],
   })
-  .then(({code}) => {
-    if (code !== 0) {
-      throw new Error('non-zero exit code')
-    }
-  })
+  .then(filterShellCode)
   .then(...resolveGulpTask('audit-licenses', cb))
 }

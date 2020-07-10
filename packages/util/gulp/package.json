@@ -1,5 +1,5 @@
 {
-	"name": "@essex/build-step-storybook",
+	"name": "@essex/build-utils-gulp",
 	"version": "8.0.0-alpha.11",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
@@ -8,15 +8,13 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@essex/build-utils-gulp": "^8.0.0-alpha.11",
 		"@essex/shellrunner": "^8.0.0-alpha.11",
-		"@essex/storybook-config": "^8.0.0-alpha.11",
 		"@essex/tasklogger": "^8.0.0-alpha.11",
-		"@storybook/react": "^5.3.19"
+		"@types/through2": "^2.0.36",
+		"through2": "^4.0.2"
 	},
 	"devDependencies": {
 		"@types/node": "^14.0.14",
-		"@types/rimraf": "^3.0.0",
 		"rimraf": "^3.0.2",
 		"typescript": "3.9.6"
 	}

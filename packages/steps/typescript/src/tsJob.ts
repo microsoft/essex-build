@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { noop } from '@essex/build-util-noop'
+import { noopStep } from '@essex/build-utils-gulp'
 import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
 import * as gulp from 'gulp'
 import * as debug from 'gulp-debug'
@@ -50,7 +50,7 @@ export function tsJob({
 		return gulp
 			.src(['src/**/*.ts*', '!**/__tests__/**'])
 			.pipe(tsProject())
-			.pipe(verbose ? debug({ title }) : noop())
+			.pipe(verbose ? debug({ title }) : noopStep())
 			.pipe(gulp.dest(dest))
 			.on('end', () => subtaskSuccess(title))
 			.on('error', () => subtaskFail(title))

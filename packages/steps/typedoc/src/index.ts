@@ -4,7 +4,7 @@
  */
 import { existsSync } from 'fs'
 import { join, resolve } from 'path'
-import { resolveGulpTask } from '@essex/tasklogger'
+import { resolveGulpTask } from '@essex/build-utils-gulp'
 import {
 	Application,
 	TSConfigReader,

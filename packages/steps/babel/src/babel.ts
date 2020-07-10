@@ -4,7 +4,7 @@
  */
 /* eslint-disable @essex/adjacent-await */
 import { getCjsConfiguration, getEsmConfiguration } from '@essex/babel-config'
-import { noop } from '@essex/build-util-noop'
+import { noopStep } from '@essex/build-utils-gulp'
 import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
 import * as gulp from 'gulp'
 import * as babel from 'gulp-babel'
@@ -23,7 +23,7 @@ export function babelCjs(
 		gulp
 			.src(['lib/**/*.js'])
 			.pipe(babel(cjsConfig))
-			.pipe(verbose ? debug({ title: 'babel-cjs' }) : noop())
+			.pipe(verbose ? debug({ title: 'babel-cjs' }) : noopStep())
 			.pipe(gulp.dest('dist/cjs'))
 			.on('end', () => subtaskSuccess('babel-cjs'))
 			.on('error', () => subtaskFail('babel-cjs'))
@@ -42,7 +42,7 @@ export function babelEsm(
 		gulp
 			.src(['lib/**/*.js'])
 			.pipe(babel(esmConfig))
-			.pipe(verbose ? debug({ title: 'babel-esm' }) : noop())
+			.pipe(verbose ? debug({ title: 'babel-esm' }) : noopStep())
 			.pipe(gulp.dest('dist/esm'))
 			.on('end', () => subtaskSuccess('babel-esm'))
 			.on('error', () => subtaskFail('babel-esm'))
