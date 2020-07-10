@@ -1531,6 +1531,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@essex/build-step-rollup@^8.0.0-alpha.11, @essex/build-step-rollup@workspace:packages/steps/rollup":
+  version: 0.0.0-use.local
+  resolution: "@essex/build-step-rollup@workspace:packages/steps/rollup"
+  dependencies:
+    "@essex/shellrunner": ^8.0.0-alpha.11
+    "@essex/tasklogger": ^8.0.0-alpha.9
+    "@types/node": ^14.0.14
+    rimraf: ^3.0.2
+    typescript: 3.9.6
+  languageName: unknown
+  linkType: soft
+
 "@essex/build-step-typedoc@^8.0.0-alpha.9, @essex/build-step-typedoc@workspace:packages/steps/typedoc":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-typedoc@workspace:packages/steps/typedoc"
@@ -1568,7 +1580,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/build-step-webpack@workspace:packages/steps/webpack"
   dependencies:
-    "@essex/webpack-config": 8.0.0-alpha.11
+    "@essex/tasklogger": ^8.0.0-alpha.9
+    "@essex/webpack-config": ^8.0.0-alpha.11
     "@types/node": ^14.0.14
     "@types/webpack": ^4.41.19
     "@types/webpack-dev-server": ^3.11.0
@@ -1683,6 +1696,7 @@ __metadata:
     "@essex/build-step-docs": ^8.0.0-alpha.10
     "@essex/build-step-eslint": ^8.0.0-alpha.11
     "@essex/build-step-pretty-quick": ^8.0.0-alpha.9
+    "@essex/build-step-rollup": ^8.0.0-alpha.11
     "@essex/build-step-typedoc": ^8.0.0-alpha.9
     "@essex/build-step-typescript": ^8.0.0-alpha.9
     "@essex/build-step-webpack": ^8.0.0-alpha.11
@@ -1738,6 +1752,7 @@ __metadata:
     "@essex/build-step-docs": ^8.0.0-alpha.10
     "@essex/build-step-eslint": ^8.0.0-alpha.11
     "@essex/build-step-pretty-quick": ^8.0.0-alpha.9
+    "@essex/build-step-rollup": ^8.0.0-alpha.11
     "@essex/build-step-typedoc": ^8.0.0-alpha.9
     "@essex/build-step-typescript": ^8.0.0-alpha.9
     "@essex/build-step-webpack": ^8.0.0-alpha.11
@@ -1811,7 +1826,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/webpack-config@8.0.0-alpha.11, @essex/webpack-config@^8.0.0-alpha.11, @essex/webpack-config@workspace:packages/config/webpack-config":
+"@essex/webpack-config@^8.0.0-alpha.11, @essex/webpack-config@workspace:packages/config/webpack-config":
   version: 0.0.0-use.local
   resolution: "@essex/webpack-config@workspace:packages/config/webpack-config"
   dependencies:

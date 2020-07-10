@@ -30,10 +30,8 @@ export async function execute(options: AuditCommandOptions): Promise<number> {
 const checkSecurityIssues: Job = {
 	exec: 'audit-ci',
 	args: ['--config', auditCiConfig],
-	npx: true,
 }
 const checkLicenses: Job = {
 	exec: 'license-to-fail',
 	args: [licenseConfig],
-	npx: true,
 }

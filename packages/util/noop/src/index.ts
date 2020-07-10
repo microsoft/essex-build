@@ -4,3 +4,4 @@
  */
 import * as through2 from 'through2'
 export const noop = (): any => through2.obj()
+export const noopTask = (cb: Function) => cb()

@@ -5,16 +5,13 @@ import { generateTypedocs } from '@essex/build-step-typedoc'
 import { compileTypescript, emitTypings } from '@essex/build-step-typescript'
 import { babelEsm, babelCjs } from '@essex/build-step-babel'
 import { webpackBuild } from '@essex/build-step-webpack'
+import { rollupBuild } from '@essex/build-step-rollup'
+import { noopTask } from '@essex/build-util-noop'
 import { BundleMode, BuildCommandOptions } from './types'
 import { existsSync } from 'fs'
-import { run } from '@essex/shellrunner'
-import { resolveGulpTask } from '../../utils'
 
 const cwd = process.cwd()
-/* tsconfig.json _must_ exist */
-const tsConfigJsonPath = join(cwd, 'tsconfig.json')
-const webpackConfigPath = join(cwd, 'webpack.config.js')
-const rollupConfigPath = join(cwd, 'rollup.config.js')
+const tsConfigPath = join(cwd, 'tsconfig.json')
 
 export function configureTasks({
 	verbose = false,
@@ -22,38 +19,17 @@ export function configureTasks({
 	docs = false,
 	mode = BundleMode.production,
 }: BuildCommandOptions) {
-	function webpack(cb: (err?: Error) => void) {
-		if (!existsSync(webpackConfigPath)) {
-			return cb()
-		} else {
-			webpackBuild({ env, mode, verbose }).then(
-				...resolveGulpTask('webpack', cb),
-			)
-		}
+	if (!existsSync(tsConfigPath)) {
+		throw new Error('tsconfig.json must exist')
 	}
 
-	function rollup(cb: (err?: Error) => void) {
-		if (!existsSync(rollupConfigPath)) {
-			return cb()
-		} else {
-			run({
-				exec: 'rollup',
-				args: ['-c', rollupConfigPath],
-			}).then(...resolveGulpTask('rollup', cb))
-		}
-	}
-
-	const tsc = compileTypescript(tsConfigJsonPath, verbose)
-	const tscDeclarations = emitTypings(tsConfigJsonPath, verbose)
-	const typedoc = docs ? generateTypedocs(verbose) : (cb: Function) => cb()
-
-	const build = gulp.parallel(
-		typedoc,
+	return gulp.parallel(
+		docs ? generateTypedocs(verbose) : noopTask,
+		emitTypings(tsConfigPath, verbose),
 		gulp.series(
-			gulp.parallel(tsc, tscDeclarations),
+			compileTypescript(tsConfigPath, verbose),
 			gulp.parallel(babelEsm(verbose), babelCjs(verbose)),
-			gulp.parallel(webpack, rollup),
+			gulp.parallel(webpackBuild({ env, mode, verbose }), rollupBuild),
 		),
 	)
-	return build
 }

@@ -2,21 +2,25 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
 import webpack = require('webpack')
 import { getCompiler } from './getCompiler'
 import { WebpackCompilerOptions } from './types'
 
-export function webpackBuild(config: WebpackCompilerOptions): Promise<number> {
-	return new Promise((resolve, reject) => {
+export function webpackBuild(
+	config: WebpackCompilerOptions,
+): (cb: (err?: Error) => void) => void {
+	return (cb: (err?: Error) => void) => {
 		const compiler = getCompiler(config)
 		compiler.run((err: Error, stats: webpack.Stats) => {
 			console.log(stats.toString({ colors: true }))
 			if (err || stats.hasErrors()) {
-				console.error('webpack error', err)
-				resolve(1)
+				subtaskFail('webpack')
+				cb(err)
 			} else {
-				resolve(0)
+				subtaskSuccess('webpack')
+				cb()
 			}
 		})
-	})
+	}
 }
