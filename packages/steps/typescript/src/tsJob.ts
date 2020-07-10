@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { noop } from '@essex/build-util-noop'
-import { streamToPromise } from '@essex/build-util-stream-to-promise'
+import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
 import * as gulp from 'gulp'
 import * as debug from 'gulp-debug'
 import * as ts from 'gulp-typescript'
@@ -22,7 +22,7 @@ export interface TsJobSpec {
 	/**
 	 * Whether to use verbose logging
 	 */
-	verbose?: boolean
+	debug?: boolean
 
 	/**
 	 * The output destination
@@ -40,16 +40,19 @@ export interface TsJobSpec {
  */
 export function tsJob({
 	configFile,
-	verbose,
+	debug: verbose,
 	dest,
 	title,
 	overrides,
-}: TsJobSpec): Promise<void> {
-	const tsProject = ts.createProject(configFile, overrides)
-	const stream = gulp
-		.src(['src/**/*.ts*', '!**/__tests__/**'])
-		.pipe(tsProject())
-		.pipe(verbose ? debug({ title }) : noop())
-		.pipe(gulp.dest(dest))
-	return streamToPromise(stream)
+}: TsJobSpec): () => NodeJS.ReadWriteStream {
+	return () => {
+		const tsProject = ts.createProject(configFile, overrides)
+		return gulp
+			.src(['src/**/*.ts*', '!**/__tests__/**'])
+			.pipe(tsProject())
+			.pipe(verbose ? debug({ title }) : noop())
+			.pipe(gulp.dest(dest))
+			.on('end', () => subtaskSuccess(title))
+			.on('error', () => subtaskFail(title))
+	}
 }

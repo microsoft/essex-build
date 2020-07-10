@@ -36,4 +36,14 @@ export async function eslint(fix: boolean, strict: boolean): Promise<void> {
 	const formatter = await linter.loadFormatter('stylish')
 	const resultText = formatter.format(results)
 	console.log(resultText)
+
+	const sum = (a: number, b: number) => a + b
+	const errorCount = results.map(r => r.errorCount).reduce(sum, 0)
+	const warningCount = results.map(r => r.warningCount).reduce(sum, 0)
+	if (errorCount > 0) {
+		return Promise.reject('eslint failed')
+	}
+	if (strict && warningCount > 0) {
+		return Promise.reject('eslint failed')
+	}
 }

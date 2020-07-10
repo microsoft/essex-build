@@ -3,18 +3,12 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { docs as execDocs } from '@essex/build-step-docs'
+import { eslint } from '@essex/build-step-eslint'
 import { prettyQuick } from '@essex/build-step-pretty-quick'
 import * as gulp from 'gulp'
 import { resolveGulpTask } from '../../utils'
 import { LintCommandOptions } from './types'
-import { subtaskSuccess, subtaskFail } from '../../utils/log'
-import { join } from 'path'
-import { existsSync } from 'fs'
-const eslint = require('gulp-eslint')
-
-const eslintDefault = join(__dirname, '../../config/.eslintrc-experiment')
-const eslintOverride = join(process.cwd(), '.eslintrc')
-const eslintConfig = existsSync(eslintOverride ? eslintOverride : eslintDefault)
+const prettier = require('gulp-prettier')
 
 export function configureTasks({
 	fix = false,
@@ -22,25 +16,15 @@ export function configureTasks({
 	docs = false,
 	strict = false,
 }: LintCommandOptions) {
-	function checkCode() {
-		gulp
-			.src(['src/**/*', '*.js', '*.ts', '*.tsx'])
-			.pipe(
-				eslint({
-					configFile: eslintConfig
-				}),
-			)
-			.pipe(eslint.format())
-			.pipe(eslint.failAfterError())
-			.on('end', () => subtaskSuccess('eslint'))
-			.on('error', () => subtaskFail('eslint'))
+	function checkCode(cb: (err?: Error) => void) {
+		eslint(fix, strict).then(...resolveGulpTask('eslint', cb))
 	}
 
 	function checkFormatting(cb: (err?: Error) => void) {
-		;(staged
+		const task = staged
 			? prettyQuick({ staged: true })
 			: prettyQuick({ check: !fix })
-		).then(...resolveGulpTask('pretty-quick', cb))
+		task.then(...resolveGulpTask('pretty-quick', cb))
 	}
 
 	function checkDocumentation(cb: (err?: Error) => void) {

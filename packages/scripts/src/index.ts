@@ -12,11 +12,11 @@ import * as program from 'commander'
 
 process
 	.on('unhandledRejection', (reason, p) => {
-		console.error(reason, 'Unhandled Rejection at Promise', p)
+		console.error(reason, 'unhandled promise rejection', p)
 		process.exit(1)
 	})
 	.on('uncaughtException', err => {
-		console.error(err, 'Uncaught Exception thrown')
+		console.error(err, 'uncaught exception')
 		process.exit(1)
 	})
 

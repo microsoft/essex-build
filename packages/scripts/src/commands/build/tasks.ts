@@ -2,8 +2,8 @@
 import { join } from 'path'
 import * as gulp from 'gulp'
 import * as babel from 'gulp-babel'
-import * as ts from 'gulp-typescript'
 import { generateTypedocs } from '@essex/build-step-typedoc'
+import { compileTypescript, emitTypings } from '@essex/build-step-typescript'
 import { webpackBuild } from '@essex/build-step-webpack'
 import { BundleMode, BuildCommandOptions } from './types'
 import { subtaskSuccess, subtaskFail } from '../../utils/log'
@@ -19,44 +19,12 @@ const webpackConfigPath = join(cwd, 'webpack.config.js')
 const rollupConfigPath = join(cwd, 'rollup.config.js')
 
 export function configureTasks({
-	verbose = true,
+	verbose = false,
 	env = 'production',
 	docs = false,
 	mode = BundleMode.production,
 }: BuildCommandOptions) {
 	const [babelEsmConfig, babelCjsConfig] = getBabelConfigs(env)
-
-	function typedoc(cb: (err?: Error) => void) {
-		if (docs) {
-			generateTypedocs(verbose).then(...resolveGulpTask('typedoc', cb))
-		} else {
-			cb()
-		}
-	}
-
-	function compileTsc() {
-		const tsProject = ts.createProject(tsConfigJsonPath)
-		return gulp
-			.src(['src/**/*.ts*', '!**/__tests__/**'])
-			.pipe(tsProject())
-			.pipe(gulp.dest('lib'))
-			.on('end', () => subtaskSuccess('tsc'))
-			.on('error', () => subtaskFail('tsc'))
-	}
-
-	function emitTypings() {
-		const tsProject = ts.createProject(tsConfigJsonPath, {
-			declaration: true,
-			emitDeclarationOnly: true,
-			stripInternal: true,
-		})
-		return gulp
-			.src(['src/**/*.ts*', '!**/__tests__/**'])
-			.pipe(tsProject())
-			.pipe(gulp.dest('dist/typings'))
-			.on('end', () => subtaskSuccess('typings'))
-			.on('error', () => subtaskFail('typings'))
-	}
 
 	function babelEsm() {
 		return gulp
@@ -97,10 +65,14 @@ export function configureTasks({
 		}
 	}
 
+	const tsc = compileTypescript(tsConfigJsonPath, verbose)
+	const tscDeclarations = emitTypings(tsConfigJsonPath,verbose)
+	const typedoc = docs ? generateTypedocs(verbose) : (cb: Function) => cb()
+
 	const build = gulp.parallel(
 		typedoc,
 		gulp.series(
-			gulp.parallel(compileTsc, emitTypings),
+			gulp.parallel(tsc, tscDeclarations),
 			gulp.parallel(babelEsm, babelCjs),
 			gulp.parallel(webpack, rollup),
 		),

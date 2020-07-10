@@ -9,7 +9,7 @@
 	},
 	"dependencies": {
 		"@essex/build-util-noop": "^8.0.0-alpha.9",
-		"@essex/build-util-stream-to-promise": "^8.0.0-alpha.9",
+		"@essex/tasklogger": "^8.0.0-alpha.9",
 		"gulp": "^4.0.2",
 		"gulp-debug": "^4.0.0",
 		"gulp-typescript": "^6.0.0-alpha.1"
