@@ -20,15 +20,15 @@ const configFileOptions = [
 export function configureJob(): Job {
 	return {
 		exec: 'lint-staged',
-		args: isLintStagedConfigured() ? ['-c', defaultConfigPath] : [],
+		args: isLintStagedConfigured() ? [] : ['-c', defaultConfigPath],
 	}
 }
 
-function isLintStagedConfigured() {
+function isLintStagedConfigured(): boolean {
 	const pkgJson = getPackageJson()
 	return pkgJson['lint-staged'] || configFileOptions.some(t => existsSync(t))
 }
 
-function getPackageJson() {
+function getPackageJson(): any {
 	return existsSync(pkgJsonPath) ? require(pkgJsonPath) : {}
 }
