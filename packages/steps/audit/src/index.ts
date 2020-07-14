@@ -3,29 +3,25 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { resolve } from 'path'
-import { resolveGulpTask, filterShellCode } from '@essex/build-utils-gulp'
+import { gulpify, filterShellCode } from '@essex/build-utils'
 import { run } from '@essex/shellrunner'
 
 const auditCiConfig = resolve(__dirname, '../config/.audit-ci.js')
-const licenseConfig = resolve(
-	__dirname,
-	'../config/licenses-to-fail-config.js',
-)
+const licenseConfig = resolve(__dirname, '../config/licenses-to-fail-config.js')
 
-export function auditSecurity(cb: (err?: Error) => void) {
-	run({
+export function auditSecurity(): Promise<void> {
+	return run({
 		exec: 'audit-ci',
 		args: ['--config', auditCiConfig],
-  })
-  .then(filterShellCode)
-  .then(...resolveGulpTask('audit-sec', cb))
+	}).then(filterShellCode)
 }
 
-export function auditLicenses(cb: (err?: Error) => void) {
-	run({
+export function auditLicenses(): Promise<void> {
+	return run({
 		exec: 'license-to-fail',
 		args: [licenseConfig],
-  })
-  .then(filterShellCode)
-  .then(...resolveGulpTask('audit-licenses', cb))
+	}).then(filterShellCode)
 }
+
+export const auditSecurityGulp = gulpify('audit-security', auditSecurity)
+export const auditLicensesGulp = gulpify('audit-licenses', auditLicenses)

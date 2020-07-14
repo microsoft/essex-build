@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-var-require */
 import { join } from 'path'
 import * as gulp from 'gulp'
-import { generateTypedocs } from '@essex/build-step-typedoc'
+import { generateTypedocsGulp } from '@essex/build-step-typedoc'
 import { compileTypescript, emitTypings } from '@essex/build-step-typescript'
 import { babelEsm, babelCjs } from '@essex/build-step-babel'
-import { webpackBuild } from '@essex/build-step-webpack'
+import { webpackBuild, webpackBuildGulp } from '@essex/build-step-webpack'
 import { rollupBuild } from '@essex/build-step-rollup'
-import { storybookBuild } from '@essex/build-step-storybook'
-import { noopTask } from '@essex/build-utils-gulp'
+import { storybookBuildGulp } from '@essex/build-step-storybook'
+import { noopTask } from '@essex/build-utils'
 import { BundleMode, BuildCommandOptions } from './types'
 import { existsSync } from 'fs'
 
@@ -20,7 +20,7 @@ export function configureTasks({
 	webpack = false,
 	rollup = false,
 	docs = false,
-	code = !webpack && !rollup, 
+	code = !webpack && !rollup,
 	env = 'production',
 	mode = BundleMode.production,
 }: BuildCommandOptions) {
@@ -28,12 +28,16 @@ export function configureTasks({
 		throw new Error('tsconfig.json must exist')
 	}
 
-	const generateDocs = docs ? generateTypedocs(verbose) : noopTask
-	const buildStorybook = storybook ? storybookBuild(verbose) : noopTask
+	const generateDocs = docs ? generateTypedocsGulp(verbose) : noopTask
+	const buildStorybook = storybook ? storybookBuildGulp(verbose) : noopTask
 	const buildTypings = code ? emitTypings(tsConfigPath, verbose) : noopTask
 	const compileTS = code ? compileTypescript(tsConfigPath, verbose) : noopTask
-	const compileJS = code ? gulp.parallel(babelEsm(verbose, env), babelCjs(verbose, env)) : noopTask
-	const bundleWebpack = webpack ? webpackBuild({ env, mode, verbose }) : noopTask
+	const compileJS = code
+		? gulp.parallel(babelEsm(verbose, env), babelCjs(verbose, env))
+		: noopTask
+	const bundleWebpack = webpack
+		? webpackBuildGulp({ env, mode, verbose })
+		: noopTask
 	const bundleRollup = rollup ? rollupBuild : noopTask
 
 	return gulp.parallel(
@@ -47,10 +51,7 @@ export function configureTasks({
 		gulp.series(
 			compileTS,
 			compileJS,
-			gulp.parallel(
-				bundleWebpack, 
-				bundleRollup
-			),
+			gulp.parallel(bundleWebpack, bundleRollup),
 		),
 	)
 }

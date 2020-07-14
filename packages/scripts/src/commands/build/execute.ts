@@ -5,7 +5,7 @@
 import { fail, success } from '@essex/tasklogger'
 import { configureTasks } from './tasks'
 import { BuildCommandOptions } from './types'
-import { execGulpTask } from '@essex/build-utils-gulp'
+import { execGulpTask } from '@essex/build-utils'
 
 export async function execute(options: BuildCommandOptions): Promise<number> {
 	try {

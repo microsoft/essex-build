@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { noopStep } from '@essex/build-utils-gulp'
+import { noopStep } from '@essex/build-utils'
 import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
 import * as gulp from 'gulp'
 import * as debug from 'gulp-debug'

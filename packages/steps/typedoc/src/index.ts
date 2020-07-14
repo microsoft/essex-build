@@ -4,7 +4,7 @@
  */
 import { existsSync } from 'fs'
 import { join, resolve } from 'path'
-import { resolveGulpTask } from '@essex/build-utils-gulp'
+import { resolveGulpTask, gulpify } from '@essex/build-utils'
 import {
 	Application,
 	TSConfigReader,
@@ -21,27 +21,24 @@ const DEFAULT_ENTRY_POINT = 'src/index.ts'
 /**
  * Generates API documentation using TypeDoc
  */
-export function generateTypedocs(
-	verbose: boolean,
-): (cb: (err?: Error) => void) => void {
-	return (cb: (err?: Error) => void) => {
-		const { title, name } = packageJson
-		typedoc({
-			name: title || name || 'API Documentation',
-			entryPoint: DEFAULT_ENTRY_POINT,
-			stripInternal: true,
-			excludeExternals: true,
-			excludeNotExported: true,
-			exclude: ['**/__tests__/**', '**/node_modules/**'],
-			excludePrivate: true,
-			project: 'tsconfig.json',
-			out: 'dist/docs',
-			logger: 'none',
-			readme: existsSync(readmePath) ? readmePath : undefined,
-			
-		}).then(...resolveGulpTask('typedocs', cb))
-	}
+export function generateTypedocs(verbose: boolean): Promise<void> {
+	const { title, name } = packageJson
+	return typedoc({
+		name: title || name || 'API Documentation',
+		entryPoint: DEFAULT_ENTRY_POINT,
+		stripInternal: true,
+		excludeExternals: true,
+		excludeNotExported: true,
+		exclude: ['**/__tests__/**', '**/node_modules/**'],
+		excludePrivate: true,
+		project: 'tsconfig.json',
+		out: 'dist/docs',
+		logger: 'none',
+		readme: existsSync(readmePath) ? readmePath : undefined,
+	})
 }
+
+export const generateTypedocsGulp = gulpify('typedocs', generateTypedocs)
 
 /**
  * Generate TypeDoc documentation

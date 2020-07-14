@@ -8,6 +8,7 @@
 		"build": "tsc"
 	},
 	"dependencies": {
+		"@essex/build-utils": "^8.0.0-alpha.11",
 		"chalk": "^4.1.0",
 		"prettier": "^2.0.5",
 		"pretty-quick": "^2.0.1"

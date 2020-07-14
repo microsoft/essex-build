@@ -8,6 +8,7 @@
 		"build": "tsc"
 	},
 	"dependencies": {
+		"@essex/build-utils": "^8.0.0-alpha.11",
 		"@essex/tasklogger": "^8.0.0-alpha.11",
 		"@essex/webpack-config": "^8.0.0-alpha.11",
 		"webpack": "^4.43.0",

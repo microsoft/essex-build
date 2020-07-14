@@ -4,7 +4,7 @@
  */
 import { existsSync } from 'fs'
 import { join } from 'path'
-import { resolveGulpTask, filterShellCode } from '@essex/build-utils-gulp'
+import { gulpify, filterShellCode } from '@essex/build-utils'
 import { run } from '@essex/shellrunner'
 
 const cwd = process.cwd()
@@ -13,16 +13,14 @@ const overridePath = join(cwd, '.storybook')
 const configPath = existsSync(overridePath) ? overridePath : defaultPath
 
 export function storybookBuild(verbose: boolean) {
-	return (cb: (err?: Error) => void) => {
-		const args: string[] = ['-c', configPath]
-		if (!verbose) {
-			args.push('--quiet')
-		}
-		run({
-			exec: 'build-storybook',
-			args,
-		})
-			.then(filterShellCode)
-			.then(...resolveGulpTask('rollup', cb))
+	const args: string[] = ['-c', configPath]
+	if (!verbose) {
+		args.push('--quiet')
 	}
+	return run({
+		exec: 'build-storybook',
+		args,
+	}).then(filterShellCode)
 }
+
+export const storybookBuildGulp = gulpify('storybook', storybookBuild)

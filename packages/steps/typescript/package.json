@@ -8,7 +8,7 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@essex/build-utils-gulp": "^8.0.0-alpha.11",
+		"@essex/build-utils": "^8.0.0-alpha.11",
 		"@essex/tasklogger": "^8.0.0-alpha.11",
 		"gulp": "^4.0.2",
 		"gulp-debug": "^4.0.0",

@@ -1927,7 +1927,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/build-step-audit@workspace:packages/steps/audit"
   dependencies:
-    "@essex/build-utils-gulp": ^8.0.0-alpha.11
+    "@essex/build-utils": ^8.0.0-alpha.11
     "@essex/shellrunner": ^8.0.0-alpha.11
     "@essex/tasklogger": ^8.0.0-alpha.11
     "@types/node": ^14.0.14
@@ -1945,7 +1945,7 @@ __metadata:
     "@babel/core": ^7.10.4
     "@babel/types": ^7.10.4
     "@essex/babel-config": ^8.0.0-alpha.11
-    "@essex/build-utils-gulp": ^8.0.0-alpha.11
+    "@essex/build-utils": ^8.0.0-alpha.11
     "@essex/tasklogger": ^8.0.0-alpha.11
     "@types/gulp": ^4.0.6
     "@types/gulp-babel": ^6.1.29
@@ -1963,6 +1963,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/build-step-clean@workspace:packages/steps/clean"
   dependencies:
+    "@essex/build-utils": ^8.0.0-alpha.11
     "@types/node": ^14.0.14
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
@@ -1976,7 +1977,7 @@ __metadata:
   dependencies:
     "@commitlint/cli": ^9.0.1
     "@commitlint/config-conventional": ^9.0.1
-    "@essex/build-utils-gulp": ^8.0.0-alpha.11
+    "@essex/build-utils": ^8.0.0-alpha.11
     "@essex/shellrunner": ^8.0.0-alpha.11
     "@types/node": ^14.0.14
     "@types/rimraf": ^3.0.0
@@ -1989,6 +1990,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/build-step-docs@workspace:packages/steps/docs"
   dependencies:
+    "@essex/build-utils": 8.0.0-alpha.11
     "@types/node": ^14.0.14
     dictionary-en: ^3.0.1
     remark-frontmatter: ^2.0.0
@@ -2011,6 +2013,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/build-step-eslint@workspace:packages/steps/eslint"
   dependencies:
+    "@essex/build-utils": ^8.0.0-alpha.11
     "@essex/eslint-plugin": ^8.0.0-alpha.11
     "@types/eslint": ^7.2.0
     "@types/node": ^14.0.14
@@ -2024,6 +2027,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/build-step-pretty-quick@workspace:packages/steps/pretty-quick"
   dependencies:
+    "@essex/build-utils": ^8.0.0-alpha.11
     "@types/node": ^14.0.14
     chalk: ^4.1.0
     prettier: ^2.0.5
@@ -2037,7 +2041,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/build-step-rollup@workspace:packages/steps/rollup"
   dependencies:
-    "@essex/build-utils-gulp": ^8.0.0-alpha.11
+    "@essex/build-utils": ^8.0.0-alpha.11
     "@essex/shellrunner": ^8.0.0-alpha.11
     "@essex/tasklogger": ^8.0.0-alpha.11
     "@types/node": ^14.0.14
@@ -2050,7 +2054,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/build-step-storybook@workspace:packages/steps/storybook"
   dependencies:
-    "@essex/build-utils-gulp": ^8.0.0-alpha.11
+    "@essex/build-utils": ^8.0.0-alpha.11
     "@essex/shellrunner": ^8.0.0-alpha.11
     "@essex/storybook-config": ^8.0.0-alpha.11
     "@essex/tasklogger": ^8.0.0-alpha.11
@@ -2066,7 +2070,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/build-step-typedoc@workspace:packages/steps/typedoc"
   dependencies:
-    "@essex/build-utils-gulp": ^8.0.0-alpha.11
+    "@essex/build-utils": ^8.0.0-alpha.11
     "@essex/tasklogger": ^8.0.0-alpha.11
     "@types/node": ^14.0.14
     rimraf: ^3.0.2
@@ -2081,7 +2085,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/build-step-typescript@workspace:packages/steps/typescript"
   dependencies:
-    "@essex/build-utils-gulp": ^8.0.0-alpha.11
+    "@essex/build-utils": ^8.0.0-alpha.11
     "@essex/tasklogger": ^8.0.0-alpha.11
     "@types/gulp": ^4.0.6
     "@types/gulp-debug": ^2.0.31
@@ -2100,6 +2104,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/build-step-webpack@workspace:packages/steps/webpack"
   dependencies:
+    "@essex/build-utils": ^8.0.0-alpha.11
     "@essex/tasklogger": ^8.0.0-alpha.11
     "@essex/webpack-config": ^8.0.0-alpha.11
     "@types/node": ^14.0.14
@@ -2122,21 +2127,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-util-stream-to-promise@^8.0.0-alpha.11, @essex/build-util-stream-to-promise@workspace:packages/util/streamToPromise":
+"@essex/build-utils@8.0.0-alpha.11, @essex/build-utils@^8.0.0-alpha.11, @essex/build-utils@workspace:packages/util/gulp":
   version: 0.0.0-use.local
-  resolution: "@essex/build-util-stream-to-promise@workspace:packages/util/streamToPromise"
-  dependencies:
-    "@types/node": ^14.0.14
-    rimraf: ^3.0.2
-    typescript: 3.9.6
-  peerDependencies:
-    "@types/node": ">= 14"
-  languageName: unknown
-  linkType: soft
-
-"@essex/build-utils-gulp@^8.0.0-alpha.11, @essex/build-utils-gulp@workspace:packages/util/gulp":
-  version: 0.0.0-use.local
-  resolution: "@essex/build-utils-gulp@workspace:packages/util/gulp"
+  resolution: "@essex/build-utils@workspace:packages/util/gulp"
   dependencies:
     "@essex/shellrunner": ^8.0.0-alpha.11
     "@essex/tasklogger": ^8.0.0-alpha.11
@@ -2144,17 +2137,6 @@ __metadata:
     "@types/through2": ^2.0.36
     rimraf: ^3.0.2
     through2: ^4.0.2
-    typescript: 3.9.6
-  languageName: unknown
-  linkType: soft
-
-"@essex/build-utils-promises@^8.0.0-alpha.11, @essex/build-utils-promises@workspace:packages/util/promises":
-  version: 0.0.0-use.local
-  resolution: "@essex/build-utils-promises@workspace:packages/util/promises"
-  dependencies:
-    "@essex/tasklogger": ^8.0.0-alpha.11
-    "@types/node": ^14.0.14
-    rimraf: ^3.0.2
     typescript: 3.9.6
   languageName: unknown
   linkType: soft
@@ -2246,9 +2228,7 @@ __metadata:
     "@essex/build-step-typedoc": ^8.0.0-alpha.11
     "@essex/build-step-typescript": ^8.0.0-alpha.11
     "@essex/build-step-webpack": ^8.0.0-alpha.11
-    "@essex/build-util-stream-to-promise": ^8.0.0-alpha.11
-    "@essex/build-utils-gulp": ^8.0.0-alpha.11
-    "@essex/build-utils-promises": ^8.0.0-alpha.11
+    "@essex/build-utils": ^8.0.0-alpha.11
     "@essex/eslint-plugin": ^8.0.0-alpha.11
     "@essex/shellrunner": ^8.0.0-alpha.11
     "@essex/webpack-config": ^8.0.0-alpha.11
@@ -2304,9 +2284,7 @@ __metadata:
     "@essex/build-step-typedoc": ^8.0.0-alpha.11
     "@essex/build-step-typescript": ^8.0.0-alpha.11
     "@essex/build-step-webpack": ^8.0.0-alpha.11
-    "@essex/build-util-stream-to-promise": ^8.0.0-alpha.11
-    "@essex/build-utils-gulp": ^8.0.0-alpha.11
-    "@essex/build-utils-promises": ^8.0.0-alpha.11
+    "@essex/build-utils": ^8.0.0-alpha.11
     "@essex/eslint-plugin": ^8.0.0-alpha.11
     "@essex/shellrunner": ^8.0.0-alpha.11
     "@essex/webpack-config": ^8.0.0-alpha.11

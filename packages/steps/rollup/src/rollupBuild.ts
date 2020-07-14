@@ -4,21 +4,21 @@
  */
 import { existsSync } from 'fs'
 import { join } from 'path'
-import { resolveGulpTask, filterShellCode } from '@essex/build-utils-gulp'
+import { gulpify, filterShellCode } from '@essex/build-utils'
 import { run } from '@essex/shellrunner'
 
 const cwd = process.cwd()
 const rollupConfigPath = join(cwd, 'rollup.config.js')
 
-export function rollupBuild(cb: (err?: Error) => void) {
+export function rollupBuild(): Promise<void> {
 	if (!existsSync(rollupConfigPath)) {
-		return cb()
+		return Promise.resolve()
 	} else {
-		run({
+		return run({
 			exec: 'rollup',
 			args: ['-c', rollupConfigPath],
-		})
-			.then(filterShellCode)
-			.then(...resolveGulpTask('rollup', cb))
+		}).then(filterShellCode)
 	}
 }
+
+export const rollupBuildGulp = gulpify('rollup', rollupBuild)

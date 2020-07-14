@@ -8,6 +8,7 @@
 		"build": "tsc"
 	},
 	"dependencies": {
+		"@essex/build-utils": "8.0.0-alpha.11",
 		"dictionary-en": "^3.0.1",
 		"remark-frontmatter": "^2.0.0",
 		"remark-message-control": "^6.0.0",

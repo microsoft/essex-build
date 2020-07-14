@@ -1,5 +1,5 @@
 {
-	"name": "@essex/build-utils-gulp",
+	"name": "@essex/build-utils",
 	"version": "8.0.0-alpha.11",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",

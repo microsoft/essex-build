@@ -8,6 +8,7 @@
 		"build": "tsc"
 	},
 	"dependencies": {
+		"@essex/build-utils": "^8.0.0-alpha.11",
 		"rimraf": "^3.0.2"
 	},
 	"devDependencies": {

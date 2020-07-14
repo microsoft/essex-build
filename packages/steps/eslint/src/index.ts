@@ -5,6 +5,7 @@
 /* eslint-disable @essex/adjacent-await */
 import { existsSync } from 'fs'
 import { join } from 'path'
+import { gulpify } from '@essex/build-utils'
 import { ESLint } from 'eslint'
 
 const releaseConfig = join(__dirname, '../config/.eslintrc-release')
@@ -47,3 +48,5 @@ export async function eslint(fix: boolean, strict: boolean): Promise<void> {
 		return Promise.reject('eslint failed')
 	}
 }
+
+export const eslintGulp = gulpify('eslint', eslint)
