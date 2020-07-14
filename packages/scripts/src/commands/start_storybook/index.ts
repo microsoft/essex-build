@@ -2,16 +2,22 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { storybookStart } from '@essex/build-step-storybook'
 import { Command } from 'commander'
-import { execute, StartStorybookCommandOptions } from './execute'
+
+interface StartStorybookCommandOptions {
+	verbose: boolean
+}
 
 export default function start(program: Command): void {
 	program
 		.command('start-storybook')
 		.description('starts the storybook server on the current package')
 		.option('-v, --verbose', 'verbose output')
-		.action(async (options: StartStorybookCommandOptions) => {
-			const code = await execute(options)
-			process.exit(code)
+		.action((options: StartStorybookCommandOptions) => {
+			Promise.resolve()
+				.then(() => storybookStart(options.verbose))
+				.then(() => process.exit(0))
+				.catch(() => process.exit(1))
 		})
 }
