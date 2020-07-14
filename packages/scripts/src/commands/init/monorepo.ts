@@ -25,6 +25,8 @@ const CONFIG_FILES = [
 	'.eslintrc',
 	'.eslintignore',
 	'.docsrc',
+	'.gitignore',
+	'tsconfig.json',
 ]
 
 export function initMonorepo(): Promise<number> {

@@ -11,7 +11,7 @@ import { join } from 'path'
 import * as program from 'commander'
 import * as gulp from 'gulp'
 
-gulp.on('error', () => process.exit(1))
+//gulp.on('error', () => process.exit(1))
 
 process
 	.on('unhandledRejection', (reason, p) => {

@@ -11,10 +11,6 @@
 		"@essex/build-utils": "^8.0.0-alpha.11",
 		"@essex/jest-config": "^8.0.0-alpha.11",
 		"@essex/tasklogger": "^8.0.0-alpha.11",
-		"@types/gulp": "^4.0.6",
-		"@types/jest": "^26.0.4",
-		"gulp": "^4.0.2",
-		"gulp-jest": "^4.0.3",
 		"jest": "^26.1.0"
 	},
 	"devDependencies": {
