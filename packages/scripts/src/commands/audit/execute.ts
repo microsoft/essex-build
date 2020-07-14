@@ -10,14 +10,12 @@ export interface AuditCommandOptions {
 	verbose: boolean
 }
 
-export async function execute(options: AuditCommandOptions): Promise<number> {
-	try {
-		const build = configureTasks()
-		await execGulpTask(build)
-		success('audit succeeded')
-		return 0
-	} catch (err) {
-		fail('audit failed')
-		return 1
-	}
+export function execute(options: AuditCommandOptions): Promise<number> {
+	return Promise.resolve()
+		.then(() => configureTasks())
+		.then(build => execGulpTask(build))
+		.then(
+			() => 0,
+			() => 1,
+		)
 }

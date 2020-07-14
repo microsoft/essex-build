@@ -23,6 +23,7 @@
 		"@essex/build-step-commitlint": "^8.0.0-alpha.11",
 		"@essex/build-step-docs": "^8.0.0-alpha.11",
 		"@essex/build-step-eslint": "^8.0.0-alpha.11",
+		"@essex/build-step-lint-staged": "^8.0.0-alpha.11",
 		"@essex/build-step-pretty-quick": "^8.0.0-alpha.11",
 		"@essex/build-step-rollup": "^8.0.0-alpha.11",
 		"@essex/build-step-storybook": "^8.0.0-alpha.11",

@@ -2023,6 +2023,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@essex/build-step-lint-staged@^8.0.0-alpha.11, @essex/build-step-lint-staged@workspace:packages/steps/lint-staged":
+  version: 0.0.0-use.local
+  resolution: "@essex/build-step-lint-staged@workspace:packages/steps/lint-staged"
+  dependencies:
+    "@essex/build-utils": ^8.0.0-alpha.11
+    "@essex/shellrunner": ^8.0.0-alpha.11
+    "@types/node": ^14.0.14
+    "@types/rimraf": ^3.0.0
+    rimraf: ^3.0.2
+    typescript: 3.9.6
+  languageName: unknown
+  linkType: soft
+
 "@essex/build-step-pretty-quick@^8.0.0-alpha.11, @essex/build-step-pretty-quick@workspace:packages/steps/pretty-quick":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-pretty-quick@workspace:packages/steps/pretty-quick"
@@ -2222,6 +2235,7 @@ __metadata:
     "@essex/build-step-commitlint": ^8.0.0-alpha.11
     "@essex/build-step-docs": ^8.0.0-alpha.11
     "@essex/build-step-eslint": ^8.0.0-alpha.11
+    "@essex/build-step-lint-staged": ^8.0.0-alpha.11
     "@essex/build-step-pretty-quick": ^8.0.0-alpha.11
     "@essex/build-step-rollup": ^8.0.0-alpha.11
     "@essex/build-step-storybook": ^8.0.0-alpha.11
@@ -2278,6 +2292,7 @@ __metadata:
     "@essex/build-step-commitlint": ^8.0.0-alpha.11
     "@essex/build-step-docs": ^8.0.0-alpha.11
     "@essex/build-step-eslint": ^8.0.0-alpha.11
+    "@essex/build-step-lint-staged": ^8.0.0-alpha.11
     "@essex/build-step-pretty-quick": ^8.0.0-alpha.11
     "@essex/build-step-rollup": ^8.0.0-alpha.11
     "@essex/build-step-storybook": ^8.0.0-alpha.11
