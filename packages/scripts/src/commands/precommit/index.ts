@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { lintStaged } from '@essex/build-step-lint-staged'
+import { resolveShellCode } from '@essex/build-utils'
 import { Command } from 'commander'
 
 export default function preCommit(program: Command): void {
@@ -12,10 +13,7 @@ export default function preCommit(program: Command): void {
 		.action(() => {
 			Promise.resolve()
 				.then(() => lintStaged())
-				.then(
-					() => 0,
-					() => 1,
-				)
+				.then(...resolveShellCode())
 				.then(code => process.exit(code))
 		})
 }

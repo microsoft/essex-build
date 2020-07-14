@@ -5,6 +5,7 @@
 export * from './noop'
 export * from './resolveGulpTask'
 export * from './filterShellCode'
+export * from './resolveShellCode'
 export * from './execGulpTask'
 export * from './types'
 export * from './gulpify'

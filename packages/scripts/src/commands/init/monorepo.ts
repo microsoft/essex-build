@@ -21,6 +21,7 @@ ${INIT_INSTRUCTIONS}
 const CONFIG_FILES = [
 	'.huskyrc',
 	'.prettierrc',
+	'.prettierignore',
 	'.eslintrc',
 	'.eslintignore',
 	'.docsrc',

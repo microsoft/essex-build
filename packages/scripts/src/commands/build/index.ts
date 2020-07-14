@@ -1,6 +1,7 @@
 import { Command } from 'commander'
-import { execute } from './execute'
 import { BuildCommandOptions } from './types'
+import { configureTasks } from './tasks'
+import { execGulpTask, resolveShellCode } from '@essex/build-utils'
 
 export default function build(program: Command): void {
 	program
@@ -19,7 +20,10 @@ export default function build(program: Command): void {
 			'-rp, --rollup',
 			'bundles rollup output using either the base config or rollup.config.js',
 		)
-		.option('-c, --code', 'transpiles TS; necessary when --webpack or --rollup is explicitly set')
+		.option(
+			'-c, --code',
+			'transpiles TS; necessary when --webpack or --rollup is explicitly set',
+		)
 		.option('-d, --docs', 'generates TypeDoc documentation')
 		.option(
 			'--env <env>',
@@ -31,8 +35,11 @@ export default function build(program: Command): void {
 			'enable production optimization or development hints ("development" | "production" | "none")',
 			'production',
 		)
-		.action(async (options: BuildCommandOptions) => {
-			const code = await execute(options)
-			process.exit(code)
+		.action((options: BuildCommandOptions) => {
+			Promise.resolve()
+				.then(() => configureTasks(options))
+				.then(build => execGulpTask(build))
+				.then(...resolveShellCode())
+				.then(code => process.exit(code))
 		})
 }
