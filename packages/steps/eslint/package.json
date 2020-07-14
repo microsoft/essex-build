@@ -12,6 +12,7 @@
 		"config/"
 	],
 	"dependencies": {
+		"@essex/build-utils": "^8.0.0-alpha.11",
 		"@essex/eslint-plugin": "^8.0.0-alpha.11",
 		"eslint": "^7.4.0"
 	},

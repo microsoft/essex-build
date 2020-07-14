@@ -7,14 +7,6 @@ import * as dbg from 'debug'
 import { Job } from './types'
 const debugLog = dbg('essex:shellrunner')
 
-export function subtaskFail(text: string): void {
-	console.log(`    ✘ ${text}`.red)
-}
-
-export function subtaskSuccess(text: string): void {
-	console.log(`    ✔ ${text}`.green)
-}
-
 export function debug(
 	text: string,
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any

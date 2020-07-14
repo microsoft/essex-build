@@ -1,0 +1,22 @@
+{
+	"name": "@essex/jest-config",
+	"version": "8.0.0-alpha.11",
+	"author": "Chris Trevino <chtrevin@microsoft.com>",
+	"main": "lib/index.js",
+	"typings": "lib/index.d.ts",
+	"scripts": {
+		"clean": "rimraf dist lib",
+		"build": "tsc"
+	},
+	"dependencies": {
+		"identity-obj-proxy": "^3.0.0",
+		"jest-config": "^26.1.0",
+		"jest-junit-reporter": "^1.1.0",
+		"ts-jest": "^26.1.2"
+	},
+	"devDependencies": {
+		"@types/node": "^14.0.22",
+		"rimraf": "^3.0.2",
+		"typescript": "^3.9.6"
+	}
+}

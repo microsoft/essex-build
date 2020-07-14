@@ -3,6 +3,7 @@ coverage/
 lib/
 dist/
 *.log
+*.tsbuildinfo
 
 # https://yarnpkg.com/advanced/qa#which-files-should-be-gitignored
 .yarn/*

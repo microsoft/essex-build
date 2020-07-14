@@ -3,7 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { existsSync } from 'fs'
-import { join } from 'path'
+import { join, resolve } from 'path'
+import { resolveGulpTask, gulpify } from '@essex/build-utils'
 import {
 	Application,
 	TSConfigReader,
@@ -20,9 +21,9 @@ const DEFAULT_ENTRY_POINT = 'src/index.ts'
 /**
  * Generates API documentation using TypeDoc
  */
-export async function generateTypedocs(verbose: boolean): Promise<void> {
+export function generateTypedocs(verbose: boolean): Promise<void> {
 	const { title, name } = packageJson
-	await typedoc({
+	return typedoc({
 		name: title || name || 'API Documentation',
 		entryPoint: DEFAULT_ENTRY_POINT,
 		stripInternal: true,
@@ -36,6 +37,8 @@ export async function generateTypedocs(verbose: boolean): Promise<void> {
 		readme: existsSync(readmePath) ? readmePath : undefined,
 	})
 }
+
+export const generateTypedocsGulp = gulpify('typedocs', generateTypedocs)
 
 /**
  * Generate TypeDoc documentation

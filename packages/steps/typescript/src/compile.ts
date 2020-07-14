@@ -9,13 +9,13 @@ import { tsJob } from './tsJob'
  * @param configFile The tsconfig.json path
  * @param verbose verbose mode
  */
-export async function compileTypescript(
+export function compileTypescript(
 	configFile: string,
-	verbose: boolean,
-): Promise<void> {
+	debug: boolean,
+): () => NodeJS.ReadWriteStream {
 	return tsJob({
 		configFile,
-		verbose,
+		debug,
 		dest: 'lib',
 		title: 'tsc',
 	})

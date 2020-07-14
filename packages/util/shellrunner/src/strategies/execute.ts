@@ -3,8 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { SpawnOptions, ChildProcess } from 'child_process'
+import { getHoistedPath } from '@essex/build-util-hoister'
 import { Job, JobResult } from '../types'
-import { getHoistedPath } from './getHoistedPath'
 
 /* eslint-disable-next-line @typescript-eslint/no-var-requires */
 const spawn = require('cross-spawn')

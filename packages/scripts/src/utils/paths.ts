@@ -117,22 +117,3 @@ export function getProjectPath(
 	const filePath = join(process.cwd(), file)
 	return fileIfExists(filePath, fallback)
 }
-
-/**
- * Returns the absolute path of the file relative to the user's local directory or the essex-scripts directory
- * if there is no local one
- * @param file The file to get the path for
- */
-export function getConfigPath(
-	file: string,
-	essexFile: string = file,
-): Promise<string | undefined> {
-	return Promise.all([
-		getProjectPath(file),
-		// TODO: (chris)- I'm not sure about using home paths to override a config file.
-		// this will lead to local builds differing from CI or other developer machines
-		// because of a sticky config in a home dir.
-		getHomePath(file),
-		getEssexScriptsPath(essexFile),
-	]).then(([local, home, essex]) => local || home || essex)
-}

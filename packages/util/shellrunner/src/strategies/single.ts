@@ -7,13 +7,7 @@ import { Job, JobResult } from '../types'
 import { execute } from './execute'
 
 export async function single(job: Job): Promise<JobResult> {
-	const { exec, id } = job
 	const { code } = await execute(job)
 	log.printJob(job)
-	if (code > 0) {
-		log.subtaskFail(`${exec}${id ? `[${id}]` : ''} failed`)
-	} else {
-		log.subtaskSuccess(`${exec}${id ? `[${id}]` : ''} passed`)
-	}
 	return { code }
 }
