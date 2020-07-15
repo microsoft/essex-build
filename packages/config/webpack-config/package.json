@@ -1,6 +1,6 @@
 {
 	"name": "@essex/webpack-config",
-	"version": "8.0.0-alpha.11",
+	"version": "8.0.0-alpha.12",
 	"main": "lib/index.js",
 	"types": "lib/index.d.ts",
 	"scripts": {
@@ -9,8 +9,8 @@
 	},
 	"dependencies": {
 		"@babel/core": "^7.10.4",
-		"@essex/babel-config": "^8.0.0-alpha.11",
-		"@essex/build-util-hoister": "^8.0.0-alpha.11",
+		"@essex/babel-config": "^8.0.0-alpha.12",
+		"@essex/build-util-hoister": "^8.0.0-alpha.12",
 		"babel-loader": "^8.1.0",
 		"cache-loader": "^4.1.0",
 		"css-loader": "^3.6.0",

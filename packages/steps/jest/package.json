@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-jest",
-	"version": "8.0.0-alpha.11",
+	"version": "8.0.0-alpha.12",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
 	"scripts": {
@@ -8,9 +8,9 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@essex/build-utils": "^8.0.0-alpha.11",
-		"@essex/jest-config": "^8.0.0-alpha.11",
-		"@essex/tasklogger": "^8.0.0-alpha.11",
+		"@essex/build-utils": "^8.0.0-alpha.12",
+		"@essex/jest-config": "^8.0.0-alpha.12",
+		"@essex/tasklogger": "^8.0.0-alpha.12",
 		"jest": "^26.1.0"
 	},
 	"devDependencies": {

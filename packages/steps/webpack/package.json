@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-webpack",
-	"version": "8.0.0-alpha.11",
+	"version": "8.0.0-alpha.12",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
 	"scripts": {
@@ -8,9 +8,9 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@essex/build-utils": "^8.0.0-alpha.11",
-		"@essex/tasklogger": "^8.0.0-alpha.11",
-		"@essex/webpack-config": "^8.0.0-alpha.11",
+		"@essex/build-utils": "^8.0.0-alpha.12",
+		"@essex/tasklogger": "^8.0.0-alpha.12",
+		"@essex/webpack-config": "^8.0.0-alpha.12",
 		"webpack": "^4.43.0",
 		"webpack-dev-server": "^3.11.0"
 	},

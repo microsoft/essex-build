@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-storybook",
-	"version": "8.0.0-alpha.11",
+	"version": "8.0.0-alpha.12",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
 	"scripts": {
@@ -8,10 +8,10 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@essex/build-utils": "^8.0.0-alpha.11",
-		"@essex/shellrunner": "^8.0.0-alpha.11",
-		"@essex/storybook-config": "^8.0.0-alpha.11",
-		"@essex/tasklogger": "^8.0.0-alpha.11",
+		"@essex/build-utils": "^8.0.0-alpha.12",
+		"@essex/shellrunner": "^8.0.0-alpha.12",
+		"@essex/storybook-config": "^8.0.0-alpha.12",
+		"@essex/tasklogger": "^8.0.0-alpha.12",
 		"@storybook/react": "^5.3.19"
 	},
 	"devDependencies": {

@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-init",
-	"version": "8.0.0-alpha.11",
+	"version": "8.0.0-alpha.12",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
 	"scripts": {
@@ -8,8 +8,8 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@essex/build-step-recipes": "^8.0.0-alpha.11",
-		"@essex/build-utils": "^8.0.0-alpha.11"
+		"@essex/build-step-recipes": "^8.0.0-alpha.12",
+		"@essex/build-utils": "^8.0.0-alpha.12"
 	},
 	"devDependencies": {
 		"@types/node": "^14.0.14",
