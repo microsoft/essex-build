@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @essex/adjacent-await */
+import { FSWatcher } from 'fs'
 import { getCjsConfiguration, getEsmConfiguration } from '@essex/babel-config'
 import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
 import * as gulp from 'gulp'
@@ -15,7 +16,7 @@ const BABEL_GLOBS = ['lib/**/*.js']
  * Transpile ts output into babel cjs
  * @param verbose
  */
-function babelCjs(env: string, listen = true): () => NodeJS.ReadWriteStream {
+function babelCjs(env: string, listen = true): gulp.TaskFunction {
 	const cjsConfig = getCjsConfiguration(env)
 	const title = 'babel-cjs'
 	return function execute() {
@@ -37,7 +38,7 @@ function babelCjs(env: string, listen = true): () => NodeJS.ReadWriteStream {
  * Transpile ts output into babel esm
  * @param verbose
  */
-function babelEsm(env: string, listen = true): () => NodeJS.ReadWriteStream {
+function babelEsm(env: string, listen = true): gulp.TaskFunction {
 	const esmConfig = getEsmConfiguration(env)
 	const title = 'babel-esm'
 	return function execute() {
@@ -60,13 +61,13 @@ function babelEsm(env: string, listen = true): () => NodeJS.ReadWriteStream {
  * @param env
  * @param listen
  */
-export function buildBabel(env: string, listen = true) {
+export function buildBabel(env: string, listen = true): gulp.TaskFunction {
 	return gulp.parallel(babelEsm(env, listen), babelCjs(env, listen))
 }
 /**
  * Watches typescript from src/ to the lib/ folder
  * @param verbose verbose mode
  */
-export function watchBabel(env: string) {
+export function watchBabel(env: string): FSWatcher {
 	return gulp.watch(BABEL_GLOBS, buildBabel(env, false))
 }

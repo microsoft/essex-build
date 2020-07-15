@@ -3,8 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { existsSync } from 'fs'
-import { join, resolve } from 'path'
-import { resolveGulpTask, gulpify } from '@essex/build-utils'
+import { join } from 'path'
+import { gulpify } from '@essex/build-utils'
 import {
 	Application,
 	TSConfigReader,

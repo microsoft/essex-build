@@ -3,9 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
+import * as webpack from 'webpack'
 import { getConfig } from './getConfig'
 import { WebpackCompilerOptions } from './types'
-import webpack = require('webpack')
 
 /**
  * Gets a webpack compiler instance

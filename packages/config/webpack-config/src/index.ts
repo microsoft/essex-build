@@ -50,7 +50,7 @@ export function configure({
 	modules,
 	loaderModules,
 	htmlWebpackPlugin,
-}: Configuration) {
+}: Configuration): any {
 	validateConfiguration()
 	const isDevelopment = mode !== 'production'
 	const extendedAliases = aliases ? aliases(env, mode) : {}

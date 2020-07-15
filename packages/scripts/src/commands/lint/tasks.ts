@@ -14,7 +14,7 @@ export function configureTasks({
 	staged = false,
 	docs = false,
 	strict = false,
-}: LintCommandOptions) {
+}: LintCommandOptions): gulp.TaskFunction {
 	function checkCode(cb: (err?: Error) => void) {
 		eslint(fix, strict).then(...resolveGulpTask('eslint', cb))
 	}

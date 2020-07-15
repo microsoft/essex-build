@@ -12,7 +12,7 @@ const defaultPath = join(__dirname, '../config/.storybook')
 const overridePath = join(cwd, '.storybook')
 const configPath = existsSync(overridePath) ? overridePath : defaultPath
 
-export function storybookStart(verbose: boolean) {
+export function storybookStart(verbose: boolean): Promise<void> {
 	const args: string[] = ['-c', configPath]
 	if (!verbose) {
 		args.push('--quiet')

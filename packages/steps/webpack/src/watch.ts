@@ -9,7 +9,7 @@ import { WebpackCompilerOptions } from './types'
 export function webpackWatch(config: WebpackCompilerOptions): Promise<number> {
 	return new Promise((resolve, reject) => {
 		const compiler = getCompiler(config)
-		const watcher = compiler.watch(
+		compiler.watch(
 			{
 				aggregateTimeout: 500,
 				ignored: /node_modules/,

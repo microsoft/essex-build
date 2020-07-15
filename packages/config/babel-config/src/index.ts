@@ -20,7 +20,7 @@ const corejs = packageJson.corejs || (useBuiltIns ? { version: 3 } : undefined)
  * Gets the babel CJS configuration
  * @param env The babel env to use
  */
-export function getCjsConfiguration(env: string) {
+export function getCjsConfiguration(env: string): any {
 	if (existsSync(babelCjsOverride)) {
 		return require(babelCjsOverride)
 	}
@@ -36,7 +36,7 @@ export function getCjsConfiguration(env: string) {
  * Gets the babel ESM configuration
  * @param env The babel env to use
  */
-export function getEsmConfiguration(env: string) {
+export function getEsmConfiguration(env: string): any {
 	if (existsSync(babelEsmOverride)) {
 		return require(babelEsmOverride)
 	}

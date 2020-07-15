@@ -6,6 +6,6 @@ import { jestGulp } from '@essex/build-step-jest'
 import * as gulp from 'gulp'
 import { TestCommandOptions } from './types'
 
-export function configureTasks(config: TestCommandOptions) {
+export function configureTasks(config: TestCommandOptions): gulp.TaskFunction {
 	return gulp.parallel(jestGulp(config))
 }

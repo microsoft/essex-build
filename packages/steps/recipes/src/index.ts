@@ -2,6 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+
+import { info } from '@essex/tasklogger'
+
 export const recipes = `
 {
 	"name": "monorepo-root",
@@ -57,3 +60,7 @@ export const recipes = `
 	}
 }
 `
+
+export function printRecipes(): void {
+	info(recipes)
+}

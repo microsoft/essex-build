@@ -5,6 +5,6 @@
 import { auditSecurity, auditLicenses } from '@essex/build-step-audit'
 import * as gulp from 'gulp'
 
-export function configureTasks() {
-  return gulp.parallel(auditSecurity, auditLicenses)
+export function configureTasks(): gulp.TaskFunction {
+	return gulp.parallel(auditSecurity, auditLicenses)
 }

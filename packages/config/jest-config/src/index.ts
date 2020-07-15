@@ -16,7 +16,7 @@ const tsConfigFile = existsSync(tsConfigFileOverride)
 
 const emptyMock = join(__dirname, 'filemock.js')
 
-export default {
+const config = {
 	preset: 'ts-jest',
 	transform: {
 		'^.+\\.[tj]sx?$': 'ts-jest',
@@ -47,3 +47,5 @@ export default {
 		},
 	},
 }
+
+export default config

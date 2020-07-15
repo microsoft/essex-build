@@ -3,8 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 const { join } = require('path')
-const rule = require('../../../lib/rules/adjacent-await')
 const RuleTester = require('eslint').RuleTester
+const rule = require('../../../lib/rules/adjacent-await')
 const adaptTslintTestCase = require('../../utils/adaptTslintTestCase')
 const { code, errors } = adaptTslintTestCase(join(__dirname, './test.es.lint'))
 // const testCase = fs.readFileSync(__dirname + '/testCase.txt').toString()

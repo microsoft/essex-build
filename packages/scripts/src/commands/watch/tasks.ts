@@ -4,10 +4,12 @@
  */
 import { watchBabel } from '@essex/build-step-babel'
 import { watchTypescript } from '@essex/build-step-typescript'
-import * as gulp from 'gulp'
+import { TaskFunction } from 'gulp'
 import { WatchCommandOptions } from './types'
 
-export function configureTasks({ env = 'development' }: WatchCommandOptions) {
+export function configureTasks({
+	env = 'development',
+}: WatchCommandOptions): TaskFunction {
 	return () => {
 		watchTypescript()
 		watchBabel(env)

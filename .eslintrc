@@ -1,0 +1,6 @@
+{
+  "extends": "plugin:@essex/release",
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off" 
+  }
+}

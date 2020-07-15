@@ -8,6 +8,7 @@ import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
 import * as gulp from 'gulp'
 import * as debug from 'gulp-debug'
 import * as ts from 'gulp-typescript'
+import { FileWatcher } from 'typescript'
 
 const TYPESCRIPT_GLOBS = ['src/**/*.ts*', '!**/__tests__/**']
 
@@ -59,7 +60,7 @@ export function emitTypings(): () => NodeJS.ReadWriteStream {
  * Watches typescript from src/ to the lib/ folder
  * @param verbose verbose mode
  */
-export function watchTypescript() {
+export function watchTypescript(): FileWatcher {
 	return gulp.watch(TYPESCRIPT_GLOBS, gulp.series(compileTypescript()))
 }
 

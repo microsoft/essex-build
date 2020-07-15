@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { recipes } from '@essex/build-step-recipes'
 import * as log from '@essex/tasklogger'
-import { recipes } from '../recipes/recipes'
 import { copyConfigFile } from './util'
 
 const INIT_INSTRUCTIONS = `
@@ -19,13 +19,11 @@ ${INIT_INSTRUCTIONS}
 `
 
 const CONFIG_FILES = [
-	'.huskyrc',
-	'.prettierrc',
-	'.prettierignore',
-	'.eslintrc',
-	'.eslintignore',
 	'.docsrc',
 	'.gitignore',
+	'.huskyrc',
+	'.prettierignore',
+	'.prettierrc',
 	'tsconfig.json',
 ]
 

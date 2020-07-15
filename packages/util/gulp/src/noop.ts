@@ -4,4 +4,4 @@
  */
 import * as through2 from 'through2'
 export const noopStep = (): any => through2.obj()
-export const noopTask = (cb: (err?: Error) => void) => cb()
+export const noopTask = (cb: (err?: Error) => void): void => cb()

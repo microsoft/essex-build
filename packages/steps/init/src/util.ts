@@ -2,12 +2,12 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { exists, copyFile } from 'fs'
 import { join } from 'path'
 import * as log from '@essex/tasklogger'
-import { fileExists, rootDir, copyFilePromise } from '../../utils'
 
 export function copyConfigFile(file: string): Promise<number> {
-	const scriptPath = join(rootDir, `config/${file}`)
+	const scriptPath = join(__dirname, `../config/${file}`)
 	const pkgPath = join(process.cwd(), file)
 
 	return fileExists(pkgPath).then(pkgFileExists => {
@@ -19,5 +19,20 @@ export function copyConfigFile(file: string): Promise<number> {
 		} else {
 			return copyFilePromise(scriptPath, pkgPath).then(() => 0)
 		}
+	})
+}
+
+export const fileExists = (file: string): Promise<boolean> =>
+	new Promise(resolve => exists(file, is => resolve(is)))
+
+function copyFilePromise(source: string, target: string): Promise<void> {
+	return new Promise((resolve, reject) => {
+		copyFile(source, target, err => {
+			if (err) {
+				reject(err)
+			} else {
+				resolve()
+			}
+		})
 	})
 }
