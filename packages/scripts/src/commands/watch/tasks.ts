@@ -7,12 +7,9 @@ import { watchTypescript } from '@essex/build-step-typescript'
 import * as gulp from 'gulp'
 import { WatchCommandOptions } from './types'
 
-export function configureTasks({
-	verbose = false,
-	env = 'development',
-}: WatchCommandOptions) {
+export function configureTasks({ env = 'development' }: WatchCommandOptions) {
 	return () => {
-		watchTypescript(verbose)
-		watchBabel(verbose, env)
+		watchTypescript()
+		watchBabel(env)
 	}
 }

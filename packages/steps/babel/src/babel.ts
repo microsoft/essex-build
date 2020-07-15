@@ -16,17 +16,21 @@ const BABEL_GLOBS = ['lib/**/*.js']
  * Transpile ts output into babel cjs
  * @param verbose
  */
-function babelCjs(verbose: boolean, env: string): () => NodeJS.ReadWriteStream {
+function babelCjs(env: string, listen = true): () => NodeJS.ReadWriteStream {
 	const cjsConfig = getCjsConfiguration(env)
 	const title = 'babel-cjs'
 	return function execute() {
-		return gulp
+		const task: NodeJS.ReadWriteStream = gulp
 			.src(BABEL_GLOBS, { since: gulp.lastRun(execute) })
 			.pipe(babel(cjsConfig))
-			.pipe(verbose ? debug({ title }) : noopStep())
+			.pipe(debug({ title }))
 			.pipe(gulp.dest('dist/cjs'))
-			.on('end', () => subtaskSuccess(title))
-			.on('error', () => subtaskFail(title))
+
+		if (listen) {
+			task.on('end', () => subtaskSuccess(title))
+			task.on('error', () => subtaskFail(title))
+		}
+		return task
 	}
 }
 
@@ -34,27 +38,36 @@ function babelCjs(verbose: boolean, env: string): () => NodeJS.ReadWriteStream {
  * Transpile ts output into babel esm
  * @param verbose
  */
-function babelEsm(verbose: boolean, env: string): () => NodeJS.ReadWriteStream {
+function babelEsm(env: string, listen = true): () => NodeJS.ReadWriteStream {
 	const esmConfig = getEsmConfiguration(env)
 	const title = 'babel-esm'
 	return function execute() {
-		return gulp
+		const task: NodeJS.ReadWriteStream = gulp
 			.src(BABEL_GLOBS, { since: gulp.lastRun(execute) })
 			.pipe(babel(esmConfig))
-			.pipe(verbose ? debug({ title }) : noopStep())
+			.pipe(debug({ title }))
 			.pipe(gulp.dest('dist/esm'))
-			.on('end', () => subtaskSuccess(title))
-			.on('error', () => subtaskFail(title))
+
+		if (listen) {
+			task.on('end', () => subtaskSuccess(title))
+			task.on('error', () => subtaskFail(title))
+		}
+		return task
 	}
 }
 
-export function buildBabel(debug: boolean, env: string) {
-	return () => gulp.parallel(babelEsm(debug, env), babelCjs(debug, env))
+/**
+ * Transpiles babel from lib/ into dist/esm and dist/cjs
+ * @param env
+ * @param listen
+ */
+export function buildBabel(env: string, listen = true) {
+	return gulp.parallel(babelEsm(env, listen), babelCjs(env, listen))
 }
 /**
  * Watches typescript from src/ to the lib/ folder
  * @param verbose verbose mode
  */
-export function watchBabel(debug: boolean, env: string) {
-	return gulp.watch(BABEL_GLOBS, buildBabel(debug, env))
+export function watchBabel(env: string) {
+	return gulp.watch(BABEL_GLOBS, buildBabel(env, false))
 }

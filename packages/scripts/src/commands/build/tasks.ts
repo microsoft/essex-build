@@ -30,9 +30,9 @@ export function configureTasks({
 
 	const generateDocs = docs ? generateTypedocsGulp(verbose) : noopTask
 	const buildStorybook = storybook ? storybookBuildGulp(verbose) : noopTask
-	const buildTypings = code ? emitTypings(verbose) : noopTask
-	const compileTS = code ? compileTypescript(verbose) : noopTask
-	const compileJS = code ? buildBabel(verbose, env) : noopTask
+	const buildTypings = code ? emitTypings() : noopTask
+	const compileTS = code ? compileTypescript() : noopTask
+	const compileJS = code ? buildBabel(env) : noopTask
 	const bundleWebpack = webpack
 		? webpackBuildGulp({ env, mode, verbose })
 		: noopTask
