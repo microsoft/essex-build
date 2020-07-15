@@ -3,7 +3,7 @@ import { join } from 'path'
 import * as gulp from 'gulp'
 import { generateTypedocsGulp } from '@essex/build-step-typedoc'
 import { compileTypescript, emitTypings } from '@essex/build-step-typescript'
-import { babelEsm, babelCjs } from '@essex/build-step-babel'
+import { buildBabel } from '@essex/build-step-babel'
 import { webpackBuildGulp } from '@essex/build-step-webpack'
 import { rollupBuild } from '@essex/build-step-rollup'
 import { storybookBuildGulp } from '@essex/build-step-storybook'
@@ -30,11 +30,9 @@ export function configureTasks({
 
 	const generateDocs = docs ? generateTypedocsGulp(verbose) : noopTask
 	const buildStorybook = storybook ? storybookBuildGulp(verbose) : noopTask
-	const buildTypings = code ? emitTypings(tsConfigPath, verbose) : noopTask
-	const compileTS = code ? compileTypescript(tsConfigPath, verbose) : noopTask
-	const compileJS = code
-		? gulp.parallel(babelEsm(verbose, env), babelCjs(verbose, env))
-		: noopTask
+	const buildTypings = code ? emitTypings(verbose) : noopTask
+	const compileTS = code ? compileTypescript(verbose) : noopTask
+	const compileJS = code ? buildBabel(verbose, env) : noopTask
 	const bundleWebpack = webpack
 		? webpackBuildGulp({ env, mode, verbose })
 		: noopTask

@@ -2,8 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { execGulpTask, resolveShellCode } from '@essex/build-utils'
 import { Command } from 'commander'
-import { execute, WatchCommandOptions } from './execute'
+import { configureTasks } from './tasks'
+import { WatchCommandOptions } from './types'
 
 export default function watch(program: Command): void {
 	program
@@ -21,7 +23,10 @@ export default function watch(program: Command): void {
 			'development',
 		)
 		.action(async (options: WatchCommandOptions) => {
-			const code = await execute(options)
-			process.exit(code)
+			Promise.resolve()
+				.then(() => configureTasks(options))
+				.then(build => execGulpTask(build))
+				.then(...resolveShellCode())
+				.then(code => process.exit(code))
 		})
 }
