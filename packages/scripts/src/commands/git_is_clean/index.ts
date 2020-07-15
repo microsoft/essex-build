@@ -18,5 +18,5 @@ export default function start(program: Command): void {
 
 const job: Job = {
 	exec: 'git',
-	args: ['diff-index', '--quiet', 'HEAD'],
+	args: ['diff-index', 'HEAD'],
 }
