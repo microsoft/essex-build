@@ -4,6 +4,7 @@
  */
 import { watchBabel } from '@essex/build-step-babel'
 import { watchTypescript } from '@essex/build-step-typescript'
+import * as gulp from 'gulp'
 import { WatchCommandOptions } from './types'
 
 export function configureTasks({
