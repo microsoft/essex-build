@@ -9,6 +9,7 @@
 	},
 	"dependencies": {
 		"@babel/core": "^7.10.4",
+		"@essex/babel-config": "^8.0.0-alpha.11",
 		"@essex/build-util-hoister": "^8.0.0-alpha.11",
 		"babel-loader": "^8.1.0",
 		"cache-loader": "^4.1.0",

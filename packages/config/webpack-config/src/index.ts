@@ -121,7 +121,7 @@ export function configure({
 						{ loader: cacheLoader },
 						{
 							loader: babelLoader,
-							options: getBabelConfiguration(),
+							options: getBabelConfiguration(env),
 						},
 						{
 							loader: tsLoader,

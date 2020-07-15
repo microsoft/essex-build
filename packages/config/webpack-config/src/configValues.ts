@@ -4,6 +4,7 @@
  */
 import { existsSync } from 'fs'
 import { join } from 'path'
+import { getEsmConfiguration } from '@essex/babel-config'
 import { log } from './log'
 
 /* eslint-disable @typescript-eslint/no-var-requires */
@@ -14,7 +15,7 @@ export const pkgJson = require(join(process.cwd(), 'package.json'))
  * If <package>/assets directory is present, it will be used
  * to serve static assets out of.
  */
-export function getWdsStaticConfig() {
+export function getWdsStaticConfig(): any {
 	const staticFolder = join(process.cwd(), 'public')
 	return existsSync(staticFolder)
 		? {
@@ -24,15 +25,15 @@ export function getWdsStaticConfig() {
 		: {}
 }
 
-export function getHomePage() {
+export function getHomePage(): string | boolean {
 	return pkgJson.homepage ? pkgJson.homepage : false
 }
 
-export function getTitle() {
+export function getTitle(): string {
 	return pkgJson.title || pkgJson.name || 'Essex Application'
 }
 
-export function getIndexFile() {
+export function getIndexFile(): string {
 	const indexTsx = join(process.cwd(), 'src', 'index.tsx')
 	const indexTs = join(process.cwd(), 'src', 'index.ts')
 	const indexJsx = join(process.cwd(), 'src', 'index.jsx')
@@ -53,13 +54,6 @@ export function getIndexFile() {
 	}
 }
 
-export function getBabelConfiguration() {
-	const overrideFile = join(process.cwd(), 'babelrc.esm.js')
-	const defaultFile = join(__dirname, 'babelrc.esm.js')
-
-	if (existsSync(overrideFile)) {
-		return require(overrideFile)
-	} else {
-		return require(defaultFile)
-	}
+export function getBabelConfiguration(env: string): string {
+	return getEsmConfiguration(env)
 }

@@ -2,6 +2,19 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+
+import { readFileSync, existsSync } from 'fs'
+import { join } from 'path'
+
+const projectDictionaryPath = join(process.cwd(), '.spelling')
+const projectDictionary = existsSync(projectDictionaryPath)
+	? readFileSync(projectDictionaryPath, { encoding: 'utf-8' }).toString()
+	: ''
+
+const ACTUAL_WORDS = `
+inclusivity
+e.g.
+`
 const TEAM = `
 essex
 Essex
@@ -34,7 +47,6 @@ lintstagedrc
 prettierrc
 index.js
 `
-
 const TOOLS = `
 prettier-config
 eslint-config
@@ -61,8 +73,8 @@ AspNet
 Xamarin
 audit-ci
 `
-
 const TLAs = `
+BYO
 API
 APIs
 CLI
@@ -110,6 +122,7 @@ analytics
 Analaytics
 `
 const dictionary = `
+${ACTUAL_WORDS}
 ${CORP}
 ${LEGALESE}
 ${TEAM}
@@ -117,12 +130,6 @@ ${TOOLS}
 ${JARGON}
 ${TLAs}
 ${CONFIGS}
-value1
-value2
-value3
-vaule4
-inclusivity
-e.g.
-BYO
+${projectDictionary}
 `
 export default dictionary
