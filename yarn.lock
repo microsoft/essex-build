@@ -1979,7 +1979,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-babel@workspace:packages/steps/babel":
+"@essex/build-step-babel@^8.0.0-alpha.12, @essex/build-step-babel@workspace:packages/steps/babel":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-babel@workspace:packages/steps/babel"
   dependencies:
@@ -2329,6 +2329,7 @@ __metadata:
   resolution: "@essex/scripts@portal:./packages/scripts::locator=%40essex%2Falpha-build-utils%40workspace%3A."
   dependencies:
     "@essex/build-step-audit": ^8.0.0-alpha.12
+    "@essex/build-step-babel": ^8.0.0-alpha.12
     "@essex/build-step-clean": ^8.0.0-alpha.12
     "@essex/build-step-commitlint": ^8.0.0-alpha.12
     "@essex/build-step-docs": ^8.0.0-alpha.12
@@ -2389,6 +2390,7 @@ __metadata:
   resolution: "@essex/scripts@workspace:packages/scripts"
   dependencies:
     "@essex/build-step-audit": ^8.0.0-alpha.12
+    "@essex/build-step-babel": ^8.0.0-alpha.12
     "@essex/build-step-clean": ^8.0.0-alpha.12
     "@essex/build-step-commitlint": ^8.0.0-alpha.12
     "@essex/build-step-docs": ^8.0.0-alpha.12
