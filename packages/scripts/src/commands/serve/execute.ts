@@ -12,6 +12,10 @@ export interface ServeCommandOptions {
 	verbose: boolean
 }
 
-export async function execute(config: ServeCommandOptions): Promise<number> {
-	return webpackServe(config).then(...resolveShellCode())
+export async function execute({
+	env,
+	mode,
+	verbose,
+}: ServeCommandOptions): Promise<number> {
+	return webpackServe({ env, mode, verbose }).then(...resolveShellCode())
 }
