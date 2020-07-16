@@ -29,7 +29,6 @@ const CONFIG_FILES = [
 	'.gitignore',
 	'.prettierignore',
 	'tsconfig.json',
-	'commitlint.config.js',
 ]
 
 export function initMonorepo(): Promise<number> {
@@ -49,7 +48,6 @@ export function initMonorepo(): Promise<number> {
 
 function configurePackageJsonForMonorepo(): Promise<number> {
 	let writeNeeded = false
-
 	if (!pkgJson.prettier) {
 		pkgJson.prettier = '@essex/prettier-config'
 		writeNeeded = true
@@ -58,7 +56,7 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 		pkgJson.husky = {
 			hooks: {
 				'pre-commit': 'lint-staged',
-				'commit-msg': 'commitlint -E HUSKY_GIT_PARAMS',
+				'commit-msg': 'essex commit-msg',
 			},
 		}
 		writeNeeded = true
@@ -67,7 +65,7 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 		pkgJson[`lint-staged`] = {
 			'**/*': ['essex prettify --staged'],
 			'**/*.{js,jsx,ts,tsx}': ['essex lint --docs --fix --staged'],
-		}
+		}		
 		writeNeeded = true
 	}
 
@@ -92,7 +90,7 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 		writeNeeded = true
 	}
 	if (!pkgJson.scripts.git_is_clean) {
-		pkgJson.scripts.git_is_clean = 'git diff-index HEAD'
+		pkgJson.scripts.git_is_clean = 'essex git-is-clean'
 		writeNeeded = true
 	}
 	if (!pkgJson.scripts.ci) {
@@ -103,6 +101,8 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 		writeFileSync(pkgJsonPath, JSON.stringify(pkgJson, null, 2))
 	}
 	log.info(`
+	You should install these recommended peer dependencies
+
 	yarn add --dev -W lerna npm-run-all husky lint-staged commitlint
 	`)
 	return Promise.resolve(0)
