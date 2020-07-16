@@ -7,4 +7,5 @@ export interface LintCommandOptions {
 	staged?: boolean
 	docs?: boolean
 	strict?: boolean
+	docsOnly?: boolean
 }

@@ -48,7 +48,7 @@
 			"yarn essex prettify --staged"
 		],
 		"**/md": [
-			"yarn essex lint --docs"
+			"yarn essex lint --docs-only"
 		],
 		"**/*.{js,jsx,ts,tsx}": [
 			"yarn essex lint --fix --staged"

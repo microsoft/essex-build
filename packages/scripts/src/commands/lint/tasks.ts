@@ -14,6 +14,7 @@ export function configureTasks({
 	staged = false,
 	docs = false,
 	strict = false,
+	docsOnly = false,
 }: LintCommandOptions): gulp.TaskFunction {
 	function checkCode(cb: (err?: Error) => void) {
 		eslint(fix, strict).then(...resolveGulpTask('eslint', cb))
@@ -30,10 +31,13 @@ export function configureTasks({
 		execDocs().then(...resolveGulpTask('docs', cb))
 	}
 
-	const lint = gulp.parallel(
-		checkCode,
-		checkFormatting,
-		docs ? checkDocumentation : noopTask,
-	)
-	return lint
+	if (docsOnly) {
+		return gulp.series(checkDocumentation)
+	} else {
+		return gulp.parallel(
+			checkCode,
+			checkFormatting,
+			docs ? checkDocumentation : noopTask,
+		)
+	}
 }
