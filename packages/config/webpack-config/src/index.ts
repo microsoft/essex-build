@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { getNodeModulesPaths } from '@essex/build-util-hoister'
+import * as webpack from 'webpack'
 import {
 	getWdsStaticConfig,
 	getHomePage,
@@ -12,19 +13,17 @@ import {
 } from './configValues'
 import { log } from './log'
 import { validateConfiguration } from './validate'
-
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { join } = require('path')
-const babelLoader = require('babel-loader')
-const cacheLoader = require('cache-loader')
-const cssLoader = require('css-loader')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const sassLoader = require('sass-loader')
-const styleLoader = require('style-loader')
-const tsLoader = require('ts-loader')
-const webpack = require('webpack')
+const babelLoader = require.resolve('babel-loader')
+const cacheLoader = require.resolve('cache-loader')
+const cssLoader = require.resolve('css-loader')
+const sassLoader = require.resolve('sass-loader')
+const styleLoader = require.resolve('style-loader')
+const tsLoader = require.resolve('ts-loader')
 
 export interface Configuration {
 	env?: string
@@ -50,7 +49,7 @@ export function configure({
 	modules,
 	loaderModules,
 	htmlWebpackPlugin,
-}: Configuration): any {
+}: Configuration): webpack.Configuration {
 	validateConfiguration()
 	const isDevelopment = mode !== 'production'
 	const extendedAliases = aliases ? aliases(env, mode) : {}
@@ -89,7 +88,7 @@ export function configure({
 
 	const buildPath = join(process.cwd(), 'build/')
 
-	const result = {
+	const result: webpack.Configuration & { devServer: any } = {
 		mode: isDevelopment ? 'development' : 'production',
 		entry: getIndexFile(),
 		devtool: 'cheap-module-source-map',

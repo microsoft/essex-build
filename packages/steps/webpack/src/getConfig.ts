@@ -5,14 +5,18 @@
 import { existsSync } from 'fs'
 import { join } from 'path'
 import { configure } from '@essex/webpack-config'
+import { Configuration } from 'webpack'
 import { WebpackCompilerOptions } from './types'
 
 const webpackConfigFile = join(process.cwd(), 'webpack.config.js')
 
-export function getConfig(config: WebpackCompilerOptions): any {
+export function getConfig({
+	env,
+	mode,
+}: WebpackCompilerOptions): Configuration {
 	if (existsSync(webpackConfigFile)) {
 		return require(webpackConfigFile)
 	} else {
-		return configure(config as any)
+		return configure({ env, mode })
 	}
 }

@@ -4,6 +4,6 @@
  */
 export interface WebpackCompilerOptions {
 	env?: string
-	mode?: string
+	mode?: 'development' | 'production'
 	verbose?: boolean
 }

@@ -2050,7 +2050,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-eslint@^8.0.0-alpha.12, @essex/build-step-eslint@workspace:packages/steps/eslint":
+"@essex/build-step-eslint@^8.0.0-alpha.16, @essex/build-step-eslint@workspace:packages/steps/eslint":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-eslint@workspace:packages/steps/eslint"
   dependencies:
@@ -2065,7 +2065,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-init@^8.0.0-alpha.12, @essex/build-step-init@workspace:packages/steps/init":
+"@essex/build-step-init@^8.0.0-alpha.17, @essex/build-step-init@workspace:packages/steps/init":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-init@workspace:packages/steps/init"
   dependencies:
@@ -2078,7 +2078,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-jest@^8.0.0-alpha.12, @essex/build-step-jest@workspace:packages/steps/jest":
+"@essex/build-step-jest@^8.0.0-alpha.17, @essex/build-step-jest@workspace:packages/steps/jest":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-jest@workspace:packages/steps/jest"
   dependencies:
@@ -2093,7 +2093,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-pretty-quick@^8.0.0-alpha.12, @essex/build-step-pretty-quick@workspace:packages/steps/pretty-quick":
+"@essex/build-step-pretty-quick@^8.0.0-alpha.17, @essex/build-step-pretty-quick@workspace:packages/steps/pretty-quick":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-pretty-quick@workspace:packages/steps/pretty-quick"
   dependencies:
@@ -2119,7 +2119,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-rollup@^8.0.0-alpha.12, @essex/build-step-rollup@workspace:packages/steps/rollup":
+"@essex/build-step-rollup@^8.0.0-alpha.18, @essex/build-step-rollup@workspace:packages/steps/rollup":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-rollup@workspace:packages/steps/rollup"
   dependencies:
@@ -2148,7 +2148,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-typedoc@^8.0.0-alpha.14, @essex/build-step-typedoc@workspace:packages/steps/typedoc":
+"@essex/build-step-typedoc@^8.0.0-alpha.17, @essex/build-step-typedoc@workspace:packages/steps/typedoc":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-typedoc@workspace:packages/steps/typedoc"
   dependencies:
@@ -2182,7 +2182,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-webpack@^8.0.0-alpha.12, @essex/build-step-webpack@workspace:packages/steps/webpack":
+"@essex/build-step-webpack@^8.0.0-alpha.17, @essex/build-step-webpack@workspace:packages/steps/webpack":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-webpack@workspace:packages/steps/webpack"
   dependencies:
@@ -2331,16 +2331,16 @@ __metadata:
     "@essex/build-step-clean": ^8.0.0-alpha.12
     "@essex/build-step-commitlint": ^8.0.0-alpha.12
     "@essex/build-step-docs": ^8.0.0-alpha.12
-    "@essex/build-step-eslint": ^8.0.0-alpha.12
-    "@essex/build-step-init": ^8.0.0-alpha.12
-    "@essex/build-step-jest": ^8.0.0-alpha.12
-    "@essex/build-step-pretty-quick": ^8.0.0-alpha.12
+    "@essex/build-step-eslint": ^8.0.0-alpha.16
+    "@essex/build-step-init": ^8.0.0-alpha.17
+    "@essex/build-step-jest": ^8.0.0-alpha.17
+    "@essex/build-step-pretty-quick": ^8.0.0-alpha.17
     "@essex/build-step-recipes": ^8.0.0-alpha.12
-    "@essex/build-step-rollup": ^8.0.0-alpha.12
+    "@essex/build-step-rollup": ^8.0.0-alpha.18
     "@essex/build-step-storybook": ^8.0.0-alpha.12
-    "@essex/build-step-typedoc": ^8.0.0-alpha.14
+    "@essex/build-step-typedoc": ^8.0.0-alpha.17
     "@essex/build-step-typescript": ^8.0.0-alpha.15
-    "@essex/build-step-webpack": ^8.0.0-alpha.12
+    "@essex/build-step-webpack": ^8.0.0-alpha.17
     "@essex/build-utils": ^8.0.0-alpha.12
     "@essex/eslint-plugin": ^8.0.0-alpha.12
     "@essex/shellrunner": ^8.0.0-alpha.12
@@ -2381,16 +2381,16 @@ __metadata:
     "@essex/build-step-clean": ^8.0.0-alpha.12
     "@essex/build-step-commitlint": ^8.0.0-alpha.12
     "@essex/build-step-docs": ^8.0.0-alpha.12
-    "@essex/build-step-eslint": ^8.0.0-alpha.12
-    "@essex/build-step-init": ^8.0.0-alpha.12
-    "@essex/build-step-jest": ^8.0.0-alpha.12
-    "@essex/build-step-pretty-quick": ^8.0.0-alpha.12
+    "@essex/build-step-eslint": ^8.0.0-alpha.16
+    "@essex/build-step-init": ^8.0.0-alpha.17
+    "@essex/build-step-jest": ^8.0.0-alpha.17
+    "@essex/build-step-pretty-quick": ^8.0.0-alpha.17
     "@essex/build-step-recipes": ^8.0.0-alpha.12
-    "@essex/build-step-rollup": ^8.0.0-alpha.12
+    "@essex/build-step-rollup": ^8.0.0-alpha.18
     "@essex/build-step-storybook": ^8.0.0-alpha.12
-    "@essex/build-step-typedoc": ^8.0.0-alpha.14
+    "@essex/build-step-typedoc": ^8.0.0-alpha.17
     "@essex/build-step-typescript": ^8.0.0-alpha.15
-    "@essex/build-step-webpack": ^8.0.0-alpha.12
+    "@essex/build-step-webpack": ^8.0.0-alpha.17
     "@essex/build-utils": ^8.0.0-alpha.12
     "@essex/eslint-plugin": ^8.0.0-alpha.12
     "@essex/shellrunner": ^8.0.0-alpha.12
@@ -2482,6 +2482,7 @@ __metadata:
     "@essex/build-util-hoister": ^8.0.0-alpha.12
     "@types/debug": ^4.1.5
     "@types/node": ^14.0.14
+    "@types/webpack": ^4.41.21
     babel-loader: ^8.1.0
     cache-loader: ^4.1.0
     css-loader: ^3.6.0
@@ -5226,6 +5227,20 @@ __metadata:
     "@types/webpack-sources": "*"
     source-map: ^0.6.0
   checksum: 8717e0dbcc552f305d87cf61b01765c09b94837fbf9683fdb5a6ba6f0ddec540cab76c6353c44b8044419d55853dc412889608358f7d73cd09c6a70f0d4fcbf9
+  languageName: node
+  linkType: hard
+
+"@types/webpack@npm:^4.41.21":
+  version: 4.41.21
+  resolution: "@types/webpack@npm:4.41.21"
+  dependencies:
+    "@types/anymatch": "*"
+    "@types/node": "*"
+    "@types/tapable": "*"
+    "@types/uglify-js": "*"
+    "@types/webpack-sources": "*"
+    source-map: ^0.6.0
+  checksum: 3a02667221be2d8ecdb2da8d78e74dbc6ef216a4f0c636017e9dbe243198ed80a258e0c9f9e0613eea76efe77b5293f6f052dee4d26adc3dd54e56f38a2031f2
   languageName: node
   linkType: hard
 
