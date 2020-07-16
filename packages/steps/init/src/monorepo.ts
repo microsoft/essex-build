@@ -92,7 +92,7 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 		writeNeeded = true
 	}
 	if (!pkgJson.scripts.git_is_clean) {
-		pkgJson.scripts.git_is_clean = 'essex git-is-clean'
+		pkgJson.scripts.git_is_clean = 'git diff-index HEAD'
 		writeNeeded = true
 	}
 	if (!pkgJson.scripts.ci) {

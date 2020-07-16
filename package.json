@@ -15,7 +15,7 @@
 		"lint": "essex lint --docs --fix",
 		"prettify": "essex prettify",
 		"audit_dependencies": "essex audit",
-		"git_is_clean": "essex git-is-clean",
+		"git_is_clean": "git diff-index HEAD",
 		"ci": "run-s build lint test git_is_clean"
 	},
 	"workspaces": {
