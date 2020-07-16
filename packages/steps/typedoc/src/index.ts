@@ -22,20 +22,25 @@ const DEFAULT_ENTRY_POINT = 'src/index.ts'
  * Generates API documentation using TypeDoc
  */
 export function generateTypedocs(verbose: boolean): Promise<void> {
-	const { title, name } = packageJson
-	return typedoc({
-		name: title || name || 'API Documentation',
-		entryPoint: DEFAULT_ENTRY_POINT,
-		stripInternal: true,
-		excludeExternals: true,
-		excludeNotExported: true,
-		exclude: ['**/__tests__/**', '**/node_modules/**'],
-		excludePrivate: true,
-		project: 'tsconfig.json',
-		out: 'dist/docs',
-		logger: 'none',
-		readme: existsSync(readmePath) ? readmePath : undefined,
-	})
+	try {
+		const { title, name } = packageJson
+		return typedoc({
+			name: title || name || 'API Documentation',
+			entryPoint: DEFAULT_ENTRY_POINT,
+			stripInternal: true,
+			excludeExternals: true,
+			excludeNotExported: true,
+			exclude: ['**/__tests__/**', '**/node_modules/**'],
+			excludePrivate: true,
+			project: 'tsconfig.json',
+			out: 'dist/docs',
+			logger: 'none',
+			readme: existsSync(readmePath) ? readmePath : undefined,
+		})
+	} catch (err) {
+		console.log('error running typedoc', err)
+		return Promise.reject(err)
+	}
 }
 
 export const generateTypedocsGulp = gulpify('typedocs', generateTypedocs)

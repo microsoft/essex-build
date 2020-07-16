@@ -9,19 +9,24 @@ import { getCompiler } from './getCompiler'
 import { WebpackCompilerOptions } from './types'
 
 export function webpackBuild(config: WebpackCompilerOptions): Promise<void> {
-	const compiler = getCompiler(config)
-	return new Promise((resolve, reject) => {
-		compiler.run((err: Error, stats: webpack.Stats) => {
-			console.log(stats.toString({ colors: true }))
-			if (err || stats.hasErrors()) {
-				subtaskFail('webpack')
-				reject(err)
-			} else {
-				subtaskSuccess('webpack')
-				resolve()
-			}
+	try {
+		const compiler = getCompiler(config)
+		return new Promise((resolve, reject) => {
+			compiler.run((err: Error, stats: webpack.Stats) => {
+				console.log(stats.toString({ colors: true }))
+				if (err || stats.hasErrors()) {
+					subtaskFail('webpack')
+					reject(err)
+				} else {
+					subtaskSuccess('webpack')
+					resolve()
+				}
+			})
 		})
-	})
+	} catch (err) {
+		console.log('error running webpack build', err)
+		return Promise.reject(err)
+	}
 }
 
 export const webpackBuildGulp = gulpify('webpack', webpackBuild)

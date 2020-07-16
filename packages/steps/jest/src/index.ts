@@ -28,29 +28,34 @@ export function jest({
 	coverageThreshold,
 	browser,
 }: TestCommandOptions): Promise<void> {
-	const jestConfig: any = {
-		...config,
-	}
-	return runCLI(
-		{
-			...jestConfig,
-			verbose,
-			coverage,
-			watch,
-			ci,
-			clearCache,
-			updateSnapshots,
-			coverageThreshold,
-			browser,
-		},
-		[process.cwd()],
-	).then(({ results }) => {
-		if (results.numFailedTests || results.numFailedTestSuites) {
-			return Promise.reject()
-		} else {
-			return Promise.resolve()
+	try {
+		const jestConfig: any = {
+			...config,
 		}
-	})
+		return runCLI(
+			{
+				...jestConfig,
+				verbose,
+				coverage,
+				watch,
+				ci,
+				clearCache,
+				updateSnapshots,
+				coverageThreshold,
+				browser,
+			},
+			[process.cwd()],
+		).then(({ results }) => {
+			if (results.numFailedTests || results.numFailedTestSuites) {
+				return Promise.reject()
+			} else {
+				return Promise.resolve()
+			}
+		})
+	} catch (err) {
+		console.log('error running jest', err)
+		return Promise.reject(err)
+	}
 }
 
 export const jestGulp = gulpify('jest', jest)

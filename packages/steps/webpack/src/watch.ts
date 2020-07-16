@@ -8,18 +8,23 @@ import { WebpackCompilerOptions } from './types'
 
 export function webpackWatch(config: WebpackCompilerOptions): Promise<number> {
 	return new Promise((resolve, reject) => {
-		const compiler = getCompiler(config)
-		compiler.watch(
-			{
-				aggregateTimeout: 500,
-				ignored: /node_modules/,
-			},
-			(err: Error, stats: webpack.Stats) => {
-				if (err) {
-					reject(err)
-				}
-				console.log(stats.toString({ colors: true }))
-			},
-		)
+		try {
+			const compiler = getCompiler(config)
+			compiler.watch(
+				{
+					aggregateTimeout: 500,
+					ignored: /node_modules/,
+				},
+				(err: Error, stats: webpack.Stats) => {
+					if (err) {
+						reject(err)
+					}
+					console.log(stats.toString({ colors: true }))
+				},
+			)
+		} catch (err) {
+			console.log('error running webpack watch', err)
+			reject(err)
+		}
 	})
 }

@@ -52,16 +52,20 @@ function configurePackageJsonForLib(): Promise<number> {
 }
 
 export function initLib(): Promise<number> {
-	return Promise.all([
-		copyConfigFile('tsconfig.json'),
-		configurePackageJsonForLib(),
-	]).then(results => {
-		const result = results.reduce((a, b) => a + b, 0)
-		if (result > 0) {
-			log.info(INIT_MSG_FAIL)
-		} else {
-			log.info(INIT_INSTRUCTIONS)
-		}
-		return result
-	})
+	return Promise.resolve()
+		.then(() =>
+			Promise.all([
+				copyConfigFile('tsconfig.json'),
+				configurePackageJsonForLib(),
+			]),
+		)
+		.then(results => {
+			const result = results.reduce((a, b) => a + b, 0)
+			if (result > 0) {
+				log.info(INIT_MSG_FAIL)
+			} else {
+				log.info(INIT_INSTRUCTIONS)
+			}
+			return result
+		})
 }

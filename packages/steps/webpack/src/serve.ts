@@ -26,6 +26,7 @@ export function webpackServe(config: WebpackCompilerOptions): Promise<number> {
 				reject(err)
 			})
 		} catch (err) {
+			console.log('eror running webpack serve', err)
 			reject(err)
 		}
 	})

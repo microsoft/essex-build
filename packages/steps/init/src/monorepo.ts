@@ -32,18 +32,22 @@ const CONFIG_FILES = [
 ]
 
 export function initMonorepo(): Promise<number> {
-	return Promise.all([
-		configurePackageJsonForMonorepo(),
-		...CONFIG_FILES.map(copyConfigFile),
-	]).then(results => {
-		const result = results.reduce((a, b) => a + b, 0)
-		if (result > 0) {
-			log.info(INIT_MSG_FAIL)
-		} else {
-			log.info(INIT_INSTRUCTIONS)
-		}
-		return result
-	})
+	return Promise.resolve()
+		.then(() =>
+			Promise.all([
+				configurePackageJsonForMonorepo(),
+				...CONFIG_FILES.map(copyConfigFile),
+			]),
+		)
+		.then(results => {
+			const result = results.reduce((a, b) => a + b, 0)
+			if (result > 0) {
+				log.info(INIT_MSG_FAIL)
+			} else {
+				log.info(INIT_INSTRUCTIONS)
+			}
+			return result
+		})
 }
 
 function configurePackageJsonForMonorepo(): Promise<number> {
