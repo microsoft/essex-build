@@ -4,12 +4,11 @@
  */
 import { webpackServe } from '@essex/build-step-webpack'
 import { resolveShellCode } from '@essex/build-utils'
-import { BundleMode } from '../_build/types'
 
 export interface ServeCommandOptions {
-	mode: BundleMode
-	env: string
-	verbose: boolean
+	mode?: 'production' | 'development'
+	env?: string
+	verbose?: boolean
 }
 
 export async function execute({

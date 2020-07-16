@@ -27,11 +27,6 @@ export interface BuildCommandOptions {
 	storybook?: boolean
 
 	env?: string
-	mode?: BundleMode
-}
 
-export enum BundleMode {
-	production = 'production',
-	development = 'development',
-	none = 'none',
+	mode?: 'production' | 'development'
 }

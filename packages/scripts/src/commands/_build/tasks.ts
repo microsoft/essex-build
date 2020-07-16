@@ -13,7 +13,7 @@ import { compileTypescript, emitTypings } from '@essex/build-step-typescript'
 import { webpackBuildGulp } from '@essex/build-step-webpack'
 import { noopTask } from '@essex/build-utils'
 import * as gulp from 'gulp'
-import { BundleMode, BuildCommandOptions } from './types'
+import { BuildCommandOptions } from './types'
 
 const cwd = process.cwd()
 const tsConfigPath = join(cwd, 'tsconfig.json')
@@ -26,7 +26,7 @@ export function configureTasks({
 	docs = false,
 	code = !webpack && !rollup,
 	env = 'production',
-	mode = BundleMode.production,
+	mode = 'production',
 }: BuildCommandOptions): gulp.TaskFunction {
 	if (!existsSync(tsConfigPath)) {
 		throw new Error('tsconfig.json must exist')
