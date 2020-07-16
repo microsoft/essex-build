@@ -2,7 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { join } from 'path'
 import { getNodeModulesPaths } from '@essex/build-util-hoister'
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import * as webpack from 'webpack'
 import {
 	getWdsStaticConfig,
@@ -14,10 +16,11 @@ import {
 import { log } from './log'
 import { validateConfiguration } from './validate'
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { join } = require('path')
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const PnpWebpackPlugin = require('pnp-webpack-plugin')
+
+// Webpack Loaders
 const babelLoader = require.resolve('babel-loader')
 const cacheLoader = require.resolve('cache-loader')
 const cssLoader = require.resolve('css-loader')
@@ -28,6 +31,8 @@ const tsLoader = require.resolve('ts-loader')
 export interface Configuration {
 	env?: string
 	mode?: 'development' | 'production'
+	pnp?: boolean
+	typecheck?: boolean
 	// extends
 	aliases?: (env: string, mode: string) => any
 	output?: (env: string, mode: string) => any
@@ -41,6 +46,8 @@ export interface Configuration {
 export function configure({
 	env = 'development',
 	mode = 'development',
+	pnp = false,
+	typecheck = true,
 	aliases,
 	output,
 	devServer,
@@ -200,7 +207,8 @@ export function configure({
 			...extendedDevServer,
 		},
 		plugins: [
-			new ForkTsCheckerWebpackPlugin(),
+			pnp ? PnpWebpackPlugin.moduleLoader(module) : undefined,
+			typecheck ? new ForkTsCheckerWebpackPlugin() : undefined,
 			new HtmlWebpackPlugin({
 				title: getTitle(),
 				base: isDevelopment ? false : getHomePage(),
@@ -215,7 +223,7 @@ export function configure({
 				chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css',
 			}),
 			...extendedPlugins,
-		],
+		].filter(p => !!p),
 		node: {
 			fs: 'empty',
 		},
