@@ -22,8 +22,8 @@ export function webpackServe(config: WebpackCompilerOptions): Promise<number> {
 			server.listen(port, host, (err?: Error | undefined) => {
 				if (err) {
 					console.error(`error listening`, err)
+					reject(err)
 				}
-				reject(err)
 			})
 		} catch (err) {
 			console.log('eror running webpack serve', err)
