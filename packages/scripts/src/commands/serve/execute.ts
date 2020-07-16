@@ -4,7 +4,7 @@
  */
 import { webpackServe } from '@essex/build-step-webpack'
 import { resolveShellCode } from '@essex/build-utils'
-import { BundleMode } from '../build/types'
+import { BundleMode } from '../_build/types'
 
 export interface ServeCommandOptions {
 	mode: BundleMode

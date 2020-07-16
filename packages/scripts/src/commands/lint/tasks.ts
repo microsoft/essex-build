@@ -20,7 +20,7 @@ export function configureTasks(
 	files: string[] | undefined,
 ): gulp.TaskFunction {
 	function checkCode(cb: (err?: Error) => void) {
-		eslint(fix, strict, files).then(...resolveGulpTask('eslint', cb))
+		eslint(fix, strict, files || ['.']).then(...resolveGulpTask('eslint', cb))
 	}
 
 	function checkFormatting(cb: (err?: Error) => void) {

@@ -1,15 +1,19 @@
-/* eslint-disable @typescript-eslint/no-var-require */
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
+/* eslint-disable @typescript-eslint/no-var-requires */
+import { existsSync } from 'fs'
 import { join } from 'path'
-import * as gulp from 'gulp'
-import { generateTypedocsGulp } from '@essex/build-step-typedoc'
-import { compileTypescript, emitTypings } from '@essex/build-step-typescript'
 import { buildBabel } from '@essex/build-step-babel'
-import { webpackBuildGulp } from '@essex/build-step-webpack'
 import { rollupBuild } from '@essex/build-step-rollup'
 import { storybookBuildGulp } from '@essex/build-step-storybook'
+import { generateTypedocsGulp } from '@essex/build-step-typedoc'
+import { compileTypescript, emitTypings } from '@essex/build-step-typescript'
+import { webpackBuildGulp } from '@essex/build-step-webpack'
 import { noopTask } from '@essex/build-utils'
+import * as gulp from 'gulp'
 import { BundleMode, BuildCommandOptions } from './types'
-import { existsSync } from 'fs'
 
 const cwd = process.cwd()
 const tsConfigPath = join(cwd, 'tsconfig.json')
@@ -23,7 +27,7 @@ export function configureTasks({
 	code = !webpack && !rollup,
 	env = 'production',
 	mode = BundleMode.production,
-}: BuildCommandOptions) {
+}: BuildCommandOptions): gulp.TaskFunction {
 	if (!existsSync(tsConfigPath)) {
 		throw new Error('tsconfig.json must exist')
 	}

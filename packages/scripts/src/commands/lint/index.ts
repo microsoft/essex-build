@@ -17,7 +17,6 @@ export default function lint(program: Command): void {
 		.option('--staged', 'only do git-stage verifications')
 		.option('--strict', 'strict linting, warnings will cause failure')
 		.action((files: string[], options: LintCommandOptions = {}) => {
-			console.log('LINTING', files)
 			Promise.resolve(true)
 				.then(() => configureTasks(options, files))
 				.then(lint => execGulpTask(lint))

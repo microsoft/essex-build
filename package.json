@@ -27,6 +27,7 @@
 		]
 	},
 	"devDependencies": {
+		"@essex/eslint-config": "portal:./packages/config/eslint-config",
 		"@essex/eslint-plugin": "portal:./packages/config/eslint-plugin",
 		"@essex/scripts": "portal:./packages/scripts",
 		"husky": "^4.2.5",

@@ -1937,6 +1937,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/alpha-build-utils@workspace:."
   dependencies:
+    "@essex/eslint-config": "portal:./packages/config/eslint-config"
     "@essex/eslint-plugin": "portal:./packages/config/eslint-plugin"
     "@essex/scripts": "portal:./packages/scripts"
     husky: ^4.2.5
@@ -2054,6 +2055,7 @@ __metadata:
   resolution: "@essex/build-step-eslint@workspace:packages/steps/eslint"
   dependencies:
     "@essex/build-utils": ^8.0.0-alpha.12
+    "@essex/eslint-config": ^8.0.0-alpha.12
     "@essex/eslint-plugin": ^8.0.0-alpha.12
     "@types/eslint": ^7.2.0
     "@types/node": ^14.0.14
@@ -2221,7 +2223,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/eslint-config@workspace:packages/config/eslint-config":
+"@essex/eslint-config@^8.0.0-alpha.12, @essex/eslint-config@workspace:packages/config/eslint-config":
   version: 0.0.0-use.local
   resolution: "@essex/eslint-config@workspace:packages/config/eslint-config"
   dependencies:
@@ -2229,6 +2231,16 @@ __metadata:
   peerDependencies:
     "@essex/eslint-plugin": ">= 8.0.0-alpha.7"
   languageName: unknown
+  linkType: soft
+
+"@essex/eslint-config@portal:./packages/config/eslint-config::locator=%40essex%2Falpha-build-utils%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@essex/eslint-config@portal:./packages/config/eslint-config::locator=%40essex%2Falpha-build-utils%40workspace%3A."
+  dependencies:
+    "@essex/eslint-plugin": ^8.0.0-alpha.12
+  peerDependencies:
+    "@essex/eslint-plugin": ">= 8.0.0-alpha.7"
+  languageName: node
   linkType: soft
 
 "@essex/eslint-plugin@^8.0.0-alpha.12, @essex/eslint-plugin@workspace:packages/config/eslint-plugin":
