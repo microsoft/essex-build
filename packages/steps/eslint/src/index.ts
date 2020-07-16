@@ -42,7 +42,7 @@ export async function eslint(
 			return Promise.reject('eslint failed')
 		}
 	} catch (err) {
-		console.log('error running eslint', err)
+		console.error('error running eslint', err)
 		return Promise.reject(err)
 	}
 }

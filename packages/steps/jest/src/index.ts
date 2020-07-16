@@ -53,7 +53,7 @@ export function jest({
 			}
 		})
 	} catch (err) {
-		console.log('error running jest', err)
+		console.error('error running jest', err)
 		return Promise.reject(err)
 	}
 }

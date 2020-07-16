@@ -15,6 +15,7 @@ export function webpackBuild(config: WebpackCompilerOptions): Promise<void> {
 			compiler.run((err: Error, stats: webpack.Stats) => {
 				console.log(stats.toString({ colors: true }))
 				if (err || stats.hasErrors()) {
+					console.error('webpack error', err)
 					subtaskFail('webpack')
 					reject(err)
 				} else {
@@ -24,7 +25,7 @@ export function webpackBuild(config: WebpackCompilerOptions): Promise<void> {
 			})
 		})
 	} catch (err) {
-		console.log('error running webpack build', err)
+		console.error('error running webpack build', err)
 		return Promise.reject(err)
 	}
 }

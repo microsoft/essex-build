@@ -17,13 +17,14 @@ export function webpackWatch(config: WebpackCompilerOptions): Promise<number> {
 				},
 				(err: Error, stats: webpack.Stats) => {
 					if (err) {
+						console.error('webpack error', err)
 						reject(err)
 					}
 					console.log(stats.toString({ colors: true }))
 				},
 			)
 		} catch (err) {
-			console.log('error running webpack watch', err)
+			console.error('error running webpack watch', err)
 			reject(err)
 		}
 	})
