@@ -21,7 +21,6 @@
 		"@essex/build-step-audit": "^8.0.0-alpha.12",
 		"@essex/build-step-babel": "^8.0.0-alpha.12",
 		"@essex/build-step-clean": "^8.0.0-alpha.12",
-		"@essex/build-step-commitlint": "^8.0.0-alpha.12",
 		"@essex/build-step-docs": "^8.0.0-alpha.12",
 		"@essex/build-step-eslint": "^8.0.0-alpha.12",
 		"@essex/build-step-init": "^8.0.0-alpha.12",
@@ -60,19 +59,5 @@
 		"rimraf": "^3.0.2",
 		"shx": "^0.3.2",
 		"typescript": "^3.9.6"
-	},
-	"peerDependencies": {
-		"husky": ">= 4",
-		"lint-staged": ">= 10.2"
-	},
-	"peerDependenciesMeta": {
-		"husky": {
-			"optional": true,
-			"//optional": "required at monorepo root"
-		},
-		"lint-staged": {
-			"optional": true,
-			"//optional": "required at monorepo root"
-		}
 	}
 }

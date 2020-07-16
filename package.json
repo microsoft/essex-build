@@ -27,6 +27,8 @@
 		]
 	},
 	"devDependencies": {
+		"@commitlint/cli": "^9.1.1",
+		"@commitlint/config-conventional": "^9.1.1",
 		"@essex/eslint-plugin": "portal:./packages/config/eslint-plugin",
 		"@essex/scripts": "portal:./packages/scripts",
 		"husky": "^4.2.5",
@@ -41,7 +43,7 @@
 	"husky": {
 		"hooks": {
 			"pre-commit": "lint-staged",
-			"commit-msg": "yarn essex commit-msg"
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
 		}
 	},
 	"lint-staged": {

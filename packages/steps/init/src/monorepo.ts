@@ -27,11 +27,9 @@ ${INIT_INSTRUCTIONS}
 const CONFIG_FILES = [
 	'.docsrc',
 	'.gitignore',
-	'.huskyrc',
-	'.lintstagedrc',
 	'.prettierignore',
-	'.prettierrc',
 	'tsconfig.json',
+	'commitlint.config.js',
 ]
 
 export function initMonorepo(): Promise<number> {
@@ -51,11 +49,16 @@ export function initMonorepo(): Promise<number> {
 
 function configurePackageJsonForMonorepo(): Promise<number> {
 	let writeNeeded = false
+
+	if (!pkgJson.prettier) {
+		pkgJson.prettier = '@essex/prettier-config'
+		writeNeeded = true
+	}
 	if (!pkgJson.husky) {
 		pkgJson.husky = {
 			hooks: {
 				'pre-commit': 'lint-staged',
-				'commit-msg': 'essex commit-msg',
+				'commit-msg': 'commitlint -E HUSKY_GIT_PARAMS',
 			},
 		}
 		writeNeeded = true
@@ -65,6 +68,7 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 			'**/*': ['essex prettify --staged'],
 			'**/*.{js,jsx,ts,tsx}': ['essex lint --docs --fix --staged'],
 		}
+		writeNeeded = true
 	}
 
 	if (!pkgJson.scripts.build) {
@@ -99,7 +103,7 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 		writeFileSync(pkgJsonPath, JSON.stringify(pkgJson, null, 2))
 	}
 	log.info(`
-	Remember: add lerna, npm-run-all, husky, and lint-staged devDependencies
+	yarn add --dev -W lerna npm-run-all husky lint-staged commitlint
 	`)
 	return Promise.resolve(0)
 }
