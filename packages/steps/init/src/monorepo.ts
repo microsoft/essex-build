@@ -63,9 +63,9 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 	}
 	if (!pkgJson[`lint-staged`]) {
 		pkgJson[`lint-staged`] = {
-			'**/*': ['essex prettify --staged'],
-			'**/md': ['essex lint --docs-only'],
-			'**/*.{js,jsx,ts,tsx}': ['essex lint --fix --staged'],
+			'*': ['essex prettify --staged'],
+			'.md': ['essex lint --docs-only'],
+			'*.{js,jsx,ts,tsx}': ['essex lint --fix --staged'],
 		}
 		writeNeeded = true
 	}
