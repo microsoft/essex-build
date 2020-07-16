@@ -9,15 +9,18 @@ import { resolveGulpTask, noopTask } from '@essex/build-utils'
 import * as gulp from 'gulp'
 import { LintCommandOptions } from './types'
 
-export function configureTasks({
-	fix = false,
-	staged = false,
-	docs = false,
-	strict = false,
-	docsOnly = false,
-}: LintCommandOptions): gulp.TaskFunction {
+export function configureTasks(
+	{
+		fix = false,
+		staged = false,
+		docs = false,
+		strict = false,
+		docsOnly = false,
+	}: LintCommandOptions,
+	files: string[] | undefined,
+): gulp.TaskFunction {
 	function checkCode(cb: (err?: Error) => void) {
-		eslint(fix, strict).then(...resolveGulpTask('eslint', cb))
+		eslint(fix, strict, files).then(...resolveGulpTask('eslint', cb))
 	}
 
 	function checkFormatting(cb: (err?: Error) => void) {

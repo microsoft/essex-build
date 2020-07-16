@@ -16,7 +16,11 @@ const defaultIgnore = join(__dirname, '../config/.eslintignore')
 const projectIgnore = join(process.cwd(), '.eslintignore')
 const ignorePath = existsSync(projectIgnore) ? projectIgnore : defaultIgnore
 
-export async function eslint(fix: boolean, strict: boolean): Promise<void> {
+export async function eslint(
+	fix: boolean,
+	strict: boolean,
+	files: string[] = ['.'],
+): Promise<void> {
 	const pluginPath = join(__dirname, '..', '..')
 	let configFile = experimentConfig
 	if (existsSync(projectConfig)) {
@@ -32,7 +36,7 @@ export async function eslint(fix: boolean, strict: boolean): Promise<void> {
 		extensions: ['.js', '.jsx', '.ts', '.tsx'],
 		ignorePath,
 	})
-	const results = await linter.lintFiles(['.'])
+	const results = await linter.lintFiles(files)
 	await ESLint.outputFixes(results)
 	const formatter = await linter.loadFormatter('stylish')
 	const resultText = formatter.format(results)

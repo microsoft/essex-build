@@ -9,17 +9,17 @@ import { LintCommandOptions } from './types'
 
 export default function lint(program: Command): void {
 	program
-		.command('lint <pattern>')
+		.command('lint [...files]')
 		.description('performs static analysis checks')
 		.option('-f, --fix', 'correct fixable problems')
 		.option('--docs', 'performs documentation linting steps')
 		.option('--docs-only', 'skip code linting, only check documentation')
 		.option('--staged', 'only do git-stage verifications')
 		.option('--strict', 'strict linting, warnings will cause failure')
-		.action((pattern: string, options: LintCommandOptions = {}) => {
-			console.log('LINTING', pattern)
+		.action((files: string[], options: LintCommandOptions = {}) => {
+			console.log('LINTING', files)
 			Promise.resolve(true)
-				.then(() => configureTasks(options))
+				.then(() => configureTasks(options, files))
 				.then(lint => execGulpTask(lint))
 				.then(...resolveShellCode())
 				.then(code => process.exit(code))
