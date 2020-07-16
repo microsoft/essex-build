@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-typedoc",
-	"version": "8.0.0-alpha.22",
+	"version": "8.0.0-alpha.24",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
 	"scripts": {
@@ -8,8 +8,8 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@essex/build-utils": "^8.0.0-alpha.12",
-		"@essex/tasklogger": "^8.0.0-alpha.12",
+		"@essex/build-utils": "^8.0.0-alpha.24",
+		"@essex/tasklogger": "^8.0.0-alpha.24",
 		"typedoc": "^0.17.8",
 		"typescript": "3.9.7"
 	},
