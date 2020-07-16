@@ -21,6 +21,7 @@
 		"@essex/build-step-audit": "^8.0.0-alpha.12",
 		"@essex/build-step-babel": "^8.0.0-alpha.12",
 		"@essex/build-step-clean": "^8.0.0-alpha.12",
+		"@essex/build-step-commitlint": "^8.0.0-alpha.12",
 		"@essex/build-step-docs": "^8.0.0-alpha.12",
 		"@essex/build-step-eslint": "^8.0.0-alpha.12",
 		"@essex/build-step-init": "^8.0.0-alpha.12",
