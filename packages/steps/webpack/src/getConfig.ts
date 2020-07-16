@@ -13,7 +13,7 @@ const webpackConfigFile = join(process.cwd(), 'webpack.config.js')
 export function getConfig({
 	env,
 	mode,
-}: WebpackCompilerOptions): Configuration {
+}: WebpackCompilerOptions): Configuration & { devServer?: any } {
 	if (existsSync(webpackConfigFile)) {
 		return require(webpackConfigFile)
 	} else {

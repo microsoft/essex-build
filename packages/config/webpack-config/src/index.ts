@@ -30,7 +30,7 @@ const tsLoader = require.resolve('ts-loader')
 
 export interface Configuration {
 	env?: string
-	mode?: 'development' | 'production'
+	mode?: 'development' | 'production' | 'none'
 	pnp?: boolean
 	typecheck?: boolean
 	// extends
@@ -45,7 +45,7 @@ export interface Configuration {
 }
 export function configure({
 	env = 'development',
-	mode = 'development',
+	mode = 'none',
 	pnp = false,
 	typecheck = true,
 	aliases,
@@ -56,7 +56,7 @@ export function configure({
 	modules,
 	loaderModules,
 	htmlWebpackPlugin,
-}: Configuration): webpack.Configuration {
+}: Configuration): webpack.Configuration & { devServer: any } {
 	validateConfiguration()
 	const isDevelopment = mode !== 'production'
 	const extendedAliases = aliases ? aliases(env, mode) : {}
@@ -94,6 +94,7 @@ export function configure({
 	]
 
 	const buildPath = join(process.cwd(), 'build/')
+	const babelConfig = getBabelConfiguration(env)
 
 	const result: webpack.Configuration & { devServer: any } = {
 		mode: isDevelopment ? 'development' : 'production',
@@ -127,7 +128,7 @@ export function configure({
 						{ loader: cacheLoader },
 						{
 							loader: babelLoader,
-							options: getBabelConfiguration(env),
+							options: babelConfig,
 						},
 						{
 							loader: tsLoader,

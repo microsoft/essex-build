@@ -12,8 +12,8 @@
 		"rimraf": "^3.0.2"
 	},
 	"devDependencies": {
-		"@types/node": "^14.0.14",
+		"@types/node": "^14.0.23",
 		"@types/rimraf": "^3.0.0",
-		"typescript": "3.9.6"
+		"typescript": "3.9.7"
 	}
 }
