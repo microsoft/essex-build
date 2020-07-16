@@ -50,7 +50,7 @@ export function emitTypings(): () => NodeJS.ReadWriteStream {
 			.src(TYPESCRIPT_GLOBS, { since: gulp.lastRun(execute) })
 			.pipe(project())
 			.pipe(debug({ title }))
-			.pipe(gulp.dest('dist/typings'))
+			.pipe(gulp.dest('dist/types'))
 			.on('end', () => subtaskSuccess(title))
 			.on('error', () => subtaskFail(title))
 	}
