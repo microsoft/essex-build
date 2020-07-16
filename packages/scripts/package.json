@@ -26,7 +26,6 @@
 		"@essex/build-step-eslint": "^8.0.0-alpha.12",
 		"@essex/build-step-init": "^8.0.0-alpha.12",
 		"@essex/build-step-jest": "^8.0.0-alpha.12",
-		"@essex/build-step-lint-staged": "^8.0.0-alpha.12",
 		"@essex/build-step-pretty-quick": "^8.0.0-alpha.12",
 		"@essex/build-step-recipes": "^8.0.0-alpha.12",
 		"@essex/build-step-rollup": "^8.0.0-alpha.12",

@@ -40,7 +40,7 @@
 	"prettier": "./packages/config/prettier-config",
 	"husky": {
 		"hooks": {
-			"pre-commit": "yarn essex pre-commit",
+			"pre-commit": "lint-staged",
 			"commit-msg": "yarn essex commit-msg"
 		}
 	},
