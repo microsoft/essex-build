@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-docs",
-	"version": "8.0.0-alpha.24",
+	"version": "8.0.0-alpha.25",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
 	"scripts": {

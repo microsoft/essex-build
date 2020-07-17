@@ -1,6 +1,6 @@
 {
 	"name": "@essex/storybook-config",
-	"version": "8.0.0-alpha.24",
+	"version": "8.0.0-alpha.25",
 	"author": "Chris Trevino <chtrevin@microsoft.com>",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
