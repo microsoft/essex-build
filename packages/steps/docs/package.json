@@ -12,7 +12,7 @@
 		"dictionary-en": "^3.0.1",
 		"remark-frontmatter": "^2.0.0",
 		"remark-message-control": "^6.0.0",
-		"remark-parse": "^8.0.2",
+		"remark-parse": "^8.0.3",
 		"remark-retext": "^4.0.0",
 		"retext-english": "^3.0.4",
 		"retext-equality": "^5.1.0",

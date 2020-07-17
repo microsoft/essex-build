@@ -10,7 +10,7 @@
 	},
 	"dependencies": {
 		"@essex/build-util-hoister": "^8.0.0-alpha.24",
-		"@mdx-js/loader": "^1.6.8",
+		"@mdx-js/loader": "^1.6.11",
 		"@storybook/addon-a11y": "^5.3.19",
 		"@storybook/addon-actions": "^5.3.19",
 		"@storybook/addon-docs": "^5.3.19",
