@@ -6,6 +6,7 @@ import { join } from 'path'
 import { getNodeModulesPaths } from '@essex/build-util-hoister'
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import * as webpack from 'webpack'
+import { Configuration as WdsConfiguration } from 'webpack-dev-server'
 import {
 	getWdsStaticConfig,
 	getHomePage,
@@ -15,7 +16,6 @@ import {
 } from './configValues'
 import { log } from './log'
 import { validateConfiguration } from './validate'
-import { Configuration as WdsConfiguration } from 'webpack-dev-server'
 /* eslint-disable @typescript-eslint/no-var-requires */
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
