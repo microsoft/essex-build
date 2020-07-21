@@ -15,23 +15,26 @@ export function webpackServe({
 	mode,
 	verbose,
 }: WebpackCompilerOptions): Promise<number> {
-	return new Promise((resolve, reject) => {
-		try {
-			const wpConfig = getConfig({ env, mode, verbose })
-			const compiler = getCompiler({ env, mode, verbose })
-			const port = wpConfig?.devServer?.port || DEFAULT_PORT
-			const host = wpConfig?.devServer?.host || DEFAULT_HOST
+	return Promise.resolve().then(
+		() =>
+			new Promise((resolve, reject) => {
+				try {
+					const wpConfig = getConfig({ env, mode, verbose })
+					const compiler = getCompiler({ env, mode, verbose })
+					const port = wpConfig?.devServer?.port || DEFAULT_PORT
+					const host = wpConfig?.devServer?.host || DEFAULT_HOST
 
-			const server = new Server(compiler, wpConfig.devServer)
-			server.listen(port, host, (err?: Error | undefined) => {
-				if (err) {
-					console.error(`error listening`, err)
+					const server = new Server(compiler, wpConfig.devServer)
+					server.listen(port, host, (err?: Error | undefined) => {
+						if (err) {
+							console.error(`error listening`, err)
+							reject(err)
+						}
+					})
+				} catch (err) {
+					console.error('eror running webpack serve', err)
 					reject(err)
 				}
-			})
-		} catch (err) {
-			console.log('eror running webpack serve', err)
-			reject(err)
-		}
-	})
+			}),
+	)
 }
