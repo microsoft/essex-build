@@ -12,6 +12,7 @@
 		"@essex/babel-config": "^8.0.0-alpha.24",
 		"@essex/build-util-hoister": "^8.0.0-alpha.24",
 		"@types/webpack": "^4.41.21",
+		"@types/webpack-dev-server": "^3.11.0",
 		"babel-loader": "^8.1.0",
 		"cache-loader": "^4.1.0",
 		"css-loader": "^3.6.0",

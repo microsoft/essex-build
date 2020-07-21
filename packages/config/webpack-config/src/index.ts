@@ -15,6 +15,7 @@ import {
 } from './configValues'
 import { log } from './log'
 import { validateConfiguration } from './validate'
+import { Configuration as WdsConfiguration } from 'webpack-dev-server'
 /* eslint-disable @typescript-eslint/no-var-requires */
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -56,7 +57,7 @@ export function configure({
 	modules,
 	loaderModules,
 	htmlWebpackPlugin,
-}: Configuration): webpack.Configuration & { devServer: any } {
+}: Configuration): webpack.Configuration & { devServer: WdsConfiguration } {
 	validateConfiguration()
 	const isDevelopment = mode !== 'production'
 	const extendedAliases = aliases ? aliases(env, mode) : {}

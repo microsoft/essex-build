@@ -5,6 +5,7 @@
 import { existsSync } from 'fs'
 import { join } from 'path'
 import { getEsmConfiguration } from '@essex/babel-config'
+import { Configuration } from 'webpack-dev-server'
 import { log } from './log'
 
 /* eslint-disable @typescript-eslint/no-var-requires */
@@ -15,7 +16,7 @@ export const pkgJson = require(join(process.cwd(), 'package.json'))
  * If <package>/assets directory is present, it will be used
  * to serve static assets out of.
  */
-export function getWdsStaticConfig(): any {
+export function getWdsStaticConfig(): Configuration {
 	const staticFolder = join(process.cwd(), 'public')
 	return existsSync(staticFolder)
 		? {

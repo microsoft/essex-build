@@ -6,6 +6,7 @@ import { existsSync } from 'fs'
 import { join } from 'path'
 import { configure } from '@essex/webpack-config'
 import { Configuration } from 'webpack'
+import { Configuration as WdsConfiguration } from 'webpack-dev-server'
 import { WebpackCompilerOptions } from './types'
 
 const webpackConfigFile = join(process.cwd(), 'webpack.config.js')
@@ -13,7 +14,7 @@ const webpackConfigFile = join(process.cwd(), 'webpack.config.js')
 export function getConfig({
 	env,
 	mode,
-}: WebpackCompilerOptions): Configuration & { devServer?: any } {
+}: WebpackCompilerOptions): Configuration & { devServer?: WdsConfiguration } {
 	if (existsSync(webpackConfigFile)) {
 		return require(webpackConfigFile)
 	} else {

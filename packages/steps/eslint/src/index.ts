@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @essex/adjacent-await */
-import { join } from 'path'
+// import { join } from 'path'
 import { gulpify } from '@essex/build-utils'
 import { ESLint } from 'eslint'
 import { getConfigFile, getIgnorePath } from './config'
@@ -14,14 +14,14 @@ export async function eslint(
 	files: string[] = ['.'],
 ): Promise<void> {
 	try {
-		const pluginPath = join(__dirname, '..', '..')
+		// const pluginPath = join(__dirname, '..', '..')
 		const configFile = getConfigFile(strict)
 		const ignorePath = getIgnorePath()
 
 		const linter = new ESLint({
 			fix,
 			overrideConfigFile: configFile,
-			resolvePluginsRelativeTo: pluginPath,
+			// resolvePluginsRelativeTo: pluginPath,
 			extensions: ['js', 'jsx', 'ts', 'tsx'],
 			ignorePath,
 		})
