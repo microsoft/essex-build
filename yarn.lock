@@ -2036,7 +2036,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/babel-config@^8.0.0-alpha.24, @essex/babel-config@workspace:packages/config/babel-config":
+"@essex/babel-config@^8.0.0-alpha.26, @essex/babel-config@workspace:packages/config/babel-config":
   version: 0.0.0-use.local
   resolution: "@essex/babel-config@workspace:packages/config/babel-config"
   dependencies:
@@ -2051,13 +2051,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-audit@^8.0.0-alpha.24, @essex/build-step-audit@workspace:packages/steps/audit":
+"@essex/build-step-audit@^8.0.0-alpha.26, @essex/build-step-audit@workspace:packages/steps/audit":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-audit@workspace:packages/steps/audit"
   dependencies:
-    "@essex/build-utils": ^8.0.0-alpha.24
-    "@essex/shellrunner": ^8.0.0-alpha.24
-    "@essex/tasklogger": ^8.0.0-alpha.24
+    "@essex/build-utils": ^8.0.0-alpha.26
+    "@essex/shellrunner": ^8.0.0-alpha.26
+    "@essex/tasklogger": ^8.0.0-alpha.26
     "@types/node": ^14.0.24
     audit-ci: ^3.1.1
     license-to-fail: ^3.0.0
@@ -2066,15 +2066,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-babel@^8.0.0-alpha.24, @essex/build-step-babel@workspace:packages/steps/babel":
+"@essex/build-step-babel@^8.0.0-alpha.26, @essex/build-step-babel@workspace:packages/steps/babel":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-babel@workspace:packages/steps/babel"
   dependencies:
     "@babel/core": ^7.10.5
     "@babel/types": ^7.10.5
-    "@essex/babel-config": ^8.0.0-alpha.24
-    "@essex/build-utils": ^8.0.0-alpha.24
-    "@essex/tasklogger": ^8.0.0-alpha.24
+    "@essex/babel-config": ^8.0.0-alpha.26
+    "@essex/build-utils": ^8.0.0-alpha.26
+    "@essex/tasklogger": ^8.0.0-alpha.26
     "@types/gulp": ^4.0.6
     "@types/gulp-babel": ^6.1.29
     "@types/gulp-debug": ^2.0.31
@@ -2087,11 +2087,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-clean@^8.0.0-alpha.24, @essex/build-step-clean@workspace:packages/steps/clean":
+"@essex/build-step-clean@^8.0.0-alpha.26, @essex/build-step-clean@workspace:packages/steps/clean":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-clean@workspace:packages/steps/clean"
   dependencies:
-    "@essex/build-utils": ^8.0.0-alpha.24
+    "@essex/build-utils": ^8.0.0-alpha.26
     "@types/node": ^14.0.24
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
@@ -2099,14 +2099,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-commitlint@^8.0.0-alpha.24, @essex/build-step-commitlint@workspace:packages/steps/commitlint":
+"@essex/build-step-commitlint@^8.0.0-alpha.26, @essex/build-step-commitlint@workspace:packages/steps/commitlint":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-commitlint@workspace:packages/steps/commitlint"
   dependencies:
     "@commitlint/cli": ^9.1.2
     "@commitlint/config-conventional": ^9.1.2
-    "@essex/build-utils": ^8.0.0-alpha.24
-    "@essex/shellrunner": ^8.0.0-alpha.24
+    "@essex/build-utils": ^8.0.0-alpha.26
+    "@essex/shellrunner": ^8.0.0-alpha.26
     "@types/node": ^14.0.24
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
@@ -2114,11 +2114,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-docs@^8.0.0-alpha.25, @essex/build-step-docs@workspace:packages/steps/docs":
+"@essex/build-step-docs@^8.0.0-alpha.26, @essex/build-step-docs@workspace:packages/steps/docs":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-docs@workspace:packages/steps/docs"
   dependencies:
-    "@essex/build-utils": ^8.0.0-alpha.24
+    "@essex/build-utils": ^8.0.0-alpha.26
     "@types/node": ^14.0.24
     dictionary-en: ^3.0.1
     remark-frontmatter: ^2.0.0
@@ -2137,27 +2137,29 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-eslint@^8.0.0-alpha.24, @essex/build-step-eslint@workspace:packages/steps/eslint":
+"@essex/build-step-eslint@^8.0.0-alpha.28, @essex/build-step-eslint@workspace:packages/steps/eslint":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-eslint@workspace:packages/steps/eslint"
   dependencies:
-    "@essex/build-utils": ^8.0.0-alpha.24
-    "@essex/eslint-config": ^8.0.0-alpha.24
-    "@essex/eslint-plugin": ^8.0.0-alpha.24
+    "@essex/build-utils": ^8.0.0-alpha.26
+    "@essex/eslint-config": ^8.0.0-alpha.27
+    "@essex/eslint-plugin": ^8.0.0-alpha.27
     "@types/eslint": ^7.2.0
     "@types/node": ^14.0.24
+    "@typescript-eslint/eslint-plugin": ^3.7.0
+    "@typescript-eslint/parser": ^3.7.0
     eslint: ^7.5.0
     rimraf: ^3.0.2
     typescript: 3.9.7
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-init@^8.0.0-alpha.24, @essex/build-step-init@workspace:packages/steps/init":
+"@essex/build-step-init@^8.0.0-alpha.26, @essex/build-step-init@workspace:packages/steps/init":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-init@workspace:packages/steps/init"
   dependencies:
-    "@essex/build-step-recipes": ^8.0.0-alpha.24
-    "@essex/build-utils": ^8.0.0-alpha.24
+    "@essex/build-step-recipes": ^8.0.0-alpha.26
+    "@essex/build-utils": ^8.0.0-alpha.26
     "@types/node": ^14.0.24
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
@@ -2165,13 +2167,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-jest@^8.0.0-alpha.25, @essex/build-step-jest@workspace:packages/steps/jest":
+"@essex/build-step-jest@^8.0.0-alpha.26, @essex/build-step-jest@workspace:packages/steps/jest":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-jest@workspace:packages/steps/jest"
   dependencies:
-    "@essex/build-utils": ^8.0.0-alpha.24
-    "@essex/jest-config": ^8.0.0-alpha.25
-    "@essex/tasklogger": ^8.0.0-alpha.24
+    "@essex/build-utils": ^8.0.0-alpha.26
+    "@essex/jest-config": ^8.0.0-alpha.26
+    "@essex/tasklogger": ^8.0.0-alpha.26
     "@types/node": ^14.0.24
     "@types/rimraf": ^3.0.0
     jest: ^26.1.0
@@ -2180,11 +2182,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-pretty-quick@^8.0.0-alpha.24, @essex/build-step-pretty-quick@workspace:packages/steps/pretty-quick":
+"@essex/build-step-pretty-quick@^8.0.0-alpha.26, @essex/build-step-pretty-quick@workspace:packages/steps/pretty-quick":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-pretty-quick@workspace:packages/steps/pretty-quick"
   dependencies:
-    "@essex/build-utils": ^8.0.0-alpha.24
+    "@essex/build-utils": ^8.0.0-alpha.26
     "@types/node": ^14.0.24
     chalk: ^4.1.0
     prettier: ^2.0.5
@@ -2194,11 +2196,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-recipes@^8.0.0-alpha.24, @essex/build-step-recipes@workspace:packages/steps/recipes":
+"@essex/build-step-recipes@^8.0.0-alpha.26, @essex/build-step-recipes@workspace:packages/steps/recipes":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-recipes@workspace:packages/steps/recipes"
   dependencies:
-    "@essex/tasklogger": ^8.0.0-alpha.24
+    "@essex/tasklogger": ^8.0.0-alpha.26
     "@types/node": ^14.0.24
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
@@ -2206,27 +2208,27 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-rollup@^8.0.0-alpha.24, @essex/build-step-rollup@workspace:packages/steps/rollup":
+"@essex/build-step-rollup@^8.0.0-alpha.26, @essex/build-step-rollup@workspace:packages/steps/rollup":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-rollup@workspace:packages/steps/rollup"
   dependencies:
-    "@essex/build-utils": ^8.0.0-alpha.24
-    "@essex/shellrunner": ^8.0.0-alpha.24
-    "@essex/tasklogger": ^8.0.0-alpha.24
+    "@essex/build-utils": ^8.0.0-alpha.26
+    "@essex/shellrunner": ^8.0.0-alpha.26
+    "@essex/tasklogger": ^8.0.0-alpha.26
     "@types/node": ^14.0.24
     rimraf: ^3.0.2
     typescript: 3.9.7
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-storybook@^8.0.0-alpha.25, @essex/build-step-storybook@workspace:packages/steps/storybook":
+"@essex/build-step-storybook@^8.0.0-alpha.26, @essex/build-step-storybook@workspace:packages/steps/storybook":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-storybook@workspace:packages/steps/storybook"
   dependencies:
-    "@essex/build-utils": ^8.0.0-alpha.24
-    "@essex/shellrunner": ^8.0.0-alpha.24
-    "@essex/storybook-config": ^8.0.0-alpha.25
-    "@essex/tasklogger": ^8.0.0-alpha.24
+    "@essex/build-utils": ^8.0.0-alpha.26
+    "@essex/shellrunner": ^8.0.0-alpha.26
+    "@essex/storybook-config": ^8.0.0-alpha.26
+    "@essex/tasklogger": ^8.0.0-alpha.26
     "@storybook/react": ^5.3.19
     "@types/node": ^14.0.24
     "@types/rimraf": ^3.0.0
@@ -2235,12 +2237,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-typedoc@^8.0.0-alpha.24, @essex/build-step-typedoc@workspace:packages/steps/typedoc":
+"@essex/build-step-typedoc@^8.0.0-alpha.26, @essex/build-step-typedoc@workspace:packages/steps/typedoc":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-typedoc@workspace:packages/steps/typedoc"
   dependencies:
-    "@essex/build-utils": ^8.0.0-alpha.24
-    "@essex/tasklogger": ^8.0.0-alpha.24
+    "@essex/build-utils": ^8.0.0-alpha.26
+    "@essex/tasklogger": ^8.0.0-alpha.26
     "@types/node": ^14.0.24
     rimraf: ^3.0.2
     typedoc: ^0.17.8
@@ -2250,12 +2252,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-typescript@^8.0.0-alpha.24, @essex/build-step-typescript@workspace:packages/steps/typescript":
+"@essex/build-step-typescript@^8.0.0-alpha.26, @essex/build-step-typescript@workspace:packages/steps/typescript":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-typescript@workspace:packages/steps/typescript"
   dependencies:
-    "@essex/build-utils": ^8.0.0-alpha.24
-    "@essex/tasklogger": ^8.0.0-alpha.24
+    "@essex/build-utils": ^8.0.0-alpha.26
+    "@essex/tasklogger": ^8.0.0-alpha.26
     "@types/gulp": ^4.0.6
     "@types/gulp-debug": ^2.0.31
     "@types/node": ^14.0.24
@@ -2269,13 +2271,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-webpack@^8.0.0-alpha.25, @essex/build-step-webpack@workspace:packages/steps/webpack":
+"@essex/build-step-webpack@^8.0.0-alpha.27, @essex/build-step-webpack@workspace:packages/steps/webpack":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-webpack@workspace:packages/steps/webpack"
   dependencies:
-    "@essex/build-utils": ^8.0.0-alpha.24
-    "@essex/tasklogger": ^8.0.0-alpha.24
-    "@essex/webpack-config": ^8.0.0-alpha.25
+    "@essex/build-utils": ^8.0.0-alpha.26
+    "@essex/tasklogger": ^8.0.0-alpha.26
+    "@essex/webpack-config": ^8.0.0-alpha.27
     "@types/node": ^14.0.24
     "@types/webpack": ^4.41.21
     "@types/webpack-dev-server": ^3.11.0
@@ -2286,7 +2288,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-util-hoister@^8.0.0-alpha.24, @essex/build-util-hoister@workspace:packages/util/hoister":
+"@essex/build-util-hoister@^8.0.0-alpha.26, @essex/build-util-hoister@workspace:packages/util/hoister":
   version: 0.0.0-use.local
   resolution: "@essex/build-util-hoister@workspace:packages/util/hoister"
   dependencies:
@@ -2296,12 +2298,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-utils@^8.0.0-alpha.24, @essex/build-utils@workspace:packages/util/gulp":
+"@essex/build-utils@^8.0.0-alpha.26, @essex/build-utils@workspace:packages/util/gulp":
   version: 0.0.0-use.local
   resolution: "@essex/build-utils@workspace:packages/util/gulp"
   dependencies:
-    "@essex/shellrunner": ^8.0.0-alpha.24
-    "@essex/tasklogger": ^8.0.0-alpha.24
+    "@essex/shellrunner": ^8.0.0-alpha.26
+    "@essex/tasklogger": ^8.0.0-alpha.26
     "@types/node": ^14.0.24
     "@types/through2": ^2.0.36
     rimraf: ^3.0.2
@@ -2310,17 +2312,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/eslint-config@^8.0.0-alpha.12, @essex/eslint-config@^8.0.0-alpha.24, @essex/eslint-config@workspace:packages/config/eslint-config":
+"@essex/eslint-config@^8.0.0-alpha.12, @essex/eslint-config@^8.0.0-alpha.27, @essex/eslint-config@workspace:packages/config/eslint-config":
   version: 0.0.0-use.local
   resolution: "@essex/eslint-config@workspace:packages/config/eslint-config"
   dependencies:
-    "@essex/eslint-plugin": ^8.0.0-alpha.24
+    "@essex/eslint-plugin": ^8.0.0-alpha.27
   peerDependencies:
     "@essex/eslint-plugin": ">= 8.0.0-alpha.7"
   languageName: unknown
   linkType: soft
 
-"@essex/eslint-plugin@^8.0.0-alpha.12, @essex/eslint-plugin@^8.0.0-alpha.24, @essex/eslint-plugin@workspace:packages/config/eslint-plugin":
+"@essex/eslint-plugin@^8.0.0-alpha.12, @essex/eslint-plugin@^8.0.0-alpha.27, @essex/eslint-plugin@workspace:packages/config/eslint-plugin":
   version: 0.0.0-use.local
   resolution: "@essex/eslint-plugin@workspace:packages/config/eslint-plugin"
   dependencies:
@@ -2343,12 +2345,10 @@ __metadata:
     prettier: ^2.0.5
     rimraf: ^3.0.2
     typescript: ^3.9.7
-  peerDependencies:
-    eslint: ">= 7.3.1"
   languageName: unknown
   linkType: soft
 
-"@essex/jest-config@^8.0.0-alpha.25, @essex/jest-config@workspace:packages/config/jest-config":
+"@essex/jest-config@^8.0.0-alpha.26, @essex/jest-config@workspace:packages/config/jest-config":
   version: 0.0.0-use.local
   resolution: "@essex/jest-config@workspace:packages/config/jest-config"
   dependencies:
@@ -2375,31 +2375,33 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/scripts@workspace:packages/scripts"
   dependencies:
-    "@essex/build-step-audit": ^8.0.0-alpha.24
-    "@essex/build-step-babel": ^8.0.0-alpha.24
-    "@essex/build-step-clean": ^8.0.0-alpha.24
-    "@essex/build-step-commitlint": ^8.0.0-alpha.24
-    "@essex/build-step-docs": ^8.0.0-alpha.25
-    "@essex/build-step-eslint": ^8.0.0-alpha.24
-    "@essex/build-step-init": ^8.0.0-alpha.24
-    "@essex/build-step-jest": ^8.0.0-alpha.25
-    "@essex/build-step-pretty-quick": ^8.0.0-alpha.24
-    "@essex/build-step-recipes": ^8.0.0-alpha.24
-    "@essex/build-step-rollup": ^8.0.0-alpha.24
-    "@essex/build-step-storybook": ^8.0.0-alpha.25
-    "@essex/build-step-typedoc": ^8.0.0-alpha.24
-    "@essex/build-step-typescript": ^8.0.0-alpha.24
-    "@essex/build-step-webpack": ^8.0.0-alpha.25
-    "@essex/build-utils": ^8.0.0-alpha.24
-    "@essex/eslint-plugin": ^8.0.0-alpha.24
-    "@essex/shellrunner": ^8.0.0-alpha.24
-    "@essex/webpack-config": ^8.0.0-alpha.25
+    "@essex/build-step-audit": ^8.0.0-alpha.26
+    "@essex/build-step-babel": ^8.0.0-alpha.26
+    "@essex/build-step-clean": ^8.0.0-alpha.26
+    "@essex/build-step-commitlint": ^8.0.0-alpha.26
+    "@essex/build-step-docs": ^8.0.0-alpha.26
+    "@essex/build-step-eslint": ^8.0.0-alpha.28
+    "@essex/build-step-init": ^8.0.0-alpha.26
+    "@essex/build-step-jest": ^8.0.0-alpha.26
+    "@essex/build-step-pretty-quick": ^8.0.0-alpha.26
+    "@essex/build-step-recipes": ^8.0.0-alpha.26
+    "@essex/build-step-rollup": ^8.0.0-alpha.26
+    "@essex/build-step-storybook": ^8.0.0-alpha.26
+    "@essex/build-step-typedoc": ^8.0.0-alpha.26
+    "@essex/build-step-typescript": ^8.0.0-alpha.26
+    "@essex/build-step-webpack": ^8.0.0-alpha.27
+    "@essex/build-utils": ^8.0.0-alpha.26
+    "@essex/eslint-plugin": ^8.0.0-alpha.27
+    "@essex/shellrunner": ^8.0.0-alpha.26
+    "@essex/webpack-config": ^8.0.0-alpha.27
     "@types/debug": ^4.1.5
     "@types/gulp": ^4.0.6
     "@types/gulp-babel": ^6.1.29
     "@types/gulp-debug": ^2.0.31
     "@types/gulp-typescript": ^2.13.0
     "@types/node": ^14.0.24
+    "@typescript-eslint/eslint-plugin": ^3.7.0
+    "@typescript-eslint/parser": ^3.7.0
     chalk: ^4.1.0
     commander: ^5.1.0
     core-js: ^3.6.5
@@ -2421,11 +2423,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/shellrunner@^8.0.0-alpha.24, @essex/shellrunner@workspace:packages/util/shellrunner":
+"@essex/shellrunner@^8.0.0-alpha.26, @essex/shellrunner@workspace:packages/util/shellrunner":
   version: 0.0.0-use.local
   resolution: "@essex/shellrunner@workspace:packages/util/shellrunner"
   dependencies:
-    "@essex/build-util-hoister": ^8.0.0-alpha.24
+    "@essex/build-util-hoister": ^8.0.0-alpha.26
     "@types/debug": ^4.1.5
     "@types/node": ^14.0.24
     colors: ^1.4.0
@@ -2437,11 +2439,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/storybook-config@^8.0.0-alpha.25, @essex/storybook-config@workspace:packages/config/storybook-config":
+"@essex/storybook-config@^8.0.0-alpha.26, @essex/storybook-config@workspace:packages/config/storybook-config":
   version: 0.0.0-use.local
   resolution: "@essex/storybook-config@workspace:packages/config/storybook-config"
   dependencies:
-    "@essex/build-util-hoister": ^8.0.0-alpha.24
+    "@essex/build-util-hoister": ^8.0.0-alpha.26
     "@mdx-js/loader": ^1.6.13
     "@storybook/addon-a11y": ^5.3.19
     "@storybook/addon-actions": ^5.3.19
@@ -2461,7 +2463,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/tasklogger@^8.0.0-alpha.24, @essex/tasklogger@workspace:packages/util/tasklogger":
+"@essex/tasklogger@^8.0.0-alpha.26, @essex/tasklogger@workspace:packages/util/tasklogger":
   version: 0.0.0-use.local
   resolution: "@essex/tasklogger@workspace:packages/util/tasklogger"
   dependencies:
@@ -2472,13 +2474,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/webpack-config@^8.0.0-alpha.25, @essex/webpack-config@workspace:packages/config/webpack-config":
+"@essex/webpack-config@^8.0.0-alpha.27, @essex/webpack-config@workspace:packages/config/webpack-config":
   version: 0.0.0-use.local
   resolution: "@essex/webpack-config@workspace:packages/config/webpack-config"
   dependencies:
     "@babel/core": ^7.10.5
-    "@essex/babel-config": ^8.0.0-alpha.24
-    "@essex/build-util-hoister": ^8.0.0-alpha.24
+    "@essex/babel-config": ^8.0.0-alpha.26
+    "@essex/build-util-hoister": ^8.0.0-alpha.26
     "@types/debug": ^4.1.5
     "@types/node": ^14.0.24
     "@types/webpack": ^4.41.21
