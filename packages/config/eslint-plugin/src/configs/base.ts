@@ -247,14 +247,14 @@ const tsRuleSets: string[] = [
 
 const baseConfig = {
 	plugins: [
-		'@essex',
-		'header',
-		'import',
-		'jsx-a11y',
-		'react',
-		'react-hooks',
-		'jest',
-		'@typescript-eslint',
+		'@essex/eslint-plugin',
+		'eslint-plugin-header',
+		'eslint-plugin-import',
+		'eslint-plugin-jsx-a11y',
+		'eslint-plugin-react',
+		'eslint-plugin-react-hooks',
+		'eslint-plugin-jest',
+		'@typescript-eslint/eslint-plugin',
 	],
 	extends: [...commonRuleSets],
 	env: {
