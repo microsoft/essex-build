@@ -14,6 +14,7 @@ const projectDictionary = existsSync(projectDictionaryPath)
 const ACTUAL_WORDS = `
 inclusivity
 e.g.
+embeddings
 `
 const TEAM = `
 essex
@@ -86,6 +87,7 @@ CLAs
 SDK
 SDKs
 UX
+DOM
 `
 const JARGON = `
 peerDependency

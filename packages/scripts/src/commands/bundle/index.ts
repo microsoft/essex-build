@@ -5,20 +5,37 @@
 import { execGulpTask, resolveShellCode } from '@essex/build-utils'
 import { Command } from 'commander'
 import { configureTasks } from './tasks'
-import { BuildCommandOptions } from './types'
+import { BundleCommandOptions } from './types'
 
 export default function build(program: Command): void {
 	program
 		.command('bundle')
 		.description('bundles a library package or website')
 		.option('-v, --verbose', 'verbose output')
+		.option(
+			'-sb, --storybook',
+			'builds storybook output in addition to normal build artifacts',
+		)
+		.option(
+			'-wp, --webpack',
+			'bundles webpack output using either the base config or webpack.config.js',
+		)
+		.option(
+			'-rp, --rollup',
+			'bundles rollup output using rollup.config.js. No default config.',
+		)
 		.option('-d, --docs', 'generates TypeDoc documentation')
 		.option(
 			'--env <env>',
 			'build environment (used by babel and webpack)',
 			'production',
 		)
-		.action((options: BuildCommandOptions) => {
+		.option(
+			'--mode <mode>',
+			'enable production optimization or development hints ("development" | "production" | "none")',
+			'production',
+		)
+		.action((options: BundleCommandOptions) => {
 			Promise.resolve()
 				.then(() => configureTasks(options))
 				.then(build => execGulpTask(build))
