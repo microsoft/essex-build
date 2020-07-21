@@ -1,6 +1,6 @@
 {
 	"name": "@essex/tasklogger",
-	"version": "8.0.0-alpha.24",
+	"version": "8.0.0-alpha.26",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
 	"scripts": {

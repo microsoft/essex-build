@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-eslint",
-	"version": "8.0.0-alpha.24",
+	"version": "8.0.0-alpha.26",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
 	"scripts": {
@@ -12,9 +12,9 @@
 		"config/"
 	],
 	"dependencies": {
-		"@essex/build-utils": "^8.0.0-alpha.24",
-		"@essex/eslint-config": "^8.0.0-alpha.24",
-		"@essex/eslint-plugin": "^8.0.0-alpha.24",
+		"@essex/build-utils": "^8.0.0-alpha.26",
+		"@essex/eslint-config": "^8.0.0-alpha.26",
+		"@essex/eslint-plugin": "^8.0.0-alpha.26",
 		"eslint": "^7.5.0"
 	},
 	"devDependencies": {

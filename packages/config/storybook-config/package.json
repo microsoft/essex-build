@@ -1,6 +1,6 @@
 {
 	"name": "@essex/storybook-config",
-	"version": "8.0.0-alpha.25",
+	"version": "8.0.0-alpha.26",
 	"author": "Chris Trevino <chtrevin@microsoft.com>",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
@@ -9,7 +9,7 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@essex/build-util-hoister": "^8.0.0-alpha.24",
+		"@essex/build-util-hoister": "^8.0.0-alpha.26",
 		"@mdx-js/loader": "^1.6.13",
 		"@storybook/addon-a11y": "^5.3.19",
 		"@storybook/addon-actions": "^5.3.19",
