@@ -10,7 +10,7 @@
 	},
 	"dependencies": {
 		"@essex/build-util-hoister": "^8.0.0-alpha.24",
-		"@mdx-js/loader": "^1.6.11",
+		"@mdx-js/loader": "^1.6.13",
 		"@storybook/addon-a11y": "^5.3.19",
 		"@storybook/addon-actions": "^5.3.19",
 		"@storybook/addon-docs": "^5.3.19",
@@ -20,12 +20,12 @@
 		"@storybook/source-loader": "^5.3.19",
 		"babel-loader": "^8.1.0",
 		"cache-loader": "^4.1.0",
-		"fork-ts-checker-webpack-plugin": "^5.0.7",
+		"fork-ts-checker-webpack-plugin": "^5.0.8",
 		"react-docgen-typescript-loader": "^3.7.2",
 		"ts-loader": "^8.0.1"
 	},
 	"devDependencies": {
-		"@types/node": "^14.0.23",
+		"@types/node": "^14.0.24",
 		"rimraf": "^3.0.2",
 		"typescript": "^3.9.7"
 	}
