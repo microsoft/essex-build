@@ -31,6 +31,12 @@ export function webpackServe({
 							reject(err)
 						}
 					})
+					function finish() {
+						server.close()
+						resolve()
+					}
+					process.on('SIGINT', finish)
+					process.on('SIGTERM', finish)
 				} catch (err) {
 					console.log('eror running webpack serve', err)
 					reject(err)
