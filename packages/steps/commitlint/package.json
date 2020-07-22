@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-commitlint",
-	"version": "8.0.0-alpha.26",
+	"version": "8.0.0-alpha.34",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
 	"scripts": {
@@ -10,7 +10,7 @@
 	"dependencies": {
 		"@commitlint/cli": "^9.1.2",
 		"@commitlint/config-conventional": "^9.1.2",
-		"@essex/build-utils": "^8.0.0-alpha.26",
+		"@essex/build-utils": "^8.0.0-alpha.34",
 		"@essex/shellrunner": "^8.0.0-alpha.26"
 	},
 	"devDependencies": {
