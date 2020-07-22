@@ -3,13 +3,12 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import * as webpack from 'webpack'
-import { getCompiler } from './getCompiler'
 import { WebpackCompilerOptions } from './types'
 
 export function webpackWatch(config: WebpackCompilerOptions): Promise<number> {
 	return new Promise((resolve, reject) => {
 		try {
-			const compiler = getCompiler(config)
+			const compiler = webpack(config)
 			compiler.watch(
 				{
 					aggregateTimeout: 500,
