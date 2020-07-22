@@ -5,12 +5,11 @@
 import { gulpify } from '@essex/build-utils'
 import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
 import * as webpack from 'webpack'
-import { getCompiler } from './getCompiler'
 import { WebpackCompilerOptions } from './types'
 
 export function webpackBuild(config: WebpackCompilerOptions): Promise<void> {
 	try {
-		const compiler = getCompiler(config)
+		const compiler = webpack(config)
 		return new Promise((resolve, reject) => {
 			compiler.run((err: Error, stats: webpack.Stats) => {
 				console.log(stats.toString({ colors: true }))
