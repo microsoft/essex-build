@@ -3,6 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
+import { existsSync } from 'fs'
+import { join } from 'path'
 import { rollupBuild } from '@essex/build-step-rollup'
 import { storybookBuildGulp } from '@essex/build-step-storybook'
 import { webpackBuildGulp } from '@essex/build-step-webpack'
@@ -10,11 +12,15 @@ import { noopTask } from '@essex/build-utils'
 import * as gulp from 'gulp'
 import { BundleCommandOptions } from './types'
 
+const wpConfigExists = existsSync(join(process.cwd(), 'webpack.config.js'))
+const rollupConfigExists = existsSync(join(process.cwd(), 'rollup.config.js'))
+const storybookConfigExists = existsSync(join(process.cwd(), '.storybook'))
+
 export function configureTasks({
 	verbose = false,
-	storybook = false,
-	webpack = false,
-	rollup = false,
+	storybook = storybookConfigExists,
+	webpack = wpConfigExists,
+	rollup = rollupConfigExists,
 	env = 'production',
 	mode = 'production',
 }: BundleCommandOptions): gulp.TaskFunction {

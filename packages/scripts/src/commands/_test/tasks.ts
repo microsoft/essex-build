@@ -7,5 +7,5 @@ import * as gulp from 'gulp'
 import { TestCommandOptions } from './types'
 
 export function configureTasks(config: TestCommandOptions): gulp.TaskFunction {
-	return gulp.parallel(jestGulp(config))
+	return jestGulp(config)
 }
