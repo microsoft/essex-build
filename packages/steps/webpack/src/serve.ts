@@ -14,7 +14,7 @@ export function webpackServe({
 	env,
 	mode,
 	verbose,
-}: WebpackCompilerOptions): Promise<number> {
+}: WebpackCompilerOptions): Promise<void> {
 	return Promise.resolve().then(
 		() =>
 			new Promise((resolve, reject) => {

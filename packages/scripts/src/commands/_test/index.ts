@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { execGulpTask, resolveShellCode } from '@essex/build-utils'
+import { execGulpTask } from '@essex/build-utils'
 import { Command } from 'commander'
 import { configureTasks } from './tasks'
 import { TestCommandOptions } from './types'
@@ -26,11 +26,15 @@ export default function unitTest(program: Command): void {
 			'--coverageThreshold',
 			'a JSON string with which will be used to configure minimum threshold enforcement for coverage results',
 		)
-		.action((options: TestCommandOptions) => {
-			return Promise.resolve(true)
-				.then(() => configureTasks(options))
-				.then(job => execGulpTask(job))
-				.then(...resolveShellCode())
-				.then(code => process.exit(code))
-		})
+		.action(
+			(options: TestCommandOptions): Promise<any> => {
+				return Promise.resolve(true)
+					.then(() => configureTasks(options))
+					.then(job => execGulpTask(job))
+					.catch(err => {
+						console.error('error in test', err)
+						process.exitCode = 1
+					})
+			},
+		)
 }

@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { execGulpTask, resolveShellCode } from '@essex/build-utils'
+import { execGulpTask } from '@essex/build-utils'
 import { Command } from 'commander'
 import { configureTasks } from './tasks'
 
@@ -17,10 +17,12 @@ export default function audit(program: Command): void {
 			'audit dependencies for high-severity security vulnerabilities and licensing issues',
 		)
 		.action(() => {
-			Promise.resolve()
+			return Promise.resolve()
 				.then(() => configureTasks())
 				.then(build => execGulpTask(build))
-				.then(...resolveShellCode())
-				.then(code => process.exit(code))
+				.catch(err => {
+					console.error('error in audit', err)
+					process.exitCode = 1
+				})
 		})
 }

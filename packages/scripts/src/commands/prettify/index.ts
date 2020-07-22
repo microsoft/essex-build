@@ -3,7 +3,6 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { prettyQuick } from '@essex/build-step-pretty-quick'
-import { resolveShellCode } from '@essex/build-utils'
 import { Command } from 'commander'
 
 interface PrettifyCommandOptions {
@@ -21,11 +20,12 @@ export default function prettify(program: Command): void {
 		.option('-v, --verbose', 'verbose output')
 		.option('--staged', 'run on staged files')
 		.action(({ staged, verbose }: PrettifyCommandOptions) => {
-			prettyQuick({
+			return prettyQuick({
 				staged,
 				verbose,
+			}).catch(err => {
+				console.error('error in prettify', err)
+				process.exitCode = 1
 			})
-				.then(...resolveShellCode())
-				.then(code => process.exit(code))
 		})
 }

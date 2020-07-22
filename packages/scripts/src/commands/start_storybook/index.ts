@@ -15,9 +15,11 @@ export default function start(program: Command): void {
 		.description('starts the storybook server on the current package')
 		.option('-v, --verbose', 'verbose output')
 		.action((options: StartStorybookCommandOptions) => {
-			Promise.resolve()
+			return Promise.resolve()
 				.then(() => storybookStart(options.verbose))
-				.then(() => process.exit(0))
-				.catch(() => process.exit(1))
+				.catch(err => {
+					console.error('error starting storybook', err)
+					process.exitCode = 1
+				})
 		})
 }

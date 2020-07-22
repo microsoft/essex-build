@@ -11,6 +11,5 @@ export default function commitMsg(program: Command): void {
 		.description('view common usage patterns for @essex/scripts')
 		.action(async () => {
 			log.info(recipes)
-			process.exit(0)
 		})
 }

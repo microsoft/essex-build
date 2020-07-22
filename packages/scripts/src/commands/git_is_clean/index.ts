@@ -10,9 +10,15 @@ export default function start(program: Command): void {
 		.command('git-is-clean')
 		.description('verifies that there are no active git changes')
 		.action(() => {
-			Promise.resolve()
+			return Promise.resolve()
 				.then(() => run(job))
-				.then(({ code }) => process.exit(code))
+				.then(({ code }) => {
+					process.exitCode = code
+				})
+				.catch(err => {
+					console.error('error in git-is-clean', err)
+					process.exitCode = 1
+				})
 		})
 }
 

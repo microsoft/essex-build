@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { execGulpTask, resolveShellCode } from '@essex/build-utils'
+import { execGulpTask } from '@essex/build-utils'
 import { Command } from 'commander'
 import { configureTasks } from './tasks'
 import { BundleCommandOptions } from './types'
@@ -36,10 +36,12 @@ export default function build(program: Command): void {
 			'production',
 		)
 		.action((options: BundleCommandOptions) => {
-			Promise.resolve()
+			return Promise.resolve()
 				.then(() => configureTasks(options))
 				.then(build => execGulpTask(build))
-				.then(...resolveShellCode())
-				.then(code => process.exit(code))
+				.catch(err => {
+					console.error('error in bundle', err)
+					process.exitCode = 1
+				})
 		})
 }

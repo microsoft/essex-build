@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { execGulpTask, resolveShellCode } from '@essex/build-utils'
+import { execGulpTask } from '@essex/build-utils'
 import { Command } from 'commander'
 import { configureTasks } from './tasks'
 import { LintCommandOptions } from './types'
@@ -17,10 +17,12 @@ export default function lint(program: Command): void {
 		.option('--staged', 'only do git-stage verifications')
 		.option('--strict', 'strict linting, warnings will cause failure')
 		.action((files: string[], options: LintCommandOptions = {}) => {
-			Promise.resolve(true)
+			return Promise.resolve()
 				.then(() => configureTasks(options, files))
 				.then(lint => execGulpTask(lint))
-				.then(...resolveShellCode())
-				.then(code => process.exit(code))
+				.catch(err => {
+					console.error('error in lint', err)
+					process.exitCode = 1
+				})
 		})
 }

@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { execGulpTask, resolveShellCode } from '@essex/build-utils'
+import { execGulpTask } from '@essex/build-utils'
 import { Command } from 'commander'
 import { configureTasks } from './tasks'
 import { BuildCommandOptions } from './types'
@@ -18,11 +18,15 @@ export default function build(program: Command): void {
 			'build environment (used by babel and webpack)',
 			'production',
 		)
-		.action((options: BuildCommandOptions) => {
-			Promise.resolve()
-				.then(() => configureTasks(options))
-				.then(build => execGulpTask(build))
-				.then(...resolveShellCode())
-				.then(code => process.exit(code))
-		})
+		.action(
+			(options: BuildCommandOptions): Promise<any> => {
+				return Promise.resolve()
+					.then(() => configureTasks(options))
+					.then(build => execGulpTask(build))
+					.catch(err => {
+						console.error('error in build', err)
+						process.exitCode = 1
+					})
+			},
+		)
 }

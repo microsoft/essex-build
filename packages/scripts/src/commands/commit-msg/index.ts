@@ -3,7 +3,6 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { checkCommitMessage } from '@essex/build-step-commitlint'
-import { resolveShellCode } from '@essex/build-utils'
 import { Command } from 'commander'
 
 export default function commitMsg(program: Command): void {
@@ -11,9 +10,11 @@ export default function commitMsg(program: Command): void {
 		.command('commit-msg')
 		.description('commit message verification (for husky hook)')
 		.action(() => {
-			Promise.resolve()
+			return Promise.resolve()
 				.then(() => checkCommitMessage())
-				.then(...resolveShellCode())
-				.then(code => process.exit(code))
+				.catch(err => {
+					console.error('error in commit-msg', err)
+					process.exitCode = 1
+				})
 		})
 }

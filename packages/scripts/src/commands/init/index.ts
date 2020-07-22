@@ -10,8 +10,14 @@ export default function init(program: Command): void {
 		.command('init')
 		.description('initializes essex-scripts configuration')
 		.option('--lib', 'add typescript library configuration')
-		.action(async (options: InitCommandOptions) => {
-			const code = await execute(options)
-			process.exit(code)
-		})
+		.action(
+			(options: InitCommandOptions): Promise<any> => {
+				return Promise.resolve()
+					.then(() => execute(options))
+					.catch(err => {
+						console.error('error with init', err)
+						process.exitCode = 1
+					})
+			},
+		)
 }

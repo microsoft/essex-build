@@ -3,7 +3,6 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { webpackServe } from '@essex/build-step-webpack'
-import { resolveShellCode } from '@essex/build-utils'
 
 export interface ServeCommandOptions {
 	mode?: 'production' | 'development'
@@ -15,6 +14,6 @@ export async function execute({
 	env = 'development',
 	mode = 'development',
 	verbose,
-}: ServeCommandOptions): Promise<number> {
-	return webpackServe({ env, mode, verbose }).then(...resolveShellCode())
+}: ServeCommandOptions): Promise<void> {
+	return webpackServe({ env, mode, verbose })
 }
