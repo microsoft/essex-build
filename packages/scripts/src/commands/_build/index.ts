@@ -9,8 +9,8 @@ import { BuildCommandOptions } from './types'
 
 export default function build(program: Command): void {
 	program
-		.command('bundle')
-		.description('bundles a library package or website')
+		.command('build')
+		.description('builds a library package')
 		.option('-v, --verbose', 'verbose output')
 		.option('-d, --docs', 'generates TypeDoc documentation')
 		.option(
