@@ -4,25 +4,14 @@
  */
 
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { existsSync } from 'fs'
 import { join } from 'path'
+import { getEsmConfiguration } from '@essex/babel-config'
 import { getNodeModulesPaths } from '@essex/build-util-hoister'
 const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 
-function getBabelConfiguration() {
-	const overrideFile = join(process.cwd(), 'babelrc.esm.js')
-	const defaultFile = join(__dirname, '../babelrc.esm.js')
-
-	if (existsSync(overrideFile)) {
-		return require(overrideFile)
-	} else {
-		return require(defaultFile)
-	}
-}
-
 function getMdxBabelConfiguration() {
-	const config = getBabelConfiguration()
+	const config = getEsmConfiguration('development')
 	const plugins = [
 		...(config.plugins || []),
 		require.resolve('@babel/plugin-transform-react-jsx'),
@@ -57,7 +46,7 @@ module.exports = {
 				{ loader: require.resolve('cache-loader') },
 				{
 					loader: require.resolve('babel-loader'),
-					options: getBabelConfiguration(),
+					options: getEsmConfiguration('development'),
 				},
 				{
 					loader: require.resolve('ts-loader'),
