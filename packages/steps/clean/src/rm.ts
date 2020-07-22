@@ -8,7 +8,7 @@ export function rm(fileglob: string): Promise<void> {
 	return new Promise((resolve, reject) => {
 		rimraf(fileglob, (err: Error) => {
 			if (err) {
-				console.error(err)
+				console.log(err)
 				reject(err)
 			} else {
 				resolve()

@@ -21,7 +21,7 @@ export default function lint(program: Command): void {
 				.then(() => configureTasks(options, files))
 				.then(lint => execGulpTask(lint))
 				.catch(err => {
-					console.error('error in lint', err)
+					console.log('error in lint', err)
 					process.exitCode = 1
 				})
 		})

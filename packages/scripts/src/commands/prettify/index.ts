@@ -24,7 +24,7 @@ export default function prettify(program: Command): void {
 				staged,
 				verbose,
 			}).catch(err => {
-				console.error('error in prettify', err)
+				console.log('error in prettify', err)
 				process.exitCode = 1
 			})
 		})

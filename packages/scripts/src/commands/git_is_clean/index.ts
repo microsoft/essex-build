@@ -16,7 +16,7 @@ export default function start(program: Command): void {
 					process.exitCode = code
 				})
 				.catch(err => {
-					console.error('error in git-is-clean', err)
+					console.log('error in git-is-clean', err)
 					process.exitCode = 1
 				})
 		})

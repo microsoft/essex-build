@@ -21,7 +21,7 @@ export default function build(program: Command): void {
 				return Promise.resolve()
 					.then(() => execute(options))
 					.catch(err => {
-						console.error('error starting webpack server', err)
+						console.log('error starting webpack server', err)
 						process.exitCode = 1
 					})
 			},

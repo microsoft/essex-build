@@ -21,7 +21,7 @@ export default function audit(program: Command): void {
 				.then(() => configureTasks())
 				.then(build => execGulpTask(build))
 				.catch(err => {
-					console.error('error in audit', err)
+					console.log('error in audit', err)
 					process.exitCode = 1
 				})
 		})

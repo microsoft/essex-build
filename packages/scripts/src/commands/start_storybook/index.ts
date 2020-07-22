@@ -18,7 +18,7 @@ export default function start(program: Command): void {
 			return Promise.resolve()
 				.then(() => storybookStart(options.verbose))
 				.catch(err => {
-					console.error('error starting storybook', err)
+					console.log('error starting storybook', err)
 					process.exitCode = 1
 				})
 		})

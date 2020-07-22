@@ -27,12 +27,12 @@ export function webpackServe({
 					const server = new Server(compiler, wpConfig.devServer)
 					server.listen(port, host, (err?: Error | undefined) => {
 						if (err) {
-							console.error(`error listening`, err)
+							console.log(`error listening`, err)
 							reject(err)
 						}
 					})
 				} catch (err) {
-					console.error('eror running webpack serve', err)
+					console.log('eror running webpack serve', err)
 					reject(err)
 				}
 			}),

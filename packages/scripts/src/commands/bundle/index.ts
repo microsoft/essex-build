@@ -40,7 +40,7 @@ export default function build(program: Command): void {
 				.then(() => configureTasks(options))
 				.then(build => execGulpTask(build))
 				.catch(err => {
-					console.error('error in bundle', err)
+					console.log('error in bundle', err)
 					process.exitCode = 1
 				})
 		})

@@ -27,7 +27,7 @@ export default function watch(program: Command): void {
 				.then(() => configureTasks(options))
 				.then(build => execGulpTask(build))
 				.catch(err => {
-					console.error('error starting watch', err)
+					console.log('error starting watch', err)
 					process.exitCode = 1
 				})
 		})

@@ -19,11 +19,11 @@ gulp.on('error', () => {
 
 process
 	.on('unhandledRejection', (reason, p) => {
-		console.error(reason, 'unhandled promise rejection', p)
+		console.log(reason, 'unhandled promise rejection', p)
 		process.exit(1)
 	})
 	.on('uncaughtException', err => {
-		console.error(err, 'uncaught exception')
+		console.log(err, 'uncaught exception')
 		process.exit(1)
 	})
 
@@ -43,14 +43,14 @@ commands.forEach(file => {
 			command(program)
 		}
 	} catch (err) {
-		console.error('error loading %s', commandPath, err)
+		console.log('error loading %s', commandPath, err)
 		throw err
 	}
 })
 
 // error on unknown commands
 program.on('command:*', () => {
-	console.error(
+	console.log(
 		'Invalid command: %s\nSee --help for a list of available commands.',
 		program.args.join(' '),
 	)

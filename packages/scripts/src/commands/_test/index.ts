@@ -32,7 +32,7 @@ export default function unitTest(program: Command): void {
 					.then(() => configureTasks(options))
 					.then(job => execGulpTask(job))
 					.catch(err => {
-						console.error('error in test', err)
+						console.log('error in test', err)
 						process.exitCode = 1
 					})
 			},

@@ -73,7 +73,7 @@ export function prettyQuick(args: PrettyQuickArgs): Promise<void> {
 			return Promise.reject(prettyQuickResult.errors)
 		}
 	} catch (err) {
-		console.error('error running pretty-quick', err)
+		console.log('error running pretty-quick', err)
 		return Promise.reject(err)
 	}
 }

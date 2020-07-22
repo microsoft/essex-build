@@ -15,7 +15,7 @@ export default function init(program: Command): void {
 				return Promise.resolve()
 					.then(() => execute(options))
 					.catch(err => {
-						console.error('error with init', err)
+						console.log('error with init', err)
 						process.exitCode = 1
 					})
 			},

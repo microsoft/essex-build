@@ -38,7 +38,7 @@ export function generateTypedocs(verbose: boolean): Promise<void> {
 			readme: existsSync(readmePath) ? readmePath : undefined,
 		})
 	} catch (err) {
-		console.error('error running typedoc', err)
+		console.log('error running typedoc', err)
 		return Promise.reject(err)
 	}
 }

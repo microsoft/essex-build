@@ -16,7 +16,7 @@ export default function clean(program: Command): void {
 			return Promise.resolve()
 				.then(() => cleanTask(files))
 				.catch(err => {
-					console.error('error in clean', err)
+					console.log('error in clean', err)
 					process.exitCode = 1
 				})
 		})

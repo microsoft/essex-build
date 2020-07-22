@@ -13,7 +13,7 @@ export default function commitMsg(program: Command): void {
 			return Promise.resolve()
 				.then(() => checkCommitMessage())
 				.catch(err => {
-					console.error('error in commit-msg', err)
+					console.log('error in commit-msg', err)
 					process.exitCode = 1
 				})
 		})

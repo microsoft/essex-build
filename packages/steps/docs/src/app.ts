@@ -79,7 +79,7 @@ export function app(
 				})
 
 				if (out) {
-					console.error(out)
+					console.log(out)
 				}
 
 				resolve(code)
