@@ -12,8 +12,8 @@ export interface ServeCommandOptions {
 }
 
 export async function execute({
-	env,
-	mode,
+	env = 'development',
+	mode = 'development',
 	verbose,
 }: ServeCommandOptions): Promise<number> {
 	return webpackServe({ env, mode, verbose }).then(...resolveShellCode())
