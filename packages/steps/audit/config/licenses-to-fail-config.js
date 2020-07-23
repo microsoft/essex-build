@@ -7,9 +7,14 @@ const path = require('path')
 const cwd = process.cwd()
 const licensesPath = path.join(cwd, 'licenses-to-fail-config.js')
 const customConfig = fs.existsSync(licensesPath) ? require(licensesPath) : {}
-const extraAllowedLicenses = customConfig.allowedLicenses || []
+const {
+	allowedLicenses = [],
+	allowedPackages = [],
+	...otherConfig
+} = customConfig
 
 module.exports = {
+	warnOnUnknown: true,
 	allowedLicenses: [
 		'MIT',
 		'ISC',
@@ -21,16 +26,29 @@ module.exports = {
 		'0BSD',
 		'MPL-2.0',
 		'Unlicense',
+		'public domain',
+		'DBAD',
+		'WTFPL',
+
 		// Art & Creative-Commons Licenses
 		'Artistic-2.0',
 		'CC0-1.0',
 		'CC-BY-2.0',
 		'CC-BY-3.0',
 		'CC-BY-4.0',
+
 		// Data Licenses
 		'ODC-By-1.0',
-		...extraAllowedLicenses,
+		...allowedLicenses,
 	],
-	warnOnUnknown: true,
-	...customConfig,
+	allowedPackages: [
+		{
+			name: 'memfs',
+		},
+		{
+			name: 'fs-monkey',
+		},
+		...allowedPackages,
+	],
+	...otherConfig,
 }
