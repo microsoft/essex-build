@@ -15,6 +15,7 @@ Performs common build tasks for a library package.
 - `--verbose`<br/> enables verbose mode
 - `--env <env> (default=development)`<br/> sets the env to use for babel and webpack (if used)
 - `--mode <mode> (default=development)`<br/> sets the mode to use in webpack (if used)
+- `--storybook`<br/> to build a storybook into a static site (CLI dependencies required)
 - `--docs`<br/> enable documentation generation. This is recommended for CI of open source and quality-sensitive projects.
 
 # Details & Customization

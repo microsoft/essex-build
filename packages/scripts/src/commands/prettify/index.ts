@@ -2,8 +2,14 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { prettyQuick } from '@essex/build-step-pretty-quick'
+import { success, fail } from '@essex/tasklogger'
 import { Command } from 'commander'
-import { execute, PrettierCommandOptions } from './execute'
+
+interface PrettifyCommandOptions {
+	verbose?: boolean
+	staged?: boolean
+}
 
 /**
  * Runs the prettier tool to format client source code
@@ -13,8 +19,17 @@ export default function prettify(program: Command): void {
 	program
 		.command('prettify')
 		.option('-v, --verbose', 'verbose output')
-		.action(async (options: PrettierCommandOptions) => {
-			const code = await execute(options)
-			process.exit(code)
+		.option('--staged', 'run on staged files')
+		.action(({ staged, verbose }: PrettifyCommandOptions) => {
+			return prettyQuick({
+				staged,
+				verbose,
+			})
+				.then(() => success('prettify'))
+				.catch(err => {
+					console.log('error in prettify', err)
+					process.exitCode = 1
+					fail('s')
+				})
 		})
 }

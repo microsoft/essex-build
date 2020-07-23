@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"module": "CommonJS",
+		"target": "ES2017",
+		"lib": ["ES2017"],
+		"types": ["node"],
+		"outDir": "lib",
+		"strict": true,
+		"incremental": true,
+		"declaration": true,
+		"esModuleInterop": true
+	},
+	"include": ["src/**/*.ts"]
+}

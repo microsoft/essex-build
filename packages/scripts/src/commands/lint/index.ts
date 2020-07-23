@@ -2,20 +2,30 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { execGulpTask } from '@essex/build-utils'
+import { success, fail } from '@essex/tasklogger'
 import { Command } from 'commander'
-import { execute, LintCommandOptions } from './execute'
+import { configureTasks } from './tasks'
+import { LintCommandOptions } from './types'
 
 export default function lint(program: Command): void {
 	program
-		.command('lint')
+		.command('lint [...files]')
 		.description('performs static analysis checks')
 		.option('-f, --fix', 'correct fixable problems')
 		.option('--docs', 'performs documentation linting steps')
+		.option('--docs-only', 'skip code linting, only check documentation')
 		.option('--staged', 'only do git-stage verifications')
 		.option('--strict', 'strict linting, warnings will cause failure')
-		.option('--spelling-ignore <files>', 'ignore spelling on a glob')
-		.action(async (options: LintCommandOptions = {}) => {
-			const code = await execute(options)
-			process.exit(code)
+		.action((files: string[], options: LintCommandOptions = {}) => {
+			return Promise.resolve()
+				.then(() => configureTasks(options, files))
+				.then(lint => execGulpTask(lint))
+				.then(() => success('lint'))
+				.catch(err => {
+					console.log('error in lint', err)
+					process.exitCode = 1
+					fail('lint')
+				})
 		})
 }

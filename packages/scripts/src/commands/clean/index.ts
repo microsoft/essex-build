@@ -2,18 +2,25 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { clean as cleanTask } from '@essex/build-step-clean'
+import { success, fail } from '@essex/tasklogger'
 import { Command } from 'commander'
-import { execute } from './execute'
 
 export default function clean(program: Command): void {
 	program
 		.command('clean [files...]')
 		.description('cleans up build artifact directories')
-		.action(async (files: string[]) => {
+		.action((files: string[]) => {
 			if (files.length === 0) {
 				files = ['lib', 'dist']
 			}
-			const code = await execute(files)
-			process.exit(code)
+			return Promise.resolve()
+				.then(() => cleanTask(files))
+				.then(() => success('clean'))
+				.catch(err => {
+					console.log('error in clean', err)
+					fail('clean')
+					process.exitCode = 1
+				})
 		})
 }
