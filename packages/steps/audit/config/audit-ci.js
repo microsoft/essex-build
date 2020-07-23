@@ -10,7 +10,7 @@ const cwd = process.cwd()
 
 const DEFAULT_CONFIG = {
 	high: true,
-	'path-whitelist': [],
+	'allowlist': [],
 }
 
 const JS_DOT_OVERRIDE = join(cwd, '.audit-ci.js')

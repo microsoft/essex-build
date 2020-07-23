@@ -14,14 +14,10 @@ The following checks are performed when this command is invoked.
 
   When possible, use the following priority to minimize allowlist coverage:
 
-  <!--alex disable whitelist-->
-  <!--alex disable whitelisted-->
 
-  1. `path-whitelist`
-  1. `advisories`
-  1. `whitelist`
-     <!--alex enable whitelist-->
-     <!--alex enable whitelisted-->
+  1. `path` (e.g. `123|example-module`)
+  1. `advisories` (e.g. `123`)
+  1. `modules` (e.g. `example-module`)
 
 - ## license-to-fail
 
