@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { lintStaged } from '@essex/build-step-lint-staged'
+import { success, fail } from '@essex/tasklogger'
 import { Command } from 'commander'
 
 export default function preCommit(program: Command): void {
@@ -12,9 +13,11 @@ export default function preCommit(program: Command): void {
 		.action(() => {
 			Promise.resolve()
 				.then(() => lintStaged())
+				.then(() => success('lint-staged'))
 				.catch(err => {
 					console.log('error in precommit', err)
 					process.exitCode = 1
+					fail('lint-staged')
 				})
 		})
 }

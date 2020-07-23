@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { execGulpTask } from '@essex/build-utils'
+import { success, fail } from '@essex/tasklogger'
 import { Command } from 'commander'
 import { configureTasks } from './tasks'
 
@@ -20,8 +21,10 @@ export default function audit(program: Command): void {
 			return Promise.resolve()
 				.then(() => configureTasks())
 				.then(build => execGulpTask(build))
+				.then(() => success('audit'))
 				.catch(err => {
 					console.log('error in audit', err)
+					fail('audit')
 					process.exitCode = 1
 				})
 		})

@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { execGulpTask } from '@essex/build-utils'
+import { success, fail } from '@essex/tasklogger'
 import { Command } from 'commander'
 import { configureTasks } from './tasks'
 import { LintCommandOptions } from './types'
@@ -20,9 +21,11 @@ export default function lint(program: Command): void {
 			return Promise.resolve()
 				.then(() => configureTasks(options, files))
 				.then(lint => execGulpTask(lint))
+				.then(() => success('lint'))
 				.catch(err => {
 					console.log('error in lint', err)
 					process.exitCode = 1
+					fail('lint')
 				})
 		})
 }

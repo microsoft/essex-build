@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { run, Job } from '@essex/shellrunner'
+import * as logger from '@essex/tasklogger'
 import { Command } from 'commander'
 
 export default function start(program: Command): void {
@@ -17,9 +18,15 @@ export default function start(program: Command): void {
 				)
 				.then(code => {
 					process.exitCode = code
+					if (code === 0) {
+						logger.success('git is clean')
+					} else {
+						logger.fail('git is clean')
+					}
 				})
 				.catch(err => {
 					console.log('error in git-is-clean', err)
+					logger.fail('git is clean')
 					process.exitCode = 1
 				})
 		})

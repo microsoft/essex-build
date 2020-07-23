@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { execGulpTask } from '@essex/build-utils'
+import { success, fail } from '@essex/tasklogger'
 import { Command } from 'commander'
 import { configureTasks } from './tasks'
 import { TestCommandOptions } from './types'
@@ -31,9 +32,11 @@ export default function unitTest(program: Command): void {
 				return Promise.resolve(true)
 					.then(() => configureTasks(options))
 					.then(job => execGulpTask(job))
+					.then(() => success('test'))
 					.catch(err => {
 						console.log('error in test', err)
 						process.exitCode = 1
+						fail('test')
 					})
 			},
 		)

@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { prettyQuick } from '@essex/build-step-pretty-quick'
+import { success, fail } from '@essex/tasklogger'
 import { Command } from 'commander'
 
 interface PrettifyCommandOptions {
@@ -23,9 +24,12 @@ export default function prettify(program: Command): void {
 			return prettyQuick({
 				staged,
 				verbose,
-			}).catch(err => {
-				console.log('error in prettify', err)
-				process.exitCode = 1
 			})
+				.then(() => success('prettify'))
+				.catch(err => {
+					console.log('error in prettify', err)
+					process.exitCode = 1
+					fail('s')
+				})
 		})
 }

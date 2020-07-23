@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { checkCommitMessage } from '@essex/build-step-commitlint'
+import { success, fail } from '@essex/tasklogger'
 import { Command } from 'commander'
 
 export default function commitMsg(program: Command): void {
@@ -12,9 +13,11 @@ export default function commitMsg(program: Command): void {
 		.action(() => {
 			return Promise.resolve()
 				.then(() => checkCommitMessage())
+				.then(() => success('commit-msg'))
 				.catch(err => {
 					console.log('error in commit-msg', err)
 					process.exitCode = 1
+					fail('commit-msg')
 				})
 		})
 }

@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { clean as cleanTask } from '@essex/build-step-clean'
+import { success, fail } from '@essex/tasklogger'
 import { Command } from 'commander'
 
 export default function clean(program: Command): void {
@@ -15,8 +16,10 @@ export default function clean(program: Command): void {
 			}
 			return Promise.resolve()
 				.then(() => cleanTask(files))
+				.then(() => success('clean'))
 				.catch(err => {
 					console.log('error in clean', err)
+					fail('clean')
 					process.exitCode = 1
 				})
 		})
