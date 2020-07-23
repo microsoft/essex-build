@@ -27,9 +27,9 @@
 		]
 	},
 	"devDependencies": {
-		"@essex/eslint-config": "^8.0.0-alpha.12",
-		"@essex/eslint-plugin": "^8.0.0-alpha.12",
-		"@essex/scripts": "^8.0.0-alpha.23",
+		"@essex/eslint-config": "^8.0.0",
+		"@essex/eslint-plugin": "^8.0.0",
+		"@essex/scripts": "^8.0.0",
 		"husky": "^4.2.5",
 		"lerna": "^3.22.1",
 		"npm-run-all": "^4.1.5",

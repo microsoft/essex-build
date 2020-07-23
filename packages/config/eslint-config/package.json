@@ -7,6 +7,6 @@
 		"@essex/eslint-plugin": "^8.0.1"
 	},
 	"peerDependencies": {
-		"@essex/eslint-plugin": ">= 8.0.0-alpha.7"
+		"@essex/eslint-plugin": ">= 8.0.0"
 	}
 }
