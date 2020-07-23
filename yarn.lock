@@ -2029,14 +2029,13 @@ __metadata:
     "@essex/scripts": ^8.0.0-alpha.23
     husky: ^4.2.5
     lerna: ^3.22.1
-    lint-staged: ^10.2.11
     npm-run-all: ^4.1.5
     prettier: ^2.0.5
     typescript: ^3.9.7
   languageName: unknown
   linkType: soft
 
-"@essex/babel-config@^8.0.0-alpha.26, @essex/babel-config@workspace:packages/config/babel-config":
+"@essex/babel-config@8.0.0-alpha.26, @essex/babel-config@^8.0.0-alpha.26, @essex/babel-config@workspace:packages/config/babel-config":
   version: 0.0.0-use.local
   resolution: "@essex/babel-config@workspace:packages/config/babel-config"
   dependencies:
@@ -2066,7 +2065,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-babel@^8.0.0-alpha.34, @essex/build-step-babel@workspace:packages/steps/babel":
+"@essex/build-step-babel@^8.0.0-alpha.36, @essex/build-step-babel@workspace:packages/steps/babel":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-babel@workspace:packages/steps/babel"
   dependencies:
@@ -2182,6 +2181,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@essex/build-step-lint-staged@^8.0.0-alpha.37, @essex/build-step-lint-staged@workspace:packages/steps/lint-staged":
+  version: 0.0.0-use.local
+  resolution: "@essex/build-step-lint-staged@workspace:packages/steps/lint-staged"
+  dependencies:
+    "@essex/build-utils": ^8.0.0-alpha.12
+    "@essex/shellrunner": ^8.0.0-alpha.12
+    "@types/node": ^14.0.14
+    "@types/rimraf": ^3.0.0
+    lint-staged: ^10.2.11
+    rimraf: ^3.0.2
+    typescript: 3.9.6
+  languageName: unknown
+  linkType: soft
+
 "@essex/build-step-pretty-quick@^8.0.0-alpha.35, @essex/build-step-pretty-quick@workspace:packages/steps/pretty-quick":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-pretty-quick@workspace:packages/steps/pretty-quick"
@@ -2221,13 +2234,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-storybook@^8.0.0-alpha.34, @essex/build-step-storybook@workspace:packages/steps/storybook":
+"@essex/build-step-storybook@^8.0.0-alpha.37, @essex/build-step-storybook@workspace:packages/steps/storybook":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-storybook@workspace:packages/steps/storybook"
   dependencies:
     "@essex/build-utils": ^8.0.0-alpha.34
     "@essex/shellrunner": ^8.0.0-alpha.26
-    "@essex/storybook-config": ^8.0.0-alpha.26
+    "@essex/storybook-config": ^8.0.0-alpha.37
     "@essex/tasklogger": ^8.0.0-alpha.26
     "@storybook/react": ^5.3.19
     "@types/node": ^14.0.24
@@ -2252,7 +2265,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-typescript@^8.0.0-alpha.34, @essex/build-step-typescript@workspace:packages/steps/typescript":
+"@essex/build-step-typescript@^8.0.0-alpha.36, @essex/build-step-typescript@workspace:packages/steps/typescript":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-typescript@workspace:packages/steps/typescript"
   dependencies:
@@ -2271,7 +2284,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-webpack@^8.0.0-alpha.35, @essex/build-step-webpack@workspace:packages/steps/webpack":
+"@essex/build-step-webpack@^8.0.0-alpha.36, @essex/build-step-webpack@workspace:packages/steps/webpack":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-webpack@workspace:packages/steps/webpack"
   dependencies:
@@ -2298,7 +2311,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-utils@^8.0.0-alpha.34, @essex/build-utils@workspace:packages/util/gulp":
+"@essex/build-utils@^8.0.0-alpha.12, @essex/build-utils@^8.0.0-alpha.34, @essex/build-utils@workspace:packages/util/gulp":
   version: 0.0.0-use.local
   resolution: "@essex/build-utils@workspace:packages/util/gulp"
   dependencies:
@@ -2371,25 +2384,26 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/scripts@^8.0.0-alpha.23, @essex/scripts@^8.0.0-alpha.35, @essex/scripts@workspace:packages/scripts":
+"@essex/scripts@^8.0.0-alpha.23, @essex/scripts@workspace:packages/scripts":
   version: 0.0.0-use.local
   resolution: "@essex/scripts@workspace:packages/scripts"
   dependencies:
     "@essex/build-step-audit": ^8.0.0-alpha.34
-    "@essex/build-step-babel": ^8.0.0-alpha.34
+    "@essex/build-step-babel": ^8.0.0-alpha.36
     "@essex/build-step-clean": ^8.0.0-alpha.35
     "@essex/build-step-commitlint": ^8.0.0-alpha.34
     "@essex/build-step-docs": ^8.0.0-alpha.35
     "@essex/build-step-eslint": ^8.0.0-alpha.35
     "@essex/build-step-init": ^8.0.0-alpha.34
     "@essex/build-step-jest": ^8.0.0-alpha.35
+    "@essex/build-step-lint-staged": ^8.0.0-alpha.37
     "@essex/build-step-pretty-quick": ^8.0.0-alpha.35
     "@essex/build-step-recipes": ^8.0.0-alpha.26
     "@essex/build-step-rollup": ^8.0.0-alpha.34
-    "@essex/build-step-storybook": ^8.0.0-alpha.34
+    "@essex/build-step-storybook": ^8.0.0-alpha.37
     "@essex/build-step-typedoc": ^8.0.0-alpha.35
-    "@essex/build-step-typescript": ^8.0.0-alpha.34
-    "@essex/build-step-webpack": ^8.0.0-alpha.35
+    "@essex/build-step-typescript": ^8.0.0-alpha.36
+    "@essex/build-step-webpack": ^8.0.0-alpha.36
     "@essex/build-utils": ^8.0.0-alpha.34
     "@essex/eslint-plugin": ^8.0.0-alpha.31
     "@essex/shellrunner": ^8.0.0-alpha.26
@@ -2417,13 +2431,15 @@ __metadata:
     shx: ^0.3.2
     supports-color: ^7.1.0
     typescript: ^3.9.7
+  peerDependencies:
+    husky: ">= 4.2.5"
   bin:
     essex: ./lib/index.js
     essex-scripts: ./lib/index.js
   languageName: unknown
   linkType: soft
 
-"@essex/shellrunner@^8.0.0-alpha.26, @essex/shellrunner@workspace:packages/util/shellrunner":
+"@essex/shellrunner@^8.0.0-alpha.12, @essex/shellrunner@^8.0.0-alpha.26, @essex/shellrunner@workspace:packages/util/shellrunner":
   version: 0.0.0-use.local
   resolution: "@essex/shellrunner@workspace:packages/util/shellrunner"
   dependencies:
@@ -2439,10 +2455,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/storybook-config@^8.0.0-alpha.26, @essex/storybook-config@workspace:packages/config/storybook-config":
+"@essex/storybook-config@^8.0.0-alpha.37, @essex/storybook-config@workspace:packages/config/storybook-config":
   version: 0.0.0-use.local
   resolution: "@essex/storybook-config@workspace:packages/config/storybook-config"
   dependencies:
+    "@essex/babel-config": 8.0.0-alpha.26
     "@essex/build-util-hoister": ^8.0.0-alpha.26
     "@mdx-js/loader": ^1.6.13
     "@storybook/addon-a11y": ^5.3.19
@@ -5026,7 +5043,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^14.0.24":
+"@types/node@npm:^14.0.14, @types/node@npm:^14.0.24":
   version: 14.0.24
   resolution: "@types/node@npm:14.0.24"
   checksum: b10d6b56faeb7fdf2d2527d7aa685b472adaf810612903d667e364eb53a1ffd2ee0e74f25ab135375c7c3f77400cf05a569d7b8d5eee51cbf7b2f748ec86383d
@@ -10614,7 +10631,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"execa@npm:^4.0.0, execa@npm:^4.0.1":
+"execa@npm:^4.0.0":
   version: 4.0.2
   resolution: "execa@npm:4.0.2"
   dependencies:
@@ -10628,6 +10645,23 @@ __metadata:
     signal-exit: ^3.0.2
     strip-final-newline: ^2.0.0
   checksum: c48f3d6a044daa1bb5d93486e1c8eee12a8724b439b7f8c270c556a37cf7e2ffd528a86d2ef08adcbe78b485956cfca56c6027ec15d8370bef959097b9ba23ba
+  languageName: node
+  linkType: hard
+
+"execa@npm:^4.0.1":
+  version: 4.0.3
+  resolution: "execa@npm:4.0.3"
+  dependencies:
+    cross-spawn: ^7.0.0
+    get-stream: ^5.0.0
+    human-signals: ^1.1.1
+    is-stream: ^2.0.0
+    merge-stream: ^2.0.0
+    npm-run-path: ^4.0.0
+    onetime: ^5.1.0
+    signal-exit: ^3.0.2
+    strip-final-newline: ^2.0.0
+  checksum: 65b237d178b468045ee57af6aa4e4124807b28aec9573d9b3b16b02a7e41bd65996236e0c5575d053d3888585ffc795cbed38847c6c9669e9c8481fc44ac05e4
   languageName: node
   linkType: hard
 
@@ -14974,8 +15008,8 @@ fsevents@^1.2.7:
   linkType: hard
 
 "listr2@npm:^2.1.0":
-  version: 2.1.9
-  resolution: "listr2@npm:2.1.9"
+  version: 2.3.2
+  resolution: "listr2@npm:2.3.2"
   dependencies:
     chalk: ^4.0.0
     cli-truncate: ^2.1.0
@@ -14987,7 +15021,7 @@ fsevents@^1.2.7:
     through: ^2.3.8
   peerDependencies:
     enquirer: ">= 2.3.0 < 3"
-  checksum: d22f9993116ab5d740cb6fefe17201626a692a67dce361d987ea00142f194bed7fc315512d5aadbbb76c2b5116e948c1ef492dd13beb73919eb11423516a561d
+  checksum: 4bed0e930d5d21caf3cd06bdd9153425edd62a92870aafe09441c73c13d4458c4a824a267be8296aab3ca1f2d7f87cfca06b0eea5c9a4e60ce6499b3764b425e
   languageName: node
   linkType: hard
 
@@ -20024,14 +20058,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"sample-webapp@workspace:packages/tests/sample-webapp":
-  version: 0.0.0-use.local
-  resolution: "sample-webapp@workspace:packages/tests/sample-webapp"
-  dependencies:
-    "@essex/scripts": ^8.0.0-alpha.35
-  languageName: unknown
-  linkType: soft
-
 "sane@npm:^4.0.3":
   version: 4.1.0
   resolution: "sane@npm:4.1.0"
@@ -22246,6 +22272,16 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+typescript@3.9.6:
+  version: 3.9.6
+  resolution: "typescript@npm:3.9.6"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 75d8e3610ca435b0feaa3eb714ef3aa9060ec72621da3c62c45ceee1d8d0ddcbd8ff2a816de2d24ab28dcd2249953edb640d34595d59e491656156da4c2903fc
+  languageName: node
+  linkType: hard
+
 "typescript@3.9.7, typescript@^3.9.7":
   version: 3.9.7
   resolution: "typescript@npm:3.9.7"
@@ -22253,6 +22289,16 @@ fsevents@^1.2.7:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 10848a9c35fd8c70a8792b8bd9485317534bcd58768793d3b7d9c7486e9fd30cf345f83fa2a324e0bf6088bc8a4d8d061d58fda38b18c2ff187cf01fbbff6267
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@3.9.6#builtin<compat/typescript>":
+  version: 3.9.6
+  resolution: "typescript@patch:typescript@npm%3A3.9.6#builtin<compat/typescript>::version=3.9.6&hash=5b02a2"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: de0b64b2df571ddb6a87e058605b011b1d7e2ed5e1bb27ba658251a380041abbbdf5bdf8da25d5605ac84e7fb3882a816b9a283ffaddedebfde1a57db4c18c30
   languageName: node
   linkType: hard
 

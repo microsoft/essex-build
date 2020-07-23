@@ -18,6 +18,10 @@ export default function build(program: Command): void {
 			'build environment (used by babel and webpack)',
 			'production',
 		)
+		.option(
+			'--stripInternalTypes',
+			'strip out internal types from typings declarations',
+		)
 		.action(
 			(options: BuildCommandOptions): Promise<any> => {
 				return Promise.resolve()

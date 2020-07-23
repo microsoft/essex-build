@@ -26,6 +26,7 @@
 		"@essex/build-step-eslint": "^8.0.0-alpha.35",
 		"@essex/build-step-init": "^8.0.0-alpha.34",
 		"@essex/build-step-jest": "^8.0.0-alpha.35",
+		"@essex/build-step-lint-staged": "^8.0.0-alpha.37",
 		"@essex/build-step-pretty-quick": "^8.0.0-alpha.35",
 		"@essex/build-step-recipes": "^8.0.0-alpha.26",
 		"@essex/build-step-rollup": "^8.0.0-alpha.34",
@@ -62,5 +63,8 @@
 		"rimraf": "^3.0.2",
 		"shx": "^0.3.2",
 		"typescript": "^3.9.7"
+	},
+	"peerDependencies": {
+		"husky": ">= 4.2.5"
 	}
 }

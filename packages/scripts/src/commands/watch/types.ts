@@ -5,5 +5,6 @@
 export interface WatchCommandOptions {
 	verbose?: boolean
 	env?: string
+	stripInternalTypes?: boolean
 	mode?: 'production' | 'development'
 }

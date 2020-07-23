@@ -22,6 +22,10 @@ export default function watch(program: Command): void {
 			'enable production optimization or development hints ("development" | "production" | "none")',
 			'development',
 		)
+		.option(
+			'--stripInternalTypes',
+			'strip out internal types from typings declarations',
+		)
 		.action((options: WatchCommandOptions) => {
 			return Promise.resolve()
 				.then(() => configureTasks(options))

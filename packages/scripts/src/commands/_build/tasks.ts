@@ -19,13 +19,14 @@ export function configureTasks({
 	verbose = false,
 	docs = false,
 	env = 'production',
+	stripInternalTypes = false,
 }: BuildCommandOptions): gulp.TaskFunction {
 	if (!existsSync(tsConfigPath)) {
 		throw new Error('tsconfig.json must exist')
 	}
 
 	const generateDocs = docs ? generateTypedocsGulp(verbose) : noopTask
-	const buildTypings = emitTypings()
+	const buildTypings = emitTypings(stripInternalTypes)
 	const compileTS = compileTypescript()
 	const compileJS = buildBabel(env)
 

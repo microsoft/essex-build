@@ -10,4 +10,6 @@ export interface BuildCommandOptions {
 	docs?: boolean
 
 	env?: string
+
+	stripInternalTypes?: boolean
 }

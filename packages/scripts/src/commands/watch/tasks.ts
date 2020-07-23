@@ -15,9 +15,10 @@ const webpackConfigFile = join(process.cwd(), 'webpack.config.js')
 
 export function configureTasks({
 	env = 'development',
+	stripInternalTypes = false,
 }: WatchCommandOptions): TaskFunction {
 	return () => {
-		watchTypescript()
+		watchTypescript(stripInternalTypes)
 		watchBabel(env)
 		rollupWatch()
 		if (existsSync(webpackConfigFile)) {
