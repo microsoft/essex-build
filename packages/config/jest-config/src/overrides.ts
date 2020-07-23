@@ -43,5 +43,5 @@ export function getTsConfigFile(): string | any {
  * Gets the setupFiles to use
  */
 export function getSetupFiles(): string[] {
-	return existsSync(SETUP_FILE) ? [SETUP_FILE] : []
+	return existsSync(SETUP_FILE) ? ['<rootDir>/jest.setup.js'] : []
 }
