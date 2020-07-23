@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-storybook",
-	"version": "8.0.0-alpha.37",
+	"version": "8.0.0",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
@@ -9,10 +9,10 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@essex/build-utils": "^8.0.0-alpha.34",
-		"@essex/shellrunner": "^8.0.0-alpha.26",
-		"@essex/storybook-config": "^8.0.0-alpha.37",
-		"@essex/tasklogger": "^8.0.0-alpha.26",
+		"@essex/build-utils": "^8.0.0",
+		"@essex/shellrunner": "^8.0.0",
+		"@essex/storybook-config": "^8.0.0",
+		"@essex/tasklogger": "^8.0.0",
 		"@storybook/react": "^5.3.19"
 	},
 	"devDependencies": {
