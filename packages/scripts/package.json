@@ -1,6 +1,6 @@
 {
 	"name": "@essex/scripts",
-	"version": "8.0.9",
+	"version": "8.0.10",
 	"description": "A set of scripts to make a essex javascript engineer's life easier",
 	"main": "lib/index.js",
 	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
@@ -24,8 +24,8 @@
 		"@essex/build-step-commitlint": "^8.0.1",
 		"@essex/build-step-docs": "^8.0.4",
 		"@essex/build-step-eslint": "^8.0.2",
-		"@essex/build-step-init": "^8.0.5",
-		"@essex/build-step-jest": "^8.0.9",
+		"@essex/build-step-init": "^8.0.10",
+		"@essex/build-step-jest": "^8.0.10",
 		"@essex/build-step-lint-staged": "^8.0.1",
 		"@essex/build-step-pretty-quick": "^8.0.1",
 		"@essex/build-step-recipes": "^8.0.1",
@@ -63,12 +63,12 @@
 		"typescript": "^3.9.7"
 	},
 	"peerDependencies": {
+		"@essex/eslint-config": ">= 8.0.2",
+		"@essex/jest-config": ">= 8.0.9",
+		"@essex/prettier-config": ">= 8.0.1",
 		"husky": ">= 4.2.5",
 		"react": ">= 16.13.1",
-		"react-dom": ">= 16.13.1",
-		"@essex/jest-config": ">= 8.0.9",
-		"@essex/eslint-config": ">= 8.0.2",
-		"@essex/prettier-config": ">= 8.0.1"
+		"react-dom": ">= 16.13.1"
 	},
 	"peerDependenciesMeta": {
 		"react": {
