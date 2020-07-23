@@ -1,7 +1,0 @@
-**/lib/*
-**/dist/*
-**/node_modules/*
-**/build/*
-**/storybook-static/*
-**/site/*
-**/*.d.ts

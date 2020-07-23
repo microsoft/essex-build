@@ -2,8 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { execGulpTask } from '@essex/build-utils'
 import { Command } from 'commander'
-import { execute, WatchCommandOptions } from './execute'
+import { configureTasks } from './tasks'
+import { WatchCommandOptions } from './types'
 
 export default function watch(program: Command): void {
 	program
@@ -20,8 +22,17 @@ export default function watch(program: Command): void {
 			'enable production optimization or development hints ("development" | "production" | "none")',
 			'development',
 		)
-		.action(async (options: WatchCommandOptions) => {
-			const code = await execute(options)
-			process.exit(code)
+		.option(
+			'--stripInternalTypes',
+			'strip out internal types from typings declarations',
+		)
+		.action((options: WatchCommandOptions) => {
+			return Promise.resolve()
+				.then(() => configureTasks(options))
+				.then(build => execGulpTask(build))
+				.catch(err => {
+					console.log('error starting watch', err)
+					process.exitCode = 1
+				})
 		})
 }

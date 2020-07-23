@@ -16,8 +16,14 @@ export default function build(program: Command): void {
 			'development',
 		)
 		.option('-v, --verbose', 'verbose output')
-		.action(async (options: ServeCommandOptions) => {
-			const code = await execute(options)
-			process.exit(code)
-		})
+		.action(
+			(options: ServeCommandOptions): Promise<any> => {
+				return Promise.resolve()
+					.then(() => execute(options))
+					.catch(err => {
+						console.log('error starting webpack server', err)
+						process.exitCode = 1
+					})
+			},
+		)
 }

@@ -1,8 +1,0 @@
-{
-  "**/*": [
-    "pretty-quick --staged"
-  ],
-  "**/*.{js,jsx,ts,tsx}": [
-    "yarn essex lint --fix --staged"
-  ]
-}

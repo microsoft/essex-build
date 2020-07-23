@@ -30,8 +30,8 @@ The following checks are performed when this command is invoked.
   - `<rootDir>/.audit-ci.js`<br/>
     This file can export an audit-ci configuration to use for your project. See [audit-ci](https://github.com/IBM/audit-ci/#example-config-file-and-different-directory-usage) for configuration details.
 
-  - `<rootDir>/allowedLicenses.js`<br/>
-    This file can export a list of allowed licenses for your project in addition to the default allowed set of this tool. (See the configuration file for details)
+  - `<rootDir>/licenses-to-fail-config.js`<br/>
+    This file can export a list of allowed licenses for your project in addition to the default allowed set of this tool. (See licenses-to-fail documentation)
 
     ```js
     /* allowedLicenses.js */

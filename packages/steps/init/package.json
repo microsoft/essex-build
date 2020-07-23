@@ -1,0 +1,21 @@
+{
+	"name": "@essex/build-step-init",
+	"version": "8.0.0",
+	"license": "MIT",
+	"main": "lib/index.js",
+	"typings": "lib/index.d.ts",
+	"scripts": {
+		"clean": "rimraf dist lib",
+		"build": "tsc"
+	},
+	"dependencies": {
+		"@essex/build-step-recipes": "^8.0.0",
+		"@essex/build-utils": "^8.0.0"
+	},
+	"devDependencies": {
+		"@types/node": "^14.0.24",
+		"@types/rimraf": "^3.0.0",
+		"rimraf": "^3.0.2",
+		"typescript": "3.9.7"
+	}
+}

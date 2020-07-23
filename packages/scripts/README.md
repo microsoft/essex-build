@@ -34,7 +34,6 @@ To view detailed options, run `essex <command> --help` or `essex --help`
 
 - [audit](./docs/audit.md)
 - [build](./docs/build.md)
-- [build-storybook](./docs/build_storybook.md)
 - [bundle](./docs/bundle.md)
 - [clean](./docs/clean.md)
 - [commit-msg](./docs/commit_msg.md)
