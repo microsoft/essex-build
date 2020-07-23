@@ -13,11 +13,11 @@ export default function preCommit(program: Command): void {
 		.action(() => {
 			Promise.resolve()
 				.then(() => lintStaged())
-				.then(() => success('lint-staged'))
+				.then(() => success('pre-commit'))
 				.catch(err => {
 					console.log('error in precommit', err)
 					process.exitCode = 1
-					fail('lint-staged')
+					fail('pre-commit')
 				})
 		})
 }
