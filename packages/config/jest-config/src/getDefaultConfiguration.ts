@@ -12,6 +12,8 @@ export function getDefaultConfiguration(): any {
 		},
 		testMatch: ['**/__tests__/**/?(*.)+(spec|test).[jt]s?(x)'],
 		testResultsProcessor: 'jest-junit-reporter',
+		rootDir: process.cwd(),
+		roots: [process.cwd()],
 		moduleNameMapper: {
 			'\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
 				'@essex/jest-config/lib/filemock',

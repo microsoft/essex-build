@@ -5,6 +5,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { getDefaultConfiguration } from './getDefaultConfiguration'
 import { getJestConfigOverride } from './overrides'
+export * from './getDefaultConfiguration'
 
 /**
  * If a Jest config is present, use that - otherwise get the override
