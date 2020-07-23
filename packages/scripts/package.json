@@ -65,13 +65,25 @@
 	"peerDependencies": {
 		"husky": ">= 4.2.5",
 		"react": ">= 16.13.1",
-		"react-dom": ">= 16.13.1"
+		"react-dom": ">= 16.13.1",
+		"@essex/jest-config": ">= 8.0.9",
+		"@essex/eslint-config": ">= 8.0.2",
+		"@essex/prettier-config": ">= 8.0.1"
 	},
 	"peerDependenciesMeta": {
 		"react": {
 			"optional": true
 		},
 		"react-dom": {
+			"optional": true
+		},
+		"@essex/eslint-config": {
+			"optional": true
+		},
+		"@essex/jest-config": {
+			"optional": true
+		},
+		"@essex/prettier-config": {
 			"optional": true
 		}
 	}

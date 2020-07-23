@@ -32,7 +32,7 @@ const CONFIG_FILES = [
 	'.gitignore',
 	'.prettierignore',
 	'tsconfig.json',
-	'tsconfig.jest.json',
+	'jest.config.js',
 ]
 
 export function initMonorepo(): Promise<number> {

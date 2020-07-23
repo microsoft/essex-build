@@ -2,9 +2,13 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { getSetupFiles, getTsConfigFile } from './overrides'
 
-export function getDefaultConfiguration(): any {
+import { getTsConfig, getSetupFiles } from './overrides'
+
+export function configure(
+	setupFiles: string[] = getSetupFiles(),
+	tsConfig: string | any = getTsConfig(),
+): any {
 	return {
 		preset: 'ts-jest',
 		transform: {
@@ -29,10 +33,10 @@ export function getDefaultConfiguration(): any {
 			'!**/__tests__/**',
 		],
 		coverageReporters: ['json', 'lcov', 'text', 'clover', 'cobertura'],
-		setupFilesAfterEnv: getSetupFiles(),
+		setupFilesAfterEnv: setupFiles,
 		globals: {
 			'ts-jest': {
-				tsConfig: getTsConfigFile(),
+				tsConfig,
 			},
 		},
 	}

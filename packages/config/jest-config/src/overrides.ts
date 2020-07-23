@@ -16,7 +16,7 @@ export function getJestConfigOverride(): any | undefined {
 /**
  * Gets the ts-jest TSConfig to use
  */
-export function getTsConfigFile(): string | any {
+export function getTsConfig(): string | any {
 	if (existsSync(OVERRIDE_TSCONFIG)) {
 		return '<rootDir>/tsconfig.jest.json'
 	} else {

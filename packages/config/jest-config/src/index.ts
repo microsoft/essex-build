@@ -3,13 +3,13 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { getDefaultConfiguration } from './getDefaultConfiguration'
-import { getJestConfigOverride } from './overrides'
-export * from './getDefaultConfiguration'
+import { configure } from './configure'
+import { getJestConfigOverride, getTsConfig, getSetupFiles } from './overrides'
+export * from './configure'
 
 /**
  * If a Jest config is present, use that - otherwise get the override
  */
 export function getJestConfiguration(): any {
-	return getJestConfigOverride() || getDefaultConfiguration()
+	return getJestConfigOverride() || configure(getSetupFiles(), getTsConfig())
 }
