@@ -2,6 +2,7 @@
 	"name": "@essex/jest-config",
 	"version": "8.0.0-alpha.26",
 	"author": "Chris Trevino <chtrevin@microsoft.com>",
+	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
 	"scripts": {

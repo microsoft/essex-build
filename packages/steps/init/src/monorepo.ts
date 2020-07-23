@@ -90,8 +90,12 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 		pkgJson.scripts.git_is_clean = 'essex git-is-clean'
 		writeNeeded = true
 	}
+	if (!pkgJson.scripts.audit) {
+		pkgJson.scripts.audit = 'essex audit'
+		writeNeeded = true
+	}
 	if (!pkgJson.scripts.ci) {
-		pkgJson.scripts.ci = 'run-s build lint test git_is_clean'
+		pkgJson.scripts.ci = 'run-s build lint test git_is_clean audit'
 		writeNeeded = true
 	}
 	if (writeNeeded) {

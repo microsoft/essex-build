@@ -15,8 +15,9 @@
 		"lint": "essex lint --docs --fix",
 		"prettify": "essex prettify",
 		"audit_dependencies": "essex audit",
+		"audit": "essex audit",
 		"git_is_clean": "essex git-is-clean",
-		"ci": "run-s build lint test git_is_clean"
+		"ci": "run-s build lint test git_is_clean audit"
 	},
 	"workspaces": {
 		"packages": [

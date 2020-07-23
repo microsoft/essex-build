@@ -2,6 +2,7 @@
 	"name": "@essex/shellrunner",
 	"version": "8.0.0-alpha.26",
 	"description": "A set of utility libraries for executing shell commands",
+	"license": "MIT",
 	"main": "lib/index.js",
 	"types": "lib/index.d.ts",
 	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
@@ -9,7 +10,6 @@
 	"contributors": [
 		"Chris Trevino <chtrevin@microsoft.com>"
 	],
-	"license": "MIT",
 	"scripts": {
 		"build": "tsc",
 		"clean": "rimraf lib"

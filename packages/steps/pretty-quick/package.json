@@ -1,6 +1,7 @@
 {
 	"name": "@essex/build-step-pretty-quick",
 	"version": "8.0.0-alpha.35",
+	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
 	"scripts": {

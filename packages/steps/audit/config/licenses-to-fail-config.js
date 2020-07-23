@@ -5,8 +5,9 @@
 const fs = require('fs')
 const path = require('path')
 const cwd = process.cwd()
-const licensesPath = path.join(cwd, 'allowedLicenses.js')
-const extraLicenses = fs.existsSync(licensesPath) ? require(licensesPath) : []
+const licensesPath = path.join(cwd, 'licenses-to-fail-config.js')
+const customConfig = fs.existsSync(licensesPath) ? require(licensesPath) : {}
+const extraAllowedLicenses = customConfig.allowedLicenses || []
 
 module.exports = {
 	allowedLicenses: [
@@ -26,7 +27,10 @@ module.exports = {
 		'CC-BY-2.0',
 		'CC-BY-3.0',
 		'CC-BY-4.0',
-		...extraLicenses,
+		// Data Licenses
+		'ODC-By-1.0',
+		...extraAllowedLicenses,
 	],
 	warnOnUnknown: true,
+	...customConfig,
 }

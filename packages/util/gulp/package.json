@@ -1,6 +1,7 @@
 {
 	"name": "@essex/build-utils",
 	"version": "8.0.0-alpha.34",
+	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
 	"scripts": {
