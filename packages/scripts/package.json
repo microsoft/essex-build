@@ -1,6 +1,6 @@
 {
 	"name": "@essex/scripts",
-	"version": "8.0.3",
+	"version": "8.0.4",
 	"description": "A set of scripts to make a essex javascript engineer's life easier",
 	"main": "lib/index.js",
 	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
@@ -22,7 +22,7 @@
 		"@essex/build-step-babel": "^8.0.1",
 		"@essex/build-step-clean": "^8.0.1",
 		"@essex/build-step-commitlint": "^8.0.1",
-		"@essex/build-step-docs": "^8.0.3",
+		"@essex/build-step-docs": "^8.0.4",
 		"@essex/build-step-eslint": "^8.0.2",
 		"@essex/build-step-init": "^8.0.3",
 		"@essex/build-step-jest": "^8.0.1",
