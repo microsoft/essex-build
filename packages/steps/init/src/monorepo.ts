@@ -25,7 +25,10 @@ ${INIT_INSTRUCTIONS}
 `
 
 const CONFIG_FILES = [
+	'.docsignore',
 	'.docsrc',
+	'.eslintignore',
+	'.eslintrc',
 	'.gitignore',
 	'.prettierignore',
 	'tsconfig.json',

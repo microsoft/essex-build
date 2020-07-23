@@ -18,7 +18,7 @@ const unified = require('unified')
 const engine = require('unified-engine')
 const report = require('vfile-reporter')
 
-const textExtensions = [
+const extensions = [
 	'txt',
 	'text',
 	'md',
@@ -41,19 +41,7 @@ export function app(
 	input: string[],
 	{ verbose, quiet }: AppArgs,
 ): Promise<number> {
-	const extensions = textExtensions
-	const defaultGlobs = [
-		'{README,readme,docs/**/,doc/**/,}*.{' + extensions.join(',') + '}',
-	]
-	let silentlyIgnore = false
-	let globs: string[]
-
-	if (input.length === 0) {
-		globs = defaultGlobs
-		silentlyIgnore = true
-	} else {
-		globs = input
-	}
+	const [globs, silentlyIgnore] = getGlobs(input)
 
 	return new Promise(resolve => {
 		engine(
@@ -68,7 +56,7 @@ export function app(
 				rcName: '.docsrc',
 				packageField: 'docs',
 				ignoreName: '.docsignore',
-				silentlyIgnore: silentlyIgnore,
+				silentlyIgnore,
 				frail: true,
 				defaultConfig: transform(),
 			},
@@ -115,4 +103,20 @@ export function app(
 
 		return { plugins }
 	}
+}
+
+function getGlobs(input: string[]): [string[], boolean] {
+	const defaultGlobs = [
+		'{README,readme,docs/**/,doc/**/,}*.{' + extensions.join(',') + '}',
+	]
+	let silentlyIgnore = false
+	let globs: string[]
+
+	if (input.length === 0) {
+		globs = defaultGlobs
+		silentlyIgnore = true
+	} else {
+		globs = input
+	}
+	return [globs, silentlyIgnore]
 }
