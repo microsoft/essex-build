@@ -6,6 +6,9 @@
 import { gulpify } from '@essex/build-utils'
 import { getJestConfiguration } from '@essex/jest-config'
 import { runCLI } from '@jest/core'
+import * as debug from 'debug'
+
+const log = debug('essex:jest')
 
 export interface TestCommandOptions {
 	verbose?: boolean
@@ -29,9 +32,11 @@ export function jest({
 	browser,
 }: TestCommandOptions): Promise<void> {
 	try {
+		const jestConfig = getJestConfiguration()
+		log('using jest configuration', JSON.stringify(jestConfig, null, 2))
 		return runCLI(
 			{
-				...getJestConfiguration(),
+				...jestConfig,
 				verbose,
 				coverage,
 				watch,

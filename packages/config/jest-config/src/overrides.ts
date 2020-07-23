@@ -16,11 +16,27 @@ export function getJestConfigOverride(): any | undefined {
 /**
  * Gets the ts-jest TSConfig to use
  */
-export function getTsConfigFile(): string {
-	if (!existsSync(OVERRIDE_TSCONFIG)) {
-		throw new Error('tsconfig.jest.json must be present')
+export function getTsConfigFile(): string | any {
+	if (existsSync(OVERRIDE_TSCONFIG)) {
+		return '<rootDir>/tsconfig.jest.json'
+	} else {
+		return {
+			module: 'CommonJS',
+			target: 'ES2015',
+			moduleResolution: 'Node',
+			jsx: 'react',
+			forceConsistentCasingInFileNames: true,
+			declaration: false,
+			esModuleInterop: true,
+			allowSyntheticDefaultImports: true,
+			allowJs: true,
+			resolveJsonModule: true,
+			experimentalDecorators: true,
+			emitDecoratorMetadata: true,
+			lib: ['esnext', 'dom'],
+			types: ['node', 'jest'],
+		}
 	}
-	return '<rootDir>/tsconfig.jest.json'
 }
 
 /**
