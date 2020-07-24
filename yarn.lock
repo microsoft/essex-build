@@ -2024,9 +2024,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/alpha-build-utils@workspace:."
   dependencies:
-    "@essex/eslint-config": ^8.0.0
-    "@essex/eslint-plugin": ^8.0.0
-    "@essex/scripts": ^8.0.0
+    "@essex/eslint-config": ^8.0.2
+    "@essex/eslint-plugin": ^8.0.1
+    "@essex/jest-config": ^8.0.10
+    "@essex/scripts": ^8.0.12
     husky: ^4.2.5
     lerna: ^3.22.1
     npm-run-all: ^4.1.5
@@ -2335,7 +2336,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/eslint-config@^8.0.0, @essex/eslint-config@^8.0.2, @essex/eslint-config@workspace:packages/config/eslint-config":
+"@essex/eslint-config@^8.0.2, @essex/eslint-config@workspace:packages/config/eslint-config":
   version: 0.0.0-use.local
   resolution: "@essex/eslint-config@workspace:packages/config/eslint-config"
   dependencies:
@@ -2345,7 +2346,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/eslint-plugin@^8.0.0, @essex/eslint-plugin@^8.0.1, @essex/eslint-plugin@workspace:packages/config/eslint-plugin":
+"@essex/eslint-plugin@^8.0.1, @essex/eslint-plugin@workspace:packages/config/eslint-plugin":
   version: 0.0.0-use.local
   resolution: "@essex/eslint-plugin@workspace:packages/config/eslint-plugin"
   dependencies:
@@ -2394,7 +2395,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/scripts@^8.0.0, @essex/scripts@workspace:packages/scripts":
+"@essex/scripts@^8.0.12, @essex/scripts@workspace:packages/scripts":
   version: 0.0.0-use.local
   resolution: "@essex/scripts@workspace:packages/scripts"
   dependencies:
