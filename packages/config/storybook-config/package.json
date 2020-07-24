@@ -1,6 +1,6 @@
 {
 	"name": "@essex/storybook-config",
-	"version": "8.0.0",
+	"version": "8.0.1",
 	"author": "Chris Trevino <chtrevin@microsoft.com>",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
@@ -10,8 +10,9 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@essex/babel-config": "^8.0.0",
-		"@essex/build-util-hoister": "^8.0.0",
+		"@babel/core": "^7.10.5",
+		"@essex/babel-config": "^8.0.1",
+		"@essex/build-util-hoister": "^8.0.1",
 		"@mdx-js/loader": "^1.6.13",
 		"@storybook/addon-a11y": "^5.3.19",
 		"@storybook/addon-actions": "^5.3.19",
@@ -24,11 +25,19 @@
 		"cache-loader": "^4.1.0",
 		"fork-ts-checker-webpack-plugin": "^5.0.8",
 		"react-docgen-typescript-loader": "^3.7.2",
-		"ts-loader": "^8.0.1"
+		"react-is": "^16.13.1",
+		"ts-loader": "^8.0.1",
+		"webpack": "^4.43.0"
 	},
 	"devDependencies": {
 		"@types/node": "^14.0.24",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
 		"rimraf": "^3.0.2",
 		"typescript": "^3.9.7"
+	},
+	"peerDependencies": {
+		"react": ">= 16.13.1",
+		"react-dom": ">= 16.13.1"
 	}
 }

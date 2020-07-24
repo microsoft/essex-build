@@ -4,8 +4,11 @@
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { gulpify } from '@essex/build-utils'
-import config from '@essex/jest-config'
+import { getJestConfiguration } from '@essex/jest-config'
 import { runCLI } from '@jest/core'
+import * as debug from 'debug'
+
+const log = debug('essex:jest')
 
 export interface TestCommandOptions {
 	verbose?: boolean
@@ -29,9 +32,8 @@ export function jest({
 	browser,
 }: TestCommandOptions): Promise<void> {
 	try {
-		const jestConfig: any = {
-			...config,
-		}
+		const jestConfig = getJestConfiguration()
+		log('using jest configuration', JSON.stringify(jestConfig, null, 2))
 		return runCLI(
 			{
 				...jestConfig,
@@ -45,11 +47,11 @@ export function jest({
 				browser,
 			},
 			[process.cwd()],
-		).then(({ results }) => {
-			if (results.numFailedTests || results.numFailedTestSuites) {
-				return Promise.reject()
-			} else {
-				return Promise.resolve()
+		).then(({ results: { numFailedTestSuites, numFailedTests } }) => {
+			if (numFailedTests > 0 || numFailedTestSuites > 0) {
+				throw new Error(
+					`${numFailedTests} failed tests; ${numFailedTestSuites} failed suites`,
+				)
 			}
 		})
 	} catch (err) {

@@ -14,7 +14,7 @@ export default function start(program: Command): void {
 			return Promise.resolve()
 				.then(() => run(isCleanJob))
 				.then(({ code }) =>
-					code !== 0 ? run(statusJob).then(() => code) : code,
+					code !== 0 ? run(statusJob, diffJob).then(() => code) : code,
 				)
 				.then(code => {
 					process.exitCode = code
@@ -39,4 +39,8 @@ const isCleanJob: Job = {
 const statusJob: Job = {
 	exec: 'git',
 	args: ['status'],
+}
+const diffJob: Job = {
+	exec: 'git',
+	args: ['diff', '--exit-code'],
 }
