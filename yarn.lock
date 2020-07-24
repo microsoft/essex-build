@@ -2051,7 +2051,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-audit@^8.0.1, @essex/build-step-audit@workspace:packages/steps/audit":
+"@essex/build-step-audit@^8.0.11, @essex/build-step-audit@workspace:packages/steps/audit":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-audit@workspace:packages/steps/audit"
   dependencies:
@@ -2154,7 +2154,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-init@^8.0.5, @essex/build-step-init@workspace:packages/steps/init":
+"@essex/build-step-init@^8.0.10, @essex/build-step-init@workspace:packages/steps/init":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-init@workspace:packages/steps/init"
   dependencies:
@@ -2167,12 +2167,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-jest@^8.0.5, @essex/build-step-jest@workspace:packages/steps/jest":
+"@essex/build-step-jest@^8.0.10, @essex/build-step-jest@workspace:packages/steps/jest":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-jest@workspace:packages/steps/jest"
   dependencies:
     "@essex/build-utils": ^8.0.1
-    "@essex/jest-config": ^8.0.5
+    "@essex/jest-config": ^8.0.10
     "@essex/tasklogger": ^8.0.1
     "@types/debug": ^4.1.5
     "@types/node": ^14.0.24
@@ -2371,7 +2371,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/jest-config@^8.0.5, @essex/jest-config@workspace:packages/config/jest-config":
+"@essex/jest-config@^8.0.10, @essex/jest-config@workspace:packages/config/jest-config":
   version: 0.0.0-use.local
   resolution: "@essex/jest-config@workspace:packages/config/jest-config"
   dependencies:
@@ -2398,14 +2398,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/scripts@workspace:packages/scripts"
   dependencies:
-    "@essex/build-step-audit": ^8.0.1
+    "@essex/build-step-audit": ^8.0.11
     "@essex/build-step-babel": ^8.0.1
     "@essex/build-step-clean": ^8.0.1
     "@essex/build-step-commitlint": ^8.0.1
     "@essex/build-step-docs": ^8.0.4
     "@essex/build-step-eslint": ^8.0.2
-    "@essex/build-step-init": ^8.0.5
-    "@essex/build-step-jest": ^8.0.5
+    "@essex/build-step-init": ^8.0.10
+    "@essex/build-step-jest": ^8.0.10
     "@essex/build-step-lint-staged": ^8.0.1
     "@essex/build-step-pretty-quick": ^8.0.1
     "@essex/build-step-recipes": ^8.0.1
@@ -2440,10 +2440,19 @@ __metadata:
     supports-color: ^7.1.0
     typescript: ^3.9.7
   peerDependencies:
+    "@essex/eslint-config": ">= 8.0.2"
+    "@essex/jest-config": ">= 8.0.9"
+    "@essex/prettier-config": ">= 8.0.1"
     husky: ">= 4.2.5"
     react: ">= 16.13.1"
     react-dom: ">= 16.13.1"
   peerDependenciesMeta:
+    "@essex/eslint-config":
+      optional: true
+    "@essex/jest-config":
+      optional: true
+    "@essex/prettier-config":
+      optional: true
     react:
       optional: true
     react-dom:

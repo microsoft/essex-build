@@ -71,12 +71,6 @@
 		"react-dom": ">= 16.13.1"
 	},
 	"peerDependenciesMeta": {
-		"react": {
-			"optional": true
-		},
-		"react-dom": {
-			"optional": true
-		},
 		"@essex/eslint-config": {
 			"optional": true
 		},
@@ -84,6 +78,12 @@
 			"optional": true
 		},
 		"@essex/prettier-config": {
+			"optional": true
+		},
+		"react": {
+			"optional": true
+		},
+		"react-dom": {
 			"optional": true
 		}
 	}
