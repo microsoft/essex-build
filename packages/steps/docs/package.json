@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-docs",
-	"version": "8.0.4",
+	"version": "8.0.13",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
@@ -9,7 +9,7 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@essex/build-utils": "^8.0.1",
+		"@essex/build-utils": "^8.0.13",
 		"dictionary-en": "^3.0.1",
 		"remark-frontmatter": "^2.0.0",
 		"remark-message-control": "^6.0.0",
