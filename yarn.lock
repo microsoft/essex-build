@@ -2026,7 +2026,6 @@ __metadata:
   dependencies:
     "@essex/eslint-config": ^8.0.2
     "@essex/eslint-plugin": ^8.0.1
-    "@essex/jest-config": ^8.0.10
     "@essex/scripts": ^8.0.12
     husky: ^4.2.5
     lerna: ^3.22.1
