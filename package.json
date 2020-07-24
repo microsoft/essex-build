@@ -10,8 +10,8 @@
 		"clean": "lerna run clean --stream --parallel",
 		"build": "lerna run build --stream",
 		"test": "essex test",
-		"publish_packages": "lerna publish",
-		"release": "run-s build publish_packages",
+		"release:publish": "lerna publish",
+		"release": "run-s clean build release:publish",
 		"lint": "essex lint --docs --fix",
 		"prettify": "essex prettify",
 		"audit_dependencies": "essex audit",
@@ -28,9 +28,9 @@
 		]
 	},
 	"devDependencies": {
-		"@essex/eslint-config": "^8.0.0-alpha.12",
-		"@essex/eslint-plugin": "^8.0.0-alpha.12",
-		"@essex/scripts": "^8.0.0-alpha.23",
+		"@essex/eslint-config": "^8.0.2",
+		"@essex/eslint-plugin": "^8.0.1",
+		"@essex/scripts": "^8.0.12",
 		"husky": "^4.2.5",
 		"lerna": "^3.22.1",
 		"npm-run-all": "^4.1.5",

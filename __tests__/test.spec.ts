@@ -4,6 +4,7 @@
  */
 describe('the test command', () => {
 	it('works', () => {
-		expect(true).toBeTruthy()
+		const value = { a: { b: { c: true } } }
+		expect(value?.a?.b?.c).toBeTruthy()
 	})
 })

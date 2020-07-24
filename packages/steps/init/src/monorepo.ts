@@ -25,10 +25,14 @@ ${INIT_INSTRUCTIONS}
 `
 
 const CONFIG_FILES = [
+	'.docsignore',
 	'.docsrc',
+	'.eslintignore',
+	'.eslintrc',
 	'.gitignore',
 	'.prettierignore',
 	'tsconfig.json',
+	'jest.config.js',
 ]
 
 export function initMonorepo(): Promise<number> {
@@ -104,7 +108,7 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 	log.info(`
 	You should install these recommended peer dependencies
 
-	yarn add --dev -W lerna npm-run-all husky lint-staged commitlint
+	yarn add --dev -W lerna npm-run-all husky @typescript-eslint/eslint-plugin @typescript-eslint/eslint-parser
 	`)
 	return Promise.resolve(0)
 }
