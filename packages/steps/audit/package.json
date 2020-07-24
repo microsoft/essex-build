@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-audit",
-	"version": "8.0.1",
+	"version": "8.0.11",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
