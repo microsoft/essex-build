@@ -31,13 +31,16 @@ export function webpackServe({
 							reject(err)
 						}
 					})
-					function finish() {
-						console.log('received exit signal, shutting down...')
-						server.close()
-						resolve()
+					function finish(signal: string) {
+						console.log(`received exit signal (${signal}), shutting down...`)
+						return function handleSignal() {
+							server.close(() => {
+								resolve()
+								process.exit()
+							})
+						}
 					}
-					process.on('SIGINT', finish)
-					process.on('SIGTERM', finish)
+					EXIT_SIGNALS.forEach(finish)
 				} catch (err) {
 					console.log('error running webpack serve', err)
 					reject(err)
@@ -45,3 +48,5 @@ export function webpackServe({
 			}),
 	)
 }
+
+const EXIT_SIGNALS: string[] = ['SIGINT', 'SIGTERM']
