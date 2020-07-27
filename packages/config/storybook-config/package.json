@@ -1,6 +1,6 @@
 {
 	"name": "@essex/storybook-config",
-	"version": "8.0.1",
+	"version": "8.0.13",
 	"author": "Chris Trevino <chtrevin@microsoft.com>",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
@@ -11,8 +11,8 @@
 	},
 	"dependencies": {
 		"@babel/core": "^7.10.5",
-		"@essex/babel-config": "^8.0.1",
-		"@essex/build-util-hoister": "^8.0.1",
+		"@essex/babel-config": "^8.0.13",
+		"@essex/build-util-hoister": "^8.0.13",
 		"@mdx-js/loader": "^1.6.13",
 		"@storybook/addon-a11y": "^5.3.19",
 		"@storybook/addon-actions": "^5.3.19",

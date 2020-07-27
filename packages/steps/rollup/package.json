@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-rollup",
-	"version": "8.0.1",
+	"version": "8.0.13",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
@@ -9,9 +9,9 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@essex/build-utils": "^8.0.1",
-		"@essex/shellrunner": "^8.0.1",
-		"@essex/tasklogger": "^8.0.1"
+		"@essex/build-utils": "^8.0.13",
+		"@essex/shellrunner": "^8.0.13",
+		"@essex/tasklogger": "^8.0.13"
 	},
 	"devDependencies": {
 		"@types/node": "^14.0.24",
