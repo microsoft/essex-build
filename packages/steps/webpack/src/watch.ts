@@ -3,11 +3,13 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import * as webpack from 'webpack'
+import { getConfig } from './getConfig'
 import { WebpackCompilerOptions } from './types'
 
-export function webpackWatch(config: WebpackCompilerOptions): Promise<number> {
+export function webpackWatch(opts: WebpackCompilerOptions): Promise<number> {
 	return new Promise((resolve, reject) => {
 		try {
+			const config = getConfig(opts)
 			const compiler = webpack(config)
 			compiler.watch(
 				{
