@@ -1,1 +1,3 @@
-packages/scripts/config/.audit-ci.json
+node_modules/
+dist/
+lib/
