@@ -8,7 +8,7 @@ import { gulpify, filterShellCode } from '@essex/build-utils'
 import { run } from '@essex/shellrunner'
 
 const cwd = process.cwd()
-const defaultPath = join(__dirname, '../config/.storybook')
+const defaultPath = join(__dirname, '../config/storybook')
 const overridePath = join(cwd, '.storybook')
 const configPath = existsSync(overridePath) ? overridePath : defaultPath
 

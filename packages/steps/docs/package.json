@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-docs",
-	"version": "8.0.14",
+	"version": "8.0.15",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
@@ -9,7 +9,7 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@essex/build-utils": "^8.0.14",
+		"@essex/build-utils": "^8.0.15",
 		"dictionary-en": "^3.0.1",
 		"remark-frontmatter": "^2.0.0",
 		"remark-message-control": "^6.0.0",
@@ -19,12 +19,12 @@
 		"retext-equality": "^5.1.0",
 		"retext-profanities": "^6.0.0",
 		"retext-spell": "^4.0.0",
-		"unified": "^9.0.0",
+		"unified": "^9.1.0",
 		"unified-engine": "^8.0.0",
 		"vfile-reporter": "^6.0.1"
 	},
 	"devDependencies": {
-		"@types/node": "^14.0.24",
+		"@types/node": "^14.0.27",
 		"rimraf": "^3.0.2",
 		"typescript": "3.9.7"
 	}

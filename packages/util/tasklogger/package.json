@@ -1,6 +1,6 @@
 {
 	"name": "@essex/tasklogger",
-	"version": "8.0.14",
+	"version": "8.0.15",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
@@ -12,7 +12,7 @@
 		"chalk": "^4.1.0"
 	},
 	"devDependencies": {
-		"@types/node": "^14.0.24",
+		"@types/node": "^14.0.27",
 		"rimraf": "^3.0.2",
 		"typescript": "3.9.7"
 	}
