@@ -13,7 +13,7 @@
 		"@babel/core": "^7.10.5",
 		"@essex/babel-config": "^8.0.14",
 		"@essex/build-util-hoister": "^8.0.14",
-		"@mdx-js/loader": "^1.6.15",
+		"@mdx-js/loader": "^1.6.16",
 		"@storybook/addon-a11y": "^5.3.19",
 		"@storybook/addon-actions": "^5.3.19",
 		"@storybook/addon-docs": "^5.3.19",

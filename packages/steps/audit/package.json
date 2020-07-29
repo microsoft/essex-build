@@ -13,7 +13,7 @@
 		"@essex/shellrunner": "^8.0.14",
 		"@essex/tasklogger": "^8.0.14",
 		"audit-ci": "^3.1.1",
-		"license-to-fail": "^3.0.0"
+		"license-to-fail": "^4.0.0"
 	},
 	"devDependencies": {
 		"@types/node": "^14.0.27",
