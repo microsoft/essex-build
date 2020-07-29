@@ -32,8 +32,8 @@ export function webpackServe({
 						}
 					})
 					function finish(signal: string) {
-						console.log(`received exit signal (${signal}), shutting down...`)
 						return function handleSignal() {
+							console.log(`received exit signal (${signal}), shutting down...`)
 							server.close(() => {
 								resolve()
 								process.exit()
