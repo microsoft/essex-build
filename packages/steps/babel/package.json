@@ -22,7 +22,7 @@
 		"@types/gulp": "^4.0.6",
 		"@types/gulp-babel": "^6.1.29",
 		"@types/gulp-debug": "^2.0.31",
-		"@types/node": "^14.0.24",
+		"@types/node": "^14.0.27",
 		"rimraf": "^3.0.2",
 		"typescript": "3.9.7"
 	}
