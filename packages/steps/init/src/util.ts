@@ -6,9 +6,9 @@ import { exists, copyFile } from 'fs'
 import { join } from 'path'
 import * as log from '@essex/tasklogger'
 
-export function copyConfigFile(file: string): Promise<number> {
+export function copyConfigFile(file: string, dot = false): Promise<number> {
 	const scriptPath = join(__dirname, `../config/${file}`)
-	const pkgPath = join(process.cwd(), file)
+	const pkgPath = join(process.cwd(), `${dot ? '.' : ''}${file}`)
 
 	return fileExists(pkgPath).then(pkgFileExists => {
 		if (pkgFileExists) {

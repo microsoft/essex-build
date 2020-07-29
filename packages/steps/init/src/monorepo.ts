@@ -24,23 +24,23 @@ Check the logs for more details.
 ${INIT_INSTRUCTIONS}
 `
 
-const CONFIG_FILES = [
-	'.docsignore',
-	'.docsrc',
-	'.eslintignore',
-	'.eslintrc',
-	'.gitignore',
-	'.prettierignore',
-	'tsconfig.json',
-	'jest.config.js',
+const CONFIG_FILES_DOT = [
+	'docsignore',
+	'docsrc',
+	'eslintignore',
+	'eslintrc',
+	'gitignore',
+	'prettierignore',
 ]
+const CONFIG_FILES_NODOT = ['tsconfig.json', 'jest.config.js']
 
 export function initMonorepo(): Promise<number> {
 	return Promise.resolve()
 		.then(() =>
 			Promise.all([
 				configurePackageJsonForMonorepo(),
-				...CONFIG_FILES.map(copyConfigFile),
+				...CONFIG_FILES_DOT.map(f => copyConfigFile(f, true)),
+				...CONFIG_FILES_NODOT.map(f => copyConfigFile(f, false)),
 			]),
 		)
 		.then(results => {
