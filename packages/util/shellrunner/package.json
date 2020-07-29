@@ -1,6 +1,6 @@
 {
 	"name": "@essex/shellrunner",
-	"version": "8.0.14",
+	"version": "8.0.15",
 	"description": "A set of utility libraries for executing shell commands",
 	"license": "MIT",
 	"main": "lib/index.js",
@@ -15,7 +15,7 @@
 		"clean": "rimraf lib"
 	},
 	"dependencies": {
-		"@essex/build-util-hoister": "^8.0.14",
+		"@essex/build-util-hoister": "^8.0.15",
 		"colors": "^1.4.0",
 		"cross-spawn": "^7.0.3",
 		"debug": "^4.1.1",

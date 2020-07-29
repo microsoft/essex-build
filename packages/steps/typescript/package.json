@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-typescript",
-	"version": "8.0.14",
+	"version": "8.0.15",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
@@ -9,8 +9,8 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@essex/build-utils": "^8.0.14",
-		"@essex/tasklogger": "^8.0.14",
+		"@essex/build-utils": "^8.0.15",
+		"@essex/tasklogger": "^8.0.15",
 		"gulp": "^4.0.2",
 		"gulp-debug": "^4.0.0",
 		"gulp-typescript": "^6.0.0-alpha.1",
