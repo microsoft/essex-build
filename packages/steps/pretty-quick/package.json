@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-pretty-quick",
-	"version": "8.0.13",
+	"version": "8.0.14",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
@@ -9,7 +9,7 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@essex/build-utils": "^8.0.13",
+		"@essex/build-utils": "^8.0.14",
 		"chalk": "^4.1.0",
 		"prettier": "^2.0.5",
 		"pretty-quick": "^2.0.1"
