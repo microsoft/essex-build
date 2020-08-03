@@ -5,9 +5,9 @@
 export function getBrowsersList(
 	env: string,
 	setting: undefined | string[] | Record<string, string[]>,
-): string[] {
+): string | string[] {
 	if (setting == null) {
-		return ['> 0.25%, not dead']
+		return 'defaults'
 	} else if (Array.isArray(setting)) {
 		return setting
 	} else {

@@ -9,8 +9,8 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@babel/core": "^7.10.5",
-		"@babel/types": "^7.10.5",
+		"@babel/core": "^7.11.0",
+		"@babel/types": "^7.11.0",
 		"@essex/babel-config": "^9.0.0",
 		"@essex/build-utils": "^9.0.0",
 		"@essex/tasklogger": "^9.0.0",

@@ -10,7 +10,7 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@babel/core": "^7.10.5",
+		"@babel/core": "^7.11.0",
 		"@essex/babel-config": "^9.0.0",
 		"@essex/build-util-hoister": "^9.0.0",
 		"@mdx-js/loader": "^1.6.16",
@@ -23,11 +23,11 @@
 		"@storybook/source-loader": "^5.3.19",
 		"babel-loader": "^8.1.0",
 		"cache-loader": "^4.1.0",
-		"fork-ts-checker-webpack-plugin": "^5.0.12",
+		"fork-ts-checker-webpack-plugin": "^5.0.14",
 		"react-docgen-typescript-loader": "^3.7.2",
 		"react-is": "^16.13.1",
-		"ts-loader": "^8.0.1",
-		"webpack": "^4.44.0"
+		"ts-loader": "^8.0.2",
+		"webpack": "^4.44.1"
 	},
 	"devDependencies": {
 		"@types/node": "^14.0.27",

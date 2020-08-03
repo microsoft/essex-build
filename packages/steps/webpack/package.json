@@ -12,7 +12,7 @@
 		"@essex/build-utils": "^9.0.0",
 		"@essex/tasklogger": "^9.0.0",
 		"@essex/webpack-config": "^9.0.0",
-		"webpack": "^4.44.0",
+		"webpack": "^4.44.1",
 		"webpack-dev-server": "^3.11.0"
 	},
 	"devDependencies": {
