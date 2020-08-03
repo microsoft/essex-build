@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-eslint",
-	"version": "8.0.16",
+	"version": "9.0.0",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
@@ -13,9 +13,9 @@
 		"config/"
 	],
 	"dependencies": {
-		"@essex/build-utils": "^8.0.16",
-		"@essex/eslint-config": "^8.0.16",
-		"@essex/eslint-plugin": "^8.0.16",
+		"@essex/build-utils": "^9.0.0",
+		"@essex/eslint-config": "^9.0.0",
+		"@essex/eslint-plugin": "^9.0.0",
 		"@typescript-eslint/eslint-plugin": "^3.7.1",
 		"@typescript-eslint/parser": "^3.7.1",
 		"eslint": "^7.5.0"
