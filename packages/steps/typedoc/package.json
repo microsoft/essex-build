@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-typedoc",
-	"version": "8.0.16",
+	"version": "9.0.0",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
@@ -9,8 +9,8 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@essex/build-utils": "^8.0.16",
-		"@essex/tasklogger": "^8.0.16",
+		"@essex/build-utils": "^9.0.0",
+		"@essex/tasklogger": "^9.0.0",
 		"typedoc": "^0.17.8",
 		"typescript": "3.9.7"
 	},

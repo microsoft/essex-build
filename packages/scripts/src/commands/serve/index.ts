@@ -15,13 +15,14 @@ export default function build(program: Command): void {
 			'enable production optimization or development hints ("development" | "production" | "none")',
 			'development',
 		)
+		.option('--storybook', 'serve a storybook package')
 		.option('-v, --verbose', 'verbose output')
 		.action(
 			(options: ServeCommandOptions): Promise<any> => {
 				return Promise.resolve()
 					.then(() => execute(options))
 					.catch(err => {
-						console.log('error starting webpack server', err)
+						console.log('error with essex serve', err)
 						process.exitCode = 1
 					})
 			},

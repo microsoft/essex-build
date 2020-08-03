@@ -1,6 +1,6 @@
 {
 	"name": "@essex/tasklogger",
-	"version": "8.0.16",
+	"version": "9.0.0",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
