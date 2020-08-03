@@ -4,7 +4,7 @@
  */
 export function createBabelConfig(
 	modules: 'cjs' | 'esm',
-	browsers: string[],
+	targets: string | string[] | Record<string, string>,
 	useBuiltIns: boolean,
 	corejs: undefined | { version: number },
 ): any {
@@ -14,19 +14,11 @@ export function createBabelConfig(
 				require('@babel/preset-env'),
 				{
 					modules: modules === 'cjs' ? 'cjs' : false,
-					targets: {
-						browsers,
-					},
+					targets,
 					useBuiltIns,
 					corejs,
 				},
 			],
-		],
-		plugins: [
-			require('@babel/plugin-proposal-class-properties'),
-			require('@babel/plugin-proposal-object-rest-spread'),
-			require('@babel/plugin-proposal-optional-chaining'),
-			require('@babel/plugin-proposal-nullish-coalescing-operator'),
 		],
 	} as any
 }
