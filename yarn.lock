@@ -2442,7 +2442,7 @@ __metadata:
     "@types/rimraf": ^3.0.0
     chalk: ^4.1.0
     debug: ^4.1.1
-    jest: 26.1.x
+    jest: ~26.1.0
     rimraf: ^3.0.2
     typescript: 3.9.7
   languageName: unknown
@@ -2644,7 +2644,7 @@ __metadata:
     jest-config: ^26.1.0
     jest-junit-reporter: ^1.1.0
     rimraf: ^3.0.2
-    ts-jest: 26.1.x
+    ts-jest: ~26.1.0
     typescript: ^3.9.7
   peerDependencies:
     jest: ">= 26"
@@ -14729,7 +14729,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jest@npm:26.1.x":
+"jest@npm:~26.1.0":
   version: 26.1.0
   resolution: "jest@npm:26.1.0"
   dependencies:
@@ -22356,7 +22356,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"ts-jest@npm:26.1.x":
+"ts-jest@npm:~26.1.0":
   version: 26.1.4
   resolution: "ts-jest@npm:26.1.4"
   dependencies:

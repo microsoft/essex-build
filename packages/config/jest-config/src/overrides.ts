@@ -22,14 +22,12 @@ export function getTsConfig(): string | any {
 	} else {
 		return {
 			module: 'CommonJS',
-			target: 'ES2015',
+			target: 'ES5',
 			moduleResolution: 'Node',
 			jsx: 'react',
 			forceConsistentCasingInFileNames: true,
-			declaration: false,
 			esModuleInterop: true,
 			allowSyntheticDefaultImports: true,
-			allowJs: true,
 			resolveJsonModule: true,
 			experimentalDecorators: true,
 			emitDecoratorMetadata: true,
