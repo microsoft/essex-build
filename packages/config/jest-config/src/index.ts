@@ -6,6 +6,7 @@
 import { configure } from './configure'
 import { getJestConfigOverride, getTsConfig, getSetupFiles } from './overrides'
 export * from './configure'
+export * from './overrides'
 
 /**
  * If a Jest config is present, use that - otherwise get the override
