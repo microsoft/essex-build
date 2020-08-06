@@ -9,7 +9,7 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@babel/core": "^7.11.0",
+		"@babel/core": "^7.11.1",
 		"@essex/build-utils": "^9.0.2",
 		"@essex/shellrunner": "^9.0.2",
 		"@essex/storybook-config": "^9.0.2",

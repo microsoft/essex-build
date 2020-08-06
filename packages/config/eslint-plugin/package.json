@@ -13,7 +13,7 @@
 		"msHeader.js"
 	],
 	"dependencies": {
-		"@babel/core": "^7.11.0",
+		"@babel/core": "^7.11.1",
 		"@babel/types": "^7.11.0",
 		"@typescript-eslint/eslint-plugin": "^3.8.0",
 		"@typescript-eslint/parser": "^3.8.0",
