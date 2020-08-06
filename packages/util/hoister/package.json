@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-util-hoister",
-	"version": "9.0.2",
+	"version": "9.0.3",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
