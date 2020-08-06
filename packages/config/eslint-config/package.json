@@ -1,10 +1,10 @@
 {
 	"name": "@essex/eslint-config",
 	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
-	"version": "9.0.2",
+	"version": "9.0.3",
 	"license": "MIT",
 	"devDependencies": {
-		"@essex/eslint-plugin": "^9.0.2"
+		"@essex/eslint-plugin": "^9.0.3"
 	},
 	"peerDependencies": {
 		"@essex/eslint-plugin": ">= 8.0.0"
