@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-storybook",
-	"version": "9.0.3",
+	"version": "9.1.0",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
@@ -10,10 +10,10 @@
 	},
 	"dependencies": {
 		"@babel/core": "^7.11.1",
-		"@essex/build-utils": "^9.0.3",
-		"@essex/shellrunner": "^9.0.3",
-		"@essex/storybook-config": "^9.0.3",
-		"@essex/tasklogger": "^9.0.3",
+		"@essex/build-utils": "^9.1.0",
+		"@essex/shellrunner": "^9.1.0",
+		"@essex/storybook-config": "^9.1.0",
+		"@essex/tasklogger": "^9.1.0",
 		"@storybook/react": "^5.3.19",
 		"babel-loader": "^8.1.0",
 		"webpack": "^4.44.1"
