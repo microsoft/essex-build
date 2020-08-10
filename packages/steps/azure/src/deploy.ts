@@ -67,8 +67,8 @@ async function uploadFile(
 export async function deployBlob(
 	storageAccount: string,
 	storageAccountKey: string,
-	verbose: boolean,
-	directories: string[] = DEFAULT_DIRECTORIES,
+	verbose = false,
+	directories = DEFAULT_DIRECTORIES,
 ): Promise<void> {
 	const containerClient = getBlobContainerClient(
 		storageAccount,
