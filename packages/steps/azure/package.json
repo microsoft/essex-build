@@ -1,5 +1,5 @@
 {
-	"name": "@essex/build-step-recipes",
+	"name": "@essex/build-step-azure",
 	"version": "9.1.0",
 	"license": "MIT",
 	"main": "lib/index.js",
@@ -9,11 +9,14 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@essex/tasklogger": "^9.1.0"
+		"@azure/storage-blob": "^12.2.0-preview.1",
+		"@essex/build-utils": "^9.1.0",
+		"glob": "^7.1.6",
+		"mime-types": "^2.1.27"
 	},
 	"devDependencies": {
+		"@types/mime-types": "^2.1.0",
 		"@types/node": "^14.0.27",
-		"@types/rimraf": "^3.0.0",
 		"rimraf": "^3.0.2",
 		"typescript": "3.9.7"
 	}

@@ -5,6 +5,126 @@ __metadata:
   version: 4
   cacheKey: 5
 
+"@azure/abort-controller@npm:^1.0.0":
+  version: 1.0.1
+  resolution: "@azure/abort-controller@npm:1.0.1"
+  dependencies:
+    tslib: ^1.9.3
+  checksum: dd2ad033953e7b12b4acca7feb9f3c27ac197cc639a13fd362f4559b234022dc016e76529738d7ddc2b841b763ba5338c8afa783f1bd3840e43d1aea08e50d86
+  languageName: node
+  linkType: hard
+
+"@azure/core-asynciterator-polyfill@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@azure/core-asynciterator-polyfill@npm:1.0.0"
+  checksum: 0ca9ab69091dd1a95724884313b6fa0b957d3ead7bcdc055f796599e3854e17e4ecdca193170692d412b5a2b7ccb9c7cfae274c7cbe26b4ab98004b300a285df
+  languageName: node
+  linkType: hard
+
+"@azure/core-auth@npm:^1.1.3":
+  version: 1.1.3
+  resolution: "@azure/core-auth@npm:1.1.3"
+  dependencies:
+    "@azure/abort-controller": ^1.0.0
+    "@azure/core-tracing": 1.0.0-preview.8
+    "@opentelemetry/api": ^0.6.1
+    tslib: ^2.0.0
+  checksum: 878abbde1e4e3b826393cbc0a3cfe613ed7789ce42861f1ffe97a0bba86b2847b55350829a38763e6b57cf3e70751e11de386cffa6c309716297d6b8330c6a94
+  languageName: node
+  linkType: hard
+
+"@azure/core-http@npm:^1.1.1":
+  version: 1.1.6
+  resolution: "@azure/core-http@npm:1.1.6"
+  dependencies:
+    "@azure/abort-controller": ^1.0.0
+    "@azure/core-auth": ^1.1.3
+    "@azure/core-tracing": 1.0.0-preview.9
+    "@azure/logger": ^1.0.0
+    "@opentelemetry/api": ^0.10.2
+    "@types/node-fetch": ^2.5.0
+    "@types/tunnel": ^0.0.1
+    form-data: ^3.0.0
+    node-fetch: ^2.6.0
+    process: ^0.11.10
+    tough-cookie: ^4.0.0
+    tslib: ^2.0.0
+    tunnel: ^0.0.6
+    uuid: ^8.1.0
+    xml2js: ^0.4.19
+  checksum: 3a31144b694d2e9de4c273cfbbf27a1f186d828a3b049a963280beadc5b4f9b3317dbf7a0071f64e970467d5a8bdcbd7b5b2c6c9ddb6325f6efbdaaf1dba0fbb
+  languageName: node
+  linkType: hard
+
+"@azure/core-lro@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@azure/core-lro@npm:1.0.2"
+  dependencies:
+    "@azure/abort-controller": ^1.0.0
+    "@azure/core-http": ^1.1.1
+    events: ^3.0.0
+    tslib: ^1.10.0
+  checksum: 670511274311b8314d143c165639e0434db239df9dbada916e808b276f86d407351bd415a162487d489b337c047dace744535c03d62d4942a43ecc469d1ea964
+  languageName: node
+  linkType: hard
+
+"@azure/core-paging@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@azure/core-paging@npm:1.1.1"
+  dependencies:
+    "@azure/core-asynciterator-polyfill": ^1.0.0
+  checksum: da489b640a46a688c3b8ab4276740dc78c7c6240ea5f18acaf42ba4d9b9778dcf3a4395ed217b5bbfd672b46d059d5ce694bd9ca6bc2380f8db2dc5977449d2f
+  languageName: node
+  linkType: hard
+
+"@azure/core-tracing@npm:1.0.0-preview.8":
+  version: 1.0.0-preview.8
+  resolution: "@azure/core-tracing@npm:1.0.0-preview.8"
+  dependencies:
+    "@opencensus/web-types": 0.0.7
+    "@opentelemetry/api": ^0.6.1
+    tslib: ^1.10.0
+  checksum: 3b51860206b7857ce0159f7c5e6b12f1a98bea2bd4887bcbfa6fcfdd351c312783789ea211b0a157576c5d2fcad0836266ec46231cee5314206678fa2ab108b7
+  languageName: node
+  linkType: hard
+
+"@azure/core-tracing@npm:1.0.0-preview.9":
+  version: 1.0.0-preview.9
+  resolution: "@azure/core-tracing@npm:1.0.0-preview.9"
+  dependencies:
+    "@opencensus/web-types": 0.0.7
+    "@opentelemetry/api": ^0.10.2
+    tslib: ^2.0.0
+  checksum: 93f17f93ca03e60cebd38157943499ba55e0d7656886c92b0896345cc134674095fc45fbd64bbe8f52769a5d08a2890eeda3db57778e27c21f42e65898a15895
+  languageName: node
+  linkType: hard
+
+"@azure/logger@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@azure/logger@npm:1.0.0"
+  dependencies:
+    tslib: ^1.9.3
+  checksum: 710d91a8f389cc5bfcdc207b6cbc13175123d8ece291c996e2c975f40d2af9d00629cbd6965f6e2c1281a24cad74a23621b5fc9d27bd2a98648e2c2b245f246e
+  languageName: node
+  linkType: hard
+
+"@azure/storage-blob@npm:^12.2.0-preview.1":
+  version: 12.2.0-preview.1
+  resolution: "@azure/storage-blob@npm:12.2.0-preview.1"
+  dependencies:
+    "@azure/abort-controller": ^1.0.0
+    "@azure/core-http": ^1.1.1
+    "@azure/core-lro": ^1.0.2
+    "@azure/core-paging": ^1.1.1
+    "@azure/core-tracing": 1.0.0-preview.8
+    "@azure/logger": ^1.0.0
+    "@opentelemetry/api": ^0.6.1
+    events: ^3.0.0
+    tslib: ^2.0.0
+  checksum: f4caa7e3d5365fa1fd43ee666d1cf35d389acb20137cc7cf05d22f395a03ef56d26f17651d023e50b703770f3599ace79d811009772905f3cda839643efb2300
+  languageName: node
+  linkType: hard
+
 "@babel/code-frame@npm:7.5.5":
   version: 7.5.5
   resolution: "@babel/code-frame@npm:7.5.5"
@@ -2311,7 +2431,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/babel-config@^9.0.3, @essex/babel-config@workspace:packages/config/babel-config":
+"@essex/babel-config@^9.1.0, @essex/babel-config@workspace:packages/config/babel-config":
   version: 0.0.0-use.local
   resolution: "@essex/babel-config@workspace:packages/config/babel-config"
   dependencies:
@@ -2327,13 +2447,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-audit@^9.0.3, @essex/build-step-audit@workspace:packages/steps/audit":
+"@essex/build-step-audit@^9.1.0, @essex/build-step-audit@workspace:packages/steps/audit":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-audit@workspace:packages/steps/audit"
   dependencies:
-    "@essex/build-utils": ^9.0.3
-    "@essex/shellrunner": ^9.0.3
-    "@essex/tasklogger": ^9.0.3
+    "@essex/build-utils": ^9.1.0
+    "@essex/shellrunner": ^9.1.0
+    "@essex/tasklogger": ^9.1.0
     "@types/node": ^14.0.27
     audit-ci: ^3.1.1
     license-to-fail: ^4.0.0
@@ -2342,15 +2462,30 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-babel@^9.0.3, @essex/build-step-babel@workspace:packages/steps/babel":
+"@essex/build-step-azure@^9.1.0, @essex/build-step-azure@workspace:packages/steps/azure":
+  version: 0.0.0-use.local
+  resolution: "@essex/build-step-azure@workspace:packages/steps/azure"
+  dependencies:
+    "@azure/storage-blob": ^12.2.0-preview.1
+    "@essex/build-utils": ^9.1.0
+    "@types/mime-types": ^2.1.0
+    "@types/node": ^14.0.27
+    glob: ^7.1.6
+    mime-types: ^2.1.27
+    rimraf: ^3.0.2
+    typescript: 3.9.7
+  languageName: unknown
+  linkType: soft
+
+"@essex/build-step-babel@^9.1.0, @essex/build-step-babel@workspace:packages/steps/babel":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-babel@workspace:packages/steps/babel"
   dependencies:
     "@babel/core": ^7.11.1
     "@babel/types": ^7.11.0
-    "@essex/babel-config": ^9.0.3
-    "@essex/build-utils": ^9.0.3
-    "@essex/tasklogger": ^9.0.3
+    "@essex/babel-config": ^9.1.0
+    "@essex/build-utils": ^9.1.0
+    "@essex/tasklogger": ^9.1.0
     "@types/gulp": ^4.0.6
     "@types/gulp-babel": ^6.1.29
     "@types/gulp-debug": ^2.0.31
@@ -2363,11 +2498,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-clean@^9.0.3, @essex/build-step-clean@workspace:packages/steps/clean":
+"@essex/build-step-clean@^9.1.0, @essex/build-step-clean@workspace:packages/steps/clean":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-clean@workspace:packages/steps/clean"
   dependencies:
-    "@essex/build-utils": ^9.0.3
+    "@essex/build-utils": ^9.1.0
     "@types/node": ^14.0.27
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
@@ -2375,14 +2510,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-commitlint@^9.0.3, @essex/build-step-commitlint@workspace:packages/steps/commitlint":
+"@essex/build-step-commitlint@^9.1.0, @essex/build-step-commitlint@workspace:packages/steps/commitlint":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-commitlint@workspace:packages/steps/commitlint"
   dependencies:
     "@commitlint/cli": ^9.1.1
     "@commitlint/config-conventional": ^9.1.1
-    "@essex/build-utils": ^9.0.3
-    "@essex/shellrunner": ^9.0.3
+    "@essex/build-utils": ^9.1.0
+    "@essex/shellrunner": ^9.1.0
     "@types/node": ^14.0.27
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
@@ -2390,11 +2525,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-docs@^9.0.3, @essex/build-step-docs@workspace:packages/steps/docs":
+"@essex/build-step-docs@^9.1.0, @essex/build-step-docs@workspace:packages/steps/docs":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-docs@workspace:packages/steps/docs"
   dependencies:
-    "@essex/build-utils": ^9.0.3
+    "@essex/build-utils": ^9.1.0
     "@types/node": ^14.0.27
     dictionary-en: ^3.0.1
     remark-frontmatter: ^2.0.0
@@ -2413,29 +2548,29 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-eslint@^9.0.3, @essex/build-step-eslint@workspace:packages/steps/eslint":
+"@essex/build-step-eslint@^9.1.0, @essex/build-step-eslint@workspace:packages/steps/eslint":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-eslint@workspace:packages/steps/eslint"
   dependencies:
-    "@essex/build-utils": ^9.0.3
-    "@essex/eslint-config": ^9.0.3
-    "@essex/eslint-plugin": ^9.0.3
+    "@essex/build-utils": ^9.1.0
+    "@essex/eslint-config": ^9.1.0
+    "@essex/eslint-plugin": ^9.1.0
     "@types/eslint": ^7.2.0
     "@types/node": ^14.0.27
-    "@typescript-eslint/eslint-plugin": ^3.8.0
-    "@typescript-eslint/parser": ^3.8.0
+    "@typescript-eslint/eslint-plugin": ^3.9.0
+    "@typescript-eslint/parser": ^3.9.0
     eslint: ^7.6.0
     rimraf: ^3.0.2
     typescript: 3.9.7
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-init@^9.0.3, @essex/build-step-init@workspace:packages/steps/init":
+"@essex/build-step-init@^9.1.0, @essex/build-step-init@workspace:packages/steps/init":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-init@workspace:packages/steps/init"
   dependencies:
-    "@essex/build-step-recipes": ^9.0.3
-    "@essex/build-utils": ^9.0.3
+    "@essex/build-step-recipes": ^9.1.0
+    "@essex/build-utils": ^9.1.0
     "@types/node": ^14.0.27
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
@@ -2443,13 +2578,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-jest@^9.0.3, @essex/build-step-jest@workspace:packages/steps/jest":
+"@essex/build-step-jest@^9.1.0, @essex/build-step-jest@workspace:packages/steps/jest":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-jest@workspace:packages/steps/jest"
   dependencies:
-    "@essex/build-utils": ^9.0.3
-    "@essex/jest-config": ^9.0.3
-    "@essex/tasklogger": ^9.0.3
+    "@essex/build-utils": ^9.1.0
+    "@essex/jest-config": ^9.1.0
+    "@essex/tasklogger": ^9.1.0
     "@types/debug": ^4.1.5
     "@types/node": ^14.0.27
     "@types/rimraf": ^3.0.0
@@ -2461,12 +2596,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-lint-staged@^9.0.3, @essex/build-step-lint-staged@workspace:packages/steps/lint-staged":
+"@essex/build-step-lint-staged@^9.1.0, @essex/build-step-lint-staged@workspace:packages/steps/lint-staged":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-lint-staged@workspace:packages/steps/lint-staged"
   dependencies:
-    "@essex/build-utils": ^9.0.3
-    "@essex/shellrunner": ^9.0.3
+    "@essex/build-utils": ^9.1.0
+    "@essex/shellrunner": ^9.1.0
     "@types/node": ^14.0.27
     "@types/rimraf": ^3.0.0
     lint-staged: ^10.2.11
@@ -2475,11 +2610,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-pretty-quick@^9.0.3, @essex/build-step-pretty-quick@workspace:packages/steps/pretty-quick":
+"@essex/build-step-pretty-quick@^9.1.0, @essex/build-step-pretty-quick@workspace:packages/steps/pretty-quick":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-pretty-quick@workspace:packages/steps/pretty-quick"
   dependencies:
-    "@essex/build-utils": ^9.0.3
+    "@essex/build-utils": ^9.1.0
     "@types/node": ^14.0.27
     chalk: ^4.1.0
     prettier: ^2.0.5
@@ -2489,11 +2624,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-recipes@^9.0.3, @essex/build-step-recipes@workspace:packages/steps/recipes":
+"@essex/build-step-recipes@^9.1.0, @essex/build-step-recipes@workspace:packages/steps/recipes":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-recipes@workspace:packages/steps/recipes"
   dependencies:
-    "@essex/tasklogger": ^9.0.3
+    "@essex/tasklogger": ^9.1.0
     "@types/node": ^14.0.27
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
@@ -2501,28 +2636,28 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-rollup@^9.0.3, @essex/build-step-rollup@workspace:packages/steps/rollup":
+"@essex/build-step-rollup@^9.1.0, @essex/build-step-rollup@workspace:packages/steps/rollup":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-rollup@workspace:packages/steps/rollup"
   dependencies:
-    "@essex/build-utils": ^9.0.3
-    "@essex/shellrunner": ^9.0.3
-    "@essex/tasklogger": ^9.0.3
+    "@essex/build-utils": ^9.1.0
+    "@essex/shellrunner": ^9.1.0
+    "@essex/tasklogger": ^9.1.0
     "@types/node": ^14.0.27
     rimraf: ^3.0.2
     typescript: 3.9.7
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-storybook@^9.0.3, @essex/build-step-storybook@workspace:packages/steps/storybook":
+"@essex/build-step-storybook@^9.1.0, @essex/build-step-storybook@workspace:packages/steps/storybook":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-storybook@workspace:packages/steps/storybook"
   dependencies:
     "@babel/core": ^7.11.1
-    "@essex/build-utils": ^9.0.3
-    "@essex/shellrunner": ^9.0.3
-    "@essex/storybook-config": ^9.0.3
-    "@essex/tasklogger": ^9.0.3
+    "@essex/build-utils": ^9.1.0
+    "@essex/shellrunner": ^9.1.0
+    "@essex/storybook-config": ^9.1.0
+    "@essex/tasklogger": ^9.1.0
     "@storybook/react": ^5.3.19
     "@types/node": ^14.0.27
     "@types/rimraf": ^3.0.0
@@ -2536,27 +2671,27 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-typedoc@^9.0.3, @essex/build-step-typedoc@workspace:packages/steps/typedoc":
+"@essex/build-step-typedoc@^9.1.0, @essex/build-step-typedoc@workspace:packages/steps/typedoc":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-typedoc@workspace:packages/steps/typedoc"
   dependencies:
-    "@essex/build-utils": ^9.0.3
-    "@essex/tasklogger": ^9.0.3
+    "@essex/build-utils": ^9.1.0
+    "@essex/tasklogger": ^9.1.0
     "@types/node": ^14.0.27
     rimraf: ^3.0.2
-    typedoc: ^0.17.8
+    typedoc: ^0.18.0
     typescript: 3.9.7
   peerDependencies:
     "@types/node": ">= 14"
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-typescript@^9.0.3, @essex/build-step-typescript@workspace:packages/steps/typescript":
+"@essex/build-step-typescript@^9.1.0, @essex/build-step-typescript@workspace:packages/steps/typescript":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-typescript@workspace:packages/steps/typescript"
   dependencies:
-    "@essex/build-utils": ^9.0.3
-    "@essex/tasklogger": ^9.0.3
+    "@essex/build-utils": ^9.1.0
+    "@essex/tasklogger": ^9.1.0
     "@types/gulp": ^4.0.6
     "@types/gulp-debug": ^2.0.31
     "@types/node": ^14.0.27
@@ -2570,13 +2705,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-webpack@^9.0.3, @essex/build-step-webpack@workspace:packages/steps/webpack":
+"@essex/build-step-webpack@^9.1.0, @essex/build-step-webpack@workspace:packages/steps/webpack":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-webpack@workspace:packages/steps/webpack"
   dependencies:
-    "@essex/build-utils": ^9.0.3
-    "@essex/tasklogger": ^9.0.3
-    "@essex/webpack-config": ^9.0.3
+    "@essex/build-utils": ^9.1.0
+    "@essex/tasklogger": ^9.1.0
+    "@essex/webpack-config": ^9.1.0
     "@types/node": ^14.0.27
     "@types/webpack": ^4.41.21
     "@types/webpack-dev-server": ^3.11.0
@@ -2587,7 +2722,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-util-hoister@^9.0.3, @essex/build-util-hoister@workspace:packages/util/hoister":
+"@essex/build-util-hoister@^9.1.0, @essex/build-util-hoister@workspace:packages/util/hoister":
   version: 0.0.0-use.local
   resolution: "@essex/build-util-hoister@workspace:packages/util/hoister"
   dependencies:
@@ -2597,12 +2732,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-utils@^9.0.3, @essex/build-utils@workspace:packages/util/gulp":
+"@essex/build-utils@^9.1.0, @essex/build-utils@workspace:packages/util/gulp":
   version: 0.0.0-use.local
   resolution: "@essex/build-utils@workspace:packages/util/gulp"
   dependencies:
-    "@essex/shellrunner": ^9.0.3
-    "@essex/tasklogger": ^9.0.3
+    "@essex/shellrunner": ^9.1.0
+    "@essex/tasklogger": ^9.1.0
     "@types/node": ^14.0.27
     "@types/through2": ^2.0.36
     rimraf: ^3.0.2
@@ -2611,25 +2746,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/eslint-config@^9.0.3, @essex/eslint-config@workspace:packages/config/eslint-config":
+"@essex/eslint-config@^9.0.3, @essex/eslint-config@^9.1.0, @essex/eslint-config@workspace:packages/config/eslint-config":
   version: 0.0.0-use.local
   resolution: "@essex/eslint-config@workspace:packages/config/eslint-config"
   dependencies:
-    "@essex/eslint-plugin": ^9.0.3
+    "@essex/eslint-plugin": ^9.1.0
   peerDependencies:
     "@essex/eslint-plugin": ">= 8.0.0"
   languageName: unknown
   linkType: soft
 
-"@essex/eslint-plugin@^9.0.3, @essex/eslint-plugin@workspace:packages/config/eslint-plugin":
+"@essex/eslint-plugin@^9.0.3, @essex/eslint-plugin@^9.1.0, @essex/eslint-plugin@workspace:packages/config/eslint-plugin":
   version: 0.0.0-use.local
   resolution: "@essex/eslint-plugin@workspace:packages/config/eslint-plugin"
   dependencies:
     "@babel/core": ^7.11.1
     "@babel/types": ^7.11.0
     "@types/node": ^14.0.27
-    "@typescript-eslint/eslint-plugin": ^3.8.0
-    "@typescript-eslint/parser": ^3.8.0
+    "@typescript-eslint/eslint-plugin": ^3.9.0
+    "@typescript-eslint/parser": ^3.9.0
     babel-eslint: ^10.1.0
     confusing-browser-globals: ^1.0.9
     eslint: ^7.6.0
@@ -2647,7 +2782,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/jest-config@^9.0.3, @essex/jest-config@workspace:packages/config/jest-config":
+"@essex/jest-config@^9.1.0, @essex/jest-config@workspace:packages/config/jest-config":
   version: 0.0.0-use.local
   resolution: "@essex/jest-config@workspace:packages/config/jest-config"
   dependencies:
@@ -2674,26 +2809,27 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/scripts@workspace:packages/scripts"
   dependencies:
-    "@essex/build-step-audit": ^9.0.3
-    "@essex/build-step-babel": ^9.0.3
-    "@essex/build-step-clean": ^9.0.3
-    "@essex/build-step-commitlint": ^9.0.3
-    "@essex/build-step-docs": ^9.0.3
-    "@essex/build-step-eslint": ^9.0.3
-    "@essex/build-step-init": ^9.0.3
-    "@essex/build-step-jest": ^9.0.3
-    "@essex/build-step-lint-staged": ^9.0.3
-    "@essex/build-step-pretty-quick": ^9.0.3
-    "@essex/build-step-recipes": ^9.0.3
-    "@essex/build-step-rollup": ^9.0.3
-    "@essex/build-step-storybook": ^9.0.3
-    "@essex/build-step-typedoc": ^9.0.3
-    "@essex/build-step-typescript": ^9.0.3
-    "@essex/build-step-webpack": ^9.0.3
-    "@essex/build-utils": ^9.0.3
-    "@essex/eslint-plugin": ^9.0.3
-    "@essex/shellrunner": ^9.0.3
-    "@essex/webpack-config": ^9.0.3
+    "@essex/build-step-audit": ^9.1.0
+    "@essex/build-step-azure": ^9.1.0
+    "@essex/build-step-babel": ^9.1.0
+    "@essex/build-step-clean": ^9.1.0
+    "@essex/build-step-commitlint": ^9.1.0
+    "@essex/build-step-docs": ^9.1.0
+    "@essex/build-step-eslint": ^9.1.0
+    "@essex/build-step-init": ^9.1.0
+    "@essex/build-step-jest": ^9.1.0
+    "@essex/build-step-lint-staged": ^9.1.0
+    "@essex/build-step-pretty-quick": ^9.1.0
+    "@essex/build-step-recipes": ^9.1.0
+    "@essex/build-step-rollup": ^9.1.0
+    "@essex/build-step-storybook": ^9.1.0
+    "@essex/build-step-typedoc": ^9.1.0
+    "@essex/build-step-typescript": ^9.1.0
+    "@essex/build-step-webpack": ^9.1.0
+    "@essex/build-utils": ^9.1.0
+    "@essex/eslint-plugin": ^9.1.0
+    "@essex/shellrunner": ^9.1.0
+    "@essex/webpack-config": ^9.1.0
     "@types/debug": ^4.1.5
     "@types/gulp": ^4.0.6
     "@types/gulp-babel": ^6.1.29
@@ -2739,11 +2875,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/shellrunner@^9.0.3, @essex/shellrunner@workspace:packages/util/shellrunner":
+"@essex/shellrunner@^9.1.0, @essex/shellrunner@workspace:packages/util/shellrunner":
   version: 0.0.0-use.local
   resolution: "@essex/shellrunner@workspace:packages/util/shellrunner"
   dependencies:
-    "@essex/build-util-hoister": ^9.0.3
+    "@essex/build-util-hoister": ^9.1.0
     "@types/debug": ^4.1.5
     "@types/node": ^14.0.27
     colors: ^1.4.0
@@ -2755,13 +2891,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/storybook-config@^9.0.3, @essex/storybook-config@workspace:packages/config/storybook-config":
+"@essex/storybook-config@^9.1.0, @essex/storybook-config@workspace:packages/config/storybook-config":
   version: 0.0.0-use.local
   resolution: "@essex/storybook-config@workspace:packages/config/storybook-config"
   dependencies:
     "@babel/core": ^7.11.1
-    "@essex/babel-config": ^9.0.3
-    "@essex/build-util-hoister": ^9.0.3
+    "@essex/babel-config": ^9.1.0
+    "@essex/build-util-hoister": ^9.1.0
     "@mdx-js/loader": ^1.6.16
     "@storybook/addon-a11y": ^5.3.19
     "@storybook/addon-actions": ^5.3.19
@@ -2788,7 +2924,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/tasklogger@^9.0.3, @essex/tasklogger@workspace:packages/util/tasklogger":
+"@essex/tasklogger@^9.1.0, @essex/tasklogger@workspace:packages/util/tasklogger":
   version: 0.0.0-use.local
   resolution: "@essex/tasklogger@workspace:packages/util/tasklogger"
   dependencies:
@@ -2799,24 +2935,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/webpack-config@^9.0.3, @essex/webpack-config@workspace:packages/config/webpack-config":
+"@essex/webpack-config@^9.1.0, @essex/webpack-config@workspace:packages/config/webpack-config":
   version: 0.0.0-use.local
   resolution: "@essex/webpack-config@workspace:packages/config/webpack-config"
   dependencies:
     "@babel/core": ^7.11.1
-    "@essex/babel-config": ^9.0.3
-    "@essex/build-util-hoister": ^9.0.3
+    "@essex/babel-config": ^9.1.0
+    "@essex/build-util-hoister": ^9.1.0
     "@types/debug": ^4.1.5
     "@types/node": ^14.0.27
     "@types/webpack": ^4.41.21
     "@types/webpack-dev-server": ^3.11.0
     babel-loader: ^8.1.0
     cache-loader: ^4.1.0
-    css-loader: ^4.2.0
+    css-loader: ^4.2.1
     debug: ^4.1.1
     fork-ts-checker-webpack-plugin: ^5.0.14
     html-webpack-plugin: ^4.3.0
-    mini-css-extract-plugin: ^0.9.0
+    mini-css-extract-plugin: ^0.10.0
     rimraf: ^3.0.2
     sass-loader: ^9.0.3
     style-loader: ^1.2.1
@@ -4281,6 +4417,45 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@opencensus/web-types@npm:0.0.7":
+  version: 0.0.7
+  resolution: "@opencensus/web-types@npm:0.0.7"
+  checksum: 52c6efc58f852003c2ef37ad490f1ee390c4a59b3b30f461b88a2233fb3e76d753455e77b15500371d255dfb54f5351653e8d975ba3cedb0a7907b433f42845c
+  languageName: node
+  linkType: hard
+
+"@opentelemetry/api@npm:^0.10.2":
+  version: 0.10.2
+  resolution: "@opentelemetry/api@npm:0.10.2"
+  dependencies:
+    "@opentelemetry/context-base": ^0.10.2
+  checksum: 6c995855b63862bc2acf7ae676ab30a187798f76e576750033dffeb439aa7cb89e521d610ff3ea74178599b59fc309b6e894e7b28521fe2a49c0c9a5b999db3d
+  languageName: node
+  linkType: hard
+
+"@opentelemetry/api@npm:^0.6.1":
+  version: 0.6.1
+  resolution: "@opentelemetry/api@npm:0.6.1"
+  dependencies:
+    "@opentelemetry/context-base": ^0.6.1
+  checksum: 360f2e5bb1a3649b6fdfc78a2c2a33c0c39dd3bec35ad35bfc13cf5ab697385e4bbbdbe8ba1755bf26587efe55b5e2e3d0a7d62641b89620f8246645d337378d
+  languageName: node
+  linkType: hard
+
+"@opentelemetry/context-base@npm:^0.10.2":
+  version: 0.10.2
+  resolution: "@opentelemetry/context-base@npm:0.10.2"
+  checksum: 99fe85a92129252cdb9ac8390a864b35d4b7fb913f39d9bdcea99b29e71b5f2fe67f667889b16734af95c790767c2c4b94b260ac1344600244f0de58ff3d5494
+  languageName: node
+  linkType: hard
+
+"@opentelemetry/context-base@npm:^0.6.1":
+  version: 0.6.1
+  resolution: "@opentelemetry/context-base@npm:0.6.1"
+  checksum: 394333c0c1014d1563c3b952aa296d0ce84b6a7b067937a8ea72c6173670fe682c1ee905c7b0adf1f23532a0570e27fba93edae2d9cc62f133cdf7195e8b9e05
+  languageName: node
+  linkType: hard
+
 "@reach/router@npm:^1.2.1":
   version: 1.3.4
   resolution: "@reach/router@npm:1.3.4"
@@ -5323,6 +5498,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/mime-types@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "@types/mime-types@npm:2.1.0"
+  checksum: 26915c3601cb8569f4a3665ea8e460adc97165d48a3898edf816066212eca0de3935a0c11d111a3aff8c0ebb4b7e03923001d8bac90c24896719e3ff4655e1a9
+  languageName: node
+  linkType: hard
+
 "@types/mime@npm:*":
   version: 2.0.2
   resolution: "@types/mime@npm:2.0.2"
@@ -5341,6 +5523,16 @@ __metadata:
   version: 1.2.0
   resolution: "@types/minimist@npm:1.2.0"
   checksum: 098945c2c29df019cae250dfe614e50dab8120f4e359bd034190f931a63a23f3058764eec0d8cea3757eedd5b308ed28e4357ece9510a99380da08762f5f6635
+  languageName: node
+  linkType: hard
+
+"@types/node-fetch@npm:^2.5.0":
+  version: 2.5.7
+  resolution: "@types/node-fetch@npm:2.5.7"
+  dependencies:
+    "@types/node": "*"
+    form-data: ^3.0.0
+  checksum: 101f6e8474407f957dfe1750d82aa0bcaa56347d09c8ba8634e6a901d07032533c0a578860691d915ff8fa230355700c41c04ae7e505840b5d6ff8cc3ece7741
   languageName: node
   linkType: hard
 
@@ -5528,6 +5720,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/tunnel@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "@types/tunnel@npm:0.0.1"
+  dependencies:
+    "@types/node": "*"
+  checksum: 70de50a226402432ce604dc5fa18cfe8c13ecfdda53483a0eaea9808ca12fcea3fbd4fbc6e790260ff93decdd12575dfc4ab66b6e5b1472492746603472e2a13
+  languageName: node
+  linkType: hard
+
 "@types/uglify-js@npm:*":
   version: 3.9.2
   resolution: "@types/uglify-js@npm:3.9.2"
@@ -5680,11 +5881,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^3.8.0":
-  version: 3.8.0
-  resolution: "@typescript-eslint/eslint-plugin@npm:3.8.0"
+"@typescript-eslint/eslint-plugin@npm:^3.9.0":
+  version: 3.9.0
+  resolution: "@typescript-eslint/eslint-plugin@npm:3.9.0"
   dependencies:
-    "@typescript-eslint/experimental-utils": 3.8.0
+    "@typescript-eslint/experimental-utils": 3.9.0
     debug: ^4.1.1
     functional-red-black-tree: ^1.0.1
     regexpp: ^3.0.0
@@ -5697,22 +5898,22 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: eedb39dbed67a6db875d247de498404a5dfdf3c19d6146be18ad4f7823288ab4c4a49b41094ae7ff3824378b1b36b02f4c1851c79cf08d1f89b3278fb729b521
+  checksum: f685820537343396e2d51fab49af279eb80234ec6cd007de8e3f0186e929903fc331c6f9cf3ad1f4261d300f156001cf968f38a06a354948ef97cd6a86d3eec2
   languageName: node
   linkType: hard
 
-"@typescript-eslint/experimental-utils@npm:3.8.0":
-  version: 3.8.0
-  resolution: "@typescript-eslint/experimental-utils@npm:3.8.0"
+"@typescript-eslint/experimental-utils@npm:3.9.0":
+  version: 3.9.0
+  resolution: "@typescript-eslint/experimental-utils@npm:3.9.0"
   dependencies:
     "@types/json-schema": ^7.0.3
-    "@typescript-eslint/types": 3.8.0
-    "@typescript-eslint/typescript-estree": 3.8.0
+    "@typescript-eslint/types": 3.9.0
+    "@typescript-eslint/typescript-estree": 3.9.0
     eslint-scope: ^5.0.0
     eslint-utils: ^2.0.0
   peerDependencies:
     eslint: "*"
-  checksum: 6403f33cf6e68cd86cc9f8363a8e414bf5be5b5a31917dae0cc6078dac41563aaf199f696b3d652160b2f347f83584f6309ffff2dd2af83d6f18d50783bfcd30
+  checksum: 1f4b91467e31e514dff1d4fc8b609ef03da49be7fead8681804c4aecba4524fc5d9bf41cf75e37fdd6bfd99f2dacce808b48ea7ca4c6ba8ee8d53e6bdaf08f5f
   languageName: node
   linkType: hard
 
@@ -5730,14 +5931,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^3.8.0":
-  version: 3.8.0
-  resolution: "@typescript-eslint/parser@npm:3.8.0"
+"@typescript-eslint/parser@npm:^3.9.0":
+  version: 3.9.0
+  resolution: "@typescript-eslint/parser@npm:3.9.0"
   dependencies:
     "@types/eslint-visitor-keys": ^1.0.0
-    "@typescript-eslint/experimental-utils": 3.8.0
-    "@typescript-eslint/types": 3.8.0
-    "@typescript-eslint/typescript-estree": 3.8.0
+    "@typescript-eslint/experimental-utils": 3.9.0
+    "@typescript-eslint/types": 3.9.0
+    "@typescript-eslint/typescript-estree": 3.9.0
     eslint-visitor-keys: ^1.1.0
   peerDependencies:
     eslint: ^5.0.0 || ^6.0.0 || ^7.0.0
@@ -5745,14 +5946,14 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: b1cf09ac2e6c9dfd18c5e480e6a8a01d8376b059a985ced616fd92039ff2cd4db9a5e0c86069e8cb3ae10ef65bd63ea4fc8fe309875ffdd985ef583366953318
+  checksum: b3d9bf0ddc16d207eecd85f8f6abf766341958aad02e02cb8cc01a98fcdb5200b5dd1959d7e112cefa2ebc1800f551b8fb5694aa6e0e0d0a2c5e37957798b64e
   languageName: node
   linkType: hard
 
-"@typescript-eslint/types@npm:3.8.0":
-  version: 3.8.0
-  resolution: "@typescript-eslint/types@npm:3.8.0"
-  checksum: e6eaaccda7abbabbc1e2fb18b7a7aaef326bd33ed984ab9140afa7a8dd967a898290042c50f32f01b53cd417d1f0e5081d2f0582c760f09cf3cc9f262cbe77e0
+"@typescript-eslint/types@npm:3.9.0":
+  version: 3.9.0
+  resolution: "@typescript-eslint/types@npm:3.9.0"
+  checksum: 32b52ccd65dd150a5ee962886fc3add7325b9595e65ffe99ed93954385b3ae0d0c7ca6878c82c7a6715891c674e4e196266f91fef7818d5b62e8b631ce3d2c8b
   languageName: node
   linkType: hard
 
@@ -5776,12 +5977,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/typescript-estree@npm:3.8.0":
-  version: 3.8.0
-  resolution: "@typescript-eslint/typescript-estree@npm:3.8.0"
+"@typescript-eslint/typescript-estree@npm:3.9.0":
+  version: 3.9.0
+  resolution: "@typescript-eslint/typescript-estree@npm:3.9.0"
   dependencies:
-    "@typescript-eslint/types": 3.8.0
-    "@typescript-eslint/visitor-keys": 3.8.0
+    "@typescript-eslint/types": 3.9.0
+    "@typescript-eslint/visitor-keys": 3.9.0
     debug: ^4.1.1
     glob: ^7.1.6
     is-glob: ^4.0.1
@@ -5793,16 +5994,16 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 2e7948abe9ea112fdc0000a535d01ea8755d213c6c6961d8a178ef107239ce70d1502e31593d868603d6d3f3a4644c5dc906b89408cc9e46dac8dae68d66db82
+  checksum: c6bedbec0bf0a3815b4f98ef99d669096251335237cb2f9724334bedbbd035af17b54ce63ccdc89f380841156db56ffb5338da193110b2c574c159daa607070f
   languageName: node
   linkType: hard
 
-"@typescript-eslint/visitor-keys@npm:3.8.0":
-  version: 3.8.0
-  resolution: "@typescript-eslint/visitor-keys@npm:3.8.0"
+"@typescript-eslint/visitor-keys@npm:3.9.0":
+  version: 3.9.0
+  resolution: "@typescript-eslint/visitor-keys@npm:3.9.0"
   dependencies:
     eslint-visitor-keys: ^1.1.0
-  checksum: cb1252b3f0f4c912a0035be264b33323c93d156da178e202b5ef339e6e3ea334f2c9c6d373eb29eb46979240dc4e4c60af4e124c998130b41fe6aa7473bcda1d
+  checksum: a5fa3e4957dd6451dd9c805727073ebbbbd29226205ee1b9f0de0c07983bb41d9299b11cbc73db8d7375f3b2ea9995db0b4c5d20a7ef8bf9d3f5c97341947510
   languageName: node
   linkType: hard
 
@@ -8717,7 +8918,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"combined-stream@npm:^1.0.6, combined-stream@npm:~1.0.6":
+"combined-stream@npm:^1.0.6, combined-stream@npm:^1.0.8, combined-stream@npm:~1.0.6":
   version: 1.0.8
   resolution: "combined-stream@npm:1.0.8"
   dependencies:
@@ -9315,9 +9516,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-loader@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "css-loader@npm:4.2.0"
+"css-loader@npm:^4.2.1":
+  version: 4.2.1
+  resolution: "css-loader@npm:4.2.1"
   dependencies:
     camelcase: ^6.0.0
     cssesc: ^3.0.0
@@ -9334,7 +9535,7 @@ __metadata:
     semver: ^7.3.2
   peerDependencies:
     webpack: ^4.27.0 || ^5.0.0
-  checksum: cb813eb5eeb46fb970e3d1d692ccdedcec5f1b16f7a6bd9e29284afb60e50b20fd982d229f993b6c2f3563824bbbd90cdb7dc536e252e51208cc46a79c1bcc80
+  checksum: bd8188efac141352371d3c87e90b6c5658018fa2e9438a22ad38e7a3896e492edb535ae7fe7e56e4c14e43ccc88fbb3a235a0929d4f9302bbf12215687edc9fa
   languageName: node
   linkType: hard
 
@@ -11598,6 +11799,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"form-data@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "form-data@npm:3.0.0"
+  dependencies:
+    asynckit: ^0.4.0
+    combined-stream: ^1.0.8
+    mime-types: ^2.1.12
+  checksum: 1af88217b449eda6566a0d95185f2baa403ed2a0e3b11547069f6062be66cbac7c8d7a25f0fc59560702e96526e659b5b9e5a8c6fefe00f06da44338191a9133
+  languageName: node
+  linkType: hard
+
 "form-data@npm:~2.3.2":
   version: 2.3.3
   resolution: "form-data@npm:2.3.3"
@@ -11680,7 +11892,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:^9.0.0":
+"fs-extra@npm:^9.0.0, fs-extra@npm:^9.0.1":
   version: 9.0.1
   resolution: "fs-extra@npm:9.0.1"
   dependencies:
@@ -15875,12 +16087,12 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"marked@npm:1.0.0":
-  version: 1.0.0
-  resolution: "marked@npm:1.0.0"
+"marked@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "marked@npm:1.1.1"
   bin:
     marked: bin/marked
-  checksum: 4121f2f5cb7130e57571780181cddac9e3a8692486045f760baad14c6d896c9481180ad8ab8a36fb9476375ddaa860dbc7d29ecf386b2bfa47d4450a9f866cd4
+  checksum: 4fb077a99ca6a6a4f389bbe2f27620509a332da6fac019560fc25e0e9636226cc86420ddbcfc6e8956920cbca68d64cd11d03954d22123a95ffc63c2e6c4e0ae
   languageName: node
   linkType: hard
 
@@ -16218,7 +16430,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"mime-types@npm:^2.1.12, mime-types@npm:~2.1.17, mime-types@npm:~2.1.19, mime-types@npm:~2.1.24":
+"mime-types@npm:^2.1.12, mime-types@npm:^2.1.27, mime-types@npm:~2.1.17, mime-types@npm:~2.1.19, mime-types@npm:~2.1.24":
   version: 2.1.27
   resolution: "mime-types@npm:2.1.27"
   dependencies:
@@ -16275,6 +16487,20 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"mini-css-extract-plugin@npm:^0.10.0":
+  version: 0.10.0
+  resolution: "mini-css-extract-plugin@npm:0.10.0"
+  dependencies:
+    loader-utils: ^1.1.0
+    normalize-url: 1.9.1
+    schema-utils: ^1.0.0
+    webpack-sources: ^1.1.0
+  peerDependencies:
+    webpack: ^4.4.0 || ^5.0.0
+  checksum: 2e133cdd20e9de9acbaffc1820be4124432fe6b44078ab08f1eab4b632656ca9e226afb14e4703db8b873435aadecb4b5fa750e1dd439ed370f22897df247aad
+  languageName: node
+  linkType: hard
+
 "mini-css-extract-plugin@npm:^0.7.0":
   version: 0.7.0
   resolution: "mini-css-extract-plugin@npm:0.7.0"
@@ -16286,20 +16512,6 @@ fsevents@^1.2.7:
   peerDependencies:
     webpack: ^4.4.0
   checksum: d293e7c89a72458816aafa243bcd86cdfb0e1412367c48dbfee5945217fefaf027b6ec3cc55ad41295bcc8dcc5910a61c74ae6d178f1f55f654c1c9f5cba6bd2
-  languageName: node
-  linkType: hard
-
-"mini-css-extract-plugin@npm:^0.9.0":
-  version: 0.9.0
-  resolution: "mini-css-extract-plugin@npm:0.9.0"
-  dependencies:
-    loader-utils: ^1.1.0
-    normalize-url: 1.9.1
-    schema-utils: ^1.0.0
-    webpack-sources: ^1.1.0
-  peerDependencies:
-    webpack: ^4.4.0
-  checksum: 654be33368f70857371fcd36e191ffc2ba2f6af338f3e112b3136cf2ccffd6ebf30b0271e87660b81d02a52988edb70d5caaec3a8628725b87ca0b49b4fcc225
   languageName: node
   linkType: hard
 
@@ -18578,7 +18790,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"psl@npm:^1.1.28":
+"psl@npm:^1.1.28, psl@npm:^1.1.33":
   version: 1.8.0
   resolution: "psl@npm:1.8.0"
   checksum: 92d47c6257456878bfa8190d76b84de69bcefdc129eeee3f9fe204c15fd08d35fe5b8627033f39b455e40a9375a1474b25ff4ab2c5448dd8c8f75da692d0f5b4
@@ -20445,7 +20657,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"sax@npm:~1.2.4":
+"sax@npm:>=0.6.0, sax@npm:~1.2.4":
   version: 1.2.4
   resolution: "sax@npm:1.2.4"
   checksum: 9d7668d69105e89e2c1a4b2fdc12c72e1a2f78b825f7b4a8a2ea5cdfebf70920bd17715bed55264c3b3959616a0695f8ad2d098bf6944fbd0953ee9c695dceef
@@ -22279,6 +22491,17 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"tough-cookie@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "tough-cookie@npm:4.0.0"
+  dependencies:
+    psl: ^1.1.33
+    punycode: ^2.1.1
+    universalify: ^0.1.2
+  checksum: 161dc4728e2801c1bd3b32d4d14abd2762120d9ed0b96d892720440aa04ed0ad6c425c38195265c74366fe01d8aaf1cc0a31636cb18b82c9b6ce630743210235
+  languageName: node
+  linkType: hard
+
 "tr46@npm:^1.0.1":
   version: 1.0.1
   resolution: "tr46@npm:1.0.1"
@@ -22452,6 +22675,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"tslib@npm:^2.0.0":
+  version: 2.0.1
+  resolution: "tslib@npm:2.0.1"
+  checksum: 7b42337a07f536c9650c72471cdf51317f07eb981692e91b8979fee3f6e20136a8f047e6ecdc5f2f3201132a6cc4e0096fa3c58655eba3803bf7fe739ccd088e
+  languageName: node
+  linkType: hard
+
 "tsutils@npm:^3.17.1":
   version: 3.17.1
   resolution: "tsutils@npm:3.17.1"
@@ -22476,6 +22706,13 @@ fsevents@^1.2.7:
   dependencies:
     safe-buffer: ^5.0.1
   checksum: 03db75a4f994fee610d3485c492e95105ed265a9fecd49d14c98e9982f973ecc0220d0c1bc264e37802e423a1274bb63788a873e4e07009408ae3ac517347fd7
+  languageName: node
+  linkType: hard
+
+"tunnel@npm:^0.0.6":
+  version: 0.0.6
+  resolution: "tunnel@npm:0.0.6"
+  checksum: 78fbb1a55a44fc8de6a497923bf7bf6e7b14b396e0ddaf11fe624ab7f646a0d2ada03f6dcb4a80940faed9649e30d229114f218e8906badd12ded2323a6f666b
   languageName: node
   linkType: hard
 
@@ -22602,16 +22839,16 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"typedoc@npm:^0.17.8":
-  version: 0.17.8
-  resolution: "typedoc@npm:0.17.8"
+"typedoc@npm:^0.18.0":
+  version: 0.18.0
+  resolution: "typedoc@npm:0.18.0"
   dependencies:
-    fs-extra: ^8.1.0
+    fs-extra: ^9.0.1
     handlebars: ^4.7.6
     highlight.js: ^10.0.0
     lodash: ^4.17.15
     lunr: ^2.3.8
-    marked: 1.0.0
+    marked: ^1.1.1
     minimatch: ^3.0.0
     progress: ^2.0.3
     shelljs: ^0.8.4
@@ -22620,7 +22857,7 @@ fsevents@^1.2.7:
     typescript: ">=3.8.3"
   bin:
     typedoc: bin/typedoc
-  checksum: 5c8d869a85c0fa71b69299ffbcf542278bb0f17672ee2fb23f65f696f5d520e66b0e29634589c71db9f0d4f059f9982ddfb0a29b733755071b1779e98537da1f
+  checksum: 74abaec6601e823c29805cb0edf709329cf6ffe8189be50eab5b939bff502de535f1dc0be60f425000cf8d9246cdec65c5cde898b240a97bcb10461f37430393
   languageName: node
   linkType: hard
 
@@ -23034,7 +23271,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"universalify@npm:^0.1.0":
+"universalify@npm:^0.1.0, universalify@npm:^0.1.2":
   version: 0.1.2
   resolution: "universalify@npm:0.1.2"
   checksum: 420fc6547357782c700d53e9a92506a8e95345b13e97684c8f9ab75237912ec2ebb6af8ac10d4f7406b7b6bd21c58f6c5c0811414fb0b4091b78b4743fa6806e
@@ -23244,6 +23481,15 @@ fsevents@^1.2.7:
   bin:
     uuid: dist/bin/uuid
   checksum: a56be8a5bbf2bae755d749d0693637274935b5ae250dfaaaf79241391cf1a7c142a202492196363ec62ec51a476e5e3fc4de2944d854abf2e9b35a33e0e31d4c
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^8.1.0":
+  version: 8.3.0
+  resolution: "uuid@npm:8.3.0"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: a2bdb8a3eb80a53506e9657e7e1f70d7600562bf43fa010a645fd1deb7de1686df61c496c6f9826bac4be8db4d1ac1b976dd6fdf3bd083207eec1674507936fb
   languageName: node
   linkType: hard
 
@@ -24142,10 +24388,27 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"xml2js@npm:^0.4.19":
+  version: 0.4.23
+  resolution: "xml2js@npm:0.4.23"
+  dependencies:
+    sax: ">=0.6.0"
+    xmlbuilder: ~11.0.0
+  checksum: 5e6e53955714a9d094c9f39ac7509706d136a3dae76684059019ca949e131775f69715715879df86b1a49519ffea3805ff2e930596e229c5f6228ce027e8a80e
+  languageName: node
+  linkType: hard
+
 "xml@npm:^1.0.1":
   version: 1.0.1
   resolution: "xml@npm:1.0.1"
   checksum: adde7652a6f6010d28079586e7f608d616138bcb6c44bbc9174292b5cc2fab09b351d6c5f009e9304df2e0030888198225dd2e9ccbf51b776c8928479bfea4cb
+  languageName: node
+  linkType: hard
+
+"xmlbuilder@npm:~11.0.0":
+  version: 11.0.1
+  resolution: "xmlbuilder@npm:11.0.1"
+  checksum: 8f479b28b5897d903dc514c45c54c869b2f798c0eb44b11e35f7d6e3e631fb9d7aaaec6b9db6b92b715b4ded00d9d8ed8c08e9fd7e2a5f220b14b7b54403fa10
   languageName: node
   linkType: hard
 
