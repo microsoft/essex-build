@@ -19,6 +19,7 @@
 	},
 	"dependencies": {
 		"@essex/build-step-audit": "^9.0.3",
+		"@essex/build-step-azure": "^9.0.3",
 		"@essex/build-step-babel": "^9.0.3",
 		"@essex/build-step-clean": "^9.0.3",
 		"@essex/build-step-commitlint": "^9.0.3",
