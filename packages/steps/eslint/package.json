@@ -16,8 +16,8 @@
 		"@essex/build-utils": "^9.0.3",
 		"@essex/eslint-config": "^9.0.3",
 		"@essex/eslint-plugin": "^9.0.3",
-		"@typescript-eslint/eslint-plugin": "^3.8.0",
-		"@typescript-eslint/parser": "^3.8.0",
+		"@typescript-eslint/eslint-plugin": "^3.9.0",
+		"@typescript-eslint/parser": "^3.9.0",
 		"eslint": "^7.6.0"
 	},
 	"devDependencies": {

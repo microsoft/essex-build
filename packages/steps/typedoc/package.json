@@ -11,7 +11,7 @@
 	"dependencies": {
 		"@essex/build-utils": "^9.0.3",
 		"@essex/tasklogger": "^9.0.3",
-		"typedoc": "^0.17.8",
+		"typedoc": "^0.18.0",
 		"typescript": "3.9.7"
 	},
 	"devDependencies": {
