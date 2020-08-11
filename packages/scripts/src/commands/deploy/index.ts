@@ -12,8 +12,11 @@ export default function deploy(program: Command): void {
 		.command('deploy')
 		.description('deploys standard essex projects')
 		.option('-v, --verbose', 'verbose output')
-		.option('--storageAccount', 'Azure Storage Account Id')
-		.option('--storageAccountKey', 'Azure Storage Account Key')
+		.option('--storageAccount <storageAccount>', 'Azure Storage Account Id')
+		.option(
+			'--storageAccountKey <storageAccountKey>',
+			'Azure Storage Account Key',
+		)
 		.option(
 			'--type <type>',
 			'deployment type: (e.g. azure-blob-storage)',
