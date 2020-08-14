@@ -10,6 +10,7 @@ import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
 import * as gulp from 'gulp'
 import * as babel from 'gulp-babel'
 import * as debug from 'gulp-debug'
+import * as plumber from 'gulp-plumber'
 
 const BABEL_GLOBS = ['lib/**/*.js']
 
@@ -27,6 +28,11 @@ function babelCjs(
 	return function execute() {
 		const task: NodeJS.ReadWriteStream = gulp
 			.src(BABEL_GLOBS, { since: gulp.lastRun(execute) })
+			.pipe(
+				plumber({
+					errorHandler: !listen,
+				}),
+			)
 			.pipe(babel(cjsConfig))
 			.pipe(logFiles ? debug({ title }) : noopStep())
 			.pipe(gulp.dest('dist/cjs'))
@@ -53,6 +59,11 @@ function babelEsm(
 	return function execute() {
 		const task: NodeJS.ReadWriteStream = gulp
 			.src(BABEL_GLOBS, { since: gulp.lastRun(execute) })
+			.pipe(
+				plumber({
+					errorHandler: !listen,
+				}),
+			)
 			.pipe(babel(esmConfig))
 			.pipe(logFiles ? debug({ title }) : noopStep())
 			.pipe(gulp.dest('dist/esm'))

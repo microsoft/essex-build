@@ -8,6 +8,7 @@ import { noopStep } from '@essex/build-utils'
 import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
 import * as gulp from 'gulp'
 import * as debug from 'gulp-debug'
+import * as plumber from 'gulp-plumber'
 import * as ts from 'gulp-typescript'
 import { FileWatcher } from 'typescript'
 
@@ -29,6 +30,11 @@ function executeCompile(logFiles: boolean, listen: boolean): gulp.TaskFunction {
 	return function execute(): NodeJS.ReadWriteStream {
 		const task = gulp
 			.src(TYPESCRIPT_GLOBS, { since: gulp.lastRun(execute) })
+			.pipe(
+				plumber({
+					errorHandler: !listen,
+				}),
+			)
 			.pipe(project())
 			.pipe(logFiles ? debug({ title }) : noopStep())
 			.pipe(gulp.dest('lib'))
@@ -55,6 +61,11 @@ function executeTypeEmit(
 	return function execute(): NodeJS.ReadWriteStream {
 		const task = gulp
 			.src(TYPESCRIPT_GLOBS, { since: gulp.lastRun(execute) })
+			.pipe(
+				plumber({
+					errorHandler: !listen,
+				}),
+			)
 			.pipe(project())
 			.pipe(logFiles ? debug({ title }) : noopStep())
 			.pipe(gulp.dest('dist/types'))
