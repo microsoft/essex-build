@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-jest",
-	"version": "9.1.1",
+	"version": "9.1.2",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
@@ -9,9 +9,9 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@essex/build-utils": "^9.1.1",
-		"@essex/jest-config": "^9.1.1",
-		"@essex/tasklogger": "^9.1.1",
+		"@essex/build-utils": "^9.1.2",
+		"@essex/jest-config": "^9.1.2",
+		"@essex/tasklogger": "^9.1.2",
 		"@types/debug": "^4.1.5",
 		"chalk": "^4.1.0",
 		"debug": "^4.1.1",
