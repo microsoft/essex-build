@@ -1,5 +1,5 @@
 {
-  "extends": "@essex/eslint-config/release",
+  "extends": "./packages/config/eslint-config/release",
   "rules": {
     "@typescript-eslint/no-explicit-any": "off" 
   }
