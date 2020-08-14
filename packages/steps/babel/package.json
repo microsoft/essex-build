@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-babel",
-	"version": "9.1.1",
+	"version": "9.1.2",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
@@ -11,17 +11,19 @@
 	"dependencies": {
 		"@babel/core": "^7.11.1",
 		"@babel/types": "^7.11.0",
-		"@essex/babel-config": "^9.1.1",
-		"@essex/build-utils": "^9.1.1",
-		"@essex/tasklogger": "^9.1.1",
+		"@essex/babel-config": "^9.1.2",
+		"@essex/build-utils": "^9.1.2",
+		"@essex/tasklogger": "^9.1.2",
 		"gulp": "^4.0.2",
 		"gulp-babel": "^8.0.0",
-		"gulp-debug": "^4.0.0"
+		"gulp-debug": "^4.0.0",
+		"gulp-plumber": "^1.2.1"
 	},
 	"devDependencies": {
 		"@types/gulp": "^4.0.6",
 		"@types/gulp-babel": "^6.1.29",
 		"@types/gulp-debug": "^2.0.31",
+		"@types/gulp-plumber": "^0.0.32",
 		"@types/node": "^14.0.27",
 		"rimraf": "^3.0.2",
 		"typescript": "3.9.7"

@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-typescript",
-	"version": "9.1.1",
+	"version": "9.1.2",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
@@ -9,16 +9,18 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@essex/build-utils": "^9.1.1",
-		"@essex/tasklogger": "^9.1.1",
+		"@essex/build-utils": "^9.1.2",
+		"@essex/tasklogger": "^9.1.2",
 		"gulp": "^4.0.2",
 		"gulp-debug": "^4.0.0",
+		"gulp-plumber": "^1.2.1",
 		"gulp-typescript": "^6.0.0-alpha.1",
 		"typescript": "3.9.7"
 	},
 	"devDependencies": {
 		"@types/gulp": "^4.0.6",
 		"@types/gulp-debug": "^2.0.31",
+		"@types/gulp-plumber": "^0.0.32",
 		"@types/node": "^14.0.27",
 		"rimraf": "^3.0.2"
 	},

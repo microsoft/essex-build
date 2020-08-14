@@ -7,16 +7,17 @@
 		"Chris Trevino <chtrevin@microsoft.com>"
 	],
 	"scripts": {
+		"essex": "node ./packages/scripts/lib/index.js",
 		"clean": "lerna run clean --stream --parallel",
 		"build": "lerna run build --stream",
-		"test": "essex test",
+		"test": "yarn essex test",
 		"release:publish": "lerna publish",
 		"release": "run-s clean build release:publish",
-		"lint": "essex lint --docs --fix",
-		"prettify": "essex prettify",
-		"audit_dependencies": "essex audit",
-		"audit": "essex audit",
-		"git_is_clean": "essex git-is-clean",
+		"lint": "yarn essex lint --docs --fix",
+		"prettify": "yarn essex prettify",
+		"audit_dependencies": "yarn essex audit",
+		"audit": "yarn essex audit",
+		"git_is_clean": "yarn essex git-is-clean",
 		"ci": "run-s build lint test git_is_clean audit"
 	},
 	"workspaces": {
@@ -28,9 +29,6 @@
 		]
 	},
 	"devDependencies": {
-		"@essex/eslint-config": "^9.0.3",
-		"@essex/eslint-plugin": "^9.0.3",
-		"@essex/scripts": "^9.0.3",
 		"husky": "^4.2.5",
 		"lerna": "^3.22.1",
 		"npm-run-all": "^4.1.5",

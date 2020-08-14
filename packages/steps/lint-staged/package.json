@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-lint-staged",
-	"version": "9.1.1",
+	"version": "9.1.2",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
@@ -9,8 +9,8 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@essex/build-utils": "^9.1.1",
-		"@essex/shellrunner": "^9.1.1",
+		"@essex/build-utils": "^9.1.2",
+		"@essex/shellrunner": "^9.1.2",
 		"lint-staged": "^10.2.11"
 	},
 	"devDependencies": {
