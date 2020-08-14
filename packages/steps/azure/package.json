@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-azure",
-	"version": "9.1.1",
+	"version": "9.1.2",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
@@ -10,7 +10,7 @@
 	},
 	"dependencies": {
 		"@azure/storage-blob": "^12.2.0-preview.1",
-		"@essex/build-utils": "^9.1.1",
+		"@essex/build-utils": "^9.1.2",
 		"glob": "^7.1.6",
 		"mime-types": "^2.1.27"
 	},
