@@ -14,7 +14,7 @@
 		"@essex/shellrunner": "^9.1.2",
 		"@essex/storybook-config": "^9.1.2",
 		"@essex/tasklogger": "^9.1.2",
-		"@storybook/react": "^5.3.19",
+		"@storybook/react": "^6.0.16",
 		"babel-loader": "^8.1.0",
 		"webpack": "^4.44.1"
 	},
