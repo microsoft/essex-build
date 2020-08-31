@@ -35,6 +35,7 @@
 		"@essex/build-step-typedoc": "^9.2.0",
 		"@essex/build-step-typescript": "^9.2.0",
 		"@essex/build-step-webpack": "^9.2.0",
+		"@essex/build-step-zip": "^9.2.0",
 		"@essex/build-utils": "^9.2.0",
 		"@essex/eslint-plugin": "^9.2.0",
 		"@essex/shellrunner": "^9.2.0",
