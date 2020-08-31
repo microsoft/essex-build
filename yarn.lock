@@ -2728,9 +2728,10 @@ __metadata:
   resolution: "@essex/build-step-zip@workspace:packages/steps/zip"
   dependencies:
     "@types/archiver": ^3.1.0
+    "@types/glob": ^7.1.3
     "@types/node": ^14.0.27
-    "@types/rimraf": ^3.0.0
     archiver: ^5.0.0
+    glob: ^7.1.6
     typescript: 3.9.7
   languageName: unknown
   linkType: soft
@@ -5362,6 +5363,16 @@ __metadata:
     "@types/minimatch": "*"
     "@types/node": "*"
   checksum: 28bc8b1c10b141173c0d8f287729e727bd864c652c8887fd471b2841de5227b08757a13dd7090133e915cd0e1753800cb69cb251525171972140655c390737b3
+  languageName: node
+  linkType: hard
+
+"@types/glob@npm:^7.1.3":
+  version: 7.1.3
+  resolution: "@types/glob@npm:7.1.3"
+  dependencies:
+    "@types/minimatch": "*"
+    "@types/node": "*"
+  checksum: 633bf1dda9a30899b233ed6b97c75cdd59f2ee856a12240c85474ce6889e26b3b3520b62de56f6bb61824af0ef51b311a0cae305f27ba0de8ddc4898a3673d42
   languageName: node
   linkType: hard
 
