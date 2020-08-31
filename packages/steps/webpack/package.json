@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-webpack",
-	"version": "9.2.0",
+	"version": "9.2.1",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
@@ -9,9 +9,9 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@essex/build-utils": "^9.2.0",
-		"@essex/tasklogger": "^9.2.0",
-		"@essex/webpack-config": "^9.2.0",
+		"@essex/build-utils": "^9.2.1",
+		"@essex/tasklogger": "^9.2.1",
+		"@essex/webpack-config": "^9.2.1",
 		"webpack": "^4.44.1",
 		"webpack-dev-server": "^3.11.0"
 	},
