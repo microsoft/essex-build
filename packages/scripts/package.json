@@ -1,6 +1,6 @@
 {
 	"name": "@essex/scripts",
-	"version": "9.2.2",
+	"version": "9.2.3",
 	"description": "A set of scripts to make a essex javascript engineer's life easier",
 	"main": "lib/index.js",
 	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
@@ -35,7 +35,7 @@
 		"@essex/build-step-typedoc": "^9.2.1",
 		"@essex/build-step-typescript": "^9.2.1",
 		"@essex/build-step-webpack": "^9.2.1",
-		"@essex/build-step-zip": "^9.2.2",
+		"@essex/build-step-zip": "^9.2.3",
 		"@essex/build-utils": "^9.2.1",
 		"@essex/eslint-plugin": "^9.2.1",
 		"@essex/shellrunner": "^9.2.1",
