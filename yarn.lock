@@ -2723,7 +2723,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-zip@^9.2.1, @essex/build-step-zip@workspace:packages/steps/zip":
+"@essex/build-step-zip@^9.2.3, @essex/build-step-zip@workspace:packages/steps/zip":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-zip@workspace:packages/steps/zip"
   dependencies:
@@ -2840,7 +2840,7 @@ __metadata:
     "@essex/build-step-typedoc": ^9.2.1
     "@essex/build-step-typescript": ^9.2.1
     "@essex/build-step-webpack": ^9.2.1
-    "@essex/build-step-zip": ^9.2.1
+    "@essex/build-step-zip": ^9.2.3
     "@essex/build-utils": ^9.2.1
     "@essex/eslint-plugin": ^9.2.1
     "@essex/shellrunner": ^9.2.1
