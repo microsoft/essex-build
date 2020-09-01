@@ -20,7 +20,7 @@ export async function zip(
 	const destinationPath = path.join(workingDirectory, destination)
 
 	const fileEntries = await getFileEntries(sources, workingDirectory)
-	await archive(workingDirectory, destinationPath, fileEntries)
+	await archive(destinationPath, fileEntries)
 	return 0
 }
 
@@ -30,10 +30,11 @@ async function getFileEntries(
 ): Promise<string[]> {
 	const result: string[] = []
 	for (const source of sources) {
+		const sourcePath = path.join(workingDirectory, source)
 		if (source.indexOf('*') >= 0) {
-			result.push(...(await getGlobSource(source)))
+			result.push(...(await getGlobSource(sourcePath)))
 		} else {
-			result.push(...(await getSourceFiles(source, workingDirectory)))
+			result.push(...(await getSourceFiles(sourcePath)))
 		}
 	}
 	return result
@@ -51,15 +52,11 @@ function getGlobSource(source: string): Promise<string[]> {
 	})
 }
 
-async function getSourceFiles(
-	source: string,
-	workingDirectory: string,
-): Promise<string[]> {
+async function getSourceFiles(source: string): Promise<string[]> {
 	const stats = await fs.stat(source)
 
 	if (stats.isDirectory()) {
-		const files = await walkDir(source)
-		return files.map(f => path.relative(workingDirectory, f))
+		return await walkDir(source)
 	} else if (stats.isFile()) {
 		return [source]
 	} else {
@@ -96,7 +93,6 @@ async function walkDir(directory: string): Promise<string[]> {
 }
 
 async function archive(
-	workingDirectory: string,
 	destination: string,
 	fileEntries: string[],
 ): Promise<void> {
@@ -115,13 +111,10 @@ async function archive(
 		archive.on('error', reject)
 		archive.pipe(output)
 
-		for (const relativeFilePath of fileEntries) {
-			archive.file(
-				path.resolve(path.join(workingDirectory, relativeFilePath)),
-				{
-					name: relativeFilePath,
-				},
-			)
+		for (const entry of fileEntries) {
+			archive.file(entry, {
+				name: entry,
+			})
 		}
 
 		archive.finalize()
