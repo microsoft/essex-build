@@ -20,14 +20,12 @@
 		"git_is_clean": "yarn essex git-is-clean",
 		"ci": "run-s build lint test git_is_clean audit"
 	},
-	"workspaces": {
-		"packages": [
-			"packages/scripts",
-			"packages/config/*",
-			"packages/steps/*",
-			"packages/util/*"
-		]
-	},
+	"workspaces": [
+		"packages/scripts",
+		"packages/config/*",
+		"packages/steps/*",
+		"packages/util/*"
+	],
 	"devDependencies": {
 		"husky": "^4.2.5",
 		"lerna": "^3.22.1",

@@ -5,6 +5,7 @@
 import { promises as fs, createWriteStream } from 'fs'
 import * as path from 'path'
 import * as archiver from 'archiver'
+import * as glob from 'glob'
 
 export interface ZipCommandOptions {
 	cwd: string
@@ -18,30 +19,50 @@ export async function zip(
 	const workingDirectory = path.resolve(cwd)
 	const destinationPath = path.join(workingDirectory, destination)
 
-	let fileEntries: string[] = []
+	const fileEntries = await getFileEntries(sources, workingDirectory)
+	await archive(destinationPath, fileEntries)
+	return 0
+}
 
+async function getFileEntries(
+	sources: string[],
+	workingDirectory: string,
+): Promise<string[]> {
+	const result: string[] = []
 	for (const source of sources) {
-		const filePath = path.join(workingDirectory, source)
-		const stats = await fs.stat(filePath)
-
-		if (stats.isDirectory()) {
-			const files = await walkDir(filePath)
-			fileEntries = [
-				...fileEntries,
-				...files.map(f => path.relative(workingDirectory, f)),
-			]
-		} else if (stats.isFile()) {
-			fileEntries = [...fileEntries, source]
+		const sourcePath = path.join(workingDirectory, source)
+		if (source.indexOf('*') >= 0) {
+			result.push(...(await getGlobSource(sourcePath)))
 		} else {
-			console.warn(
-				`${filePath} is not a file or directory. Unable to compress.`,
-			)
+			result.push(...(await getSourceFiles(sourcePath)))
 		}
 	}
+	return result
+}
 
-	await archive(workingDirectory, destinationPath, fileEntries)
+function getGlobSource(source: string): Promise<string[]> {
+	return new Promise<string[]>((resolve, reject) => {
+		glob(source, (err, files) => {
+			if (err) {
+				reject(err)
+			} else {
+				resolve(files)
+			}
+		})
+	})
+}
 
-	return 0
+async function getSourceFiles(source: string): Promise<string[]> {
+	const stats = await fs.stat(source)
+
+	if (stats.isDirectory()) {
+		return await walkDir(source)
+	} else if (stats.isFile()) {
+		return [source]
+	} else {
+		console.warn(`${source} is not a file or directory. Unable to compress.`)
+		return []
+	}
 }
 
 async function walkDir(directory: string): Promise<string[]> {
@@ -72,7 +93,6 @@ async function walkDir(directory: string): Promise<string[]> {
 }
 
 async function archive(
-	workingDirectory: string,
 	destination: string,
 	fileEntries: string[],
 ): Promise<void> {
@@ -88,18 +108,13 @@ async function archive(
 		})
 
 		archive.on('warning', reject)
-
 		archive.on('error', reject)
-
 		archive.pipe(output)
 
-		for (const relativeFilePath of fileEntries) {
-			archive.file(
-				path.resolve(path.join(workingDirectory, relativeFilePath)),
-				{
-					name: relativeFilePath,
-				},
-			)
+		for (const entry of fileEntries) {
+			archive.file(entry, {
+				name: entry,
+			})
 		}
 
 		archive.finalize()
