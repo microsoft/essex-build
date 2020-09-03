@@ -31,8 +31,8 @@
 	"prettier": "./packages/config/prettier-config",
 	"husky": {
 		"hooks": {
-			"pre-commit": "yarn essex pre-commit",
-			"commit-msg": "yarn essex commit-msg"
+			"pre-commit": "pnpm essex -- pre-commit",
+			"commit-msg": "pnpm essex -- commit-msg"
 		}
 	}
 }
