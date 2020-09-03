@@ -108,7 +108,7 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 	log.info(`
 	You should install these recommended peer dependencies
 
-	lerna npm-run-all husky @typescript-eslint/eslint-plugin @typescript-eslint/eslint-parser
+	npm-run-all husky lint-staged @typescript-eslint/eslint-plugin @typescript-eslint/eslint-parser
 	`)
 	return Promise.resolve(0)
 }
