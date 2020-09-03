@@ -480,6 +480,7 @@ importers:
       '@essex/build-utils': 'link:../../util/gulp'
       '@essex/jest-config': 'link:../../config/jest-config'
       '@essex/tasklogger': 'link:../../util/tasklogger'
+      '@jest/core': 26.4.2
       '@types/debug': 4.1.5
       chalk: 4.1.0
       debug: 4.1.1
@@ -493,6 +494,7 @@ importers:
       '@essex/build-utils': ^9.2.1
       '@essex/jest-config': ^9.2.1
       '@essex/tasklogger': ^9.2.1
+      '@jest/core': ^26.4.2
       '@types/debug': ^4.1.5
       '@types/node': ^14.0.27
       '@types/rimraf': ^3.0.0
