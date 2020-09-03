@@ -19,7 +19,6 @@ import { validateConfiguration } from './validate'
 /* eslint-disable @typescript-eslint/no-var-requires */
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const PnpWebpackPlugin = require('pnp-webpack-plugin')
 
 // Webpack Loaders
 const babelLoader = require.resolve('babel-loader')
@@ -32,7 +31,6 @@ const tsLoader = require.resolve('ts-loader')
 export interface Configuration {
 	env?: string
 	mode?: 'development' | 'production' | 'none'
-	pnp?: boolean
 	typecheck?: boolean
 	// extends
 	aliases?: (env: string, mode: string) => any
@@ -47,7 +45,6 @@ export interface Configuration {
 export function configure({
 	env = 'development',
 	mode = 'none',
-	pnp = false,
 	typecheck = true,
 	aliases,
 	output,
@@ -209,7 +206,6 @@ export function configure({
 			...extendedDevServer,
 		},
 		plugins: [
-			pnp ? PnpWebpackPlugin.moduleLoader(module) : undefined,
 			typecheck ? new ForkTsCheckerWebpackPlugin() : undefined,
 			new HtmlWebpackPlugin({
 				title: getTitle(),
