@@ -220,6 +220,7 @@ importers:
       '@essex/build-utils': 'link:../util/gulp'
       '@essex/eslint-plugin': 'link:../config/eslint-plugin'
       '@essex/shellrunner': 'link:../util/shellrunner'
+      '@essex/tasklogger': 'link:../util/tasklogger'
       '@essex/webpack-config': 'link:../config/webpack-config'
       chalk: 4.1.0
       commander: 6.1.0
@@ -265,6 +266,7 @@ importers:
       '@essex/build-utils': ^9.2.1
       '@essex/eslint-plugin': ^9.2.1
       '@essex/shellrunner': ^9.2.1
+      '@essex/tasklogger': ^9.2.1
       '@essex/webpack-config': ^9.2.1
       '@types/debug': ^4.1.5
       '@types/gulp': ^4.0.6
