@@ -10,6 +10,7 @@
 	},
 	"dependencies": {
 		"@essex/build-utils": "^9.2.1",
+		"@essex/tasklogger": "^9.2.1",
 		"chalk": "^4.1.0",
 		"prettier": "^2.0.5",
 		"pretty-quick": "^2.0.1"

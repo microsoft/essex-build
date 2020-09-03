@@ -9,6 +9,7 @@
 		"build": "tsc"
 	},
 	"dependencies": {
+		"@essex/tasklogger": "^9.2.1",
 		"@essex/build-step-recipes": "^9.2.1",
 		"@essex/build-utils": "^9.2.1"
 	},
