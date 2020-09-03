@@ -12,6 +12,7 @@
 		"@essex/shellrunner": "^9.2.1",
 		"@essex/tasklogger": "^9.2.1",
 		"@types/through2": "^2.0.36",
+		"gulp": "^4.0.2",
 		"through2": "^4.0.2"
 	},
 	"devDependencies": {

@@ -1,1 +1,2 @@
-.yarn/
+pnpm-workspace.yaml
+pnpm-lock.yaml

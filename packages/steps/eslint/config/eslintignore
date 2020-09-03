@@ -4,4 +4,3 @@
 **/storybook-static/*
 **/node_modules/*
 **/*.d.ts
-.yarn/*
