@@ -520,6 +520,7 @@ importers:
   packages/steps/pretty-quick:
     dependencies:
       '@essex/build-utils': 'link:../../util/gulp'
+      '@essex/tasklogger': 'link:../../util/tasklogger'
       chalk: 4.1.0
       prettier: 2.1.1
       pretty-quick: 2.0.2_prettier@2.1.1
@@ -529,6 +530,7 @@ importers:
       typescript: 3.9.7
     specifiers:
       '@essex/build-utils': ^9.2.1
+      '@essex/tasklogger': ^9.2.1
       '@types/node': ^14.0.27
       chalk: ^4.1.0
       prettier: ^2.0.5
