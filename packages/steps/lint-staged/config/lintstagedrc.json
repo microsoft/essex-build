@@ -1,5 +1,5 @@
 {
-	"*": ["pnpm essex -- prettify --staged"],
-	"*.md": ["pnpm essex -- lint --docs-only"],
-	"*.{js,jsx,ts,tsx}": ["pnpm essex -- lint --fix --staged"]
+	"*": ["essex prettify --staged"],
+	"*.md": ["essex lint --docs-only"],
+	"*.{js,jsx,ts,tsx}": ["essex lint --fix --staged"]
 }
