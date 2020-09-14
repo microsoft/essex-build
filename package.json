@@ -16,10 +16,8 @@
 		"release": "run-s clean build release:publish",
 		"lint": "pnpm essex -- lint --docs --fix",
 		"prettify": "pnpm essex -- prettify",
-		"audit_dependencies": "pnpm essex -- audit",
-		"audit": "pnpm essex -- audit",
 		"git_is_clean": "pnpm essex -- git-is-clean",
-		"ci": "run-s build lint test git_is_clean audit"
+		"ci": "run-s build lint test git_is_clean"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^11.0.0",

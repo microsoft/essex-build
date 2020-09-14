@@ -12,7 +12,7 @@ importers:
       lint-staged: 10.3.0
       npm-run-all: 4.1.5
       prettier: 2.1.1
-      ts-jest: 26.3.0
+      ts-jest: 26.3.0_typescript@4.0.2
       typescript: 4.0.2
     specifiers:
       '@commitlint/cli': ^11.0.0
@@ -16470,28 +16470,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-3IVX4nI6B5cc31/GFFE+i8ey/N2eA0CZDbo6n0yrz0zDX8ZJ8djmU1p+XRz7G3is0F3bB3pu2pAroFdAWQKU3w==
-  /ts-jest/26.3.0:
-    dependencies:
-      '@types/jest': 26.0.13
-      bs-logger: 0.2.6
-      buffer-from: 1.1.1
-      fast-json-stable-stringify: 2.1.0
-      jest-util: 26.3.0
-      json5: 2.1.3
-      lodash.memoize: 4.1.2
-      make-error: 1.3.6
-      mkdirp: 1.0.4
-      semver: 7.3.2
-      yargs-parser: 18.1.3
-    dev: true
-    engines:
-      node: '>= 10'
-    hasBin: true
-    peerDependencies:
-      jest: '>=26 <27'
-      typescript: '>=3.8 <5.0'
-    resolution:
-      integrity: sha512-Jq2uKfx6bPd9+JDpZNMBJMdMQUC3sJ08acISj8NXlVgR2d5OqslEHOR2KHMgwymu8h50+lKIm0m0xj/ioYdW2Q==
   /ts-jest/26.3.0_typescript@4.0.2:
     dependencies:
       '@types/jest': 26.0.13
@@ -16506,7 +16484,6 @@ packages:
       semver: 7.3.2
       typescript: 4.0.2
       yargs-parser: 18.1.3
-    dev: false
     engines:
       node: '>= 10'
     hasBin: true
