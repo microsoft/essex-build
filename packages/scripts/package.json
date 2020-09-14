@@ -68,9 +68,14 @@
 		"@essex/eslint-config": ">= 8.0.2",
 		"@essex/jest-config": ">= 8.0.9",
 		"@essex/prettier-config": ">= 8.0.1",
+		"@storybook/react": ">= 6",
+		"rollup": ">= 2",
 		"husky": ">= 4.2.5",
+		"lint-staged": ">= ^10.3.0",
 		"react": ">= 16.13.1",
-		"react-dom": ">= 16.13.1"
+		"react-dom": ">= 16.13.1",
+		"audit-ci": ">= 3.1",
+		"license-to-fail": ">= 4.0"
 	},
 	"peerDependenciesMeta": {
 		"@essex/eslint-config": {
@@ -86,6 +91,18 @@
 			"optional": true
 		},
 		"react-dom": {
+			"optional": true
+		},
+		"@storybook/react": {
+			"optional": true
+		},
+		"rollup": {
+			"optional": true
+		},
+		"audit-ci": {
+			"optional": true
+		},
+		"license-to-fail": {
 			"optional": true
 		}
 	}
