@@ -268,6 +268,9 @@ const baseConfig = {
 		react: {
 			version: 'detect',
 		},
+		jest: {
+			version: 26,
+		},
 	},
 	overrides: [
 		{

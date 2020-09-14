@@ -9,7 +9,7 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@azure/storage-blob": "^12.2.0-preview.1",
+		"@azure/storage-blob": "^12.2.0",
 		"@essex/build-utils": "^9.2.1",
 		"glob": "^7.1.6",
 		"mime-types": "^2.1.27"

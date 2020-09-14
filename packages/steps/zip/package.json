@@ -9,7 +9,7 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"archiver": "^5.0.0",
+		"archiver": "^5.0.2",
 		"glob": "^7.1.6"
 	},
 	"devDependencies": {
