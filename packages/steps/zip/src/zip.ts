@@ -37,7 +37,7 @@ async function getFileEntries(
 			result.push(...(await getSourceFiles(sourcePath)))
 		}
 	}
-	return result
+	return result.map(absFilePath => path.relative(workingDirectory, absFilePath))
 }
 
 function getGlobSource(source: string): Promise<string[]> {
