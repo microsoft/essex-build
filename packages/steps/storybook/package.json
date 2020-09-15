@@ -9,23 +9,20 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@babel/core": "^7.11.1",
 		"@essex/build-utils": "^9.2.1",
 		"@essex/shellrunner": "^9.2.1",
 		"@essex/storybook-config": "^9.2.1",
-		"@essex/tasklogger": "^9.2.1",
-		"@storybook/react": "^5.3.19",
-		"babel-loader": "^8.1.0",
-		"webpack": "^4.44.1"
+		"@essex/tasklogger": "^9.2.1"
 	},
 	"devDependencies": {
-		"@types/node": "^14.0.27",
+		"@types/node": "^14.10.1",
 		"@types/rimraf": "^3.0.0",
 		"rimraf": "^3.0.2",
-		"typescript": "3.9.7"
+		"typescript": "^4.0.2"
 	},
 	"peerDependencies": {
 		"react": ">= 16.13.1",
-		"react-dom": ">= 16.13.1"
+		"react-dom": ">= 16.13.1",
+		"@storybook/react": ">= 6"
 	}
 }

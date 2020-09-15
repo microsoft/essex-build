@@ -18,7 +18,10 @@ export function auditSecurity(): Promise<void> {
 		.then(filterShellCode)
 		.then(
 			() => subtaskSuccess('security'),
-			() => subtaskFail('security'),
+			(err: Error) => {
+				subtaskFail('security', err)
+				throw err
+			},
 		)
 }
 
@@ -30,7 +33,10 @@ export function auditLicenses(): Promise<void> {
 		.then(filterShellCode)
 		.then(
 			() => subtaskSuccess('licenses'),
-			() => subtaskFail('licenses'),
+			(err: Error) => {
+				subtaskFail('licenses', err)
+				throw err
+			},
 		)
 }
 

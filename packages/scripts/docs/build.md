@@ -7,7 +7,6 @@ Performs common build tasks for a library package.
 - TypeScript (if `tsconfig.json` is present). The output should land in `lib`
 - TypeDoc (if `tsconfig.json` is present). The output should land in `dist/docs`
 - Babel (from `src/` if no TypeScript, from `lib` if TypeScript was used). Output should land in `dist/esm` and `dist/cjs`
-- Rollup (if `rollup.config.js` exists, BYO rollup)
 - Webpack (if `webpack.config.js` exists)
 
 # CLI Options
@@ -15,7 +14,6 @@ Performs common build tasks for a library package.
 - `--verbose`<br/> enables verbose mode
 - `--env <env> (default=development)`<br/> sets the env to use for babel and webpack (if used)
 - `--mode <mode> (default=development)`<br/> sets the mode to use in webpack (if used)
-- `--storybook`<br/> to build a storybook into a static site (CLI dependencies required)
 - `--docs`<br/> enable documentation generation. This is recommended for CI of open source and quality-sensitive projects.
 
 # Details & Customization

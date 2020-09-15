@@ -136,6 +136,7 @@ runtime
 scalable
 transpiling
 variadic
+deployable
 `
 const dictionary = `
 ${ACTUAL_WORDS}
