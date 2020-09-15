@@ -17,14 +17,16 @@
 		"lint": "pnpm essex -- lint --docs --fix",
 		"prettify": "pnpm essex -- prettify",
 		"git_is_clean": "pnpm essex -- git-is-clean",
-		"ci": "run-s build lint test git_is_clean"
+		"ci": "run-s build lint test git_is_clean",
+		"cut_version": "changeset version"
 	},
 	"devDependencies": {
+		"@changesets/cli": "^2.10.2",
 		"@commitlint/cli": "^11.0.0",
-		"@essex/eslint-config": "^9.2.1",
-		"@essex/eslint-plugin": "^9.2.1",
-		"@essex/jest-config": "^9.2.1",
-		"@essex/prettier-config": "^9.2.1",
+		"@essex/eslint-config": "^10.0.0",
+		"@essex/eslint-plugin": "^10.0.0",
+		"@essex/jest-config": "^10.0.0",
+		"@essex/prettier-config": "^10.0.0",
 		"@types/jest": "^26.0.13",
 		"husky": "^4.3.0",
 		"jest-junit-reporter": "^1.1.0",
