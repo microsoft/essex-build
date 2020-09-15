@@ -2,6 +2,8 @@
 
 Note: taken from [pnpm documentation](https://pnpm.js.org/en/using-changesets#releasing-changes)
 
+- `pnpx changeset`
+  This will create a new changeset document describing what changes were made to what workspaces. This should be done frequently.
 - `pnpx changeset version`
   This will bump all the package versions in the monorepo and update the changelog files.
 - `pnpm install`
