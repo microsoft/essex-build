@@ -32,8 +32,11 @@ export function subtaskInfo(text: string): void {
 	console.log(chalk.white(`    - ${text}`))
 }
 
-export function subtaskFail(text: string): void {
+export function subtaskFail(text: string, err?: Error | undefined): void {
 	console.log(chalk.red(`    ✘ ${text}`))
+	if (err) {
+		console.error(err)
+	}
 }
 
 export function subtaskSuccess(text: string): void {
