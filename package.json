@@ -20,6 +20,7 @@
 		"ci": "run-s build lint test git_is_clean"
 	},
 	"devDependencies": {
+		"@changesets/cli": "^2.10.2",
 		"@commitlint/cli": "^11.0.0",
 		"@essex/eslint-config": "^9.2.1",
 		"@essex/eslint-plugin": "^9.2.1",
