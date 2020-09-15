@@ -1,3 +1,10 @@
 {
-  "allow": ["hook", "hooks", "color", "colors", "husky", "american"]
+  "allow": [
+    "hook", 
+    "hooks", 
+    "color", 
+    "colors", 
+    "husky", 
+    "american"
+  ]
 }
