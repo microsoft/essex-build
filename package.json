@@ -17,7 +17,8 @@
 		"lint": "pnpm essex -- lint --docs --fix",
 		"prettify": "pnpm essex -- prettify",
 		"git_is_clean": "pnpm essex -- git-is-clean",
-		"ci": "run-s build lint test git_is_clean"
+		"ci": "run-s build lint test git_is_clean",
+		"cut_version": "changeset version"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.10.2",
