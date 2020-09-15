@@ -1,6 +1,6 @@
 {
 	"name": "@essex/jest-config",
-	"version": "9.2.1",
+	"version": "10.0.0",
 	"author": "Chris Trevino <chtrevin@microsoft.com>",
 	"license": "MIT",
 	"main": "lib/index.js",
