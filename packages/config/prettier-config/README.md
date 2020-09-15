@@ -1,2 +1,3 @@
 # @essex/prettier-config
-Contains our prettier configuration, most of the action can be found in [index.js](index.js)
+
+Contains Team Essex's prettier configuration
