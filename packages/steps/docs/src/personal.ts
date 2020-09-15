@@ -137,6 +137,9 @@ scalable
 transpiling
 variadic
 deployable
+pnpm
+npm
+lockfile
 `
 const dictionary = `
 ${ACTUAL_WORDS}

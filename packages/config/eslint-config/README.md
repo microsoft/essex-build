@@ -1,0 +1,1 @@
+# @essex/eslint-config
