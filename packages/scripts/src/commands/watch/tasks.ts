@@ -8,7 +8,7 @@ import { watchBabel } from '@essex/build-step-babel'
 import { rollupWatch } from '@essex/build-step-rollup'
 import { watchTypescript } from '@essex/build-step-typescript'
 import { webpackWatch } from '@essex/build-step-webpack'
-import { TaskFunction } from 'gulp'
+import { TaskFunction } from 'just-scripts'
 import { WatchCommandOptions } from './types'
 
 const webpackConfigFile = join(process.cwd(), 'webpack.config.js')

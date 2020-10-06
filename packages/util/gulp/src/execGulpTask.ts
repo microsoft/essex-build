@@ -2,7 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { TaskFunction } from 'gulp'
+import { TaskFunction } from 'just-scripts'
+
 export function execGulpTask(task: TaskFunction): Promise<void> {
 	return new Promise((resolve, reject) => {
 		task(err => {
