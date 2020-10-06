@@ -11,3 +11,11 @@ storybook-static/
 # Testing Output
 coverage/
 test-report.xml
+
+# Yarn Gitignores
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
