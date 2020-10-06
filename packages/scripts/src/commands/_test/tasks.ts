@@ -3,9 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { jestGulp } from '@essex/build-step-jest'
-import * as gulp from 'gulp'
+import { TaskFunction } from 'just-scripts'
 import { TestCommandOptions } from './types'
 
-export function configureTasks(config: TestCommandOptions): gulp.TaskFunction {
+export function configureTasks(config: TestCommandOptions): TaskFunction {
 	return jestGulp(config)
 }

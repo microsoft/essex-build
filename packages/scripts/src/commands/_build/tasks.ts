@@ -9,7 +9,7 @@ import { buildBabel } from '@essex/build-step-babel'
 import { generateTypedocsGulp } from '@essex/build-step-typedoc'
 import { compileTypescript, emitTypings } from '@essex/build-step-typescript'
 import { noopTask } from '@essex/build-utils'
-import * as gulp from 'gulp'
+import { TaskFunction, series, parallel, condition } from 'just-scripts'
 import { BuildCommandOptions } from './types'
 
 const cwd = process.cwd()
@@ -20,7 +20,7 @@ export function configureTasks({
 	docs = false,
 	env = 'production',
 	stripInternalTypes = false,
-}: BuildCommandOptions): gulp.TaskFunction {
+}: BuildCommandOptions): TaskFunction {
 	if (!existsSync(tsConfigPath)) {
 		throw new Error('tsconfig.json must exist')
 	}
@@ -30,13 +30,13 @@ export function configureTasks({
 	const compileTS = compileTypescript()
 	const compileJS = buildBabel(env)
 
-	return gulp.parallel(
+	return parallel(
 		generateDocs,
 		buildTypings,
 		//
 		// The primary transpilation pipeline
 		//  tsc -> babel -> bundlers
 		//
-		gulp.series(compileTS, compileJS),
+		series(compileTS, compileJS),
 	)
 }

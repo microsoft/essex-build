@@ -6,7 +6,7 @@ import { docs as execDocs } from '@essex/build-step-docs'
 import { eslint } from '@essex/build-step-eslint'
 import { prettyQuick } from '@essex/build-step-pretty-quick'
 import { resolveGulpTask, noopTask } from '@essex/build-utils'
-import * as gulp from 'gulp'
+import { parallel, TaskFunction } from 'just-scripts'
 import { LintCommandOptions } from './types'
 
 export function configureTasks(
@@ -18,7 +18,7 @@ export function configureTasks(
 		docsOnly = false,
 	}: LintCommandOptions,
 	files: string[] | undefined,
-): gulp.TaskFunction {
+): TaskFunction {
 	function checkCode(cb: (err?: Error) => void) {
 		eslint(fix, strict, files || ['.']).then(...resolveGulpTask('eslint', cb))
 	}
@@ -35,9 +35,9 @@ export function configureTasks(
 	}
 
 	if (docsOnly) {
-		return gulp.series(checkDocumentation)
+		return checkDocumentation
 	} else {
-		return gulp.parallel(
+		return parallel(
 			checkCode,
 			checkFormatting,
 			docs ? checkDocumentation : noopTask,

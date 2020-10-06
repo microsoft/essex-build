@@ -9,7 +9,7 @@ import { rollupBuild } from '@essex/build-step-rollup'
 import { storybookBuildGulp } from '@essex/build-step-storybook'
 import { webpackBuildGulp } from '@essex/build-step-webpack'
 import { noopTask } from '@essex/build-utils'
-import * as gulp from 'gulp'
+import { TaskFunction, parallel } from 'just-scripts'
 import { BundleCommandOptions } from './types'
 
 const wpConfigExists = existsSync(join(process.cwd(), 'webpack.config.js'))
@@ -23,7 +23,7 @@ export function configureTasks({
 	rollup = rollupConfigExists,
 	env = 'production',
 	mode = 'production',
-}: BundleCommandOptions): gulp.TaskFunction {
+}: BundleCommandOptions): TaskFunction {
 	if (!webpack && !rollup && !storybook) {
 		throw new Error(
 			'--webpack, --rollup, or --storybook flags must be passed to bundle command',
@@ -35,5 +35,5 @@ export function configureTasks({
 		: noopTask
 	const bundleRollup = rollup ? rollupBuild : noopTask
 
-	return gulp.parallel(buildStorybook, bundleWebpack, bundleRollup)
+	return parallel(buildStorybook, bundleWebpack, bundleRollup)
 }
