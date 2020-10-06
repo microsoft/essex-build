@@ -9,10 +9,9 @@
 	"scripts": {
 		"preinstall": "npx only-allow yarn",
 		"essex": "node ./packages/scripts/lib/index.js",
-		"lage": "lage",
 		"test": "yarn essex test",
 		"lint": "yarn essex lint --docs --fix",
-		"prettify": "essex prettify",
+		"prettify": "yarn essex prettify",
 		"pipeline": "lage clean build bundle test",
 		"git_is_clean": "yarn essex git-is-clean",
 		"ci": "run-s pipeline lint test git_is_clean"
