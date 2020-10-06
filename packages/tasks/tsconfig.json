@@ -1,8 +1,10 @@
 {
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
-		"outDir": "lib",
-		"declaration": false
+		"module": "CommonJS",
+		"lib": ["ES2018"],
+		"target": "ES2018",
+		"outDir": "lib"
 	},
 	"include": ["src/**/*.ts"]
 }

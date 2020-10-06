@@ -8,7 +8,8 @@
 	"license": "MIT",
 	"scripts": {
 		"build": "tsc",
-		"clean": "rimraf lib"
+		"clean": "rimraf lib",
+		"bj": "just-scripts typedocs"
 	},
 	"bin": {
 		"essex": "./lib/index.js",
@@ -38,6 +39,8 @@
 		"@essex/shellrunner": "^10.0.0",
 		"@essex/tasklogger": "^10.0.0",
 		"@essex/webpack-config": "^10.0.0",
+		"@types/undertaker": "^1.2.3",
+		"@types/yargs": "^15.0.7",
 		"chalk": "^4.1.0",
 		"gulp": "^4.0.2",
 		"gulp-debug": "^4.0.0",
@@ -45,7 +48,9 @@
 		"just-scripts": "^0.44.7",
 		"prettier": "^2.0.5",
 		"regenerator-runtime": "^0.13.7",
-		"supports-color": "^7.1.0"
+		"supports-color": "^7.1.0",
+		"undertaker": "^1.3.0",
+		"yargs": "^16.0.3"
 	},
 	"devDependencies": {
 		"@types/debug": "^4.1.5",
