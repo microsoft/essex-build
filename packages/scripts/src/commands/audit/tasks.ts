@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { auditSecurity, auditLicenses } from '@essex/build-step-audit'
-import { parallel, TaskFunction } from 'just-scripts'
+import { parallel, TaskFunction } from 'gulp'
 
 export function configureTasks(): TaskFunction {
 	return parallel(auditSecurity, auditLicenses)

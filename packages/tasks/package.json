@@ -7,13 +7,12 @@
 	"author": "David Tittsworth <datittsw@microsoft.com>",
 	"license": "MIT",
 	"scripts": {
-		"build": "tsc",
+		"build": "tsc -b",
 		"clean": "rimraf lib",
-		"bj": "just-scripts typedocs"
+		"bj": "just-scripts build"
 	},
 	"bin": {
-		"essex": "./lib/index.js",
-		"essex-scripts": "./lib/index.js"
+		"just-scripts": "./just-scripts.js"
 	},
 	"dependencies": {
 		"@essex/build-step-audit": "^10.0.0",
@@ -37,32 +36,32 @@
 		"@essex/build-utils": "^10.0.0",
 		"@essex/eslint-plugin": "^10.0.0",
 		"@essex/shellrunner": "^10.0.0",
-		"@essex/tasklogger": "^10.0.0",
 		"@essex/webpack-config": "^10.0.0",
 		"@types/undertaker": "^1.2.3",
+		"@types/webpack-merge": "^4.1.5",
 		"@types/yargs": "^15.0.7",
 		"chalk": "^4.1.0",
 		"gulp": "^4.0.2",
 		"gulp-debug": "^4.0.0",
 		"gulp-prettier": "^3.0.0",
 		"just-scripts": "^0.44.7",
-		"prettier": "^2.0.5",
+		"prettier": "^2.1.2",
 		"regenerator-runtime": "^0.13.7",
-		"supports-color": "^7.1.0",
+		"supports-color": "^7.2.0",
 		"undertaker": "^1.3.0",
 		"yargs": "^16.0.3"
 	},
 	"devDependencies": {
 		"@types/debug": "^4.1.5",
-		"@types/gulp": "^4.0.6",
+		"@types/gulp": "^4.0.7",
 		"@types/gulp-babel": "^6.1.29",
 		"@types/gulp-debug": "^2.0.31",
-		"@types/node": "^14.10.1",
+		"@types/node": "^14.11.5",
 		"crlf": "^1.1.1",
 		"npm-run-all": "^4.1.5",
 		"rimraf": "^3.0.2",
 		"shx": "^0.3.2",
-		"typescript": "^4.0.2"
+		"typescript": "^4.0.3"
 	},
 	"peerDependencies": {
 		"@essex/eslint-config": ">=10.0.0",

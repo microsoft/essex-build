@@ -2,9 +2,16 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { task, series, parallel, option, argv, condition } from 'just-scripts'
-import { generateTypedocsGulp } from '@essex/build-step-typedoc'
-import { compileTypescript, emitTypings } from '@essex/build-step-typescript'
+import { series, parallel, TaskFunction, tree } from 'gulp'
+import { options, argv } from 'yargs'
+import {
+	generateTypedocs,
+	generateTypedocsGulp,
+} from '@essex/build-step-typedoc'
+import {
+	compileTypescript,
+	emitTypings as emitTypingsTask,
+} from '@essex/build-step-typescript'
 import { buildBabel } from '@essex/build-step-babel'
 import { rollupBuild } from '@essex/build-step-rollup'
 import { storybookBuildGulp } from '@essex/build-step-storybook'
@@ -12,44 +19,94 @@ import { webpackBuildGulp } from '@essex/build-step-webpack'
 import { checkCommitMessage } from '@essex/build-step-commitlint'
 import { auditSecurity, auditLicenses } from '@essex/build-step-audit'
 import { clean as cleanTask } from '@essex/build-step-clean'
-import { jestGulp } from '../../scripts/node_modules/@essex/build-step-jest/lib'
+import { jestGulp } from '@essex/build-step-jest'
 import { deployTask } from './deploy'
+import { condition } from '@essex/build-utils'
+import { task, tscTask } from 'just-scripts'
 
-export function preset() {
-	option('verbose', { boolean: true })
-	option('stripInternalTypes', { boolean: true })
-	option('env', { string: true, default: 'production' as any })
-	option('mode', { string: true, default: 'production' as any })
-	option('docs', { boolean: true })
-	option('coverage', { boolean: true })
-	option('ci', { boolean: true })
-	option('storybook', { boolean: true })
-	option('webpack', { boolean: true })
-	option('rollup', { boolean: true })
-	option('cleanFiles', { boolean: true })
-	option('jestClearCache', { boolean: true })
-	option('jestUpdateSnapshots', { boolean: true })
-	option('jestCoverageThreshold', { number: true })
-	option('jestBrowser', { boolean: true })
-	option('jestConfigFile', { string: true })
-	option('deployStorageAccount', { string: true })
-	option('deployStorageAccountKey', { string: true })
-	option('deployType', { string: true })
+export function preset(): Record<string, TaskFunction> {
+	options({
+		verbose: {
+			boolean: true,
+			default: false,
+		},
+		docs: {
+			boolean: true,
+			default: false,
+		},
+		stripInternalTypes: {
+			boolean: true,
+			default: false,
+		},
+		coverage: {
+			boolean: true,
+			default: false,
+		},
+		ci: {
+			boolean: true,
+			default: false,
+		},
+		storybook: {
+			boolean: true,
+			default: false,
+		},
+		webpack: {
+			boolean: true,
+			default: false,
+		},
+		rollup: {
+			boolean: true,
+			default: false,
+		},
+		env: {
+			string: true,
+			default: 'production',
+			choices: ['production', 'development'],
+		},
+		mode: {
+			string: true,
+			default: 'production',
+			choices: ['production', 'development'],
+		},
+	})
 
-	console.log('A', task)
-	task('typedocs', () => generateTypedocsGulp(argv()['verbose']))
-	// task('typings', () => emitTypings(argv()['stripInternalTypes']))
-	// task('tsc', compileTypescript())
-	// task('babel', buildBabel(argv()['env']))
+	const verbose = argv['verbose'] as boolean
+	const docs = argv['docs'] as boolean
+	const coverage = argv['coverage'] as boolean
+	const ci = argv['ci'] as boolean
+	const storybook = argv['storybook'] as boolean
+	const webpack = argv['webpack'] as boolean
+	const rollup = argv['rollup'] as boolean
+	const stripInternalTypes = argv['stripInternalTypes'] as boolean
+	const env = argv['env'] as string
+	const splatArgs = argv._
 
-	// task('build', () =>
-	// 	parallel(
-	// 		condition('typedocs', argv()['docs']),
-	// 		'tyings',
-	// 		series('tsc', 'babel'),
-	// 	),
-	// )
+	function typedocs() {
+		return generateTypedocs(verbose)
+	}
+	function clean() {
+		return cleanTask(['lib', 'dist', 'storybook_static', 'build', ...splatArgs])
+	}
+	const build = parallel(
+		condition(typedocs, docs),
+		emitTypingsTask(stripInternalTypes),
+		series(tscTask(), buildBabel(env)),
+	)
 
+	task('clean', clean)
+	task('build', build)
+
+	// option('jestClearCache', { boolean: true })
+	// option('jestUpdateSnapshots', { boolean: true })
+	// option('jestCoverageThreshold', { number: true })
+	// option('jestBrowser', { boolean: true })
+	// option('jestConfigFile', { string: true })
+	// option('deployStorageAccount', { string: true })
+	// option('deployStorageAccountKey', { string: true })
+	// option('deployType', { string: true })
+	return {
+		build,
+	}
 	// task('test', () =>
 	// 	jestGulp({
 	// 		verbose: argv()['verbose'],

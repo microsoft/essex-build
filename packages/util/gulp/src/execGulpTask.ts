@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { TaskFunction } from 'just-scripts'
+import { TaskFunction } from 'undertaker'
 
 export function execGulpTask(task: TaskFunction): Promise<void> {
 	return new Promise((resolve, reject) => {

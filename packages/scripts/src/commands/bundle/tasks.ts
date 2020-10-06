@@ -9,7 +9,7 @@ import { rollupBuild } from '@essex/build-step-rollup'
 import { storybookBuildGulp } from '@essex/build-step-storybook'
 import { webpackBuildGulp } from '@essex/build-step-webpack'
 import { noopTask } from '@essex/build-utils'
-import { TaskFunction, parallel } from 'just-scripts'
+import { TaskFunction, parallel } from 'gulp'
 import { BundleCommandOptions } from './types'
 
 const wpConfigExists = existsSync(join(process.cwd(), 'webpack.config.js'))

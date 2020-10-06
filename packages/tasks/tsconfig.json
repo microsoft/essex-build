@@ -1,6 +1,8 @@
 {
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
+		"allowJs": true,
+		"esModuleInterop": true,
 		"module": "CommonJS",
 		"lib": ["ES2018"],
 		"target": "ES2018",

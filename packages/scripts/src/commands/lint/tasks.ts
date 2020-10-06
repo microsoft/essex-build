@@ -6,7 +6,7 @@ import { docs as execDocs } from '@essex/build-step-docs'
 import { eslint } from '@essex/build-step-eslint'
 import { prettyQuick } from '@essex/build-step-pretty-quick'
 import { resolveGulpTask, noopTask } from '@essex/build-utils'
-import { parallel, TaskFunction } from 'just-scripts'
+import { parallel, TaskFunction } from 'gulp'
 import { LintCommandOptions } from './types'
 
 export function configureTasks(

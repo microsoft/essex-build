@@ -7,7 +7,7 @@
 	"author": "David Tittsworth <datittsw@microsoft.com>",
 	"license": "MIT",
 	"scripts": {
-		"build:typescript": "tsc",
+		"build:typescript": "tsc -b",
 		"build:crlf": "crlf --set=LF \"lib/**/*.js\"",
 		"build:perms": "shx chmod +x lib/index.js",
 		"build": "run-s build:typescript build:crlf build:perms",
@@ -43,28 +43,28 @@
 		"@essex/tasks": "^10.0.0",
 		"@essex/webpack-config": "^10.0.0",
 		"chalk": "^4.1.0",
-		"commander": "^6.0.0",
+		"commander": "^6.1.0",
 		"core-js": "^3.6.5",
-		"debug": "^4.1.1",
+		"debug": "^4.2.0",
 		"gulp": "^4.0.2",
 		"gulp-debug": "^4.0.0",
 		"gulp-prettier": "^3.0.0",
 		"just-scripts": "^0.44.7",
-		"prettier": "^2.0.5",
+		"prettier": "^2.1.2",
 		"regenerator-runtime": "^0.13.7",
-		"supports-color": "^7.1.0"
+		"supports-color": "^7.2.0"
 	},
 	"devDependencies": {
 		"@types/debug": "^4.1.5",
-		"@types/gulp": "^4.0.6",
+		"@types/gulp": "^4.0.7",
 		"@types/gulp-babel": "^6.1.29",
 		"@types/gulp-debug": "^2.0.31",
-		"@types/node": "^14.10.1",
+		"@types/node": "^14.11.5",
 		"crlf": "^1.1.1",
 		"npm-run-all": "^4.1.5",
 		"rimraf": "^3.0.2",
 		"shx": "^0.3.2",
-		"typescript": "^4.0.2"
+		"typescript": "^4.0.3"
 	},
 	"peerDependencies": {
 		"@essex/eslint-config": ">=10.0.0",

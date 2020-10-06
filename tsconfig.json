@@ -6,7 +6,6 @@
 		"esModuleInterop": false,
 		"jsx": "react",
 		"strict": true,
-		"incremental": true,
 		"declaration": true,
 		"forceConsistentCasingInFileNames": true,
 		// SDI covers over esm support flaws. Libraries should not ship with SDI enabled if it's at all possible.

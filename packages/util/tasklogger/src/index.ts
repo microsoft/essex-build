@@ -3,46 +3,47 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import * as chalk from 'chalk'
+const { logger } = require('just-scripts')
 
 export function info(text: string, ...args: unknown[]): void {
-	console.log(chalk.white(text), ...args)
+	logger.info(text, ...args)
 }
 
 export function error(text: string, ...args: unknown[]): void {
-	console.log(chalk.red(text), ...args)
+	logger.error(text, ...args)
 }
 
 export function warn(text: string, ...args: unknown[]): void {
-	console.log(chalk.yellow.bold(text), ...args)
+	logger.warn(text, ...args)
 }
 
 export function success(text: string, ...args: unknown[]): void {
-	console.log(chalk.green(`🎉 ${text}`), ...args)
+	logger.info(chalk.green(`🎉 ${text}`), ...args)
 }
 
 export function fail(text: string, ...args: unknown[]): void {
-	console.log(chalk.red(`🔥 ${text}`), ...args)
+	logger.info(chalk.red(`🔥 ${text}`), ...args)
 }
 
 export function subtask(text: string): void {
-	console.log(chalk.cyan(`  * ${text}`))
+	logger.info(chalk.cyan(`  * ${text}`))
 }
 
 export function subtaskInfo(text: string): void {
-	console.log(chalk.white(`    - ${text}`))
+	logger.info(chalk.white(`    - ${text}`))
 }
 
 export function subtaskFail(text: string, err?: Error | undefined): void {
-	console.log(chalk.red(`    ✘ ${text}`))
+	logger.info(chalk.red(`    ✘ ${text}`))
 	if (err) {
-		console.error(err)
+		logger.error(err)
 	}
 }
 
 export function subtaskSuccess(text: string): void {
-	console.log(chalk.green(`    ✔ ${text}`))
+	logger.info(chalk.green(`    ✔ ${text}`))
 }
 
 export function subtaskComplete(): void {
-	console.log(chalk.green('      ✔ Complete'))
+	logger.info(chalk.green('      ✔ Complete'))
 }
