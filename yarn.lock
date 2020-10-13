@@ -125,7 +125,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@azure/storage-blob@npm:^12.2.0":
+"@azure/storage-blob@npm:^12.2.1":
   version: 12.2.1
   resolution: "@azure/storage-blob@npm:12.2.1"
   dependencies:
@@ -171,7 +171,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:7.11.6, @babel/core@npm:^7.1.0, @babel/core@npm:^7.11.1, @babel/core@npm:^7.11.6, @babel/core@npm:^7.7.5, @babel/core@npm:^7.9.0":
+"@babel/core@npm:7.11.6, @babel/core@npm:^7.1.0, @babel/core@npm:^7.11.6, @babel/core@npm:^7.7.5, @babel/core@npm:^7.9.0":
   version: 7.11.6
   resolution: "@babel/core@npm:7.11.6"
   dependencies:
@@ -1381,7 +1381,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-env@npm:^7.11.0, @babel/preset-env@npm:^7.9.5, @babel/preset-env@npm:^7.9.6":
+"@babel/preset-env@npm:^7.11.5, @babel/preset-env@npm:^7.9.5, @babel/preset-env@npm:^7.9.6":
   version: 7.11.5
   resolution: "@babel/preset-env@npm:7.11.5"
   dependencies:
@@ -1949,15 +1949,15 @@ __metadata:
     "@essex/eslint-plugin": ^10.0.0
     "@essex/jest-config": ^10.0.0
     "@essex/prettier-config": ^10.0.0
-    "@types/jest": ^26.0.13
+    "@types/jest": ^26.0.14
     husky: ^4.3.0
     jest-junit-reporter: ^1.1.0
     lage: 0.19.9
-    lint-staged: ^10.3.0
+    lint-staged: ^10.4.0
     npm-run-all: ^4.1.5
-    prettier: ^2.0.5
+    prettier: ^2.1.2
     ts-jest: ~26.3.0
-    typescript: ^4.0.2
+    typescript: ^4.0.3
   languageName: unknown
   linkType: soft
 
@@ -1965,15 +1965,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/babel-config@workspace:packages/config/babel-config"
   dependencies:
-    "@babel/core": ^7.11.1
+    "@babel/core": ^7.11.6
     "@babel/plugin-proposal-class-properties": ^7.10.4
     "@babel/plugin-proposal-nullish-coalescing-operator": ^7.10.4
     "@babel/plugin-proposal-object-rest-spread": ^7.11.0
     "@babel/plugin-proposal-optional-chaining": ^7.11.0
-    "@babel/preset-env": ^7.11.0
-    "@types/node": ^14.10.1
+    "@babel/preset-env": ^7.11.5
+    "@types/node": ^14.11.5
     rimraf: ^3.0.2
-    typescript: ^4.0.2
+    typescript: ^4.0.3
   languageName: unknown
   linkType: soft
 
@@ -1984,9 +1984,9 @@ __metadata:
     "@essex/build-utils": ^10.0.0
     "@essex/shellrunner": ^10.0.0
     "@essex/tasklogger": ^10.0.0
-    "@types/node": ^14.10.1
+    "@types/node": ^14.11.5
     rimraf: ^3.0.2
-    typescript: ^4.0.2
+    typescript: ^4.0.3
   peerDependencies:
     audit-ci: ">= 3.1"
     license-to-fail: ">= 4.0"
@@ -1997,14 +1997,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/build-step-azure@workspace:packages/steps/azure"
   dependencies:
-    "@azure/storage-blob": ^12.2.0
+    "@azure/storage-blob": ^12.2.1
     "@essex/build-utils": ^10.0.0
+    "@types/glob": ^7.1.3
     "@types/mime-types": ^2.1.0
-    "@types/node": ^14.10.1
+    "@types/node": ^14.11.5
     glob: ^7.1.6
     mime-types: ^2.1.27
     rimraf: ^3.0.2
-    typescript: ^4.0.2
+    typescript: ^4.0.3
   languageName: unknown
   linkType: soft
 
@@ -2012,22 +2013,22 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/build-step-babel@workspace:packages/steps/babel"
   dependencies:
-    "@babel/core": ^7.11.1
-    "@babel/types": ^7.11.0
+    "@babel/core": ^7.11.6
+    "@babel/types": ^7.11.5
     "@essex/babel-config": ^10.0.0
     "@essex/build-utils": ^10.0.0
     "@essex/tasklogger": ^10.0.0
-    "@types/gulp": ^4.0.6
+    "@types/gulp": ^4.0.7
     "@types/gulp-babel": ^6.1.29
     "@types/gulp-debug": ^2.0.31
     "@types/gulp-plumber": ^0.0.32
-    "@types/node": ^14.10.1
+    "@types/node": ^14.11.5
     gulp: ^4.0.2
     gulp-babel: ^8.0.0
     gulp-debug: ^4.0.0
     gulp-plumber: ^1.2.1
     rimraf: ^3.0.2
-    typescript: ^4.0.2
+    typescript: ^4.0.3
   languageName: unknown
   linkType: soft
 
@@ -2036,10 +2037,10 @@ __metadata:
   resolution: "@essex/build-step-clean@workspace:packages/steps/clean"
   dependencies:
     "@essex/build-utils": ^10.0.0
-    "@types/node": ^14.10.1
+    "@types/node": ^14.11.5
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
-    typescript: ^4.0.2
+    typescript: ^4.0.3
   languageName: unknown
   linkType: soft
 
@@ -2050,10 +2051,10 @@ __metadata:
     "@commitlint/config-conventional": 11.0.0
     "@essex/build-utils": ^10.0.0
     "@essex/shellrunner": ^10.0.0
-    "@types/node": ^14.10.1
+    "@types/node": ^14.11.5
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
-    typescript: ^4.0.2
+    typescript: ^4.0.3
   peerDependencies:
     "@commitlint/cli": ">= 11.0.0"
   languageName: unknown
@@ -2064,19 +2065,19 @@ __metadata:
   resolution: "@essex/build-step-docs@workspace:packages/steps/docs"
   dependencies:
     "@essex/build-utils": ^10.0.0
-    "@types/node": ^14.10.1
+    "@types/node": ^14.11.5
     dictionary-en: ^3.0.1
     remark-frontmatter: ^2.0.0
     remark-message-control: ^6.0.0
     remark-parse: ^8.0.3
     remark-retext: ^4.0.0
     retext-english: ^3.0.4
-    retext-equality: ^5.1.0
-    retext-profanities: ^6.0.0
+    retext-equality: ^5.4.0
+    retext-profanities: ^6.1.0
     retext-spell: ^4.0.0
     rimraf: ^3.0.2
-    typescript: ^4.0.2
-    unified: ^9.1.0
+    typescript: ^4.0.3
+    unified: ^9.2.0
     unified-engine: ^8.0.0
     vfile-reporter: ^6.0.1
   languageName: unknown
@@ -2089,13 +2090,13 @@ __metadata:
     "@essex/build-utils": ^10.0.0
     "@essex/eslint-config": ^10.0.0
     "@essex/eslint-plugin": ^10.0.0
-    "@types/eslint": ^7.2.0
-    "@types/node": ^14.10.1
-    "@typescript-eslint/eslint-plugin": ^4.1.1
-    "@typescript-eslint/parser": ^4.1.1
-    eslint: ^7.9.0
+    "@types/eslint": ^7.2.3
+    "@types/node": ^14.11.5
+    "@typescript-eslint/eslint-plugin": ^4.4.0
+    "@typescript-eslint/parser": ^4.4.0
+    eslint: ^7.10.0
     rimraf: ^3.0.2
-    typescript: ^4.0.2
+    typescript: ^4.0.3
   languageName: unknown
   linkType: soft
 
@@ -2106,10 +2107,10 @@ __metadata:
     "@essex/build-step-recipes": ^10.0.0
     "@essex/build-utils": ^10.0.0
     "@essex/tasklogger": ^10.0.0
-    "@types/node": ^14.10.1
+    "@types/node": ^14.11.5
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
-    typescript: ^4.0.2
+    typescript: ^4.0.3
   languageName: unknown
   linkType: soft
 
@@ -2122,13 +2123,13 @@ __metadata:
     "@essex/tasklogger": ^10.0.0
     "@jest/core": ^26.4.2
     "@types/debug": ^4.1.5
-    "@types/node": ^14.10.1
+    "@types/node": ^14.11.5
     "@types/rimraf": ^3.0.0
     chalk: ^4.1.0
-    debug: ^4.1.1
+    debug: ^4.2.0
     jest: ~26.3
     rimraf: ^3.0.2
-    typescript: ^4.0.2
+    typescript: ^4.0.3
   languageName: unknown
   linkType: soft
 
@@ -2138,10 +2139,10 @@ __metadata:
   dependencies:
     "@essex/build-utils": ^10.0.0
     "@essex/shellrunner": ^10.0.0
-    "@types/node": ^14.10.1
+    "@types/node": ^14.11.5
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
-    typescript: ^4.0.2
+    typescript: ^4.0.3
   peerDependencies:
     lint-staged: ">= 10.2"
   languageName: unknown
@@ -2153,12 +2154,12 @@ __metadata:
   dependencies:
     "@essex/build-utils": ^10.0.0
     "@essex/tasklogger": ^10.0.0
-    "@types/node": ^14.10.1
+    "@types/node": ^14.11.5
     chalk: ^4.1.0
-    prettier: ^2.0.5
+    prettier: ^2.1.2
     pretty-quick: ^3.0.2
     rimraf: ^3.0.2
-    typescript: ^4.0.2
+    typescript: ^4.0.3
   languageName: unknown
   linkType: soft
 
@@ -2167,10 +2168,10 @@ __metadata:
   resolution: "@essex/build-step-recipes@workspace:packages/steps/recipes"
   dependencies:
     "@essex/tasklogger": ^10.0.0
-    "@types/node": ^14.10.1
+    "@types/node": ^14.11.5
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
-    typescript: ^4.0.2
+    typescript: ^4.0.3
   languageName: unknown
   linkType: soft
 
@@ -2181,9 +2182,9 @@ __metadata:
     "@essex/build-utils": ^10.0.0
     "@essex/shellrunner": ^10.0.0
     "@essex/tasklogger": ^10.0.0
-    "@types/node": ^14.10.1
+    "@types/node": ^14.11.5
     rimraf: ^3.0.2
-    typescript: ^4.0.2
+    typescript: ^4.0.3
   peerDependencies:
     rollup: ">= 2"
   languageName: unknown
@@ -2197,10 +2198,10 @@ __metadata:
     "@essex/shellrunner": ^10.0.0
     "@essex/storybook-config": ^10.0.0
     "@essex/tasklogger": ^10.0.0
-    "@types/node": ^14.10.1
+    "@types/node": ^14.11.5
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
-    typescript: ^4.0.2
+    typescript: ^4.0.3
   peerDependencies:
     "@storybook/react": ">= 6"
     react: ">= 16.13.1"
@@ -2214,10 +2215,10 @@ __metadata:
   dependencies:
     "@essex/build-utils": ^10.0.0
     "@essex/tasklogger": ^10.0.0
-    "@types/node": ^14.10.1
+    "@types/node": ^14.11.5
     rimraf: ^3.0.2
-    typedoc: ^0.19.1
-    typescript: ^4.0.2
+    typedoc: ^0.19.2
+    typescript: ^4.0.3
   peerDependencies:
     "@types/node": ">= 14"
   languageName: unknown
@@ -2229,16 +2230,16 @@ __metadata:
   dependencies:
     "@essex/build-utils": ^10.0.0
     "@essex/tasklogger": ^10.0.0
-    "@types/gulp": ^4.0.6
+    "@types/gulp": ^4.0.7
     "@types/gulp-debug": ^2.0.31
     "@types/gulp-plumber": ^0.0.32
-    "@types/node": ^14.10.1
+    "@types/node": ^14.11.5
     gulp: ^4.0.2
     gulp-debug: ^4.0.0
     gulp-plumber: ^1.2.1
     gulp-typescript: ^6.0.0-alpha.1
     rimraf: ^3.0.2
-    typescript: ^4.0.2
+    typescript: ^4.0.3
   peerDependencies:
     "@types/node": ">= 14"
   languageName: unknown
@@ -2251,12 +2252,12 @@ __metadata:
     "@essex/build-utils": ^10.0.0
     "@essex/tasklogger": ^10.0.0
     "@essex/webpack-config": ^10.0.0
-    "@types/node": ^14.10.1
-    "@types/webpack": ^4.41.21
+    "@types/node": ^14.11.5
+    "@types/webpack": ^4.41.22
     "@types/webpack-dev-server": ^3.11.0
     rimraf: ^3.0.2
-    typescript: ^4.0.2
-    webpack: ^4.44.1
+    typescript: ^4.0.3
+    webpack: ^4.44.2
     webpack-dev-server: ^3.11.0
   languageName: unknown
   linkType: soft
@@ -2265,12 +2266,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/build-step-zip@workspace:packages/steps/zip"
   dependencies:
-    "@types/archiver": ^3.1.0
+    "@types/archiver": ^3.1.1
     "@types/glob": ^7.1.3
-    "@types/node": ^14.10.1
+    "@types/node": ^14.11.5
     archiver: ^5.0.2
     glob: ^7.1.6
-    typescript: ^4.0.2
+    typescript: ^4.0.3
   languageName: unknown
   linkType: soft
 
@@ -2278,9 +2279,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/build-util-hoister@workspace:packages/util/hoister"
   dependencies:
-    "@types/node": ^14.10.1
+    "@types/node": ^14.11.5
     rimraf: ^3.0.2
-    typescript: ^4.0.2
+    typescript: ^4.0.3
   languageName: unknown
   linkType: soft
 
@@ -2290,12 +2291,13 @@ __metadata:
   dependencies:
     "@essex/shellrunner": ^10.0.0
     "@essex/tasklogger": ^10.0.0
-    "@types/node": ^14.10.1
+    "@types/gulp": ^4.0.7
+    "@types/node": ^14.11.5
     "@types/through2": ^2.0.36
     gulp: ^4.0.2
     rimraf: ^3.0.2
     through2: ^4.0.2
-    typescript: ^4.0.2
+    typescript: ^4.0.3
   languageName: unknown
   linkType: soft
 
@@ -2315,23 +2317,23 @@ __metadata:
   dependencies:
     "@babel/core": ^7.11.6
     "@babel/types": ^7.11.5
-    "@types/node": ^14.10.1
-    "@typescript-eslint/eslint-plugin": ^4.1.1
-    "@typescript-eslint/parser": ^4.1.1
+    "@types/node": ^14.11.5
+    "@typescript-eslint/eslint-plugin": ^4.4.0
+    "@typescript-eslint/parser": ^4.4.0
     babel-eslint: ^10.1.0
     confusing-browser-globals: ^1.0.9
-    eslint: ^7.9.0
-    eslint-config-prettier: ^6.11.0
+    eslint: ^7.10.0
+    eslint-config-prettier: ^6.12.0
     eslint-import-resolver-node: ^0.3.4
     eslint-plugin-header: ^3.1.0
-    eslint-plugin-import: ^2.22.0
-    eslint-plugin-jest: ^24.0.1
+    eslint-plugin-import: ^2.22.1
+    eslint-plugin-jest: ^24.1.0
     eslint-plugin-jsx-a11y: ^6.3.1
-    eslint-plugin-react: ^7.20.6
+    eslint-plugin-react: ^7.21.3
     eslint-plugin-react-hooks: ^4.1.2
-    prettier: ^2.1.1
+    prettier: ^2.1.2
     rimraf: ^3.0.2
-    typescript: ^4.0.2
+    typescript: ^4.0.3
   languageName: unknown
   linkType: soft
 
@@ -2339,14 +2341,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/jest-config@workspace:packages/config/jest-config"
   dependencies:
-    "@types/jest": ^26.0.9
-    "@types/node": ^14.10.1
+    "@types/jest": ^26.0.14
+    "@types/node": ^14.11.5
     identity-obj-proxy: ^3.0.0
     jest-config: ^26.1.0
     jest-junit-reporter: ^1.1.0
     rimraf: ^3.0.2
-    ts-jest: ~26.3
-    typescript: ^4.0.2
+    ts-jest: ~26.3.0
+    typescript: ^4.0.3
   peerDependencies:
     jest: ">= 26"
   languageName: unknown
@@ -2386,25 +2388,25 @@ __metadata:
     "@essex/tasklogger": ^10.0.0
     "@essex/webpack-config": ^10.0.0
     "@types/debug": ^4.1.5
-    "@types/gulp": ^4.0.6
+    "@types/gulp": ^4.0.7
     "@types/gulp-babel": ^6.1.29
     "@types/gulp-debug": ^2.0.31
-    "@types/node": ^14.10.1
+    "@types/node": ^14.11.5
     chalk: ^4.1.0
-    commander: ^6.0.0
+    commander: ^6.1.0
     core-js: ^3.6.5
     crlf: ^1.1.1
-    debug: ^4.1.1
+    debug: ^4.2.0
     gulp: ^4.0.2
     gulp-debug: ^4.0.0
     gulp-prettier: ^3.0.0
     npm-run-all: ^4.1.5
-    prettier: ^2.0.5
+    prettier: ^2.1.2
     regenerator-runtime: ^0.13.7
     rimraf: ^3.0.2
     shx: ^0.3.2
-    supports-color: ^7.1.0
-    typescript: ^4.0.2
+    supports-color: ^7.2.0
+    typescript: ^4.0.3
   peerDependencies:
     "@essex/eslint-config": ">=10.0.0"
     "@essex/jest-config": ">=10.0.0"
@@ -2448,13 +2450,13 @@ __metadata:
   dependencies:
     "@essex/build-util-hoister": ^10.0.0
     "@types/debug": ^4.1.5
-    "@types/node": ^14.10.1
+    "@types/node": ^14.11.5
     colors: ^1.4.0
     cross-spawn: ^7.0.3
-    debug: ^4.1.1
+    debug: ^4.2.0
     rimraf: ^3.0.2
-    supports-color: ^7.1.0
-    typescript: ^4.0.2
+    supports-color: ^7.2.0
+    typescript: ^4.0.3
   languageName: unknown
   linkType: soft
 
@@ -2466,14 +2468,14 @@ __metadata:
     "@essex/babel-config": ^10.0.0
     "@essex/build-util-hoister": ^10.0.0
     "@mdx-js/loader": ^1.6.17
-    "@storybook/addon-a11y": ^6.0.21
-    "@storybook/addon-actions": ^6.0.21
-    "@storybook/addon-docs": ^6.0.21
-    "@storybook/addon-knobs": ^6.0.21
-    "@storybook/addon-links": ^6.0.21
-    "@storybook/react": ^6.0.21
-    "@storybook/source-loader": ^6.0.21
-    "@types/node": ^14.10.1
+    "@storybook/addon-a11y": ^6.0.26
+    "@storybook/addon-actions": ^6.0.26
+    "@storybook/addon-docs": ^6.0.26
+    "@storybook/addon-knobs": ^6.0.26
+    "@storybook/addon-links": ^6.0.26
+    "@storybook/react": ^6.0.26
+    "@storybook/source-loader": ^6.0.26
+    "@types/node": ^14.11.5
     babel-loader: ^8.1.0
     cache-loader: ^4.1.0
     fork-ts-checker-webpack-plugin: ^5.2.0
@@ -2482,9 +2484,9 @@ __metadata:
     react-dom: ^16.13.1
     react-is: ^16.13.1
     rimraf: ^3.0.2
-    ts-loader: ^8.0.3
-    typescript: ^4.0.2
-    webpack: ^4.44.1
+    ts-loader: ^8.0.4
+    typescript: ^4.0.3
+    webpack: ^4.44.2
   peerDependencies:
     react: ">= 16.13.1"
     react-dom: ">= 16.13.1"
@@ -2495,10 +2497,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/tasklogger@workspace:packages/util/tasklogger"
   dependencies:
-    "@types/node": ^14.10.1
+    "@types/node": ^14.11.5
     chalk: ^4.1.0
     rimraf: ^3.0.2
-    typescript: ^4.0.2
+    typescript: ^4.0.3
   languageName: unknown
   linkType: soft
 
@@ -2510,22 +2512,22 @@ __metadata:
     "@essex/babel-config": ^10.0.0
     "@essex/build-util-hoister": ^10.0.0
     "@types/debug": ^4.1.5
-    "@types/node": ^14.10.1
+    "@types/node": ^14.11.5
     "@types/webpack": ^4.41.22
     "@types/webpack-dev-server": ^3.11.0
     babel-loader: ^8.1.0
     cache-loader: ^4.1.0
     css-loader: ^4.3.0
-    debug: ^4.1.1
+    debug: ^4.2.0
     fork-ts-checker-webpack-plugin: ^5.2.0
-    html-webpack-plugin: ^4.4.1
-    mini-css-extract-plugin: ^0.11.2
+    html-webpack-plugin: ^4.5.0
+    mini-css-extract-plugin: ^0.11.3
     rimraf: ^3.0.2
     sass-loader: ^10.0.2
-    style-loader: ^1.2.1
-    ts-loader: ^8.0.3
-    typescript: ^4.0.2
-    webpack: ^4.44.1
+    style-loader: ^1.3.0
+    ts-loader: ^8.0.4
+    typescript: ^4.0.3
+    webpack: ^4.44.2
     webpack-dev-server: ^3.11.0
   peerDependencies:
     webpack: ">= 4.43.0"
@@ -3039,7 +3041,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-a11y@npm:^6.0.21":
+"@storybook/addon-a11y@npm:^6.0.26":
   version: 6.0.26
   resolution: "@storybook/addon-a11y@npm:6.0.26"
   dependencies:
@@ -3066,7 +3068,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-actions@npm:^6.0.21":
+"@storybook/addon-actions@npm:^6.0.26":
   version: 6.0.26
   resolution: "@storybook/addon-actions@npm:6.0.26"
   dependencies:
@@ -3094,7 +3096,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-docs@npm:^6.0.21":
+"@storybook/addon-docs@npm:^6.0.26":
   version: 6.0.26
   resolution: "@storybook/addon-docs@npm:6.0.26"
   dependencies:
@@ -3159,7 +3161,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-knobs@npm:^6.0.21":
+"@storybook/addon-knobs@npm:^6.0.26":
   version: 6.0.26
   resolution: "@storybook/addon-knobs@npm:6.0.26"
   dependencies:
@@ -3189,7 +3191,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-links@npm:^6.0.21":
+"@storybook/addon-links@npm:^6.0.26":
   version: 6.0.26
   resolution: "@storybook/addon-links@npm:6.0.26"
   dependencies:
@@ -3508,7 +3510,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react@npm:^6.0.21":
+"@storybook/react@npm:^6.0.26":
   version: 6.0.26
   resolution: "@storybook/react@npm:6.0.26"
   dependencies:
@@ -3573,7 +3575,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/source-loader@npm:6.0.26, @storybook/source-loader@npm:^6.0.21":
+"@storybook/source-loader@npm:6.0.26, @storybook/source-loader@npm:^6.0.26":
   version: 6.0.26
   resolution: "@storybook/source-loader@npm:6.0.26"
   dependencies:
@@ -3794,7 +3796,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/archiver@npm:^3.1.0":
+"@types/archiver@npm:^3.1.1":
   version: 3.1.1
   resolution: "@types/archiver@npm:3.1.1"
   dependencies:
@@ -3887,7 +3889,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:^7.2.0":
+"@types/eslint@npm:^7.2.3":
   version: 7.2.3
   resolution: "@types/eslint@npm:7.2.3"
   dependencies:
@@ -3997,7 +3999,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/gulp@npm:^4.0.6":
+"@types/gulp@npm:^4.0.7":
   version: 4.0.7
   resolution: "@types/gulp@npm:4.0.7"
   dependencies:
@@ -4093,7 +4095,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:26.x, @types/jest@npm:^26.0.13, @types/jest@npm:^26.0.9":
+"@types/jest@npm:26.x, @types/jest@npm:^26.0.14":
   version: 26.0.14
   resolution: "@types/jest@npm:26.0.14"
   dependencies:
@@ -4182,7 +4184,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^14.10.1":
+"@types/node@npm:*":
   version: 14.11.4
   resolution: "@types/node@npm:14.11.4"
   checksum: 27c793b33ad29e3ca709c389fb4d3ee3ecdc304e997af9bceaed9aebb27ebc0082b11c709483990827de35d6d1505b0a273951e0f11fbad847e7a6e9b0fbb353
@@ -4193,6 +4195,13 @@ __metadata:
   version: 10.17.13
   resolution: "@types/node@npm:10.17.13"
   checksum: 54c6ee789e8013ba531c07e869b5a49cb6340fe59fdd4181aed65c0df9c78dab93a4098c88b726cbe9bd8f5000f5675de996290374de08cf43e3b989f23ecc4a
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^14.11.5":
+  version: 14.11.5
+  resolution: "@types/node@npm:14.11.5"
+  checksum: 974f9dbebf83593b3fcd3ef2266cef2be033b33ccfe24a37b265abfe1340eee0e3967824819a099ec336182758b07a816798a7cdecbaf1b5a8c714d8e663ba82
   languageName: node
   linkType: hard
 
@@ -4458,7 +4467,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/webpack@npm:*, @types/webpack@npm:^4.41.21, @types/webpack@npm:^4.41.22, @types/webpack@npm:^4.41.8":
+"@types/webpack@npm:*, @types/webpack@npm:^4.41.22, @types/webpack@npm:^4.41.8":
   version: 4.41.22
   resolution: "@types/webpack@npm:4.41.22"
   dependencies:
@@ -4488,7 +4497,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^4.1.1":
+"@typescript-eslint/eslint-plugin@npm:^4.4.0":
   version: 4.4.0
   resolution: "@typescript-eslint/eslint-plugin@npm:4.4.0"
   dependencies:
@@ -4525,7 +4534,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^4.1.1":
+"@typescript-eslint/parser@npm:^4.4.0":
   version: 4.4.0
   resolution: "@typescript-eslint/parser@npm:4.4.0"
   dependencies:
@@ -7418,7 +7427,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^6.0.0":
+"commander@npm:^6.0.0, commander@npm:^6.1.0":
   version: 6.1.0
   resolution: "commander@npm:6.1.0"
   checksum: ef1e310c3f430b84f8818ec9c6e5ce1b84909616eb2c1b1a79f646bc25fbca156eccf2ecf19f07e77a08dc519728d53d1300f94f3b2ad93de65add66044dfce6
@@ -8127,7 +8136,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:^4.0.0, debug@npm:^4.0.1, debug@npm:^4.1.0, debug@npm:^4.1.1":
+"debug@npm:^4.0.0, debug@npm:^4.0.1, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.2.0":
   version: 4.3.0
   resolution: "debug@npm:4.3.0"
   dependencies:
@@ -9081,7 +9090,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^6.11.0":
+"eslint-config-prettier@npm:^6.12.0":
   version: 6.12.0
   resolution: "eslint-config-prettier@npm:6.12.0"
   dependencies:
@@ -9123,7 +9132,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-import@npm:^2.22.0":
+"eslint-plugin-import@npm:^2.22.1":
   version: 2.22.1
   resolution: "eslint-plugin-import@npm:2.22.1"
   dependencies:
@@ -9146,7 +9155,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jest@npm:^24.0.1":
+"eslint-plugin-jest@npm:^24.1.0":
   version: 24.1.0
   resolution: "eslint-plugin-jest@npm:24.1.0"
   dependencies:
@@ -9187,7 +9196,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react@npm:^7.20.6":
+"eslint-plugin-react@npm:^7.21.3":
   version: 7.21.3
   resolution: "eslint-plugin-react@npm:7.21.3"
   dependencies:
@@ -9251,7 +9260,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^7.9.0":
+"eslint@npm:^7.10.0":
   version: 7.10.0
   resolution: "eslint@npm:7.10.0"
   dependencies:
@@ -11306,7 +11315,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"html-webpack-plugin@npm:^4.2.1, html-webpack-plugin@npm:^4.4.1":
+"html-webpack-plugin@npm:^4.2.1, html-webpack-plugin@npm:^4.5.0":
   version: 4.5.0
   resolution: "html-webpack-plugin@npm:4.5.0"
   dependencies:
@@ -13490,7 +13499,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^10.3.0":
+"lint-staged@npm:^10.4.0":
   version: 10.4.0
   resolution: "lint-staged@npm:10.4.0"
   dependencies:
@@ -14332,7 +14341,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"mini-css-extract-plugin@npm:^0.11.2":
+"mini-css-extract-plugin@npm:^0.11.3":
   version: 0.11.3
   resolution: "mini-css-extract-plugin@npm:0.11.3"
   dependencies:
@@ -16131,7 +16140,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.0.0, prettier@npm:^2.0.5, prettier@npm:^2.1.1":
+"prettier@npm:^2.0.0, prettier@npm:^2.1.2":
   version: 2.1.2
   resolution: "prettier@npm:2.1.2"
   bin:
@@ -17579,7 +17588,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"retext-equality@npm:^5.1.0":
+"retext-equality@npm:^5.4.0":
   version: 5.4.0
   resolution: "retext-equality@npm:5.4.0"
   dependencies:
@@ -17593,7 +17602,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"retext-profanities@npm:^6.0.0":
+"retext-profanities@npm:^6.1.0":
   version: 6.1.0
   resolution: "retext-profanities@npm:6.1.0"
   dependencies:
@@ -18836,7 +18845,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"style-loader@npm:^1.2.1":
+"style-loader@npm:^1.2.1, style-loader@npm:^1.3.0":
   version: 1.3.0
   resolution: "style-loader@npm:1.3.0"
   dependencies:
@@ -18882,7 +18891,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"supports-color@npm:^7.0.0, supports-color@npm:^7.1.0":
+"supports-color@npm:^7.0.0, supports-color@npm:^7.1.0, supports-color@npm:^7.2.0":
   version: 7.2.0
   resolution: "supports-color@npm:7.2.0"
   dependencies:
@@ -19477,7 +19486,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"ts-jest@npm:~26.3, ts-jest@npm:~26.3.0":
+"ts-jest@npm:~26.3.0":
   version: 26.3.0
   resolution: "ts-jest@npm:26.3.0"
   dependencies:
@@ -19501,7 +19510,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"ts-loader@npm:^8.0.3":
+"ts-loader@npm:^8.0.4":
   version: 8.0.4
   resolution: "ts-loader@npm:8.0.4"
   dependencies:
@@ -19700,7 +19709,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"typedoc@npm:^0.19.1":
+"typedoc@npm:^0.19.2":
   version: 0.19.2
   resolution: "typedoc@npm:0.19.2"
   dependencies:
@@ -19723,7 +19732,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-typescript@^4.0.2:
+typescript@^4.0.3:
   version: 4.0.3
   resolution: "typescript@npm:4.0.3"
   bin:
@@ -19733,7 +19742,7 @@ typescript@^4.0.2:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.0.2#builtin<compat/typescript>":
+"typescript@patch:typescript@^4.0.3#builtin<compat/typescript>":
   version: 4.0.3
   resolution: "typescript@patch:typescript@npm%3A4.0.3#builtin<compat/typescript>::version=4.0.3&hash=5bf698"
   bin:
@@ -19867,7 +19876,7 @@ typescript@^4.0.2:
   languageName: node
   linkType: hard
 
-"unified@npm:9.2.0, unified@npm:^9.1.0":
+"unified@npm:9.2.0, unified@npm:^9.2.0":
   version: 9.2.0
   resolution: "unified@npm:9.2.0"
   dependencies:
@@ -20643,7 +20652,7 @@ typescript@^4.0.2:
   languageName: node
   linkType: hard
 
-"webpack@npm:^4.43.0, webpack@npm:^4.44.1":
+"webpack@npm:^4.43.0, webpack@npm:^4.44.2":
   version: 4.44.2
   resolution: "webpack@npm:4.44.2"
   dependencies:
