@@ -7,40 +7,36 @@
 		"Chris Trevino <chtrevin@microsoft.com>"
 	],
 	"scripts": {
-		"preinstall": "npx only-allow pnpm",
+		"preinstall": "npx only-allow yarn",
 		"essex": "node ./packages/scripts/lib/index.js",
-		"clean": "pnpm clean -r --stream --parallel",
-		"build": "pnpm build -r --stream",
-		"test": "pnpm essex -- test",
-		"release:publish": "pnpm publish",
-		"release": "run-s clean build release:publish",
-		"lint": "pnpm essex -- lint --docs --fix",
-		"prettify": "pnpm essex -- prettify",
-		"git_is_clean": "pnpm essex -- git-is-clean",
-		"ci": "run-s build lint test git_is_clean",
-		"cut_version": "changeset version"
+		"clean_all": "yarn workspaces foreach -pv run clean",
+		"build_all": "yarn workspaces foreach -pvt run build",
+		"lage": "lage",
+		"test": "yarn essex test",
+		"lint": "yarn essex lint --docs --fix",
+		"prettify": "essex prettify",
+		"git_is_clean": "yarn essex git-is-clean",
+		"ci": "run-s build_all lint test git_is_clean"
 	},
 	"devDependencies": {
-		"@changesets/cli": "^2.10.2",
 		"@commitlint/cli": "^11.0.0",
 		"@essex/eslint-config": "^10.0.0",
 		"@essex/eslint-plugin": "^10.0.0",
 		"@essex/jest-config": "^10.0.0",
 		"@essex/prettier-config": "^10.0.0",
-		"@types/jest": "^26.0.13",
+		"@types/jest": "^26.0.14",
 		"husky": "^4.3.0",
 		"jest-junit-reporter": "^1.1.0",
-		"lint-staged": "^10.3.0",
+		"lint-staged": "^10.4.0",
 		"npm-run-all": "^4.1.5",
-		"prettier": "^2.0.5",
+		"prettier": "^2.1.2",
 		"ts-jest": "~26.3.0",
-		"typescript": "^4.0.2"
+		"typescript": "^4.0.3"
 	},
-	"prettier": "@essex/prettier-config",
-	"husky": {
-		"hooks": {
-			"pre-commit": "pnpm essex -- pre-commit",
-			"commit-msg": "pnpm essex -- commit-msg"
-		}
-	}
+	"workspaces": [
+		"packages/scripts",
+		"packages/config/*",
+		"packages/steps/*",
+		"packages/util/*"
+	]
 }
