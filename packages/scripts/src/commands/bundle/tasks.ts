@@ -5,12 +5,12 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { existsSync } from 'fs'
 import { join } from 'path'
+import * as gulp from 'gulp'
+import { BundleCommandOptions } from './types'
 import { rollupBuild } from '@essex/build-step-rollup'
 import { storybookBuildGulp } from '@essex/build-step-storybook'
 import { webpackBuildGulp } from '@essex/build-step-webpack'
 import { noopTask } from '@essex/build-utils'
-import * as gulp from 'gulp'
-import { BundleCommandOptions } from './types'
 
 const wpConfigExists = existsSync(join(process.cwd(), 'webpack.config.js'))
 const rollupConfigExists = existsSync(join(process.cwd(), 'rollup.config.js'))

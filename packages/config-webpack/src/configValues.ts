@@ -4,9 +4,9 @@
  */
 import { existsSync } from 'fs'
 import { join } from 'path'
-import { getEsmConfiguration } from '@essex/babel-config'
 import { Configuration } from 'webpack-dev-server'
 import { log } from './log'
+import { getEsmConfiguration } from '@essex/babel-config'
 
 /* eslint-disable @typescript-eslint/no-var-requires */
 export const pkgJson = require(join(process.cwd(), 'package.json'))

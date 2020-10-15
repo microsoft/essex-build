@@ -23,5 +23,10 @@
 	},
 	"peerDependencies": {
 		"jest": ">= 26"
+	},
+	"peerDependenciesMeta": {
+		"jest": {
+			"optional": true
+		}
 	}
 }

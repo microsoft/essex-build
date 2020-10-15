@@ -65,11 +65,15 @@
 		"typescript": "^4.0.3"
 	},
 	"peerDependencies": {
+		"@commitlint/cli": ">= 11.0.0",
 		"@essex/eslint-config": ">=10.0.0",
 		"@essex/jest-config": ">=10.0.0",
 		"@essex/prettier-config": ">=10.0.0",
 		"@storybook/react": ">= 6",
+		"@typescript-eslint/eslint-plugin": ">= 4.4.1",
+		"@typescript-eslint/parser": ">= 4.4.1",
 		"audit-ci": ">= 3.1",
+		"eslint-import-resolver-node": ">= 0.3.4",
 		"husky": ">= 4.2.5",
 		"license-to-fail": ">= 4.0",
 		"lint-staged": "*",
@@ -78,6 +82,9 @@
 		"rollup": ">= 2"
 	},
 	"peerDependenciesMeta": {
+		"@commitlint/cli": {
+			"optional": true
+		},
 		"@essex/eslint-config": {
 			"optional": true
 		},
@@ -90,7 +97,16 @@
 		"@storybook/react": {
 			"optional": true
 		},
+		"@typescript-eslint/eslint-plugin": {
+			"optional": true
+		},
+		"@typescript-eslint/parser": {
+			"optional": true
+		},
 		"audit-ci": {
+			"optional": true
+		},
+		"eslint-import-resolver-node": {
 			"optional": true
 		},
 		"license-to-fail": {

@@ -4,13 +4,13 @@
  */
 /* eslint-disable @essex/adjacent-await */
 import { FSWatcher } from 'fs'
-import { getCjsConfiguration, getEsmConfiguration } from '@essex/babel-config'
-import { noopStep } from '@essex/build-utils'
-import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
 import * as gulp from 'gulp'
 import * as babel from 'gulp-babel'
 import * as debug from 'gulp-debug'
 import * as plumber from 'gulp-plumber'
+import { getCjsConfiguration, getEsmConfiguration } from '@essex/babel-config'
+import { noopStep } from '@essex/build-utils'
+import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
 
 const BABEL_GLOBS = ['lib/**/*.js']
 

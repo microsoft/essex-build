@@ -4,13 +4,13 @@
  */
 import { existsSync } from 'fs'
 import { join } from 'path'
-import { noopStep } from '@essex/build-utils'
-import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
 import * as gulp from 'gulp'
 import * as debug from 'gulp-debug'
 import * as plumber from 'gulp-plumber'
 import * as ts from 'gulp-typescript'
 import { FileWatcher } from 'typescript'
+import { noopStep } from '@essex/build-utils'
+import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
 
 const TYPESCRIPT_GLOBS = ['src/**/*.ts*', '!**/__tests__/**']
 

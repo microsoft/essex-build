@@ -5,12 +5,12 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { existsSync } from 'fs'
 import { join } from 'path'
+import * as gulp from 'gulp'
+import { BuildCommandOptions } from './types'
 import { buildBabel } from '@essex/build-step-babel'
 import { generateTypedocsGulp } from '@essex/build-step-typedoc'
 import { compileTypescript, emitTypings } from '@essex/build-step-typescript'
 import { noopTask } from '@essex/build-utils'
-import * as gulp from 'gulp'
-import { BuildCommandOptions } from './types'
 
 const cwd = process.cwd()
 const tsConfigPath = join(cwd, 'tsconfig.json')
