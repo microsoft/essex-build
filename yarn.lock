@@ -2232,6 +2232,7 @@ __metadata:
     lint-staged: ^10.4.0
     npm-run-all: ^4.1.5
     prettier: ^2.1.2
+    ts-jest: ^26.4.1
     typescript: ^4.0.3
   languageName: unknown
   linkType: soft
@@ -2634,8 +2635,11 @@ __metadata:
     typescript: ^4.0.3
   peerDependencies:
     jest: ">= 26"
+    ts-jest: ">= 26"
   peerDependenciesMeta:
     jest:
+      optional: true
+    ts-jest:
       optional: true
   languageName: unknown
   linkType: soft
@@ -12984,7 +12988,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jest-util@npm:^26.5.2":
+"jest-util@npm:^26.1.0, jest-util@npm:^26.5.2":
   version: 26.5.2
   resolution: "jest-util@npm:26.5.2"
   dependencies:
@@ -19427,6 +19431,30 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"ts-jest@npm:^26.4.1":
+  version: 26.4.1
+  resolution: "ts-jest@npm:26.4.1"
+  dependencies:
+    "@types/jest": 26.x
+    bs-logger: 0.x
+    buffer-from: 1.x
+    fast-json-stable-stringify: 2.x
+    jest-util: ^26.1.0
+    json5: 2.x
+    lodash.memoize: 4.x
+    make-error: 1.x
+    mkdirp: 1.x
+    semver: 7.x
+    yargs-parser: 20.x
+  peerDependencies:
+    jest: ">=26 <27"
+    typescript: ">=3.8 <5.0"
+  bin:
+    ts-jest: cli.js
+  checksum: d57275098b82156a75fd4b67903822ea9fa2d523d2ec0ef407bb7eb60f611af1b5a0f7d25531dbfc436e29c3baa7e0fcdeeb2f4b19d94b1aa70a3566114c132f
+  languageName: node
+  linkType: hard
+
 "ts-jest@npm:~26.3.0":
   version: 26.3.0
   resolution: "ts-jest@npm:26.3.0"
@@ -20949,6 +20977,13 @@ typescript@^4.0.3:
     camelcase: ^5.0.0
     decamelize: ^1.2.0
   checksum: 33871721679053cc38165afc6356c06c3e820459589b5db78f315886105070eb90cbb583cd6515fa4231937d60c80262ca2b7c486d5942576802446318a39597
+  languageName: node
+  linkType: hard
+
+"yargs-parser@npm:20.x":
+  version: 20.2.2
+  resolution: "yargs-parser@npm:20.2.2"
+  checksum: 64f808e43c36369c73c79ab575400378fcb49e8b6b30868ec4e16eb272107bc201143303ce8e7dc6f085f7e1973a4df1792c5ffbd612c3d259dbdf9e2f7e953d
   languageName: node
   linkType: hard
 

@@ -22,10 +22,14 @@
 		"typescript": "^4.0.3"
 	},
 	"peerDependencies": {
-		"jest": ">= 26"
+		"jest": ">= 26",
+		"ts-jest": ">= 26"
 	},
 	"peerDependenciesMeta": {
 		"jest": {
+			"optional": true
+		},
+		"ts-jest": {
 			"optional": true
 		}
 	}
