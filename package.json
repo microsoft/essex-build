@@ -24,7 +24,7 @@
 		"@commitlint/cli": "^11.0.0",
 		"@essex/eslint-config": "^10.0.0",
 		"@essex/eslint-plugin": "^10.0.0",
-		"@essex/jest-config": "^10.0.0",
+		"@essex/jest-config": "^10.0.1",
 		"@essex/prettier-config": "^10.0.0",
 		"@types/jest": "^26.0.14",
 		"@typescript-eslint/eslint-plugin": "^4.4.1",
