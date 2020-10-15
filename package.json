@@ -10,7 +10,7 @@
 		"preinstall": "npx only-allow yarn",
 		"essex": "node ./packages/scripts/lib/index.js",
 		"clean_all": "yarn workspaces foreach -pv run clean",
-		"build_all": "yarn workspaces foreach -pvt run build",
+		"build_all": "yarn workspaces foreach -pv --topological-dev run build",
 		"lint_all": "yarn workspaces foreach -pvt run lint",
 		"test_all": "yarn workspaces foreach -pvt run test",
 		"lage": "lage",
