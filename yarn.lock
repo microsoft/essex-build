@@ -2218,9 +2218,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex-build/test-suite-library@workspace:packages/test-suite-lib"
   dependencies:
-    "@essex/eslint-config": "workspace:packages/config-eslint"
-    "@essex/jest-config": "workspace:packages/config-jest"
-    "@essex/scripts": "workspace:packages/scripts"
+    "@essex/eslint-config": ^10.0.0
+    "@essex/jest-config": ^10.0.0
+    "@essex/scripts": ^10.0.0
     "@types/jest": ^26.0.14
     "@typescript-eslint/eslint-plugin": ^4.4.1
     "@typescript-eslint/parser": ^4.4.1
@@ -2233,9 +2233,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex-build/test-suite-webapp@workspace:packages/test-suite-webapp"
   dependencies:
-    "@essex/eslint-config": "workspace:packages/config-eslint"
-    "@essex/scripts": "workspace:packages/scripts"
-    "@essex/webpack-config": "workspace:packages/config-webpack"
+    "@essex/eslint-config": ^10.0.0
+    "@essex/scripts": ^10.0.0
+    "@essex/webpack-config": ^10.0.0
     "@types/react": ^16.9.52
     "@types/react-dom": ^16.9.8
     "@typescript-eslint/eslint-plugin": ^4.4.1
@@ -2681,7 +2681,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/scripts@workspace:packages/scripts":
+"@essex/scripts@^10.0.0, @essex/scripts@workspace:packages/scripts":
   version: 0.0.0-use.local
   resolution: "@essex/scripts@workspace:packages/scripts"
   dependencies:

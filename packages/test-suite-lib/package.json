@@ -13,9 +13,9 @@
 		"watch": "essex watch"
 	},
 	"devDependencies": {
-		"@essex/eslint-config": "workspace:packages/config-eslint",
-		"@essex/jest-config": "workspace:packages/config-jest",
-		"@essex/scripts": "workspace:packages/scripts",
+		"@essex/eslint-config": "^10.0.0",
+		"@essex/jest-config": "^10.0.0",
+		"@essex/scripts": "^10.0.0",
 		"@types/jest": "^26.0.14",
 		"@typescript-eslint/eslint-plugin": "^4.4.1",
 		"@typescript-eslint/parser": "^4.4.1",
