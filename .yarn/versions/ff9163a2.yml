@@ -1,5 +1,4 @@
 releases:
-  "@essex/babel-config": patch
   "@essex/build-step-audit": patch
   "@essex/build-step-azure": patch
   "@essex/build-step-babel": patch
@@ -20,11 +19,16 @@ releases:
   "@essex/build-step-zip": patch
   "@essex/build-util-hoister": patch
   "@essex/build-utils": patch
-  "@essex/eslint-config": patch
-  "@essex/eslint-plugin": patch
   "@essex/jest-config": patch
   "@essex/scripts": patch
   "@essex/shellrunner": patch
-  "@essex/storybook-config": patch
   "@essex/tasklogger": patch
   "@essex/webpack-config": patch
+
+declined:
+  - "@essex/babel-config"
+  - "@essex/eslint-config"
+  - "@essex/eslint-plugin"
+  - "@essex/storybook-config"
+  - "@essex-build/test-suite-library"
+  - "@essex-build/test-suite-webapp"
