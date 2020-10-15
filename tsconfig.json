@@ -16,6 +16,6 @@
 		"experimentalDecorators": true,
 		"emitDecoratorMetadata": true,
 		"lib": ["esnext", "dom"],
-		"types": ["node", "jest"]
+		"types": ["node"]
 	}
 }
