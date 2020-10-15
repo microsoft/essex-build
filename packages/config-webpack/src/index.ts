@@ -3,7 +3,6 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { join } from 'path'
-import { getNodeModulesPaths } from '@essex/build-util-hoister'
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import * as webpack from 'webpack'
 import { Configuration as WdsConfiguration } from 'webpack-dev-server'
@@ -16,9 +15,12 @@ import {
 } from './configValues'
 import { log } from './log'
 import { validateConfiguration } from './validate'
+import { getNodeModulesPaths } from '@essex/build-util-hoister'
+
 /* eslint-disable @typescript-eslint/no-var-requires */
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const PnpWebpackPlugin = require('pnp-webpack-plugin')
 
 // Webpack Loaders
 const babelLoader = require.resolve('babel-loader')
@@ -32,6 +34,7 @@ export interface Configuration {
 	env?: string
 	mode?: 'development' | 'production' | 'none'
 	typecheck?: boolean
+	pnp?: boolean
 	// extends
 	aliases?: (env: string, mode: string) => any
 	output?: (env: string, mode: string) => any
@@ -45,6 +48,7 @@ export interface Configuration {
 export function configure({
 	env = 'development',
 	mode = 'none',
+	pnp = false,
 	typecheck = true,
 	aliases,
 	output,
@@ -100,11 +104,12 @@ export function configure({
 		devtool: 'cheap-module-source-map',
 		output: {
 			path: buildPath,
-			chunkFilename: '[name].[hash].js',
-			filename: '[name].[hash].js',
+			chunkFilename: '[name].[chunkhashh].js',
+			filename: '[name].[fullhash].js',
 			...extendedOutput,
 		},
 		resolve: {
+			plugins: pnp ? [PnpWebpackPlugin] : undefined,
 			extensions: ['.ts', '.tsx', '.js', '.jsx'],
 			modules: [...standardModulePaths, ...extendedResolveModules],
 			alias: {
@@ -112,6 +117,7 @@ export function configure({
 			},
 		},
 		resolveLoader: {
+			plugins: pnp ? [PnpWebpackPlugin.moduleLoader(module)] : undefined,
 			modules: [...standardModulePaths, ...extendedResolveLoaderModules],
 		},
 		module: {
@@ -123,7 +129,7 @@ export function configure({
 					test: /\.tsx?$/,
 					exclude: /node_modules/,
 					use: [
-						{ loader: cacheLoader },
+						cacheLoader,
 						{
 							loader: babelLoader,
 							options: babelConfig,
@@ -142,7 +148,7 @@ export function configure({
 				 */
 				{
 					test: /\.module\.s(a|c)ss$/,
-					loader: [
+					use: [
 						isDevelopment ? styleLoader : MiniCssExtractPlugin.loader,
 						{
 							loader: cssLoader,
@@ -165,7 +171,7 @@ export function configure({
 				{
 					test: /\.s(a|c)ss$/,
 					exclude: /\.module.(s(a|c)ss)$/,
-					loader: [
+					use: [
 						isDevelopment ? styleLoader : MiniCssExtractPlugin.loader,
 						cssLoader,
 						{
@@ -181,7 +187,7 @@ export function configure({
 				 */
 				{
 					test: /\.css$/,
-					loader: [
+					use: [
 						isDevelopment ? styleLoader : MiniCssExtractPlugin.loader,
 						cssLoader,
 					],
@@ -191,7 +197,6 @@ export function configure({
 		devServer: {
 			stats: 'minimal',
 			hot: true,
-			open: true,
 			compress: true,
 			historyApiFallback: true,
 			clientLogLevel: 'error',
@@ -222,9 +227,6 @@ export function configure({
 			}),
 			...extendedPlugins,
 		].filter(p => !!p),
-		node: {
-			fs: 'empty',
-		},
 	}
 
 	log('final webpack configuration', result)

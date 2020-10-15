@@ -15,7 +15,6 @@ export function configure(
 			'^.+\\.[tj]sx?$': 'ts-jest',
 		},
 		testMatch: ['**/__tests__/**/?(*.)+(spec|test).[jt]s?(x)'],
-		testResultsProcessor: 'jest-junit-reporter',
 		rootDir: process.cwd(),
 		roots: [process.cwd()],
 		moduleNameMapper: {

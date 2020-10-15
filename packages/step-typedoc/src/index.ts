@@ -4,13 +4,13 @@
  */
 import { existsSync } from 'fs'
 import { join } from 'path'
-import { gulpify } from '@essex/build-utils'
 import {
 	Application,
 	TSConfigReader,
 	TypeDocReader,
 	TypeDocAndTSOptions,
 } from 'typedoc'
+import { gulpify } from '@essex/build-utils'
 
 const packageJsonPath = join(process.cwd(), 'package.json')
 const readmePath = join(process.cwd(), 'README.md')

@@ -2,10 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { success, fail } from '@essex/tasklogger'
 import { Command } from 'commander'
 import { execute } from './tasks'
 import { DeployCommandOptions } from './types'
+import { success, fail } from '@essex/tasklogger'
 
 export default function deploy(program: Command): void {
 	program

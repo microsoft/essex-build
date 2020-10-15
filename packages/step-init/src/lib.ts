@@ -5,8 +5,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { writeFileSync } from 'fs'
 import { join } from 'path'
-import * as log from '@essex/tasklogger'
 import { copyConfigFile } from './util'
+import * as log from '@essex/tasklogger'
 
 const pkgJsonPath = join(process.cwd(), 'package.json')
 const pkgJson = require(pkgJsonPath)

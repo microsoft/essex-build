@@ -2,10 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { execGulpTask } from '@essex/build-utils'
 import { Command } from 'commander'
 import { configureTasks } from './tasks'
 import { WatchCommandOptions } from './types'
+import { execGulpTask } from '@essex/build-utils'
 
 export default function watch(program: Command): void {
 	program

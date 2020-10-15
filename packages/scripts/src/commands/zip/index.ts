@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { zip, ZipCommandOptions } from '@essex/build-step-zip'
 import { Command } from 'commander'
+import { zip, ZipCommandOptions } from '@essex/build-step-zip'
 
 export default function zipCommand(program: Command): void {
 	program
