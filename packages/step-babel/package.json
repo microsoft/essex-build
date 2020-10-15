@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-babel",
-	"version": "10.0.0",
+	"version": "10.0.1",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
@@ -12,8 +12,8 @@
 		"@babel/core": "^7.12.0",
 		"@babel/types": "^7.12.0",
 		"@essex/babel-config": "^10.0.0",
-		"@essex/build-utils": "^10.0.0",
-		"@essex/tasklogger": "^10.0.0",
+		"@essex/build-utils": "^10.0.1",
+		"@essex/tasklogger": "^10.0.1",
 		"gulp": "^4.0.2",
 		"gulp-babel": "^8.0.0",
 		"gulp-debug": "^4.0.0",

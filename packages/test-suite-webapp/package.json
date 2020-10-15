@@ -16,8 +16,8 @@
 	},
 	"devDependencies": {
 		"@essex/eslint-config": "^10.0.0",
-		"@essex/scripts": "^10.0.0",
-		"@essex/webpack-config": "^10.0.0",
+		"@essex/scripts": "^10.0.1",
+		"@essex/webpack-config": "^10.0.1",
 		"@typescript-eslint/eslint-plugin": "^4.4.1",
 		"@typescript-eslint/parser": "^4.4.1",
 		"eslint-import-resolver-node": "^0.3.4"
