@@ -1,0 +1,25 @@
+{
+	"name": "@essex-build/test-suite-webapp",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"clean": "essex clean",
+		"build": "essex bundle",
+		"lint": "essex lint",
+		"start": "essex serve"
+	},
+	"dependencies": {
+		"@types/react": "^16.9.52",
+		"@types/react-dom": "^16.9.8",
+		"react": "^16.14.0",
+		"react-dom": "^16.14.0"
+	},
+	"devDependencies": {
+		"@essex/eslint-config": "^10.0.0",
+		"@essex/scripts": "^10.0.0",
+		"@essex/webpack-config": "^10.0.0",
+		"@typescript-eslint/eslint-plugin": "^4.4.1",
+		"@typescript-eslint/parser": "^4.4.1",
+		"eslint-import-resolver-node": "^0.3.4"
+	}
+}

@@ -16,12 +16,12 @@ export function webpackWatch(opts: WebpackCompilerOptions): Promise<number> {
 					aggregateTimeout: 500,
 					ignored: /node_modules/,
 				},
-				(err: Error, stats: webpack.Stats) => {
+				(err: Error | undefined, stats: webpack.Stats | undefined) => {
 					if (err) {
 						console.log('webpack error', err)
 						reject(err)
 					}
-					console.log(stats.toString({ colors: true }))
+					console.log(stats?.toString({ colors: true }))
 				},
 			)
 		} catch (err) {

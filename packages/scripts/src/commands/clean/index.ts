@@ -2,9 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { Command } from 'commander'
 import { clean as cleanTask } from '@essex/build-step-clean'
 import { success, fail } from '@essex/tasklogger'
-import { Command } from 'commander'
 
 export default function clean(program: Command): void {
 	program

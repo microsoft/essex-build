@@ -10,13 +10,15 @@
 		"preinstall": "npx only-allow yarn",
 		"essex": "node ./packages/scripts/lib/index.js",
 		"clean_all": "yarn workspaces foreach -pv run clean",
-		"build_all": "yarn workspaces foreach -pvt run build",
+		"build_all": "yarn workspaces foreach -pv --topological-dev run build",
+		"lint_all": "yarn workspaces foreach -pvt run lint",
+		"test_all": "yarn workspaces foreach -pvt run test",
 		"lage": "lage",
-		"test": "yarn essex test",
+		"unit_test": "yarn essex test",
 		"lint": "yarn essex lint --docs --fix",
 		"prettify": "essex prettify",
 		"git_is_clean": "yarn essex git-is-clean",
-		"ci": "run-s build_all lint test git_is_clean"
+		"ci": "run-s build_all lint_all test_all lint unit_test git_is_clean"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^11.0.0",
@@ -25,12 +27,15 @@
 		"@essex/jest-config": "^10.0.0",
 		"@essex/prettier-config": "^10.0.0",
 		"@types/jest": "^26.0.14",
+		"@typescript-eslint/eslint-plugin": "^4.4.1",
+		"@typescript-eslint/parser": "^4.4.1",
+		"eslint-import-resolver-node": "^0.3.4",
 		"husky": "^4.3.0",
 		"jest-junit-reporter": "^1.1.0",
 		"lint-staged": "^10.4.0",
 		"npm-run-all": "^4.1.5",
 		"prettier": "^2.1.2",
-		"ts-jest": "~26.3.0",
+		"ts-jest": "^26.4.1",
 		"typescript": "^4.0.3"
 	},
 	"workspaces": [

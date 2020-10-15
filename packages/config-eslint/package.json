@@ -7,6 +7,9 @@
 		"@essex/eslint-plugin": "^10.0.0"
 	},
 	"peerDependencies": {
-		"@essex/eslint-plugin": ">=10.0.0"
+		"@essex/eslint-plugin": ">=10.0.0",
+		"@typescript-eslint/eslint-plugin": ">= 4.4.1",
+		"@typescript-eslint/parser": ">= 4.4.1",
+		"eslint-import-resolver-node": ">= 0.3.4"
 	}
 }

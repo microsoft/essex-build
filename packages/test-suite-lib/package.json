@@ -1,0 +1,25 @@
+{
+	"name": "@essex-build/test-suite-library",
+	"version": "0.0.1",
+	"private": true,
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"types": "dist/types/index.d.ts",
+	"scripts": {
+		"clean": "essex clean",
+		"build": "essex build",
+		"lint": "essex lint",
+		"test": "essex test",
+		"watch": "essex watch"
+	},
+	"devDependencies": {
+		"@essex/eslint-config": "^10.0.0",
+		"@essex/jest-config": "^10.0.0",
+		"@essex/scripts": "^10.0.0",
+		"@types/jest": "^26.0.14",
+		"@typescript-eslint/eslint-plugin": "^4.4.1",
+		"@typescript-eslint/parser": "^4.4.1",
+		"eslint-import-resolver-node": "^0.3.4",
+		"ts-jest": "^26.4.1"
+	}
+}

@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { filterShellCode, gulpify } from '@essex/build-utils'
 import { app } from './app'
+import { filterShellCode, gulpify } from '@essex/build-utils'
 
 /**
  * Checks docs for tonal linting & misspellings
