@@ -1,6 +1,6 @@
 {
 	"name": "@essex/webpack-config",
-	"version": "10.0.0",
+	"version": "10.0.1",
 	"main": "lib/index.js",
 	"types": "lib/index.d.ts",
 	"license": "MIT",
@@ -11,7 +11,7 @@
 	"dependencies": {
 		"@babel/core": "^7.12.0",
 		"@essex/babel-config": "^10.0.0",
-		"@essex/build-util-hoister": "^10.0.0",
+		"@essex/build-util-hoister": "^10.0.1",
 		"@types/webpack": "^4.41.22",
 		"@types/webpack-dev-server": "^3.11.0",
 		"babel-loader": "^8.1.0",

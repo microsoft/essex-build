@@ -10,9 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Debug Action
-        uses: hmarr/debug-action@v1.0.0
-
       - name: Use Node ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -20,14 +17,19 @@ jobs:
 
       - run: yarn version check
         name: Version Check
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - run: yarn install
         name: Install Dependencies
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - run: yarn ci
         name: Execute Tests
         env:
           CI: true
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: Publish coverage to codecov.io
         uses: codecov/codecov-action@v1.0.3
