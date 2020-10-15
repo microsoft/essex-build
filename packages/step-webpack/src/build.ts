@@ -13,17 +13,19 @@ export function webpackBuild(opts: WebpackCompilerOptions): Promise<void> {
 		const config = getConfig(opts)
 		const compiler = webpack(config)
 		return new Promise((resolve, reject) => {
-			compiler.run((err: Error, stats: webpack.Stats) => {
-				console.log(stats.toString({ colors: true }))
-				if (err || stats.hasErrors()) {
-					console.log('webpack error', err)
-					subtaskFail('webpack')
-					reject(err)
-				} else {
-					subtaskSuccess('webpack')
-					resolve()
-				}
-			})
+			compiler.run(
+				(err: Error | undefined, stats: webpack.Stats | undefined) => {
+					if (err || stats?.hasErrors()) {
+						console.log('webpack error', err)
+						subtaskFail('webpack')
+						reject(err)
+					} else {
+						console.log(stats?.toString({ colors: true }))
+						subtaskSuccess('webpack')
+						resolve()
+					}
+				},
+			)
 		})
 	} catch (err) {
 		console.log('error running webpack build', err)

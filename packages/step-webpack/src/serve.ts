@@ -24,7 +24,7 @@ export function webpackServe({
 					const port = wpConfig?.devServer?.port || DEFAULT_PORT
 					const host = wpConfig?.devServer?.host || DEFAULT_HOST
 
-					const server = new Server(compiler, wpConfig.devServer)
+					const server = new Server(compiler as any, wpConfig.devServer)
 					server.listen(port, host, (err?: Error | undefined) => {
 						if (err) {
 							console.log(`error listening`, err)

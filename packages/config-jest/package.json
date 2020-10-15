@@ -13,7 +13,6 @@
 		"@types/jest": "^26.0.14",
 		"identity-obj-proxy": "^3.0.0",
 		"jest-config": "^26.1.0",
-		"jest-junit-reporter": "^1.1.0",
 		"ts-jest": "~26.3.0"
 	},
 	"devDependencies": {

@@ -11,12 +11,14 @@
 		"essex": "node ./packages/scripts/lib/index.js",
 		"clean_all": "yarn workspaces foreach -pv run clean",
 		"build_all": "yarn workspaces foreach -pvt run build",
+		"lint_all": "yarn workspaces foreach -pvt run lint",
+		"test_all": "yarn workspaces foreach -pvt run test",
 		"lage": "lage",
 		"unit_test": "yarn essex test",
 		"lint": "yarn essex lint --docs --fix",
 		"prettify": "essex prettify",
 		"git_is_clean": "yarn essex git-is-clean",
-		"ci": "run-s build_all lint unit_test git_is_clean"
+		"ci": "run-s build_all lint_all test_all lint unit_test git_is_clean"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^11.0.0",

@@ -16,15 +16,16 @@
 		"@types/webpack-dev-server": "^3.11.0",
 		"babel-loader": "^8.1.0",
 		"cache-loader": "^4.1.0",
-		"css-loader": "^4.3.0",
+		"css-loader": "^5.0.0",
 		"debug": "^4.2.0",
 		"fork-ts-checker-webpack-plugin": "^5.2.0",
 		"html-webpack-plugin": "^4.5.0",
-		"mini-css-extract-plugin": "^0.11.3",
+		"mini-css-extract-plugin": "^1.0.0",
+		"pnp-webpack-plugin": "^1.6.4",
 		"sass-loader": "^10.0.3",
 		"style-loader": "^2.0.0",
 		"ts-loader": "^8.0.5",
-		"webpack": "^4.44.2",
+		"webpack": "^4",
 		"webpack-dev-server": "^3.11.0"
 	},
 	"devDependencies": {
@@ -34,6 +35,6 @@
 		"typescript": "^4.0.3"
 	},
 	"peerDependencies": {
-		"webpack": ">= 4.43.0"
+		"webpack": ">= 4"
 	}
 }

@@ -2214,6 +2214,38 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@essex-build/test-suite-library@workspace:packages/test-suite-lib":
+  version: 0.0.0-use.local
+  resolution: "@essex-build/test-suite-library@workspace:packages/test-suite-lib"
+  dependencies:
+    "@essex/eslint-config": "workspace:packages/config-eslint"
+    "@essex/jest-config": "workspace:packages/config-jest"
+    "@essex/scripts": "workspace:packages/scripts"
+    "@types/jest": ^26.0.14
+    "@typescript-eslint/eslint-plugin": ^4.4.1
+    "@typescript-eslint/parser": ^4.4.1
+    eslint-import-resolver-node: ^0.3.4
+    ts-jest: ^26.4.1
+  languageName: unknown
+  linkType: soft
+
+"@essex-build/test-suite-webapp@workspace:packages/test-suite-webapp":
+  version: 0.0.0-use.local
+  resolution: "@essex-build/test-suite-webapp@workspace:packages/test-suite-webapp"
+  dependencies:
+    "@essex/eslint-config": "workspace:packages/config-eslint"
+    "@essex/scripts": "workspace:packages/scripts"
+    "@essex/webpack-config": "workspace:packages/config-webpack"
+    "@types/react": ^16.9.52
+    "@types/react-dom": ^16.9.8
+    "@typescript-eslint/eslint-plugin": ^4.4.1
+    "@typescript-eslint/parser": ^4.4.1
+    eslint-import-resolver-node: ^0.3.4
+    react: ^16.14.0
+    react-dom: ^16.14.0
+  languageName: unknown
+  linkType: soft
+
 "@essex/alpha-build-utils@workspace:.":
   version: 0.0.0-use.local
   resolution: "@essex/alpha-build-utils@workspace:."
@@ -2629,7 +2661,6 @@ __metadata:
     "@types/node": ^14.11.8
     identity-obj-proxy: ^3.0.0
     jest-config: ^26.1.0
-    jest-junit-reporter: ^1.1.0
     rimraf: ^3.0.2
     ts-jest: ~26.3.0
     typescript: ^4.0.3
@@ -2819,20 +2850,21 @@ __metadata:
     "@types/webpack-dev-server": ^3.11.0
     babel-loader: ^8.1.0
     cache-loader: ^4.1.0
-    css-loader: ^4.3.0
+    css-loader: ^5.0.0
     debug: ^4.2.0
     fork-ts-checker-webpack-plugin: ^5.2.0
     html-webpack-plugin: ^4.5.0
-    mini-css-extract-plugin: ^0.11.3
+    mini-css-extract-plugin: ^1.0.0
+    pnp-webpack-plugin: ^1.6.4
     rimraf: ^3.0.2
     sass-loader: ^10.0.3
     style-loader: ^2.0.0
     ts-loader: ^8.0.5
     typescript: ^4.0.3
-    webpack: ^4.44.2
+    webpack: ^4
     webpack-dev-server: ^3.11.0
   peerDependencies:
-    webpack: ">= 4.43.0"
+    webpack: ">= 4"
   languageName: unknown
   linkType: soft
 
@@ -4511,6 +4543,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-dom@npm:^16.9.8":
+  version: 16.9.8
+  resolution: "@types/react-dom@npm:16.9.8"
+  dependencies:
+    "@types/react": "*"
+  checksum: 53a223c0266178bca9161301d18ee6199e8f75f88caed5c4601c5aaedaf4c68f03bd72f6aafa979254beb20759f0b68a542ce04295d704eb67ae179769c50813
+  languageName: node
+  linkType: hard
+
 "@types/react-syntax-highlighter@npm:11.0.4":
   version: 11.0.4
   resolution: "@types/react-syntax-highlighter@npm:11.0.4"
@@ -4527,6 +4568,16 @@ __metadata:
     "@types/prop-types": "*"
     csstype: ^3.0.2
   checksum: 2244f20526c284e3d81ff50422222fce609034f4a1e29ea71733ab9e2c2c9894f062e4a270e327d5a81d11b02a6de24e418babcfb039a7139549b21179fc1942
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^16.9.52":
+  version: 16.9.52
+  resolution: "@types/react@npm:16.9.52"
+  dependencies:
+    "@types/prop-types": "*"
+    csstype: ^3.0.2
+  checksum: 5e352e28b7a5ee6104a1ddddb7585ce50f88c5fca78f2edb73cc6df897ab3efa4404111052b643782d130755b8657494f3f5324b1eba4644b4a36fea34fec6fb
   languageName: node
   linkType: hard
 
@@ -7032,6 +7083,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"camelcase@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "camelcase@npm:6.1.0"
+  checksum: 3e968d5efba3c08410437c097b6706aa2a3f1ff34c3ee11940cca932397d99e44693a314545e2d00cb36c1c05d8463ca6f3dabb005e9ce2b615edb7ef274b6c3
+  languageName: node
+  linkType: hard
+
 "caniuse-lite@npm:^1.0.30001035, caniuse-lite@npm:^1.0.30001109, caniuse-lite@npm:^1.0.30001135":
   version: 1.0.30001143
   resolution: "caniuse-lite@npm:1.0.30001143"
@@ -8062,25 +8120,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-loader@npm:^4.3.0":
-  version: 4.3.0
-  resolution: "css-loader@npm:4.3.0"
+"css-loader@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "css-loader@npm:5.0.0"
   dependencies:
-    camelcase: ^6.0.0
+    camelcase: ^6.1.0
     cssesc: ^3.0.0
-    icss-utils: ^4.1.1
+    icss-utils: ^5.0.0
     loader-utils: ^2.0.0
-    postcss: ^7.0.32
-    postcss-modules-extract-imports: ^2.0.0
-    postcss-modules-local-by-default: ^3.0.3
-    postcss-modules-scope: ^2.2.0
-    postcss-modules-values: ^3.0.0
+    postcss: ^8.1.1
+    postcss-modules-extract-imports: ^3.0.0
+    postcss-modules-local-by-default: ^4.0.0
+    postcss-modules-scope: ^3.0.0
+    postcss-modules-values: ^4.0.0
     postcss-value-parser: ^4.1.0
-    schema-utils: ^2.7.1
+    schema-utils: ^3.0.0
     semver: ^7.3.2
   peerDependencies:
     webpack: ^4.27.0 || ^5.0.0
-  checksum: 1f441ac567e3c45dde1009860fcc0d2807d5af4e42e799c77070a121f91a8a8c0ce41d6aa19b664bd9fbc127c5375abefa8f871ba503e55f2ea27c3e1385f3fa
+  checksum: 8b0d45e2011d09ba91fd6d200f07ee7206104e676a84c7a01f9c7d6b7515e9b882b44a290f44002d4624d8252d9b06303f0a5c0e1885c43238ad84482e5efb51
   languageName: node
   linkType: hard
 
@@ -11523,6 +11581,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"icss-utils@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "icss-utils@npm:5.0.0"
+  peerDependencies:
+    postcss: ^8.1.0
+  checksum: c0f385f09dd428269700bd7a3e90fb44f0e866b11807f215e2dfe6db26d02248a362625c62c819bd4cd0116b0fc2c7c148b25f3ea9edba91285e8a09a5d2a0a0
+  languageName: node
+  linkType: hard
+
 "identity-obj-proxy@npm:^3.0.0":
   version: 3.0.0
   resolution: "identity-obj-proxy@npm:3.0.0"
@@ -13518,6 +13585,16 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"line-column@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "line-column@npm:1.0.2"
+  dependencies:
+    isarray: ^1.0.0
+    isobject: ^2.0.0
+  checksum: e6fa785b0c75c4485d0f181beaeb2f0b482ebf16921b64d5b61e75e86a61504b42053655d481b1c8de5c4d8b551473c034eb48780c65d76be377e643d395f6e5
+  languageName: node
+  linkType: hard
+
 "lines-and-columns@npm:^1.1.6":
   version: 1.1.6
   resolution: "lines-and-columns@npm:1.1.6"
@@ -14384,17 +14461,17 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"mini-css-extract-plugin@npm:^0.11.3":
-  version: 0.11.3
-  resolution: "mini-css-extract-plugin@npm:0.11.3"
+"mini-css-extract-plugin@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "mini-css-extract-plugin@npm:1.0.0"
   dependencies:
-    loader-utils: ^1.1.0
+    loader-utils: ^2.0.0
     normalize-url: 1.9.1
-    schema-utils: ^1.0.0
+    schema-utils: ^3.0.0
     webpack-sources: ^1.1.0
   peerDependencies:
     webpack: ^4.4.0 || ^5.0.0
-  checksum: d0bd0149ccb2e33abe44d1fd986912c5e64b4cbdcaac2483e431e15377c386ebe302261bbb8f62effaaa7cc197e431e25963c510b6609fe2e1d33233ae9a5440
+  checksum: c3f4b1691cf9d70ce9f56906941be60791050e62d4e4c7b4d87e868d765b7350ad91f0e8492e100739a9965b8ac6277c91d4cdf1e476eb0535af6e740ff90ab2
   languageName: node
   linkType: hard
 
@@ -14637,6 +14714,15 @@ fsevents@^1.2.7:
   dependencies:
     node-gyp: latest
   checksum: eeab7cf260362a578f0b8622716a76d19bc009722049c7274748644ce03b2aa38ca01b3ac730a0497fd2c1ec882a21a0592e800a903994ed4d32acd06bf7eba7
+  languageName: node
+  linkType: hard
+
+"nanoid@npm:^3.1.12":
+  version: 3.1.12
+  resolution: "nanoid@npm:3.1.12"
+  bin:
+    nanoid: bin/nanoid.cjs
+  checksum: dc51417babadca4b00c2126ac0bc1c01e842e3c40edda2d3e1da40e8aae4d691a2a0b9d8e9c3a8cdb16133345a47f9135f0d0eef85a66ad31711ad3d908050e4
   languageName: node
   linkType: hard
 
@@ -15942,7 +16028,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pnp-webpack-plugin@npm:1.6.4":
+"pnp-webpack-plugin@npm:1.6.4, pnp-webpack-plugin@npm:^1.6.4":
   version: 1.6.4
   resolution: "pnp-webpack-plugin@npm:1.6.4"
   dependencies:
@@ -16025,7 +16111,16 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"postcss-modules-local-by-default@npm:^3.0.2, postcss-modules-local-by-default@npm:^3.0.3":
+"postcss-modules-extract-imports@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "postcss-modules-extract-imports@npm:3.0.0"
+  peerDependencies:
+    postcss: ^8.1.0
+  checksum: 874b94fd94f6e44e27f7a08814b972c472bcf21db708640f09b8d5900ce9ef6c8aa3291bc54be0526ba07efee5da0322ea01ed0deecd831e80ba5bd5de0e784e
+  languageName: node
+  linkType: hard
+
+"postcss-modules-local-by-default@npm:^3.0.2":
   version: 3.0.3
   resolution: "postcss-modules-local-by-default@npm:3.0.3"
   dependencies:
@@ -16034,6 +16129,19 @@ fsevents@^1.2.7:
     postcss-selector-parser: ^6.0.2
     postcss-value-parser: ^4.1.0
   checksum: 6d34b3b1dc38cba7a3c50ef1bf6f5a0573c638b92a74cf47a730b9e029ad0f1464a944470a4aa51fdaaa8e4c47fcbb52f167d2da0342778776cdd6bafe9b146e
+  languageName: node
+  linkType: hard
+
+"postcss-modules-local-by-default@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "postcss-modules-local-by-default@npm:4.0.0"
+  dependencies:
+    icss-utils: ^5.0.0
+    postcss-selector-parser: ^6.0.2
+    postcss-value-parser: ^4.1.0
+  peerDependencies:
+    postcss: ^8.1.0
+  checksum: c0331dbc56cb37174ad5d9cf84c71fd5787a4f0241fafaade870cb6382abdb0e3db233e9e0eb86fc000a7399006fa360391d97341d4ac0f21e4918ad01892cb9
   languageName: node
   linkType: hard
 
@@ -16047,6 +16155,17 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"postcss-modules-scope@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "postcss-modules-scope@npm:3.0.0"
+  dependencies:
+    postcss-selector-parser: ^6.0.4
+  peerDependencies:
+    postcss: ^8.1.0
+  checksum: 0b30c7bd28433880baf35f9e076f79fee98d9fe2544d118618429dacedd0a26d26145efd238c72f2c68f936b35729fe45e193e088f7d16fce72dd40bfa6afb69
+  languageName: node
+  linkType: hard
+
 "postcss-modules-values@npm:^3.0.0":
   version: 3.0.0
   resolution: "postcss-modules-values@npm:3.0.0"
@@ -16057,7 +16176,18 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"postcss-selector-parser@npm:^6.0.0, postcss-selector-parser@npm:^6.0.2":
+"postcss-modules-values@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "postcss-modules-values@npm:4.0.0"
+  dependencies:
+    icss-utils: ^5.0.0
+  peerDependencies:
+    postcss: ^8.1.0
+  checksum: 43fa6db334e38acb9b835578dccab45a5e9e5951dcbb20647348cdc0ad35ed362e36833facd8dab753fa83ffbecd26d2b3f9d4f06a2f9ae4c5c39abf9a0191e0
+  languageName: node
+  linkType: hard
+
+"postcss-selector-parser@npm:^6.0.0, postcss-selector-parser@npm:^6.0.2, postcss-selector-parser@npm:^6.0.4":
   version: 6.0.4
   resolution: "postcss-selector-parser@npm:6.0.4"
   dependencies:
@@ -16084,6 +16214,18 @@ fsevents@^1.2.7:
     source-map: ^0.6.1
     supports-color: ^6.1.0
   checksum: 8a979ea9799dd48399337708a395ddb8cf0e328515201ed35c99f5ba5eaa7688eae65764c570bf49b5be0b106226e2f222abc210de068b3d3da9a9a3bbb70567
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.1.1":
+  version: 8.1.1
+  resolution: "postcss@npm:8.1.1"
+  dependencies:
+    colorette: ^1.2.1
+    line-column: ^1.0.2
+    nanoid: ^3.1.12
+    source-map: ^0.6.1
+  checksum: 9bdc9e51369ee35831589f0cfffcb996ed2b50aa23e54e3cf849c74361c17e7f7c1df3e0b993392818ede40f0731c458be134901ce9438bd38223e38781f52f5
   languageName: node
   linkType: hard
 
@@ -20614,7 +20756,7 @@ typescript@^4.0.3:
   languageName: node
   linkType: hard
 
-"webpack@npm:^4.43.0, webpack@npm:^4.44.2":
+"webpack@npm:^4, webpack@npm:^4.43.0, webpack@npm:^4.44.2":
   version: 4.44.2
   resolution: "webpack@npm:4.44.2"
   dependencies:
