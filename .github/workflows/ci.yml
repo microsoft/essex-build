@@ -16,7 +16,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - run: yarn version check
-        if: !startsWith(github.ref , 'release/')
+        if: "!startsWith(github.ref , 'release/')"
         name: Version Check
 
       - run: yarn install
