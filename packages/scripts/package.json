@@ -1,6 +1,6 @@
 {
 	"name": "@essex/scripts",
-	"version": "10.0.1",
+	"version": "11.0.0",
 	"description": "A set of scripts to make a essex javascript engineer's life easier",
 	"main": "lib/index.js",
 	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
@@ -65,8 +65,8 @@
 	},
 	"peerDependencies": {
 		"@commitlint/cli": ">= 11.0.0",
-		"@essex/eslint-config": ">=10.0.0",
-		"@essex/jest-config": ">=10.0.1",
+		"@essex/eslint-config": ">=10.0.1",
+		"@essex/jest-config": ">=10.0.2",
 		"@essex/prettier-config": ">=10.0.0",
 		"@storybook/react": ">= 6",
 		"@typescript-eslint/eslint-plugin": ">= 4.4.1",

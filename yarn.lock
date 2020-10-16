@@ -3214,7 +3214,7 @@ __metadata:
   dependencies:
     "@essex/eslint-plugin": "workspace:packages/config-eslint-plugin"
   peerDependencies:
-    "@essex/eslint-plugin": ">=10.0.0"
+    "@essex/eslint-plugin": ">=10.0.1"
     "@typescript-eslint/eslint-plugin": ">= 4.4.1"
     "@typescript-eslint/parser": ">= 4.4.1"
     eslint-import-resolver-node: ">= 0.3.4"
@@ -3327,8 +3327,8 @@ __metadata:
     typescript: ^4.0.3
   peerDependencies:
     "@commitlint/cli": ">= 11.0.0"
-    "@essex/eslint-config": ">=10.0.0"
-    "@essex/jest-config": ">=10.0.1"
+    "@essex/eslint-config": ">=10.0.1"
+    "@essex/jest-config": ">=10.0.2"
     "@essex/prettier-config": ">=10.0.0"
     "@storybook/react": ">= 6"
     "@typescript-eslint/eslint-plugin": ">= 4.4.1"
