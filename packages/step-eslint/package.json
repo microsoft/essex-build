@@ -6,16 +6,16 @@
 	"typings": "lib/index.d.ts",
 	"scripts": {
 		"clean": "rimraf dist lib",
-		"build": "tsc"
+		"build": "tsc -b"
 	},
 	"files": [
 		"lib/",
 		"config/"
 	],
 	"dependencies": {
-		"@essex/build-utils": "^10.0.1",
-		"@essex/eslint-config": "^10.0.0",
-		"@essex/eslint-plugin": "^10.0.0",
+		"@essex/build-utils": "workspace:packages/util-utils",
+		"@essex/eslint-config": "workspace:packages/config-eslint",
+		"@essex/eslint-plugin": "workspace:packages/config-eslint-plugin",
 		"@typescript-eslint/eslint-plugin": "^4.4.1",
 		"@typescript-eslint/parser": "^4.4.1",
 		"eslint": "^7.11.0",
@@ -23,7 +23,7 @@
 	},
 	"devDependencies": {
 		"@types/eslint": "^7.2.4",
-		"@types/node": "^14.11.8",
+		"@types/node": "^14.11.10",
 		"rimraf": "^3.0.2",
 		"typescript": "^4.0.3"
 	}
