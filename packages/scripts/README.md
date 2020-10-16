@@ -15,8 +15,7 @@ Add the following configuration to your `package.json`. If you're in a monorepo,
 	"prettier": "@essex/prettier-config",
 	"husky": {
 		"hooks": {
-			"pre-commit": "essex pre-commit",
-			"commit-msg": "essex commit-msg"
+			"pre-commit": "essex pre-commit"
 		}
 	}
 }
@@ -36,7 +35,6 @@ To view detailed options, run `essex <command> --help` or `essex --help`
 - [build](./docs/build.md)
 - [bundle](./docs/bundle.md)
 - [clean](./docs/clean.md)
-- [commit-msg](./docs/commit_msg.md)
 - [init](./docs/init.md)
 - [lint](./docs/lint.md)
 - [precommit](./docs/precommit.md)

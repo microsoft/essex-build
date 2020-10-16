@@ -21,7 +21,6 @@
 		"@essex/build-step-azure": "workspace:packages/step-azure",
 		"@essex/build-step-babel": "workspace:packages/step-babel",
 		"@essex/build-step-clean": "workspace:packages/step-clean",
-		"@essex/build-step-commitlint": "workspace:packages/step-commitlint",
 		"@essex/build-step-docs": "workspace:packages/step-docs",
 		"@essex/build-step-eslint": "workspace:packages/step-eslint",
 		"@essex/build-step-init": "workspace:packages/step-init",
@@ -78,10 +77,7 @@
 		"react-dom": ">= 16.13.1",
 		"rollup": ">= 2"
 	},
-	"peerDependenciesMeta": {
-		"@commitlint/cli": {
-			"optional": true
-		},
+	"peerDependenciesMeta": {		
 		"@essex/eslint-config": {
 			"optional": true
 		},
