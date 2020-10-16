@@ -40,7 +40,6 @@ eslintignore
 eslintrc
 babelrc.esm.js
 babelrc.cjs.js
-commitlint.config.js
 webpack.override.js
 tsconfig.json
 package.json

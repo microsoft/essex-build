@@ -1,6 +1,6 @@
 # > essex pre-commit
 
-Performs precommit verification, usually as part of a husky `commit-msg` hook.
+Performs precommit verification.
 
 # Details & Customization
 

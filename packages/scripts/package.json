@@ -1,6 +1,6 @@
 {
 	"name": "@essex/scripts",
-	"version": "10.0.1",
+	"version": "11.0.0",
 	"description": "A set of scripts to make a essex javascript engineer's life easier",
 	"main": "lib/index.js",
 	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
@@ -21,7 +21,6 @@
 		"@essex/build-step-azure": "workspace:packages/step-azure",
 		"@essex/build-step-babel": "workspace:packages/step-babel",
 		"@essex/build-step-clean": "workspace:packages/step-clean",
-		"@essex/build-step-commitlint": "workspace:packages/step-commitlint",
 		"@essex/build-step-docs": "workspace:packages/step-docs",
 		"@essex/build-step-eslint": "workspace:packages/step-eslint",
 		"@essex/build-step-init": "workspace:packages/step-init",
@@ -64,9 +63,8 @@
 		"typescript": "^4.0.3"
 	},
 	"peerDependencies": {
-		"@commitlint/cli": ">= 11.0.0",
-		"@essex/eslint-config": ">=10.0.0",
-		"@essex/jest-config": ">=10.0.1",
+		"@essex/eslint-config": ">=10.0.1",
+		"@essex/jest-config": ">=10.0.2",
 		"@essex/prettier-config": ">=10.0.0",
 		"@storybook/react": ">= 6",
 		"@typescript-eslint/eslint-plugin": ">= 4.4.1",
@@ -79,9 +77,6 @@
 		"rollup": ">= 2"
 	},
 	"peerDependenciesMeta": {
-		"@commitlint/cli": {
-			"optional": true
-		},
 		"@essex/eslint-config": {
 			"optional": true
 		},
