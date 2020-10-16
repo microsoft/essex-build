@@ -6,11 +6,11 @@
 	"typings": "lib/index.d.ts",
 	"scripts": {
 		"clean": "rimraf dist lib",
-		"build": "tsc"
+		"build": "tsc -b"
 	},
 	"dependencies": {
-		"@essex/shellrunner": "^10.0.1",
-		"@essex/tasklogger": "^10.0.1",
+		"@essex/shellrunner": "workspace:packages/util-shellrunner",
+		"@essex/tasklogger": "workspace:packages/util-tasklogger",
 		"@types/gulp": "^4.0.7",
 		"@types/through2": "^2.0.36",
 		"gulp": "^4.0.2",

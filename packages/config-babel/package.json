@@ -7,7 +7,7 @@
 	"typings": "lib/index.d.ts",
 	"scripts": {
 		"clean": "rimraf dist lib",
-		"build": "tsc"
+		"build": "tsc -b"
 	},
 	"dependencies": {
 		"@babel/core": "^7.12.0",

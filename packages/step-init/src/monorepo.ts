@@ -26,10 +26,11 @@ ${INIT_INSTRUCTIONS}
 
 const CONFIG_FILES_DOT = [
 	'docsignore',
-	'docsrc',
+	'docsrc.json',
 	'eslintignore',
-	'eslintrc',
+	'eslintrc.json',
 	'gitignore',
+	'linstagedrc.json',
 	'prettierignore',
 ]
 const CONFIG_FILES_NODOT = ['tsconfig.json', 'jest.config.js']
@@ -70,36 +71,42 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 		writeNeeded = true
 	}
 
-	if (!pkgJson.scripts.build) {
-		pkgJson.scripts.build = 'lerna run build --stream'
+	if (!pkgJson.scripts['build_all']) {
+		pkgJson.scripts['build_all'] =
+			'yarn workspaces foreach -pivt --topological-dev run build'
 		writeNeeded = true
 	}
-	if (!pkgJson.scripts.clean) {
-		pkgJson.scripts.clean = 'lerna run clean --stream --parallel'
+	if (!pkgJson.scripts['test_all']) {
+		pkgJson.scripts['test_all'] = 'yarn workspaces foreach -piv run test'
+		writeNeeded = true
+	}
+	if (!pkgJson.scripts['clean_all']) {
+		pkgJson.scripts['clean_all'] = 'yarn workspaces foreach -piv run clean'
 		writeNeeded = true
 	}
 	if (!pkgJson.scripts.start) {
-		pkgJson.scripts.start = 'lerna run start --stream --parallel'
+		pkgJson.scripts.start = 'yarn workspaces foreach -piv run start'
 		writeNeeded = true
 	}
-	if (!pkgJson.scripts.test) {
-		pkgJson.scripts.test = 'essex test'
+	if (!pkgJson.scripts['unit_test']) {
+		pkgJson.scripts['unit_test'] = 'essex test'
 		writeNeeded = true
 	}
 	if (!pkgJson.scripts.lint) {
 		pkgJson.scripts.lint = 'essex lint --docs --fix'
 		writeNeeded = true
 	}
-	if (!pkgJson.scripts.git_is_clean) {
-		pkgJson.scripts.git_is_clean = 'essex git-is-clean'
+	if (!pkgJson.scripts['publish_all']) {
+		pkgJson.scripts['publish_all'] =
+			"yarn workspaces foreach --exclude '<YOUR_TOP_LEVEL_PACKAGE_NAME>' -pv npm publish --tolerate-republish --access public"
+	}
+	if (!pkgJson.scripts['git_is_clean']) {
+		pkgJson.scripts['git_is_clean'] = 'essex git-is-clean'
 		writeNeeded = true
 	}
-	if (!pkgJson.scripts.audit) {
-		pkgJson.scripts.audit = 'essex audit'
-		writeNeeded = true
-	}
-	if (!pkgJson.scripts.ci) {
-		pkgJson.scripts.ci = 'run-s build lint test git_is_clean audit'
+	if (!pkgJson.scripts['ci']) {
+		pkgJson.scripts['ci'] =
+			'run-s build_all test_all lint unit_test git_is_clean'
 		writeNeeded = true
 	}
 	if (writeNeeded) {
@@ -108,7 +115,7 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 	log.info(`
 	You should install these recommended peer dependencies
 
-	npm-run-all husky lint-staged @typescript-eslint/eslint-plugin @typescript-eslint/eslint-parser
+	npm-run-all husky lint-staged @commitlint/cli @typescript-eslint/eslint-plugin @typescript-eslint/eslint-parser eslint-import-resolver-node
 	`)
 	return Promise.resolve(0)
 }

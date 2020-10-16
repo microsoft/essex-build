@@ -2393,9 +2393,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex-build/test-suite-library@workspace:packages/test-suite-lib"
   dependencies:
-    "@essex/eslint-config": ^10.0.0
-    "@essex/jest-config": ^10.0.1
-    "@essex/scripts": ^10.0.1
+    "@essex/eslint-config": "workspace:packages/config-eslint"
+    "@essex/jest-config": "workspace:packages/config-jest"
+    "@essex/scripts": "workspace:packages/scripts"
     "@types/jest": ^26.0.14
     "@typescript-eslint/eslint-plugin": ^4.4.1
     "@typescript-eslint/parser": ^4.4.1
@@ -2428,9 +2428,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex-build/test-suite-webapp@workspace:packages/test-suite-webapp"
   dependencies:
-    "@essex/eslint-config": ^10.0.0
-    "@essex/scripts": ^10.0.1
-    "@essex/webpack-config": ^10.0.1
+    "@essex/eslint-config": "workspace:packages/config-eslint"
+    "@essex/scripts": "workspace:packages/scripts"
+    "@essex/webpack-config": "workspace:packages/config-webpack"
     "@types/react": ^16.9.52
     "@types/react-dom": ^16.9.8
     "@typescript-eslint/eslint-plugin": ^4.4.1
@@ -2446,10 +2446,10 @@ __metadata:
   resolution: "@essex/alpha-build-utils@workspace:."
   dependencies:
     "@commitlint/cli": ^11.0.0
-    "@essex/eslint-config": ^10.0.0
-    "@essex/eslint-plugin": ^10.0.0
-    "@essex/jest-config": ^10.0.1
-    "@essex/prettier-config": ^10.0.0
+    "@essex/eslint-config": "workspace:packages/config-eslint"
+    "@essex/eslint-plugin": "workspace:packages/config-eslint-plugin"
+    "@essex/jest-config": "workspace:packages/config-jest"
+    "@essex/prettier-config": "workspace:packages/config-prettier"
     "@types/jest": ^26.0.14
     "@typescript-eslint/eslint-plugin": ^4.4.1
     "@typescript-eslint/parser": ^4.4.1
@@ -2464,7 +2464,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/babel-config@^10.0.0, @essex/babel-config@workspace:packages/config-babel":
+"@essex/babel-config@workspace:packages/config-babel":
   version: 0.0.0-use.local
   resolution: "@essex/babel-config@workspace:packages/config-babel"
   dependencies:
@@ -2480,28 +2480,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-audit@^10.0.1, @essex/build-step-audit@workspace:packages/step-audit":
-  version: 0.0.0-use.local
-  resolution: "@essex/build-step-audit@workspace:packages/step-audit"
-  dependencies:
-    "@essex/build-utils": ^10.0.1
-    "@essex/shellrunner": ^10.0.1
-    "@essex/tasklogger": ^10.0.1
-    "@types/node": ^14.11.8
-    rimraf: ^3.0.2
-    typescript: ^4.0.3
-  peerDependencies:
-    audit-ci: ">= 3.1"
-    license-to-fail: ">= 4.0"
-  languageName: unknown
-  linkType: soft
-
-"@essex/build-step-azure@^10.0.1, @essex/build-step-azure@workspace:packages/step-azure":
+"@essex/build-step-azure@workspace:packages/step-azure":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-azure@workspace:packages/step-azure"
   dependencies:
     "@azure/storage-blob": ^12.2.1
-    "@essex/build-utils": ^10.0.1
+    "@essex/build-utils": "workspace:packages/util-utils"
     "@types/glob": ^7.1.3
     "@types/mime-types": ^2.1.0
     "@types/node": ^14.11.8
@@ -2512,15 +2496,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-babel@^10.0.1, @essex/build-step-babel@workspace:packages/step-babel":
+"@essex/build-step-babel@workspace:packages/step-babel":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-babel@workspace:packages/step-babel"
   dependencies:
     "@babel/core": ^7.12.0
     "@babel/types": ^7.12.0
-    "@essex/babel-config": ^10.0.0
-    "@essex/build-utils": ^10.0.1
-    "@essex/tasklogger": ^10.0.1
+    "@essex/babel-config": "workspace:packages/config-babel"
+    "@essex/build-utils": "workspace:packages/util-utils"
+    "@essex/tasklogger": "workspace:packages/util-tasklogger"
     "@types/gulp": ^4.0.7
     "@types/gulp-babel": ^6.1.29
     "@types/gulp-debug": ^2.0.31
@@ -2535,11 +2519,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-clean@^10.0.1, @essex/build-step-clean@workspace:packages/step-clean":
+"@essex/build-step-clean@workspace:packages/step-clean":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-clean@workspace:packages/step-clean"
   dependencies:
-    "@essex/build-utils": ^10.0.1
+    "@essex/build-utils": "workspace:packages/util-utils"
     "@types/node": ^14.11.8
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
@@ -2547,13 +2531,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-commitlint@^10.0.1, @essex/build-step-commitlint@workspace:packages/step-commitlint":
+"@essex/build-step-commitlint@workspace:packages/step-commitlint":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-commitlint@workspace:packages/step-commitlint"
   dependencies:
     "@commitlint/config-conventional": 11.0.0
-    "@essex/build-utils": ^10.0.1
-    "@essex/shellrunner": ^10.0.1
+    "@essex/build-utils": "workspace:packages/util-utils"
+    "@essex/shellrunner": "workspace:packages/util-shellrunner"
     "@types/node": ^14.11.8
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
@@ -2563,11 +2547,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-docs@^10.0.1, @essex/build-step-docs@workspace:packages/step-docs":
+"@essex/build-step-docs@workspace:packages/step-docs":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-docs@workspace:packages/step-docs"
   dependencies:
-    "@essex/build-utils": ^10.0.1
+    "@essex/build-utils": "workspace:packages/util-utils"
     "@types/node": ^14.11.8
     dictionary-en: ^3.0.1
     remark-frontmatter: ^3.0.0
@@ -2586,13 +2570,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-eslint@^10.0.1, @essex/build-step-eslint@workspace:packages/step-eslint":
+"@essex/build-step-eslint@workspace:packages/step-eslint":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-eslint@workspace:packages/step-eslint"
   dependencies:
-    "@essex/build-utils": ^10.0.1
-    "@essex/eslint-config": ^10.0.0
-    "@essex/eslint-plugin": ^10.0.0
+    "@essex/build-utils": "workspace:packages/util-utils"
+    "@essex/eslint-config": "workspace:packages/config-eslint"
+    "@essex/eslint-plugin": "workspace:packages/config-eslint-plugin"
     "@types/eslint": ^7.2.4
     "@types/node": ^14.11.8
     "@typescript-eslint/eslint-plugin": ^4.4.1
@@ -2604,13 +2588,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-init@^10.0.1, @essex/build-step-init@workspace:packages/step-init":
+"@essex/build-step-init@workspace:packages/step-init":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-init@workspace:packages/step-init"
   dependencies:
-    "@essex/build-step-recipes": ^10.0.1
-    "@essex/build-utils": ^10.0.1
-    "@essex/tasklogger": ^10.0.1
+    "@essex/build-step-recipes": "workspace:packages/step-recipes"
+    "@essex/build-utils": "workspace:packages/util-utils"
+    "@essex/tasklogger": "workspace:packages/util-tasklogger"
     "@types/node": ^14.11.8
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
@@ -2618,13 +2602,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-jest@^10.0.1, @essex/build-step-jest@workspace:packages/step-jest":
+"@essex/build-step-jest@workspace:packages/step-jest":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-jest@workspace:packages/step-jest"
   dependencies:
-    "@essex/build-utils": ^10.0.1
-    "@essex/jest-config": ^10.0.1
-    "@essex/tasklogger": ^10.0.1
+    "@essex/build-utils": "workspace:packages/util-utils"
+    "@essex/jest-config": "workspace:packages/config-jest"
+    "@essex/tasklogger": "workspace:packages/util-tasklogger"
     "@jest/core": ^26.4.2
     "@types/debug": ^4.1.5
     "@types/node": ^14.11.8
@@ -2637,12 +2621,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-lint-staged@^10.0.1, @essex/build-step-lint-staged@workspace:packages/step-lint-staged":
+"@essex/build-step-lint-staged@workspace:packages/step-lint-staged":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-lint-staged@workspace:packages/step-lint-staged"
   dependencies:
-    "@essex/build-utils": ^10.0.1
-    "@essex/shellrunner": ^10.0.1
+    "@essex/build-utils": "workspace:packages/util-utils"
+    "@essex/shellrunner": "workspace:packages/util-shellrunner"
     "@types/node": ^14.11.8
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
@@ -2652,12 +2636,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-pretty-quick@^10.0.1, @essex/build-step-pretty-quick@workspace:packages/step-pretty-quick":
+"@essex/build-step-pretty-quick@workspace:packages/step-pretty-quick":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-pretty-quick@workspace:packages/step-pretty-quick"
   dependencies:
-    "@essex/build-utils": ^10.0.1
-    "@essex/tasklogger": ^10.0.1
+    "@essex/build-utils": "workspace:packages/util-utils"
+    "@essex/tasklogger": "workspace:packages/util-tasklogger"
     "@types/node": ^14.11.8
     chalk: ^4.1.0
     prettier: ^2.1.2
@@ -2667,11 +2651,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-recipes@^10.0.1, @essex/build-step-recipes@workspace:packages/step-recipes":
+"@essex/build-step-recipes@workspace:packages/step-recipes":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-recipes@workspace:packages/step-recipes"
   dependencies:
-    "@essex/tasklogger": ^10.0.1
+    "@essex/tasklogger": "workspace:packages/util-tasklogger"
     "@types/node": ^14.11.8
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
@@ -2679,13 +2663,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-rollup@^10.0.1, @essex/build-step-rollup@workspace:packages/step-rollup":
+"@essex/build-step-rollup@workspace:packages/step-rollup":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-rollup@workspace:packages/step-rollup"
   dependencies:
-    "@essex/build-utils": ^10.0.1
-    "@essex/shellrunner": ^10.0.1
-    "@essex/tasklogger": ^10.0.1
+    "@essex/build-utils": "workspace:packages/util-utils"
+    "@essex/shellrunner": "workspace:packages/util-shellrunner"
+    "@essex/tasklogger": "workspace:packages/util-tasklogger"
     "@types/node": ^14.11.8
     rimraf: ^3.0.2
     typescript: ^4.0.3
@@ -2694,14 +2678,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-storybook@^10.0.1, @essex/build-step-storybook@workspace:packages/step-storybook":
+"@essex/build-step-storybook@workspace:packages/step-storybook":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-storybook@workspace:packages/step-storybook"
   dependencies:
-    "@essex/build-utils": ^10.0.1
-    "@essex/shellrunner": ^10.0.1
-    "@essex/storybook-config": ^10.0.0
-    "@essex/tasklogger": ^10.0.1
+    "@essex/build-utils": "workspace:packages/util-utils"
+    "@essex/shellrunner": "workspace:packages/util-shellrunner"
+    "@essex/storybook-config": "workspace:packages/config-storybook"
+    "@essex/tasklogger": "workspace:packages/util-tasklogger"
     "@types/node": ^14.11.8
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
@@ -2713,12 +2697,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-typedoc@^10.0.1, @essex/build-step-typedoc@workspace:packages/step-typedoc":
+"@essex/build-step-typedoc@workspace:packages/step-typedoc":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-typedoc@workspace:packages/step-typedoc"
   dependencies:
-    "@essex/build-utils": ^10.0.1
-    "@essex/tasklogger": ^10.0.1
+    "@essex/build-utils": "workspace:packages/util-utils"
+    "@essex/tasklogger": "workspace:packages/util-tasklogger"
     "@types/node": ^14.11.8
     rimraf: ^3.0.2
     typedoc: ^0.19.2
@@ -2728,12 +2712,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-typescript@^10.0.1, @essex/build-step-typescript@workspace:packages/step-typescript":
+"@essex/build-step-typescript@workspace:packages/step-typescript":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-typescript@workspace:packages/step-typescript"
   dependencies:
-    "@essex/build-utils": ^10.0.1
-    "@essex/tasklogger": ^10.0.1
+    "@essex/build-utils": "workspace:packages/util-utils"
+    "@essex/tasklogger": "workspace:packages/util-tasklogger"
     "@types/gulp": ^4.0.7
     "@types/gulp-debug": ^2.0.31
     "@types/gulp-plumber": ^0.0.32
@@ -2749,13 +2733,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-webpack@^10.0.1, @essex/build-step-webpack@workspace:packages/step-webpack":
+"@essex/build-step-webpack@workspace:packages/step-webpack":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-webpack@workspace:packages/step-webpack"
   dependencies:
-    "@essex/build-utils": ^10.0.1
-    "@essex/tasklogger": ^10.0.1
-    "@essex/webpack-config": ^10.0.1
+    "@essex/build-utils": "workspace:packages/util-utils"
+    "@essex/tasklogger": "workspace:packages/util-tasklogger"
+    "@essex/webpack-config": "workspace:packages/config-webpack"
     "@types/node": ^14.11.8
     "@types/webpack": ^4.41.22
     "@types/webpack-dev-server": ^3.11.0
@@ -2766,7 +2750,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-zip@^10.0.1, @essex/build-step-zip@workspace:packages/step-zip":
+"@essex/build-step-zip@workspace:packages/step-zip":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-zip@workspace:packages/step-zip"
   dependencies:
@@ -2779,7 +2763,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-util-hoister@^10.0.1, @essex/build-util-hoister@workspace:packages/util-hoister":
+"@essex/build-util-hoister@workspace:packages/util-hoister":
   version: 0.0.0-use.local
   resolution: "@essex/build-util-hoister@workspace:packages/util-hoister"
   dependencies:
@@ -2789,12 +2773,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-utils@^10.0.1, @essex/build-utils@workspace:packages/util-gulp":
+"@essex/build-utils@workspace:packages/util-utils":
   version: 0.0.0-use.local
-  resolution: "@essex/build-utils@workspace:packages/util-gulp"
+  resolution: "@essex/build-utils@workspace:packages/util-utils"
   dependencies:
-    "@essex/shellrunner": ^10.0.1
-    "@essex/tasklogger": ^10.0.1
+    "@essex/shellrunner": "workspace:packages/util-shellrunner"
+    "@essex/tasklogger": "workspace:packages/util-tasklogger"
     "@types/gulp": ^4.0.7
     "@types/node": ^14.11.8
     "@types/through2": ^2.0.36
@@ -2805,11 +2789,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/eslint-config@^10.0.0, @essex/eslint-config@workspace:packages/config-eslint":
+"@essex/eslint-config@workspace:packages/config-eslint":
   version: 0.0.0-use.local
   resolution: "@essex/eslint-config@workspace:packages/config-eslint"
   dependencies:
-    "@essex/eslint-plugin": ^10.0.0
+    "@essex/eslint-plugin": "workspace:packages/config-eslint-plugin"
   peerDependencies:
     "@essex/eslint-plugin": ">=10.0.0"
     "@typescript-eslint/eslint-plugin": ">= 4.4.1"
@@ -2818,7 +2802,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/eslint-plugin@^10.0.0, @essex/eslint-plugin@workspace:packages/config-eslint-plugin":
+"@essex/eslint-plugin@workspace:packages/config-eslint-plugin":
   version: 0.0.0-use.local
   resolution: "@essex/eslint-plugin@workspace:packages/config-eslint-plugin"
   dependencies:
@@ -2848,7 +2832,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/jest-config@^10.0.1, @essex/jest-config@workspace:packages/config-jest":
+"@essex/jest-config@workspace:packages/config-jest":
   version: 0.0.0-use.local
   resolution: "@essex/jest-config@workspace:packages/config-jest"
   dependencies:
@@ -2870,39 +2854,38 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/prettier-config@^10.0.0, @essex/prettier-config@workspace:packages/config-prettier":
+"@essex/prettier-config@workspace:packages/config-prettier":
   version: 0.0.0-use.local
   resolution: "@essex/prettier-config@workspace:packages/config-prettier"
   languageName: unknown
   linkType: soft
 
-"@essex/scripts@^10.0.1, @essex/scripts@workspace:packages/scripts":
+"@essex/scripts@workspace:packages/scripts":
   version: 0.0.0-use.local
   resolution: "@essex/scripts@workspace:packages/scripts"
   dependencies:
-    "@essex/build-step-audit": ^10.0.1
-    "@essex/build-step-azure": ^10.0.1
-    "@essex/build-step-babel": ^10.0.1
-    "@essex/build-step-clean": ^10.0.1
-    "@essex/build-step-commitlint": ^10.0.1
-    "@essex/build-step-docs": ^10.0.1
-    "@essex/build-step-eslint": ^10.0.1
-    "@essex/build-step-init": ^10.0.1
-    "@essex/build-step-jest": ^10.0.1
-    "@essex/build-step-lint-staged": ^10.0.1
-    "@essex/build-step-pretty-quick": ^10.0.1
-    "@essex/build-step-recipes": ^10.0.1
-    "@essex/build-step-rollup": ^10.0.1
-    "@essex/build-step-storybook": ^10.0.1
-    "@essex/build-step-typedoc": ^10.0.1
-    "@essex/build-step-typescript": ^10.0.1
-    "@essex/build-step-webpack": ^10.0.1
-    "@essex/build-step-zip": ^10.0.1
-    "@essex/build-utils": ^10.0.1
-    "@essex/eslint-plugin": ^10.0.0
-    "@essex/shellrunner": ^10.0.1
-    "@essex/tasklogger": ^10.0.1
-    "@essex/webpack-config": ^10.0.1
+    "@essex/build-step-azure": "workspace:packages/step-azure"
+    "@essex/build-step-babel": "workspace:packages/step-babel"
+    "@essex/build-step-clean": "workspace:packages/step-clean"
+    "@essex/build-step-commitlint": "workspace:packages/step-commitlint"
+    "@essex/build-step-docs": "workspace:packages/step-docs"
+    "@essex/build-step-eslint": "workspace:packages/step-eslint"
+    "@essex/build-step-init": "workspace:packages/step-init"
+    "@essex/build-step-jest": "workspace:packages/step-jest"
+    "@essex/build-step-lint-staged": "workspace:packages/step-lint-staged"
+    "@essex/build-step-pretty-quick": "workspace:packages/step-pretty-quick"
+    "@essex/build-step-recipes": "workspace:packages/step-recipes"
+    "@essex/build-step-rollup": "workspace:packages/step-rollup"
+    "@essex/build-step-storybook": "workspace:packages/step-storybook"
+    "@essex/build-step-typedoc": "workspace:packages/step-typedoc"
+    "@essex/build-step-typescript": "workspace:packages/step-typescript"
+    "@essex/build-step-webpack": "workspace:packages/step-webpack"
+    "@essex/build-step-zip": "workspace:packages/step-zip"
+    "@essex/build-utils": "workspace:packages/util-utils"
+    "@essex/eslint-plugin": "workspace:packages/config-eslint-plugin"
+    "@essex/shellrunner": "workspace:packages/util-shellrunner"
+    "@essex/tasklogger": "workspace:packages/util-tasklogger"
+    "@essex/webpack-config": "workspace:packages/config-webpack"
     "@types/debug": ^4.1.5
     "@types/gulp": ^4.0.7
     "@types/gulp-babel": ^6.1.29
@@ -2931,10 +2914,8 @@ __metadata:
     "@storybook/react": ">= 6"
     "@typescript-eslint/eslint-plugin": ">= 4.4.1"
     "@typescript-eslint/parser": ">= 4.4.1"
-    audit-ci: ">= 3.1"
     eslint-import-resolver-node: ">= 0.3.4"
     husky: ">= 4.2.5"
-    license-to-fail: ">= 4.0"
     lint-staged: "*"
     react: ">= 16.13.1"
     react-dom: ">= 16.13.1"
@@ -2972,11 +2953,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/shellrunner@^10.0.1, @essex/shellrunner@workspace:packages/util-shellrunner":
+"@essex/shellrunner@workspace:packages/util-shellrunner":
   version: 0.0.0-use.local
   resolution: "@essex/shellrunner@workspace:packages/util-shellrunner"
   dependencies:
-    "@essex/build-util-hoister": ^10.0.1
+    "@essex/build-util-hoister": "workspace:packages/util-hoister"
     "@types/debug": ^4.1.5
     "@types/node": ^14.11.8
     colors: ^1.4.0
@@ -2988,13 +2969,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/storybook-config@^10.0.0, @essex/storybook-config@workspace:packages/config-storybook":
+"@essex/storybook-config@workspace:packages/config-storybook":
   version: 0.0.0-use.local
   resolution: "@essex/storybook-config@workspace:packages/config-storybook"
   dependencies:
     "@babel/plugin-transform-react-jsx": ^7.12.1
-    "@essex/babel-config": ^10.0.0
-    "@essex/build-util-hoister": ^10.0.1
+    "@essex/babel-config": "workspace:packages/config-babel"
+    "@essex/build-util-hoister": "workspace:packages/util-hoister"
     "@mdx-js/loader": ^1.6.18
     "@storybook/addon-a11y": ^6.0.26
     "@storybook/addon-actions": ^6.0.26
@@ -3024,7 +3005,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/tasklogger@^10.0.1, @essex/tasklogger@workspace:packages/util-tasklogger":
+"@essex/tasklogger@workspace:packages/util-tasklogger":
   version: 0.0.0-use.local
   resolution: "@essex/tasklogger@workspace:packages/util-tasklogger"
   dependencies:
@@ -3035,13 +3016,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/webpack-config@^10.0.1, @essex/webpack-config@workspace:packages/config-webpack":
+"@essex/webpack-config@workspace:packages/config-webpack":
   version: 0.0.0-use.local
   resolution: "@essex/webpack-config@workspace:packages/config-webpack"
   dependencies:
     "@babel/core": ^7.12.0
-    "@essex/babel-config": ^10.0.0
-    "@essex/build-util-hoister": ^10.0.1
+    "@essex/babel-config": "workspace:packages/config-babel"
+    "@essex/build-util-hoister": "workspace:packages/util-hoister"
     "@types/debug": ^4.1.5
     "@types/node": ^14.11.8
     "@types/webpack": ^4.41.22

@@ -6,10 +6,10 @@
 	"typings": "lib/index.d.ts",
 	"scripts": {
 		"clean": "rimraf dist lib",
-		"build": "tsc"
+		"build": "tsc -b"
 	},
 	"dependencies": {
-		"@essex/build-utils": "^10.0.1",
+		"@essex/build-utils": "workspace:packages/util-utils",
 		"dictionary-en": "^3.0.1",
 		"remark-frontmatter": "^3.0.0",
 		"remark-message-control": "^6.0.0",

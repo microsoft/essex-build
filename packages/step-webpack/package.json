@@ -6,12 +6,12 @@
 	"typings": "lib/index.d.ts",
 	"scripts": {
 		"clean": "rimraf dist lib",
-		"build": "tsc"
+		"build": "tsc -b"
 	},
 	"dependencies": {
-		"@essex/build-utils": "^10.0.1",
-		"@essex/tasklogger": "^10.0.1",
-		"@essex/webpack-config": "^10.0.1",
+		"@essex/build-utils": "workspace:packages/util-utils",
+		"@essex/tasklogger": "workspace:packages/util-tasklogger",
+		"@essex/webpack-config": "workspace:packages/config-webpack",
 		"webpack": "^4.44.2",
 		"webpack-dev-server": "^3.11.0"
 	},

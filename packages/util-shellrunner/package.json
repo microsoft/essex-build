@@ -11,11 +11,11 @@
 		"Chris Trevino <chtrevin@microsoft.com>"
 	],
 	"scripts": {
-		"build": "tsc",
+		"build": "tsc -b",
 		"clean": "rimraf lib"
 	},
 	"dependencies": {
-		"@essex/build-util-hoister": "^10.0.1",
+		"@essex/build-util-hoister": "workspace:packages/util-hoister",
 		"colors": "^1.4.0",
 		"cross-spawn": "^7.0.3",
 		"debug": "^4.2.0",

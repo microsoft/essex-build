@@ -6,12 +6,12 @@
 	"typings": "lib/index.d.ts",
 	"scripts": {
 		"clean": "rimraf dist lib",
-		"build": "tsc"
+		"build": "tsc -b"
 	},
 	"dependencies": {
-		"@essex/build-step-recipes": "^10.0.1",
-		"@essex/build-utils": "^10.0.1",
-		"@essex/tasklogger": "^10.0.1"
+		"@essex/build-step-recipes": "workspace:packages/step-recipes",
+		"@essex/build-utils": "workspace:packages/util-utils",
+		"@essex/tasklogger": "workspace:packages/util-tasklogger"
 	},
 	"devDependencies": {
 		"@types/node": "^14.11.8",

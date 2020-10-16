@@ -3,5 +3,4 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 const { configure } = require('@essex/storybook-config/lib/main')
-
-module.exports = configure()
+module.exports = configure({})

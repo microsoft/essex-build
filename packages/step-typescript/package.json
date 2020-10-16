@@ -6,11 +6,11 @@
 	"typings": "lib/index.d.ts",
 	"scripts": {
 		"clean": "rimraf dist lib",
-		"build": "tsc"
+		"build": "tsc -b"
 	},
 	"dependencies": {
-		"@essex/build-utils": "^10.0.1",
-		"@essex/tasklogger": "^10.0.1",
+		"@essex/build-utils": "workspace:packages/util-utils",
+		"@essex/tasklogger": "workspace:packages/util-tasklogger",
 		"gulp": "^4.0.2",
 		"gulp-debug": "^4.0.0",
 		"gulp-plumber": "^1.2.1",

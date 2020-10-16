@@ -6,11 +6,11 @@
 	"typings": "lib/index.d.ts",
 	"scripts": {
 		"clean": "rimraf dist lib",
-		"build": "tsc"
+		"build": "tsc -b"
 	},
 	"dependencies": {
-		"@essex/build-utils": "^10.0.1",
-		"@essex/tasklogger": "^10.0.1",
+		"@essex/build-utils": "workspace:packages/util-utils",
+		"@essex/tasklogger": "workspace:packages/util-tasklogger",
 		"typedoc": "^0.19.2",
 		"typescript": "^4.0.3"
 	},

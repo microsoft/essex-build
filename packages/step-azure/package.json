@@ -6,11 +6,11 @@
 	"typings": "lib/index.d.ts",
 	"scripts": {
 		"clean": "rimraf dist lib",
-		"build": "tsc"
+		"build": "tsc -b"
 	},
 	"dependencies": {
 		"@azure/storage-blob": "^12.2.1",
-		"@essex/build-utils": "^10.0.1",
+		"@essex/build-utils": "workspace:packages/util-utils",
 		"glob": "^7.1.6",
 		"mime-types": "^2.1.27"
 	},
