@@ -104,7 +104,7 @@ export function configure({
 		devtool: 'cheap-module-source-map',
 		output: {
 			path: buildPath,
-			chunkFilename: '[name].[chunkhashh].js',
+			chunkFilename: '[name].[chunkhash].js',
 			filename: '[name].[fullhash].js',
 			...extendedOutput,
 		},

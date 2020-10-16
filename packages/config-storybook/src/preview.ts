@@ -9,12 +9,14 @@ const { withKnobs } = require('@storybook/addon-knobs')
 const { addDecorator } = require('@storybook/react')
 const { addParameters } = require('@storybook/react')
 
-addDecorator(withKnobs)
-addDecorator(withA11y)
+export function configure() {
+	addDecorator(withKnobs)
+	addDecorator(withA11y)
 
-addParameters({
-	docs: {
-		container: DocsContainer,
-		page: DocsPage,
-	},
-})
+	addParameters({
+		docs: {
+			container: DocsContainer,
+			page: DocsPage,
+		},
+	})
+}
