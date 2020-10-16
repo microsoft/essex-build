@@ -65,7 +65,6 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 		pkgJson.husky = {
 			hooks: {
 				'pre-commit': 'essex pre-commit',
-				'commit-msg': 'essex commit-msg',
 			},
 		}
 		writeNeeded = true
