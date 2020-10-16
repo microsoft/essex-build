@@ -16,6 +16,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - run: yarn version check
+        if: !contains("release/" , github.ref)
         name: Version Check
 
       - run: yarn install
@@ -28,7 +29,6 @@ jobs:
 
       - name: Publish coverage to codecov.io
         uses: codecov/codecov-action@v1.0.3
-        if: success() && matrix.node-version == '14.x'
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
 
