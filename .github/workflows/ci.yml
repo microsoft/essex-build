@@ -16,7 +16,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Debug Info
-        uses: hmarr/debug-action
+        uses: hmarr/debug-action@v1.0.0
 
       - run: yarn version check
         if: "!startsWith(github.ref , 'release/')"
