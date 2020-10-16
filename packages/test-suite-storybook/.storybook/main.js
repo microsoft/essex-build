@@ -4,4 +4,4 @@
  */
 const { configure } = require('@essex/storybook-config/lib/main')
 
-module.exports = configure()
+module.exports = configure({ pnp: true })

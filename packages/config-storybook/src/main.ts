@@ -23,19 +23,14 @@ function getMdxBabelConfiguration() {
 	}
 }
 
-const nodeModulesPaths = getNodeModulesPaths()
-
 export interface Configuration {
 	pnp?: boolean
 }
 
 export function configure({ pnp }: Configuration) {
+	const nodeModulesPaths = getNodeModulesPaths()
 	return {
-		stories: [
-			join(process.cwd(), 'src/index.ts'),
-			join(process.cwd(), '**/*.stories.(ts|tsx|js|jsx|mdx)'),
-			join(process.cwd(), '**/*_stories.(ts|tsx|js|jsx|mdx)'),
-		],
+		stories: [join(process.cwd(), 'stories/**/*.stories.@(ts|tsx|js|jsx|mdx)')],
 		addons: [
 			require.resolve('@storybook/addon-actions/register'),
 			require.resolve('@storybook/addon-links/register'),
@@ -51,7 +46,9 @@ export function configure({ pnp }: Configuration) {
 				config.resolveLoader.plugins.push(PnpWebpackPlugin.moduleLoader(module))
 			}
 			config.resolve.extensions.push('.ts', '.tsx')
-			config.resolve.modules.push(...nodeModulesPaths)
+			if (!pnp) {
+				config.resolve.modules.push(...nodeModulesPaths)
+			}
 			config.module.rules.push({
 				test: /\.(ts|tsx)$/,
 				use: [
