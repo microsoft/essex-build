@@ -1,0 +1,7 @@
+releases:
+  "@essex/build-step-init": patch
+  "@essex/scripts": patch
+
+declined:
+  - "@essex-build/test-suite-library"
+  - "@essex-build/test-suite-webapp"
