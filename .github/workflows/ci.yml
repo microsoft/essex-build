@@ -8,9 +8,6 @@ jobs:
         node-version: [12.x, 14.x]
 
     steps:
-      - name: Debug Info
-        uses: hmarr/debug-action@v1.0.0
-
       - name: Use Node ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
