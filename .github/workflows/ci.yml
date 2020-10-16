@@ -8,14 +8,15 @@ jobs:
         node-version: [12.x, 14.x]
 
     steps:
-      - uses: actions/checkout@v1
-
       - name: Use Node ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
 
+      - uses: actions/checkout@v1
+
       - run: yarn version check
+        if: "!contains(github.ref , 'release/') && !contains(github.head_ref , 'release/')"
         name: Version Check
 
       - run: yarn install
@@ -28,7 +29,6 @@ jobs:
 
       - name: Publish coverage to codecov.io
         uses: codecov/codecov-action@v1.0.3
-        if: success() && matrix.node-version == '14.x'
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
 

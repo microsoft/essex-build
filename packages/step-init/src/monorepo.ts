@@ -29,9 +29,11 @@ const CONFIG_FILES_DOT = [
 	'docsrc.json',
 	'eslintignore',
 	'eslintrc.json',
+	'huskyrc.json',
 	'gitignore',
 	'linstagedrc.json',
 	'prettierignore',
+	'prettierrc',
 ]
 const CONFIG_FILES_NODOT = ['tsconfig.json', 'jest.config.js']
 
@@ -57,20 +59,6 @@ export function initMonorepo(): Promise<number> {
 
 function configurePackageJsonForMonorepo(): Promise<number> {
 	let writeNeeded = false
-	if (!pkgJson.prettier) {
-		pkgJson.prettier = '@essex/prettier-config'
-		writeNeeded = true
-	}
-	if (!pkgJson.husky) {
-		pkgJson.husky = {
-			hooks: {
-				'pre-commit': 'essex pre-commit',
-				'commit-msg': 'essex commit-msg',
-			},
-		}
-		writeNeeded = true
-	}
-
 	if (!pkgJson.scripts['build_all']) {
 		pkgJson.scripts['build_all'] =
 			'yarn workspaces foreach -pivt --topological-dev run build'
@@ -84,21 +72,21 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 		pkgJson.scripts['clean_all'] = 'yarn workspaces foreach -piv run clean'
 		writeNeeded = true
 	}
-	if (!pkgJson.scripts.start) {
-		pkgJson.scripts.start = 'yarn workspaces foreach -piv run start'
-		writeNeeded = true
-	}
-	if (!pkgJson.scripts['unit_test']) {
-		pkgJson.scripts['unit_test'] = 'essex test'
-		writeNeeded = true
-	}
-	if (!pkgJson.scripts.lint) {
-		pkgJson.scripts.lint = 'essex lint --docs --fix'
+	if (!pkgJson.scripts['start_all']) {
+		pkgJson.scripts['start_all'] = 'yarn workspaces foreach -piv run start'
 		writeNeeded = true
 	}
 	if (!pkgJson.scripts['publish_all']) {
 		pkgJson.scripts['publish_all'] =
 			"yarn workspaces foreach --exclude '<YOUR_TOP_LEVEL_PACKAGE_NAME>' -pv npm publish --tolerate-republish --access public"
+	}
+	if (!pkgJson.scripts['unit_test']) {
+		pkgJson.scripts['unit_test'] = 'essex test'
+		writeNeeded = true
+	}
+	if (!pkgJson.scripts['lint']) {
+		pkgJson.scripts['lint'] = 'essex lint --docs --fix'
+		writeNeeded = true
 	}
 	if (!pkgJson.scripts['git_is_clean']) {
 		pkgJson.scripts['git_is_clean'] = 'essex git-is-clean'
@@ -115,7 +103,7 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 	log.info(`
 	You should install these recommended peer dependencies
 
-	npm-run-all husky lint-staged @commitlint/cli @typescript-eslint/eslint-plugin @typescript-eslint/eslint-parser eslint-import-resolver-node
+	npm-run-all husky lint-staged @typescript-eslint/eslint-plugin @typescript-eslint/eslint-parser eslint-import-resolver-node
 	`)
 	return Promise.resolve(0)
 }

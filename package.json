@@ -24,7 +24,6 @@
 		"ci": "run-s build_all lint_all test_all lint unit_test git_is_clean"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^11.0.0",
 		"@essex/eslint-config": "workspace:packages/config-eslint",
 		"@essex/eslint-plugin": "workspace:packages/config-eslint-plugin",
 		"@essex/jest-config": "workspace:packages/config-jest",
