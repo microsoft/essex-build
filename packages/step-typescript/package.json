@@ -21,7 +21,7 @@
 		"@types/gulp": "^4.0.7",
 		"@types/gulp-debug": "^2.0.31",
 		"@types/gulp-plumber": "^0.0.32",
-		"@types/node": "^14.11.8",
+		"@types/node": "^14.11.10",
 		"rimraf": "^3.0.2"
 	},
 	"peerDependencies": {

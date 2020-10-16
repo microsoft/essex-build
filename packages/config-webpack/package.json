@@ -9,7 +9,7 @@
 		"build": "tsc -b"
 	},
 	"dependencies": {
-		"@babel/core": "^7.12.0",
+		"@babel/core": "^7.12.1",
 		"@essex/babel-config": "workspace:packages/config-babel",
 		"@essex/build-util-hoister": "workspace:packages/util-hoister",
 		"@types/webpack": "^4.41.22",
@@ -25,12 +25,12 @@
 		"sass-loader": "^10.0.3",
 		"style-loader": "^2.0.0",
 		"ts-loader": "^8.0.5",
-		"webpack": "^4",
+		"webpack": "^4.44.2",
 		"webpack-dev-server": "^3.11.0"
 	},
 	"devDependencies": {
 		"@types/debug": "^4.1.5",
-		"@types/node": "^14.11.8",
+		"@types/node": "^14.11.10",
 		"rimraf": "^3.0.2",
 		"typescript": "^4.0.3"
 	},
