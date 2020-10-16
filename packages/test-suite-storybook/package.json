@@ -5,8 +5,8 @@
 	"scripts": {
 		"clean": "essex clean",
 		"lint": "essex lint",
-		"start": "start-storybook -p 6006",
-		"build": "build-storybook"
+		"start": "essex serve --storybook",
+		"build": "essex bundle --storybook"
 	},
 	"dependencies": {
 		"@storybook/react": "^6.0.26",
