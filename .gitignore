@@ -2,10 +2,10 @@ node_modules/
 *.log
 
 # Build Outputs
-lib/
-dist/
-build/
-storybook-static/
+packages/*/lib/
+packages/*/dist/
+packages/*/build/
+packages/*/storybook-static/
 *.tsbuildinfo
 
 # Testing Output
@@ -19,4 +19,3 @@ test-report.xml
 !.yarn/plugins
 !.yarn/sdks
 !.yarn/versions
-.pnp.*
