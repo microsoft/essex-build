@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v1
 
       - run: yarn version check
-        if: "!contains(github.ref , 'release/') && !contains(github.head_ref , 'release/')"
+        if: "github.actor != 'dependabot-preview[bot]' && !contains(github.ref , 'release/') && !contains(github.head_ref , 'release/')"
         name: Version Check
 
       - run: yarn install
@@ -28,7 +28,7 @@ jobs:
           CI: true
 
       - name: Publish coverage to codecov.io
-        uses: codecov/codecov-action@v1.0.3
+        uses: codecov/codecov-action@v1.0.13
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
 
