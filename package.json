@@ -8,7 +8,6 @@
 	],
 	"scripts": {
 		"preinstall": "npx only-allow yarn",
-		"essex": "node ./packages/scripts/lib/index.js",
 		"clean_all:primary": "yarn workspaces foreach --exclude '@essex-build/test-suite-*' -piv run clean",
 		"clean_all:tests": "yarn workspaces foreach --include '@essex-build/test-suite-*' -piv run clean",
 		"clean_all": "run-s clean_all:tests clean_all:primary",
@@ -28,6 +27,7 @@
 		"@essex/eslint-plugin": "workspace:packages/config-eslint-plugin",
 		"@essex/jest-config": "workspace:packages/config-jest",
 		"@essex/prettier-config": "workspace:packages/config-prettier",
+		"@essex/scripts": "workspace:packages/scripts",
 		"@types/jest": "^26.0.14",
 		"@typescript-eslint/eslint-plugin": "^4.4.1",
 		"@typescript-eslint/parser": "^4.4.1",
