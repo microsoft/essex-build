@@ -9,7 +9,7 @@ const { withKnobs } = require('@storybook/addon-knobs')
 const { addDecorator } = require('@storybook/react')
 const { addParameters } = require('@storybook/react')
 
-export function configure() {
+export function configure(): void {
 	addDecorator(withKnobs)
 	addDecorator(withA11y)
 
