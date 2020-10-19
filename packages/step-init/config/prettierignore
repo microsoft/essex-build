@@ -10,3 +10,4 @@ pnpm-workspace.yaml
 .yarn/
 .pnp.js
 yarn.lock
+.yarnrc.yml
