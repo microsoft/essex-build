@@ -8,5 +8,6 @@ public/
 pnpm-lock.yaml
 pnpm-workspace.yaml
 .yarn/
+.yarnrc.yml
 .pnp.js
 yarn.lock
