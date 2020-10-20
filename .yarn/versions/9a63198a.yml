@@ -1,0 +1,9 @@
+releases:
+  "@essex/build-step-webpack": patch
+  "@essex/scripts": patch
+  "@essex/webpack-config": patch
+
+declined:
+  - "@essex-build/test-suite-library"
+  - "@essex-build/test-suite-storybook"
+  - "@essex-build/test-suite-webapp"
