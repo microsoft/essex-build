@@ -7910,6 +7910,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex/build-util-hoister", "workspace:packages/util-hoister"],
             ["@types/debug", "npm:4.1.5"],
             ["@types/node", "npm:14.11.10"],
+            ["@types/typescript", null],
             ["@types/webpack", "npm:4.41.22"],
             ["@types/webpack-dev-server", "npm:3.11.0"],
             ["babel-loader", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:8.1.0"],
@@ -7929,7 +7930,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["webpack-dev-server", "virtual:0c5fc579d174ed88a7c0294dd81387f980a505dae700ac2568a8bec8cc541d099ba1400446ad2994f02967f0112d5c0a0d01abddcb8302f2b586f4d3d49a6d75#npm:3.11.0"]
           ],
           "packagePeers": [
+            "@types/typescript",
             "@types/webpack",
+            "typescript",
             "webpack"
           ],
           "linkType": "SOFT",
@@ -7943,6 +7946,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex/build-util-hoister", "workspace:packages/util-hoister"],
             ["@types/debug", "npm:4.1.5"],
             ["@types/node", "npm:14.11.10"],
+            ["@types/typescript", null],
             ["@types/webpack", "npm:4.41.22"],
             ["@types/webpack-dev-server", "npm:3.11.0"],
             ["babel-loader", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:8.1.0"],
@@ -7960,6 +7964,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["typescript", "patch:typescript@npm%3A4.0.3#builtin<compat/typescript>::version=4.0.3&hash=5bf698"],
             ["webpack", "virtual:0c5fc579d174ed88a7c0294dd81387f980a505dae700ac2568a8bec8cc541d099ba1400446ad2994f02967f0112d5c0a0d01abddcb8302f2b586f4d3d49a6d75#npm:4.44.2"],
             ["webpack-dev-server", "virtual:0c5fc579d174ed88a7c0294dd81387f980a505dae700ac2568a8bec8cc541d099ba1400446ad2994f02967f0112d5c0a0d01abddcb8302f2b586f4d3d49a6d75#npm:3.11.0"]
+          ],
+          "packagePeers": [
+            "@types/typescript",
+            "typescript"
           ],
           "linkType": "SOFT",
         }],
