@@ -15,7 +15,7 @@
 		"@essex/build-utils": "workspace:packages/util-utils",
 		"@essex/jest-config": "workspace:packages/config-jest",
 		"@essex/tasklogger": "workspace:packages/util-tasklogger",
-		"@jest/core": "~26.4",
+		"@jest/core": "~26.6",
 		"@types/debug": "^4.1.5",
 		"chalk": "^4.1.0",
 		"debug": "^4.2.0",
