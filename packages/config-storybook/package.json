@@ -13,7 +13,7 @@
 		"@babel/plugin-transform-react-jsx": "^7.12.1",
 		"@essex/babel-config": "workspace:packages/config-babel",
 		"@essex/build-util-hoister": "workspace:packages/util-hoister",
-		"@mdx-js/loader": "^1.6.18",
+		"@mdx-js/loader": "^1.6.19",
 		"@storybook/addon-a11y": "^6.0.26",
 		"@storybook/addon-actions": "^6.0.26",
 		"@storybook/addon-docs": "^6.0.26",
@@ -27,11 +27,11 @@
 		"pnp-webpack-plugin": "^1.6.4",
 		"react-docgen-typescript-loader": "^3.7.2",
 		"react-is": "^16.13.1",
-		"ts-loader": "^8.0.5",
+		"ts-loader": "^8.0.6",
 		"webpack": "^4.44.2"
 	},
 	"devDependencies": {
-		"@types/node": "^14.11.10",
+		"@types/node": "^14.14.2",
 		"react": "^16.14.0",
 		"react-dom": "^16.14.0",
 		"rimraf": "^3.0.2",
