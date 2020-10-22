@@ -2,11 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-export * from './createBabelConfig'
 import { existsSync } from 'fs'
 import { join } from 'path'
 import { BabelSpecification, createBabelConfig } from './createBabelConfig'
 import { getBrowsersList } from './getBrowsersList'
+export * from './createBabelConfig'
 
 const cwd = process.cwd()
 const packageJsonPath = join(cwd, 'package.json')
