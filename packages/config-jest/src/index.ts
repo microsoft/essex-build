@@ -4,7 +4,7 @@
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { configure } from './configure'
-import { getJestConfigOverride, getTsConfig, getSetupFiles } from './overrides'
+import { getJestConfigOverride, getSetupFiles } from './overrides'
 export * from './configure'
 export * from './overrides'
 
@@ -12,5 +12,5 @@ export * from './overrides'
  * If a Jest config is present, use that - otherwise get the override
  */
 export function getJestConfiguration(): any {
-	return getJestConfigOverride() || configure(getSetupFiles(), getTsConfig())
+	return getJestConfigOverride() || configure(getSetupFiles())
 }

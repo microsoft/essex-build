@@ -35,7 +35,11 @@ const CONFIG_FILES_DOT = [
 	'prettierignore',
 	'prettierrc',
 ]
-const CONFIG_FILES_NODOT = ['tsconfig.json', 'jest.config.js']
+const CONFIG_FILES_NODOT = [
+	'tsconfig.json',
+	'jest.config.js',
+	'babel.config.js',
+]
 
 export function initMonorepo(): Promise<number> {
 	return Promise.resolve()
@@ -103,7 +107,25 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 	log.info(`
 	You should install these recommended peer dependencies
 
-	npm-run-all husky lint-staged @typescript-eslint/eslint-plugin @typescript-eslint/eslint-parser eslint-import-resolver-node
+	-- Essex Configs --
+	@essex/scripts
+	@essex/prettier-config
+
+	-- Build Tooling --
+	npm-run-all 
+	husky 
+	lint-staged 
+
+	-- Required for Jest testing --
+	@essex/babel-config
+	@essex/jest-config
+	
+	-- Required for Eslint to work in PnP mode --
+	@essex/eslint-config
+	@essex/eslint-plugin
+	@typescript-eslint/eslint-plugin 
+	@typescript-eslint/eslint-parser 
+	eslint-import-resolver-node 
 	`)
 	return Promise.resolve(0)
 }
