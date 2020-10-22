@@ -15,7 +15,7 @@ export function createBabelConfig({
 	modules,
 	targets,
 	corejs = 3,
-	useBuiltIns = false,
+	useBuiltIns = 'usage',
 	presets = [],
 	plugins = [],
 }: BabelSpecification): any {
