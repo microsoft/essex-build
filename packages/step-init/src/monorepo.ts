@@ -107,21 +107,25 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 	log.info(`
 	You should install these recommended peer dependencies
 
+	-- Essex Configs --
+	@essex/scripts
+	@essex/prettier-config
+
 	-- Build Tooling --
 	npm-run-all 
 	husky 
 	lint-staged 
+
+	-- Required for Jest testing --
+	@essex/babel-config
+	@essex/jest-config
 	
 	-- Required for Eslint to work in PnP mode --
+	@essex/eslint-config
+	@essex/eslint-plugin
 	@typescript-eslint/eslint-plugin 
 	@typescript-eslint/eslint-parser 
 	eslint-import-resolver-node 
-	
-	-- Required in babel.config.js for Jest testing --
-	@babel/core 
-	@babel/preset-env 
-	@babel/preset-typescript 
-	@babel/react
 	`)
 	return Promise.resolve(0)
 }
