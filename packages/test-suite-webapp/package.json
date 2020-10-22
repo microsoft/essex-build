@@ -18,8 +18,8 @@
 		"@essex/eslint-config": "workspace:packages/config-eslint",
 		"@essex/scripts": "workspace:packages/scripts",
 		"@essex/webpack-config": "workspace:packages/config-webpack",
-		"@typescript-eslint/eslint-plugin": "^4.4.1",
-		"@typescript-eslint/parser": "^4.4.1",
+		"@typescript-eslint/eslint-plugin": "^4.5.0",
+		"@typescript-eslint/parser": "^4.5.0",
 		"eslint-import-resolver-node": "^0.3.4"
 	}
 }

@@ -4,4 +4,5 @@
  */
 const { configure } = require('@essex/jest-config')
 
-module.exports = configure([], '<rootDir>/tsconfig.jest.json')
+const configuration = configure()
+module.exports = configuration

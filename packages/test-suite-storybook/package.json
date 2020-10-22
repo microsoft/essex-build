@@ -16,12 +16,12 @@
 		"react-dom": "^16.14.0"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.12.1",
+		"@babel/core": "^7.12.3",
 		"@essex/eslint-config": "workspace:packages/config-eslint",
 		"@essex/scripts": "workspace:packages/scripts",
 		"@essex/storybook-config": "workspace:packages/config-storybook",
-		"@typescript-eslint/eslint-plugin": "^4.4.1",
-		"@typescript-eslint/parser": "^4.4.1",
+		"@typescript-eslint/eslint-plugin": "^4.5.0",
+		"@typescript-eslint/parser": "^4.5.0",
 		"core-js": "^3.6.5",
 		"eslint-import-resolver-node": "^0.3.4"
 	}
