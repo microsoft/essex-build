@@ -27,7 +27,7 @@
 		"pnp-webpack-plugin": "^1.6.4",
 		"react-docgen-typescript-loader": "^3.7.2",
 		"react-is": "^16.13.1",
-		"ts-loader": "^8.0.6",
+		"ts-loader": "^8.0.7",
 		"webpack": "^4.44.2"
 	},
 	"devDependencies": {
