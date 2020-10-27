@@ -5,8 +5,8 @@ releases:
   "@essex/build-step-clean": patch
   "@essex/build-step-docs": patch
   "@essex/build-step-eslint": patch
-  "@essex/build-step-init": major
-  "@essex/build-step-jest": major
+  "@essex/build-step-init": patch
+  "@essex/build-step-jest": patch
   "@essex/build-step-lint-staged": patch
   "@essex/build-step-pretty-quick": patch
   "@essex/build-step-recipes": patch
@@ -20,8 +20,8 @@ releases:
   "@essex/build-utils": patch
   "@essex/eslint-config": patch
   "@essex/eslint-plugin": patch
-  "@essex/jest-config": major
-  "@essex/scripts": major
+  "@essex/jest-config": patch
+  "@essex/scripts": patch
   "@essex/shellrunner": patch
   "@essex/storybook-config": patch
   "@essex/tasklogger": patch
