@@ -1,6 +1,6 @@
 {
-	"name": "@essex-build/test-suite-storybook",
-	"version": "0.0.2",
+	"name": "@essex-build/test-suite-storybook-configless",
+	"version": "0.0.0",
 	"private": true,
 	"scripts": {
 		"clean": "essex clean",
