@@ -22,6 +22,7 @@
 		"@essex/storybook-config": "workspace:packages/config-storybook",
 		"@typescript-eslint/eslint-plugin": "^4.6.0",
 		"@typescript-eslint/parser": "^4.6.0",
+		"core-js": "^3.6.5",
 		"eslint-import-resolver-node": "^0.3.4"
 	}
 }
