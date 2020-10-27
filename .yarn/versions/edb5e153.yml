@@ -1,0 +1,34 @@
+releases:
+  "@essex/babel-config": patch
+  "@essex/build-step-azure": patch
+  "@essex/build-step-babel": patch
+  "@essex/build-step-clean": patch
+  "@essex/build-step-docs": patch
+  "@essex/build-step-eslint": patch
+  "@essex/build-step-init": major
+  "@essex/build-step-jest": major
+  "@essex/build-step-lint-staged": patch
+  "@essex/build-step-pretty-quick": patch
+  "@essex/build-step-recipes": patch
+  "@essex/build-step-rollup": patch
+  "@essex/build-step-storybook": patch
+  "@essex/build-step-typedoc": patch
+  "@essex/build-step-typescript": patch
+  "@essex/build-step-webpack": patch
+  "@essex/build-step-zip": patch
+  "@essex/build-util-hoister": patch
+  "@essex/build-utils": patch
+  "@essex/eslint-config": patch
+  "@essex/eslint-plugin": patch
+  "@essex/jest-config": major
+  "@essex/scripts": major
+  "@essex/shellrunner": patch
+  "@essex/storybook-config": patch
+  "@essex/tasklogger": patch
+  "@essex/webpack-config": patch
+
+declined:
+  - "@essex-build/test-suite-library"
+  - "@essex-build/test-suite-storybook"
+  - "@essex-build/test-suite-storybook-configless"
+  - "@essex-build/test-suite-webapp"
