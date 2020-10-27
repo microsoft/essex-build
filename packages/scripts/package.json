@@ -25,6 +25,7 @@
 		}
 	},
 	"dependencies": {
+		"@babel/core": "^7.12.3",
 		"@essex/build-step-azure": "workspace:packages/step-azure",
 		"@essex/build-step-babel": "workspace:packages/step-babel",
 		"@essex/build-step-clean": "workspace:packages/step-clean",

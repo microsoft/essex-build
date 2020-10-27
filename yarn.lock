@@ -2775,6 +2775,26 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@essex-build/test-suite-storybook-configless@workspace:packages/test-suite-storybook-configless":
+  version: 0.0.0-use.local
+  resolution: "@essex-build/test-suite-storybook-configless@workspace:packages/test-suite-storybook-configless"
+  dependencies:
+    "@babel/core": ^7.12.3
+    "@essex/eslint-config": "workspace:packages/config-eslint"
+    "@essex/scripts": "workspace:packages/scripts"
+    "@essex/storybook-config": "workspace:packages/config-storybook"
+    "@storybook/react": ^6.0.26
+    "@types/react": ^16.9.53
+    "@types/react-dom": ^16.9.8
+    "@typescript-eslint/eslint-plugin": ^4.5.0
+    "@typescript-eslint/parser": ^4.5.0
+    core-js: ^3.6.5
+    eslint-import-resolver-node: ^0.3.4
+    react: ^16.14.0
+    react-dom: ^16.14.0
+  languageName: unknown
+  linkType: soft
+
 "@essex-build/test-suite-storybook@workspace:packages/test-suite-storybook":
   version: 0.0.0-use.local
   resolution: "@essex-build/test-suite-storybook@workspace:packages/test-suite-storybook"
@@ -3047,7 +3067,9 @@ __metadata:
     rimraf: ^3.0.2
     typescript: ^4.0.3
   peerDependencies:
+    "@babel/core": ">= 7"
     "@storybook/react": ">= 6"
+    core-js: ">= 3"
     react: ">= 16.13.1"
     react-dom: ">= 16.13.1"
   languageName: unknown
@@ -3216,6 +3238,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/scripts@workspace:packages/scripts"
   dependencies:
+    "@babel/core": ^7.12.3
     "@essex/build-step-azure": "workspace:packages/step-azure"
     "@essex/build-step-babel": "workspace:packages/step-babel"
     "@essex/build-step-clean": "workspace:packages/step-clean"
