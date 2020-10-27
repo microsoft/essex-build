@@ -7331,6 +7331,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/$$virtual/@essex-scripts-virtual-65da87b8b2/1/packages/scripts/",
           "packageDependencies": [
             ["@essex/scripts", "virtual:04634ac6be101f21c9f62e3dd0c2d609954aa83a27d90480365c1606853fee68918a86ffd783a6f6cf5f838ce81ba2b6ec2e520f999c782b5854c13adbc64e75#workspace:packages/scripts"],
+            ["@babel/core", "npm:7.12.3"],
             ["@essex/build-step-azure", "workspace:packages/step-azure"],
             ["@essex/build-step-babel", "workspace:packages/step-babel"],
             ["@essex/build-step-clean", "workspace:packages/step-clean"],
@@ -7434,6 +7435,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/$$virtual/@essex-scripts-virtual-be3a772e35/1/packages/scripts/",
           "packageDependencies": [
             ["@essex/scripts", "virtual:215b566b7f0cd7c54ce57376135b3799429eb8ab081fa64cfb1ea72e8237c028255fd8f92174e2b5e264634a9d89b531db904c2c6490c79d610aef56a6b0dc74#workspace:packages/scripts"],
+            ["@babel/core", "npm:7.12.3"],
             ["@essex/build-step-azure", "workspace:packages/step-azure"],
             ["@essex/build-step-babel", "workspace:packages/step-babel"],
             ["@essex/build-step-clean", "workspace:packages/step-clean"],
@@ -7537,6 +7539,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/$$virtual/@essex-scripts-virtual-1b7d658845/1/packages/scripts/",
           "packageDependencies": [
             ["@essex/scripts", "virtual:24f8120b4c5632984ea93cb321e300e7b48148c79f3c35bd44a31c6b8479b1174c2bccfbbe5cf0be60df13e9b22a90520954b735f6694cea3ea5ec2ee1df1bcc#workspace:packages/scripts"],
+            ["@babel/core", "npm:7.12.3"],
             ["@essex/build-step-azure", "workspace:packages/step-azure"],
             ["@essex/build-step-babel", "workspace:packages/step-babel"],
             ["@essex/build-step-clean", "workspace:packages/step-clean"],
@@ -7640,6 +7643,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/$$virtual/@essex-scripts-virtual-25caa3f830/1/packages/scripts/",
           "packageDependencies": [
             ["@essex/scripts", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#workspace:packages/scripts"],
+            ["@babel/core", "npm:7.12.3"],
             ["@essex/build-step-azure", "workspace:packages/step-azure"],
             ["@essex/build-step-babel", "workspace:packages/step-babel"],
             ["@essex/build-step-clean", "workspace:packages/step-clean"],
@@ -7743,6 +7747,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/$$virtual/@essex-scripts-virtual-d8f1f3e20b/1/packages/scripts/",
           "packageDependencies": [
             ["@essex/scripts", "virtual:cdeeaa4696a5f742f2ce32f8f2713113acb7d22b37abc5ab2da317ae9cb7784e311490ac816f249e334f3d714d374a375672961115ed42a17fd18cdb95b8d9e5#workspace:packages/scripts"],
+            ["@babel/core", "npm:7.12.3"],
             ["@essex/build-step-azure", "workspace:packages/step-azure"],
             ["@essex/build-step-babel", "workspace:packages/step-babel"],
             ["@essex/build-step-clean", "workspace:packages/step-clean"],
@@ -7846,6 +7851,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/scripts/",
           "packageDependencies": [
             ["@essex/scripts", "workspace:packages/scripts"],
+            ["@babel/core", "npm:7.12.3"],
             ["@essex/build-step-azure", "workspace:packages/step-azure"],
             ["@essex/build-step-babel", "workspace:packages/step-babel"],
             ["@essex/build-step-clean", "workspace:packages/step-clean"],
