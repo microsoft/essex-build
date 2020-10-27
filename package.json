@@ -11,7 +11,7 @@
 		"clean_all:primary": "yarn workspaces foreach --exclude '@essex-build/test-suite-*' -piv run clean",
 		"clean_all:tests": "yarn workspaces foreach --include '@essex-build/test-suite-*' -piv run clean",
 		"clean_all": "run-s clean_all:tests clean_all:primary",
-		"build_all": "yarn workspaces foreach -piv --topological-dev run build",
+		"build_all": "yarn workspaces foreach -pv --topological-dev run build",
 		"lint_all": "yarn workspaces foreach -piv run lint",
 		"test_all": "yarn workspaces foreach -piv run test",
 		"publish_all": "yarn workspaces foreach --exclude '@essex-build/test-suite-*' --exclude '@essex/alpha-build-utils' -pv npm publish --tolerate-republish --access public",
@@ -30,14 +30,14 @@
 		"@essex/prettier-config": "workspace:packages/config-prettier",
 		"@essex/scripts": "workspace:packages/scripts",
 		"@types/jest": "^26.0.15",
-		"@typescript-eslint/eslint-plugin": "^4.5.0",
-		"@typescript-eslint/parser": "^4.5.0",
+		"@typescript-eslint/eslint-plugin": "^4.6.0",
+		"@typescript-eslint/parser": "^4.6.0",
 		"eslint-import-resolver-node": "^0.3.4",
 		"husky": "^4.3.0",
-		"lint-staged": "^10.4.2",
+		"lint-staged": "^10.5.0",
 		"npm-run-all": "^4.1.5",
 		"prettier": "^2.1.2",
-		"typescript": "^4.0.3"
+		"typescript": "^4.0.5"
 	},
 	"workspaces": [
 		"packages/*"

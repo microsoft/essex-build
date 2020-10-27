@@ -1,0 +1,28 @@
+{
+	"name": "@essex-build/test-suite-storybook-configless",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"clean": "essex clean",
+		"lint": "essex lint",
+		"start": "essex serve --storybook",
+		"build": "essex bundle --storybook"
+	},
+	"dependencies": {
+		"@storybook/react": "^6.0.27",
+		"@types/react": "^16.9.54",
+		"@types/react-dom": "^16.9.9",
+		"react": "^16.14.0",
+		"react-dom": "^16.14.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.12.3",
+		"@essex/eslint-config": "workspace:packages/config-eslint",
+		"@essex/scripts": "workspace:packages/scripts",
+		"@essex/storybook-config": "workspace:packages/config-storybook",
+		"@typescript-eslint/eslint-plugin": "^4.6.0",
+		"@typescript-eslint/parser": "^4.6.0",
+		"core-js": "^3.6.5",
+		"eslint-import-resolver-node": "^0.3.4"
+	}
+}

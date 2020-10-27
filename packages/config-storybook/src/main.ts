@@ -30,7 +30,13 @@ export interface Configuration {
 export function configure({ pnp }: Configuration) {
 	const nodeModulesPaths = getNodeModulesPaths()
 	return {
-		stories: [join(process.cwd(), 'stories/**/*.stories.@(ts|tsx|js|jsx|mdx)')],
+		// Back slashes are broken in storybook
+		stories: [
+			join(process.cwd(), 'stories/**/*.stories.@(ts|tsx|js|jsx|mdx)').replace(
+				/\\/g,
+				'/',
+			),
+		],
 		addons: [
 			require.resolve('@storybook/addon-actions/register'),
 			require.resolve('@storybook/addon-links/register'),
