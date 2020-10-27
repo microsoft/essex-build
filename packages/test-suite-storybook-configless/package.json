@@ -16,7 +16,6 @@
 		"react-dom": "^16.14.0"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.12.3",
 		"@essex/eslint-config": "workspace:packages/config-eslint",
 		"@essex/scripts": "workspace:packages/scripts",
 		"@essex/storybook-config": "workspace:packages/config-storybook",
