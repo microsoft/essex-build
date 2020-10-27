@@ -2779,7 +2779,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex-build/test-suite-storybook-configless@workspace:packages/test-suite-storybook-configless"
   dependencies:
-    "@babel/core": ^7.12.3
     "@essex/eslint-config": "workspace:packages/config-eslint"
     "@essex/scripts": "workspace:packages/scripts"
     "@essex/storybook-config": "workspace:packages/config-storybook"
@@ -2788,7 +2787,6 @@ __metadata:
     "@types/react-dom": ^16.9.8
     "@typescript-eslint/eslint-plugin": ^4.5.0
     "@typescript-eslint/parser": ^4.5.0
-    core-js: ^3.6.5
     eslint-import-resolver-node: ^0.3.4
     react: ^16.14.0
     react-dom: ^16.14.0
@@ -3067,9 +3065,7 @@ __metadata:
     rimraf: ^3.0.2
     typescript: ^4.0.3
   peerDependencies:
-    "@babel/core": ">= 7"
     "@storybook/react": ">= 6"
-    core-js: ">= 3"
     react: ">= 16.13.1"
     react-dom: ">= 16.13.1"
   languageName: unknown
@@ -3238,7 +3234,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/scripts@workspace:packages/scripts"
   dependencies:
-    "@babel/core": ^7.12.3
     "@essex/build-step-azure": "workspace:packages/step-azure"
     "@essex/build-step-babel": "workspace:packages/step-babel"
     "@essex/build-step-clean": "workspace:packages/step-clean"
@@ -3345,6 +3340,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/storybook-config@workspace:packages/config-storybook"
   dependencies:
+    "@babel/core": ^7.12.3
     "@babel/plugin-transform-react-jsx": ^7.12.1
     "@essex/babel-config": "workspace:packages/config-babel"
     "@essex/build-util-hoister": "workspace:packages/util-hoister"
@@ -3359,6 +3355,7 @@ __metadata:
     "@types/node": ^14.14.2
     babel-loader: ^8.1.0
     cache-loader: ^4.1.0
+    core-js: ^3.6.5
     fork-ts-checker-webpack-plugin: ^5.2.0
     pnp-webpack-plugin: ^1.6.4
     react: ^16.14.0
@@ -3370,8 +3367,6 @@ __metadata:
     typescript: ^4.0.3
     webpack: ^4.44.2
   peerDependencies:
-    "@babel/core": ">= 7"
-    core-js: ">= 3"
     react: ">= 16.13.1"
     react-dom: ">= 16.13.1"
   languageName: unknown
