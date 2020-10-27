@@ -185,7 +185,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.12.3":
+"@babel/core@npm:7.12.3, @babel/core@npm:^7.12.3":
   version: 7.12.3
   resolution: "@babel/core@npm:7.12.3"
   dependencies:
@@ -3056,6 +3056,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/build-step-storybook@workspace:packages/step-storybook"
   dependencies:
+    "@babel/core": 7.12.3
     "@essex/build-utils": "workspace:packages/util-utils"
     "@essex/shellrunner": "workspace:packages/util-shellrunner"
     "@essex/storybook-config": "workspace:packages/config-storybook"

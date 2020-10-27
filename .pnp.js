@@ -6742,6 +6742,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/$$virtual/@essex-build-step-storybook-virtual-086255e3f6/1/packages/step-storybook/",
           "packageDependencies": [
             ["@essex/build-step-storybook", "virtual:1b7d658845011159ed2876467e64bc6834226578c31b94ebb5ad87fad8b55070a762bc1dc33156f9f3860e7876d8141a6562e5f1340d0a1925285a32cb12ddde#workspace:packages/step-storybook"],
+            ["@babel/core", "npm:7.12.3"],
             ["@essex/build-utils", "workspace:packages/util-utils"],
             ["@essex/shellrunner", "workspace:packages/util-shellrunner"],
             ["@essex/storybook-config", "virtual:24f8120b4c5632984ea93cb321e300e7b48148c79f3c35bd44a31c6b8479b1174c2bccfbbe5cf0be60df13e9b22a90520954b735f6694cea3ea5ec2ee1df1bcc#workspace:packages/config-storybook"],
@@ -6771,6 +6772,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/$$virtual/@essex-build-step-storybook-virtual-06a0e61429/1/packages/step-storybook/",
           "packageDependencies": [
             ["@essex/build-step-storybook", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-storybook"],
+            ["@babel/core", "npm:7.12.3"],
             ["@essex/build-utils", "workspace:packages/util-utils"],
             ["@essex/shellrunner", "workspace:packages/util-shellrunner"],
             ["@essex/storybook-config", "virtual:06a0e6142961e0894773c2eb742f50ba4ae73beb353388cef74d598c53d56f26a8d5011a6218330773d325b4e307ef04c73ced1b031da820b101d38a0fcb33b3#workspace:packages/config-storybook"],
@@ -6800,6 +6802,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/$$virtual/@essex-build-step-storybook-virtual-e39fe88efd/1/packages/step-storybook/",
           "packageDependencies": [
             ["@essex/build-step-storybook", "virtual:be3a772e35ba4b9933d96eafa998ccbd56cf83115152d9df572b9a62ef7169e1df8a1f976fc4a2e407e04729cebe7b50277b089615998b5863a0870fdcb86650#workspace:packages/step-storybook"],
+            ["@babel/core", "npm:7.12.3"],
             ["@essex/build-utils", "workspace:packages/util-utils"],
             ["@essex/shellrunner", "workspace:packages/util-shellrunner"],
             ["@essex/storybook-config", "virtual:24f8120b4c5632984ea93cb321e300e7b48148c79f3c35bd44a31c6b8479b1174c2bccfbbe5cf0be60df13e9b22a90520954b735f6694cea3ea5ec2ee1df1bcc#workspace:packages/config-storybook"],
@@ -6829,6 +6832,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/$$virtual/@essex-build-step-storybook-virtual-970c729729/1/packages/step-storybook/",
           "packageDependencies": [
             ["@essex/build-step-storybook", "virtual:d8f1f3e20b821064972cd19bca26387c4cb0e2ba7639022dc28bc38f881dbf604594b8972097a28a28ce43dbfed8b3e861dcdffb17a3a9ead4b78d207f6a3d01#workspace:packages/step-storybook"],
+            ["@babel/core", "npm:7.12.3"],
             ["@essex/build-utils", "workspace:packages/util-utils"],
             ["@essex/shellrunner", "workspace:packages/util-shellrunner"],
             ["@essex/storybook-config", "virtual:24f8120b4c5632984ea93cb321e300e7b48148c79f3c35bd44a31c6b8479b1174c2bccfbbe5cf0be60df13e9b22a90520954b735f6694cea3ea5ec2ee1df1bcc#workspace:packages/config-storybook"],
@@ -6858,6 +6862,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/step-storybook/",
           "packageDependencies": [
             ["@essex/build-step-storybook", "workspace:packages/step-storybook"],
+            ["@babel/core", "npm:7.12.3"],
             ["@essex/build-utils", "workspace:packages/util-utils"],
             ["@essex/shellrunner", "workspace:packages/util-shellrunner"],
             ["@essex/storybook-config", "virtual:85f911f7d8cd7399c7f48c484ace3d39d263dca2d9b7c78807cc2bad6b362793bcd6319cec5288e12a39254bf34c7abb5f626ff0eaceab16e62d57208064739e#workspace:packages/config-storybook"],

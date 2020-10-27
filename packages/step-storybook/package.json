@@ -12,6 +12,7 @@
 		"build": "tsc"
 	},
 	"dependencies": {
+		"@babel/core": "7.12.3",
 		"@essex/build-utils": "workspace:packages/util-utils",
 		"@essex/shellrunner": "workspace:packages/util-shellrunner",
 		"@essex/storybook-config": "workspace:packages/config-storybook",

@@ -11,7 +11,7 @@
 		"clean_all:primary": "yarn workspaces foreach --exclude '@essex-build/test-suite-*' -piv run clean",
 		"clean_all:tests": "yarn workspaces foreach --include '@essex-build/test-suite-*' -piv run clean",
 		"clean_all": "run-s clean_all:tests clean_all:primary",
-		"build_all": "yarn workspaces foreach -piv --topological-dev run build",
+		"build_all": "yarn workspaces foreach -pv --topological-dev run build",
 		"lint_all": "yarn workspaces foreach -piv run lint",
 		"test_all": "yarn workspaces foreach -piv run test",
 		"publish_all": "yarn workspaces foreach --exclude '@essex-build/test-suite-*' --exclude '@essex/alpha-build-utils' -pv npm publish --tolerate-republish --access public",
