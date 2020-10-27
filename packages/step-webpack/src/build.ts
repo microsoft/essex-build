@@ -15,14 +15,19 @@ export function webpackBuild(opts: WebpackCompilerOptions): Promise<void> {
 		return new Promise((resolve, reject) => {
 			compiler.run(
 				(err: Error | undefined, stats: webpack.Stats | undefined) => {
-					if (err || stats?.hasErrors()) {
-						console.log('webpack error', err)
+					if (err) {
+						console.error('webpack error', err)
 						subtaskFail('webpack')
 						reject(err)
 					} else {
 						console.log(stats?.toString({ colors: true }))
-						subtaskSuccess('webpack')
-						resolve()
+						if (stats?.hasErrors()) {
+							subtaskFail('webpack')
+							reject('compilation errors')
+						} else {
+							subtaskSuccess('webpack')
+							resolve()
+						}
 					}
 				},
 			)
