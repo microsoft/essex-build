@@ -4,7 +4,7 @@
  */
 import { join } from 'path'
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
-import * as webpack from 'webpack'
+import webpack from 'webpack'
 import { Configuration as WdsConfiguration } from 'webpack-dev-server'
 import {
 	getWdsStaticConfig,

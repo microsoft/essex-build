@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import * as gulp from 'gulp'
+import gulp from 'gulp'
 import { LintCommandOptions } from './types'
 import { docs as execDocs } from '@essex/build-step-docs'
 import { eslint } from '@essex/build-step-eslint'

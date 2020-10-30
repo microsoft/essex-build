@@ -4,7 +4,7 @@
  */
 import { Command } from 'commander'
 import { run, Job } from '@essex/shellrunner'
-import * as logger from '@essex/tasklogger'
+import { success, fail } from '@essex/tasklogger'
 
 export default function start(program: Command): void {
 	program
@@ -19,14 +19,14 @@ export default function start(program: Command): void {
 				.then(code => {
 					process.exitCode = code
 					if (code === 0) {
-						logger.success('git is clean')
+						success('git is clean')
 					} else {
-						logger.fail('git is clean')
+						fail('git is clean')
 					}
 				})
 				.catch(err => {
 					console.log('error in git-is-clean', err)
-					logger.fail('git is clean')
+					fail('git is clean')
 					process.exitCode = 1
 				})
 		})

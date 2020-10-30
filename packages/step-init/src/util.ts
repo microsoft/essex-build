@@ -4,7 +4,7 @@
  */
 import { exists, copyFile } from 'fs'
 import { join } from 'path'
-import * as log from '@essex/tasklogger'
+import { error } from '@essex/tasklogger'
 
 export function copyConfigFile(file: string, dot = false): Promise<number> {
 	const scriptPath = join(__dirname, `../config/${file}`)
@@ -12,7 +12,7 @@ export function copyConfigFile(file: string, dot = false): Promise<number> {
 
 	return fileExists(pkgPath).then(pkgFileExists => {
 		if (pkgFileExists) {
-			log.error(
+			error(
 				`cannot init file ${file}; it already exists in the target directory`,
 			)
 			return 1

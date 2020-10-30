@@ -7,7 +7,7 @@ import { writeFileSync } from 'fs'
 import { join } from 'path'
 import { copyConfigFile } from './util'
 import { recipes } from '@essex/build-step-recipes'
-import * as log from '@essex/tasklogger'
+import { info } from '@essex/tasklogger'
 
 const pkgJsonPath = join(process.cwd(), 'package.json')
 const pkgJson = require(pkgJsonPath)
@@ -53,9 +53,9 @@ export function initMonorepo(): Promise<number> {
 		.then(results => {
 			const result = results.reduce((a, b) => a + b, 0)
 			if (result > 0) {
-				log.info(INIT_MSG_FAIL)
+				info(INIT_MSG_FAIL)
 			} else {
-				log.info(INIT_INSTRUCTIONS)
+				info(INIT_INSTRUCTIONS)
 			}
 			return result
 		})
@@ -104,7 +104,7 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 	if (writeNeeded) {
 		writeFileSync(pkgJsonPath, JSON.stringify(pkgJson, null, 2))
 	}
-	log.info(`
+	info(`
 	You should install these recommended peer dependencies
 
 	-- Essex Configs --

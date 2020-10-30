@@ -2491,6 +2491,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/register@npm:^7.12.1":
+  version: 7.12.1
+  resolution: "@babel/register@npm:7.12.1"
+  dependencies:
+    find-cache-dir: ^2.0.0
+    lodash: ^4.17.19
+    make-dir: ^2.1.0
+    pirates: ^4.0.0
+    source-map-support: ^0.5.16
+  peerDependencies:
+    "@babel/core": ^7.0.0-0
+  checksum: e52b50e9018788826ff2193daca05eacd54bc0b4299674b68befc3d73ab7118d76070cf75240a4e1f362b393e68e7601fcb7bfc21ae20510d270e4bfcaf7ae34
+  languageName: node
+  linkType: hard
+
 "@babel/runtime-corejs3@npm:^7.10.2":
   version: 7.11.2
   resolution: "@babel/runtime-corejs3@npm:7.11.2"
@@ -2836,6 +2851,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/alpha-build-utils@workspace:."
   dependencies:
+    "@babel/register": ^7.12.1
     "@essex/babel-config": "workspace:packages/config-babel"
     "@essex/eslint-config": "workspace:packages/config-eslint"
     "@essex/eslint-plugin": "workspace:packages/config-eslint-plugin"
@@ -2845,6 +2861,7 @@ __metadata:
     "@types/jest": ^26.0.15
     "@typescript-eslint/eslint-plugin": ^4.6.0
     "@typescript-eslint/parser": ^4.6.0
+    eslint: ^7.12.1
     eslint-import-resolver-node: ^0.3.4
     husky: ^4.3.0
     lint-staged: ^10.5.0

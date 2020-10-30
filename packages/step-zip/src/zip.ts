@@ -3,9 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { promises as fs, createWriteStream } from 'fs'
-import * as path from 'path'
-import * as archiver from 'archiver'
-import * as glob from 'glob'
+import path from 'path'
+import archiver from 'archiver'
+import glob from 'glob'
 
 export interface ZipCommandOptions {
 	cwd: string

@@ -5,7 +5,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { existsSync } from 'fs'
 import { join } from 'path'
-import * as gulp from 'gulp'
+import gulp from 'gulp'
 import { BundleCommandOptions } from './types'
 import { rollupBuild } from '@essex/build-step-rollup'
 import { storybookBuildGulp } from '@essex/build-step-storybook'

@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import * as log from '../log'
+import { printJob, debug } from '../log'
 import { Job, JobResult } from '../types'
 import { single } from './single'
 
@@ -11,11 +11,11 @@ import { single } from './single'
  * @param jobs the jobs to run
  */
 export async function parallel(...jobs: Job[]): Promise<JobResult> {
-	log.debug('--running parallel jobs!--')
+	debug('--running parallel jobs!--')
 	for (const job of jobs) {
-		log.printJob(job)
+		printJob(job)
 	}
-	log.debug('-------------------------')
+	debug('-------------------------')
 	const results = await Promise.all(jobs.map(job => single(job)))
 	const codes = results.map(r => r.code)
 	const code = Math.max(...codes)

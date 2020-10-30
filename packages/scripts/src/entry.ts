@@ -7,8 +7,8 @@ import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 import { readdirSync } from 'fs'
 import { join } from 'path'
-import * as program from 'commander'
-import * as gulp from 'gulp'
+import program from 'commander'
+import gulp from 'gulp'
 
 gulp.on('error', () => {
 	if (!process.env.DEBUG_ESSEX_SCRIPTS) {

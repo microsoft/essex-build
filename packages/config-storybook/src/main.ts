@@ -27,7 +27,7 @@ export interface Configuration {
 	pnp?: boolean
 }
 
-export function configure({ pnp }: Configuration) {
+export function configure({ pnp }: Configuration): any {
 	const nodeModulesPaths = getNodeModulesPaths()
 	return {
 		// Back slashes are broken in storybook
