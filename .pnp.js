@@ -197,6 +197,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
+            ["@babel/core", "npm:7.12.3"],
+            ["@babel/preset-env", "virtual:4aed908eb310444788f3efcab67a1f1b191cb916970894d84b704c13933c8e755b2852dd69e3fbeb2220949f193e5d8316eb21edd584285ad7fb12bc6380e0b5#npm:7.12.1"],
+            ["@babel/preset-typescript", "virtual:4aed908eb310444788f3efcab67a1f1b191cb916970894d84b704c13933c8e755b2852dd69e3fbeb2220949f193e5d8316eb21edd584285ad7fb12bc6380e0b5#npm:7.12.1"],
             ["@babel/register", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#npm:7.12.1"],
             ["@essex/babel-config", "workspace:packages/config-babel"],
             ["@essex/eslint-config", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#workspace:packages/config-eslint"],
@@ -207,6 +210,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/jest", "npm:26.0.15"],
             ["@typescript-eslint/eslint-plugin", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#npm:4.6.0"],
             ["@typescript-eslint/parser", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#npm:4.6.0"],
+            ["core-js", "npm:3.6.5"],
             ["eslint", "npm:7.12.1"],
             ["eslint-import-resolver-node", "npm:0.3.4"],
             ["husky", "npm:4.3.0"],
@@ -4568,7 +4572,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/$$virtual/@babel-register-virtual-65355b97b0/0/cache/@babel-register-npm-7.12.1-71e707035d-e52b50e901.zip/node_modules/@babel/register/",
           "packageDependencies": [
             ["@babel/register", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#npm:7.12.1"],
-            ["@babel/core", null],
+            ["@babel/core", "npm:7.12.3"],
             ["@types/babel__core", null],
             ["find-cache-dir", "npm:2.1.0"],
             ["lodash", "npm:4.17.20"],
@@ -5178,6 +5182,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["@essex/alpha-build-utils", "workspace:."],
+            ["@babel/core", "npm:7.12.3"],
+            ["@babel/preset-env", "virtual:4aed908eb310444788f3efcab67a1f1b191cb916970894d84b704c13933c8e755b2852dd69e3fbeb2220949f193e5d8316eb21edd584285ad7fb12bc6380e0b5#npm:7.12.1"],
+            ["@babel/preset-typescript", "virtual:4aed908eb310444788f3efcab67a1f1b191cb916970894d84b704c13933c8e755b2852dd69e3fbeb2220949f193e5d8316eb21edd584285ad7fb12bc6380e0b5#npm:7.12.1"],
             ["@babel/register", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#npm:7.12.1"],
             ["@essex/babel-config", "workspace:packages/config-babel"],
             ["@essex/eslint-config", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#workspace:packages/config-eslint"],
@@ -5188,6 +5195,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/jest", "npm:26.0.15"],
             ["@typescript-eslint/eslint-plugin", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#npm:4.6.0"],
             ["@typescript-eslint/parser", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#npm:4.6.0"],
+            ["core-js", "npm:3.6.5"],
             ["eslint", "npm:7.12.1"],
             ["eslint-import-resolver-node", "npm:0.3.4"],
             ["husky", "npm:4.3.0"],

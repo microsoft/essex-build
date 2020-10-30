@@ -9,6 +9,15 @@ require(`@babel/register`)({
 	root,
 	extensions: [`.tsx`, `.ts`],
 	only: [p => p.startsWith(root)],
+	presets: [
+		[
+			'@babel/preset-env',
+			{
+				targets: { node: 'current' },
+			},
+		],
+		'@babel/preset-typescript',
+	],
 })
 
 // The babel configuration is required at the monorepo root for Jest. Jest will

@@ -2851,6 +2851,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/alpha-build-utils@workspace:."
   dependencies:
+    "@babel/core": ^7.12.3
+    "@babel/preset-env": ^7.12.1
+    "@babel/preset-typescript": ^7.12.1
     "@babel/register": ^7.12.1
     "@essex/babel-config": "workspace:packages/config-babel"
     "@essex/eslint-config": "workspace:packages/config-eslint"
@@ -2861,6 +2864,7 @@ __metadata:
     "@types/jest": ^26.0.15
     "@typescript-eslint/eslint-plugin": ^4.6.0
     "@typescript-eslint/parser": ^4.6.0
+    core-js: ^3.6.5
     eslint: ^7.12.1
     eslint-import-resolver-node: ^0.3.4
     husky: ^4.3.0
