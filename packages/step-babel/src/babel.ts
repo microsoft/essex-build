@@ -14,6 +14,15 @@ import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
 
 const BABEL_GLOBS = ['lib/**/*.js']
 
+function createErrorHandler(title: string, listen: boolean) {
+	return function onError(err?: Error | undefined) {
+		console.error('Babel Error', err)
+		if (listen) {
+			subtaskFail(title, err)
+		}
+	}
+}
+
 /**
  * Transpile ts output into babel cjs
  * @param verbose
@@ -26,6 +35,7 @@ function babelCjs(
 	const cjsConfig = getCjsConfiguration(env)
 	const title = 'babel-cjs'
 	return function execute() {
+		const handleError = createErrorHandler(title, listen)
 		const task: NodeJS.ReadWriteStream = gulp
 			.src(BABEL_GLOBS, { since: gulp.lastRun(execute) })
 			.pipe(
@@ -34,12 +44,15 @@ function babelCjs(
 				}),
 			)
 			.pipe(babel(cjsConfig))
+			.on('error', handleError)
 			.pipe(logFiles ? debug({ title }) : noopStep())
 			.pipe(gulp.dest('dist/cjs'))
 
 		if (listen) {
-			task.on('end', () => subtaskSuccess(title))
-			task.on('error', () => subtaskFail(title))
+			task.on('end', (...args) => {
+				subtaskSuccess(title)
+			})
+			task.on('error', handleError)
 		}
 		return task
 	}
@@ -57,6 +70,7 @@ function babelEsm(
 	const esmConfig = getEsmConfiguration(env)
 	const title = 'babel-esm'
 	return function execute() {
+		const handleError = createErrorHandler(title, listen)
 		const task: NodeJS.ReadWriteStream = gulp
 			.src(BABEL_GLOBS, { since: gulp.lastRun(execute) })
 			.pipe(
@@ -65,12 +79,15 @@ function babelEsm(
 				}),
 			)
 			.pipe(babel(esmConfig))
+			.on('error', handleError)
 			.pipe(logFiles ? debug({ title }) : noopStep())
 			.pipe(gulp.dest('dist/esm'))
 
 		if (listen) {
-			task.on('end', () => subtaskSuccess(title))
-			task.on('error', () => subtaskFail(title))
+			task.on('end', (...args) => {
+				subtaskSuccess(title)
+			})
+			task.on('error', handleError)
 		}
 		return task
 	}
