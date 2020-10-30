@@ -73,9 +73,12 @@ To view detailed options, run `essex <command> --help` or `essex --help`
 {
 	"name": "library-package",
 	"version": "1.0",
-	"main": "dist/cjs/index.js",
-	"module": "dist/esm/index.js",
-	"types": "dist/types/index.d.ts",
+	"main": "src/index.ts",
+	"publishConfig": {		
+		"main": "dist/cjs/index.js",
+		"module": "dist/esm/index.js",
+		"types": "dist/types/index.d.ts",
+	},
 	"scripts": {
 		"build": "essex build",
 		"clean": "essex clean",
