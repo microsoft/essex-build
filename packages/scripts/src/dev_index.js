@@ -13,12 +13,12 @@ require(`@babel/register`)({
 	only: [p => p.startsWith(root)],
 	presets: [
 		[
-			'@babel/preset-env',
+			require.resolve('@babel/preset-env'),
 			{
 				targets: { node: 'current' },
 			},
 		],
-		'@babel/preset-typescript',
+		require.resolve('@babel/preset-typescript'),
 	],
 })
 
