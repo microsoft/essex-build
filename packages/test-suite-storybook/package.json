@@ -17,6 +17,9 @@
 	},
 	"devDependencies": {
 		"@babel/core": "^7.12.3",
+		"@babel/preset-env": "^7.12.1",
+		"@babel/preset-typescript": "^7.12.1",
+		"@babel/register": "^7.12.1",
 		"@essex/eslint-config": "workspace:packages/config-eslint",
 		"@essex/scripts": "workspace:packages/scripts",
 		"@essex/storybook-config": "workspace:packages/config-storybook",

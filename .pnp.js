@@ -5119,6 +5119,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@essex-build/test-suite-storybook", "workspace:packages/test-suite-storybook"],
             ["@babel/core", "npm:7.12.3"],
+            ["@babel/preset-env", "virtual:4aed908eb310444788f3efcab67a1f1b191cb916970894d84b704c13933c8e755b2852dd69e3fbeb2220949f193e5d8316eb21edd584285ad7fb12bc6380e0b5#npm:7.12.1"],
+            ["@babel/preset-typescript", "virtual:4aed908eb310444788f3efcab67a1f1b191cb916970894d84b704c13933c8e755b2852dd69e3fbeb2220949f193e5d8316eb21edd584285ad7fb12bc6380e0b5#npm:7.12.1"],
+            ["@babel/register", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#npm:7.12.1"],
             ["@essex/eslint-config", "virtual:04634ac6be101f21c9f62e3dd0c2d609954aa83a27d90480365c1606853fee68918a86ffd783a6f6cf5f838ce81ba2b6ec2e520f999c782b5854c13adbc64e75#workspace:packages/config-eslint"],
             ["@essex/scripts", "virtual:24f8120b4c5632984ea93cb321e300e7b48148c79f3c35bd44a31c6b8479b1174c2bccfbbe5cf0be60df13e9b22a90520954b735f6694cea3ea5ec2ee1df1bcc#workspace:packages/scripts"],
             ["@essex/storybook-config", "virtual:24f8120b4c5632984ea93cb321e300e7b48148c79f3c35bd44a31c6b8479b1174c2bccfbbe5cf0be60df13e9b22a90520954b735f6694cea3ea5ec2ee1df1bcc#workspace:packages/config-storybook"],
@@ -6074,6 +6077,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@essex/scripts", "virtual:04634ac6be101f21c9f62e3dd0c2d609954aa83a27d90480365c1606853fee68918a86ffd783a6f6cf5f838ce81ba2b6ec2e520f999c782b5854c13adbc64e75#workspace:packages/scripts"],
             ["@babel/core", "npm:7.12.3"],
+            ["@babel/preset-env", "virtual:4aed908eb310444788f3efcab67a1f1b191cb916970894d84b704c13933c8e755b2852dd69e3fbeb2220949f193e5d8316eb21edd584285ad7fb12bc6380e0b5#npm:7.12.1"],
+            ["@babel/preset-typescript", "virtual:4aed908eb310444788f3efcab67a1f1b191cb916970894d84b704c13933c8e755b2852dd69e3fbeb2220949f193e5d8316eb21edd584285ad7fb12bc6380e0b5#npm:7.12.1"],
+            ["@babel/register", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#npm:7.12.1"],
             ["@essex/build-step-azure", "workspace:packages/step-azure"],
             ["@essex/build-step-babel", "workspace:packages/step-babel"],
             ["@essex/build-step-clean", "workspace:packages/step-clean"],
@@ -6140,7 +6146,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rollup", null],
             ["shx", "npm:0.3.3"],
             ["supports-color", "npm:7.2.0"],
-            ["ts-node", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#npm:9.0.0"],
             ["typescript", "patch:typescript@npm%3A4.0.5#builtin<compat/typescript>::version=4.0.5&hash=5bf698"]
           ],
           "packagePeers": [
@@ -6178,6 +6183,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@essex/scripts", "virtual:215b566b7f0cd7c54ce57376135b3799429eb8ab081fa64cfb1ea72e8237c028255fd8f92174e2b5e264634a9d89b531db904c2c6490c79d610aef56a6b0dc74#workspace:packages/scripts"],
             ["@babel/core", "npm:7.12.3"],
+            ["@babel/preset-env", "virtual:4aed908eb310444788f3efcab67a1f1b191cb916970894d84b704c13933c8e755b2852dd69e3fbeb2220949f193e5d8316eb21edd584285ad7fb12bc6380e0b5#npm:7.12.1"],
+            ["@babel/preset-typescript", "virtual:4aed908eb310444788f3efcab67a1f1b191cb916970894d84b704c13933c8e755b2852dd69e3fbeb2220949f193e5d8316eb21edd584285ad7fb12bc6380e0b5#npm:7.12.1"],
+            ["@babel/register", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#npm:7.12.1"],
             ["@essex/build-step-azure", "workspace:packages/step-azure"],
             ["@essex/build-step-babel", "workspace:packages/step-babel"],
             ["@essex/build-step-clean", "workspace:packages/step-clean"],
@@ -6244,7 +6252,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rollup", null],
             ["shx", "npm:0.3.3"],
             ["supports-color", "npm:7.2.0"],
-            ["ts-node", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#npm:9.0.0"],
             ["typescript", "patch:typescript@npm%3A4.0.5#builtin<compat/typescript>::version=4.0.5&hash=5bf698"]
           ],
           "packagePeers": [
@@ -6282,6 +6289,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@essex/scripts", "virtual:24f8120b4c5632984ea93cb321e300e7b48148c79f3c35bd44a31c6b8479b1174c2bccfbbe5cf0be60df13e9b22a90520954b735f6694cea3ea5ec2ee1df1bcc#workspace:packages/scripts"],
             ["@babel/core", "npm:7.12.3"],
+            ["@babel/preset-env", "virtual:4aed908eb310444788f3efcab67a1f1b191cb916970894d84b704c13933c8e755b2852dd69e3fbeb2220949f193e5d8316eb21edd584285ad7fb12bc6380e0b5#npm:7.12.1"],
+            ["@babel/preset-typescript", "virtual:4aed908eb310444788f3efcab67a1f1b191cb916970894d84b704c13933c8e755b2852dd69e3fbeb2220949f193e5d8316eb21edd584285ad7fb12bc6380e0b5#npm:7.12.1"],
+            ["@babel/register", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#npm:7.12.1"],
             ["@essex/build-step-azure", "workspace:packages/step-azure"],
             ["@essex/build-step-babel", "workspace:packages/step-babel"],
             ["@essex/build-step-clean", "workspace:packages/step-clean"],
@@ -6348,7 +6358,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rollup", null],
             ["shx", "npm:0.3.3"],
             ["supports-color", "npm:7.2.0"],
-            ["ts-node", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#npm:9.0.0"],
             ["typescript", "patch:typescript@npm%3A4.0.5#builtin<compat/typescript>::version=4.0.5&hash=5bf698"]
           ],
           "packagePeers": [
@@ -6386,6 +6395,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@essex/scripts", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#workspace:packages/scripts"],
             ["@babel/core", "npm:7.12.3"],
+            ["@babel/preset-env", "virtual:4aed908eb310444788f3efcab67a1f1b191cb916970894d84b704c13933c8e755b2852dd69e3fbeb2220949f193e5d8316eb21edd584285ad7fb12bc6380e0b5#npm:7.12.1"],
+            ["@babel/preset-typescript", "virtual:4aed908eb310444788f3efcab67a1f1b191cb916970894d84b704c13933c8e755b2852dd69e3fbeb2220949f193e5d8316eb21edd584285ad7fb12bc6380e0b5#npm:7.12.1"],
+            ["@babel/register", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#npm:7.12.1"],
             ["@essex/build-step-azure", "workspace:packages/step-azure"],
             ["@essex/build-step-babel", "workspace:packages/step-babel"],
             ["@essex/build-step-clean", "workspace:packages/step-clean"],
@@ -6452,7 +6464,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rollup", null],
             ["shx", "npm:0.3.3"],
             ["supports-color", "npm:7.2.0"],
-            ["ts-node", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#npm:9.0.0"],
             ["typescript", "patch:typescript@npm%3A4.0.5#builtin<compat/typescript>::version=4.0.5&hash=5bf698"]
           ],
           "packagePeers": [
@@ -6490,6 +6501,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@essex/scripts", "workspace:packages/scripts"],
             ["@babel/core", "npm:7.12.3"],
+            ["@babel/preset-env", "virtual:4aed908eb310444788f3efcab67a1f1b191cb916970894d84b704c13933c8e755b2852dd69e3fbeb2220949f193e5d8316eb21edd584285ad7fb12bc6380e0b5#npm:7.12.1"],
+            ["@babel/preset-typescript", "virtual:4aed908eb310444788f3efcab67a1f1b191cb916970894d84b704c13933c8e755b2852dd69e3fbeb2220949f193e5d8316eb21edd584285ad7fb12bc6380e0b5#npm:7.12.1"],
+            ["@babel/register", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#npm:7.12.1"],
             ["@essex/build-step-azure", "workspace:packages/step-azure"],
             ["@essex/build-step-babel", "workspace:packages/step-babel"],
             ["@essex/build-step-clean", "workspace:packages/step-clean"],
@@ -6530,7 +6544,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rimraf", "npm:3.0.2"],
             ["shx", "npm:0.3.3"],
             ["supports-color", "npm:7.2.0"],
-            ["ts-node", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#npm:9.0.0"],
             ["typescript", "patch:typescript@npm%3A4.0.5#builtin<compat/typescript>::version=4.0.5&hash=5bf698"]
           ],
           "linkType": "SOFT",
@@ -12079,15 +12092,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["arg", [
-        ["npm:4.1.3", {
-          "packageLocation": "./.yarn/cache/arg-npm-4.1.3-1748b966a8-81b3b40b15.zip/node_modules/arg/",
-          "packageDependencies": [
-            ["arg", "npm:4.1.3"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["argparse", [
         ["npm:1.0.10", {
           "packageLocation": "./.yarn/cache/argparse-npm-1.0.10-528934e59d-435adaef5f.zip/node_modules/argparse/",
@@ -15643,15 +15647,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/dictionary-en-npm-3.0.1-6ad9a17dc4-bec257aa8a.zip/node_modules/dictionary-en/",
           "packageDependencies": [
             ["dictionary-en", "npm:3.0.1"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["diff", [
-        ["npm:4.0.2", {
-          "packageLocation": "./.yarn/cache/diff-npm-4.0.2-73133c7102-81b5cd7ddd.zip/node_modules/diff/",
-          "packageDependencies": [
-            ["diff", "npm:4.0.2"]
           ],
           "linkType": "HARD",
         }]
@@ -21584,15 +21579,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["make-dir", "npm:3.1.0"],
             ["semver", "npm:6.3.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["make-error", [
-        ["npm:1.3.6", {
-          "packageLocation": "./.yarn/cache/make-error-npm-1.3.6-ccb85d9458-2c780bab84.zip/node_modules/make-error/",
-          "packageDependencies": [
-            ["make-error", "npm:1.3.6"]
           ],
           "linkType": "HARD",
         }]
@@ -28423,26 +28409,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["ts-node", [
-        ["virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#npm:9.0.0", {
-          "packageLocation": "./.yarn/$$virtual/ts-node-virtual-f66ac61aa9/0/cache/ts-node-npm-9.0.0-7f58a021c2-49d2ab087f.zip/node_modules/ts-node/",
-          "packageDependencies": [
-            ["ts-node", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#npm:9.0.0"],
-            ["@types/typescript", null],
-            ["arg", "npm:4.1.3"],
-            ["diff", "npm:4.0.2"],
-            ["make-error", "npm:1.3.6"],
-            ["source-map-support", "npm:0.5.19"],
-            ["typescript", "patch:typescript@npm%3A4.0.5#builtin<compat/typescript>::version=4.0.5&hash=5bf698"],
-            ["yn", "npm:3.1.1"]
-          ],
-          "packagePeers": [
-            "@types/typescript",
-            "typescript"
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["ts-pnp", [
         ["virtual:c497046afcbefb679e3fe12575088ec12205b913a36c3d158b27e7cd646d448426540ab27ba98e54ddb75b1ed97de7e3ce5dc0158c9ba4e76ce942c87e5d02d8#npm:1.2.0", {
           "packageLocation": "./.yarn/$$virtual/ts-pnp-virtual-abd2827f29/0/cache/ts-pnp-npm-1.2.0-43620de7df-78341a2793.zip/node_modules/ts-pnp/",
@@ -30302,15 +30268,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["yargs-parser", "npm:5.0.0-security.0"],
             ["camelcase", "npm:3.0.0"],
             ["object.assign", "npm:4.1.1"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["yn", [
-        ["npm:3.1.1", {
-          "packageLocation": "./.yarn/cache/yn-npm-3.1.1-8ad4259784-bff63b8056.zip/node_modules/yn/",
-          "packageDependencies": [
-            ["yn", "npm:3.1.1"]
           ],
           "linkType": "HARD",
         }]
