@@ -6,9 +6,8 @@ import base from './base'
 import experiment from './experiment'
 import release from './release'
 
-const configs = {
+export const configs = {
 	base,
 	experiment,
 	release,
 }
-export default configs

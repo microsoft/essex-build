@@ -4,7 +4,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 const path = require(`path`)
-const root = path.dirname(path.join(__dirname, '../../..'))
+// lots of dot-dots to hoist out of the .yarn folder
+const root = path.dirname(path.join(__dirname, '../../../../../..'))
 
 require(`@babel/register`)({
 	root,
