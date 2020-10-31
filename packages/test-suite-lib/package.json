@@ -13,6 +13,10 @@
 		"watch": "essex watch"
 	},
 	"devDependencies": {
+		"@babel/core": "^7.12.3",
+		"@babel/preset-env": "^7.12.1",
+		"@babel/preset-typescript": "^7.12.1",
+		"@babel/register": "^7.12.1",
 		"@essex/babel-config": "workspace:packages/config-babel",
 		"@essex/eslint-config": "workspace:packages/config-eslint",
 		"@essex/jest-config": "workspace:packages/config-jest",

@@ -8,7 +8,7 @@ const root = path.dirname(__dirname)
 const CONFIG = {
 	presets: [
 		[
-			'@babel/preset-env',
+			require.resolve('@babel/preset-env'),
 			{
 				modules: 'cjs',
 				targets: { node: 'current' },
@@ -16,7 +16,7 @@ const CONFIG = {
 				corejs: 3,
 			},
 		],
-		'@babel/preset-typescript',
+		require.resolve('@babel/preset-typescript'),
 	],
 }
 

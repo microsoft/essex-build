@@ -5101,6 +5101,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/test-suite-lib/",
           "packageDependencies": [
             ["@essex-build/test-suite-library", "workspace:packages/test-suite-lib"],
+            ["@babel/core", "npm:7.12.3"],
+            ["@babel/preset-env", "virtual:4aed908eb310444788f3efcab67a1f1b191cb916970894d84b704c13933c8e755b2852dd69e3fbeb2220949f193e5d8316eb21edd584285ad7fb12bc6380e0b5#npm:7.12.1"],
+            ["@babel/preset-typescript", "virtual:4aed908eb310444788f3efcab67a1f1b191cb916970894d84b704c13933c8e755b2852dd69e3fbeb2220949f193e5d8316eb21edd584285ad7fb12bc6380e0b5#npm:7.12.1"],
+            ["@babel/register", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#npm:7.12.1"],
             ["@essex/babel-config", "workspace:packages/config-babel"],
             ["@essex/eslint-config", "virtual:04634ac6be101f21c9f62e3dd0c2d609954aa83a27d90480365c1606853fee68918a86ffd783a6f6cf5f838ce81ba2b6ec2e520f999c782b5854c13adbc64e75#workspace:packages/config-eslint"],
             ["@essex/jest-config", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#workspace:packages/config-jest"],
