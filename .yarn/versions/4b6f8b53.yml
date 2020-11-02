@@ -1,5 +1,5 @@
 releases:
-  "@essex/build-step-babel": prerelease
+  "@essex/build-step-babel": patch
   "@essex/scripts": patch
 
 declined:
