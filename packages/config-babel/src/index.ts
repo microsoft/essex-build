@@ -14,7 +14,7 @@ const packageJson = existsSync('package.json') ? require(packageJsonPath) : {}
 const babelEsmOverride = join(cwd, 'babel.esm.js')
 const babelCjsOverride = join(cwd, 'babel.cjs.js')
 
-const useBuiltIns = packageJson.useBuiltIns || false
+const useBuiltIns = packageJson.useBuiltIns || 'usage'
 const corejs = packageJson.corejs || (useBuiltIns ? { version: 3 } : undefined)
 
 /**
