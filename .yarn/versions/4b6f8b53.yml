@@ -1,9 +1,0 @@
-releases:
-  "@essex/build-step-babel": patch
-  "@essex/scripts": patch
-
-declined:
-  - "@essex-build/test-suite-library"
-  - "@essex-build/test-suite-storybook"
-  - "@essex-build/test-suite-storybook-configless"
-  - "@essex-build/test-suite-webapp"

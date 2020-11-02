@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-utils",
-	"version": "10.0.2",
+	"version": "10.0.3",
 	"license": "MIT",
 	"main": "src/index.ts",
 	"publishConfig": {
