@@ -1,0 +1,14 @@
+releases:
+  "@essex-build/test-suite-library": patch
+  "@essex/babel-config": patch
+  "@essex/build-step-babel": patch
+  "@essex/build-step-storybook": patch
+  "@essex/build-step-webpack": patch
+  "@essex/scripts": patch
+  "@essex/storybook-config": patch
+  "@essex/webpack-config": patch
+
+declined:
+  - "@essex-build/test-suite-storybook"
+  - "@essex-build/test-suite-storybook-configless"
+  - "@essex-build/test-suite-webapp"
