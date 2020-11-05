@@ -15,4 +15,4 @@ export function getBrowsersList(
 	}
 }
 
-const DEFAULT_ESSEX_BROWSERSLIST = ['>0.5%', 'not IE11', 'not dead']
+const DEFAULT_ESSEX_BROWSERSLIST = ['>0.5%', 'not IE 11', 'not dead']
