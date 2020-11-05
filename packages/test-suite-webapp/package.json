@@ -9,7 +9,7 @@
 		"start": "essex serve"
 	},
 	"dependencies": {
-		"@types/react": "^16.9.54",
+		"@types/react": "^16.9.55",
 		"@types/react-dom": "^16.9.9",
 		"react": "^16.14.0",
 		"react-dom": "^16.14.0"
@@ -18,8 +18,8 @@
 		"@essex/eslint-config": "workspace:packages/config-eslint",
 		"@essex/scripts": "workspace:packages/scripts",
 		"@essex/webpack-config": "workspace:packages/config-webpack",
-		"@typescript-eslint/eslint-plugin": "^4.6.0",
-		"@typescript-eslint/parser": "^4.6.0",
+		"@typescript-eslint/eslint-plugin": "^4.6.1",
+		"@typescript-eslint/parser": "^4.6.1",
 		"eslint-import-resolver-node": "^0.3.4"
 	}
 }
