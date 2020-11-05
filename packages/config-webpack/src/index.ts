@@ -105,7 +105,7 @@ export function configure({
 		output: {
 			path: buildPath,
 			chunkFilename: '[name].[chunkhash].js',
-			filename: '[name].[fullhash].js',
+			filename: '[name].[hash].js',
 			...extendedOutput,
 		},
 		resolve: {
