@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-azure",
-	"version": "10.0.3",
+	"version": "10.0.4",
 	"license": "MIT",
 	"main": "src/index.ts",
 	"publishConfig": {
