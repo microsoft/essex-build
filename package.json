@@ -15,7 +15,6 @@
 		"lint_all": "yarn workspaces foreach -piv run lint",
 		"test_all": "yarn workspaces foreach -piv run test",
 		"publish_all": "yarn workspaces foreach --exclude '@essex-build/test-suite-*' --exclude '@essex/alpha-build-utils' -pv npm publish --tolerate-republish --access public",
-		"lage": "lage",
 		"unit_test": "yarn essex test",
 		"lint": "yarn essex lint --docs --fix",
 		"prettify": "essex prettify",
