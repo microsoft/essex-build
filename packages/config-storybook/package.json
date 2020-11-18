@@ -29,7 +29,7 @@
 		"react-docgen-typescript-loader": "^3.7.2",
 		"react-is": "^16.13.1",
 		"ts-loader": "^8.0.9",
-		"webpack": "^4.44.2"
+		"webpack": "^5.5.1"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.12.3",
