@@ -2290,8 +2290,8 @@ __metadata:
     "@essex/scripts": "workspace:packages/scripts"
     "@essex/storybook-config": "workspace:packages/config-storybook"
     "@storybook/react": ^6.1.9
-    "@types/react": ^16.14.2
-    "@types/react-dom": ^16.9.10
+    "@types/react": ^17.0.0
+    "@types/react-dom": ^17.0.0
     "@typescript-eslint/eslint-plugin": ^4.9.0
     "@typescript-eslint/parser": ^4.9.0
     core-js: ^3.8.0
@@ -2310,8 +2310,8 @@ __metadata:
     "@essex/scripts": "workspace:packages/scripts"
     "@essex/storybook-config": "workspace:packages/config-storybook"
     "@storybook/react": ^6.1.9
-    "@types/react": ^16.14.2
-    "@types/react-dom": ^16.9.10
+    "@types/react": ^17.0.0
+    "@types/react-dom": ^17.0.0
     "@typescript-eslint/eslint-plugin": ^4.9.0
     "@typescript-eslint/parser": ^4.9.0
     core-js: ^3.8.0
@@ -2328,8 +2328,8 @@ __metadata:
     "@essex/eslint-config": "workspace:packages/config-eslint"
     "@essex/scripts": "workspace:packages/scripts"
     "@essex/webpack-config": "workspace:packages/config-webpack"
-    "@types/react": ^16.14.2
-    "@types/react-dom": ^16.9.10
+    "@types/react": ^17.0.0
+    "@types/react-dom": ^17.0.0
     "@typescript-eslint/eslint-plugin": ^4.9.0
     "@typescript-eslint/parser": ^4.9.0
     eslint-import-resolver-node: ^0.3.4
@@ -4614,12 +4614,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^16.9.10":
-  version: 16.9.10
-  resolution: "@types/react-dom@npm:16.9.10"
+"@types/react-dom@npm:^17.0.0":
+  version: 17.0.0
+  resolution: "@types/react-dom@npm:17.0.0"
   dependencies:
-    "@types/react": ^16
-  checksum: 910dd9894ba67438f8c80e71dc4f2ef1c15e2d62145309679dc3b2c0a6f2c4e5a611566a15174e4a7891f9fb6149f21a0a393488716665ff20f10b1181745964
+    "@types/react": "*"
+  checksum: 7ca9351b6c2523327cd7afe40082a37034898f65e9d86700236682efed910ba7c9cec10e9a3b829aa7b804b18791a28743ce468fcb42e9a788bfc33b84137e45
   languageName: node
   linkType: hard
 
@@ -4642,13 +4642,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^16, @types/react@npm:^16.14.2":
-  version: 16.14.2
-  resolution: "@types/react@npm:16.14.2"
+"@types/react@npm:^17.0.0":
+  version: 17.0.0
+  resolution: "@types/react@npm:17.0.0"
   dependencies:
     "@types/prop-types": "*"
     csstype: ^3.0.2
-  checksum: 41d227d4e9a45b1ad6d80c9b0fe9af003d95d03a0f2f2495a537c36d69541439fcff67edcef241e88c8ab7257377dbe8737d013d3f9b9503b76174165083f7b6
+  checksum: dcef2034b822a949c5528fa8fa3c64da654fdbb822bd8f0488c0084d84cadb8b90af68813a6c95153d4754079f50b1cab206552c7c20f6b67a26c3641383fe31
   languageName: node
   linkType: hard
 
