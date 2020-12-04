@@ -24,6 +24,8 @@ const { dependencies } = require('../../package.json')
 Object.keys(dependencies).forEach(dep => require(dep))
 
 const reactAppRules: any = {
+	// This isn't necessary in React 17
+	'react/react-in-jsx-scope': 'off',
 	// http://eslint.org/docs/rules/
 	'array-callback-return': 'warn',
 	'default-case': ['warn', { commentPattern: '^no default$' }],
@@ -169,7 +171,6 @@ const reactAppRules: any = {
 	'react/no-direct-mutation-state': 'warn',
 	'react/no-is-mounted': 'warn',
 	'react/no-typos': 'error',
-	'react/react-in-jsx-scope': 'error',
 	'react/require-render-return': 'error',
 	'react/style-prop-object': 'warn',
 
