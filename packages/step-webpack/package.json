@@ -15,7 +15,7 @@
 		"@essex/build-utils": "workspace:packages/util-utils",
 		"@essex/tasklogger": "workspace:packages/util-tasklogger",
 		"@essex/webpack-config": "workspace:packages/config-webpack",
-		"webpack": "^4.44.2",
+		"webpack": "^5.12.3",
 		"webpack-dev-server": "^3.11.0"
 	},
 	"devDependencies": {
