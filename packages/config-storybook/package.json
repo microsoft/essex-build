@@ -15,7 +15,7 @@
 		"@essex/build-util-hoister": "workspace:packages/util-hoister",
 		"@mdx-js/loader": "^1.6.22",
 		"@storybook/addon-a11y": "^6.1.9",
-		"@storybook/addon-actions": "^6.1.9",
+		"@storybook/addon-actions": "^6.1.14",
 		"@storybook/addon-docs": "^6.1.9",
 		"@storybook/addon-knobs": "^6.1.9",
 		"@storybook/addon-links": "^6.1.9",
