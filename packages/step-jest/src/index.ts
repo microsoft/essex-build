@@ -4,7 +4,7 @@
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { runCLI } from '@jest/core'
-import * as debug from 'debug'
+import debug from 'debug'
 import { gulpify } from '@essex/build-utils'
 import { getJestConfiguration } from '@essex/jest-config'
 

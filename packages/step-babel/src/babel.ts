@@ -4,10 +4,10 @@
  */
 /* eslint-disable @essex/adjacent-await */
 import { FSWatcher } from 'fs'
-import * as gulp from 'gulp'
-import * as babel from 'gulp-babel'
-import * as debug from 'gulp-debug'
-import * as plumber from 'gulp-plumber'
+import gulp from 'gulp'
+import babel from 'gulp-babel'
+import debug from 'gulp-debug'
+import plumber from 'gulp-plumber'
 import { getCjsConfiguration, getEsmConfiguration } from '@essex/babel-config'
 import { noopStep } from '@essex/build-utils'
 import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
