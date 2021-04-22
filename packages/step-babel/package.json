@@ -12,8 +12,8 @@
 		"build": "tsc -b"
 	},
 	"dependencies": {
-		"@babel/core": "^7.12.9",
-		"@babel/types": "^7.12.7",
+		"@babel/core": "^7.13.16",
+		"@babel/types": "^7.13.17",
 		"@essex/babel-config": "workspace:packages/config-babel",
 		"@essex/build-utils": "workspace:packages/util-utils",
 		"@essex/tasklogger": "workspace:packages/util-tasklogger",
@@ -23,11 +23,11 @@
 		"gulp-plumber": "^1.2.1"
 	},
 	"devDependencies": {
-		"@types/gulp": "^4.0.7",
+		"@types/gulp": "^4.0.8",
 		"@types/gulp-babel": "^6.1.29",
 		"@types/gulp-debug": "^2.0.31",
 		"@types/gulp-plumber": "^0.0.32",
-		"@types/node": "^14.14.10",
+		"@types/node": "^14.14.41",
 		"rimraf": "^3.0.2",
 		"typescript": "^4.1.2"
 	}
