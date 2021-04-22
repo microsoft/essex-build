@@ -8,18 +8,18 @@
 	],
 	"scripts": {
 		"preinstall": "npx only-allow yarn",
-		"clean_all:primary": "yarn workspaces foreach --exclude '@essex-build/test-suite-*' -piv run clean",
-		"clean_all:tests": "yarn workspaces foreach --include '@essex-build/test-suite-*' -piv run clean",
-		"clean_all": "run-s clean_all:tests clean_all:primary",
-		"build_all": "yarn workspaces foreach -pv --topological-dev run build",
-		"lint_all": "yarn workspaces foreach -piv run lint",
-		"test_all": "yarn workspaces foreach -piv run test",
-		"publish_all": "yarn workspaces foreach --exclude '@essex-build/test-suite-*' --exclude '@essex/alpha-build-utils' -pv npm publish --tolerate-republish --access public",
-		"unit_test": "yarn essex test",
+		"clean:all:primary": "yarn workspaces foreach --exclude '@essex-build/test-suite-*' -piv run clean",
+		"clean:all:tests": "yarn workspaces foreach --include '@essex-build/test-suite-*' -piv run clean",
+		"clean:all": "run-s clean:all:tests clean:all:primary",
+		"build:all": "yarn workspaces foreach -pv --topological-dev run build",
+		"lint:all": "yarn workspaces foreach -piv run lint",
+		"test:all": "yarn workspaces foreach -piv run test",
+		"publish:all": "yarn workspaces foreach --exclude '@essex-build/test-suite-*' --exclude '@essex/alpha-build-utils' -pv npm publish --tolerate-republish --access public",
+		"unit:test": "yarn essex test",
 		"lint": "yarn essex lint --docs --fix",
 		"prettify": "essex prettify",
 		"git_is_clean": "yarn essex git-is-clean",
-		"ci": "run-s build_all lint_all test_all lint unit_test git_is_clean"
+		"ci": "run-s build:all lint:all test:all lint unit:test git_is_clean"
 	},
 	"devDependencies": {
 		"@essex/babel-config": "workspace:packages/config-babel",
