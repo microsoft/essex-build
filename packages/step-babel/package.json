@@ -23,6 +23,7 @@
 		"gulp-plumber": "^1.2.1"
 	},
 	"devDependencies": {
+		"@tsconfig/node14": "^1.0.0",
 		"@types/gulp": "^4.0.8",
 		"@types/gulp-babel": "^6.1.29",
 		"@types/gulp-debug": "^2.0.31",

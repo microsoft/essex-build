@@ -12,6 +12,7 @@
 		"@babel/core": "^7.13.16",
 		"@essex/babel-config": "workspace:packages/config-babel",
 		"@essex/build-util-hoister": "workspace:packages/util-hoister",
+		"@tsconfig/node14": "^1.0.0",
 		"@types/webpack": "^5.28.0",
 		"@types/webpack-dev-server": "^3.11.3",
 		"babel-loader": "^8.2.2",

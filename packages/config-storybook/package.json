@@ -21,6 +21,7 @@
 		"@storybook/addon-links": "^6.2.8",
 		"@storybook/react": "^6.2.8",
 		"@storybook/source-loader": "^6.2.8",
+		"@tsconfig/node14": "^1.0.0",
 		"babel-loader": "^8.2.2",
 		"cache-loader": "^4.1.0",
 		"core-js": "^3.11.0",

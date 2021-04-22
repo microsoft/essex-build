@@ -8,7 +8,7 @@ import {
 	Application,
 	TSConfigReader,
 	TypeDocReader,
-	TypeDocAndTSOptions,
+	TypeDocOptions,
 } from 'typedoc'
 import { gulpify } from '@essex/build-utils'
 
@@ -26,13 +26,13 @@ export function generateTypedocs(verbose: boolean): Promise<void> {
 		const { title, name } = packageJson
 		return typedoc({
 			name: title || name || 'API Documentation',
-			entryPoint: DEFAULT_ENTRY_POINT,
-			stripInternal: true,
+			entryPoints: [DEFAULT_ENTRY_POINT],
+			excludeInternal: true,
 			excludeExternals: true,
-			excludeNotExported: true,
+			excludeProtected: true,
 			exclude: ['**/__tests__/**', '**/node_modules/**'],
 			excludePrivate: true,
-			project: 'tsconfig.json',
+			tsconfig: join(process.cwd(), 'tsconfig.json'),
 			out: 'dist/docs',
 			logger: 'none',
 			readme: existsSync(readmePath) ? readmePath : undefined,
@@ -49,7 +49,7 @@ export const generateTypedocsGulp = gulpify('typedocs', generateTypedocs)
  * Generate TypeDoc documentation
  * @param options TypeDoc options
  */
-async function typedoc(options: Partial<TypeDocAndTSOptions>): Promise<void> {
+async function typedoc(options: Partial<TypeDocOptions>): Promise<void> {
 	return new Promise((resolve, reject) => {
 		try {
 			const app = new Application()
@@ -57,7 +57,8 @@ async function typedoc(options: Partial<TypeDocAndTSOptions>): Promise<void> {
 			app.options.addReader(new TypeDocReader())
 			app.bootstrap(options)
 			const src = app.expandInputFiles([DEFAULT_ENTRY_POINT])
-			app.generateDocs(src, 'dist/docs')
+			const project = app.convert()
+			app.generateDocs(project!, 'dist/docs')
 			resolve()
 		} catch (err) {
 			reject(err)
