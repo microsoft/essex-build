@@ -46,10 +46,12 @@ export function execute({
 
 		return new Promise<JobResult>((resolve, reject) => {
 			spawned.on('error', err => reject(err))
-			spawned.on('close', code => {
-				if (codeMap[code] != null) {
-					return codeMap[code]
+			spawned.on('close', childCode => {
+				let code = childCode
+				if (childCode != null && codeMap[childCode] != null) {
+					code = codeMap[childCode]
 				}
+				code = code ?? 0
 				resolve({
 					output,
 					error,

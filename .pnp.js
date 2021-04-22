@@ -6010,6 +6010,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex/babel-config", "workspace:packages/config-babel"],
             ["@essex/build-util-hoister", "workspace:packages/util-hoister"],
             ["@types/debug", "npm:4.1.5"],
+            ["@types/express", "npm:4.17.11"],
             ["@types/node", "npm:14.14.41"],
             ["@types/typescript", null],
             ["@types/webpack", "npm:4.41.27"],
@@ -6046,6 +6047,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex/babel-config", "workspace:packages/config-babel"],
             ["@essex/build-util-hoister", "workspace:packages/util-hoister"],
             ["@types/debug", "npm:4.1.5"],
+            ["@types/express", "npm:4.17.11"],
             ["@types/node", "npm:14.14.41"],
             ["@types/typescript", null],
             ["@types/webpack", "npm:4.41.27"],
@@ -6080,6 +6082,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex/babel-config", "workspace:packages/config-babel"],
             ["@essex/build-util-hoister", "workspace:packages/util-hoister"],
             ["@types/debug", "npm:4.1.5"],
+            ["@types/express", "npm:4.17.11"],
             ["@types/node", "npm:14.14.41"],
             ["@types/webpack", "npm:4.41.27"],
             ["@types/webpack-dev-server", "npm:3.11.3"],
@@ -10818,6 +10821,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/express", [
+        ["npm:4.17.11", {
+          "packageLocation": "./.yarn/cache/@types-express-npm-4.17.11-1b3f17f056-2818120a0f.zip/node_modules/@types/express/",
+          "packageDependencies": [
+            ["@types/express", "npm:4.17.11"],
+            ["@types/body-parser", "npm:1.19.0"],
+            ["@types/express-serve-static-core", "npm:4.17.19"],
+            ["@types/qs", "npm:6.9.5"],
+            ["@types/serve-static", "npm:1.13.5"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:4.17.8", {
           "packageLocation": "./.yarn/cache/@types-express-npm-4.17.8-c21b94ed16-9220ef3cb0.zip/node_modules/@types/express/",
           "packageDependencies": [
@@ -10835,6 +10849,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-express-serve-static-core-npm-4.17.13-864c105004-6db6f2e0eb.zip/node_modules/@types/express-serve-static-core/",
           "packageDependencies": [
             ["@types/express-serve-static-core", "npm:4.17.13"],
+            ["@types/node", "npm:14.11.4"],
+            ["@types/qs", "npm:6.9.5"],
+            ["@types/range-parser", "npm:1.2.3"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:4.17.19", {
+          "packageLocation": "./.yarn/cache/@types-express-serve-static-core-npm-4.17.19-3f514f7e12-b6c8c357c5.zip/node_modules/@types/express-serve-static-core/",
+          "packageDependencies": [
+            ["@types/express-serve-static-core", "npm:4.17.19"],
             ["@types/node", "npm:14.11.4"],
             ["@types/qs", "npm:6.9.5"],
             ["@types/range-parser", "npm:1.2.3"]

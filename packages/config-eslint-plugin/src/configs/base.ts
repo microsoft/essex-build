@@ -237,7 +237,6 @@ const commonRuleSets: any[] = [
 	'plugin:jest/style',
 	'plugin:react-hooks/recommended',
 	'prettier',
-	'prettier/react',
 	'plugin:import/recommended',
 ]
 const tsRuleSets: string[] = [
