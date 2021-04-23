@@ -4,7 +4,6 @@
  */
 import { SpawnOptions, ChildProcess } from 'child_process'
 import { Job, JobResult } from '../types'
-import { getHoistedPath } from '@essex/build-util-hoister'
 
 /* eslint-disable-next-line @typescript-eslint/no-var-requires */
 const spawn = require('cross-spawn')
@@ -68,13 +67,9 @@ export function execute({
 function getInitialSpawnOptions(toConsole: boolean): SpawnOptions {
 	const cwd = process.cwd()
 	const stdio = toConsole ? 'inherit' : undefined
-	const hoistedPath = getHoistedPath()
 	return {
 		cwd,
-		env: {
-			...process.env,
-			PATH: hoistedPath,
-		},
+		env: process.env,
 		stdio,
 	} as SpawnOptions
 }

@@ -18,7 +18,6 @@
 		"clean": "rimraf lib"
 	},
 	"dependencies": {
-		"@essex/build-util-hoister": "workspace:packages/util-hoister",
 		"cross-spawn": "^7.0.3",
 		"debug": "^4.3.1"
 	},

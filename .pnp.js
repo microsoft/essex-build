@@ -115,10 +115,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/test-suite-webapp"
       },
       {
-        "name": "@essex/build-util-hoister",
-        "reference": "workspace:packages/util-hoister"
-      },
-      {
         "name": "@essex/shellrunner",
         "reference": "workspace:packages/util-shellrunner"
       },
@@ -152,7 +148,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@essex/build-step-typescript", ["virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-typescript", "workspace:packages/step-typescript"]],
       ["@essex/build-step-webpack", ["workspace:packages/step-webpack"]],
       ["@essex/build-step-zip", ["workspace:packages/step-zip"]],
-      ["@essex/build-util-hoister", ["workspace:packages/util-hoister"]],
       ["@essex/build-utils", ["workspace:packages/util-utils"]],
       ["@essex/eslint-config", ["virtual:04634ac6be101f21c9f62e3dd0c2d609954aa83a27d90480365c1606853fee68918a86ffd783a6f6cf5f838ce81ba2b6ec2e520f999c782b5854c13adbc64e75#workspace:packages/config-eslint", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#workspace:packages/config-eslint", "virtual:7c0cbc99fdcb7542e7dbc1484bf0bb69ec9bb5e21b5e3b1fb66f2a645f0cba835d8250ab525d1ac0fe3666ecda2a92025db63b298d57c07740217e1e561301d3#workspace:packages/config-eslint", "workspace:packages/config-eslint"]],
       ["@essex/eslint-plugin", ["virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#workspace:packages/config-eslint-plugin", "virtual:5a888ece582ef5d4265d460b100883749393e8229dc290b7b62fcd0dd8578f1c57edc7b97e629faa454a3b0ee5edea4c84c999fd45d3c9a914ac62fabffd164a#workspace:packages/config-eslint-plugin", "virtual:7c0cbc99fdcb7542e7dbc1484bf0bb69ec9bb5e21b5e3b1fb66f2a645f0cba835d8250ab525d1ac0fe3666ecda2a92025db63b298d57c07740217e1e561301d3#workspace:packages/config-eslint-plugin", "virtual:9d283c11c830d2ccc251d8111219ea09bda919ba24871ac6dbc38fa87bafa144c5e2e76a7b109c080c95d704d610fc7af14c476cb672e5ae37f0ee4f5405c3cd#workspace:packages/config-eslint-plugin", "workspace:packages/config-eslint-plugin"]],
@@ -3521,19 +3516,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "SOFT",
         }]
       ]],
-      ["@essex/build-util-hoister", [
-        ["workspace:packages/util-hoister", {
-          "packageLocation": "./packages/util-hoister/",
-          "packageDependencies": [
-            ["@essex/build-util-hoister", "workspace:packages/util-hoister"],
-            ["@tsconfig/node12", "npm:1.0.7"],
-            ["@types/node", "npm:14.14.41"],
-            ["rimraf", "npm:3.0.2"],
-            ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"]
-          ],
-          "linkType": "SOFT",
-        }]
-      ]],
       ["@essex/build-utils", [
         ["workspace:packages/util-utils", {
           "packageLocation": "./packages/util-utils/",
@@ -4211,7 +4193,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/util-shellrunner/",
           "packageDependencies": [
             ["@essex/shellrunner", "workspace:packages/util-shellrunner"],
-            ["@essex/build-util-hoister", "workspace:packages/util-hoister"],
             ["@tsconfig/node12", "npm:1.0.7"],
             ["@types/debug", "npm:4.1.5"],
             ["@types/node", "npm:14.14.41"],
@@ -4244,7 +4225,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex/webpack-config", "virtual:0c5fc579d174ed88a7c0294dd81387f980a505dae700ac2568a8bec8cc541d099ba1400446ad2994f02967f0112d5c0a0d01abddcb8302f2b586f4d3d49a6d75#workspace:packages/config-webpack"],
             ["@babel/core", "npm:7.13.16"],
             ["@essex/babel-config", "workspace:packages/config-babel"],
-            ["@essex/build-util-hoister", "workspace:packages/util-hoister"],
             ["@tsconfig/node12", "npm:1.0.7"],
             ["@types/debug", "npm:4.1.5"],
             ["@types/express", "npm:4.17.11"],
@@ -4282,7 +4262,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex/webpack-config", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/config-webpack"],
             ["@babel/core", "npm:7.13.16"],
             ["@essex/babel-config", "workspace:packages/config-babel"],
-            ["@essex/build-util-hoister", "workspace:packages/util-hoister"],
             ["@tsconfig/node12", "npm:1.0.7"],
             ["@types/debug", "npm:4.1.5"],
             ["@types/express", "npm:4.17.11"],
@@ -4318,7 +4297,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex/webpack-config", "workspace:packages/config-webpack"],
             ["@babel/core", "npm:7.13.16"],
             ["@essex/babel-config", "workspace:packages/config-babel"],
-            ["@essex/build-util-hoister", "workspace:packages/util-hoister"],
             ["@tsconfig/node12", "npm:1.0.7"],
             ["@types/debug", "npm:4.1.5"],
             ["@types/express", "npm:4.17.11"],

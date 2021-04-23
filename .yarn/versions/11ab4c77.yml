@@ -16,7 +16,6 @@ releases:
   "@essex/build-step-typescript": major
   "@essex/build-step-webpack": major
   "@essex/build-step-zip": major
-  "@essex/build-util-hoister": major
   "@essex/build-utils": major
   "@essex/eslint-config": major
   "@essex/eslint-plugin": major
