@@ -15,7 +15,6 @@ export default function build(program: Command): void {
 			'enable production optimization or development hints ("development" | "production" | "none")',
 			'development',
 		)
-		.option('--storybook', 'serve a storybook package')
 		.option('-v, --verbose', 'verbose output')
 		.action(
 			(options: ServeCommandOptions): Promise<any> => {

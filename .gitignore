@@ -5,7 +5,6 @@ node_modules/
 packages/*/lib/
 packages/*/dist/
 packages/*/build/
-packages/*/storybook-static/
 *.tsbuildinfo
 
 # Testing Output

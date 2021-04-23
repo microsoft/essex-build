@@ -40,7 +40,6 @@ To view detailed options, run `essex <command> --help` or `essex --help`
 - [precommit](./docs/precommit.md)
 - [prettify](./docs/prettify.md)
 - [serve](./docs/serve.md)
-- [start-storybook](./docs/start_storybook.md)
 - [test](./docs/test.md)
 - [watch](./docs/watch.md)
 
@@ -52,19 +51,16 @@ To view detailed options, run `essex <command> --help` or `essex --help`
 	"private": true,
 	"scripts": {
 		/* orchestrate child packages */
-		"clean": "lerna run clean --stream --parallel",
-		"build": "lerna run build --stream",
-		"build:ci": "lerna run build --stream -- --docs",
-		"bundle": "lerna run bundle --stream",
+		"clean:all": "yarn workspaces foreach -piv run clean",    
+		"build:all": "yarn workspaces foreach -pivt run build",		
+		"bundle:all": "yarn workspaces foreach -piv run bundle",
 
 		/* use @essex/scripts for top-level checks */
-		"lint": "essex lint",
-		"lint:ci": "essex lint --docs",
-		"test": "essex test",
-		"test:ci": "essex test --coverage",
+    "lint:all": "essex lint --docs",    
+    "unit:test": "essex test --coverage",
 
 		/* hook for CI builds */
-		"ci": "run-s lint:ci build:ci bundle test:ci"
+		"ci": "run-s lint:all build:all bundle:all unit:test"
 	}
 }
 ```
@@ -92,18 +88,6 @@ To view detailed options, run `essex <command> --help` or `essex --help`
 		"bundle": "essex bundle",
 		"clean": "essex clean build",
 		"start": "essex serve"
-	}
-}
-```
-
-```json
-{
-	"name": "storybook-app",
-	"private": true,
-	"scripts": {
-		"clean": "essex clean storybook-static",
-		"start": "essex start-storybook",
-		"bundle": "essex build-storybook"
 	}
 }
 ```

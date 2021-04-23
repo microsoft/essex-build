@@ -13,19 +13,17 @@ import { noopTask } from '@essex/build-utils'
 
 const wpConfigExists = existsSync(join(process.cwd(), 'webpack.config.js'))
 const rollupConfigExists = existsSync(join(process.cwd(), 'rollup.config.js'))
-const storybookConfigExists = existsSync(join(process.cwd(), '.storybook'))
 
 export function configureTasks({
 	verbose = false,
-	storybook = storybookConfigExists,
 	webpack = wpConfigExists,
 	rollup = rollupConfigExists,
 	env = 'production',
 	mode = 'production',
 }: BundleCommandOptions): gulp.TaskFunction {
-	if (!webpack && !rollup && !storybook) {
+	if (!webpack && !rollup) {
 		throw new Error(
-			'--webpack, --rollup, or --storybook flags must be passed to bundle command',
+			'--webpack or --rollup flag must be passed to bundle command',
 		)
 	}
 	const bundleWebpack = webpack

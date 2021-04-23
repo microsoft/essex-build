@@ -12,11 +12,7 @@ export default function build(program: Command): void {
 	program
 		.command('bundle')
 		.description('bundles a library package or website')
-		.option('-v, --verbose', 'verbose output')
-		.option(
-			'-sb, --storybook',
-			'builds storybook output in addition to normal build artifacts',
-		)
+		.option('-v, --verbose', 'verbose output')		
 		.option(
 			'-wp, --webpack',
 			'bundles webpack output using either the base config or webpack.config.js',
