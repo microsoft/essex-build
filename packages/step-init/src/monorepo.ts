@@ -29,7 +29,6 @@ const CONFIG_FILES_DOT = [
 	'docsrc.json',
 	'eslintignore',
 	'eslintrc.json',
-	'huskyrc.json',
 	'gitignore',
 	'linstagedrc.json',
 	'prettierignore',
@@ -113,7 +112,6 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 
 	-- Build Tooling --
 	npm-run-all 
-	husky 
 	lint-staged 
 
 	-- Required for Jest testing --

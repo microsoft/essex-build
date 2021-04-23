@@ -12,17 +12,11 @@ Add the following configuration to your `package.json`. If you're in a monorepo,
 	"devDependencies": {
 		"@essex/scripts": "<latest version>"
 	},
-	"prettier": "@essex/prettier-config",
-	"husky": {
-		"hooks": {
-			"pre-commit": "essex pre-commit"
-		}
-	}
+	"prettier": "@essex/prettier-config"
 }
 ```
 
 The **prettier** section allows for `pretty-quick` (used by our build system) and Visual Studio Code to detect the active prettier configuration.<br/>
-The **husky** section wires our scripts into the husky hooks.
 
 Additional build tooling is wired in via invoking `essex`. Check out the available scripts and recipes below.
 

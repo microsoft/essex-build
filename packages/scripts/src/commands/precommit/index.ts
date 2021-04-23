@@ -9,7 +9,7 @@ import { success, fail } from '@essex/tasklogger'
 export default function preCommit(program: Command): void {
 	program
 		.command('pre-commit')
-		.description('execute pre-commit tasks (for husky hook)')
+		.description('execute pre-commit tasks (e.g. for husky hook)')
 		.action(() => {
 			Promise.resolve()
 				.then(() => lintStaged())
