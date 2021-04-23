@@ -15,7 +15,6 @@ import {
 } from './configValues'
 import { log } from './log'
 import { validateConfiguration } from './validate'
-import { getNodeModulesPaths } from '@essex/build-util-hoister'
 
 /* eslint-disable @typescript-eslint/no-var-requires */
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -87,9 +86,7 @@ export function configure({
 		log('extend resolveLoaderModules', extendedResolveLoaderModules)
 	}
 
-	const standardModulePaths = [
-		// client & workspaces paths
-		...getNodeModulesPaths(),
+	const standardModulePaths = [		
 		// config package node modules
 		join(__dirname, '../node_modules'),
 		'node_modules',
