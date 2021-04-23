@@ -4,8 +4,7 @@ releases:
   "@essex/babel-config": major
   "@essex/build-step-azure": major
   "@essex/build-step-babel": major
-  "@essex/build-step-clean": major
-  "@essex/build-step-docs": major
+  "@essex/build-step-clean": major  
   "@essex/build-step-eslint": major
   "@essex/build-step-init": major
   "@essex/build-step-jest": major
