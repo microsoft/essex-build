@@ -50,7 +50,7 @@ To view detailed options, run `essex <command> --help` or `essex --help`
 		"bundle:all": "yarn workspaces foreach -piv run bundle",
 
 		/* use @essex/scripts for top-level checks */
-    "lint:all": "essex lint --docs",    
+    "lint:all": "essex lint",    
     "unit:test": "essex test --coverage",
 
 		/* hook for CI builds */

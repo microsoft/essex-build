@@ -4,7 +4,6 @@
  */
 import gulp from 'gulp'
 import { LintCommandOptions } from './types'
-import { docs as execDocs } from '@essex/build-step-docs'
 import { eslint } from '@essex/build-step-eslint'
 import { prettyQuick } from '@essex/build-step-pretty-quick'
 import { resolveGulpTask, noopTask } from '@essex/build-utils'
@@ -31,7 +30,7 @@ export function configureTasks(
 	}
 
 	function checkDocumentation(cb: (err?: Error) => void) {
-		execDocs().then(...resolveGulpTask('docs', cb))
+		resolveGulpTask('docs', cb)
 	}
 
 	if (docsOnly) {
