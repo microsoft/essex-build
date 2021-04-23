@@ -1943,7 +1943,7 @@ __metadata:
     "@types/node": ^14.14.41
     "@typescript-eslint/eslint-plugin": ^4.22.0
     "@typescript-eslint/parser": ^4.22.0
-    eslint: ^7.24.0
+    eslint: ^7.25.0
     eslint-import-resolver-node: ^0.3.4
     rimraf: ^3.0.2
     typescript: ^4.2.4
@@ -2159,7 +2159,7 @@ __metadata:
     "@typescript-eslint/parser": ^4.22.0
     babel-eslint: ^10.1.0
     confusing-browser-globals: ^1.0.10
-    eslint: ^7.24.0
+    eslint: ^7.25.0
     eslint-config-prettier: ^8.2.0
     eslint-import-resolver-node: ^0.3.4
     eslint-plugin-header: ^3.1.1
@@ -2242,7 +2242,7 @@ __metadata:
     gulp-prettier: ^3.0.0
     npm-run-all: ^4.1.5
     prettier: ^2.2.1
-    regenerator-runtime: ^0.13.8
+    regenerator-runtime: ^0.13.7
     rimraf: ^3.0.2
     shx: ^0.3.3
     ts-node: ^9.1.1
@@ -2336,7 +2336,7 @@ __metadata:
     rimraf: ^3.0.2
     sass-loader: ^10.1.1
     style-loader: ^2.0.0
-    ts-loader: ^8.1.0
+    ts-loader: ^8.2.0
     typescript: ^4.2.4
     webpack: ^4.46.0
     webpack-dev-server: ^3.11.2
@@ -7136,9 +7136,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^7.24.0":
-  version: 7.24.0
-  resolution: "eslint@npm:7.24.0"
+"eslint@npm:^7.25.0":
+  version: 7.25.0
+  resolution: "eslint@npm:7.25.0"
   dependencies:
     "@babel/code-frame": 7.12.11
     "@eslint/eslintrc": ^0.4.0
@@ -7179,7 +7179,7 @@ __metadata:
     v8-compile-cache: ^2.0.3
   bin:
     eslint: bin/eslint.js
-  checksum: 8130aacc3698a730ba8fa10ac9e1436151181c34cad265c21c97708e62dba714b6f3cc4cb7a1d343918da3d35a5913505ccf53cfbdc1fa8d62d326b7e35b7aae
+  checksum: 6e1782e2264ebf987504746ee82e996bf0ef2c29a2eaea869b54cb8aa1eaf10945b1d563618515e65ac934ca626f3609282127773f45868ad4a98744458a3c62
   languageName: node
   linkType: hard
 
@@ -13087,7 +13087,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"regenerator-runtime@npm:^0.13.8":
+"regenerator-runtime@npm:^0.13.7":
   version: 0.13.8
   resolution: "regenerator-runtime@npm:0.13.8"
   checksum: 20178f5753f181d59691e5c3b4c59a2769987f75c7ccf325777673b5478acca61a553b10e895585086c222f72f5ee428090acf50320264de4b79f630f7388653
@@ -15049,9 +15049,9 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"ts-loader@npm:^8.1.0":
-  version: 8.1.0
-  resolution: "ts-loader@npm:8.1.0"
+"ts-loader@npm:^8.2.0":
+  version: 8.2.0
+  resolution: "ts-loader@npm:8.2.0"
   dependencies:
     chalk: ^4.1.0
     enhanced-resolve: ^4.0.0
@@ -15061,7 +15061,7 @@ resolve@^2.0.0-next.3:
   peerDependencies:
     typescript: "*"
     webpack: "*"
-  checksum: f49f5a4e04d3032d5be72f0d29b572eedd57069c206566a443d4b0246409048ccbd85596bb9bd377999875d41c28b8e193b6f54a139c4fae52a3a3768f7020ee
+  checksum: c34c66e5193b234e9b2bca3a6ad21a25fc22fb05ac1c9b2e3b6c655adc431033bac60a36c1d0c9caea473ea91748e29f41bf91f25fad3930a32c06cbdee7d9f3
   languageName: node
   linkType: hard
 
