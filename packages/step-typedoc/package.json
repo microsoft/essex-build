@@ -14,7 +14,7 @@
 	"dependencies": {
 		"@essex/build-utils": "workspace:packages/util-utils",
 		"@essex/tasklogger": "workspace:packages/util-tasklogger",
-		"typedoc": "^0.20.35",
+		"typedoc": "^0.20.36",
 		"typescript": "^4.2.4"
 	},
 	"devDependencies": {
