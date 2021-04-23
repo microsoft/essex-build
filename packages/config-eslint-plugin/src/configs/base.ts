@@ -242,7 +242,6 @@ const commonRuleSets: any[] = [
 const tsRuleSets: string[] = [
 	'plugin:import/typescript',
 	'plugin:@typescript-eslint/recommended',
-	'prettier/@typescript-eslint',
 ]
 
 const baseConfig = {
