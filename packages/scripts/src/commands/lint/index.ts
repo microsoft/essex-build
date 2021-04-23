@@ -13,8 +13,6 @@ export default function lint(program: Command): void {
 		.command('lint [...files]')
 		.description('performs static analysis checks')
 		.option('-f, --fix', 'correct fixable problems')
-		.option('--docs', 'performs documentation linting steps')
-		.option('--docs-only', 'skip code linting, only check documentation')
 		.option('--staged', 'only do git-stage verifications')
 		.option('--strict', 'strict linting, warnings will cause failure')
 		.action((files: string[], options: LintCommandOptions = {}) => {

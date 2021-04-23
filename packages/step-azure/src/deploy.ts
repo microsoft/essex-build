@@ -3,14 +3,14 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { promises as fs } from 'fs'
-import * as path from 'path'
+import path from 'path'
 import {
 	BlobServiceClient,
 	StorageSharedKeyCredential,
 	ContainerClient,
 } from '@azure/storage-blob'
-import * as glob from 'glob'
-import * as mime from 'mime-types'
+import glob from 'glob'
+import mime from 'mime-types'
 
 // files to upload. Directory is not recreated in Azure storage.
 const DEFAULT_DIRECTORIES = ['build/', 'public/']

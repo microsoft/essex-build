@@ -1,1 +1,0 @@
-# @essex/storybook-config

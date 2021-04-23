@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import * as webpack from 'webpack'
-import * as Server from 'webpack-dev-server'
+import webpack from 'webpack'
+import Server from 'webpack-dev-server'
 import { getConfig } from './getConfig'
 import { WebpackCompilerOptions } from './types'
 

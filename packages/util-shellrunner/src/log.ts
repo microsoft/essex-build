@@ -2,8 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import 'colors'
-import * as dbg from 'debug'
+import dbg from 'debug'
 import { Job } from './types'
 const debugLog = dbg('essex:shellrunner')
 

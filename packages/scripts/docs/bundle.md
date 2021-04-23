@@ -6,16 +6,13 @@ Performs common bundling tasks for a library package.
 
 - Bundle Webpack
 - Bundle Rollup
-- Bundle Storybook
 
 # CLI Options
 
 - `--verbose`<br/> enables verbose mode
 - `--env <env> (default=development)`<br/> sets the env to use for babel and webpack (if used)
 - `--mode <mode> (default=development)`<br/> sets the mode to use in webpack (if used)
-- `--storybook`<br/> enables storybook bundling. default=true if `.storybook/` is present
 - `--webpack`<br/> enables webpack bundling. default=true if `webpack.config.js` is present
-- `--rollup`<br/> enables storybook bundling. default=true if `rollup.config.js` is present
 
 # Details & Customization
 
@@ -38,14 +35,3 @@ Performs common bundling tasks for a library package.
   ### Customization
 
   Define a `webpack.config.js`
-
-- ## Storybook
-
-  ### Purpose
-
-  Storybook bundles are discrete artifacts that
-  may be deployed as a form of documentation. BYO Config & Executable.
-
-  ### Customization
-
-  Define a configuration in `.storybook/`

@@ -13,11 +13,7 @@ export interface BundleCommandOptions {
 	 * client-dependency for this option
 	 */
 	rollup?: boolean
-	/**
-	 * Bundles a static storybook site
-	 */
-	storybook?: boolean
-
+	
 	env?: string
 
 	mode?: 'production' | 'development'

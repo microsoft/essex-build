@@ -1,5 +1,5 @@
 {
 	"*": ["yarn essex prettify --staged"],
-	"*.md": ["yarn essex lint --docs-only"],
+	"*.md": ["yarn essex lint"],
 	"*.{js,jsx,ts,tsx}": ["yarn essex lint --fix --staged"]
 }
