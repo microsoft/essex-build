@@ -2079,7 +2079,7 @@ __metadata:
     "@tsconfig/node12": ^1.0.7
     "@types/node": ^14.14.41
     rimraf: ^3.0.2
-    typedoc: ^0.20.35
+    typedoc: ^0.20.36
     typescript: ^4.2.4
   peerDependencies:
     "@types/node": ">= 14"
@@ -2278,7 +2278,7 @@ __metadata:
     gulp-prettier: ^3.0.0
     npm-run-all: ^4.1.5
     prettier: ^2.2.1
-    regenerator-runtime: ^0.13.7
+    regenerator-runtime: ^0.13.8
     rimraf: ^3.0.2
     shx: ^0.3.3
     ts-node: ^9.1.1
@@ -11110,7 +11110,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"marked@npm:^2.0.1":
+"marked@npm:^2.0.3":
   version: 2.0.3
   resolution: "marked@npm:2.0.3"
   bin:
@@ -13453,10 +13453,17 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"regenerator-runtime@npm:^0.13.4, regenerator-runtime@npm:^0.13.7":
+"regenerator-runtime@npm:^0.13.4":
   version: 0.13.7
   resolution: "regenerator-runtime@npm:0.13.7"
   checksum: 6ef567c662088b1b292214920cbd72443059298d477f72e1a37e0a113bafbfac9057cbfe35ae617284effc4b423493326a78561bbff7b04162c7949bdb9624e8
+  languageName: node
+  linkType: hard
+
+"regenerator-runtime@npm:^0.13.8":
+  version: 0.13.8
+  resolution: "regenerator-runtime@npm:0.13.8"
+  checksum: 20178f5753f181d59691e5c3b4c59a2769987f75c7ccf325777673b5478acca61a553b10e895585086c222f72f5ee428090acf50320264de4b79f630f7388653
   languageName: node
   linkType: hard
 
@@ -15737,33 +15744,33 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"typedoc-default-themes@npm:^0.12.9":
+"typedoc-default-themes@npm:^0.12.10":
   version: 0.12.10
   resolution: "typedoc-default-themes@npm:0.12.10"
   checksum: 3a420c405b00122c20018762ce145186219f26651a051216b1d4dafa1b3756a7e47290bf27898d3e2769af3a0da44591e3c93268c2a6503fcf28eb8b0f32980b
   languageName: node
   linkType: hard
 
-"typedoc@npm:^0.20.35":
-  version: 0.20.35
-  resolution: "typedoc@npm:0.20.35"
+"typedoc@npm:^0.20.36":
+  version: 0.20.36
+  resolution: "typedoc@npm:0.20.36"
   dependencies:
     colors: ^1.4.0
     fs-extra: ^9.1.0
     handlebars: ^4.7.7
     lodash: ^4.17.21
     lunr: ^2.3.9
-    marked: ^2.0.1
+    marked: ^2.0.3
     minimatch: ^3.0.0
     progress: ^2.0.3
     shelljs: ^0.8.4
     shiki: ^0.9.3
-    typedoc-default-themes: ^0.12.9
+    typedoc-default-themes: ^0.12.10
   peerDependencies:
     typescript: 3.9.x || 4.0.x || 4.1.x || 4.2.x
   bin:
     typedoc: bin/typedoc
-  checksum: 107295014bc223dc789f99bb01ddebd9756ef5f624e21eb13bbdda974b17a1ccf125b87a8ab77520dae4399b3ec2791f5aa825cf470b73d7fdebae0a936039d7
+  checksum: 362a576deee8225e7f0e2722c91f9de553d8d821f0a7b07ac4bf9b9fa704452f495aba035e7c73af415b7363c88e80689f666e0b2dab3f29bb42eb5f2d7ae93c
   languageName: node
   linkType: hard
 

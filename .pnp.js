@@ -3444,7 +3444,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:14.14.41"],
             ["@types/types__node", null],
             ["rimraf", "npm:3.0.2"],
-            ["typedoc", "virtual:d1963771c13d076914ef09154ae8de9b828bc5d4d2496069804cb8f5995aed659f8c06ad6eebecdfb442807ca82017900721f63361bada839e64c988564587d0#npm:0.20.35"],
+            ["typedoc", "virtual:d1963771c13d076914ef09154ae8de9b828bc5d4d2496069804cb8f5995aed659f8c06ad6eebecdfb442807ca82017900721f63361bada839e64c988564587d0#npm:0.20.36"],
             ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"]
           ],
           "packagePeers": [
@@ -3462,7 +3462,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tsconfig/node12", "npm:1.0.7"],
             ["@types/node", "npm:14.14.41"],
             ["rimraf", "npm:3.0.2"],
-            ["typedoc", "virtual:d1963771c13d076914ef09154ae8de9b828bc5d4d2496069804cb8f5995aed659f8c06ad6eebecdfb442807ca82017900721f63361bada839e64c988564587d0#npm:0.20.35"],
+            ["typedoc", "virtual:d1963771c13d076914ef09154ae8de9b828bc5d4d2496069804cb8f5995aed659f8c06ad6eebecdfb442807ca82017900721f63361bada839e64c988564587d0#npm:0.20.36"],
             ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"]
           ],
           "linkType": "SOFT",
@@ -3968,7 +3968,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.2.1"],
             ["react", null],
             ["react-dom", null],
-            ["regenerator-runtime", "npm:0.13.7"],
+            ["regenerator-runtime", "npm:0.13.8"],
             ["rimraf", "npm:3.0.2"],
             ["rollup", null],
             ["shx", "npm:0.3.3"],
@@ -4063,7 +4063,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.2.1"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:215b566b7f0cd7c54ce57376135b3799429eb8ab081fa64cfb1ea72e8237c028255fd8f92174e2b5e264634a9d89b531db904c2c6490c79d610aef56a6b0dc74#npm:17.0.2"],
-            ["regenerator-runtime", "npm:0.13.7"],
+            ["regenerator-runtime", "npm:0.13.8"],
             ["rimraf", "npm:3.0.2"],
             ["rollup", null],
             ["shx", "npm:0.3.3"],
@@ -4158,7 +4158,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.2.1"],
             ["react", null],
             ["react-dom", null],
-            ["regenerator-runtime", "npm:0.13.7"],
+            ["regenerator-runtime", "npm:0.13.8"],
             ["rimraf", "npm:3.0.2"],
             ["rollup", null],
             ["shx", "npm:0.3.3"],
@@ -4232,7 +4232,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gulp-prettier", "npm:3.0.0"],
             ["npm-run-all", "npm:4.1.5"],
             ["prettier", "npm:2.2.1"],
-            ["regenerator-runtime", "npm:0.13.7"],
+            ["regenerator-runtime", "npm:0.13.8"],
             ["rimraf", "npm:3.0.2"],
             ["shx", "npm:0.3.3"],
             ["ts-node", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#npm:9.1.1"],
@@ -17270,6 +17270,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["regenerator-runtime", "npm:0.13.7"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:0.13.8", {
+          "packageLocation": "./.yarn/cache/regenerator-runtime-npm-0.13.8-0450f887d6-20178f5753.zip/node_modules/regenerator-runtime/",
+          "packageDependencies": [
+            ["regenerator-runtime", "npm:0.13.8"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["regenerator-transform", [
@@ -19818,17 +19825,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["typedoc", [
-        ["npm:0.20.35", {
-          "packageLocation": "./.yarn/cache/typedoc-npm-0.20.35-3e222199ae-107295014b.zip/node_modules/typedoc/",
+        ["npm:0.20.36", {
+          "packageLocation": "./.yarn/cache/typedoc-npm-0.20.36-048bd47683-362a576dee.zip/node_modules/typedoc/",
           "packageDependencies": [
-            ["typedoc", "npm:0.20.35"]
+            ["typedoc", "npm:0.20.36"]
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:d1963771c13d076914ef09154ae8de9b828bc5d4d2496069804cb8f5995aed659f8c06ad6eebecdfb442807ca82017900721f63361bada839e64c988564587d0#npm:0.20.35", {
-          "packageLocation": "./.yarn/$$virtual/typedoc-virtual-cac6973c3f/0/cache/typedoc-npm-0.20.35-3e222199ae-107295014b.zip/node_modules/typedoc/",
+        ["virtual:d1963771c13d076914ef09154ae8de9b828bc5d4d2496069804cb8f5995aed659f8c06ad6eebecdfb442807ca82017900721f63361bada839e64c988564587d0#npm:0.20.36", {
+          "packageLocation": "./.yarn/$$virtual/typedoc-virtual-3d6850a040/0/cache/typedoc-npm-0.20.36-048bd47683-362a576dee.zip/node_modules/typedoc/",
           "packageDependencies": [
-            ["typedoc", "virtual:d1963771c13d076914ef09154ae8de9b828bc5d4d2496069804cb8f5995aed659f8c06ad6eebecdfb442807ca82017900721f63361bada839e64c988564587d0#npm:0.20.35"],
+            ["typedoc", "virtual:d1963771c13d076914ef09154ae8de9b828bc5d4d2496069804cb8f5995aed659f8c06ad6eebecdfb442807ca82017900721f63361bada839e64c988564587d0#npm:0.20.36"],
             ["@types/typescript", null],
             ["colors", "npm:1.4.0"],
             ["fs-extra", "npm:9.1.0"],
