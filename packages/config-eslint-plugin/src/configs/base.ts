@@ -237,13 +237,11 @@ const commonRuleSets: any[] = [
 	'plugin:jest/style',
 	'plugin:react-hooks/recommended',
 	'prettier',
-	'prettier/react',
 	'plugin:import/recommended',
 ]
 const tsRuleSets: string[] = [
 	'plugin:import/typescript',
 	'plugin:@typescript-eslint/recommended',
-	'prettier/@typescript-eslint',
 ]
 
 const baseConfig = {

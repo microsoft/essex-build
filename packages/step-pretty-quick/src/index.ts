@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import * as chalk from 'chalk'
+import chalk from 'chalk'
 import { gulpify } from '@essex/build-utils'
 
 /* eslint-disable-next-line @typescript-eslint/no-var-requires */

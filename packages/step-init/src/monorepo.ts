@@ -29,7 +29,6 @@ const CONFIG_FILES_DOT = [
 	'docsrc.json',
 	'eslintignore',
 	'eslintrc.json',
-	'huskyrc.json',
 	'gitignore',
 	'linstagedrc.json',
 	'prettierignore',
@@ -63,33 +62,33 @@ export function initMonorepo(): Promise<number> {
 
 function configurePackageJsonForMonorepo(): Promise<number> {
 	let writeNeeded = false
-	if (!pkgJson.scripts['build_all']) {
-		pkgJson.scripts['build_all'] =
+	if (!pkgJson.scripts['build:all']) {
+		pkgJson.scripts['build:all'] =
 			'yarn workspaces foreach -pivt --topological-dev run build'
 		writeNeeded = true
 	}
-	if (!pkgJson.scripts['test_all']) {
-		pkgJson.scripts['test_all'] = 'yarn workspaces foreach -piv run test'
+	if (!pkgJson.scripts['test:all']) {
+		pkgJson.scripts['test:all'] = 'yarn workspaces foreach -piv run test'
 		writeNeeded = true
 	}
-	if (!pkgJson.scripts['clean_all']) {
-		pkgJson.scripts['clean_all'] = 'yarn workspaces foreach -piv run clean'
+	if (!pkgJson.scripts['clean:all']) {
+		pkgJson.scripts['clean:all'] = 'yarn workspaces foreach -piv run clean'
 		writeNeeded = true
 	}
-	if (!pkgJson.scripts['start_all']) {
-		pkgJson.scripts['start_all'] = 'yarn workspaces foreach -piv run start'
+	if (!pkgJson.scripts['start:all']) {
+		pkgJson.scripts['start:all'] = 'yarn workspaces foreach -piv run start'
 		writeNeeded = true
 	}
-	if (!pkgJson.scripts['publish_all']) {
-		pkgJson.scripts['publish_all'] =
+	if (!pkgJson.scripts['publish:all']) {
+		pkgJson.scripts['publish:all'] =
 			"yarn workspaces foreach --exclude '<YOUR_TOP_LEVEL_PACKAGE_NAME>' -pv npm publish --tolerate-republish --access public"
 	}
-	if (!pkgJson.scripts['unit_test']) {
-		pkgJson.scripts['unit_test'] = 'essex test'
+	if (!pkgJson.scripts['unit:test']) {
+		pkgJson.scripts['unit:test'] = 'essex test'
 		writeNeeded = true
 	}
-	if (!pkgJson.scripts['lint']) {
-		pkgJson.scripts['lint'] = 'essex lint --docs --fix'
+	if (!pkgJson.scripts['lint:all']) {
+		pkgJson.scripts['lint:all'] = 'essex lint --fix'
 		writeNeeded = true
 	}
 	if (!pkgJson.scripts['git_is_clean']) {
@@ -98,7 +97,7 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 	}
 	if (!pkgJson.scripts['ci']) {
 		pkgJson.scripts['ci'] =
-			'run-s build_all test_all lint unit_test git_is_clean'
+			'run-s build:all test:all lint:all unit:test git_is_clean'
 		writeNeeded = true
 	}
 	if (writeNeeded) {
@@ -113,7 +112,6 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 
 	-- Build Tooling --
 	npm-run-all 
-	husky 
 	lint-staged 
 
 	-- Required for Jest testing --

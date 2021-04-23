@@ -4,7 +4,7 @@
  */
 import { join } from 'path'
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
-import * as webpack from 'webpack'
+import webpack from 'webpack'
 import { Configuration as WdsConfiguration } from 'webpack-dev-server'
 import {
 	getWdsStaticConfig,
@@ -15,7 +15,6 @@ import {
 } from './configValues'
 import { log } from './log'
 import { validateConfiguration } from './validate'
-import { getNodeModulesPaths } from '@essex/build-util-hoister'
 
 /* eslint-disable @typescript-eslint/no-var-requires */
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -87,9 +86,7 @@ export function configure({
 		log('extend resolveLoaderModules', extendedResolveLoaderModules)
 	}
 
-	const standardModulePaths = [
-		// client & workspaces paths
-		...getNodeModulesPaths(),
+	const standardModulePaths = [		
 		// config package node modules
 		join(__dirname, '../node_modules'),
 		'node_modules',

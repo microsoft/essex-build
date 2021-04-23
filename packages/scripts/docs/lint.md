@@ -8,7 +8,6 @@ Performs static checks (linting) operations over a project. Run `essex lint --he
 
 - `--staged`<br/> only lint staged files. This is used internally in the default precommit configuration of **@essex/scripts**, and disables all but the `eslint` command.
 
-- `--docs`<br/> performs documentation linting. This is recommended for usage in CI for open-source projects or quality-sensitive internal projects.
 
 # Details & Customization
 
@@ -41,16 +40,3 @@ The following static verification checks are performed when this command is invo
     /* package.json */
     "prettier": "@essex/prettier-config"
     ```
-
-  - ## docs
-
-  ### Purpose
-
-  The docs step checks for misspelling and inconsiderate writing and tone in documentation files. This allows us to meet community and corporate expectations with regards to inclusivity in our documentation.
-
-  ### Customization
-
-  - `<rootDir>/.docsrc`<br/>
-    `<rootDir>/.docsignore`<br/>
-
-  .docsrc has two fields: `allow (string[])` and `spelling (string[])`

@@ -5,7 +5,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { existsSync } from 'fs'
 import { join } from 'path'
-import * as gulp from 'gulp'
+import gulp from 'gulp'
 import { BuildCommandOptions } from './types'
 import { buildBabel } from '@essex/build-step-babel'
 import { generateTypedocsGulp } from '@essex/build-step-typedoc'
