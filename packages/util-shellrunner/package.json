@@ -19,10 +19,8 @@
 	},
 	"dependencies": {
 		"@essex/build-util-hoister": "workspace:packages/util-hoister",
-		"colors": "^1.4.0",
 		"cross-spawn": "^7.0.3",
-		"debug": "^4.3.1",
-		"supports-color": "^8.1.1"
+		"debug": "^4.3.1"
 	},
 	"devDependencies": {
 		"@tsconfig/node14": "^1.0.0",

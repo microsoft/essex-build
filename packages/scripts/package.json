@@ -54,8 +54,7 @@
 		"gulp-debug": "^4.0.0",
 		"gulp-prettier": "^3.0.0",
 		"prettier": "^2.2.1",
-		"regenerator-runtime": "^0.13.7",
-		"supports-color": "^8.1.1"
+		"regenerator-runtime": "^0.13.7"
 	},
 	"devDependencies": {
 		"@tsconfig/node14": "^1.0.0",

@@ -2281,7 +2281,6 @@ __metadata:
     regenerator-runtime: ^0.13.7
     rimraf: ^3.0.2
     shx: ^0.3.3
-    supports-color: ^8.1.1
     ts-node: ^9.1.1
     typescript: ^4.2.4
   peerDependencies:
@@ -2332,11 +2331,9 @@ __metadata:
     "@tsconfig/node14": ^1.0.0
     "@types/debug": ^4.1.5
     "@types/node": ^14.14.41
-    colors: ^1.4.0
     cross-spawn: ^7.0.3
     debug: ^4.3.1
     rimraf: ^3.0.2
-    supports-color: ^8.1.1
     typescript: ^4.2.4
   languageName: unknown
   linkType: soft
@@ -15117,15 +15114,6 @@ resolve@^2.0.0-next.3:
   dependencies:
     has-flag: ^4.0.0
   checksum: 8e57067c39216f3c2ffce7cc14ca934d54746192571203aa9c9922d97d2d55cc1bdaa9e41a11f91e620670b5a74ebdec6b548a885d8cc2dea7cab59e21416029
-  languageName: node
-  linkType: hard
-
-"supports-color@npm:^8.1.1":
-  version: 8.1.1
-  resolution: "supports-color@npm:8.1.1"
-  dependencies:
-    has-flag: ^4.0.0
-  checksum: 0219f5c91753fea8dc8046cd4b18d39458b5dc0c6421c67c1072209faae9ba93b89283252e3b05d5c18901fd9f8b95001e3247fb93e2265f66d584a676522c75
   languageName: node
   linkType: hard
 

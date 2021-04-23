@@ -3300,7 +3300,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:14.14.41"],
             ["@types/rimraf", "npm:3.0.0"],
             ["chalk", "npm:4.1.1"],
-            ["debug", "virtual:5004dcb581264de86786e111b83dff80a43f5282043eb67d0062959aa4466d1c92a541c9019981a8575f4963ac4a656268b889792a105d56ba0539aaed616f2b#npm:4.3.2"],
+            ["debug", "virtual:f135cd886c07ae77f2d6e3167094c1566a599648106bd21572eec1c13524147b4cce5ee8ec1321a2758bf931d51a76ac35fc54f40a5ea5630c0758887cb38626#npm:4.3.2"],
             ["jest", "npm:26.6.3"],
             ["rimraf", "npm:3.0.2"],
             ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"]
@@ -3972,7 +3972,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rimraf", "npm:3.0.2"],
             ["rollup", null],
             ["shx", "npm:0.3.3"],
-            ["supports-color", "npm:8.1.1"],
             ["ts-node", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#npm:9.1.1"],
             ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"]
           ],
@@ -4068,7 +4067,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rimraf", "npm:3.0.2"],
             ["rollup", null],
             ["shx", "npm:0.3.3"],
-            ["supports-color", "npm:8.1.1"],
             ["ts-node", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#npm:9.1.1"],
             ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"]
           ],
@@ -4164,7 +4162,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rimraf", "npm:3.0.2"],
             ["rollup", null],
             ["shx", "npm:0.3.3"],
-            ["supports-color", "npm:8.1.1"],
             ["ts-node", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#npm:9.1.1"],
             ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"]
           ],
@@ -4238,7 +4235,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["regenerator-runtime", "npm:0.13.7"],
             ["rimraf", "npm:3.0.2"],
             ["shx", "npm:0.3.3"],
-            ["supports-color", "npm:8.1.1"],
             ["ts-node", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#npm:9.1.1"],
             ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"]
           ],
@@ -4254,11 +4250,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tsconfig/node14", "npm:1.0.0"],
             ["@types/debug", "npm:4.1.5"],
             ["@types/node", "npm:14.14.41"],
-            ["colors", "npm:1.4.0"],
             ["cross-spawn", "npm:7.0.3"],
             ["debug", "virtual:f135cd886c07ae77f2d6e3167094c1566a599648106bd21572eec1c13524147b4cce5ee8ec1321a2758bf931d51a76ac35fc54f40a5ea5630c0758887cb38626#npm:4.3.2"],
             ["rimraf", "npm:3.0.2"],
-            ["supports-color", "npm:8.1.1"],
             ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"]
           ],
           "linkType": "SOFT",
@@ -4296,7 +4290,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-loader", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:8.2.2"],
             ["cache-loader", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:4.1.0"],
             ["css-loader", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:5.2.4"],
-            ["debug", "virtual:5004dcb581264de86786e111b83dff80a43f5282043eb67d0062959aa4466d1c92a541c9019981a8575f4963ac4a656268b889792a105d56ba0539aaed616f2b#npm:4.3.2"],
+            ["debug", "virtual:f135cd886c07ae77f2d6e3167094c1566a599648106bd21572eec1c13524147b4cce5ee8ec1321a2758bf931d51a76ac35fc54f40a5ea5630c0758887cb38626#npm:4.3.2"],
             ["fork-ts-checker-webpack-plugin", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:6.2.4"],
             ["html-webpack-plugin", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:4.5.2"],
             ["mini-css-extract-plugin", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:1.5.0"],
@@ -4334,7 +4328,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-loader", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:8.2.2"],
             ["cache-loader", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:4.1.0"],
             ["css-loader", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:5.2.4"],
-            ["debug", "virtual:5004dcb581264de86786e111b83dff80a43f5282043eb67d0062959aa4466d1c92a541c9019981a8575f4963ac4a656268b889792a105d56ba0539aaed616f2b#npm:4.3.2"],
+            ["debug", "virtual:f135cd886c07ae77f2d6e3167094c1566a599648106bd21572eec1c13524147b4cce5ee8ec1321a2758bf931d51a76ac35fc54f40a5ea5630c0758887cb38626#npm:4.3.2"],
             ["fork-ts-checker-webpack-plugin", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:6.2.4"],
             ["html-webpack-plugin", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:4.5.2"],
             ["mini-css-extract-plugin", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:1.5.0"],
@@ -4369,7 +4363,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-loader", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:8.2.2"],
             ["cache-loader", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:4.1.0"],
             ["css-loader", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:5.2.4"],
-            ["debug", "virtual:5004dcb581264de86786e111b83dff80a43f5282043eb67d0062959aa4466d1c92a541c9019981a8575f4963ac4a656268b889792a105d56ba0539aaed616f2b#npm:4.3.2"],
+            ["debug", "virtual:f135cd886c07ae77f2d6e3167094c1566a599648106bd21572eec1c13524147b4cce5ee8ec1321a2758bf931d51a76ac35fc54f40a5ea5630c0758887cb38626#npm:4.3.2"],
             ["fork-ts-checker-webpack-plugin", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:6.2.4"],
             ["html-webpack-plugin", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:4.5.2"],
             ["mini-css-extract-plugin", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:1.5.0"],
@@ -9096,18 +9090,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["virtual:5004dcb581264de86786e111b83dff80a43f5282043eb67d0062959aa4466d1c92a541c9019981a8575f4963ac4a656268b889792a105d56ba0539aaed616f2b#npm:4.3.2", {
-          "packageLocation": "./.yarn/$$virtual/debug-virtual-e305fbf23d/0/cache/debug-npm-4.3.2-f0148b6afe-5543570879.zip/node_modules/debug/",
-          "packageDependencies": [
-            ["debug", "virtual:5004dcb581264de86786e111b83dff80a43f5282043eb67d0062959aa4466d1c92a541c9019981a8575f4963ac4a656268b889792a105d56ba0539aaed616f2b#npm:4.3.2"],
-            ["ms", "npm:2.1.2"],
-            ["supports-color", null]
-          ],
-          "packagePeers": [
-            "supports-color"
-          ],
-          "linkType": "HARD",
-        }],
         ["virtual:8c51eedb04c6e9fe3cf52d8cde4ad43d07f66eb0f0560dd95170235150f5051ef1bca58cc9ae2556bedbb62b53dc891a752a9d0a116261fe84b5e83a416b2c90#npm:3.2.7", {
           "packageLocation": "./.yarn/$$virtual/debug-virtual-23caa7b244/0/cache/debug-npm-3.2.7-754e818c7a-9fc1277e66.zip/node_modules/debug/",
           "packageDependencies": [
@@ -9149,7 +9131,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["debug", "virtual:f135cd886c07ae77f2d6e3167094c1566a599648106bd21572eec1c13524147b4cce5ee8ec1321a2758bf931d51a76ac35fc54f40a5ea5630c0758887cb38626#npm:4.3.2"],
             ["ms", "npm:2.1.2"],
-            ["supports-color", "npm:8.1.1"]
+            ["supports-color", null]
           ],
           "packagePeers": [
             "supports-color"
@@ -19075,14 +19057,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/supports-color-npm-7.2.0-606bfcf7da-8e57067c39.zip/node_modules/supports-color/",
           "packageDependencies": [
             ["supports-color", "npm:7.2.0"],
-            ["has-flag", "npm:4.0.0"]
-          ],
-          "linkType": "HARD",
-        }],
-        ["npm:8.1.1", {
-          "packageLocation": "./.yarn/cache/supports-color-npm-8.1.1-289e937149-0219f5c917.zip/node_modules/supports-color/",
-          "packageDependencies": [
-            ["supports-color", "npm:8.1.1"],
             ["has-flag", "npm:4.0.0"]
           ],
           "linkType": "HARD",
