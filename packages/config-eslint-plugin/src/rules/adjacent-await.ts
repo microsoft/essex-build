@@ -126,7 +126,7 @@ const noAdjacentAwait = {
 				let hasAdjacentAsyncAwaits = false
 				node.body.forEach((statement: any) => {
 					if (statement.type === 'VariableDeclaration') {
-						;(statement.declarations || []).forEach((declaration: any) => {
+						(statement.declarations || []).forEach((declaration: any) => {
 							identifiersToIgnore.push(
 								...((definedIdentifiers.get(declaration) as any[]) || []),
 							)
