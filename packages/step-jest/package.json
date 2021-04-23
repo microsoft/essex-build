@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-jest",
-	"version": "11.0.2",
+	"version": "13.0.0",
 	"license": "MIT",
 	"main": "src/index.ts",
 	"publishConfig": {
