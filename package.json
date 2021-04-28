@@ -28,7 +28,7 @@
 		"@essex/jest-config": "workspace:packages/config-jest",
 		"@essex/prettier-config": "workspace:packages/config-prettier",
 		"@essex/scripts": "workspace:packages/scripts",
-		"@types/jest": "^26.0.22",
+		"@types/jest": "^26.0.23",
 		"@typescript-eslint/eslint-plugin": "^4.22.0",
 		"@typescript-eslint/parser": "^4.22.0",
 		"eslint-import-resolver-node": "^0.3.4",

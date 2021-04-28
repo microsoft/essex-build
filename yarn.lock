@@ -1812,7 +1812,7 @@ __metadata:
     "@essex/eslint-config": "workspace:packages/config-eslint"
     "@essex/jest-config": "workspace:packages/config-jest"
     "@essex/scripts": "workspace:packages/scripts"
-    "@types/jest": ^26.0.22
+    "@types/jest": ^26.0.23
     "@typescript-eslint/eslint-plugin": ^4.22.0
     "@typescript-eslint/parser": ^4.22.0
     eslint-import-resolver-node: ^0.3.4
@@ -1826,7 +1826,7 @@ __metadata:
     "@essex/eslint-config": "workspace:packages/config-eslint"
     "@essex/scripts": "workspace:packages/scripts"
     "@essex/webpack-config": "workspace:packages/config-webpack"
-    "@types/react": ^17.0.3
+    "@types/react": ^17.0.4
     "@types/react-dom": ^17.0.3
     "@typescript-eslint/eslint-plugin": ^4.22.0
     "@typescript-eslint/parser": ^4.22.0
@@ -1846,7 +1846,7 @@ __metadata:
     "@essex/jest-config": "workspace:packages/config-jest"
     "@essex/prettier-config": "workspace:packages/config-prettier"
     "@essex/scripts": "workspace:packages/scripts"
-    "@types/jest": ^26.0.22
+    "@types/jest": ^26.0.23
     "@typescript-eslint/eslint-plugin": ^4.22.0
     "@typescript-eslint/parser": ^4.22.0
     eslint-import-resolver-node: ^0.3.4
@@ -1871,7 +1871,7 @@ __metadata:
     "@babel/preset-react": ^7.13.13
     "@babel/preset-typescript": ^7.13.0
     "@tsconfig/node12": ^1.0.7
-    "@types/node": ^14.14.41
+    "@types/node": ^14.14.43
     rimraf: ^3.0.2
     typescript: ^4.2.4
   languageName: unknown
@@ -1886,7 +1886,7 @@ __metadata:
     "@tsconfig/node12": ^1.0.7
     "@types/glob": ^7.1.3
     "@types/mime-types": ^2.1.0
-    "@types/node": ^14.14.41
+    "@types/node": ^14.14.43
     glob: ^7.1.6
     mime-types: ^2.1.30
     rimraf: ^3.0.2
@@ -1908,7 +1908,7 @@ __metadata:
     "@types/gulp-babel": ^6.1.29
     "@types/gulp-debug": ^2.0.31
     "@types/gulp-plumber": ^0.0.32
-    "@types/node": ^14.14.41
+    "@types/node": ^14.14.43
     gulp: ^4.0.2
     gulp-babel: ^8.0.0
     gulp-debug: ^4.0.0
@@ -1924,7 +1924,7 @@ __metadata:
   dependencies:
     "@essex/build-utils": "workspace:packages/util-utils"
     "@tsconfig/node12": ^1.0.7
-    "@types/node": ^14.14.41
+    "@types/node": ^14.14.43
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
     typescript: ^4.2.4
@@ -1940,7 +1940,7 @@ __metadata:
     "@essex/eslint-plugin": "workspace:packages/config-eslint-plugin"
     "@tsconfig/node12": ^1.0.7
     "@types/eslint": ^7.2.10
-    "@types/node": ^14.14.41
+    "@types/node": ^14.14.43
     "@typescript-eslint/eslint-plugin": ^4.22.0
     "@typescript-eslint/parser": ^4.22.0
     eslint: ^7.25.0
@@ -1958,7 +1958,7 @@ __metadata:
     "@essex/build-utils": "workspace:packages/util-utils"
     "@essex/tasklogger": "workspace:packages/util-tasklogger"
     "@tsconfig/node12": ^1.0.7
-    "@types/node": ^14.14.41
+    "@types/node": ^14.14.43
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
     typescript: ^4.2.4
@@ -1975,7 +1975,7 @@ __metadata:
     "@jest/core": ~26.6.3
     "@tsconfig/node12": ^1.0.7
     "@types/debug": ^4.1.5
-    "@types/node": ^14.14.41
+    "@types/node": ^14.14.43
     "@types/rimraf": ^3.0.0
     chalk: ^4.1.1
     debug: ^4.3.1
@@ -1992,7 +1992,7 @@ __metadata:
     "@essex/build-utils": "workspace:packages/util-utils"
     "@essex/shellrunner": "workspace:packages/util-shellrunner"
     "@tsconfig/node12": ^1.0.7
-    "@types/node": ^14.14.41
+    "@types/node": ^14.14.43
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
     typescript: ^4.2.4
@@ -2008,7 +2008,7 @@ __metadata:
     "@essex/build-utils": "workspace:packages/util-utils"
     "@essex/tasklogger": "workspace:packages/util-tasklogger"
     "@tsconfig/node12": ^1.0.7
-    "@types/node": ^14.14.41
+    "@types/node": ^14.14.43
     chalk: ^4.1.1
     prettier: ^2.2.1
     pretty-quick: ^3.1.0
@@ -2023,7 +2023,7 @@ __metadata:
   dependencies:
     "@essex/tasklogger": "workspace:packages/util-tasklogger"
     "@tsconfig/node12": ^1.0.7
-    "@types/node": ^14.14.41
+    "@types/node": ^14.14.43
     "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
     typescript: ^4.2.4
@@ -2038,7 +2038,7 @@ __metadata:
     "@essex/shellrunner": "workspace:packages/util-shellrunner"
     "@essex/tasklogger": "workspace:packages/util-tasklogger"
     "@tsconfig/node12": ^1.0.7
-    "@types/node": ^14.14.41
+    "@types/node": ^14.14.43
     rimraf: ^3.0.2
     typescript: ^4.2.4
   peerDependencies:
@@ -2053,7 +2053,7 @@ __metadata:
     "@essex/build-utils": "workspace:packages/util-utils"
     "@essex/tasklogger": "workspace:packages/util-tasklogger"
     "@tsconfig/node12": ^1.0.7
-    "@types/node": ^14.14.41
+    "@types/node": ^14.14.43
     rimraf: ^3.0.2
     typedoc: ^0.20.36
     typescript: ^4.2.4
@@ -2072,7 +2072,7 @@ __metadata:
     "@types/gulp": ^4.0.8
     "@types/gulp-debug": ^2.0.31
     "@types/gulp-plumber": ^0.0.32
-    "@types/node": ^14.14.41
+    "@types/node": ^14.14.43
     gulp: ^4.0.2
     gulp-debug: ^4.0.0
     gulp-plumber: ^1.2.1
@@ -2092,7 +2092,7 @@ __metadata:
     "@essex/tasklogger": "workspace:packages/util-tasklogger"
     "@essex/webpack-config": "workspace:packages/config-webpack"
     "@tsconfig/node12": ^1.0.7
-    "@types/node": ^14.14.41
+    "@types/node": ^14.14.43
     "@types/webpack": ^5.28.0
     "@types/webpack-dev-server": ^3.11.3
     rimraf: ^3.0.2
@@ -2109,7 +2109,7 @@ __metadata:
     "@tsconfig/node12": ^1.0.7
     "@types/archiver": ^5.1.0
     "@types/glob": ^7.1.3
-    "@types/node": ^14.14.41
+    "@types/node": ^14.14.43
     archiver: ^5.3.0
     glob: ^7.1.6
     rimraf: ^3.0.2
@@ -2125,7 +2125,7 @@ __metadata:
     "@essex/tasklogger": "workspace:packages/util-tasklogger"
     "@tsconfig/node12": ^1.0.7
     "@types/gulp": ^4.0.8
-    "@types/node": ^14.14.41
+    "@types/node": ^14.14.43
     "@types/through2": ^2.0.36
     gulp: ^4.0.2
     rimraf: ^3.0.2
@@ -2154,17 +2154,17 @@ __metadata:
     "@babel/core": ^7.13.16
     "@babel/types": ^7.13.17
     "@tsconfig/node12": ^1.0.7
-    "@types/node": ^14.14.41
+    "@types/node": ^14.14.43
     "@typescript-eslint/eslint-plugin": ^4.22.0
     "@typescript-eslint/parser": ^4.22.0
     babel-eslint: ^10.1.0
     confusing-browser-globals: ^1.0.10
     eslint: ^7.25.0
-    eslint-config-prettier: ^8.2.0
+    eslint-config-prettier: ^8.3.0
     eslint-import-resolver-node: ^0.3.4
     eslint-plugin-header: ^3.1.1
     eslint-plugin-import: ^2.22.1
-    eslint-plugin-jest: ^24.3.5
+    eslint-plugin-jest: ^24.3.6
     eslint-plugin-jsx-a11y: ^6.4.1
     eslint-plugin-react: ^7.23.2
     eslint-plugin-react-hooks: ^4.2.0
@@ -2183,8 +2183,8 @@ __metadata:
   resolution: "@essex/jest-config@workspace:packages/config-jest"
   dependencies:
     "@tsconfig/node12": ^1.0.7
-    "@types/jest": ^26.0.22
-    "@types/node": ^14.14.41
+    "@types/jest": ^26.0.23
+    "@types/node": ^14.14.43
     identity-obj-proxy: ^3.0.0
     rimraf: ^3.0.2
     typescript: ^4.2.4
@@ -2231,10 +2231,10 @@ __metadata:
     "@types/gulp": ^4.0.8
     "@types/gulp-babel": ^6.1.29
     "@types/gulp-debug": ^2.0.31
-    "@types/node": ^14.14.41
+    "@types/node": ^14.14.43
     chalk: ^4.1.1
     commander: ^7.2.0
-    core-js: ^3.11.0
+    core-js: ^3.11.1
     crlf: ^1.1.1
     debug: ^4.3.1
     gulp: ^4.0.2
@@ -2242,7 +2242,7 @@ __metadata:
     gulp-prettier: ^3.0.0
     npm-run-all: ^4.1.5
     prettier: ^2.2.1
-    regenerator-runtime: ^0.13.7
+    regenerator-runtime: ^0.13.8
     rimraf: ^3.0.2
     shx: ^0.3.3
     ts-node: ^9.1.1
@@ -2293,7 +2293,7 @@ __metadata:
   dependencies:
     "@tsconfig/node12": ^1.0.7
     "@types/debug": ^4.1.5
-    "@types/node": ^14.14.41
+    "@types/node": ^14.14.43
     cross-spawn: ^7.0.3
     debug: ^4.3.1
     rimraf: ^3.0.2
@@ -2306,7 +2306,7 @@ __metadata:
   resolution: "@essex/tasklogger@workspace:packages/util-tasklogger"
   dependencies:
     "@tsconfig/node12": ^1.0.7
-    "@types/node": ^14.14.41
+    "@types/node": ^14.14.43
     chalk: ^4.1.1
     rimraf: ^3.0.2
     typescript: ^4.2.4
@@ -2322,16 +2322,16 @@ __metadata:
     "@tsconfig/node12": ^1.0.7
     "@types/debug": ^4.1.5
     "@types/express": ^4.17.11
-    "@types/node": ^14.14.41
+    "@types/node": ^14.14.43
     "@types/webpack": ^5.28.0
     "@types/webpack-dev-server": ^3.11.3
     babel-loader: ^8.2.2
     cache-loader: ^4.1.0
     css-loader: ^5.2.4
     debug: ^4.3.1
-    fork-ts-checker-webpack-plugin: ^6.2.4
+    fork-ts-checker-webpack-plugin: ^6.2.5
     html-webpack-plugin: ^4.5.2
-    mini-css-extract-plugin: ^1.5.0
+    mini-css-extract-plugin: ^1.5.1
     pnp-webpack-plugin: ^1.6.4
     rimraf: ^3.0.2
     sass-loader: ^10.1.1
@@ -2966,13 +2966,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:^26.0.22":
-  version: 26.0.22
-  resolution: "@types/jest@npm:26.0.22"
+"@types/jest@npm:^26.0.23":
+  version: 26.0.23
+  resolution: "@types/jest@npm:26.0.23"
   dependencies:
     jest-diff: ^26.0.0
     pretty-format: ^26.0.0
-  checksum: 4c98ed058522f6cc74bcb47b8b7b104b77b2d4e42e087171f3d2d3ae5338c21f43ec26f2a186bc229c1bd72c3f776ad07faba837f0ec27f22cf94e154516c0b3
+  checksum: a015676b78bdc51be6f6315acef10d9106ea8064e3e49143bca3c75b834b61285b45c5f5ccfd049a80107f1e2869a9183cdb5be85816c073ea8dd05852fafdc6
   languageName: node
   linkType: hard
 
@@ -3028,10 +3028,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^14.14.41":
-  version: 14.14.41
-  resolution: "@types/node@npm:14.14.41"
-  checksum: 37dfb639644c8ee9b9846106834983f590d494b855e74645a4f169ea24199f7559366d25f6e72e83ba940b59eb6370e002bd53963d098d6d9fdf935a37011417
+"@types/node@npm:^14.14.43":
+  version: 14.14.43
+  resolution: "@types/node@npm:14.14.43"
+  checksum: b7a9e6df7c2a6f90e783bfe6ef358cc2c3ff4e1dfcea56b83349cd3feefd02a9b6fa54b443983694b4398a06257d871c947abeae03bd0d39fd71981161d61765
   languageName: node
   linkType: hard
 
@@ -3096,14 +3096,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^17.0.3":
-  version: 17.0.3
-  resolution: "@types/react@npm:17.0.3"
+"@types/react@npm:^17.0.4":
+  version: 17.0.4
+  resolution: "@types/react@npm:17.0.4"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 5bcaabadc90a23ad9008540eae98a5819b638c4cf1b968adc67be47d6a8dc8cb100061d877dae97618fb275e405dc484b37154080c7ac0ea7df5efcdd8f98c24
+  checksum: d7a8121faa889d52148df392751b771be16a45369872e9ad2b5db3d5bb8f76e684db27c2447b440441e3da1f353d434fa20fdcb45b3a56a296aab0757862da77
   languageName: node
   linkType: hard
 
@@ -5879,10 +5879,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:^3.11.0":
-  version: 3.11.0
-  resolution: "core-js@npm:3.11.0"
-  checksum: e4fd7912c2092c7dc371ade028249071807cb3ebfe8466aed23d2b13bb8988b7d51e3ddd93149550fd1d9191bbeb2bc5a506526a12573452b7716205e44f7755
+"core-js@npm:^3.11.1":
+  version: 3.11.1
+  resolution: "core-js@npm:3.11.1"
+  checksum: c48324bea978e08f09efd38d75232cb2f0ac091f701b5df75789beabaa7fe401e11617c1abf9b1ff3aa6354154656580a0235af2527af5277af584613e9217cc
   languageName: node
   linkType: hard
 
@@ -6963,14 +6963,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^8.2.0":
-  version: 8.2.0
-  resolution: "eslint-config-prettier@npm:8.2.0"
+"eslint-config-prettier@npm:^8.3.0":
+  version: 8.3.0
+  resolution: "eslint-config-prettier@npm:8.3.0"
   peerDependencies:
     eslint: ">=7.0.0"
   bin:
     eslint-config-prettier: bin/cli.js
-  checksum: 0fe60cc42dd84fd878ee437dfe73340ba8b18f41ba2538878c54ff15f24a6855bf7e048b36290022b21e0e050ee6cf61d66bfdf39bedb5ccc15c28997cda7016
+  checksum: 94ccbb50fb67e5e47e8ba6cfa257b5cbf53619990ab13f46b99518cfe9b900394b93bdf6ffedbde1a8e2997d301b0fbd73a6b4202146bc53475dfb30a8c812f2
   languageName: node
   linkType: hard
 
@@ -7026,9 +7026,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jest@npm:^24.3.5":
-  version: 24.3.5
-  resolution: "eslint-plugin-jest@npm:24.3.5"
+"eslint-plugin-jest@npm:^24.3.6":
+  version: 24.3.6
+  resolution: "eslint-plugin-jest@npm:24.3.6"
   dependencies:
     "@typescript-eslint/experimental-utils": ^4.0.1
   peerDependencies:
@@ -7037,7 +7037,7 @@ __metadata:
   peerDependenciesMeta:
     "@typescript-eslint/eslint-plugin":
       optional: true
-  checksum: 6352966b16a2a65cd5637f6d02ffcd59f52e8cb6cb8434d35520fe5b30cbf475e3a55a088fcf0d41d6f7c0dbd93e9b5c637707075fbb3d960b318c305c3ac7aa
+  checksum: 13f4522cd838a6a356a080f76424579a58aa2f9b4f4b3fdd3713278718496c62ba3d8f53c0fb6ad6fd96ca6cfd6ee728f7dd51893b91eccfb4396b832f757afb
   languageName: node
   linkType: hard
 
@@ -7825,9 +7825,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fork-ts-checker-webpack-plugin@npm:^6.2.4":
-  version: 6.2.4
-  resolution: "fork-ts-checker-webpack-plugin@npm:6.2.4"
+"fork-ts-checker-webpack-plugin@npm:^6.2.5":
+  version: 6.2.5
+  resolution: "fork-ts-checker-webpack-plugin@npm:6.2.5"
   dependencies:
     "@babel/code-frame": ^7.8.3
     "@types/json-schema": ^7.0.5
@@ -7841,7 +7841,7 @@ __metadata:
     schema-utils: 2.7.0
     semver: ^7.3.2
     tapable: ^1.0.0
-  checksum: 3aa3e56f71c95ceeaf4575cb17f65ebc1181b13cd8c82f387a7adb9cf02fa68c17856a9d021881aadd6e9b8356507e923e68fdad6c9cb4d34b184c48f79c47f2
+  checksum: d79d47e111288efe1addd12a295ed74772cbf5cda714c5201b90d6473aa4e03b7992db3881c99ec238c9ed0167f37adc4120a7b8273090a0e910f52bd923f5c1
   languageName: node
   linkType: hard
 
@@ -11102,16 +11102,16 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"mini-css-extract-plugin@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "mini-css-extract-plugin@npm:1.5.0"
+"mini-css-extract-plugin@npm:^1.5.1":
+  version: 1.5.1
+  resolution: "mini-css-extract-plugin@npm:1.5.1"
   dependencies:
     loader-utils: ^2.0.0
     schema-utils: ^3.0.0
     webpack-sources: ^1.1.0
   peerDependencies:
     webpack: ^4.4.0 || ^5.0.0
-  checksum: b666770b3bff39afd066e4b545ad95d53b8d82dd01863c4c22aa6b866d48e44c97f27aa8c5cdfd011f727dbaf60f2a21e69c4d55ab771fc4ac00575f36342060
+  checksum: dfdb5ed1faa5926dbe638fb1dff8bb573387a778d9937ebbd800b42a213e32c5e0abc08fdb80df39fc5de7a7acda28319b73498672c1cfa48f8c548d2c02cfdb
   languageName: node
   linkType: hard
 
@@ -13087,7 +13087,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"regenerator-runtime@npm:^0.13.7":
+"regenerator-runtime@npm:^0.13.8":
   version: 0.13.8
   resolution: "regenerator-runtime@npm:0.13.8"
   checksum: 20178f5753f181d59691e5c3b4c59a2769987f75c7ccf325777673b5478acca61a553b10e895585086c222f72f5ee428090acf50320264de4b79f630f7388653
