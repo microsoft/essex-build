@@ -19,7 +19,6 @@ import { validateConfiguration } from './validate'
 /* eslint-disable @typescript-eslint/no-var-requires */
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const PnpWebpackPlugin = require('pnp-webpack-plugin')
 
 // Webpack Loaders
 const babelLoader = require.resolve('babel-loader')
@@ -86,7 +85,7 @@ export function configure({
 		log('extend resolveLoaderModules', extendedResolveLoaderModules)
 	}
 
-	const standardModulePaths = [		
+	const standardModulePaths = [
 		// config package node modules
 		join(__dirname, '../node_modules'),
 		'node_modules',
@@ -102,11 +101,10 @@ export function configure({
 		output: {
 			path: buildPath,
 			chunkFilename: '[name].[chunkhash].js',
-			filename: '[name].[hash].js',
+			filename: '[name].[fullhash].js',
 			...extendedOutput,
 		},
 		resolve: {
-			plugins: pnp ? [PnpWebpackPlugin] : undefined,
 			extensions: ['.ts', '.tsx', '.js', '.jsx'],
 			modules: [...standardModulePaths, ...extendedResolveModules],
 			alias: {
@@ -114,7 +112,6 @@ export function configure({
 			},
 		},
 		resolveLoader: {
-			plugins: pnp ? [PnpWebpackPlugin.moduleLoader(module)] : undefined,
 			modules: [...standardModulePaths, ...extendedResolveLoaderModules],
 		},
 		module: {
@@ -219,8 +216,8 @@ export function configure({
 				...extendedEnv,
 			}),
 			new MiniCssExtractPlugin({
-				filename: isDevelopment ? '[name].css' : '[name].[hash].css',
-				chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css',
+				filename: isDevelopment ? '[name].css' : '[name].[fullhash].css',
+				chunkFilename: isDevelopment ? '[id].css' : '[id].[fullhash].css',
 			}),
 			...extendedPlugins,
 		].filter(p => !!p),
