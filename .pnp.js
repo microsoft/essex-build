@@ -4239,7 +4239,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fork-ts-checker-webpack-plugin", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:6.2.5"],
             ["html-webpack-plugin", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:5.3.1"],
             ["mini-css-extract-plugin", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:1.5.1"],
-            ["pnp-webpack-plugin", "npm:1.6.4"],
             ["rimraf", "npm:3.0.2"],
             ["sass-loader", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:11.0.1"],
             ["style-loader", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:2.0.0"],
@@ -4276,7 +4275,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fork-ts-checker-webpack-plugin", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:6.2.5"],
             ["html-webpack-plugin", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:5.3.1"],
             ["mini-css-extract-plugin", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:1.5.1"],
-            ["pnp-webpack-plugin", "npm:1.6.4"],
             ["rimraf", "npm:3.0.2"],
             ["sass-loader", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:11.0.1"],
             ["style-loader", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:2.0.0"],
@@ -4310,7 +4308,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fork-ts-checker-webpack-plugin", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:6.2.5"],
             ["html-webpack-plugin", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:5.3.1"],
             ["mini-css-extract-plugin", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:1.5.1"],
-            ["pnp-webpack-plugin", "npm:1.6.4"],
             ["rimraf", "npm:3.0.2"],
             ["sass-loader", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:11.0.1"],
             ["style-loader", "virtual:52d208ec66954ef970c14fc33005b4df4cdbae1137e40fcd652b13ff9989310b9f1283d3ed10668c11e88f328bbf5fbcf56b26e664e3f008acc5bfbe743f0b10#npm:2.0.0"],
@@ -15182,16 +15179,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["pnp-webpack-plugin", [
-        ["npm:1.6.4", {
-          "packageLocation": "./.yarn/cache/pnp-webpack-plugin-npm-1.6.4-c497046afc-39a484182f.zip/node_modules/pnp-webpack-plugin/",
-          "packageDependencies": [
-            ["pnp-webpack-plugin", "npm:1.6.4"],
-            ["ts-pnp", "virtual:c497046afcbefb679e3fe12575088ec12205b913a36c3d158b27e7cd646d448426540ab27ba98e54ddb75b1ed97de7e3ce5dc0158c9ba4e76ce942c87e5d02d8#npm:1.2.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["portfinder", [
         ["npm:1.0.28", {
           "packageLocation": "./.yarn/cache/portfinder-npm-1.0.28-12c37407ab-906dc51482.zip/node_modules/portfinder/",
@@ -17940,26 +17927,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "packagePeers": [
             "@types/typescript",
-            "typescript"
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["ts-pnp", [
-        ["npm:1.2.0", {
-          "packageLocation": "./.yarn/cache/ts-pnp-npm-1.2.0-43620de7df-78341a2793.zip/node_modules/ts-pnp/",
-          "packageDependencies": [
-            ["ts-pnp", "npm:1.2.0"]
-          ],
-          "linkType": "SOFT",
-        }],
-        ["virtual:c497046afcbefb679e3fe12575088ec12205b913a36c3d158b27e7cd646d448426540ab27ba98e54ddb75b1ed97de7e3ce5dc0158c9ba4e76ce942c87e5d02d8#npm:1.2.0", {
-          "packageLocation": "./.yarn/$$virtual/ts-pnp-virtual-abd2827f29/0/cache/ts-pnp-npm-1.2.0-43620de7df-78341a2793.zip/node_modules/ts-pnp/",
-          "packageDependencies": [
-            ["ts-pnp", "virtual:c497046afcbefb679e3fe12575088ec12205b913a36c3d158b27e7cd646d448426540ab27ba98e54ddb75b1ed97de7e3ce5dc0158c9ba4e76ce942c87e5d02d8#npm:1.2.0"],
-            ["typescript", null]
-          ],
-          "packagePeers": [
             "typescript"
           ],
           "linkType": "HARD",
