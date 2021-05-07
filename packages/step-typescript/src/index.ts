@@ -11,6 +11,7 @@ import ts from 'gulp-typescript'
 import { FileWatcher } from 'typescript'
 import { noopStep } from '@essex/build-utils'
 import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
+import typescript from 'typescript'
 
 const TYPESCRIPT_GLOBS = ['src/**/*.ts*', '!**/__tests__/**']
 
@@ -21,7 +22,7 @@ function createTsProject(overrides?: ts.Settings | undefined) {
 		throw new Error('tsconfig.json file must exist')
 	}
 
-	return ts.createProject(tsConfigPath, overrides)
+	return ts.createProject(tsConfigPath, { typescript, ...overrides })
 }
 
 function executeCompile(logFiles: boolean, listen: boolean): gulp.TaskFunction {
