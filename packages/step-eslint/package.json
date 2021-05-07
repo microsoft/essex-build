@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-eslint",
-	"version": "14.0.0",
+	"version": "14.0.1-0",
 	"license": "MIT",
 	"main": "src/index.ts",
 	"publishConfig": {

@@ -1,6 +1,6 @@
 {
 	"name": "@essex/shellrunner",
-	"version": "14.0.0",
+	"version": "14.0.1-0",
 	"description": "A set of utility libraries for executing shell commands",
 	"license": "MIT",
 	"main": "src/index.ts",
