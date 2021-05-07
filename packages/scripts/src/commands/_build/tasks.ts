@@ -9,7 +9,7 @@ import gulp from 'gulp'
 import { BuildCommandOptions } from './types'
 import { buildBabel } from '@essex/build-step-babel'
 import { generateTypedocsGulp } from '@essex/build-step-typedoc'
-import { compileTypescript, emitTypings } from '@essex/build-step-typescript'
+import { compile as compileTypescript } from '@essex/build-step-typescript'
 import { noopTask } from '@essex/build-utils'
 
 const cwd = process.cwd()
@@ -25,14 +25,12 @@ export function configureTasks({
 		throw new Error('tsconfig.json must exist')
 	}
 
-	const generateDocs = docs ? generateTypedocsGulp(verbose) : noopTask
-	const buildTypings = emitTypings(stripInternalTypes)
-	const compileTS = compileTypescript()
+	const generateDocs = docs ? generateTypedocsGulp(verbose) : noopTask	
+	const compileTS = compileTypescript(stripInternalTypes)
 	const compileJS = buildBabel(env)
 
-	return gulp.parallel(
+	return gulp.series(
 		generateDocs,
-		buildTypings,
 		//
 		// The primary transpilation pipeline
 		//  tsc -> babel -> bundlers

@@ -55,9 +55,9 @@ async function typedoc(options: Partial<TypeDocOptions>): Promise<void> {
 			const app = new Application()
 			app.options.addReader(new TSConfigReader())
 			app.options.addReader(new TypeDocReader())
-			app.bootstrap(options)
-			const src = app.expandInputFiles([DEFAULT_ENTRY_POINT])
+			app.bootstrap(options)			
 			const project = app.convert()
+			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 			app.generateDocs(project!, 'dist/docs')
 			resolve()
 		} catch (err) {
