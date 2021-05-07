@@ -1,13 +1,13 @@
 {
 	"name": "@essex/jest-config",
-	"version": "14.0.0",
+	"version": "15.0.0",
 	"author": "Chris Trevino <chtrevin@microsoft.com>",
 	"license": "MIT",
 	"main": "lib/index.js",
 	"typings": "lib/index.d.ts",
 	"scripts": {
 		"clean": "rimraf dist lib",
-		"build": "tsc -b"
+		"build": "tsc -b ."
 	},
 	"dependencies": {
 		"@types/jest": "^26.0.23",
@@ -15,7 +15,7 @@
 	},
 	"devDependencies": {
 		"@tsconfig/node12": "^1.0.7",
-		"@types/node": "^14.14.43",
+		"@types/node": "^14.14.44",
 		"rimraf": "^3.0.2",
 		"typescript": "^4.2.4"
 	},

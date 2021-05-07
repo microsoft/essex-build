@@ -1,13 +1,13 @@
 {
 	"name": "@essex/eslint-config",
 	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
-	"version": "14.0.0",
+	"version": "15.0.0",
 	"license": "MIT",
 	"devDependencies": {
 		"@essex/eslint-plugin": "workspace:packages/config-eslint-plugin"
 	},
 	"peerDependencies": {
-		"@essex/eslint-plugin": ">=14.0.0",
+		"@essex/eslint-plugin": ">=15.0.1",
 		"@typescript-eslint/eslint-plugin": ">= 4.4.1",
 		"@typescript-eslint/parser": ">= 4.4.1",
 		"eslint-import-resolver-node": ">= 0.3.4"
