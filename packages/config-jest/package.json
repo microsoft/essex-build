@@ -7,7 +7,7 @@
 	"typings": "lib/index.d.ts",
 	"scripts": {
 		"clean": "rimraf dist lib",
-		"build": "tsc -b"
+		"build": "echo 'building' && tsc -b"
 	},
 	"dependencies": {
 		"@types/jest": "^26.0.23",

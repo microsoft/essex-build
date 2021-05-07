@@ -9,7 +9,7 @@
 	},
 	"scripts": {
 		"clean": "rimraf dist lib",
-		"build": "tsc -b"
+		"build": "echo 'building' && tsc -b"
 	},
 	"dependencies": {
 		"@essex/tasklogger": "workspace:packages/util-tasklogger"
