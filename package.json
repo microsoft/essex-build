@@ -14,6 +14,7 @@
 		"build:all": "yarn workspaces foreach -piv --topological-dev run build",
 		"lint:all": "yarn workspaces foreach -piv run lint",
 		"test:all": "yarn workspaces foreach -piv run test",
+		"version:all": "yarn workspaces foreach --exclude @essex/alpha-build-utils --exclude '@essex-build/test-suite-*' -iv version -d",
 		"publish:all": "yarn workspaces foreach --exclude '@essex-build/test-suite-*' --exclude '@essex/alpha-build-utils' -pv npm publish --tolerate-republish --access public",
 		"unit:test": "yarn essex test",
 		"lint": "yarn essex lint --fix",
