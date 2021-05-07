@@ -2394,7 +2394,7 @@ __metadata:
     ts-node: ^9.1.1
     typescript: ^4.2.4
   peerDependencies:
-    "@essex/eslint-config": ">=15.0.1"
+    "@essex/eslint-config": ">=15.0.0"
     "@essex/jest-config": ">=15.0.0"
     "@essex/prettier-config": ">=10.0.0"
     "@typescript-eslint/eslint-plugin": ">= 4.4.1"
