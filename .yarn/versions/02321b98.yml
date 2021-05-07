@@ -1,0 +1,26 @@
+releases:
+  "@essex-build/test-suite-library": prerelease
+  "@essex-build/test-suite-webapp": prerelease
+  "@essex/babel-config": major
+  "@essex/build-step-azure": prerelease
+  "@essex/build-step-babel": prerelease
+  "@essex/build-step-clean": prerelease
+  "@essex/build-step-eslint": prerelease
+  "@essex/build-step-init": prerelease
+  "@essex/build-step-jest": prerelease
+  "@essex/build-step-lint-staged": prerelease
+  "@essex/build-step-pretty-quick": prerelease
+  "@essex/build-step-recipes": prerelease
+  "@essex/build-step-rollup": prerelease
+  "@essex/build-step-typedoc": prerelease
+  "@essex/build-step-typescript": prerelease
+  "@essex/build-step-webpack": prerelease
+  "@essex/build-step-zip": prerelease
+  "@essex/build-utils": prerelease
+  "@essex/eslint-config": prerelease
+  "@essex/eslint-plugin": major
+  "@essex/jest-config": major
+  "@essex/scripts": major
+  "@essex/shellrunner": prerelease
+  "@essex/tasklogger": prerelease
+  "@essex/webpack-config": major
