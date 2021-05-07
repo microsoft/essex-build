@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-lint-staged",
-	"version": "14.0.1-0",
+	"version": "15.0.0",
 	"license": "MIT",
 	"main": "src/index.ts",
 	"publishConfig": {
