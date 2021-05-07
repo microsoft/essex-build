@@ -8,11 +8,11 @@ import gulp from 'gulp'
 import debug from 'gulp-debug'
 import plumber from 'gulp-plumber'
 import ts from 'gulp-typescript'
-import { FileWatcher } from 'typescript'
+import merge2 from 'merge2'
+import typescript, { FileWatcher } from 'typescript'
 import { noopStep } from '@essex/build-utils'
 import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
-import typescript from 'typescript'
-import merge2 from 'merge2'
+
 
 const TYPESCRIPT_GLOBS = ['src/**/*.ts*', '!**/__tests__/**']
 
