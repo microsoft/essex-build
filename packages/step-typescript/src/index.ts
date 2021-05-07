@@ -52,13 +52,13 @@ function executeTS(
 				.pipe(gulp.dest('dist/types')),
 			task.js
 				.pipe(logFiles ? debug({ title: 'ts' }) : noopStep())
-				.pipe(gulp.dest('lib/'))
+				.pipe(gulp.dest('lib/')),
 		])
 
 		if (listen) {
 			task
 				.on('end', () => subtaskSuccess(title))
-				.on('error', (err) => {
+				.on('error', err => {
 					subtaskFail(title)
 					console.error(err)
 					throw new Error(`error encountered in ${title}`)
