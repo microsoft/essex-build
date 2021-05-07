@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
 	"scripts": {
-		"build": "echo 'building' && tsc -b",
+		"build": "tsc -b .",
 		"clean": "rimraf lib"
 	},
 	"files": [

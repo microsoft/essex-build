@@ -9,7 +9,7 @@
 	},
 	"scripts": {
 		"clean": "rimraf dist lib",
-		"build": "echo 'building' && tsc -b"
+		"build": "tsc -b ."
 	},
 	"dependencies": {
 		"@azure/storage-blob": "^12.5.0",

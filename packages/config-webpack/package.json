@@ -6,7 +6,7 @@
 	"license": "MIT",
 	"scripts": {
 		"clean": "rimraf lib",
-		"build": "echo 'building' && tsc -b"
+		"build": "tsc -b ."
 	},
 	"dependencies": {
 		"@babel/core": "^7.14.0",
