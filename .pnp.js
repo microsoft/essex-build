@@ -3640,12 +3640,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/gulp", "npm:4.0.8"],
             ["@types/gulp-debug", "npm:2.0.31"],
             ["@types/gulp-plumber", "npm:0.0.32"],
+            ["@types/merge2", "npm:1.3.0"],
             ["@types/node", "npm:14.14.44"],
             ["@types/types__node", null],
             ["gulp", "npm:4.0.2"],
             ["gulp-debug", "virtual:54378427b4c54d7bcc690e14e5560d0bd3ecc7ffe42599cb77dbc6a5915d5368c723662a77d74043d4e4dc08055a80aa01e481afdf64a00a2e71293e5cd9b9c9#npm:4.0.0"],
             ["gulp-plumber", "npm:1.2.1"],
-            ["gulp-typescript", "virtual:aca967b7f9e4bc45756c1a47151556237be2bbc20814a445d340e7faa8001e8fd5053ff631fb8ddda7b2a6e456ea26337c714c181c7b0a6354035e17d0adfa04#npm:6.0.0-alpha.1"],
+            ["gulp-typescript", "virtual:aca967b7f9e4bc45756c1a47151556237be2bbc20814a445d340e7faa8001e8fd5053ff631fb8ddda7b2a6e456ea26337c714c181c7b0a6354035e17d0adfa04#npm:5.0.1"],
+            ["merge2", "npm:1.4.1"],
             ["rimraf", "npm:3.0.2"],
             ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"]
           ],
@@ -3665,11 +3667,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/gulp", "npm:4.0.8"],
             ["@types/gulp-debug", "npm:2.0.31"],
             ["@types/gulp-plumber", "npm:0.0.32"],
+            ["@types/merge2", "npm:1.3.0"],
             ["@types/node", "npm:14.14.44"],
             ["gulp", "npm:4.0.2"],
             ["gulp-debug", "virtual:54378427b4c54d7bcc690e14e5560d0bd3ecc7ffe42599cb77dbc6a5915d5368c723662a77d74043d4e4dc08055a80aa01e481afdf64a00a2e71293e5cd9b9c9#npm:4.0.0"],
             ["gulp-plumber", "npm:1.2.1"],
-            ["gulp-typescript", "virtual:aca967b7f9e4bc45756c1a47151556237be2bbc20814a445d340e7faa8001e8fd5053ff631fb8ddda7b2a6e456ea26337c714c181c7b0a6354035e17d0adfa04#npm:6.0.0-alpha.1"],
+            ["gulp-typescript", "virtual:aca967b7f9e4bc45756c1a47151556237be2bbc20814a445d340e7faa8001e8fd5053ff631fb8ddda7b2a6e456ea26337c714c181c7b0a6354035e17d0adfa04#npm:5.0.1"],
+            ["merge2", "npm:1.4.1"],
             ["rimraf", "npm:3.0.2"],
             ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"]
           ],
@@ -5215,6 +5219,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-json5-npm-0.0.29-f63a7916bd-66e9ac0143.zip/node_modules/@types/json5/",
           "packageDependencies": [
             ["@types/json5", "npm:0.0.29"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/merge2", [
+        ["npm:1.3.0", {
+          "packageLocation": "./.yarn/cache/@types-merge2-npm-1.3.0-82d9c7838b-00d0d750ac.zip/node_modules/@types/merge2/",
+          "packageDependencies": [
+            ["@types/merge2", "npm:1.3.0"],
+            ["@types/node", "npm:14.11.4"]
           ],
           "linkType": "HARD",
         }]
@@ -11159,19 +11173,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["gulp-typescript", [
-        ["npm:6.0.0-alpha.1", {
-          "packageLocation": "./.yarn/cache/gulp-typescript-npm-6.0.0-alpha.1-98557634b8-39ee6423d2.zip/node_modules/gulp-typescript/",
+        ["npm:5.0.1", {
+          "packageLocation": "./.yarn/cache/gulp-typescript-npm-5.0.1-c7e82db52d-4ab02ee35b.zip/node_modules/gulp-typescript/",
           "packageDependencies": [
-            ["gulp-typescript", "npm:6.0.0-alpha.1"]
+            ["gulp-typescript", "npm:5.0.1"]
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:aca967b7f9e4bc45756c1a47151556237be2bbc20814a445d340e7faa8001e8fd5053ff631fb8ddda7b2a6e456ea26337c714c181c7b0a6354035e17d0adfa04#npm:6.0.0-alpha.1", {
-          "packageLocation": "./.yarn/$$virtual/gulp-typescript-virtual-ba32f28365/0/cache/gulp-typescript-npm-6.0.0-alpha.1-98557634b8-39ee6423d2.zip/node_modules/gulp-typescript/",
+        ["virtual:aca967b7f9e4bc45756c1a47151556237be2bbc20814a445d340e7faa8001e8fd5053ff631fb8ddda7b2a6e456ea26337c714c181c7b0a6354035e17d0adfa04#npm:5.0.1", {
+          "packageLocation": "./.yarn/$$virtual/gulp-typescript-virtual-546516329b/0/cache/gulp-typescript-npm-5.0.1-c7e82db52d-4ab02ee35b.zip/node_modules/gulp-typescript/",
           "packageDependencies": [
-            ["gulp-typescript", "virtual:aca967b7f9e4bc45756c1a47151556237be2bbc20814a445d340e7faa8001e8fd5053ff631fb8ddda7b2a6e456ea26337c714c181c7b0a6354035e17d0adfa04#npm:6.0.0-alpha.1"],
+            ["gulp-typescript", "virtual:aca967b7f9e4bc45756c1a47151556237be2bbc20814a445d340e7faa8001e8fd5053ff631fb8ddda7b2a6e456ea26337c714c181c7b0a6354035e17d0adfa04#npm:5.0.1"],
             ["@types/typescript", null],
-            ["ansi-colors", "npm:4.1.1"],
+            ["ansi-colors", "npm:3.2.4"],
             ["plugin-error", "npm:1.0.1"],
             ["source-map", "npm:0.7.3"],
             ["through2", "npm:3.0.2"],

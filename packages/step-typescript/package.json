@@ -17,7 +17,8 @@
 		"gulp": "^4.0.2",
 		"gulp-debug": "^4.0.0",
 		"gulp-plumber": "^1.2.1",
-		"gulp-typescript": "^6.0.0-alpha.1",
+		"gulp-typescript": "^5.0.1",
+		"merge2": "^1.4.1",
 		"typescript": "^4.2.4"
 	},
 	"devDependencies": {
@@ -25,6 +26,7 @@
 		"@types/gulp": "^4.0.8",
 		"@types/gulp-debug": "^2.0.31",
 		"@types/gulp-plumber": "^0.0.32",
+		"@types/merge2": "^1",
 		"@types/node": "^14.14.44",
 		"rimraf": "^3.0.2"
 	},

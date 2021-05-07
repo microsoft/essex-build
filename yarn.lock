@@ -2216,11 +2216,13 @@ __metadata:
     "@types/gulp": ^4.0.8
     "@types/gulp-debug": ^2.0.31
     "@types/gulp-plumber": ^0.0.32
+    "@types/merge2": ^1
     "@types/node": ^14.14.44
     gulp: ^4.0.2
     gulp-debug: ^4.0.0
     gulp-plumber: ^1.2.1
-    gulp-typescript: ^6.0.0-alpha.1
+    gulp-typescript: ^5.0.1
+    merge2: ^1.4.1
     rimraf: ^3.0.2
     typescript: ^4.2.4
   peerDependencies:
@@ -3133,6 +3135,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/merge2@npm:^1":
+  version: 1.3.0
+  resolution: "@types/merge2@npm:1.3.0"
+  dependencies:
+    "@types/node": "*"
+  checksum: 00d0d750acbf9a6dc4bd6211bcd8161eb2047cb612a286d62cb08d0ac6c5b477dee225c7ef8dfc7d10e5d69c8f2cb40fd7bd580fb7a5d523b083223747e7cad3
+  languageName: node
+  linkType: hard
+
 "@types/mime-types@npm:^2.1.0":
   version: 2.1.0
   resolution: "@types/mime-types@npm:2.1.0"
@@ -3900,7 +3911,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ansi-colors@npm:^3.0.0":
+"ansi-colors@npm:^3.0.0, ansi-colors@npm:^3.0.5":
   version: 3.2.4
   resolution: "ansi-colors@npm:3.2.4"
   checksum: 86ec4a476ae8661237c0da58c0b4c48ea57719fdd80eed00132db09ee88d69f5caa5889e13ccd07489e710bf3b9fd85123729e0660384d4373e92ef6125c1fad
@@ -7967,19 +7978,19 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"gulp-typescript@npm:^6.0.0-alpha.1":
-  version: 6.0.0-alpha.1
-  resolution: "gulp-typescript@npm:6.0.0-alpha.1"
+"gulp-typescript@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "gulp-typescript@npm:5.0.1"
   dependencies:
-    ansi-colors: ^4.1.1
+    ansi-colors: ^3.0.5
     plugin-error: ^1.0.1
     source-map: ^0.7.3
-    through2: ^3.0.1
-    vinyl: ^2.2.0
+    through2: ^3.0.0
+    vinyl: ^2.1.0
     vinyl-fs: ^3.0.3
   peerDependencies:
-    typescript: "~2.7.1 || >=2.8.0-dev || >=2.9.0-dev || ~3.0.0 || >=3.0.0-dev || >=3.1.0-dev || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.7.0-dev "
-  checksum: 39ee6423d25da5cffab8942af65973629e48af23c6fb1aa91f19a4142d8b42f50c052784c99982a4bb45c7f58aba731dad87225b599414bbb2510e9cf875de03
+    typescript: ~2.7.1 || >=2.8.0-dev || >=2.9.0-dev || ~3.0.0 || >=3.0.0-dev || >=3.1.0-dev || >= 3.2.0-dev || >= 3.3.0-dev
+  checksum: 4ab02ee35b58f559244897b2ef758c94df7de4d87a2d006adb29320a0cf87c2f3df5f4ffd97a667ccc441bee20d584932cca191d807b454244bf20e7caf6e345
   languageName: node
   linkType: hard
 
@@ -10460,7 +10471,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"merge2@npm:^1.3.0":
+"merge2@npm:^1.3.0, merge2@npm:^1.4.1":
   version: 1.4.1
   resolution: "merge2@npm:1.4.1"
   checksum: 7ad40d8b140a5ed4e621b916858410e4f0dd4ced1e5a2b675563347e70f0661d95ba6c3c8007dd3c4e242d0b8eee44559fa75bb90a146cf168debffc0cbc18f3
@@ -14028,7 +14039,7 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"through2@npm:^3.0.0, through2@npm:^3.0.1":
+"through2@npm:^3.0.0":
   version: 3.0.2
   resolution: "through2@npm:3.0.2"
   dependencies:
@@ -14807,7 +14818,7 @@ typescript@^4.2.4:
   languageName: node
   linkType: hard
 
-"vinyl@npm:^2.0.0, vinyl@npm:^2.2.0":
+"vinyl@npm:^2.0.0, vinyl@npm:^2.1.0":
   version: 2.2.1
   resolution: "vinyl@npm:2.2.1"
   dependencies:

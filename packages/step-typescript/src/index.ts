@@ -12,6 +12,7 @@ import { FileWatcher } from 'typescript'
 import { noopStep } from '@essex/build-utils'
 import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
 import typescript from 'typescript'
+import merge2 from 'merge2'
 
 const TYPESCRIPT_GLOBS = ['src/**/*.ts*', '!**/__tests__/**']
 
@@ -25,37 +26,13 @@ function createTsProject(overrides?: ts.Settings | undefined) {
 	return ts.createProject(tsConfigPath, { typescript, ...overrides })
 }
 
-function executeCompile(logFiles: boolean, listen: boolean): gulp.TaskFunction {
-	const project = createTsProject()
-	const title = 'tsc'
-	return function execute(): NodeJS.ReadWriteStream {
-		const task = gulp
-			.src(TYPESCRIPT_GLOBS, { since: gulp.lastRun(execute) })
-			.pipe(
-				plumber({
-					errorHandler: !listen,
-				}),
-			)
-			.pipe(project())
-			.pipe(logFiles ? debug({ title }) : noopStep())
-			.pipe(gulp.dest('lib'))
-
-		if (listen) {
-			task.on('end', () => subtaskSuccess(title))
-			task.on('error', () => subtaskFail(title))
-		}
-		return task
-	}
-}
-
-function executeTypeEmit(
+function executeTS(
 	stripInternal: boolean,
 	logFiles: boolean,
 	listen: boolean,
 ): gulp.TaskFunction {
 	const project = createTsProject({
 		declaration: true,
-		emitDeclarationOnly: true,
 		stripInternal,
 	})
 	const title = 'typings'
@@ -68,8 +45,15 @@ function executeTypeEmit(
 				}),
 			)
 			.pipe(project())
-			.pipe(logFiles ? debug({ title }) : noopStep())
-			.pipe(gulp.dest('dist/types'))
+
+		merge2([
+			task.dts
+				.pipe(logFiles ? debug({ title: 'typings' }) : noopStep())
+				.pipe(gulp.dest('dist/types')),
+			task.js
+				.pipe(logFiles ? debug({ title: 'ts' }) : noopStep())
+				.pipe(gulp.dest('lib/'))
+		])
 
 		if (listen) {
 			task
@@ -81,28 +65,18 @@ function executeTypeEmit(
 }
 
 /**
- * Compiles typescript from src/ to the lib/ folder
- */
-export function compileTypescript(): gulp.TaskFunction {
-	return executeCompile(false, true)
-}
-
-/**
  * Watches typescript from src/ to the lib/ folder
  */
 export function watchTypescript(stripInternalTypes: boolean): FileWatcher {
 	return gulp.watch(
 		TYPESCRIPT_GLOBS,
-		gulp.parallel(
-			executeCompile(true, false),
-			executeTypeEmit(stripInternalTypes, true, false),
-		),
+		gulp.parallel(executeTS(stripInternalTypes, true, false)),
 	)
 }
 
 /**
  * Emits typings files into dist/types
  */
-export function emitTypings(stripInternal: boolean): gulp.TaskFunction {
-	return executeTypeEmit(stripInternal, false, true)
+export function compile(stripInternal: boolean): gulp.TaskFunction {
+	return executeTS(stripInternal, !!process.env.ESSEX_DEBUG, true)
 }

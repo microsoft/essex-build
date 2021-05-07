@@ -106,7 +106,7 @@ function babelTasks(env: string, logFiles: boolean, listen: boolean) {
  * @param listen
  */
 export function buildBabel(env: string): gulp.TaskFunction {
-	return babelTasks(env, false, true)
+	return babelTasks(env, !!process.env.ESSEX_DEBUG, true)
 }
 /**
  * Watches typescript from src/ to the lib/ folder
