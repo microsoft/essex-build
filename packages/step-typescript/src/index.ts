@@ -35,7 +35,7 @@ function executeTS(
 		declaration: true,
 		stripInternal,
 	})
-	const title = 'typings'
+	const title = 'tsc'
 	return function execute(): NodeJS.ReadWriteStream {
 		const task = gulp
 			.src(TYPESCRIPT_GLOBS, { since: gulp.lastRun(execute) })
@@ -58,7 +58,11 @@ function executeTS(
 		if (listen) {
 			task
 				.on('end', () => subtaskSuccess(title))
-				.on('error', () => subtaskFail(title))
+				.on('error', (err) => {
+					subtaskFail(title)
+					console.error(err)
+					throw new Error(`error encountered in ${title}`)
+				})
 		}
 		return task
 	}

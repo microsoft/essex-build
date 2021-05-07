@@ -19,6 +19,7 @@ function createErrorHandler(title: string, listen: boolean) {
 		console.error('Babel Error', err)
 		if (listen) {
 			subtaskFail(title, err)
+			throw new Error(`babel transpile error`)
 		}
 	}
 }
