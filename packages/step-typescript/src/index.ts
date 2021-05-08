@@ -49,10 +49,10 @@ function executeTS(
 
 		merge2([
 			task.dts
-				.pipe(logFiles ? debug({ title: 'typings' }) : noopStep())
+				.pipe(logFiles ? debug({ title: 'ts:dts' }) : noopStep())
 				.pipe(gulp.dest('dist/types')),
 			task.js
-				.pipe(logFiles ? debug({ title: 'ts' }) : noopStep())
+				.pipe(logFiles ? debug({ title: 'ts:js' }) : noopStep())
 				.pipe(gulp.dest('lib/')),
 		])
 

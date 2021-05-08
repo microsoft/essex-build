@@ -2054,6 +2054,7 @@ __metadata:
     "@types/gulp-debug": ^2.0.31
     "@types/gulp-plumber": ^0.0.32
     "@types/node": ^14.14.44
+    chalk: ^4.1.1
     glob: ^7.1.7
     gulp: ^4.0.2
     rimraf: ^3.0.2

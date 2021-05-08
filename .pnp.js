@@ -3385,6 +3385,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/gulp-debug", "npm:2.0.31"],
             ["@types/gulp-plumber", "npm:0.0.32"],
             ["@types/node", "npm:14.14.44"],
+            ["chalk", "npm:4.1.1"],
             ["glob", "npm:7.1.7"],
             ["gulp", "npm:4.0.2"],
             ["rimraf", "npm:3.0.2"],

@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import data from './data.json'
+export * from './letters'
 
 export const d = data
 export function add(...nums: number[]): number {
