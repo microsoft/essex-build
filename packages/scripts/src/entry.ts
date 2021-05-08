@@ -15,7 +15,6 @@ import { existsSync } from 'fs'
 const commandDir = join(__dirname, '/commands')
 
 function establishErrorHandlers(): void {
-	const start = now()
 	gulp.on('error', () => {
 		if (!process.env.DEBUG_ESSEX_SCRIPTS) {
 			process.exit(1)
@@ -31,8 +30,6 @@ function establishErrorHandlers(): void {
 			console.log(err, 'uncaught exception')
 			process.exit(1)
 		})
-	const end = now()
-	info(chalk.green(`set up error handlers ${printPerf(start, end)}`))
 }
 
 function loadCommand(file: string): void {
