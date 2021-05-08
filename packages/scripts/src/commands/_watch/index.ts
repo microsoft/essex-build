@@ -4,7 +4,7 @@
  */
 import { Command } from 'commander'
 import { configureTasks } from './tasks'
-import { WatchCommandOptions } from './types'
+import type { WatchCommandOptions } from './types'
 import { execGulpTask } from '@essex/build-utils'
 
 export default function watch(program: Command): void {

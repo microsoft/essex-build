@@ -4,6 +4,7 @@
  */
 import { existsSync } from 'fs'
 import { join } from 'path'
+import { performance } from 'perf_hooks'
 import gulp from 'gulp'
 import debug from 'gulp-debug'
 import plumber from 'gulp-plumber'
@@ -11,8 +12,7 @@ import ts from 'gulp-typescript'
 import merge2 from 'merge2'
 import typescript, { FileWatcher } from 'typescript'
 import { noopStep } from '@essex/build-utils'
-import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
-
+import { subtaskSuccess, subtaskFail, printPerf } from '@essex/tasklogger'
 
 const TYPESCRIPT_GLOBS = ['src/**/*.ts*', '!**/__tests__/**']
 
@@ -37,6 +37,7 @@ function executeTS(
 	})
 	const title = 'tsc'
 	return function execute(): NodeJS.ReadWriteStream {
+		const start = performance.now()
 		const task = gulp
 			.src(TYPESCRIPT_GLOBS, { since: gulp.lastRun(execute) })
 			.pipe(
@@ -57,9 +58,13 @@ function executeTS(
 
 		if (listen) {
 			task
-				.on('end', () => subtaskSuccess(title))
+				.on('end', () => {
+					const end = performance.now()
+					subtaskSuccess(`${title} ${printPerf(start, end)}`)
+				})
 				.on('error', err => {
-					subtaskFail(title)
+					const end = performance.now()
+					subtaskFail(`${title} ${printPerf(start, end)}`)
 					console.error(err)
 					throw new Error(`error encountered in ${title}`)
 				})

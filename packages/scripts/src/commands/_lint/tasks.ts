@@ -2,11 +2,12 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { performance } from 'perf_hooks'
 import gulp from 'gulp'
 import { LintCommandOptions } from './types'
 import { eslint } from '@essex/build-step-eslint'
 import { prettyQuick } from '@essex/build-step-pretty-quick'
-import { resolveGulpTask, noopTask } from '@essex/build-utils'
+import { resolveGulpTask } from '@essex/build-utils'
 
 export function configureTasks(
 	{
@@ -19,27 +20,19 @@ export function configureTasks(
 	files: string[] | undefined,
 ): gulp.TaskFunction {
 	function checkCode(cb: (err?: Error) => void) {
-		eslint(fix, strict, files || ['.']).then(...resolveGulpTask('eslint', cb))
+		const start = performance.now()
+		eslint(fix, strict, files || ['.']).then(
+			...resolveGulpTask('eslint', start, cb),
+		)
 	}
 
 	function checkFormatting(cb: (err?: Error) => void) {
+		const start = performance.now()
 		const task = staged
 			? prettyQuick({ staged: true })
 			: prettyQuick({ check: !fix })
-		task.then(...resolveGulpTask('pretty-quick', cb))
+		task.then(...resolveGulpTask('pretty-quick', start, cb))
 	}
 
-	function checkDocumentation(cb: (err?: Error) => void) {
-		resolveGulpTask('docs', cb)
-	}
-
-	if (docsOnly) {
-		return gulp.series(checkDocumentation)
-	} else {
-		return gulp.parallel(
-			checkCode,
-			checkFormatting,
-			docs ? checkDocumentation : noopTask,
-		)
-	}
+	return gulp.parallel(checkCode, checkFormatting)
 }
