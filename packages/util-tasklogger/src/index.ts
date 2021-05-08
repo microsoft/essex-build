@@ -59,3 +59,7 @@ export function timestamp(): string {
 		now.getSeconds(),
 	)}`
 }
+
+export function traceFile(file: string, operation: string) {
+	info(`[${chalk.grey(timestamp())}] ${operation} ${chalk.blueBright(file)}`)
+}

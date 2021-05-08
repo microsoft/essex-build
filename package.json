@@ -8,6 +8,7 @@
 	],
 	"scripts": {
 		"preinstall": "npx only-allow yarn",
+		"postinstall": "husky install",
 		"clean:all:primary": "yarn workspaces foreach --exclude '@essex-build/test-suite-*' -piv run clean",
 		"clean:all:tests": "yarn workspaces foreach --include '@essex-build/test-suite-*' -piv run clean",
 		"clean:all": "run-s clean:all:tests clean:all:primary",
