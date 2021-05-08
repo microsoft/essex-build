@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-rollup",
-	"version": "15.0.2",
+	"version": "15.1.0",
 	"license": "MIT",
 	"main": "src/index.ts",
 	"publishConfig": {
