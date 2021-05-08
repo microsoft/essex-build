@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-typedoc",
-	"version": "15.1.1",
+	"version": "15.1.2",
 	"license": "MIT",
 	"main": "src/index.ts",
 	"publishConfig": {
