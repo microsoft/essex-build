@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-recipes",
-	"version": "15.1.0",
+	"version": "15.1.1",
 	"license": "MIT",
 	"main": "src/index.ts",
 	"publishConfig": {
