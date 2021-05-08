@@ -3,9 +3,10 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Command } from 'commander'
-import { execute } from './tasks'
 import { DeployCommandOptions } from './types'
-import { success, fail } from '@essex/tasklogger'
+import { success, fail, printPerf } from '@essex/tasklogger'
+import { now, processStart } from '../../timers'
+import { execute } from './tasks'
 
 export default function deploy(program: Command): void {
 	program
@@ -26,11 +27,11 @@ export default function deploy(program: Command): void {
 			(options: DeployCommandOptions): Promise<any> => {
 				return Promise.resolve()
 					.then(() => execute(options))
-					.then(() => success('deploy'))
+					.then(() => success(`deploy ${printPerf(processStart(), now())}`))
 					.catch(err => {
 						console.log('error in deploy', err)
 						process.exitCode = 1
-						fail('deploy')
+						fail(`deploy ${printPerf(processStart(), now())}`)
 					})
 			},
 		)

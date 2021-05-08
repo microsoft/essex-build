@@ -3,10 +3,11 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Command } from 'commander'
-import { configureTasks } from './tasks'
 import { TestCommandOptions } from './types'
 import { execGulpTask } from '@essex/build-utils'
-import { success, fail } from '@essex/tasklogger'
+import { success, fail, printPerf } from '@essex/tasklogger'
+import { processStart, now } from '../../timers'
+import { configureTasks } from './tasks'
 
 export default function unitTest(program: Command): void {
 	program
@@ -32,11 +33,11 @@ export default function unitTest(program: Command): void {
 				return Promise.resolve(true)
 					.then(() => configureTasks(options))
 					.then(job => execGulpTask(job))
-					.then(() => success('test'))
+					.then(() => success(`test ${printPerf(processStart(), now())}`))
 					.catch(err => {
 						console.log('error in test', err)
 						process.exitCode = 1
-						fail('test')
+						fail(`test ${printPerf(processStart(), now())}`)
 					})
 			},
 		)

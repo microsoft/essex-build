@@ -2,12 +2,13 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { Command } from 'commander'
-import { configureTasks } from './tasks'
-import { BuildCommandOptions } from './types'
+import type { Command } from 'commander'
+import type { BuildCommandOptions } from './types'
 import { execGulpTask } from '@essex/build-utils'
 import { success, fail, printPerf } from '@essex/tasklogger'
 import { performance } from 'perf_hooks'
+import { processStart } from '../../timers'
+import { configureTasks } from './tasks'
 
 export default function build(program: Command): void {
 	program
@@ -26,13 +27,12 @@ export default function build(program: Command): void {
 		)
 		.action(
 			(options: BuildCommandOptions): Promise<any> => {
-				const start = performance.now()
 				return Promise.resolve()
 					.then(() => configureTasks(options))
 					.then(build => execGulpTask(build))
 					.then(() => {
 						const end = performance.now()
-						success(`build ${printPerf(start, end)}`)
+						success(`build ${printPerf(processStart(), end)}`)
 					})
 					.catch(err => {
 						console.log('error in build', err)

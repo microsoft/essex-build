@@ -3,8 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Command } from 'commander'
-import { prettyQuick } from '@essex/build-step-pretty-quick'
-import { success, fail } from '@essex/tasklogger'
+import { success, fail, printPerf } from '@essex/tasklogger'
+import { now, processStart } from '../../timers'
 
 interface PrettifyCommandOptions {
 	verbose?: boolean
@@ -21,15 +21,17 @@ export default function prettify(program: Command): void {
 		.option('-v, --verbose', 'verbose output')
 		.option('--staged', 'run on staged files')
 		.action(({ staged, verbose }: PrettifyCommandOptions) => {
+			// eslint-disable-next-line @typescript-eslint/no-var-requires
+			const { prettyQuick } = require('@essex/build-step-pretty-quick')
 			return prettyQuick({
 				staged,
 				verbose,
 			})
-				.then(() => success('prettify'))
-				.catch(err => {
+				.then(() => success(`prettify ${printPerf(processStart(), now())}`))
+				.catch((err: Error) => {
 					console.log('error in prettify', err)
 					process.exitCode = 1
-					fail('s')
+					fail(`prettify ${printPerf(processStart(), now())}`)
 				})
 		})
 }

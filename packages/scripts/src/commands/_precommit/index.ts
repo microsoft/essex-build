@@ -3,8 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Command } from 'commander'
+import { success, fail, printPerf } from '@essex/tasklogger'
+import { now, processStart } from '../../timers'
 import { lintStaged } from '@essex/build-step-lint-staged'
-import { success, fail } from '@essex/tasklogger'
 
 export default function preCommit(program: Command): void {
 	program
@@ -13,11 +14,11 @@ export default function preCommit(program: Command): void {
 		.action(() => {
 			Promise.resolve()
 				.then(() => lintStaged())
-				.then(() => success('pre-commit'))
+				.then(() => success(`pre-commit ${printPerf(processStart(), now())}`))
 				.catch(err => {
 					console.log('error in precommit', err)
 					process.exitCode = 1
-					fail('pre-commit')
+					fail(`pre-commit ${printPerf(processStart(), now())}`)
 				})
 		})
 }

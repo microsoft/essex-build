@@ -4105,7 +4105,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["audit-ci", null],
             ["chalk", "npm:4.1.1"],
             ["commander", "npm:7.2.0"],
-            ["core-js", "npm:3.12.0"],
             ["crlf", "npm:1.1.1"],
             ["debug", "virtual:4b0eea214d83e6e05cbe9674d69cb7f553c930fbd95cf27b023ecb1d9ff23bce32ab3afc880c65a5b91bd3abeccea112435944b80702879b8337532cf8f5b466#npm:4.3.2"],
             ["eslint-import-resolver-node", "npm:0.3.4"],
@@ -4118,7 +4117,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.2.1"],
             ["react", null],
             ["react-dom", null],
-            ["regenerator-runtime", "npm:0.13.8"],
             ["rimraf", "npm:3.0.2"],
             ["rollup", null],
             ["shx", "npm:0.3.3"],
@@ -4199,7 +4197,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["audit-ci", null],
             ["chalk", "npm:4.1.1"],
             ["commander", "npm:7.2.0"],
-            ["core-js", "npm:3.12.0"],
             ["crlf", "npm:1.1.1"],
             ["debug", "virtual:4b0eea214d83e6e05cbe9674d69cb7f553c930fbd95cf27b023ecb1d9ff23bce32ab3afc880c65a5b91bd3abeccea112435944b80702879b8337532cf8f5b466#npm:4.3.2"],
             ["eslint-import-resolver-node", "npm:0.3.4"],
@@ -4212,7 +4209,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.2.1"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:215b566b7f0cd7c54ce57376135b3799429eb8ab081fa64cfb1ea72e8237c028255fd8f92174e2b5e264634a9d89b531db904c2c6490c79d610aef56a6b0dc74#npm:17.0.2"],
-            ["regenerator-runtime", "npm:0.13.8"],
             ["rimraf", "npm:3.0.2"],
             ["rollup", null],
             ["shx", "npm:0.3.3"],
@@ -4293,7 +4289,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["audit-ci", null],
             ["chalk", "npm:4.1.1"],
             ["commander", "npm:7.2.0"],
-            ["core-js", "npm:3.12.0"],
             ["crlf", "npm:1.1.1"],
             ["debug", "virtual:4b0eea214d83e6e05cbe9674d69cb7f553c930fbd95cf27b023ecb1d9ff23bce32ab3afc880c65a5b91bd3abeccea112435944b80702879b8337532cf8f5b466#npm:4.3.2"],
             ["eslint-import-resolver-node", "npm:0.3.4"],
@@ -4306,7 +4301,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.2.1"],
             ["react", null],
             ["react-dom", null],
-            ["regenerator-runtime", "npm:0.13.8"],
             ["rimraf", "npm:3.0.2"],
             ["rollup", null],
             ["shx", "npm:0.3.3"],
@@ -4371,7 +4365,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:14.14.44"],
             ["chalk", "npm:4.1.1"],
             ["commander", "npm:7.2.0"],
-            ["core-js", "npm:3.12.0"],
             ["crlf", "npm:1.1.1"],
             ["debug", "virtual:4b0eea214d83e6e05cbe9674d69cb7f553c930fbd95cf27b023ecb1d9ff23bce32ab3afc880c65a5b91bd3abeccea112435944b80702879b8337532cf8f5b466#npm:4.3.2"],
             ["gulp", "npm:4.0.2"],
@@ -4379,7 +4372,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gulp-prettier", "npm:3.0.0"],
             ["npm-run-all", "npm:4.1.5"],
             ["prettier", "npm:2.2.1"],
-            ["regenerator-runtime", "npm:0.13.8"],
             ["rimraf", "npm:3.0.2"],
             ["shx", "npm:0.3.3"],
             ["ts-node", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#npm:9.1.1"],
@@ -8352,15 +8344,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["copy-props", "npm:2.0.4"],
             ["each-props", "npm:1.3.2"],
             ["is-plain-object", "npm:2.0.4"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["core-js", [
-        ["npm:3.12.0", {
-          "packageLocation": "./.yarn/unplugged/core-js-npm-3.12.0-86ddce2306/node_modules/core-js/",
-          "packageDependencies": [
-            ["core-js", "npm:3.12.0"]
           ],
           "linkType": "HARD",
         }]
@@ -16100,13 +16083,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/regenerator-runtime-npm-0.13.7-41bcbe64ea-6ef567c662.zip/node_modules/regenerator-runtime/",
           "packageDependencies": [
             ["regenerator-runtime", "npm:0.13.7"]
-          ],
-          "linkType": "HARD",
-        }],
-        ["npm:0.13.8", {
-          "packageLocation": "./.yarn/cache/regenerator-runtime-npm-0.13.8-0450f887d6-20178f5753.zip/node_modules/regenerator-runtime/",
-          "packageDependencies": [
-            ["regenerator-runtime", "npm:0.13.8"]
           ],
           "linkType": "HARD",
         }]
