@@ -6,8 +6,8 @@
 import fs, { FSWatcher } from 'fs'
 import path from 'path'
 import { performance } from 'perf_hooks'
-import chalk from 'chalk'
 import { BabelFileResult, transformFile } from '@babel/core'
+import chalk from 'chalk'
 import glob from 'glob'
 import gulp from 'gulp'
 import { getCjsConfiguration, getEsmConfiguration } from '@essex/babel-config'
@@ -173,7 +173,6 @@ function createTransformTask(title: string, root: string, babelConfig: any) {
 			const targetFile = file.replace('lib', root)
 			await writeOutputFile(targetFile, result.code)
 			if (process.env.ESSEX_DEBUG) {
-				const now = new Date()
 				info(
 					`[${chalk.grey(timestamp())}] babel ${chalk.blueBright(targetFile)}`,
 				)
