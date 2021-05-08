@@ -7,10 +7,17 @@ import fs, { FSWatcher } from 'fs'
 import path from 'path'
 import { performance } from 'perf_hooks'
 import { BabelFileResult, transformFile } from '@babel/core'
+import chalk from 'chalk'
 import glob from 'glob'
 import gulp from 'gulp'
 import { getCjsConfiguration, getEsmConfiguration } from '@essex/babel-config'
-import { subtaskSuccess, subtaskFail, printPerf } from '@essex/tasklogger'
+import {
+	subtaskSuccess,
+	subtaskFail,
+	printPerf,
+	info,
+	timestamp,
+} from '@essex/tasklogger'
 
 const BABEL_GLOB = 'lib/**/*.js'
 // a cache to prevent excessive repeat stat'ing of directories
@@ -21,7 +28,7 @@ const DIRCACHE = new Set<string>()
  * @param verbose
  */
 function babelCjs(env: string): gulp.TaskFunction {
-	const root = path.join(process.cwd(), 'dist/cjs')
+	const root = 'dist/cjs'
 	return createTransformTask('babel-cjs', root, getCjsConfiguration(env))
 }
 
@@ -30,7 +37,7 @@ function babelCjs(env: string): gulp.TaskFunction {
  * @param verbose
  */
 function babelEsm(env: string): gulp.TaskFunction {
-	const root = path.join(process.cwd(), 'dist/esm')
+	const root = 'dist/esm'
 	return createTransformTask('babel-esm', root, getEsmConfiguration(env))
 }
 
@@ -163,9 +170,15 @@ function createTransformTask(title: string, root: string, babelConfig: any) {
 	async function handleFile(file: string) {
 		const result = await transformSourceFile(file, babelConfig)
 		if (result?.code) {
-			await writeOutputFile(file.replace('lib', root), result.code)
+			const targetFile = file.replace('lib', root)
+			await writeOutputFile(targetFile, result.code)
+			if (process.env.ESSEX_DEBUG) {
+				info(
+					`[${chalk.grey(timestamp())}] babel ${chalk.blueBright(targetFile)}`,
+				)
+			}
 		} else {
-			console.warn(`no babel compiler output on file ${file}`)
+			console.warn(chalk.yellow(`no babel compiler output on file ${file}`))
 		}
 	}
 }

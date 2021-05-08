@@ -47,17 +47,17 @@ function executeTS(
 			)
 			.pipe(project())
 
-		merge2([
+		const merged = merge2([
 			task.dts
-				.pipe(logFiles ? debug({ title: 'typings' }) : noopStep())
+				.pipe(logFiles ? debug({ title: 'ts:dts' }) : noopStep())
 				.pipe(gulp.dest('dist/types')),
 			task.js
-				.pipe(logFiles ? debug({ title: 'ts' }) : noopStep())
+				.pipe(logFiles ? debug({ title: 'ts:js' }) : noopStep())
 				.pipe(gulp.dest('lib/')),
 		])
 
 		if (listen) {
-			task
+			merged
 				.on('end', () => {
 					const end = performance.now()
 					subtaskSuccess(`${title} ${printPerf(start, end)}`)
@@ -69,7 +69,7 @@ function executeTS(
 					throw new Error(`error encountered in ${title}`)
 				})
 		}
-		return task
+		return merged
 	}
 }
 
