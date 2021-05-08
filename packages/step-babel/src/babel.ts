@@ -65,7 +65,6 @@ export function watchBabel(env: string): FSWatcher {
 function getSourceFiles(): Promise<string[]> {
 	return new Promise<string[]>((resolve, reject) =>
 		glob(BABEL_GLOB, (err, files) => {
-			console.log('FILES', files)
 			if (err) {
 				reject(err)
 			} else {
