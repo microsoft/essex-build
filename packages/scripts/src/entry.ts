@@ -16,7 +16,7 @@ const commandDir = join(__dirname, '/commands')
 
 function establishErrorHandlers(): void {
 	gulp.on('error', () => {
-		if (!process.env.DEBUG_ESSEX_SCRIPTS) {
+		if (!process.env.ESSEX_DEBUG) {
 			process.exit(1)
 		}
 	})
@@ -46,7 +46,9 @@ function loadCommand(file: string): void {
 			command(program)
 		}
 		const end = now()
-		info(`load command ${file} ${printPerf(start, end)}`)
+		if (process.env.ESSEX_DEBUG) {
+			info(`load command ${file} ${printPerf(start, end)}`)
+		}
 	} catch (err) {
 		console.log('error loading %s', commandPath, err)
 		throw err
@@ -90,9 +92,13 @@ async function execute() {
 	establishErrorHandlers()
 	await bootstrap()
 	const end = now()
-	info(
-		chalk.green(`essex build ready (${(end - processStart()).toFixed(2)}ms)`),
-	)
+	if (process.env.ESSEX_DEBUG) {
+		info(
+			chalk.green(
+				`essex scripts ready (${(end - processStart()).toFixed(2)}ms)`,
+			),
+		)
+	}
 	program.parse(process.argv)
 }
 execute()
