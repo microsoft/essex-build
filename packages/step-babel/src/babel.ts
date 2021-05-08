@@ -4,8 +4,8 @@
  */
 /* eslint-disable @essex/adjacent-await */
 import { BabelFileResult, transformFile } from '@babel/core'
-import fs, { FSWatcher } from 'fs'
-import path from 'path'
+import fs, { FSWatcher, Stats } from 'fs'
+import path, { resolve } from 'path'
 import glob from 'glob'
 import gulp from 'gulp'
 import { getCjsConfiguration, getEsmConfiguration } from '@essex/babel-config'
@@ -13,6 +13,8 @@ import { subtaskSuccess, subtaskFail, printPerf } from '@essex/tasklogger'
 import { performance } from 'perf_hooks'
 
 const BABEL_GLOB = 'lib/**/*.js'
+// a cache to prevent excessive repeat stat'ing of directories
+const DIRCACHE = new Set<string>()
 
 function createErrorHandler(title: string, listen: boolean) {
 	return function onError(err?: Error | undefined) {
@@ -90,14 +92,67 @@ async function transformSourceFile(
 	})
 }
 
-function writeOutputFile(file: string, content: string): void {
-	const fileDir = path.dirname(file)
-	if (!fs.existsSync(fileDir)) {
-		fs.mkdirSync(fileDir, { recursive: true })
-	}
-	fs.writeFileSync(file, content, {
-		encoding: 'utf-8',
+async function writeOutputFile(file: string, content: string): Promise<void> {
+	await ensureFilePath(file)
+	return new Promise((resolve, reject) => {
+		fs.writeFile(
+			file,
+			content,
+			{
+				encoding: 'utf-8',
+			},
+			err => {
+				if (err) {
+					reject(err)
+				} else {
+					resolve()
+				}
+			},
+		)
 	})
+}
+
+async function ensureFilePath(file: string): Promise<void> {
+	const fileDir = path.dirname(file)
+	const exists = await dirExists(fileDir)
+	if (!exists) {
+		return createDir(fileDir)
+	}
+
+	function dirExists(dir: string): Promise<boolean> {
+		return new Promise<boolean>((resolve, reject) => {
+			if (DIRCACHE.has(dir)) {
+				resolve(true)
+			} else {
+				fs.stat(dir, (err, stat) => {
+					if (err) {
+						if (err.code === 'ENOENT') {
+							resolve(false)
+						} else {
+							console.log('ERR', err.errno, err.code)
+							reject(err)
+						}
+					} else {
+						resolve(true)
+						DIRCACHE.add(dir)
+					}
+				})
+			}
+		})
+	}
+
+	function createDir(dir: string): Promise<void> {
+		return new Promise<void>((resolve, reject) => {
+			fs.mkdir(dir, { recursive: true }, err => {
+				if (err) {
+					reject(err)
+				} else {
+					DIRCACHE.add(dir)
+					resolve()
+				}
+			})
+		})
+	}
 }
 
 function createTransformTask(title: string, root: string, babelConfig: any) {
@@ -105,20 +160,22 @@ function createTransformTask(title: string, root: string, babelConfig: any) {
 		const start = performance.now()
 		try {
 			const files = await getSourceFiles()
-			for (let file of files) {
-				const result = await transformSourceFile(file, babelConfig)
-				if (result?.code) {
-					writeOutputFile(file.replace('lib', root), result.code)
-				} else {
-					console.warn(`no babel compiler output on file ${file}`)
-				}
-			}
+			await Promise.all(files.map(handleFile))
 			const end = performance.now()
 			subtaskSuccess(`${title} ${printPerf(start, end)}`)
 		} catch (err) {
 			const end = performance.now()
 			console.error('error transforming babel', err)
 			subtaskFail(`${title} ${printPerf(start, end)}`)
+		}
+	}
+
+	async function handleFile(file: string) {
+		const result = await transformSourceFile(file, babelConfig)
+		if (result?.code) {
+			await writeOutputFile(file.replace('lib', root), result.code)
+		} else {
+			console.warn(`no babel compiler output on file ${file}`)
 		}
 	}
 }
