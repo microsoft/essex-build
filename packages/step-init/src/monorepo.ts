@@ -62,6 +62,16 @@ export function initMonorepo(): Promise<number> {
 
 function configurePackageJsonForMonorepo(): Promise<number> {
 	let writeNeeded = false
+	if (!pkgJson.scripts['preinstall']) {
+		pkgJson.scripts['preinstall'] =
+			'npx only-allow yarn'
+		writeNeeded = true
+	}
+	if (!pkgJson.scripts['postinstall']) {
+		pkgJson.scripts['postinstall'] =
+			'husky install'
+		writeNeeded = true
+	}
 	if (!pkgJson.scripts['build:all']) {
 		pkgJson.scripts['build:all'] =
 			'yarn workspaces foreach -pivt --topological-dev run build'
