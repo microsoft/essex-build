@@ -14,6 +14,7 @@ import {
 	getBabelConfiguration,
 } from './configValues'
 import { log } from './log'
+import TsConfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import { validateConfiguration } from './validate'
 
 /* eslint-disable @typescript-eslint/no-var-requires */
@@ -110,6 +111,7 @@ export function configure({
 			alias: {
 				...extendedAliases,
 			},
+			plugins: [new TsConfigPathsPlugin()],
 		},
 		resolveLoader: {
 			modules: [...standardModulePaths, ...extendedResolveLoaderModules],
