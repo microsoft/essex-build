@@ -2,13 +2,13 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { performance } from 'perf_hooks'
 import type { Command } from 'commander'
+import { processStart } from '../../timers'
+import { configureTasks } from './tasks'
 import type { BuildCommandOptions } from './types'
 import { execGulpTask } from '@essex/build-utils'
 import { success, fail, printPerf } from '@essex/tasklogger'
-import { performance } from 'perf_hooks'
-import { processStart } from '../../timers'
-import { configureTasks } from './tasks'
 
 export default function build(program: Command): void {
 	program

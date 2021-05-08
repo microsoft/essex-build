@@ -3,9 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Command } from 'commander'
+import { now, processStart } from '../../timers'
 import { zip, ZipCommandOptions } from '@essex/build-step-zip'
 import { fail, printPerf, success } from '@essex/tasklogger'
-import { now, processStart } from '../../timers'
 
 export default function zipCommand(program: Command): void {
 	program

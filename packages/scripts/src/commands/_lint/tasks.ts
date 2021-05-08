@@ -2,12 +2,12 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { performance } from 'perf_hooks'
 import gulp from 'gulp'
 import { LintCommandOptions } from './types'
 import { eslint } from '@essex/build-step-eslint'
 import { prettyQuick } from '@essex/build-step-pretty-quick'
 import { resolveGulpTask } from '@essex/build-utils'
-import { performance } from 'perf_hooks'
 
 export function configureTasks(
 	{

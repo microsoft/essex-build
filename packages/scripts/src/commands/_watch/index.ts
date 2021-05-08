@@ -3,9 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Command } from 'commander'
+import { configureTasks } from './tasks'
 import type { WatchCommandOptions } from './types'
 import { execGulpTask } from '@essex/build-utils'
-import { configureTasks } from './tasks'
 
 export default function watch(program: Command): void {
 	program

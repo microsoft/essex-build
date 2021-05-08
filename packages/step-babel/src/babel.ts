@@ -3,28 +3,18 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @essex/adjacent-await */
+import fs, { FSWatcher } from 'fs'
+import path from 'path'
+import { performance } from 'perf_hooks'
 import { BabelFileResult, transformFile } from '@babel/core'
-import fs, { FSWatcher, Stats } from 'fs'
-import path, { resolve } from 'path'
 import glob from 'glob'
 import gulp from 'gulp'
 import { getCjsConfiguration, getEsmConfiguration } from '@essex/babel-config'
 import { subtaskSuccess, subtaskFail, printPerf } from '@essex/tasklogger'
-import { performance } from 'perf_hooks'
 
 const BABEL_GLOB = 'lib/**/*.js'
 // a cache to prevent excessive repeat stat'ing of directories
 const DIRCACHE = new Set<string>()
-
-function createErrorHandler(title: string, listen: boolean) {
-	return function onError(err?: Error | undefined) {
-		console.error('Babel Error', err)
-		if (listen) {
-			subtaskFail(title, err)
-			throw new Error(`babel transpile error`)
-		}
-	}
-}
 
 /**
  * Transpile ts output into babel cjs

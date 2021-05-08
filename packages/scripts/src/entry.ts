@@ -3,14 +3,13 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { processStart, now } from './timers'
-import { readdirSync } from 'fs'
+import { readdirSync, existsSync } from 'fs'
 import { join } from 'path'
+import chalk from 'chalk'
 import program from 'commander'
 import gulp from 'gulp'
+import { processStart, now } from './timers'
 import { error, info, printPerf } from '@essex/tasklogger'
-import chalk from 'chalk'
-import { existsSync } from 'fs'
 
 const commandDir = join(__dirname, '/commands')
 

@@ -4,6 +4,7 @@
  */
 import { existsSync } from 'fs'
 import { join } from 'path'
+import { performance } from 'perf_hooks'
 import gulp from 'gulp'
 import debug from 'gulp-debug'
 import plumber from 'gulp-plumber'
@@ -12,7 +13,6 @@ import merge2 from 'merge2'
 import typescript, { FileWatcher } from 'typescript'
 import { noopStep } from '@essex/build-utils'
 import { subtaskSuccess, subtaskFail, printPerf } from '@essex/tasklogger'
-import { performance } from 'perf_hooks'
 
 const TYPESCRIPT_GLOBS = ['src/**/*.ts*', '!**/__tests__/**']
 

@@ -2,10 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { fail, printPerf, success } from '@essex/tasklogger'
 import { Command } from 'commander'
 import { now, processStart } from '../../timers'
 import type { InitCommandOptions } from './execute'
+import { fail, printPerf, success } from '@essex/tasklogger'
 
 export default function init(program: Command): void {
 	program

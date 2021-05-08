@@ -3,9 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Command } from 'commander'
+import { now, processStart } from '../../timers'
 import { run, Job } from '@essex/shellrunner'
 import * as logger from '@essex/tasklogger'
-import { now, processStart } from '../../timers'
 
 export default function start(program: Command): void {
 	program

@@ -3,10 +3,10 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Command } from 'commander'
-import { DeployCommandOptions } from './types'
-import { success, fail, printPerf } from '@essex/tasklogger'
 import { now, processStart } from '../../timers'
 import { execute } from './tasks'
+import { DeployCommandOptions } from './types'
+import { success, fail, printPerf } from '@essex/tasklogger'
 
 export default function deploy(program: Command): void {
 	program

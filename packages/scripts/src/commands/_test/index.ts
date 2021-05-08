@@ -3,11 +3,11 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Command } from 'commander'
+import { processStart, now } from '../../timers'
+import { configureTasks } from './tasks'
 import { TestCommandOptions } from './types'
 import { execGulpTask } from '@essex/build-utils'
 import { success, fail, printPerf } from '@essex/tasklogger'
-import { processStart, now } from '../../timers'
-import { configureTasks } from './tasks'
 
 export default function unitTest(program: Command): void {
 	program

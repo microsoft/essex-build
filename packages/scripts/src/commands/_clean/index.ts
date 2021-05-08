@@ -3,9 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Command } from 'commander'
-import { success, fail, printPerf } from '@essex/tasklogger'
 import { now, processStart } from '../../timers'
 import { clean as cleanTask } from '@essex/build-step-clean'
+import { success, fail, printPerf } from '@essex/tasklogger'
 
 export default function clean(program: Command): void {
 	program

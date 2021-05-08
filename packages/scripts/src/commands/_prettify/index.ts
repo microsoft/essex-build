@@ -3,8 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Command } from 'commander'
-import { success, fail, printPerf } from '@essex/tasklogger'
 import { now, processStart } from '../../timers'
+import { success, fail, printPerf } from '@essex/tasklogger'
 
 interface PrettifyCommandOptions {
 	verbose?: boolean
