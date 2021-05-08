@@ -7,7 +7,7 @@
 	"types": "dist/types/index.d.ts",
 	"scripts": {
 		"clean": "essex clean",
-		"build": "essex build",
+		"build": "ESSEX_DEBUG=1 essex build",
 		"lint": "essex lint",
 		"test": "essex test",
 		"watch": "essex watch"

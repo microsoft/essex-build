@@ -51,3 +51,11 @@ export function printPerf(start: number, end: number): string {
 	const span = end - start
 	return `(${span.toFixed(2)}ms)`
 }
+
+export function timestamp(): string {
+	const now = new Date()
+	const fmt = (num: number) => num.toString().padStart(2, '0')
+	return `${fmt(now.getHours())}:${fmt(now.getMinutes())}:${fmt(
+		now.getSeconds(),
+	)}`
+}
