@@ -3,8 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Command } from 'commander'
+import { now, processStart } from '../../timers'
 import { clean as cleanTask } from '@essex/build-step-clean'
-import { success, fail } from '@essex/tasklogger'
+import { success, fail, printPerf } from '@essex/tasklogger'
 
 export default function clean(program: Command): void {
 	program
@@ -16,10 +17,10 @@ export default function clean(program: Command): void {
 			}
 			return Promise.resolve()
 				.then(() => cleanTask(files))
-				.then(() => success('clean'))
+				.then(() => success(`clean ${printPerf(processStart(), now())}`))
 				.catch(err => {
 					console.log('error in clean', err)
-					fail('clean')
+					fail(`clean ${printPerf(processStart(), now())}`)
 					process.exitCode = 1
 				})
 		})

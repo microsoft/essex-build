@@ -3,7 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Command } from 'commander'
+import { now, processStart } from '../../timers'
 import { zip, ZipCommandOptions } from '@essex/build-step-zip'
+import { fail, printPerf, success } from '@essex/tasklogger'
 
 export default function zipCommand(program: Command): void {
 	program
@@ -20,6 +22,11 @@ export default function zipCommand(program: Command): void {
 				{ cwd }: ZipCommandOptions,
 			) => {
 				const code = await zip(destination, sources, { cwd })
+				if (code === 0) {
+					success(`zip ${printPerf(processStart(), now())}`)
+				} else {
+					fail(`zip ${printPerf(processStart(), now())}`)
+				}
 				process.exit(code)
 			},
 		)
