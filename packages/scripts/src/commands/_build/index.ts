@@ -6,7 +6,8 @@ import { Command } from 'commander'
 import { configureTasks } from './tasks'
 import { BuildCommandOptions } from './types'
 import { execGulpTask } from '@essex/build-utils'
-import { success, fail } from '@essex/tasklogger'
+import { success, fail, printPerf } from '@essex/tasklogger'
+import { performance } from 'perf_hooks'
 
 export default function build(program: Command): void {
 	program
@@ -25,10 +26,14 @@ export default function build(program: Command): void {
 		)
 		.action(
 			(options: BuildCommandOptions): Promise<any> => {
+				const start = performance.now()
 				return Promise.resolve()
 					.then(() => configureTasks(options))
 					.then(build => execGulpTask(build))
-					.then(() => success('build'))
+					.then(() => {
+						const end = performance.now()
+						success(`build ${printPerf(start, end)}`)
+					})
 					.catch(err => {
 						console.log('error in build', err)
 						process.exitCode = 1

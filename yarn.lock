@@ -2045,18 +2045,17 @@ __metadata:
     "@babel/core": ^7.14.0
     "@babel/types": ^7.14.1
     "@essex/babel-config": "workspace:packages/config-babel"
-    "@essex/build-utils": "workspace:packages/util-utils"
     "@essex/tasklogger": "workspace:packages/util-tasklogger"
     "@tsconfig/node12": ^1.0.7
+    "@types/babel__core": ^7.1.14
+    "@types/glob": ^7.1.3
     "@types/gulp": ^4.0.8
     "@types/gulp-babel": ^6.1.29
     "@types/gulp-debug": ^2.0.31
     "@types/gulp-plumber": ^0.0.32
     "@types/node": ^14.14.44
+    glob: ^7.1.7
     gulp: ^4.0.2
-    gulp-babel: ^8.0.0
-    gulp-debug: ^4.0.0
-    gulp-plumber: ^1.2.1
     rimraf: ^3.0.2
     typescript: ^4.2.4
   languageName: unknown
@@ -2849,6 +2848,19 @@ __metadata:
     "@types/babel__template": "*"
     "@types/babel__traverse": "*"
   checksum: fd013086d241527c708844ff379ec5204b31dfb4e50a427bc24e77172af74041f6eab650da16edf1a20f445595052505792ec7fa1978bb5f8f2c191bfc8c767d
+  languageName: node
+  linkType: hard
+
+"@types/babel__core@npm:^7.1.14":
+  version: 7.1.14
+  resolution: "@types/babel__core@npm:7.1.14"
+  dependencies:
+    "@babel/parser": ^7.1.0
+    "@babel/types": ^7.0.0
+    "@types/babel__generator": "*"
+    "@types/babel__template": "*"
+    "@types/babel__traverse": "*"
+  checksum: e0212770e1cd520b8ad241642e9f99ef20b5c609c157ffe154c42e136c85f3c3f598ad7bfd452fda8abb304c483d6bce92de0b8ed0612f9f1c57b6c4a18da7b3
   languageName: node
   linkType: hard
 
@@ -7894,20 +7906,6 @@ fsevents@^1.2.7:
   version: 1.3.0
   resolution: "growly@npm:1.3.0"
   checksum: c87f7e8c785cac6ee60719c9d62f7d790a85dafa13d62c4667664e3a21ee771f5fd19df3f374d2f7bdf297b8f687cf70e19bb066aba4832e6f6caa5190812578
-  languageName: node
-  linkType: hard
-
-"gulp-babel@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "gulp-babel@npm:8.0.0"
-  dependencies:
-    plugin-error: ^1.0.1
-    replace-ext: ^1.0.0
-    through2: ^2.0.0
-    vinyl-sourcemaps-apply: ^0.2.0
-  peerDependencies:
-    "@babel/core": ^7.0.0
-  checksum: d4589095f5de3f9b823e119186966550a713d4aa5868e4efd094c84054e0864f336d5140fb9418d0b17d27c18224fc982be70e8ae53ad60c9c64915b080e817f
   languageName: node
   linkType: hard
 
@@ -13397,7 +13395,7 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"source-map@npm:^0.5.0, source-map@npm:^0.5.1, source-map@npm:^0.5.6":
+"source-map@npm:^0.5.0, source-map@npm:^0.5.6":
   version: 0.5.7
   resolution: "source-map@npm:0.5.7"
   checksum: 737face96577a2184a42f141607fcc2c9db5620cb8517ae8ab3924476defa138fc26b0bab31e98cbd6f19211ecbf78400b59f801ff7a0f87aa9faa79f7433e10
@@ -14806,15 +14804,6 @@ typescript@^4.2.4:
     remove-bom-buffer: ^3.0.0
     vinyl: ^2.0.0
   checksum: 372d6f0797596bb7d86a3c86029a93f08a98816a615e418d482c77a2de95de5f65f46f6b488a56994d8dcb639b16b1e680b19e41e993479ef4729fc65cc45fb4
-  languageName: node
-  linkType: hard
-
-"vinyl-sourcemaps-apply@npm:^0.2.0":
-  version: 0.2.1
-  resolution: "vinyl-sourcemaps-apply@npm:0.2.1"
-  dependencies:
-    source-map: ^0.5.1
-  checksum: c1d826acf474831a58609e0d19f0f7e907cd6f2a347a67c2879aa44e149491f0b47449bfe906e9da54f026806196b3ac92f8ae4dfe3d3a44353baab1885a03b4
   languageName: node
   linkType: hard
 

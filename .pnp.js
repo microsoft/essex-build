@@ -3376,18 +3376,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/core", "npm:7.14.0"],
             ["@babel/types", "npm:7.14.1"],
             ["@essex/babel-config", "workspace:packages/config-babel"],
-            ["@essex/build-utils", "workspace:packages/util-utils"],
             ["@essex/tasklogger", "workspace:packages/util-tasklogger"],
             ["@tsconfig/node12", "npm:1.0.7"],
+            ["@types/babel__core", "npm:7.1.14"],
+            ["@types/glob", "npm:7.1.3"],
             ["@types/gulp", "npm:4.0.8"],
             ["@types/gulp-babel", "npm:6.1.29"],
             ["@types/gulp-debug", "npm:2.0.31"],
             ["@types/gulp-plumber", "npm:0.0.32"],
             ["@types/node", "npm:14.14.44"],
+            ["glob", "npm:7.1.7"],
             ["gulp", "npm:4.0.2"],
-            ["gulp-babel", "virtual:54378427b4c54d7bcc690e14e5560d0bd3ecc7ffe42599cb77dbc6a5915d5368c723662a77d74043d4e4dc08055a80aa01e481afdf64a00a2e71293e5cd9b9c9#npm:8.0.0"],
-            ["gulp-debug", "virtual:54378427b4c54d7bcc690e14e5560d0bd3ecc7ffe42599cb77dbc6a5915d5368c723662a77d74043d4e4dc08055a80aa01e481afdf64a00a2e71293e5cd9b9c9#npm:4.0.0"],
-            ["gulp-plumber", "npm:1.2.1"],
             ["rimraf", "npm:3.0.2"],
             ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"]
           ],
@@ -3644,7 +3643,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:14.14.44"],
             ["@types/types__node", null],
             ["gulp", "npm:4.0.2"],
-            ["gulp-debug", "virtual:54378427b4c54d7bcc690e14e5560d0bd3ecc7ffe42599cb77dbc6a5915d5368c723662a77d74043d4e4dc08055a80aa01e481afdf64a00a2e71293e5cd9b9c9#npm:4.0.0"],
+            ["gulp-debug", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#npm:4.0.0"],
             ["gulp-plumber", "npm:1.2.1"],
             ["gulp-typescript", "virtual:aca967b7f9e4bc45756c1a47151556237be2bbc20814a445d340e7faa8001e8fd5053ff631fb8ddda7b2a6e456ea26337c714c181c7b0a6354035e17d0adfa04#npm:5.0.1"],
             ["merge2", "npm:1.4.1"],
@@ -3670,7 +3669,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/merge2", "npm:1.3.0"],
             ["@types/node", "npm:14.14.44"],
             ["gulp", "npm:4.0.2"],
-            ["gulp-debug", "virtual:54378427b4c54d7bcc690e14e5560d0bd3ecc7ffe42599cb77dbc6a5915d5368c723662a77d74043d4e4dc08055a80aa01e481afdf64a00a2e71293e5cd9b9c9#npm:4.0.0"],
+            ["gulp-debug", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#npm:4.0.0"],
             ["gulp-plumber", "npm:1.2.1"],
             ["gulp-typescript", "virtual:aca967b7f9e4bc45756c1a47151556237be2bbc20814a445d340e7faa8001e8fd5053ff631fb8ddda7b2a6e456ea26337c714c181c7b0a6354035e17d0adfa04#npm:5.0.1"],
             ["merge2", "npm:1.4.1"],
@@ -4111,7 +4110,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["debug", "virtual:4b0eea214d83e6e05cbe9674d69cb7f553c930fbd95cf27b023ecb1d9ff23bce32ab3afc880c65a5b91bd3abeccea112435944b80702879b8337532cf8f5b466#npm:4.3.2"],
             ["eslint-import-resolver-node", "npm:0.3.4"],
             ["gulp", "npm:4.0.2"],
-            ["gulp-debug", "virtual:54378427b4c54d7bcc690e14e5560d0bd3ecc7ffe42599cb77dbc6a5915d5368c723662a77d74043d4e4dc08055a80aa01e481afdf64a00a2e71293e5cd9b9c9#npm:4.0.0"],
+            ["gulp-debug", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#npm:4.0.0"],
             ["gulp-prettier", "npm:3.0.0"],
             ["license-to-fail", null],
             ["lint-staged", null],
@@ -4205,7 +4204,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["debug", "virtual:4b0eea214d83e6e05cbe9674d69cb7f553c930fbd95cf27b023ecb1d9ff23bce32ab3afc880c65a5b91bd3abeccea112435944b80702879b8337532cf8f5b466#npm:4.3.2"],
             ["eslint-import-resolver-node", "npm:0.3.4"],
             ["gulp", "npm:4.0.2"],
-            ["gulp-debug", "virtual:54378427b4c54d7bcc690e14e5560d0bd3ecc7ffe42599cb77dbc6a5915d5368c723662a77d74043d4e4dc08055a80aa01e481afdf64a00a2e71293e5cd9b9c9#npm:4.0.0"],
+            ["gulp-debug", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#npm:4.0.0"],
             ["gulp-prettier", "npm:3.0.0"],
             ["license-to-fail", null],
             ["lint-staged", null],
@@ -4299,7 +4298,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["debug", "virtual:4b0eea214d83e6e05cbe9674d69cb7f553c930fbd95cf27b023ecb1d9ff23bce32ab3afc880c65a5b91bd3abeccea112435944b80702879b8337532cf8f5b466#npm:4.3.2"],
             ["eslint-import-resolver-node", "npm:0.3.4"],
             ["gulp", "npm:4.0.2"],
-            ["gulp-debug", "virtual:54378427b4c54d7bcc690e14e5560d0bd3ecc7ffe42599cb77dbc6a5915d5368c723662a77d74043d4e4dc08055a80aa01e481afdf64a00a2e71293e5cd9b9c9#npm:4.0.0"],
+            ["gulp-debug", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#npm:4.0.0"],
             ["gulp-prettier", "npm:3.0.0"],
             ["license-to-fail", null],
             ["lint-staged", "npm:11.0.0"],
@@ -4376,7 +4375,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["crlf", "npm:1.1.1"],
             ["debug", "virtual:4b0eea214d83e6e05cbe9674d69cb7f553c930fbd95cf27b023ecb1d9ff23bce32ab3afc880c65a5b91bd3abeccea112435944b80702879b8337532cf8f5b466#npm:4.3.2"],
             ["gulp", "npm:4.0.2"],
-            ["gulp-debug", "virtual:54378427b4c54d7bcc690e14e5560d0bd3ecc7ffe42599cb77dbc6a5915d5368c723662a77d74043d4e4dc08055a80aa01e481afdf64a00a2e71293e5cd9b9c9#npm:4.0.0"],
+            ["gulp-debug", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#npm:4.0.0"],
             ["gulp-prettier", "npm:3.0.0"],
             ["npm-run-all", "npm:4.1.5"],
             ["prettier", "npm:2.2.1"],
@@ -4898,6 +4897,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-babel__core-npm-7.1.10-04ad501e9b-fd013086d2.zip/node_modules/@types/babel__core/",
           "packageDependencies": [
             ["@types/babel__core", "npm:7.1.10"],
+            ["@babel/parser", "npm:7.11.5"],
+            ["@babel/types", "npm:7.11.5"],
+            ["@types/babel__generator", "npm:7.6.2"],
+            ["@types/babel__template", "npm:7.0.3"],
+            ["@types/babel__traverse", "npm:7.0.15"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:7.1.14", {
+          "packageLocation": "./.yarn/cache/@types-babel__core-npm-7.1.14-a93ee22530-e0212770e1.zip/node_modules/@types/babel__core/",
+          "packageDependencies": [
+            ["@types/babel__core", "npm:7.1.14"],
             ["@babel/parser", "npm:7.11.5"],
             ["@babel/types", "npm:7.11.5"],
             ["@types/babel__generator", "npm:7.6.2"],
@@ -11066,32 +11077,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["gulp-babel", [
-        ["npm:8.0.0", {
-          "packageLocation": "./.yarn/cache/gulp-babel-npm-8.0.0-063e6d485b-d4589095f5.zip/node_modules/gulp-babel/",
-          "packageDependencies": [
-            ["gulp-babel", "npm:8.0.0"]
-          ],
-          "linkType": "SOFT",
-        }],
-        ["virtual:54378427b4c54d7bcc690e14e5560d0bd3ecc7ffe42599cb77dbc6a5915d5368c723662a77d74043d4e4dc08055a80aa01e481afdf64a00a2e71293e5cd9b9c9#npm:8.0.0", {
-          "packageLocation": "./.yarn/$$virtual/gulp-babel-virtual-2af539e3be/0/cache/gulp-babel-npm-8.0.0-063e6d485b-d4589095f5.zip/node_modules/gulp-babel/",
-          "packageDependencies": [
-            ["gulp-babel", "virtual:54378427b4c54d7bcc690e14e5560d0bd3ecc7ffe42599cb77dbc6a5915d5368c723662a77d74043d4e4dc08055a80aa01e481afdf64a00a2e71293e5cd9b9c9#npm:8.0.0"],
-            ["@babel/core", "npm:7.14.0"],
-            ["@types/babel__core", null],
-            ["plugin-error", "npm:1.0.1"],
-            ["replace-ext", "npm:1.0.1"],
-            ["through2", "npm:2.0.5"],
-            ["vinyl-sourcemaps-apply", "npm:0.2.1"]
-          ],
-          "packagePeers": [
-            "@babel/core",
-            "@types/babel__core"
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["gulp-cli", [
         ["npm:2.3.0", {
           "packageLocation": "./.yarn/cache/gulp-cli-npm-2.3.0-acd3fcd6e3-e18372ad74.zip/node_modules/gulp-cli/",
@@ -11127,10 +11112,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:54378427b4c54d7bcc690e14e5560d0bd3ecc7ffe42599cb77dbc6a5915d5368c723662a77d74043d4e4dc08055a80aa01e481afdf64a00a2e71293e5cd9b9c9#npm:4.0.0", {
-          "packageLocation": "./.yarn/$$virtual/gulp-debug-virtual-517f77a495/0/cache/gulp-debug-npm-4.0.0-e6de8ace8e-2fe4414632.zip/node_modules/gulp-debug/",
+        ["virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#npm:4.0.0", {
+          "packageLocation": "./.yarn/$$virtual/gulp-debug-virtual-6946c7605f/0/cache/gulp-debug-npm-4.0.0-e6de8ace8e-2fe4414632.zip/node_modules/gulp-debug/",
           "packageDependencies": [
-            ["gulp-debug", "virtual:54378427b4c54d7bcc690e14e5560d0bd3ecc7ffe42599cb77dbc6a5915d5368c723662a77d74043d4e4dc08055a80aa01e481afdf64a00a2e71293e5cd9b9c9#npm:4.0.0"],
+            ["gulp-debug", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#npm:4.0.0"],
             ["@types/gulp", "npm:4.0.8"],
             ["chalk", "npm:2.4.2"],
             ["fancy-log", "npm:1.3.3"],
@@ -18848,16 +18833,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["now-and-later", "npm:2.0.1"],
             ["remove-bom-buffer", "npm:3.0.0"],
             ["vinyl", "npm:2.2.1"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["vinyl-sourcemaps-apply", [
-        ["npm:0.2.1", {
-          "packageLocation": "./.yarn/cache/vinyl-sourcemaps-apply-npm-0.2.1-5e1bcaa3c3-c1d826acf4.zip/node_modules/vinyl-sourcemaps-apply/",
-          "packageDependencies": [
-            ["vinyl-sourcemaps-apply", "npm:0.2.1"],
-            ["source-map", "npm:0.5.7"]
           ],
           "linkType": "HARD",
         }]

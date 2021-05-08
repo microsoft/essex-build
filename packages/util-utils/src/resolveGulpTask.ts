@@ -2,7 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
+import { subtaskSuccess, subtaskFail, printPerf } from '@essex/tasklogger'
+import { performance } from 'perf_hooks'
 
 /**
  * Returns promise .then(...) handlers to use a promise-based task with gulp
@@ -11,15 +12,17 @@ import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
  */
 export function resolveGulpTask(
 	title: string,
+	start: number,
 	cb: (err?: Error) => void,
 ): [() => void, (err: Error) => void] {
+	const end = performance.now()
 	return [
 		() => {
-			subtaskSuccess(title)
+			subtaskSuccess(`${title} ${printPerf(start, end)}`)
 			cb()
 		},
 		err => {
-			subtaskFail(title)
+			subtaskFail(`${title} ${printPerf(start, end)}`)
 			cb(err)
 		},
 	]
