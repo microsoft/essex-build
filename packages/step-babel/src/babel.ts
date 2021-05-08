@@ -17,6 +17,7 @@ import {
 	printPerf,
 	info,
 	timestamp,
+	traceFile,
 } from '@essex/tasklogger'
 
 const BABEL_GLOB = 'lib/**/*.js'
@@ -173,9 +174,7 @@ function createTransformTask(title: string, root: string, babelConfig: any) {
 			const targetFile = file.replace('lib', root)
 			await writeOutputFile(targetFile, result.code)
 			if (process.env.ESSEX_DEBUG) {
-				info(
-					`[${chalk.grey(timestamp())}] babel ${chalk.blueBright(targetFile)}`,
-				)
+				traceFile(targetFile, 'babel')
 			}
 		} else {
 			console.warn(chalk.yellow(`no babel compiler output on file ${file}`))
