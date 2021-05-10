@@ -2,8 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { existsSync } from 'fs'
 import { join } from 'path'
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
+import TsConfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
+import { ResolvePluginInstance } from 'tsconfig-paths-webpack-plugin/lib/plugin.temp.types'
 import webpack from 'webpack'
 import { Configuration as WdsConfiguration } from 'webpack-dev-server'
 import {
@@ -28,11 +31,23 @@ const sassLoader = require.resolve('sass-loader')
 const styleLoader = require.resolve('style-loader')
 const tsLoader = require.resolve('ts-loader')
 
+function tryToDetermineIfUsesTsconfigPaths(): boolean {
+	const tsconfigJsonPath = join(process.cwd(), 'tsconfig.json')
+	if (existsSync(tsconfigJsonPath)) {
+		const tsconfig = require(tsconfigJsonPath)
+		if (tsconfig?.compilerOptions?.paths) {
+			return true
+		}
+	}
+	return false
+}
+
 export interface Configuration {
 	env?: string
 	mode?: 'development' | 'production' | 'none'
 	typecheck?: boolean
-	pnp?: boolean
+	useTsConfigPaths?: boolean
+
 	// extends
 	aliases?: (env: string, mode: string) => any
 	output?: (env: string, mode: string) => any
@@ -46,8 +61,8 @@ export interface Configuration {
 export function configure({
 	env = 'development',
 	mode = 'none',
-	pnp = false,
 	typecheck = true,
+	useTsConfigPaths = tryToDetermineIfUsesTsconfigPaths(),
 	aliases,
 	output,
 	devServer,
@@ -110,6 +125,9 @@ export function configure({
 			alias: {
 				...extendedAliases,
 			},
+			plugins: [
+				useTsConfigPaths ? new TsConfigPathsPlugin() : undefined,
+			].filter(t => !!t) as ResolvePluginInstance[],
 		},
 		resolveLoader: {
 			modules: [...standardModulePaths, ...extendedResolveLoaderModules],

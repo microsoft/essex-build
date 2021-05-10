@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { performance } from 'perf_hooks'
 import { Command } from 'commander'
-import { now, processStart } from '../../timers'
 import { execute } from './tasks'
 import { DeployCommandOptions } from './types'
 import { success, fail, printPerf } from '@essex/tasklogger'
@@ -27,11 +27,11 @@ export default function deploy(program: Command): void {
 			(options: DeployCommandOptions): Promise<any> => {
 				return Promise.resolve()
 					.then(() => execute(options))
-					.then(() => success(`deploy ${printPerf(processStart(), now())}`))
+					.then(() => success(`deploy ${printPerf(0, performance.now())}`))
 					.catch(err => {
 						console.log('error in deploy', err)
 						process.exitCode = 1
-						fail(`deploy ${printPerf(processStart(), now())}`)
+						fail(`deploy ${printPerf(0, performance.now())}`)
 					})
 			},
 		)
