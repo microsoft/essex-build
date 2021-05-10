@@ -2,10 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { performance } from 'perf_hooks'
 import { Command } from 'commander'
 import { clean as cleanTask } from '@essex/build-step-clean'
 import { success, fail, printPerf } from '@essex/tasklogger'
-import { performance } from 'perf_hooks'
 
 export default function clean(program: Command): void {
 	program

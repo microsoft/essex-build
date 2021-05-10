@@ -2,9 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { performance } from 'perf_hooks'
 import { Command } from 'commander'
 import { success, fail, printPerf } from '@essex/tasklogger'
-import { performance } from 'perf_hooks'
 
 interface PrettifyCommandOptions {
 	verbose?: boolean

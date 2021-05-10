@@ -2,10 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { performance } from 'perf_hooks'
 import { Command } from 'commander'
 import type { InitCommandOptions } from './execute'
 import { fail, printPerf, success } from '@essex/tasklogger'
-import { performance } from 'perf_hooks'
 
 export default function init(program: Command): void {
 	program

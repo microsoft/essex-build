@@ -5,11 +5,11 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { readdirSync, existsSync } from 'fs'
 import { join } from 'path'
+import { performance } from 'perf_hooks'
 import chalk from 'chalk'
 import program from 'commander'
 import gulp from 'gulp'
 import { error, info, printPerf } from '@essex/tasklogger'
-import { performance } from 'perf_hooks'
 
 const commandDir = join(__dirname, '/commands')
 

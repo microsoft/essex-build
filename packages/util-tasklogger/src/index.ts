@@ -60,6 +60,6 @@ export function timestamp(): string {
 	)}`
 }
 
-export function traceFile(file: string, operation: string) {
+export function traceFile(file: string, operation: string): void {
 	info(`[${chalk.grey(timestamp())}] ${operation} ${chalk.blueBright(file)}`)
 }

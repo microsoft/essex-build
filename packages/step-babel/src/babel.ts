@@ -15,8 +15,6 @@ import {
 	subtaskSuccess,
 	subtaskFail,
 	printPerf,
-	info,
-	timestamp,
 	traceFile,
 } from '@essex/tasklogger'
 

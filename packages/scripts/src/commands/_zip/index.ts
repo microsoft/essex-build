@@ -2,10 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { performance } from 'perf_hooks'
 import { Command } from 'commander'
 import { zip, ZipCommandOptions } from '@essex/build-step-zip'
 import { fail, printPerf, success } from '@essex/tasklogger'
-import { performance } from 'perf_hooks'
 
 export default function zipCommand(program: Command): void {
 	program
