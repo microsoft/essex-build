@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { performance } from 'perf_hooks'
 import { Command } from 'commander'
-import { now, processStart } from '../../timers'
 import { zip, ZipCommandOptions } from '@essex/build-step-zip'
 import { fail, printPerf, success } from '@essex/tasklogger'
 
@@ -23,9 +23,9 @@ export default function zipCommand(program: Command): void {
 			) => {
 				const code = await zip(destination, sources, { cwd })
 				if (code === 0) {
-					success(`zip ${printPerf(processStart(), now())}`)
+					success(`zip ${printPerf(0, performance.now())}`)
 				} else {
-					fail(`zip ${printPerf(processStart(), now())}`)
+					fail(`zip ${printPerf(0, performance.now())}`)
 				}
 				process.exit(code)
 			},

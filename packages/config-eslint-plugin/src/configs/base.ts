@@ -227,6 +227,8 @@ const essexRules: any = {
 	'no-plusplus': 'off',
 	'react/prop-types': 'off',
 	'import/order': ['warn', { alphabetize: { order: 'asc' } }],
+	// Conflicts with tsconfig paths settingss
+	'import/no-unresolved': 'off',
 	'@typescript-eslint/interface-name-prefix': 'off',
 }
 
