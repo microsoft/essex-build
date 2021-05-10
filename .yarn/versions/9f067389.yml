@@ -1,0 +1,9 @@
+releases:
+  "@essex-build/test-suite-library": patch
+  "@essex-build/test-suite-webapp": patch
+  "@essex/build-step-eslint": patch
+  "@essex/build-step-webpack": minor
+  "@essex/eslint-config": patch
+  "@essex/eslint-plugin": patch
+  "@essex/scripts": minor
+  "@essex/webpack-config": minor
