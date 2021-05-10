@@ -8,8 +8,8 @@ import { join } from 'path'
 import chalk from 'chalk'
 import program from 'commander'
 import gulp from 'gulp'
-import { processStart, now } from './timers'
 import { error, info, printPerf } from '@essex/tasklogger'
+import { performance } from 'perf_hooks'
 
 const commandDir = join(__dirname, '/commands')
 
@@ -32,7 +32,7 @@ function establishErrorHandlers(): void {
 }
 
 function loadCommand(file: string): void {
-	const start = now()
+	const start = performance.now()
 	const commandPath = join(commandDir, file)
 	if (!existsSync(commandPath)) {
 		throw new Error(`command not found: ${commandPath}`)
@@ -44,7 +44,7 @@ function loadCommand(file: string): void {
 		} else {
 			command(program)
 		}
-		const end = now()
+		const end = performance.now()
 		if (process.env.ESSEX_DEBUG) {
 			info(`load command ${file} ${printPerf(start, end)}`)
 		}
@@ -90,13 +90,9 @@ async function bootstrap() {
 async function execute() {
 	establishErrorHandlers()
 	await bootstrap()
-	const end = now()
+	const end = performance.now()
 	if (process.env.ESSEX_DEBUG) {
-		info(
-			chalk.green(
-				`essex scripts ready (${(end - processStart()).toFixed(2)}ms)`,
-			),
-		)
+		info(chalk.green(`essex scripts ready (${(end - 0).toFixed(2)}ms)`))
 	}
 	program.parse(process.argv)
 }

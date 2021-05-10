@@ -3,9 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Command } from 'commander'
-import { now, processStart } from '../../timers'
 import { run, Job } from '@essex/shellrunner'
 import * as logger from '@essex/tasklogger'
+import { performance } from 'perf_hooks'
 
 export default function start(program: Command): void {
 	program
@@ -21,11 +21,11 @@ export default function start(program: Command): void {
 					process.exitCode = code
 					if (code === 0) {
 						logger.success(
-							`git is clean ${logger.printPerf(processStart(), now())}`,
+							`git is clean ${logger.printPerf(0, performance.now())}`,
 						)
 					} else {
 						logger.fail(
-							`git is clean ${logger.printPerf(processStart(), now())}`,
+							`git is clean ${logger.printPerf(0, performance.now())}`,
 						)
 					}
 				})

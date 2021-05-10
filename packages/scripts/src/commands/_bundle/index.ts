@@ -3,11 +3,11 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Command } from 'commander'
-import { now, processStart } from '../../timers'
 import { configureTasks } from './tasks'
 import type { BundleCommandOptions } from './types'
 import { execGulpTask } from '@essex/build-utils'
 import { success, fail, printPerf } from '@essex/tasklogger'
+import { performance } from 'perf_hooks'
 
 export default function build(program: Command): void {
 	program
@@ -36,11 +36,11 @@ export default function build(program: Command): void {
 			return Promise.resolve()
 				.then(() => configureTasks(options))
 				.then(build => execGulpTask(build))
-				.then(() => success(`bundle ${printPerf(processStart(), now())}`))
+				.then(() => success(`bundle ${printPerf(0, performance.now())}`))
 				.catch(err => {
 					console.log('error in bundle', err)
 					process.exitCode = 1
-					fail(`bundle ${printPerf(processStart(), now())}`)
+					fail(`bundle ${printPerf(0, performance.now())}`)
 				})
 		})
 }

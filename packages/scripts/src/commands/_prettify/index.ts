@@ -3,8 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Command } from 'commander'
-import { now, processStart } from '../../timers'
 import { success, fail, printPerf } from '@essex/tasklogger'
+import { performance } from 'perf_hooks'
 
 interface PrettifyCommandOptions {
 	verbose?: boolean
@@ -27,11 +27,11 @@ export default function prettify(program: Command): void {
 				staged,
 				verbose,
 			})
-				.then(() => success(`prettify ${printPerf(processStart(), now())}`))
+				.then(() => success(`prettify ${printPerf(0, performance.now())}`))
 				.catch((err: Error) => {
 					console.log('error in prettify', err)
 					process.exitCode = 1
-					fail(`prettify ${printPerf(processStart(), now())}`)
+					fail(`prettify ${printPerf(0, performance.now())}`)
 				})
 		})
 }
