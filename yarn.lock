@@ -1960,6 +1960,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^4.22.1
     "@typescript-eslint/parser": ^4.22.1
     eslint-import-resolver-node: ^0.3.4
+    npm-run-all: ^4.1.5
   languageName: unknown
   linkType: soft
 
@@ -2252,12 +2253,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/build-step-zip@workspace:packages/step-zip"
   dependencies:
+    "@essex/tasklogger": "workspace:packages/util-tasklogger"
     "@tsconfig/node12": ^1.0.7
     "@types/archiver": ^5.1.0
     "@types/glob": ^7.1.3
     "@types/node": ^14.14.44
     archiver: ^5.3.0
+    chalk: ^4.1.1
     glob: ^7.1.7
+    human-format: ^0.11.0
     rimraf: ^3.0.2
     typescript: ^4.2.4
   languageName: unknown
@@ -8358,6 +8362,13 @@ fsevents@^1.2.7:
     jsprim: ^1.2.2
     sshpk: ^1.7.0
   checksum: d28227eed37cb0dae0e76c46b2a5e611c678808433e5642238f17dba7f2c9c8f8d1646122d57ec1a110ecc7e8b9f5b7aa0462f1e2a5fa3b41f2fca5a69af7edf
+  languageName: node
+  linkType: hard
+
+"human-format@npm:^0.11.0":
+  version: 0.11.0
+  resolution: "human-format@npm:0.11.0"
+  checksum: a3ce90ab12ab0451364f44f79d4208633f8e142438b635e06b984c9622a41cca5a9177cea3e72e92da409683ab428dff42b5f9e74e5abd644bfcb52e47cdde22
   languageName: node
   linkType: hard
 

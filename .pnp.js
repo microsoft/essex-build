@@ -3280,7 +3280,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/jest", "npm:26.0.23"],
             ["@typescript-eslint/eslint-plugin", "virtual:04634ac6be101f21c9f62e3dd0c2d609954aa83a27d90480365c1606853fee68918a86ffd783a6f6cf5f838ce81ba2b6ec2e520f999c782b5854c13adbc64e75#npm:4.22.1"],
             ["@typescript-eslint/parser", "virtual:04634ac6be101f21c9f62e3dd0c2d609954aa83a27d90480365c1606853fee68918a86ffd783a6f6cf5f838ce81ba2b6ec2e520f999c782b5854c13adbc64e75#npm:4.22.1"],
-            ["eslint-import-resolver-node", "npm:0.3.4"]
+            ["eslint-import-resolver-node", "npm:0.3.4"],
+            ["npm-run-all", "npm:4.1.5"]
           ],
           "linkType": "SOFT",
         }]
@@ -3705,12 +3706,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/step-zip/",
           "packageDependencies": [
             ["@essex/build-step-zip", "workspace:packages/step-zip"],
+            ["@essex/tasklogger", "workspace:packages/util-tasklogger"],
             ["@tsconfig/node12", "npm:1.0.7"],
             ["@types/archiver", "npm:5.1.0"],
             ["@types/glob", "npm:7.1.3"],
             ["@types/node", "npm:14.14.44"],
             ["archiver", "npm:5.3.0"],
+            ["chalk", "npm:4.1.1"],
             ["glob", "npm:7.1.7"],
+            ["human-format", "npm:0.11.0"],
             ["rimraf", "npm:3.0.2"],
             ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"]
           ],
@@ -11571,6 +11575,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["assert-plus", "npm:1.0.0"],
             ["jsprim", "npm:1.4.1"],
             ["sshpk", "npm:1.16.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["human-format", [
+        ["npm:0.11.0", {
+          "packageLocation": "./.yarn/cache/human-format-npm-0.11.0-fdd3bf07a8-a3ce90ab12.zip/node_modules/human-format/",
+          "packageDependencies": [
+            ["human-format", "npm:0.11.0"]
           ],
           "linkType": "HARD",
         }]
