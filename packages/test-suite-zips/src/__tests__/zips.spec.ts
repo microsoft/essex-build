@@ -1,16 +1,22 @@
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
 import fs from 'fs'
 import path from 'path'
-// eslint-disable-next-line no-var-requires
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const jszip = require('jszip')
 
 describe('zipped archives', () => {
 	it('can unpack a flat star glob', async () => {
 		const entries = await readZip('data.zip')
+		expect(entries.length).toBeGreaterThan(0)
 		assertZipIs(entries, 'x.json', 'y.json', 'z.json', 'foo/')
 	})
 
 	it('can unpack a recursive star glob', async () => {
 		const entries = await readZip('data2.zip')
+		expect(entries.length).toBeGreaterThan(0)
 		assertZipIs(
 			entries,
 			'x.json',
@@ -25,6 +31,7 @@ describe('zipped archives', () => {
 
 	it('can unpack multiple specs', async () => {
 		const entries = await readZip('data3.zip')
+		expect(entries.length).toBeGreaterThan(0)
 		assertZipIs(
 			entries,
 			'x.json',
@@ -37,6 +44,7 @@ describe('zipped archives', () => {
 
 	it('can work without a base path', async () => {
 		const entries = await readZip('data4.zip')
+		expect(entries.length).toBeGreaterThan(0)
 		assertZipIs(
 			entries,
 			'data/x.json',
@@ -49,6 +57,7 @@ describe('zipped archives', () => {
 
 	it('can unpack a folder', async () => {
 		const entries = await readZip('data5.zip')
+		expect(entries.length).toBeGreaterThan(0)
 		assertZipIs(entries, 'foo/derp.json', 'foo/bar/herp.json')
 	})
 })

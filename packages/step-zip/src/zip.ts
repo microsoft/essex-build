@@ -5,10 +5,10 @@
 import { promises as fs, createWriteStream } from 'fs'
 import path from 'path'
 import archiver from 'archiver'
-import glob from 'glob'
 import chalk from 'chalk'
+import glob from 'glob'
 import { error, info, traceFile } from '@essex/tasklogger'
-
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const format = require('human-format')
 
 export interface ZipCommandOptions {
