@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { promises as fs, createWriteStream } from 'fs'
+import { promises as fs, createWriteStream, existsSync, mkdirSync } from 'fs'
 import path from 'path'
 import archiver from 'archiver'
 import chalk from 'chalk'
@@ -20,6 +20,11 @@ export async function zip(
 	sources: string[],
 	{ baseDir }: ZipCommandOptions,
 ): Promise<number> {
+	const outputDir = path.dirname(destination)
+	if (!existsSync(outputDir)) {
+		info('creating output folder', outputDir)
+		mkdirSync(outputDir, { recursive: true })
+	}
 	const fileEntries = await getFileEntries(sources, baseDir)
 	info(
 		`archiving ${chalk.green(destination)} from base dir ${chalk.blueBright(

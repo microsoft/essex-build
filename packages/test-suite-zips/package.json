@@ -7,7 +7,8 @@
 	"types": "dist/types/index.d.ts",
 	"scripts": {
 		"clean": "essex clean",
-		"build": "run-p 'zip_data:*'",
+		"build": "run-s 'zip_data:*'",
+		"zips:build": "yarn build",
 		"test": "essex test",
 		"zip_data:1": "essex zip --baseDir data dist/data.zip '*'",
 		"zip_data:2": "essex zip --baseDir data dist/data2.zip '**/*'",
