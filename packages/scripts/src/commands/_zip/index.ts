@@ -11,17 +11,17 @@ export default function zipCommand(program: Command): void {
 	program
 		.command('zip <destination> <sources...>')
 		.option(
-			'--cwd <cwd>',
-			'Specify working directory (default=.)',
+			'--baseDir <dir>>',
+			'Specify input paths base directory (default=.)',
 			process.cwd(),
 		)
 		.action(
 			async (
 				destination: string,
 				sources: string[],
-				{ cwd }: ZipCommandOptions,
+				{ baseDir }: ZipCommandOptions,
 			) => {
-				const code = await zip(destination, sources, { cwd })
+				const code = await zip(destination, sources, { baseDir })
 				if (code === 0) {
 					success(`zip ${printPerf(0, performance.now())}`)
 				} else {

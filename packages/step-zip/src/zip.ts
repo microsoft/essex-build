@@ -2,48 +2,70 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { promises as fs, createWriteStream } from 'fs'
+import { promises as fs, createWriteStream, existsSync, mkdirSync } from 'fs'
 import path from 'path'
 import archiver from 'archiver'
+import chalk from 'chalk'
 import glob from 'glob'
+import { error, info, traceFile } from '@essex/tasklogger'
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const format = require('human-format')
 
 export interface ZipCommandOptions {
-	cwd: string
+	baseDir: string
 }
 
 export async function zip(
 	destination: string,
 	sources: string[],
-	{ cwd }: ZipCommandOptions,
+	{ baseDir }: ZipCommandOptions,
 ): Promise<number> {
-	const workingDirectory = path.resolve(cwd)
-	const destinationPath = path.join(workingDirectory, destination)
-
-	const fileEntries = await getFileEntries(sources, workingDirectory)
-	await archive(destinationPath, fileEntries)
+	const outputDir = path.dirname(destination)
+	if (!existsSync(outputDir)) {
+		info('creating output folder', outputDir)
+		mkdirSync(outputDir, { recursive: true })
+	}
+	const fileEntries = await getFileEntries(sources, baseDir)
+	info(
+		`archiving ${chalk.green(destination)} from base dir ${chalk.blueBright(
+			baseDir,
+		)} and sources ${sources.map(s => chalk.blueBright(s)).join(', ')}`,
+	)
+	fileEntries.forEach(e => traceFile(e, 'zip'))
+	await archive(destination, fileEntries, baseDir)
 	return 0
 }
 
 async function getFileEntries(
 	sources: string[],
-	workingDirectory: string,
+	baseDir: string,
 ): Promise<string[]> {
 	const result: string[] = []
 	for (const source of sources) {
-		const sourcePath = path.join(workingDirectory, source)
-		if (source.indexOf('*') >= 0) {
-			result.push(...(await getGlobSource(sourcePath)))
-		} else {
-			result.push(...(await getSourceFiles(sourcePath)))
+		const sourcePath = path.join(baseDir, source)
+		const foundFiles =
+			source.indexOf('*') >= 0
+				? // handle globs
+				  await getGlobSource(sourcePath)
+				: // handle files
+				  await getSourceFiles(sourcePath)
+
+		if (process.env.ESSEX_DEBUG) {
+			foundFiles.forEach(f => traceFile(f, `expand ${source}`))
 		}
+		result.push(...foundFiles)
 	}
-	return result.map(absFilePath => path.relative(workingDirectory, absFilePath))
+	return result.map(file => path.relative(baseDir, file))
 }
 
 function getGlobSource(source: string): Promise<string[]> {
+	if (process.env.ESSEX_DEBUG) {
+		info('handle source glob: ' + source)
+	}
 	return new Promise<string[]>((resolve, reject) => {
 		glob(source, (err, files) => {
 			if (err) {
+				error('glob error', error)
 				reject(err)
 			} else {
 				resolve(files)
@@ -53,6 +75,9 @@ function getGlobSource(source: string): Promise<string[]> {
 }
 
 async function getSourceFiles(source: string): Promise<string[]> {
+	if (process.env.ESSEX_DEBUG) {
+		info('handle source file: ' + source)
+	}
 	const stats = await fs.stat(source)
 
 	if (stats.isDirectory()) {
@@ -95,6 +120,7 @@ async function walkDir(directory: string): Promise<string[]> {
 async function archive(
 	destination: string,
 	fileEntries: string[],
+	cwd: string,
 ): Promise<void> {
 	return new Promise((resolve, reject) => {
 		const output = createWriteStream(destination)
@@ -102,7 +128,12 @@ async function archive(
 
 		output.on('close', () => {
 			console.log(
-				`Archive complete. Total bytes of ${destination}: ${archive.pointer()}`,
+				`archive complete - ${chalk.green(destination)} ${chalk.grey(
+					format(archive.pointer() * 1000, {
+						scale: 'binary',
+						unit: 'B',
+					}),
+				)}`,
 			)
 			resolve()
 		})
@@ -112,7 +143,7 @@ async function archive(
 		archive.pipe(output)
 
 		for (const entry of fileEntries) {
-			archive.file(entry, {
+			archive.file(path.join(cwd, entry), {
 				name: entry,
 			})
 		}

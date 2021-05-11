@@ -21,7 +21,7 @@
 		"lint": "yarn essex lint --fix",
 		"prettify": "essex prettify",
 		"git_is_clean": "yarn essex git-is-clean",
-		"ci": "run-s build:all lint:all test:all lint unit:test git_is_clean"
+		"ci": "run-s build:all lint:all test:all unit:test git_is_clean"
 	},
 	"devDependencies": {
 		"@essex/babel-config": "workspace:packages/config-babel",

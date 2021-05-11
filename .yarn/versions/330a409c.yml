@@ -1,0 +1,6 @@
+releases:
+  "@essex-build/test-suite-library": patch
+  "@essex-build/test-suite-webapp": patch
+  "@essex-build/test-suite-zips": patch
+  "@essex/build-step-zip": major
+  "@essex/scripts": major
