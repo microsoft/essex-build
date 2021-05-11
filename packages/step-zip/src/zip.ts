@@ -8,34 +8,36 @@ import archiver from 'archiver'
 import glob from 'glob'
 import chalk from 'chalk'
 import { error, info, traceFile } from '@essex/tasklogger'
+
 const format = require('human-format')
+
 export interface ZipCommandOptions {
-	cwd: string
+	baseDir: string
 }
 
 export async function zip(
 	destination: string,
 	sources: string[],
-	{ cwd }: ZipCommandOptions,
+	{ baseDir }: ZipCommandOptions,
 ): Promise<number> {
-	const fileEntries = await getFileEntries(sources, cwd)
+	const fileEntries = await getFileEntries(sources, baseDir)
 	info(
-		`archiving ${chalk.green(destination)} from base path ${chalk.blueBright(
-			cwd,
+		`archiving ${chalk.green(destination)} from base dir ${chalk.blueBright(
+			baseDir,
 		)} and sources ${sources.map(s => chalk.blueBright(s)).join(', ')}`,
 	)
 	fileEntries.forEach(e => traceFile(e, 'zip'))
-	await archive(destination, fileEntries, cwd)
+	await archive(destination, fileEntries, baseDir)
 	return 0
 }
 
 async function getFileEntries(
 	sources: string[],
-	cwd: string,
+	baseDir: string,
 ): Promise<string[]> {
 	const result: string[] = []
 	for (const source of sources) {
-		const sourcePath = path.join(cwd, source)
+		const sourcePath = path.join(baseDir, source)
 		const foundFiles =
 			source.indexOf('*') >= 0
 				? // handle globs
@@ -48,7 +50,7 @@ async function getFileEntries(
 		}
 		result.push(...foundFiles)
 	}
-	return result.map(file => path.relative(cwd, file))
+	return result.map(file => path.relative(baseDir, file))
 }
 
 function getGlobSource(source: string): Promise<string[]> {

@@ -11,11 +11,11 @@
 		"lint": "essex lint",
 		"test": "essex test && zip_test",
 		"watch": "essex watch",
-		"zip_data:1": "essex zip --cwd data dist/data.zip '*'",
-		"zip_data:2": "essex zip --cwd data dist/data2.zip '**/*'",
-		"zip_data:3": "essex zip --cwd data dist/data3.zip '*.json' foo",
+		"zip_data:1": "essex zip --baseDir data dist/data.zip '*'",
+		"zip_data:2": "essex zip --baseDir data dist/data2.zip '**/*'",
+		"zip_data:3": "essex zip --baseDir data dist/data3.zip '*.json' foo",
 		"zip_data:4": "essex zip dist/data4.zip data",
-		"zip_data:5": "essex zip --cwd data dist/data5.zip foo",
+		"zip_data:5": "essex zip --baseDir data dist/data5.zip foo",
 		"zip_test": "run-s 'zip_data:*'"
 	},
 	"devDependencies": {
