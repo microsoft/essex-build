@@ -2276,10 +2276,12 @@ __metadata:
     "@types/archiver": ^5.1.0
     "@types/glob": ^7.1.3
     "@types/node": ^14.14.44
+    "@types/progress": ^2
     archiver: ^5.3.0
     chalk: ^4.1.1
     glob: ^7.1.7
     human-format: ^0.11.0
+    progress: ^2.0.3
     rimraf: ^3.0.2
     typescript: ^4.2.4
   languageName: unknown
@@ -3248,6 +3250,15 @@ __metadata:
   version: 2.1.1
   resolution: "@types/prettier@npm:2.1.1"
   checksum: 3671bedc845a0e61bb8eb698746e1f6d1201ac784f95c536cd653c1406a51c0e9c338ecbbc73f1b5fd5fe0b0af98edf7e85428810357d959355ab46b3a63ebe6
+  languageName: node
+  linkType: hard
+
+"@types/progress@npm:^2":
+  version: 2.0.3
+  resolution: "@types/progress@npm:2.0.3"
+  dependencies:
+    "@types/node": "*"
+  checksum: b221d95b40f8fade9a512b04a064571b2b35b3d4928e4d583f10bacf083d55c1400f87b5e260bd40abb74ed6b9cd4b7cea21cc8227bc219ef3f98490e511089f
   languageName: node
   linkType: hard
 
