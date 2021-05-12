@@ -31,7 +31,11 @@ export async function zip(
 			baseDir,
 		)} and sources ${sources.map(s => chalk.blueBright(s)).join(', ')}`,
 	)
-	fileEntries.forEach(e => traceFile(e, 'zip'))
+
+	info(`including ${fileEntries.length} files`)
+	if (process.env.ESSEX_DEBUG) {
+		fileEntries.forEach(e => traceFile(e, 'zip'))
+	}
 	await archive(destination, fileEntries, baseDir)
 	return 0
 }
@@ -129,7 +133,7 @@ async function archive(
 		output.on('close', () => {
 			console.log(
 				`archive complete - ${chalk.green(destination)} ${chalk.grey(
-					format(archive.pointer() * 1000, {
+					format(archive.pointer(), {
 						scale: 'binary',
 						unit: 'B',
 					}),
