@@ -7,6 +7,7 @@ import path from 'path'
 import archiver from 'archiver'
 import chalk from 'chalk'
 import glob from 'glob'
+import ProgressBar from 'progress'
 import { error, info, traceFile } from '@essex/tasklogger'
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const format = require('human-format')
@@ -31,7 +32,11 @@ export async function zip(
 			baseDir,
 		)} and sources ${sources.map(s => chalk.blueBright(s)).join(', ')}`,
 	)
-	fileEntries.forEach(e => traceFile(e, 'zip'))
+
+	info(`including ${fileEntries.length} files`)
+	if (process.env.ESSEX_DEBUG) {
+		fileEntries.forEach(e => traceFile(e, 'zip'))
+	}
 	await archive(destination, fileEntries, baseDir)
 	return 0
 }
@@ -122,6 +127,12 @@ async function archive(
 	fileEntries: string[],
 	cwd: string,
 ): Promise<void> {
+	const bar = new ProgressBar(':percent :bar', {
+		total: fileEntries.length,
+		width: 80,
+		complete: '=',
+		incomplete: '-',
+	})
 	return new Promise((resolve, reject) => {
 		const output = createWriteStream(destination)
 		const archive = archiver('zip')
@@ -129,7 +140,7 @@ async function archive(
 		output.on('close', () => {
 			console.log(
 				`archive complete - ${chalk.green(destination)} ${chalk.grey(
-					format(archive.pointer() * 1000, {
+					format(archive.pointer(), {
 						scale: 'binary',
 						unit: 'B',
 					}),
@@ -146,8 +157,10 @@ async function archive(
 			archive.file(path.join(cwd, entry), {
 				name: entry,
 			})
+			bar.tick()
 		}
 
+		info('finalizing archive')
 		archive.finalize()
 	})
 }

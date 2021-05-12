@@ -3736,10 +3736,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/archiver", "npm:5.1.0"],
             ["@types/glob", "npm:7.1.3"],
             ["@types/node", "npm:14.14.44"],
+            ["@types/progress", "npm:2.0.3"],
             ["archiver", "npm:5.3.0"],
             ["chalk", "npm:4.1.1"],
             ["glob", "npm:7.1.7"],
             ["human-format", "npm:0.11.0"],
+            ["progress", "npm:2.0.3"],
             ["rimraf", "npm:3.0.2"],
             ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"]
           ],
@@ -5353,6 +5355,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-prettier-npm-2.1.1-d2f890c19b-3671bedc84.zip/node_modules/@types/prettier/",
           "packageDependencies": [
             ["@types/prettier", "npm:2.1.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/progress", [
+        ["npm:2.0.3", {
+          "packageLocation": "./.yarn/cache/@types-progress-npm-2.0.3-8223f090c8-b221d95b40.zip/node_modules/@types/progress/",
+          "packageDependencies": [
+            ["@types/progress", "npm:2.0.3"],
+            ["@types/node", "npm:14.11.4"]
           ],
           "linkType": "HARD",
         }]
