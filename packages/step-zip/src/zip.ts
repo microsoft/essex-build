@@ -148,6 +148,9 @@ async function archive(
 			)
 			resolve()
 		})
+		archive.on('entry', () => {
+			bar.tick()
+		})
 
 		archive.on('warning', reject)
 		archive.on('error', reject)
@@ -157,7 +160,6 @@ async function archive(
 			archive.file(path.join(cwd, entry), {
 				name: entry,
 			})
-			bar.tick()
 		}
 
 		info('finalizing archive')
