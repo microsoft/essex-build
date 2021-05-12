@@ -8,6 +8,8 @@ import archiver from 'archiver'
 import chalk from 'chalk'
 import glob from 'glob'
 import { error, info, traceFile } from '@essex/tasklogger'
+import progress from 'progress'
+import ProgressBar from 'progress'
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const format = require('human-format')
 
@@ -126,6 +128,12 @@ async function archive(
 	fileEntries: string[],
 	cwd: string,
 ): Promise<void> {
+	const bar = new ProgressBar(':percent :bar', {
+		total: fileEntries.length,
+		width: 80,
+		complete: '=',
+		incomplete: '-',
+	})
 	return new Promise((resolve, reject) => {
 		const output = createWriteStream(destination)
 		const archive = archiver('zip')
@@ -150,8 +158,10 @@ async function archive(
 			archive.file(path.join(cwd, entry), {
 				name: entry,
 			})
+			bar.tick()
 		}
 
+		info('finalizing archive')
 		archive.finalize()
 	})
 }
