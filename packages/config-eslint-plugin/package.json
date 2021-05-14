@@ -19,7 +19,7 @@
 		"@typescript-eslint/parser": "^4.22.1",
 		"babel-eslint": "^10.1.0",
 		"confusing-browser-globals": "^1.0.10",
-		"eslint": "^7.25.0",
+		"eslint": "^7.26.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-import-resolver-node": "^0.3.4",
 		"eslint-plugin-header": "^3.1.1",
