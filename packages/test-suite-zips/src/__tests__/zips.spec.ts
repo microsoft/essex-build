@@ -11,7 +11,7 @@ describe('zipped archives', () => {
 	it('can unpack a flat star glob', async () => {
 		const entries = await readZip('data.zip')
 		expect(entries.length).toBeGreaterThan(0)
-		assertZipIs(entries, 'x.json', 'y.json', 'z.json', 'foo/')
+		assertZipIs(entries, 'x.json', 'y.json', 'z.json')
 	})
 
 	it('can unpack a recursive star glob', async () => {
@@ -22,10 +22,11 @@ describe('zipped archives', () => {
 			'x.json',
 			'y.json',
 			'z.json',
-			'foo/',
 			'foo/derp.json',
-			'foo/bar/',
 			'foo/bar/herp.json',
+			'bar/linked_data/a',
+			'bar/linked_data/b',
+			'bar/linked_data/c',
 		)
 	})
 
@@ -52,6 +53,10 @@ describe('zipped archives', () => {
 			'data/z.json',
 			'data/foo/derp.json',
 			'data/foo/bar/herp.json',
+			'data/bar/.gitignore',
+			'data/bar/linked_data/a',
+			'data/bar/linked_data/b',
+			'data/bar/linked_data/c',
 		)
 	})
 
