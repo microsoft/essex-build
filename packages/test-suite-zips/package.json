@@ -6,15 +6,18 @@
 	"module": "dist/esm/index.js",
 	"types": "dist/types/index.d.ts",
 	"scripts": {
-		"clean": "essex clean",
-		"build": "run-s 'zip_data:*'",
+		"clean": "essex clean data/bar/linked_data dist",
+		"build": "run-s link_external_data zip_all",
 		"zips:build": "yarn build",
 		"test": "essex test",
+		"link_external_data": "shx ln -s ../../../../__tests__/linked_data data/bar/linked_data",
+		"zip_all": "run-p 'zip_data:*'",
 		"zip_data:1": "essex zip --baseDir data dist/data.zip '*'",
 		"zip_data:2": "essex zip --baseDir data dist/data2.zip '**/*'",
 		"zip_data:3": "essex zip --baseDir data dist/data3.zip '*.json' foo",
 		"zip_data:4": "essex zip dist/data4.zip data",
-		"zip_data:5": "essex zip --baseDir data dist/data5.zip foo"
+		"zip_data:5": "essex zip --baseDir data dist/data5.zip foo",
+		"zip_data:6": "essex zip dist/data6.zip data"
 	},
 	"devDependencies": {
 		"@essex/babel-config": "workspace:packages/config-babel",
@@ -27,6 +30,7 @@
 		"@typescript-eslint/parser": "^4.22.1",
 		"eslint-import-resolver-node": "^0.3.4",
 		"jszip": "^3.6.0",
-		"npm-run-all": "^4.1.5"
+		"npm-run-all": "^4.1.5",
+		"shx": "^0.3.3"
 	}
 }

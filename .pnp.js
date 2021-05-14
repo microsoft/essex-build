@@ -3325,7 +3325,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/parser", "virtual:04634ac6be101f21c9f62e3dd0c2d609954aa83a27d90480365c1606853fee68918a86ffd783a6f6cf5f838ce81ba2b6ec2e520f999c782b5854c13adbc64e75#npm:4.22.1"],
             ["eslint-import-resolver-node", "npm:0.3.4"],
             ["jszip", "npm:3.6.0"],
-            ["npm-run-all", "npm:4.1.5"]
+            ["npm-run-all", "npm:4.1.5"],
+            ["shx", "npm:0.3.3"]
           ],
           "linkType": "SOFT",
         }]

@@ -133,7 +133,7 @@ async function archive(
 		complete: '=',
 		incomplete: '-',
 	})
-	return new Promise((resolve, reject) => {
+	return new Promise(async (resolve, reject) => {
 		const output = createWriteStream(destination)
 		const archive = archiver('zip')
 
@@ -157,9 +157,13 @@ async function archive(
 		archive.pipe(output)
 
 		for (const entry of fileEntries) {
-			archive.file(path.join(cwd, entry), {
-				name: entry,
-			})
+			const entryPath = path.join(cwd, entry)
+			const stat = await fs.stat(entryPath)
+			if (!stat.isSymbolicLink() && !stat.isDirectory() && stat.isFile()) {
+				archive.file(entryPath, {
+					name: entry,
+				})
+			}
 		}
 
 		info('finalizing archive')
