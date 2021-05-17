@@ -70,7 +70,7 @@ function getGlobSource(source: string): Promise<string[]> {
 		info('handle source glob: ' + source)
 	}
 	return new Promise<string[]>((resolve, reject) => {
-		glob(source, (err, files) => {
+		glob(source, { dot: true }, (err, files) => {
 			if (err) {
 				error('glob error', error)
 				reject(err)
