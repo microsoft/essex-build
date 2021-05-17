@@ -24,6 +24,7 @@ describe('zipped archives', () => {
 			'z.json',
 			'foo/derp.json',
 			'foo/bar/herp.json',
+			'bar/.gitignore',
 			'bar/linked_data/a',
 			'bar/linked_data/b',
 			'bar/linked_data/c',
