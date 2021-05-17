@@ -54,11 +54,13 @@ async function getFileEntries(
 				  await getGlobSource(sourcePath)
 				: // handle files
 				  await getSourceFiles(sourcePath)
+		const isIncluded = await Promise.all(foundFiles.map(isZippable))
+		const filteredFiles = foundFiles.filter((_t, i) => isIncluded[i])
 
 		if (process.env.ESSEX_DEBUG) {
-			foundFiles.forEach(f => traceFile(f, `expand ${source}`))
+			filteredFiles.forEach(f => traceFile(f, `expand ${source}`))
 		}
-		result.push(...foundFiles)
+		result.push(...filteredFiles)
 	}
 	return result.map(file => path.relative(baseDir, file))
 }
@@ -158,15 +160,17 @@ async function archive(
 
 		for (const entry of fileEntries) {
 			const entryPath = path.join(cwd, entry)
-			const stat = await fs.stat(entryPath)
-			if (!stat.isSymbolicLink() && !stat.isDirectory() && stat.isFile()) {
-				archive.file(entryPath, {
-					name: entry,
-				})
-			}
+			archive.file(entryPath, {
+				name: entry,
+			})
 		}
 
 		info('finalizing archive')
 		archive.finalize()
 	})
+}
+
+async function isZippable(file: string): Promise<boolean> {
+	const stat = await fs.stat(file)
+	return !stat.isSymbolicLink() && !stat.isDirectory() && stat.isFile()
 }
