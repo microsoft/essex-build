@@ -3,11 +3,11 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { performance } from 'perf_hooks'
+import { execGulpTask } from '@essex/build-utils'
+import { success, fail, printPerf } from '@essex/tasklogger'
 import { Command } from 'commander'
 import { configureTasks } from './tasks'
 import { TestCommandOptions } from './types'
-import { execGulpTask } from '@essex/build-utils'
-import { success, fail, printPerf } from '@essex/tasklogger'
 
 export default function unitTest(program: Command): void {
 	program
@@ -28,17 +28,15 @@ export default function unitTest(program: Command): void {
 			'--coverageThreshold',
 			'a JSON string with which will be used to configure minimum threshold enforcement for coverage results',
 		)
-		.action(
-			(options: TestCommandOptions): Promise<any> => {
-				return Promise.resolve(true)
-					.then(() => configureTasks(options))
-					.then(job => execGulpTask(job))
-					.then(() => success(`test ${printPerf(0, performance.now())}`))
-					.catch(err => {
-						console.log('error in test', err)
-						process.exitCode = 1
-						fail(`test ${printPerf(0, performance.now())}`)
-					})
-			},
-		)
+		.action((options: TestCommandOptions): Promise<any> => {
+			return Promise.resolve(true)
+				.then(() => configureTasks(options))
+				.then(job => execGulpTask(job))
+				.then(() => success(`test ${printPerf(0, performance.now())}`))
+				.catch(err => {
+					console.log('error in test', err)
+					process.exitCode = 1
+					fail(`test ${printPerf(0, performance.now())}`)
+				})
+		})
 }

@@ -4,11 +4,11 @@
  */
 import { promises as fs, createWriteStream, existsSync, mkdirSync } from 'fs'
 import path from 'path'
+import { error, info, traceFile } from '@essex/tasklogger'
 import archiver from 'archiver'
 import chalk from 'chalk'
 import glob from 'glob'
 import ProgressBar from 'progress'
-import { error, info, traceFile } from '@essex/tasklogger'
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const format = require('human-format')
 

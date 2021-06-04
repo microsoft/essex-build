@@ -3,9 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { performance } from 'perf_hooks'
-import { Command } from 'commander'
 import { run, Job } from '@essex/shellrunner'
 import * as logger from '@essex/tasklogger'
+import { Command } from 'commander'
 
 export default function start(program: Command): void {
 	program

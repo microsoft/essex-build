@@ -3,9 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @essex/adjacent-await */
+import { gulpify, wrapPromiseTask } from '@essex/build-utils'
 import { ESLint } from 'eslint'
 import { getConfigFile, getIgnorePath } from './config'
-import { gulpify } from '@essex/build-utils'
 
 export async function eslint(
 	fix: boolean,
@@ -47,4 +47,4 @@ export async function eslint(
 	}
 }
 
-export const eslintGulp = gulpify('eslint', eslint)
+export const eslintGulp = gulpify(wrapPromiseTask('eslint', false, eslint))

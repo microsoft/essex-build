@@ -4,7 +4,7 @@
  */
 import { existsSync } from 'fs'
 import { join } from 'path'
-import { gulpify, filterShellCode } from '@essex/build-utils'
+import { wrapPromiseTask, filterShellCode, gulpify } from '@essex/build-utils'
 import { run } from '@essex/shellrunner'
 
 const cwd = process.cwd()
@@ -21,4 +21,6 @@ export function rollupBuild(): Promise<void> {
 	}
 }
 
-export const rollupBuildGulp = gulpify('rollup', rollupBuild)
+export const rollupBuildGulp = gulpify(
+	wrapPromiseTask('rollup', false, rollupBuild),
+)

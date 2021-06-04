@@ -4,10 +4,10 @@
  */
 import { existsSync } from 'fs'
 import { join } from 'path'
+import { configure } from '@essex/webpack-config'
 import { Configuration } from 'webpack'
 import { Configuration as WdsConfiguration } from 'webpack-dev-server'
 import { WebpackCompilerOptions } from './types'
-import { configure } from '@essex/webpack-config'
 
 const webpackConfigFile = join(process.cwd(), 'webpack.config.js')
 

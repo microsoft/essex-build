@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { DeployCommandOptions, DeployType } from './types'
 import { deployBlob } from '@essex/build-step-azure'
+import { DeployCommandOptions, DeployType } from './types'
 
 export function execute(options: DeployCommandOptions): Promise<void> {
 	if (!options.type) {

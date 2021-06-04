@@ -3,11 +3,11 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { performance } from 'perf_hooks'
+import { execGulpTask } from '@essex/build-utils'
+import { success, fail, printPerf } from '@essex/tasklogger'
 import type { Command } from 'commander'
 import { configureTasks } from './tasks'
 import type { BuildCommandOptions } from './types'
-import { execGulpTask } from '@essex/build-utils'
-import { success, fail, printPerf } from '@essex/tasklogger'
 
 export default function build(program: Command): void {
 	program
@@ -24,20 +24,18 @@ export default function build(program: Command): void {
 			'--stripInternalTypes',
 			'strip out internal types from typings declarations',
 		)
-		.action(
-			(options: BuildCommandOptions): Promise<any> => {
-				return Promise.resolve()
-					.then(() => configureTasks(options))
-					.then(build => execGulpTask(build))
-					.then(() => {
-						const end = performance.now()
-						success(`build ${printPerf(0, end)}`)
-					})
-					.catch(err => {
-						console.log('error in build', err)
-						process.exitCode = 1
-						fail('build')
-					})
-			},
-		)
+		.action((options: BuildCommandOptions): Promise<any> => {
+			return Promise.resolve()
+				.then(() => configureTasks(options))
+				.then(build => execGulpTask(build))
+				.then(() => {
+					const end = performance.now()
+					success(`build ${printPerf(0, end)}`)
+				})
+				.catch(err => {
+					console.log('error in build', err)
+					process.exitCode = 1
+					fail('build')
+				})
+		})
 }
