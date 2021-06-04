@@ -3617,9 +3617,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/babel__core", "npm:7.1.14"],
             ["@types/glob", "npm:7.1.3"],
             ["@types/gulp", "npm:4.0.8"],
-            ["@types/gulp-babel", "npm:6.1.29"],
-            ["@types/gulp-debug", "npm:2.0.31"],
-            ["@types/gulp-plumber", "npm:0.0.32"],
             ["@types/node", "npm:14.17.2"],
             ["chalk", "npm:4.1.1"],
             ["glob", "npm:7.1.7"],
@@ -3875,9 +3872,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tsconfig/node12", "npm:1.0.7"],
             ["@types/glob", "npm:7.1.3"],
             ["@types/gulp", "npm:4.0.8"],
-            ["@types/gulp-debug", "npm:2.0.31"],
-            ["@types/gulp-plumber", "npm:0.0.32"],
-            ["@types/merge2", "npm:1.3.0"],
             ["@types/node", "npm:14.17.2"],
             ["@types/types__node", null],
             ["glob", "npm:7.1.7"],
@@ -3901,9 +3895,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tsconfig/node12", "npm:1.0.7"],
             ["@types/glob", "npm:7.1.3"],
             ["@types/gulp", "npm:4.0.8"],
-            ["@types/gulp-debug", "npm:2.0.31"],
-            ["@types/gulp-plumber", "npm:0.0.32"],
-            ["@types/merge2", "npm:1.3.0"],
             ["@types/node", "npm:14.17.2"],
             ["glob", "npm:7.1.7"],
             ["gulp", "npm:4.0.2"],
@@ -5452,16 +5443,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["@types/gulp-plumber", [
-        ["npm:0.0.32", {
-          "packageLocation": "./.yarn/cache/@types-gulp-plumber-npm-0.0.32-2fd1dcd3f1-f160230427.zip/node_modules/@types/gulp-plumber/",
-          "packageDependencies": [
-            ["@types/gulp-plumber", "npm:0.0.32"],
-            ["@types/node", "npm:14.11.4"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["@types/html-minifier-terser", [
         ["npm:5.1.1", {
           "packageLocation": "./.yarn/cache/@types-html-minifier-terser-npm-5.1.1-682990a5a3-1e750b93e1.zip/node_modules/@types/html-minifier-terser/",
@@ -5542,16 +5523,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-json5-npm-0.0.29-f63a7916bd-66e9ac0143.zip/node_modules/@types/json5/",
           "packageDependencies": [
             ["@types/json5", "npm:0.0.29"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["@types/merge2", [
-        ["npm:1.3.0", {
-          "packageLocation": "./.yarn/cache/@types-merge2-npm-1.3.0-82d9c7838b-00d0d750ac.zip/node_modules/@types/merge2/",
-          "packageDependencies": [
-            ["@types/merge2", "npm:1.3.0"],
-            ["@types/node", "npm:14.11.4"]
           ],
           "linkType": "HARD",
         }]
