@@ -3611,6 +3611,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/core", "npm:7.14.3"],
             ["@babel/types", "npm:7.14.4"],
             ["@essex/babel-config", "workspace:packages/config-babel"],
+            ["@essex/build-utils", "workspace:packages/util-utils"],
             ["@essex/tasklogger", "workspace:packages/util-tasklogger"],
             ["@tsconfig/node12", "npm:1.0.7"],
             ["@types/babel__core", "npm:7.1.14"],

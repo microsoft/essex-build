@@ -7,7 +7,7 @@ import { existsSync } from 'fs'
 import { join } from 'path'
 import gulp from 'gulp'
 import { BundleCommandOptions } from './types'
-import { rollupBuild } from '@essex/build-step-rollup'
+import { rollupBuildGulp as rollupBuild } from '@essex/build-step-rollup'
 import { webpackBuildGulp } from '@essex/build-step-webpack'
 import { noopTask } from '@essex/build-utils'
 

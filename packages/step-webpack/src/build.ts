@@ -5,7 +5,7 @@
 import webpack from 'webpack'
 import { getConfig } from './getConfig'
 import { WebpackCompilerOptions } from './types'
-import { gulpify } from '@essex/build-utils'
+import { wrapPromiseTask, gulpify } from '@essex/build-utils'
 import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
 
 export function webpackBuild(opts: WebpackCompilerOptions): Promise<void> {
@@ -38,4 +38,6 @@ export function webpackBuild(opts: WebpackCompilerOptions): Promise<void> {
 	}
 }
 
-export const webpackBuildGulp = gulpify('webpack', webpackBuild)
+export const webpackBuildGulp = gulpify(
+	wrapPromiseTask('webpack', false, webpackBuild),
+)

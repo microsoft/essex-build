@@ -2197,6 +2197,7 @@ __metadata:
     "@babel/core": ^7.14.3
     "@babel/types": ^7.14.4
     "@essex/babel-config": "workspace:packages/config-babel"
+    "@essex/build-utils": "workspace:packages/util-utils"
     "@essex/tasklogger": "workspace:packages/util-tasklogger"
     "@tsconfig/node12": ^1.0.7
     "@types/babel__core": ^7.1.14
@@ -2427,7 +2428,7 @@ __metadata:
     "@essex/tasklogger": "workspace:packages/util-tasklogger"
     "@tsconfig/node12": ^1.0.7
     "@types/gulp": ^4.0.8
-    "@types/node": ^14.17.2
+    "@types/node": 14
     "@types/through2": ^2.0.36
     gulp: ^4.0.2
     rimraf: ^3.0.2
@@ -3401,7 +3402,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^14.17.2":
+"@types/node@npm:14, @types/node@npm:^14.17.2":
   version: 14.17.2
   resolution: "@types/node@npm:14.17.2"
   checksum: 7a2e90989ce2948d3cdfc1d15fb5f0439ea53971d81a466ad049922bb23ef38252f6639271ae5899670ab93d48ed62542ad687767e45ffa6fe902ce59f518e5b

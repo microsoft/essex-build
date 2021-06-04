@@ -5,7 +5,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { runCLI } from '@jest/core'
 import debug from 'debug'
-import { gulpify } from '@essex/build-utils'
+import { gulpify, wrapPromiseTask } from '@essex/build-utils'
 import { getJestConfiguration } from '@essex/jest-config'
 
 const log = debug('essex:jest')
@@ -60,4 +60,4 @@ export function jest({
 	}
 }
 
-export const jestGulp = gulpify('jest', jest)
+export const jestGulp = gulpify(wrapPromiseTask('jest', false, jest))

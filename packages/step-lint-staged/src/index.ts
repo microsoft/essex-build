@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { configureJob } from './configure'
-import { filterShellCode, gulpify } from '@essex/build-utils'
+import { filterShellCode, gulpify, wrapPromiseTask } from '@essex/build-utils'
 import { run } from '@essex/shellrunner'
 
 export function lintStaged(): Promise<void> {
@@ -11,4 +11,6 @@ export function lintStaged(): Promise<void> {
 	return run(job).then(filterShellCode)
 }
 
-export const lintStagedGulp = gulpify('lint-staged', lintStaged)
+export const lintStagedGulp = gulpify(
+	wrapPromiseTask('lint-staged', false, lintStaged),
+)
