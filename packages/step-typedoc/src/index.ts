@@ -4,13 +4,13 @@
  */
 import { existsSync } from 'fs'
 import { join } from 'path'
+import { gulpify, wrapPromiseTask } from '@essex/build-utils'
 import {
 	Application,
 	TSConfigReader,
 	TypeDocReader,
 	TypeDocOptions,
 } from 'typedoc'
-import { gulpify } from '@essex/build-utils'
 
 const packageJsonPath = join(process.cwd(), 'package.json')
 const readmePath = join(process.cwd(), 'README.md')
@@ -43,7 +43,9 @@ export function generateTypedocs(verbose: boolean): Promise<void> {
 	}
 }
 
-export const generateTypedocsGulp = gulpify('typedocs', generateTypedocs)
+export const generateTypedocsGulp = gulpify(
+	wrapPromiseTask('typedocs', false, generateTypedocs),
+)
 
 /**
  * Generate TypeDoc documentation
@@ -55,7 +57,7 @@ async function typedoc(options: Partial<TypeDocOptions>): Promise<void> {
 			const app = new Application()
 			app.options.addReader(new TSConfigReader())
 			app.options.addReader(new TypeDocReader())
-			app.bootstrap(options)			
+			app.bootstrap(options)
 			const project = app.convert()
 			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 			app.generateDocs(project!, 'dist/docs')
