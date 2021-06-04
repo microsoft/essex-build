@@ -1,3 +1,7 @@
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
 import { load } from 'tsconfig'
 import ts from 'typescript'
 
@@ -14,7 +18,6 @@ export async function loadTSConfig(): Promise<any> {
 }
 
 export function parseTSConfig(config: any): ts.CompilerOptions {
-	1
 	const result = ts.parseJsonConfigFileContent(
 		config,
 		BASIC_HOST,

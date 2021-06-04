@@ -5,12 +5,12 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { existsSync } from 'fs'
 import { join } from 'path'
-import gulp from 'gulp'
-import { BuildCommandOptions } from './types'
 import { buildBabel } from '@essex/build-step-babel'
 import { generateTypedocsGulp } from '@essex/build-step-typedoc'
 import { compile as compileTypescript } from '@essex/build-step-typescript'
 import { noopTask } from '@essex/build-utils'
+import gulp from 'gulp'
+import { BuildCommandOptions } from './types'
 
 const cwd = process.cwd()
 const tsConfigPath = join(cwd, 'tsconfig.json')
@@ -25,7 +25,7 @@ export function configureTasks({
 		throw new Error('tsconfig.json must exist')
 	}
 
-	const generateDocs = docs ? generateTypedocsGulp(verbose) : noopTask	
+	const generateDocs = docs ? generateTypedocsGulp(verbose) : noopTask
 	const compileTS = compileTypescript(stripInternalTypes)
 	const compileJS = buildBabel(env)
 

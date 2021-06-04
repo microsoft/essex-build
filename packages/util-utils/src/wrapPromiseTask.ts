@@ -1,5 +1,9 @@
-import { printPerf, subtaskFail, subtaskSuccess } from '@essex/tasklogger'
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
 import { performance } from 'perf_hooks'
+import { printPerf, subtaskFail, subtaskSuccess } from '@essex/tasklogger'
 
 export function wrapPromiseTask(
 	title: string,

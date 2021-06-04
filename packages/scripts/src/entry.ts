@@ -6,10 +6,10 @@
 import { readdirSync, existsSync } from 'fs'
 import { join } from 'path'
 import { performance } from 'perf_hooks'
+import { error, info, printPerf } from '@essex/tasklogger'
 import chalk from 'chalk'
 import program from 'commander'
 import gulp from 'gulp'
-import { error, info, printPerf } from '@essex/tasklogger'
 
 const commandDir = join(__dirname, '/commands')
 

@@ -3,17 +3,17 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { performance } from 'perf_hooks'
-import gulp from 'gulp'
-import { FileWatcher } from 'typescript'
 import {
 	subtaskSuccess,
 	subtaskFail,
 	printPerf,
 	traceFile,
 } from '@essex/tasklogger'
+import gulp from 'gulp'
+import { FileWatcher } from 'typescript'
 import { compile as compileTS } from './compile'
-import { getSourceFiles } from './getSourceFiles'
 import { loadTSConfig, parseTSConfig } from './config'
+import { getSourceFiles } from './getSourceFiles'
 
 const TYPESCRIPT_GLOBS = ['src/**/*.ts*', '!**/__tests__/**']
 
@@ -35,7 +35,7 @@ function getBuildTask(
 			}
 			const options = parseTSConfig(config)
 			// transpile task
-			let result = compileTS(sourceFiles, options)
+			const result = compileTS(sourceFiles, options)
 			// emit types to dist/ folder; no emit expected
 			compileTS(sourceFiles, {
 				...options,
@@ -45,7 +45,7 @@ function getBuildTask(
 				outDir: 'dist/types',
 			})
 			const end = performance.now()
-			if (result == 0) {
+			if (result === 0) {
 				subtaskSuccess(`${title} ${printPerf(start, end)}`)
 			} else {
 				throw new Error(`tsc did not emit anything`)

@@ -3,10 +3,10 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { runCLI } from '@jest/core'
-import debug from 'debug'
 import { gulpify, wrapPromiseTask } from '@essex/build-utils'
 import { getJestConfiguration } from '@essex/jest-config'
+import { runCLI } from '@jest/core'
+import debug from 'debug'
 
 const log = debug('essex:jest')
 

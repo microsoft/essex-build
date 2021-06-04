@@ -2,11 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { wrapPromiseTask, gulpify } from '@essex/build-utils'
+import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
 import webpack from 'webpack'
 import { getConfig } from './getConfig'
 import { WebpackCompilerOptions } from './types'
-import { wrapPromiseTask, gulpify } from '@essex/build-utils'
-import { subtaskSuccess, subtaskFail } from '@essex/tasklogger'
 
 export function webpackBuild(opts: WebpackCompilerOptions): Promise<void> {
 	try {

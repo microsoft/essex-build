@@ -4,8 +4,8 @@
  */
 /* eslint-disable @essex/adjacent-await */
 import { FSWatcher } from 'fs'
-import gulp from 'gulp'
 import { getCjsConfiguration, getEsmConfiguration } from '@essex/babel-config'
+import gulp from 'gulp'
 import { BABEL_GLOB, createTransformTask } from './transform'
 
 /**

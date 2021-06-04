@@ -2,11 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import gulp from 'gulp'
-import { LintCommandOptions } from './types'
 import { eslintGulp as eslint } from '@essex/build-step-eslint'
 import { prettyQuickGulp as prettyQuick } from '@essex/build-step-pretty-quick'
-import { gulpify, wrapPromiseTask } from '@essex/build-utils'
+import gulp from 'gulp'
+import { LintCommandOptions } from './types'
 
 export function configureTasks(
 	{ fix = false, staged = false, strict = false }: LintCommandOptions,

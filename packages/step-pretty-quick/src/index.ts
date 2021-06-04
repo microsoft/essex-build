@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import chalk from 'chalk'
 import { gulpify, wrapPromiseTask } from '@essex/build-utils'
+import chalk from 'chalk'
 
 /* eslint-disable-next-line @typescript-eslint/no-var-requires */
 const pq = require('pretty-quick').default

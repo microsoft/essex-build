@@ -3,11 +3,11 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { performance } from 'perf_hooks'
+import { execGulpTask } from '@essex/build-utils'
+import { success, fail, printPerf } from '@essex/tasklogger'
 import { Command } from 'commander'
 import { configureTasks } from './tasks'
 import type { BundleCommandOptions } from './types'
-import { execGulpTask } from '@essex/build-utils'
-import { success, fail, printPerf } from '@essex/tasklogger'
 
 export default function build(program: Command): void {
 	program

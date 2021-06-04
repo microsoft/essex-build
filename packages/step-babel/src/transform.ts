@@ -1,10 +1,14 @@
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
 import fs from 'fs'
 import path from 'path'
-import glob from 'glob'
 import { BabelFileResult, transformFile } from '@babel/core'
 import { wrapPromiseTask } from '@essex/build-utils'
 import { traceFile } from '@essex/tasklogger'
 import chalk from 'chalk'
+import glob from 'glob'
 
 // a cache to prevent excessive repeat stat'ing of directories
 const DIRCACHE = new Set<string>()
@@ -105,7 +109,7 @@ export function createTransformTask(
 	root: string,
 	babelConfig: any,
 	swallowErrors: boolean,
-) {
+): () => Promise<void> {
 	return wrapPromiseTask(title, swallowErrors, async () => {
 		const files = await getSourceFiles()
 		await Promise.all(files.map(handleFile))
