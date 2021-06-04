@@ -3,12 +3,17 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { performance } from 'perf_hooks'
+import {
+	subtaskSuccess,
+	subtaskFail,
+	printPerf,
+	traceFile,
+} from '@essex/tasklogger'
 import gulp from 'gulp'
 import { FileWatcher } from 'typescript'
-import { subtaskSuccess, subtaskFail, printPerf } from '@essex/tasklogger'
 import { compile as compileTS } from './compile'
-import { getSourceFiles } from './getSourceFiles'
 import { loadTSConfig, parseTSConfig } from './config'
+import { getSourceFiles } from './getSourceFiles'
 
 const TYPESCRIPT_GLOBS = ['src/**/*.ts*', '!**/__tests__/**']
 
@@ -25,9 +30,12 @@ function getBuildTask(
 				getSourceFiles(),
 				loadTSConfig(),
 			])
+			if (logFiles) {
+				sourceFiles.forEach(file => traceFile(file, title))
+			}
 			const options = parseTSConfig(config)
 			// transpile task
-			let result = compileTS(sourceFiles, options)
+			const result = compileTS(sourceFiles, options)
 			// emit types to dist/ folder; no emit expected
 			compileTS(sourceFiles, {
 				...options,
