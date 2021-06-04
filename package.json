@@ -31,14 +31,14 @@
 		"@essex/prettier-config": "workspace:packages/config-prettier",
 		"@essex/scripts": "workspace:packages/scripts",
 		"@types/jest": "^26.0.23",
-		"@typescript-eslint/eslint-plugin": "^4.22.1",
-		"@typescript-eslint/parser": "^4.22.1",
+		"@typescript-eslint/eslint-plugin": "^4.26.0",
+		"@typescript-eslint/parser": "^4.26.0",
 		"eslint-import-resolver-node": "^0.3.4",
 		"husky": "^6.0.0",
 		"lint-staged": "^11.0.0",
 		"npm-run-all": "^4.1.5",
-		"prettier": "^2.2.1",
-		"typescript": "^4.2.4"
+		"prettier": "^2.3.0",
+		"typescript": "^4.3.2"
 	},
 	"workspaces": [
 		"packages/*"
