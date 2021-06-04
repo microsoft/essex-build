@@ -2090,6 +2090,7 @@ __metadata:
     "@typescript-eslint/parser": ^4.26.0
     eslint-import-resolver-node: ^0.3.4
     npm-run-all: ^4.1.5
+    typescript: 4.2.4
   languageName: unknown
   linkType: soft
 
@@ -2148,9 +2149,6 @@ __metadata:
     npm-run-all: ^4.1.5
     prettier: ^2.3.0
     typescript: ^4.3.2
-  dependenciesMeta:
-    gulp-typescript@6.0.0-alpha.1:
-      unplugged: true
   languageName: unknown
   linkType: soft
 
@@ -2373,6 +2371,7 @@ __metadata:
     typescript: ^4.3.2
   peerDependencies:
     "@types/node": ">= 14"
+    typescript: ">=4 < 5"
   languageName: unknown
   linkType: soft
 
@@ -2541,7 +2540,6 @@ __metadata:
     rimraf: ^3.0.2
     shx: ^0.3.3
     ts-node: ^10.0.0
-    typescript: ^4.3.2
   peerDependencies:
     "@essex/eslint-config": ">=15.0.4"
     "@essex/jest-config": ">=15.0.3"
@@ -2553,6 +2551,7 @@ __metadata:
     react: ">= 16.13.1"
     react-dom: ">= 16.13.1"
     rollup: ">= 2"
+    typescript: ">=4 < 5"
   peerDependenciesMeta:
     "@essex/eslint-config":
       optional: true
@@ -2636,7 +2635,7 @@ __metadata:
     webpack: ^5.38.1
     webpack-dev-server: ^3.11.2
   peerDependencies:
-    typescript: ">= 4"
+    typescript: ">= 4 <5"
     webpack: ">= 4"
   languageName: unknown
   linkType: soft
@@ -14681,6 +14680,16 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
+typescript@4.2.4:
+  version: 4.2.4
+  resolution: "typescript@npm:4.2.4"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: edaede2fa77f56b7fba80ee624a2368ab1216e75b0434d968ccb47ab0a5e2f6d94f848b3b111c1237dd71e988cd376af26370dcdad3b94355c76e759f0dd0a1e
+  languageName: node
+  linkType: hard
+
 typescript@^4.3.2:
   version: 4.3.2
   resolution: "typescript@npm:4.3.2"
@@ -14688,6 +14697,16 @@ typescript@^4.3.2:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 21e1285402e32fd240f6ad3f97b6fea81b90d2591f412677d01b570a8bd93151d1e08460d58f43689fc758671a5baaebb16fa93d3c8260181612c8e619bd24f7
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@4.2.4#builtin<compat/typescript>":
+  version: 4.2.4
+  resolution: "typescript@patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=ddfc1b"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 64658fdf27872904641dcaacf925e6b5a52fb4aa4881a5a726fc78a11b76748423ce9e996dac42313729321061c4dd38a06108014f8d07b222dcff2687037186
   languageName: node
   linkType: hard
 

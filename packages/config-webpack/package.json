@@ -36,7 +36,7 @@
 		"typescript": "^4.3.2"
 	},
 	"peerDependencies": {
-		"typescript": ">= 4",
+		"typescript": ">= 4 <5",
 		"webpack": ">= 4"
 	}
 }

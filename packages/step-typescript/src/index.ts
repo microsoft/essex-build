@@ -10,7 +10,7 @@ import {
 	traceFile,
 } from '@essex/tasklogger'
 import gulp from 'gulp'
-import { FileWatcher } from 'typescript'
+import ts, { FileWatcher } from 'typescript'
 import { compile as compileTS } from './compile'
 import { loadTSConfig, parseTSConfig } from './config'
 import { getSourceFiles } from './getSourceFiles'
@@ -24,6 +24,9 @@ function getBuildTask(
 ): gulp.TaskFunction {
 	const title = 'tsc'
 	return async function execute(): Promise<void> {
+		if (process.env.ESSEX_DEBUG) {
+			console.log('Using TypeScript version ', ts.version)
+		}
 		const start = performance.now()
 		try {
 			const [sourceFiles, config] = await Promise.all([
