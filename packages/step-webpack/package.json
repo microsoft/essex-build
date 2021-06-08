@@ -20,7 +20,7 @@
 	},
 	"devDependencies": {
 		"@tsconfig/node12": "^1.0.7",
-		"@types/node": "^14.17.2",
+		"@types/node": "^15.12.2",
 		"@types/webpack": "^5.28.0",
 		"@types/webpack-dev-server": "^3.11.4",
 		"rimraf": "^3.0.2",
