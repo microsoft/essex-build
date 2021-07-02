@@ -69,13 +69,12 @@ export function getEsmConfiguration(
 export function getNodeConfiguration(
 	spec: Partial<BabelSpecification> = {},
 ): any {
-	return createBabelConfig({
-		modules: 'cjs',
-		targets: { node: 'current' },
+	return {
 		presets: [
+			[require('@babel/preset-env'), { targets: { node: 'current' } }],
 			require('@babel/preset-typescript'),
 			require('@babel/preset-react'),
 		],
 		...spec,
-	})
+	}
 }
