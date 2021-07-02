@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-webpack",
-	"version": "15.2.0",
+	"version": "17.0.0",
 	"license": "MIT",
 	"main": "src/index.ts",
 	"publishConfig": {
