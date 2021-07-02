@@ -2676,6 +2676,7 @@ __metadata:
     rimraf: ^3.0.2
     shx: ^0.3.3
     ts-node: ^10.0.0
+    typescript: ^4.3.5
   peerDependencies:
     "@essex/eslint-config": ">=15.0.4"
     "@essex/jest-config": ">=15.0.3"
