@@ -14,8 +14,8 @@
 	"dependencies": {
 		"@essex/build-utils": "workspace:packages/util-utils",
 		"@essex/tasklogger": "workspace:packages/util-tasklogger",
-		"typedoc": "^0.20.36",
-		"typescript": "^4.3.2"
+		"typedoc": "^0.21.2",
+		"typescript": "^4.3.5"
 	},
 	"devDependencies": {
 		"@tsconfig/node12": "^1.0.9",
