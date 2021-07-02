@@ -8,7 +8,7 @@ import { join } from 'path'
 import { performance } from 'perf_hooks'
 import { error, info, printPerf } from '@essex/tasklogger'
 import chalk from 'chalk'
-import program from 'commander'
+import { program } from 'commander'
 import gulp from 'gulp'
 
 const commandDir = join(__dirname, '/commands')
