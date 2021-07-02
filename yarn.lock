@@ -2280,7 +2280,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^4.28.1
     "@typescript-eslint/parser": ^4.28.1
     eslint-import-resolver-node: ^0.3.4
-    husky: ^6.0.0
+    husky: ^7.0.0
     lint-staged: ^11.0.0
     npm-run-all: ^4.1.5
     prettier: ^2.3.2
@@ -2761,10 +2761,10 @@ __metadata:
     debug: ^4.3.1
     fork-ts-checker-webpack-plugin: ^6.2.12
     html-webpack-plugin: ^5.3.2
-    mini-css-extract-plugin: ^1.6.2
+    mini-css-extract-plugin: ^2.0.0
     rimraf: ^3.0.2
     sass-loader: ^12.1.0
-    style-loader: ^2.0.0
+    style-loader: ^3.0.0
     ts-loader: ^9.2.3
     tsconfig-paths-webpack-plugin: ^3.5.1
     typescript: ^4.3.5
@@ -8726,12 +8726,12 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"husky@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "husky@npm:6.0.0"
+"husky@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "husky@npm:7.0.0"
   bin:
     husky: lib/bin.js
-  checksum: 61e1f7f53f3c969d361c2a1d4ed8018b9447406ea6cd644a2526d18b76877d135001d8cbd48a1d201fc1614d96995e691ecd2b82a8d8513a6b4a313da1188ccd
+  checksum: 56252eeb452612a183731a3302db07de2f283ca8c869a884edb30dffe9908beab32365792dec9145c7f6df4e41f763d74212ca7bc05c0171fa6dff2bac17c8c1
   languageName: node
   linkType: hard
 
@@ -11034,16 +11034,14 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"mini-css-extract-plugin@npm:^1.6.2":
-  version: 1.6.2
-  resolution: "mini-css-extract-plugin@npm:1.6.2"
+"mini-css-extract-plugin@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "mini-css-extract-plugin@npm:2.0.0"
   dependencies:
-    loader-utils: ^2.0.0
     schema-utils: ^3.0.0
-    webpack-sources: ^1.1.0
   peerDependencies:
-    webpack: ^4.4.0 || ^5.0.0
-  checksum: 53c162db80f2b58dcc1e85a2e1b52ffed73d3184ed5b8a037786d8562fbecf1b936397ea3873f3375356f8a6def27ec97867f9938356358d369d2a9e20a30718
+    webpack: ^5.0.0
+  checksum: 4b54e77a830a284b48cc71dbbf739b586ab9a63fec8356c9389e16205b068e0318f59d7355b8695fd6a779f6c324b9c29c60280527aaadbca2ef9c23f25b9a21
   languageName: node
   linkType: hard
 
@@ -13702,7 +13700,7 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"source-list-map@npm:^2.0.0, source-list-map@npm:^2.0.1":
+"source-list-map@npm:^2.0.1":
   version: 2.0.1
   resolution: "source-list-map@npm:2.0.1"
   checksum: d8d45f29987d00d995ccda308dcc78b710031a9958fdb5d26674d32220c952eb7a8562062638d91896628ae4eef30e1cd112a6a547563dfda0b013024c2a9bf7
@@ -14161,15 +14159,12 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"style-loader@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "style-loader@npm:2.0.0"
-  dependencies:
-    loader-utils: ^2.0.0
-    schema-utils: ^3.0.0
+"style-loader@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "style-loader@npm:3.0.0"
   peerDependencies:
-    webpack: ^4.0.0 || ^5.0.0
-  checksum: ffc305488244ab499f91b05a1c94dd199b8b106d69e260ce38bd599819bbb352357e107bef3c319b775b9fb0eaed571cb68f8c7940e457553f85a980f4b630d8
+    webpack: ^5.0.0
+  checksum: 2457cb01f8b4d843aeaf4587eb26584ec9c93832ab892151cde9ce1e1fba558fa6d7b27c68f059b9d76f4e208d692cbfcd23f9461d76fcee19505274dc085fab
   languageName: node
   linkType: hard
 
@@ -15361,16 +15356,6 @@ resolve@^2.0.0-next.3:
     ansi-colors: ^3.0.0
     uuid: ^3.3.2
   checksum: 250db04c41e278aa15a4f452808ef32ca8eca0f7df9d4c7c28b3d94e45d2649fbeb90a0adbee1c675447209b6a35136e13c1fb31476c3ca81c972bb41f0535bb
-  languageName: node
-  linkType: hard
-
-"webpack-sources@npm:^1.1.0":
-  version: 1.4.3
-  resolution: "webpack-sources@npm:1.4.3"
-  dependencies:
-    source-list-map: ^2.0.0
-    source-map: ~0.6.1
-  checksum: 2a753b36adf0ddd4dadf6ff375824108a918d180c4ea5383b377526f543e6db0c1ecd40b4154bae8e94c4b209b7814d764879691a468fe230ef9eb32b27fdde4
   languageName: node
   linkType: hard
 
