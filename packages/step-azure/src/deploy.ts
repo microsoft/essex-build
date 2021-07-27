@@ -13,7 +13,14 @@ import glob from 'glob'
 import mime from 'mime-types'
 
 // files to upload. Directory is not recreated in Azure storage.
-const DEFAULT_DIRECTORIES = ['build/', 'public/']
+const DEFAULT_DIRECTORIES = [
+	// Essex Webpack Output & Static Content
+	'build/',
+	'public/',
+
+	// Vite.js Default Output
+	'dist/',
+]
 
 interface FileLocation {
 	basePath: string
