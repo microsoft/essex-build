@@ -2207,7 +2207,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/build-step-init@workspace:packages/step-init"
   dependencies:
-    "@essex/build-step-recipes": "workspace:packages/step-recipes"
     "@essex/build-utils": "workspace:packages/util-utils"
     "@essex/tasklogger": "workspace:packages/util-tasklogger"
     "@tsconfig/node12": ^1.0.9
@@ -2245,19 +2244,6 @@ __metadata:
     chalk: ^4.1.1
     prettier: ^2.3.2
     pretty-quick: ^3.1.1
-    rimraf: ^3.0.2
-    typescript: ^4.3.5
-  languageName: unknown
-  linkType: soft
-
-"@essex/build-step-recipes@workspace:packages/step-recipes":
-  version: 0.0.0-use.local
-  resolution: "@essex/build-step-recipes@workspace:packages/step-recipes"
-  dependencies:
-    "@essex/tasklogger": "workspace:packages/util-tasklogger"
-    "@tsconfig/node12": ^1.0.9
-    "@types/node": ^14.17.4
-    "@types/rimraf": ^3.0.0
     rimraf: ^3.0.2
     typescript: ^4.3.5
   languageName: unknown
@@ -2433,7 +2419,6 @@ __metadata:
     "@essex/build-step-init": "workspace:packages/step-init"
     "@essex/build-step-lint-staged": "workspace:packages/step-lint-staged"
     "@essex/build-step-pretty-quick": "workspace:packages/step-pretty-quick"
-    "@essex/build-step-recipes": "workspace:packages/step-recipes"
     "@essex/build-step-rollup": "workspace:packages/step-rollup"
     "@essex/build-step-typedoc": "workspace:packages/step-typedoc"
     "@essex/build-step-typescript": "workspace:packages/step-typescript"

@@ -33,7 +33,6 @@
 		"@essex/build-step-init": "workspace:packages/step-init",
 		"@essex/build-step-lint-staged": "workspace:packages/step-lint-staged",
 		"@essex/build-step-pretty-quick": "workspace:packages/step-pretty-quick",
-		"@essex/build-step-recipes": "workspace:packages/step-recipes",
 		"@essex/build-step-rollup": "workspace:packages/step-rollup",
 		"@essex/build-step-typedoc": "workspace:packages/step-typedoc",
 		"@essex/build-step-typescript": "workspace:packages/step-typescript",

@@ -83,10 +83,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/step-pretty-quick"
       },
       {
-        "name": "@essex/build-step-recipes",
-        "reference": "workspace:packages/step-recipes"
-      },
-      {
         "name": "@essex/build-step-rollup",
         "reference": "workspace:packages/step-rollup"
       },
@@ -147,7 +143,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@essex/build-step-init", ["workspace:packages/step-init"]],
       ["@essex/build-step-lint-staged", ["virtual:1017fdba8e894a7e10bd23a1f8c42ef02c55234cd2890799397f1e72eba3911bce65ef82430230adf959932152f90939eb8e424c4941d61f4fc61cd0de4916e8#workspace:packages/step-lint-staged", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-lint-staged", "workspace:packages/step-lint-staged"]],
       ["@essex/build-step-pretty-quick", ["workspace:packages/step-pretty-quick"]],
-      ["@essex/build-step-recipes", ["workspace:packages/step-recipes"]],
       ["@essex/build-step-rollup", ["virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-rollup", "workspace:packages/step-rollup"]],
       ["@essex/build-step-typedoc", ["virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-typedoc", "workspace:packages/step-typedoc"]],
       ["@essex/build-step-typescript", ["virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-typescript", "workspace:packages/step-typescript"]],
@@ -3483,7 +3478,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/step-init/",
           "packageDependencies": [
             ["@essex/build-step-init", "workspace:packages/step-init"],
-            ["@essex/build-step-recipes", "workspace:packages/step-recipes"],
             ["@essex/build-utils", "workspace:packages/util-utils"],
             ["@essex/tasklogger", "workspace:packages/util-tasklogger"],
             ["@tsconfig/node12", "npm:1.0.9"],
@@ -3563,21 +3557,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["chalk", "npm:4.1.1"],
             ["prettier", "npm:2.3.2"],
             ["pretty-quick", "virtual:ec349c798de3935dfca4b61b9ff6f4e9a8648fb36dac7740428de32b5aa0484d5fac3371db300a93278c9ee5b08b435ba23589b266846876faa0df73a519a42e#npm:3.1.1"],
-            ["rimraf", "npm:3.0.2"],
-            ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=d8b4e7"]
-          ],
-          "linkType": "SOFT",
-        }]
-      ]],
-      ["@essex/build-step-recipes", [
-        ["workspace:packages/step-recipes", {
-          "packageLocation": "./packages/step-recipes/",
-          "packageDependencies": [
-            ["@essex/build-step-recipes", "workspace:packages/step-recipes"],
-            ["@essex/tasklogger", "workspace:packages/util-tasklogger"],
-            ["@tsconfig/node12", "npm:1.0.9"],
-            ["@types/node", "npm:14.17.4"],
-            ["@types/rimraf", "npm:3.0.0"],
             ["rimraf", "npm:3.0.2"],
             ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=d8b4e7"]
           ],
@@ -4117,7 +4096,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex/build-step-init", "workspace:packages/step-init"],
             ["@essex/build-step-lint-staged", "virtual:1017fdba8e894a7e10bd23a1f8c42ef02c55234cd2890799397f1e72eba3911bce65ef82430230adf959932152f90939eb8e424c4941d61f4fc61cd0de4916e8#workspace:packages/step-lint-staged"],
             ["@essex/build-step-pretty-quick", "workspace:packages/step-pretty-quick"],
-            ["@essex/build-step-recipes", "workspace:packages/step-recipes"],
             ["@essex/build-step-rollup", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-rollup"],
             ["@essex/build-step-typedoc", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-typedoc"],
             ["@essex/build-step-typescript", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-typescript"],
@@ -4210,7 +4188,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex/build-step-init", "workspace:packages/step-init"],
             ["@essex/build-step-lint-staged", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-lint-staged"],
             ["@essex/build-step-pretty-quick", "workspace:packages/step-pretty-quick"],
-            ["@essex/build-step-recipes", "workspace:packages/step-recipes"],
             ["@essex/build-step-rollup", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-rollup"],
             ["@essex/build-step-typedoc", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-typedoc"],
             ["@essex/build-step-typescript", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-typescript"],
@@ -4303,7 +4280,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex/build-step-init", "workspace:packages/step-init"],
             ["@essex/build-step-lint-staged", "virtual:1017fdba8e894a7e10bd23a1f8c42ef02c55234cd2890799397f1e72eba3911bce65ef82430230adf959932152f90939eb8e424c4941d61f4fc61cd0de4916e8#workspace:packages/step-lint-staged"],
             ["@essex/build-step-pretty-quick", "workspace:packages/step-pretty-quick"],
-            ["@essex/build-step-recipes", "workspace:packages/step-recipes"],
             ["@essex/build-step-rollup", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-rollup"],
             ["@essex/build-step-typedoc", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-typedoc"],
             ["@essex/build-step-typescript", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-typescript"],
@@ -4396,7 +4372,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex/build-step-init", "workspace:packages/step-init"],
             ["@essex/build-step-lint-staged", "virtual:1017fdba8e894a7e10bd23a1f8c42ef02c55234cd2890799397f1e72eba3911bce65ef82430230adf959932152f90939eb8e424c4941d61f4fc61cd0de4916e8#workspace:packages/step-lint-staged"],
             ["@essex/build-step-pretty-quick", "workspace:packages/step-pretty-quick"],
-            ["@essex/build-step-recipes", "workspace:packages/step-recipes"],
             ["@essex/build-step-rollup", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-rollup"],
             ["@essex/build-step-typedoc", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-typedoc"],
             ["@essex/build-step-typescript", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-typescript"],
@@ -4488,7 +4463,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex/build-step-init", "workspace:packages/step-init"],
             ["@essex/build-step-lint-staged", "virtual:1017fdba8e894a7e10bd23a1f8c42ef02c55234cd2890799397f1e72eba3911bce65ef82430230adf959932152f90939eb8e424c4941d61f4fc61cd0de4916e8#workspace:packages/step-lint-staged"],
             ["@essex/build-step-pretty-quick", "workspace:packages/step-pretty-quick"],
-            ["@essex/build-step-recipes", "workspace:packages/step-recipes"],
             ["@essex/build-step-rollup", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-rollup"],
             ["@essex/build-step-typedoc", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-typedoc"],
             ["@essex/build-step-typescript", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-typescript"],
@@ -4580,7 +4554,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex/build-step-init", "workspace:packages/step-init"],
             ["@essex/build-step-lint-staged", "virtual:1017fdba8e894a7e10bd23a1f8c42ef02c55234cd2890799397f1e72eba3911bce65ef82430230adf959932152f90939eb8e424c4941d61f4fc61cd0de4916e8#workspace:packages/step-lint-staged"],
             ["@essex/build-step-pretty-quick", "workspace:packages/step-pretty-quick"],
-            ["@essex/build-step-recipes", "workspace:packages/step-recipes"],
             ["@essex/build-step-rollup", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-rollup"],
             ["@essex/build-step-typedoc", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-typedoc"],
             ["@essex/build-step-typescript", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-typescript"],
