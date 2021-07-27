@@ -1,7 +1,7 @@
 {
 	"name": "@essex/vite-config",
 	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
-	"version": "17.0.1",
+	"version": "17.0.2",
 	"license": "MIT",
 	"main": "index.js",
 	"dependencies": {
