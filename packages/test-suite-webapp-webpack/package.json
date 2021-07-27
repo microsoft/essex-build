@@ -4,9 +4,9 @@
 	"private": true,
 	"scripts": {
 		"clean": "essex clean",
-		"build": "webpack",
+		"build": "webpack-cli",
 		"lint": "essex lint",
-		"start": "webpack-dev-server"
+		"start": "webpack serve --progress"
 	},
 	"dependencies": {
 		"@types/react": "^17.0.13",

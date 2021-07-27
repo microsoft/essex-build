@@ -81,7 +81,7 @@ To view detailed options, run `essex <command> --help` or `essex --help`
 	"scripts": {
 		"bundle": "webpack",
 		"clean": "essex clean build",
-		"start": "webpack-dev-server"
+		"start": "webpack serve"
 	}
 }
 ```

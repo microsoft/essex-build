@@ -6,6 +6,7 @@
 		"David Tittsworth <datit@microsoft.com>",
 		"Chris Trevino <chtrevin@microsoft.com>"
 	],
+	"packageManager": "yarn@3.0.0",
 	"scripts": {
 		"preinstall": "npx only-allow yarn",
 		"postinstall": "husky install",
@@ -51,6 +52,5 @@
 		"react-dom": "17.0.2",
 		"@types/react": "17.0.15",
 		"@types/react-dom": "17.0.9"
-	},
-	"packageManager": "yarn@3.0.0"
+	}
 }
