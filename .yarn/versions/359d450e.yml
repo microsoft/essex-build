@@ -1,0 +1,8 @@
+releases:
+  "@essex-build/test-suite-library": patch
+  "@essex-build/test-suite-webapp-vite": patch
+  "@essex-build/test-suite-webapp-webpack": patch
+  "@essex-build/test-suite-zips": patch
+  "@essex/build-step-azure": patch
+  "@essex/scripts": patch
+  "@essex/vite-config": patch
