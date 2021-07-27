@@ -51,7 +51,7 @@ To view detailed options, run `essex <command> --help` or `essex --help`
 
 		/* use @essex/scripts for top-level checks */
 		"lint:all": "essex lint",
-		"unit:test": "essex test --coverage",
+		"unit:test": "jest --coverage",
 
 		/* hook for CI builds */
 		"ci": "run-s lint:all build:all bundle:all unit:test"

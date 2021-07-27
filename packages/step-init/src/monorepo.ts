@@ -89,7 +89,7 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 			"yarn workspaces foreach --exclude '<YOUR_TOP_LEVEL_PACKAGE_NAME>' -pv npm publish --tolerate-republish --access public"
 	}
 	if (!pkgJson.scripts['unit:test']) {
-		pkgJson.scripts['unit:test'] = 'essex test'
+		pkgJson.scripts['unit:test'] = 'jest'
 		writeNeeded = true
 	}
 	if (!pkgJson.scripts['lint:all']) {
