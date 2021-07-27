@@ -2372,6 +2372,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@essex-build/test-suite-webapp-vite@workspace:packages/test-suite-webapp-vite":
+  version: 0.0.0-use.local
+  resolution: "@essex-build/test-suite-webapp-vite@workspace:packages/test-suite-webapp-vite"
+  dependencies:
+    "@essex/scripts": "workspace:packages/scripts"
+    "@essex/vite-config": "workspace:packages/config-vite"
+    "@types/react": ^17.0.15
+    "@types/react-dom": ^17.0.9
+    react: ^17.0.2
+    react-dom: 17.0.2
+    typescript: ^4.3.2
+    vite: ^2.4.4
+  languageName: unknown
+  linkType: soft
+
 "@essex-build/test-suite-webapp-webpack@workspace:packages/test-suite-webapp-webpack":
   version: 0.0.0-use.local
   resolution: "@essex-build/test-suite-webapp-webpack@workspace:packages/test-suite-webapp-webpack"
@@ -15457,21 +15472,6 @@ resolve@^2.0.0-next.3:
   checksum: 9f4088a075cc3eb2ecbd88b09cb5c7571c4edb64d6ebb80eeaaf18ddb47bbca1ee2808dea4ae6ee338e38e60715c253c67b5f2fe34be630a914e54fae618db9c
   languageName: node
   linkType: hard
-
-"vite-project@workspace:packages/test-suite-webapp-vite":
-  version: 0.0.0-use.local
-  resolution: "vite-project@workspace:packages/test-suite-webapp-vite"
-  dependencies:
-    "@essex/scripts": "workspace:packages/scripts"
-    "@essex/vite-config": "workspace:packages/config-vite"
-    "@types/react": ^17.0.15
-    "@types/react-dom": ^17.0.9
-    react: ^17.0.2
-    react-dom: 17.0.2
-    typescript: ^4.3.2
-    vite: ^2.4.4
-  languageName: unknown
-  linkType: soft
 
 "vite-react-jsx@npm:^1.1.2":
   version: 1.1.2

@@ -1,6 +1,6 @@
 {
-	"name": "vite-project",
-	"version": "0.0.0",
+	"name": "@essex-build/test-suite-webapp-vite",
+	"version": "17.0.1",
 	"scripts": {
 		"clean": "essex clean",
 		"start": "vite",
