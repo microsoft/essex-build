@@ -2292,22 +2292,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build-step-rollup@workspace:packages/step-rollup":
-  version: 0.0.0-use.local
-  resolution: "@essex/build-step-rollup@workspace:packages/step-rollup"
-  dependencies:
-    "@essex/build-utils": "workspace:packages/util-utils"
-    "@essex/shellrunner": "workspace:packages/util-shellrunner"
-    "@essex/tasklogger": "workspace:packages/util-tasklogger"
-    "@tsconfig/node12": ^1.0.9
-    "@types/node": ^14.17.4
-    rimraf: ^3.0.2
-    typescript: ^4.3.5
-  peerDependencies:
-    rollup: ">= 2"
-  languageName: unknown
-  linkType: soft
-
 "@essex/build-step-typedoc@workspace:packages/step-typedoc":
   version: 0.0.0-use.local
   resolution: "@essex/build-step-typedoc@workspace:packages/step-typedoc"
@@ -2462,7 +2446,6 @@ __metadata:
     "@essex/build-step-init": "workspace:packages/step-init"
     "@essex/build-step-lint-staged": "workspace:packages/step-lint-staged"
     "@essex/build-step-pretty-quick": "workspace:packages/step-pretty-quick"
-    "@essex/build-step-rollup": "workspace:packages/step-rollup"
     "@essex/build-step-typedoc": "workspace:packages/step-typedoc"
     "@essex/build-step-typescript": "workspace:packages/step-typescript"
     "@essex/build-step-zip": "workspace:packages/step-zip"
@@ -2470,7 +2453,6 @@ __metadata:
     "@essex/eslint-plugin": "workspace:packages/config-eslint-plugin"
     "@essex/shellrunner": "workspace:packages/util-shellrunner"
     "@essex/tasklogger": "workspace:packages/util-tasklogger"
-    "@essex/webpack-config": "workspace:packages/config-webpack"
     "@tsconfig/node12": ^1.0.9
     "@types/debug": ^4.1.6
     "@types/gulp": ^4.0.8
@@ -2500,7 +2482,6 @@ __metadata:
     lint-staged: "*"
     react: ">= 16.13.1"
     react-dom: ">= 16.13.1"
-    rollup: ">= 2"
     typescript: ">=4 < 5"
   peerDependenciesMeta:
     "@essex/eslint-config":
@@ -2522,8 +2503,6 @@ __metadata:
     react:
       optional: true
     react-dom:
-      optional: true
-    rollup:
       optional: true
   bin:
     essex: ./src/dev_index.js
