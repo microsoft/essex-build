@@ -45,13 +45,13 @@ To view detailed options, run `essex <command> --help` or `essex --help`
 	"private": true,
 	"scripts": {
 		/* orchestrate child packages */
-		"clean:all": "yarn workspaces foreach -piv run clean",    
-		"build:all": "yarn workspaces foreach -pivt run build",		
+		"clean:all": "yarn workspaces foreach -piv run clean",
+		"build:all": "yarn workspaces foreach -pivt run build",
 		"bundle:all": "yarn workspaces foreach -piv run bundle",
 
 		/* use @essex/scripts for top-level checks */
-    "lint:all": "essex lint",    
-    "unit:test": "essex test --coverage",
+		"lint:all": "essex lint",
+		"unit:test": "jest --coverage",
 
 		/* hook for CI builds */
 		"ci": "run-s lint:all build:all bundle:all unit:test"
@@ -79,9 +79,9 @@ To view detailed options, run `essex <command> --help` or `essex --help`
 	"name": "webpack-app",
 	"private": true,
 	"scripts": {
-		"bundle": "essex bundle",
+		"bundle": "webpack",
 		"clean": "essex clean build",
-		"start": "essex serve"
+		"start": "webpack serve"
 	}
 }
 ```

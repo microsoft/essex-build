@@ -51,23 +51,3 @@ Performs common build tasks for a library package.
   - **<packageDir>/babelrc.esm.js**<br/>
     **<packageDir>/babelrc.cjs.js**<br/>
     These configuration files will override the prescribed babel configuration.
-
-  ## Rollup
-
-  ### Purpose
-
-  Some packages may want to define a Rollup configuration that bundles them into a single file for consumption. If `rollup.config.js` is present, then Rollup will be invoked using your custom configuration.
-
-  ### Customization
-
-  Define a `rollup.config.js`
-
-- ## Webpack
-
-  ### Purpose
-
-  Some packages may want to define a Webpack configuration that bundles them into a single file for consumption. If `webpack.config.js` is present, then webpack will be invoked using your custom configuration.
-
-  ### Customization
-
-  Define a `webpack.config.js`

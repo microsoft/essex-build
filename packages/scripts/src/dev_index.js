@@ -3,6 +3,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+/* eslint-disable import/order */
 const { join } = require('path')
 const { performance } = require('perf_hooks')
 const chalk = require('chalk')

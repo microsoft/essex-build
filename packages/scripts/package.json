@@ -31,20 +31,15 @@
 		"@essex/build-step-clean": "workspace:packages/step-clean",
 		"@essex/build-step-eslint": "workspace:packages/step-eslint",
 		"@essex/build-step-init": "workspace:packages/step-init",
-		"@essex/build-step-jest": "workspace:packages/step-jest",
 		"@essex/build-step-lint-staged": "workspace:packages/step-lint-staged",
 		"@essex/build-step-pretty-quick": "workspace:packages/step-pretty-quick",
-		"@essex/build-step-recipes": "workspace:packages/step-recipes",
-		"@essex/build-step-rollup": "workspace:packages/step-rollup",
 		"@essex/build-step-typedoc": "workspace:packages/step-typedoc",
 		"@essex/build-step-typescript": "workspace:packages/step-typescript",
-		"@essex/build-step-webpack": "workspace:packages/step-webpack",
 		"@essex/build-step-zip": "workspace:packages/step-zip",
 		"@essex/build-utils": "workspace:packages/util-utils",
 		"@essex/eslint-plugin": "workspace:packages/config-eslint-plugin",
 		"@essex/shellrunner": "workspace:packages/util-shellrunner",
 		"@essex/tasklogger": "workspace:packages/util-tasklogger",
-		"@essex/webpack-config": "workspace:packages/config-webpack",
 		"chalk": "^4.1.1",
 		"commander": "^8.0.0",
 		"debug": "^4.3.1",
@@ -77,7 +72,6 @@
 		"lint-staged": "*",
 		"react": ">= 16.13.1",
 		"react-dom": ">= 16.13.1",
-		"rollup": ">= 2",
 		"typescript": ">=4 < 5"
 	},
 	"peerDependenciesMeta": {
@@ -109,9 +103,6 @@
 			"optional": true
 		},
 		"react-dom": {
-			"optional": true
-		},
-		"rollup": {
 			"optional": true
 		}
 	}
