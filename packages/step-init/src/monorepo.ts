@@ -5,7 +5,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { writeFileSync } from 'fs'
 import { join } from 'path'
-import { recipes } from '@essex/build-step-recipes'
 import * as log from '@essex/tasklogger'
 import { copyConfigFile } from './util'
 
@@ -13,9 +12,7 @@ const pkgJsonPath = join(process.cwd(), 'package.json')
 const pkgJson = require(pkgJsonPath)
 
 const INIT_INSTRUCTIONS = `
-To utilize the essex build system, you should define scripts in your package.json file that utilize the build system. Here are some examples:
-
-${recipes}
+To utilize the essex build system, you should define scripts in your package.json file that utilize the build system.
 `
 const INIT_MSG_FAIL = `
 Not all configuration has been copied to the target location, as it already exists. 
@@ -92,7 +89,7 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 			"yarn workspaces foreach --exclude '<YOUR_TOP_LEVEL_PACKAGE_NAME>' -pv npm publish --tolerate-republish --access public"
 	}
 	if (!pkgJson.scripts['unit:test']) {
-		pkgJson.scripts['unit:test'] = 'essex test'
+		pkgJson.scripts['unit:test'] = 'jest'
 		writeNeeded = true
 	}
 	if (!pkgJson.scripts['lint:all']) {
