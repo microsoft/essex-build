@@ -1,7 +1,7 @@
 {
 	"name": "@essex/prettier-config",
 	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
-	"version": "17.0.0",
+	"version": "18.0.1",
 	"main": "index.js",
 	"license": "MIT"
 }
