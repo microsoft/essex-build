@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { promises as fs, createWriteStream, existsSync, mkdirSync } from 'fs'
-import path from 'path'
+import { resolve, dirname, join, relative } from 'path'
 import { error, info, traceFile } from '@essex/tasklogger'
 import archiver from 'archiver'
 import chalk from 'chalk'
@@ -21,7 +21,7 @@ export async function zip(
 	sources: string[],
 	{ baseDir }: ZipCommandOptions,
 ): Promise<number> {
-	const outputDir = path.dirname(destination)
+	const outputDir = resolve(dirname(destination))
 	if (!existsSync(outputDir)) {
 		info('creating output folder', outputDir)
 		mkdirSync(outputDir, { recursive: true })
@@ -47,7 +47,7 @@ async function getFileEntries(
 ): Promise<string[]> {
 	const result: string[] = []
 	for (const source of sources) {
-		const sourcePath = path.join(baseDir, source)
+		const sourcePath = join(baseDir, source)
 		const foundFiles =
 			source.indexOf('*') >= 0
 				? // handle globs
@@ -62,7 +62,7 @@ async function getFileEntries(
 		}
 		result.push(...filteredFiles)
 	}
-	return result.map(file => path.relative(baseDir, file))
+	return result.map(file => relative(baseDir, file))
 }
 
 function getGlobSource(source: string): Promise<string[]> {
@@ -107,7 +107,7 @@ async function walkDir(directory: string): Promise<string[]> {
 		const directoryFiles = await fs.readdir(currentDirectoryPath)
 
 		for (const file of directoryFiles) {
-			const filePath = path.join(currentDirectoryPath, file)
+			const filePath = join(currentDirectoryPath, file)
 			const stats = await fs.stat(filePath)
 			if (stats.isFile()) {
 				allFiles = [...allFiles, filePath]
@@ -159,7 +159,7 @@ async function archive(
 		archive.pipe(output)
 
 		for (const entry of fileEntries) {
-			const entryPath = path.join(cwd, entry)
+			const entryPath = join(cwd, entry)
 			archive.file(entryPath, {
 				name: entry,
 			})
