@@ -14,7 +14,7 @@
 	"dependencies": {
 		"@essex/shellrunner": "workspace:packages/util-shellrunner",
 		"@essex/tasklogger": "workspace:packages/util-tasklogger",
-		"@types/gulp": "^4.0.8",
+		"@types/gulp": "^4.0.9",
 		"@types/through2": "^2.0.36",
 		"gulp": "^4.0.2",
 		"through2": "^4.0.2"
