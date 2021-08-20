@@ -33,6 +33,7 @@ export function createBabelConfig({
 			...presets,
 		],
 		plugins: [
+			require('babel-plugin-transform-typescript-metadata'),
 			require('@babel/plugin-proposal-class-properties'),
 			require('@babel/plugin-proposal-object-rest-spread'),
 			require('@babel/plugin-proposal-optional-chaining'),
