@@ -12,7 +12,7 @@
 		"postinstall": "husky install",
 		"clean:primary": "yarn workspaces foreach --exclude '@essex-build/test-suite-*' -piv run clean",
 		"clean:tests": "yarn workspaces foreach --include '@essex-build/test-suite-*' -piv run clean",
-		"clean:": "run-s clean: clean::primary",
+		"clean:": "run-s clean:tests clean:primary",
 		"build:": "yarn workspaces foreach -piv --topological-dev run build",
 		"lint:packages": "yarn workspaces foreach -piv run lint",
 		"test:": "yarn workspaces foreach -piv run test",
