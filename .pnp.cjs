@@ -3761,6 +3761,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/preset-typescript", "virtual:4aed908eb310444788f3efcab67a1f1b191cb916970894d84b704c13933c8e755b2852dd69e3fbeb2220949f193e5d8316eb21edd584285ad7fb12bc6380e0b5#npm:7.14.5"],
             ["@tsconfig/node12", "npm:1.0.9"],
             ["@types/node", "npm:14.17.4"],
+            ["babel-plugin-transform-typescript-metadata", "virtual:4aed908eb310444788f3efcab67a1f1b191cb916970894d84b704c13933c8e755b2852dd69e3fbeb2220949f193e5d8316eb21edd584285ad7fb12bc6380e0b5#npm:0.3.2"],
             ["rimraf", "npm:3.0.2"],
             ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=d8b4e7"]
           ],
@@ -8260,6 +8261,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-plugin-polyfill-regenerator", "virtual:daec0b50804e20d336ec2d71796201f043b20cf526d84d3eddb998b5e7a466f4bc9f5cace127c9d1fe5e38a580f81d4a72d7518514402d2d9ec036c005accf7f#npm:0.2.2"],
             ["@babel/core", "npm:7.14.6"],
             ["@babel/helper-define-polyfill-provider", "virtual:40bf19abe26e00efbbda4f3b843d7cd51298bf13932309849670f6ed7f821aedb9d2afedc78ad6ab761cf94a4adeff369a858dbf6af2284ef16f56d2881e13ef#npm:0.2.3"],
+            ["@types/babel__core", null]
+          ],
+          "packagePeers": [
+            "@babel/core",
+            "@types/babel__core"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["babel-plugin-transform-typescript-metadata", [
+        ["npm:0.3.2", {
+          "packageLocation": "./.yarn/cache/babel-plugin-transform-typescript-metadata-npm-0.3.2-b5d57fbfc4-15aa2a05c9.zip/node_modules/babel-plugin-transform-typescript-metadata/",
+          "packageDependencies": [
+            ["babel-plugin-transform-typescript-metadata", "npm:0.3.2"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:4aed908eb310444788f3efcab67a1f1b191cb916970894d84b704c13933c8e755b2852dd69e3fbeb2220949f193e5d8316eb21edd584285ad7fb12bc6380e0b5#npm:0.3.2", {
+          "packageLocation": "./.yarn/__virtual__/babel-plugin-transform-typescript-metadata-virtual-9003796149/0/cache/babel-plugin-transform-typescript-metadata-npm-0.3.2-b5d57fbfc4-15aa2a05c9.zip/node_modules/babel-plugin-transform-typescript-metadata/",
+          "packageDependencies": [
+            ["babel-plugin-transform-typescript-metadata", "virtual:4aed908eb310444788f3efcab67a1f1b191cb916970894d84b704c13933c8e755b2852dd69e3fbeb2220949f193e5d8316eb21edd584285ad7fb12bc6380e0b5#npm:0.3.2"],
+            ["@babel/core", "npm:7.14.6"],
+            ["@babel/helper-plugin-utils", "npm:7.10.4"],
             ["@types/babel__core", null]
           ],
           "packagePeers": [
