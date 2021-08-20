@@ -2171,6 +2171,7 @@ __metadata:
     "@babel/preset-typescript": ^7.14.5
     "@tsconfig/node12": ^1.0.9
     "@types/node": ^14.17.4
+    babel-plugin-transform-typescript-metadata: ^0.3.2
     rimraf: ^3.0.2
     typescript: ^4.3.5
   languageName: unknown
@@ -5075,6 +5076,15 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.0.0-0
   checksum: 3e32e318fd91d65c3af2bb363189f00d3839f07a73a08813b553553e07da205162091b428dd5b6ffb6ea4caf531ff43ebc54197b0a5a9dc2fc5c7e9a650e946d
+  languageName: node
+  linkType: hard
+
+"babel-plugin-transform-typescript-metadata@npm:^0.3.2":
+  version: 0.3.2
+  resolution: "babel-plugin-transform-typescript-metadata@npm:0.3.2"
+  dependencies:
+    "@babel/helper-plugin-utils": ^7.0.0
+  checksum: 15aa2a05c9ec2817155cc15746e55e0e06dd57762e7fc1eea168ce9a65fd89372174ecc7506434b6abde367a264c5953f27468a0c3dcab2fb4a14bec1c719536
   languageName: node
   linkType: hard
 

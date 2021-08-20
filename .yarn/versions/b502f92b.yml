@@ -1,0 +1,11 @@
+releases:
+  "@essex/babel-config": minor
+  "@essex/build-step-babel": minor
+  "@essex/scripts": minor
+  "@essex/webpack-config": minor
+
+declined:
+  - "@essex-build/test-suite-library"
+  - "@essex-build/test-suite-webapp-vite"
+  - "@essex-build/test-suite-webapp-webpack"
+  - "@essex-build/test-suite-zips"
