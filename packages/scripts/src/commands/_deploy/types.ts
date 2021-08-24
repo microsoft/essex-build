@@ -7,6 +7,7 @@ export interface DeployCommandOptions {
 	type: DeployType
 	storageAccount: string
 	storageAccountKey: string
+	paths: string
 }
 
 export enum DeployType {
