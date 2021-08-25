@@ -12,16 +12,6 @@ import {
 import glob from 'glob'
 import mime from 'mime-types'
 
-// files to upload. Directory is not recreated in Azure storage.
-const DEFAULT_DIRECTORIES = [
-	// Essex Webpack Output & Static Content
-	'build/',
-	'public/',
-
-	// Vite.js Default Output
-	'dist/',
-]
-
 interface FileLocation {
 	basePath: string
 	file: string
@@ -74,8 +64,8 @@ async function uploadFile(
 export async function deployBlob(
 	storageAccount: string,
 	storageAccountKey: string,
-	verbose = false,
-	directories = DEFAULT_DIRECTORIES,
+	verbose: boolean,
+	directories: string[],
 ): Promise<void> {
 	const containerClient = getBlobContainerClient(
 		storageAccount,

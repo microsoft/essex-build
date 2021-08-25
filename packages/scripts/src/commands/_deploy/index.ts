@@ -23,6 +23,11 @@ export default function deploy(program: Command): void {
 			'deployment type: (e.g. azure-blob-storage)',
 			'azure-blob-storage',
 		)
+		.option(
+			'--paths <paths>',
+			'When using Azure-Blob-Storage deployment, the paths to upload into the blob container, comma-delimited.',
+			'build/,public/,/dist',
+		)
 		.action((options: DeployCommandOptions): Promise<any> => {
 			return Promise.resolve()
 				.then(() => execute(options))
