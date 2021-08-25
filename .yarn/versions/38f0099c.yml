@@ -1,7 +1,0 @@
-releases:
-  "@essex-build/test-suite-library": minor
-  "@essex-build/test-suite-webapp-vite": minor
-  "@essex-build/test-suite-webapp-webpack": minor
-  "@essex-build/test-suite-zips": minor
-  "@essex/build-step-azure": minor
-  "@essex/scripts": minor
