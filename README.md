@@ -1,6 +1,6 @@
 ![CI](https://github.com/microsoft/essex-alpha-build-infra/workflows/CI/badge.svg?branch=main)
 
-# essex-alpha-build-infra
+# essex-js-build
 
 This project contains build infrastructure for the Project Essex Alpha team.
 
