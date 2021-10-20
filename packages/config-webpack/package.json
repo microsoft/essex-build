@@ -8,6 +8,11 @@
 		"clean": "rimraf lib",
 		"build": "tsc -b ."
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/microsoft/essex-js-build.git",
+		"directory": "packages/config-webpack"
+	},
 	"dependencies": {
 		"@babel/core": "^7.14.6",
 		"@essex/babel-config": "workspace:packages/config-babel",

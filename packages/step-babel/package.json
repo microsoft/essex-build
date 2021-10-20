@@ -11,6 +11,11 @@
 		"clean": "rimraf dist lib",
 		"build": "tsc -b ."
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/microsoft/essex-js-build.git",
+		"directory": "packages/step-babel"
+	},
 	"dependencies": {
 		"@babel/core": "^7.14.6",
 		"@babel/types": "^7.14.5",

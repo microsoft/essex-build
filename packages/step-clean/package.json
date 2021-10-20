@@ -11,6 +11,11 @@
 		"clean": "rimraf dist lib",
 		"build": "tsc -b ."
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/microsoft/essex-js-build.git",
+		"directory": "packages/step-clean"
+	},
 	"dependencies": {
 		"@essex/build-utils": "workspace:packages/util-utils",
 		"rimraf": "^3.0.2"
