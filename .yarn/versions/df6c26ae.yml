@@ -18,6 +18,7 @@ releases:
   "@essex/eslint-config": patch
   "@essex/eslint-plugin": patch
   "@essex/jest-config": patch
+  "@essex/prettier-config": patch
   "@essex/scripts": patch
   "@essex/shellrunner": patch
   "@essex/tasklogger": patch
