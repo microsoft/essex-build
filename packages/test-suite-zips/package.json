@@ -7,7 +7,7 @@
 	"types": "dist/types/index.d.ts",
 	"scripts": {
 		"clean": "essex clean data/bar/linked_data dist",
-		"test": "run-s link_external_data zip_all run_unit_tests clean",
+		"test": "run-s clean link_external_data zip_all run_unit_tests",
 		"run_unit_tests": "jest",
 		"link_external_data": "shx ln -s ../../../../__tests__/linked_data data/bar/linked_data",
 		"zip_all": "run-p 'zip_data:*'",
