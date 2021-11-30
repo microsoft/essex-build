@@ -20,8 +20,10 @@ export function getWdsStaticConfig(): Configuration {
 	const staticFolder = join(process.cwd(), 'public')
 	return existsSync(staticFolder)
 		? {
-				contentBase: staticFolder,
-				watchContentBase: true,
+				static: {
+					directory: staticFolder,
+					watch: true,
+				},
 		  }
 		: {}
 }
