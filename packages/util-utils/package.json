@@ -11,6 +11,11 @@
 		"clean": "rimraf dist lib",
 		"build": "tsc -b ."
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/microsoft/essex-js-build.git",
+		"directory": "packages/util-utils"
+	},
 	"dependencies": {
 		"@essex/shellrunner": "workspace:packages/util-shellrunner",
 		"@essex/tasklogger": "workspace:packages/util-tasklogger",

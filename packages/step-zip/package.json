@@ -11,6 +11,11 @@
 		"clean": "rimraf dist lib",
 		"build": "tsc -b ."
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/microsoft/essex-js-build.git",
+		"directory": "packages/step-zip"
+	},
 	"dependencies": {
 		"@essex/tasklogger": "workspace:packages/util-tasklogger",
 		"archiver": "^5.3.0",

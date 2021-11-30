@@ -19,6 +19,11 @@
 		"zip_data:5": "essex zip --baseDir data dist/data5.zip foo",
 		"zip_data:6": "essex zip dist/data6.zip data"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/microsoft/essex-js-build.git",
+		"directory": "packages/test-suite-zips"
+	},
 	"devDependencies": {
 		"@essex/babel-config": "workspace:packages/config-babel",
 		"@essex/eslint-config": "workspace:packages/config-eslint",
