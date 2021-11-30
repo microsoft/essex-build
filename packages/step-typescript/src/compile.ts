@@ -15,10 +15,10 @@ export function compile(
 		.concat(emitResult.diagnostics)
 
 	allDiagnostics.forEach(diagnostic => {
-		if (diagnostic.file) {
+		if (diagnostic.file && diagnostic.start) {
 			const { line, character } = ts.getLineAndCharacterOfPosition(
 				diagnostic.file,
-				diagnostic.start!,
+				diagnostic.start,
 			)
 			const message = ts.flattenDiagnosticMessageText(
 				diagnostic.messageText,

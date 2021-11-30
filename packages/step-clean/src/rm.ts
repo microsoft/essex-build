@@ -6,7 +6,7 @@ import rimraf from 'rimraf'
 
 export function rm(fileglob: string): Promise<void> {
 	return new Promise((resolve, reject) => {
-		rimraf(fileglob, (err: Error) => {
+		rimraf(fileglob, (err: Error | null | undefined) => {
 			if (err) {
 				console.log(err)
 				reject(err)
