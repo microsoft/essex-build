@@ -257,6 +257,7 @@ const baseConfig = {
 		'eslint-plugin-jest',
 		'@typescript-eslint/eslint-plugin',
 	],
+	parser: '@typescript-eslint/parser',
 	extends: [...commonRuleSets],
 	env: {
 		browser: true,
