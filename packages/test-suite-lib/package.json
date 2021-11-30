@@ -12,6 +12,11 @@
 		"test": "jest",
 		"watch": "essex watch"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/microsoft/essex-js-build.git",
+		"directory": "packages/test-suite-lib"
+	},
 	"devDependencies": {
 		"@essex/babel-config": "workspace:packages/config-babel",
 		"@essex/eslint-config": "workspace:packages/config-eslint",

@@ -8,6 +8,11 @@
 		"lint": "essex lint",
 		"start": "webpack serve --progress"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/microsoft/essex-js-build.git",
+		"directory": "packages/test-suite-webapp-webpack"
+	},
 	"dependencies": {
 		"@types/react": "^17.0.13",
 		"@types/react-dom": "^17.0.8",
