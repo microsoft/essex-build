@@ -1,6 +1,6 @@
 {
 	"name": "@essex/build-step-typescript",
-	"version": "18.0.1",
+	"version": "18.0.2",
 	"license": "MIT",
 	"main": "src/index.ts",
 	"publishConfig": {
