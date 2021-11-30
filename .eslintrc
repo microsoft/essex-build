@@ -1,6 +1,7 @@
 {
-  "extends": "@essex/eslint-config/release",
-  "rules": {
-    "@typescript-eslint/no-explicit-any": "off" 
-  }
+	"extends": "@essex/eslint-config/release",
+	"parser": "@typescript-eslint/parser",
+	"rules": {
+		"@typescript-eslint/no-explicit-any": "off"
+	}
 }

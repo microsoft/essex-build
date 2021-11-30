@@ -8,6 +8,5 @@ module.exports = {
 	semi: false,
 	useTabs: true,
 	bracketSpacing: true,
-	jsxBracketSameLine: false,
 	arrowParens: 'avoid',
 }
