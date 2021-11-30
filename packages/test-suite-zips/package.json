@@ -8,7 +8,7 @@
 	"scripts": {
 		"clean": "essex clean data/bar/linked_data dist",
 		"test": "run-s link_external_data zip_all run_unit_tests clean",
-		"run_unit_testss": "jest",
+		"run_unit_tests": "jest",
 		"link_external_data": "shx ln -s ../../../../__tests__/linked_data data/bar/linked_data",
 		"zip_all": "run-p 'zip_data:*'",
 		"zip_data:1": "essex zip --baseDir data dist/data.zip '*'",
