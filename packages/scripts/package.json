@@ -25,7 +25,7 @@
 		}
 	},
 	"dependencies": {
-		"@babel/core": "^7.14.6",
+		"@babel/core": "^7.16.0",
 		"@essex/build-step-azure": "workspace:packages/step-azure",
 		"@essex/build-step-babel": "workspace:packages/step-babel",
 		"@essex/build-step-clean": "workspace:packages/step-clean",
@@ -40,27 +40,27 @@
 		"@essex/eslint-plugin": "workspace:packages/config-eslint-plugin",
 		"@essex/shellrunner": "workspace:packages/util-shellrunner",
 		"@essex/tasklogger": "workspace:packages/util-tasklogger",
-		"chalk": "^4.1.1",
-		"commander": "^8.0.0",
-		"debug": "^4.3.1",
+		"chalk": "^5.0.0",
+		"commander": "^8.3.0",
+		"debug": "^4.3.3",
 		"gulp": "^4.0.2",
 		"gulp-debug": "^4.0.0",
-		"gulp-prettier": "^3.0.0",
-		"prettier": "^2.3.2"
+		"gulp-prettier": "^4.0.0",
+		"prettier": "^2.5.0"
 	},
 	"devDependencies": {
 		"@tsconfig/node12": "^1.0.9",
-		"@types/debug": "^4.1.6",
-		"@types/gulp": "^4.0.8",
-		"@types/gulp-babel": "^6.1.29",
-		"@types/gulp-debug": "^2.0.31",
-		"@types/node": "^14.17.4",
+		"@types/debug": "^4.1.7",
+		"@types/gulp": "^4.0.9",
+		"@types/gulp-babel": "^6.1.30",
+		"@types/gulp-debug": "^2.0.32",
+		"@types/node": "^16.11.11",
 		"crlf": "^1.1.1",
 		"npm-run-all": "^4.1.5",
 		"rimraf": "^3.0.2",
 		"shx": "^0.3.3",
-		"ts-node": "^10.0.0",
-		"typescript": "^4.3.5"
+		"ts-node": "^10.4.0",
+		"typescript": "^4.5.2"
 	},
 	"peerDependencies": {
 		"@essex/eslint-config": ">=17.0.1",

@@ -6,7 +6,7 @@
 		"David Tittsworth <datit@microsoft.com>",
 		"Chris Trevino <chtrevin@microsoft.com>"
 	],
-	"packageManager": "yarn@3.0.0",
+	"packageManager": "yarn@3.1.1",
 	"scripts": {
 		"preinstall": "npx only-allow yarn",
 		"postinstall": "husky install",
@@ -31,19 +31,19 @@
 		"@essex/jest-config": "workspace:packages/config-jest",
 		"@essex/prettier-config": "workspace:packages/config-prettier",
 		"@essex/scripts": "workspace:packages/scripts",
-		"@types/eslint": "^7",
-		"@types/jest": "^26.0.23",
-		"@typescript-eslint/eslint-plugin": "^4.28.1",
-		"@typescript-eslint/parser": "^4.28.1",
-		"@yarnpkg/sdks": "^2.4.1-rc.4",
-		"eslint": "^7.31.0",
-		"eslint-import-resolver-node": "^0.3.4",
-		"husky": "^7.0.0",
-		"jest": "^27.0.6",
-		"lint-staged": "^11.0.0",
+		"@types/eslint": "^8.2.0",
+		"@types/jest": "^27.0.3",
+		"@typescript-eslint/eslint-plugin": "^5.5.0",
+		"@typescript-eslint/parser": "^5.5.0",
+		"@yarnpkg/sdks": "^2.5.1-rc.4",
+		"eslint": "^8.3.0",
+		"eslint-import-resolver-node": "^0.3.6",
+		"husky": "^7.0.4",
+		"jest": "^27.4.2",
+		"lint-staged": "^12.1.2",
 		"npm-run-all": "^4.1.5",
-		"prettier": "^2.3.2",
-		"typescript": "^4.3.5"
+		"prettier": "^2.5.0",
+		"typescript": "^4.5.2"
 	},
 	"workspaces": [
 		"packages/*"
