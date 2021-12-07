@@ -28,7 +28,7 @@
 	},
 	"devDependencies": {
 		"@tsconfig/node12": "^1.0.9",
-		"@types/babel__core": "^7.1.16",
+		"@types/babel__core": "^7.1.17",
 		"@types/glob": "^7.2.0",
 		"@types/gulp": "^4.0.9",
 		"@types/node": "^16.11.11",
