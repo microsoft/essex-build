@@ -23,7 +23,7 @@
 		"mime-types": "^2.1.34"
 	},
 	"devDependencies": {
-		"@tsconfig/node12": "^1.0.9",
+		"@tsconfig/node14": "^1.0.1",
 		"@types/glob": "^7.2.0",
 		"@types/mime-types": "^2.1.1",
 		"@types/node": "^16.11.11",

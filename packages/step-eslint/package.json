@@ -30,7 +30,7 @@
 		"eslint-import-resolver-node": "^0.3.6"
 	},
 	"devDependencies": {
-		"@tsconfig/node12": "^1.0.9",
+		"@tsconfig/node14": "^1.0.1",
 		"@types/eslint": "^8.2.0",
 		"@types/node": "^16.11.11",
 		"rimraf": "^3.0.2",

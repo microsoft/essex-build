@@ -49,7 +49,7 @@
 		"prettier": "^2.5.0"
 	},
 	"devDependencies": {
-		"@tsconfig/node12": "^1.0.9",
+		"@tsconfig/node14": "^1.0.1",
 		"@types/debug": "^4.1.7",
 		"@types/gulp": "^4.0.9",
 		"@types/gulp-babel": "^6.1.30",

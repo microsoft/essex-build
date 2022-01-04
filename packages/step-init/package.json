@@ -21,7 +21,7 @@
 		"@essex/tasklogger": "workspace:packages/util-tasklogger"
 	},
 	"devDependencies": {
-		"@tsconfig/node12": "^1.0.9",
+		"@tsconfig/node14": "^1.0.1",
 		"@types/node": "^16.11.11",
 		"@types/rimraf": "^3.0.2",
 		"rimraf": "^3.0.2",
