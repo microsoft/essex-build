@@ -11,7 +11,7 @@ const start = performance.now()
 const chalk = require('chalk')
 const { register } = require('esbuild-register/dist/node')
 register({
-	sourcemap: false,
+	sourcemap: false
 })
 const { info, printPerf } = require('@essex/tasklogger')
 

@@ -3115,6 +3115,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex/build-utils", "workspace:packages/util-utils"],
             ["@essex/eslint-config", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#workspace:packages/config-eslint"],
             ["@essex/eslint-plugin", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#workspace:packages/config-eslint-plugin"],
+            ["@essex/tasklogger", "workspace:packages/util-tasklogger"],
             ["@swc/cli", "virtual:4aed908eb310444788f3efcab67a1f1b191cb916970894d84b704c13933c8e755b2852dd69e3fbeb2220949f193e5d8316eb21edd584285ad7fb12bc6380e0b5#npm:0.1.55"],
             ["@swc/core", "npm:1.2.126"],
             ["@tsconfig/node14", "npm:1.0.1"],

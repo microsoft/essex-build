@@ -4,6 +4,7 @@
  */
 /* eslint-disable @essex/adjacent-await */
 import { gulpify, wrapPromiseTask } from '@essex/build-utils'
+import { traceFile } from '@essex/tasklogger'
 import { ESLint } from 'eslint'
 import { getConfigFile, getIgnorePath } from './config'
 
@@ -25,6 +26,8 @@ export async function eslint(
 			extensions: ['js', 'jsx', 'ts', 'tsx'],
 			ignorePath,
 		})
+
+		files.forEach(f => traceFile(f, 'lint'))
 
 		const results = await linter.lintFiles(files)
 		await ESLint.outputFixes(results)
