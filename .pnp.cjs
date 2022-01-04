@@ -3298,6 +3298,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex/build-step-typescript", "virtual:25caa3f830d103d043e5f3fd6d7f1c6380415e258056e04a77efbf567aeff38cec622788c2eafdcefe8f3272c253f20054d72fa4760d2a93b49eddf64c3482c5#workspace:packages/step-typescript"],
             ["@essex/build-utils", "workspace:packages/util-utils"],
             ["@essex/tasklogger", "workspace:packages/util-tasklogger"],
+            ["@swc/core", "npm:1.2.126"],
             ["@tsconfig/node12", "npm:1.0.9"],
             ["@types/glob", "npm:7.2.0"],
             ["@types/gulp", "npm:4.0.9"],
@@ -3322,6 +3323,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex/build-step-typescript", "workspace:packages/step-typescript"],
             ["@essex/build-utils", "workspace:packages/util-utils"],
             ["@essex/tasklogger", "workspace:packages/util-tasklogger"],
+            ["@swc/core", "npm:1.2.126"],
             ["@tsconfig/node12", "npm:1.0.9"],
             ["@types/glob", "npm:7.2.0"],
             ["@types/gulp", "npm:4.0.9"],
@@ -4577,6 +4579,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@napi-rs/triples", [
+        ["npm:1.1.0", {
+          "packageLocation": "./.yarn/cache/@napi-rs-triples-npm-1.1.0-b4fbbdd497-8da77d47ec.zip/node_modules/@napi-rs/triples/",
+          "packageDependencies": [
+            ["@napi-rs/triples", "npm:1.1.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@node-rs/helper", [
+        ["npm:1.3.0", {
+          "packageLocation": "./.yarn/cache/@node-rs-helper-npm-1.3.0-33c0c3a3a4-1d08175953.zip/node_modules/@node-rs/helper/",
+          "packageDependencies": [
+            ["@node-rs/helper", "npm:1.3.0"],
+            ["@napi-rs/triples", "npm:1.1.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@nodelib/fs.scandir", [
         ["npm:2.1.5", {
           "packageLocation": "./.yarn/cache/@nodelib-fs.scandir-npm-2.1.5-89c67370dd-a970d595bd.zip/node_modules/@nodelib/fs.scandir/",
@@ -4675,6 +4696,146 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@sinonjs/fake-timers", "npm:8.1.0"],
             ["@sinonjs/commons", "npm:1.8.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@swc/core", [
+        ["npm:1.2.126", {
+          "packageLocation": "./.yarn/cache/@swc-core-npm-1.2.126-9254eb50c0-9be1bddbb3.zip/node_modules/@swc/core/",
+          "packageDependencies": [
+            ["@swc/core", "npm:1.2.126"],
+            ["@node-rs/helper", "npm:1.3.0"],
+            ["@swc/core-android-arm-eabi", "npm:1.2.126"],
+            ["@swc/core-android-arm64", "npm:1.2.126"],
+            ["@swc/core-darwin-arm64", "npm:1.2.126"],
+            ["@swc/core-darwin-x64", "npm:1.2.126"],
+            ["@swc/core-freebsd-x64", "npm:1.2.126"],
+            ["@swc/core-linux-arm-gnueabihf", "npm:1.2.126"],
+            ["@swc/core-linux-arm64-gnu", "npm:1.2.126"],
+            ["@swc/core-linux-arm64-musl", "npm:1.2.126"],
+            ["@swc/core-linux-x64-gnu", "npm:1.2.126"],
+            ["@swc/core-linux-x64-musl", "npm:1.2.126"],
+            ["@swc/core-win32-arm64-msvc", "npm:1.2.126"],
+            ["@swc/core-win32-ia32-msvc", "npm:1.2.126"],
+            ["@swc/core-win32-x64-msvc", "npm:1.2.126"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@swc/core-android-arm-eabi", [
+        ["npm:1.2.126", {
+          "packageLocation": "./.yarn/unplugged/@swc-core-android-arm-eabi-npm-1.2.126-c4973b365b/node_modules/@swc/core-android-arm-eabi/",
+          "packageDependencies": [
+            ["@swc/core-android-arm-eabi", "npm:1.2.126"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@swc/core-android-arm64", [
+        ["npm:1.2.126", {
+          "packageLocation": "./.yarn/unplugged/@swc-core-android-arm64-npm-1.2.126-8aed302872/node_modules/@swc/core-android-arm64/",
+          "packageDependencies": [
+            ["@swc/core-android-arm64", "npm:1.2.126"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@swc/core-darwin-arm64", [
+        ["npm:1.2.126", {
+          "packageLocation": "./.yarn/unplugged/@swc-core-darwin-arm64-npm-1.2.126-b627ec98a7/node_modules/@swc/core-darwin-arm64/",
+          "packageDependencies": [
+            ["@swc/core-darwin-arm64", "npm:1.2.126"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@swc/core-darwin-x64", [
+        ["npm:1.2.126", {
+          "packageLocation": "./.yarn/unplugged/@swc-core-darwin-x64-npm-1.2.126-6f4f071cc7/node_modules/@swc/core-darwin-x64/",
+          "packageDependencies": [
+            ["@swc/core-darwin-x64", "npm:1.2.126"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@swc/core-freebsd-x64", [
+        ["npm:1.2.126", {
+          "packageLocation": "./.yarn/unplugged/@swc-core-freebsd-x64-npm-1.2.126-4a409f60d6/node_modules/@swc/core-freebsd-x64/",
+          "packageDependencies": [
+            ["@swc/core-freebsd-x64", "npm:1.2.126"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@swc/core-linux-arm-gnueabihf", [
+        ["npm:1.2.126", {
+          "packageLocation": "./.yarn/unplugged/@swc-core-linux-arm-gnueabihf-npm-1.2.126-b3051f3033/node_modules/@swc/core-linux-arm-gnueabihf/",
+          "packageDependencies": [
+            ["@swc/core-linux-arm-gnueabihf", "npm:1.2.126"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@swc/core-linux-arm64-gnu", [
+        ["npm:1.2.126", {
+          "packageLocation": "./.yarn/unplugged/@swc-core-linux-arm64-gnu-npm-1.2.126-9846daef05/node_modules/@swc/core-linux-arm64-gnu/",
+          "packageDependencies": [
+            ["@swc/core-linux-arm64-gnu", "npm:1.2.126"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@swc/core-linux-arm64-musl", [
+        ["npm:1.2.126", {
+          "packageLocation": "./.yarn/unplugged/@swc-core-linux-arm64-musl-npm-1.2.126-c0b8e86392/node_modules/@swc/core-linux-arm64-musl/",
+          "packageDependencies": [
+            ["@swc/core-linux-arm64-musl", "npm:1.2.126"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@swc/core-linux-x64-gnu", [
+        ["npm:1.2.126", {
+          "packageLocation": "./.yarn/unplugged/@swc-core-linux-x64-gnu-npm-1.2.126-d27047a6da/node_modules/@swc/core-linux-x64-gnu/",
+          "packageDependencies": [
+            ["@swc/core-linux-x64-gnu", "npm:1.2.126"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@swc/core-linux-x64-musl", [
+        ["npm:1.2.126", {
+          "packageLocation": "./.yarn/unplugged/@swc-core-linux-x64-musl-npm-1.2.126-8695b99f23/node_modules/@swc/core-linux-x64-musl/",
+          "packageDependencies": [
+            ["@swc/core-linux-x64-musl", "npm:1.2.126"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@swc/core-win32-arm64-msvc", [
+        ["npm:1.2.126", {
+          "packageLocation": "./.yarn/unplugged/@swc-core-win32-arm64-msvc-npm-1.2.126-657714c6d7/node_modules/@swc/core-win32-arm64-msvc/",
+          "packageDependencies": [
+            ["@swc/core-win32-arm64-msvc", "npm:1.2.126"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@swc/core-win32-ia32-msvc", [
+        ["npm:1.2.126", {
+          "packageLocation": "./.yarn/unplugged/@swc-core-win32-ia32-msvc-npm-1.2.126-d1cfaeef0e/node_modules/@swc/core-win32-ia32-msvc/",
+          "packageDependencies": [
+            ["@swc/core-win32-ia32-msvc", "npm:1.2.126"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@swc/core-win32-x64-msvc", [
+        ["npm:1.2.126", {
+          "packageLocation": "./.yarn/unplugged/@swc-core-win32-x64-msvc-npm-1.2.126-b09387c9bd/node_modules/@swc/core-win32-x64-msvc/",
+          "packageDependencies": [
+            ["@swc/core-win32-x64-msvc", "npm:1.2.126"]
           ],
           "linkType": "HARD",
         }]

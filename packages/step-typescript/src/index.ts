@@ -38,15 +38,15 @@ function getBuildTask(
 			}
 			const options = parseTSConfig(config)
 			// transpile task
-			const result = compileTS(sourceFiles, options)
+			const result = await compileTS(sourceFiles)
 			// emit types to dist/ folder; no emit expected
-			compileTS(sourceFiles, {
-				...options,
-				declaration: true,
-				emitDeclarationOnly: true,
-				stripInternal,
-				outDir: 'dist/types',
-			})
+			// compileTS(sourceFiles, {
+			// 	...options,
+			// 	declaration: true,
+			// 	emitDeclarationOnly: true,
+			// 	stripInternal,
+			// 	outDir: 'dist/types',
+			// })
 			const end = performance.now()
 			if (result === 0) {
 				subtaskSuccess(`${title} ${printPerf(start, end)}`)
