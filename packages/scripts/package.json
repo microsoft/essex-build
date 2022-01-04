@@ -6,7 +6,7 @@
 	"author": "David Tittsworth <datittsw@microsoft.com>",
 	"license": "MIT",
 	"scripts": {
-		"build:typescript": "tsc",
+		"build:typescript": "swc src -d lib & tsc --emitDeclarationOnly &",
 		"build:crlf": "crlf --set=LF \"lib/**/*.js\"",
 		"build:perms": "shx chmod +x lib/index.js",
 		"build": "run-s build:typescript build:crlf build:perms",
@@ -47,6 +47,8 @@
 		"prettier": "^2.5.0"
 	},
 	"devDependencies": {
+		"@swc/cli": "^0.1.55",
+		"@swc/core": "^1.2.126",
 		"@tsconfig/node14": "^1.0.1",
 		"@types/debug": "^4.1.7",
 		"@types/gulp": "^4.0.9",

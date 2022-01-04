@@ -2,11 +2,25 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { existsSync } from 'fs'
+import { existsSync, readFileSync } from 'fs'
 import { join } from 'path'
-import { getEsmConfiguration } from '@essex/babel-config'
 import { Configuration } from 'webpack-dev-server'
 import { log } from './log'
+
+const DEFAULT_SWC_CONFIG = {
+	jsc: {
+		parser: {
+			syntax: 'typescript',
+			tsx: true,
+		},
+		transform: {
+			react: {
+				runtime: 'automatic',
+				useBuiltins: true,
+			},
+		},
+	},
+}
 
 /* eslint-disable @typescript-eslint/no-var-requires */
 export const pkgJson = require(join(process.cwd(), 'package.json'))
@@ -57,6 +71,11 @@ export function getIndexFile(): string {
 	}
 }
 
-export function getBabelConfiguration(env: string): string {
-	return getEsmConfiguration(env)
+export function getSwcOptions() {
+	if (existsSync(join(process.cwd(), '.swcrc'))) {
+		const swcrc = readFileSync(join(process.cwd(), '.swcrc'), 'utf8')
+		return JSON.parse(swcrc)
+	} else {
+		return DEFAULT_SWC_CONFIG
+	}
 }

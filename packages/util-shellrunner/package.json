@@ -14,7 +14,7 @@
 		"Chris Trevino <chtrevin@microsoft.com>"
 	],
 	"scripts": {
-		"build": "tsc -b .",
+		"build": "swc src -d lib & tsc --emitDeclarationOnly &",
 		"clean": "rimraf lib"
 	},
 	"dependencies": {
@@ -22,6 +22,8 @@
 		"debug": "^4.3.3"
 	},
 	"devDependencies": {
+		"@swc/cli": "^0.1.55",
+		"@swc/core": "^1.2.126",
 		"@tsconfig/node14": "^1.0.1",
 		"@types/debug": "^4.1.7",
 		"@types/node": "^16.11.11",

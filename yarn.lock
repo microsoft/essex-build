@@ -1664,6 +1664,8 @@ __metadata:
     "@babel/preset-env": ^7.16.4
     "@babel/preset-react": ^7.16.0
     "@babel/preset-typescript": ^7.16.0
+    "@swc/cli": ^0.1.55
+    "@swc/core": ^1.2.126
     "@tsconfig/node14": ^1.0.1
     "@types/node": ^16.11.11
     babel-plugin-transform-typescript-metadata: ^0.3.2
@@ -1678,6 +1680,8 @@ __metadata:
   dependencies:
     "@azure/storage-blob": ^12.8.0
     "@essex/build-utils": "workspace:packages/util-utils"
+    "@swc/cli": ^0.1.55
+    "@swc/core": ^1.2.126
     "@tsconfig/node14": ^1.0.1
     "@types/glob": ^7.2.0
     "@types/mime-types": ^2.1.1
@@ -1694,9 +1698,12 @@ __metadata:
   resolution: "@essex/build-step-clean@workspace:packages/step-clean"
   dependencies:
     "@essex/build-utils": "workspace:packages/util-utils"
+    "@swc/cli": ^0.1.55
+    "@swc/core": ^1.2.126
     "@tsconfig/node14": ^1.0.1
     "@types/node": ^16.11.11
     "@types/rimraf": ^3.0.2
+    npm-run-all: ^4.1.5
     rimraf: ^3.0.2
     typescript: ^4.5.2
   languageName: unknown
@@ -1709,6 +1716,8 @@ __metadata:
     "@essex/build-utils": "workspace:packages/util-utils"
     "@essex/eslint-config": "workspace:packages/config-eslint"
     "@essex/eslint-plugin": "workspace:packages/config-eslint-plugin"
+    "@swc/cli": ^0.1.55
+    "@swc/core": ^1.2.126
     "@tsconfig/node14": ^1.0.1
     "@types/eslint": ^8.2.0
     "@types/node": ^16.11.11
@@ -1727,6 +1736,8 @@ __metadata:
   dependencies:
     "@essex/build-utils": "workspace:packages/util-utils"
     "@essex/tasklogger": "workspace:packages/util-tasklogger"
+    "@swc/cli": ^0.1.55
+    "@swc/core": ^1.2.126
     "@tsconfig/node14": ^1.0.1
     "@types/node": ^16.11.11
     "@types/rimraf": ^3.0.2
@@ -1741,6 +1752,8 @@ __metadata:
   dependencies:
     "@essex/build-utils": "workspace:packages/util-utils"
     "@essex/shellrunner": "workspace:packages/util-shellrunner"
+    "@swc/cli": ^0.1.55
+    "@swc/core": ^1.2.126
     "@tsconfig/node14": ^1.0.1
     "@types/node": ^16.11.11
     "@types/rimraf": ^3.0.2
@@ -1757,6 +1770,8 @@ __metadata:
   dependencies:
     "@essex/build-utils": "workspace:packages/util-utils"
     "@essex/tasklogger": "workspace:packages/util-tasklogger"
+    "@swc/cli": ^0.1.55
+    "@swc/core": ^1.2.126
     "@tsconfig/node14": ^1.0.1
     "@types/node": ^16.11.11
     chalk: ^4.1.2
@@ -1773,6 +1788,8 @@ __metadata:
   dependencies:
     "@essex/build-utils": "workspace:packages/util-utils"
     "@essex/tasklogger": "workspace:packages/util-tasklogger"
+    "@swc/cli": ^0.1.55
+    "@swc/core": ^1.2.126
     "@tsconfig/node14": ^1.0.1
     "@types/node": ^16.11.11
     rimraf: ^3.0.2
@@ -1789,6 +1806,7 @@ __metadata:
   dependencies:
     "@essex/build-utils": "workspace:packages/util-utils"
     "@essex/tasklogger": "workspace:packages/util-tasklogger"
+    "@swc/cli": ^0.1.55
     "@swc/core": ^1.2.126
     "@tsconfig/node14": ^1.0.1
     "@types/glob": ^7.2.0
@@ -1810,6 +1828,8 @@ __metadata:
   resolution: "@essex/build-step-zip@workspace:packages/step-zip"
   dependencies:
     "@essex/tasklogger": "workspace:packages/util-tasklogger"
+    "@swc/cli": ^0.1.55
+    "@swc/core": ^1.2.126
     "@tsconfig/node14": ^1.0.1
     "@types/archiver": ^5.3.0
     "@types/glob": ^7.2.0
@@ -1831,6 +1851,8 @@ __metadata:
   dependencies:
     "@essex/shellrunner": "workspace:packages/util-shellrunner"
     "@essex/tasklogger": "workspace:packages/util-tasklogger"
+    "@swc/cli": ^0.1.55
+    "@swc/core": ^1.2.126
     "@tsconfig/node14": ^1.0.1
     "@types/gulp": ^4.0.9
     "@types/node": 16.11.11
@@ -1861,6 +1883,8 @@ __metadata:
   dependencies:
     "@babel/core": ^7.16.0
     "@babel/types": ^7.16.0
+    "@swc/cli": ^0.1.55
+    "@swc/core": ^1.2.126
     "@tsconfig/node14": ^1.0.1
     "@types/node": ^16.11.11
     "@typescript-eslint/eslint-plugin": ^5.5.0
@@ -1890,6 +1914,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/jest-config@workspace:packages/config-jest"
   dependencies:
+    "@swc/cli": ^0.1.55
     "@swc/core": ^1.2.126
     "@swc/jest": ^0.2.15
     "@tsconfig/node14": ^1.0.1
@@ -1929,6 +1954,8 @@ __metadata:
     "@essex/eslint-plugin": "workspace:packages/config-eslint-plugin"
     "@essex/shellrunner": "workspace:packages/util-shellrunner"
     "@essex/tasklogger": "workspace:packages/util-tasklogger"
+    "@swc/cli": ^0.1.55
+    "@swc/core": ^1.2.126
     "@tsconfig/node14": ^1.0.1
     "@types/debug": ^4.1.7
     "@types/gulp": ^4.0.9
@@ -1992,6 +2019,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/shellrunner@workspace:packages/util-shellrunner"
   dependencies:
+    "@swc/cli": ^0.1.55
+    "@swc/core": ^1.2.126
     "@tsconfig/node14": ^1.0.1
     "@types/debug": ^4.1.7
     "@types/node": ^16.11.11
@@ -2006,6 +2035,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/tasklogger@workspace:packages/util-tasklogger"
   dependencies:
+    "@swc/cli": ^0.1.55
+    "@swc/core": ^1.2.126
     "@tsconfig/node14": ^1.0.1
     "@types/node": ^16.11.11
     chalk: ^4.1.2
@@ -2030,16 +2061,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/webpack-config@workspace:packages/config-webpack"
   dependencies:
-    "@babel/core": ^7.16.0
-    "@essex/babel-config": "workspace:packages/config-babel"
+    "@swc/cli": ^0.1.55
+    "@swc/core": ^1.2.126
     "@tsconfig/node14": ^1.0.1
     "@types/debug": ^4.1.7
     "@types/express": ^4.17.13
     "@types/node": ^16.11.11
     "@types/webpack": ^5.28.0
     "@types/webpack-dev-server": ^4.5.0
-    babel-loader: ^8.2.3
-    cache-loader: ^4.1.0
     css-loader: ^6.5.1
     debug: ^4.3.3
     fork-ts-checker-webpack-plugin: ^6.5.0
@@ -2048,7 +2077,7 @@ __metadata:
     rimraf: ^3.0.2
     sass-loader: ^12.3.0
     style-loader: ^3.3.1
-    ts-loader: ^9.2.6
+    swc-loader: ^0.1.15
     tsconfig-paths-webpack-plugin: ^3.5.2
     typescript: ^4.5.2
     webpack: ^5.64.4
@@ -2416,6 +2445,27 @@ __metadata:
   dependencies:
     "@sinonjs/commons": ^1.7.0
   checksum: 09b5a158ce013a6c37613258bad79ca4efeb99b1f59c41c73cca36cac00b258aefcf46eeea970fccf06b989414d86fe9f54c1102272c0c3bdd51a313cea80949
+  languageName: node
+  linkType: hard
+
+"@swc/cli@npm:^0.1.55":
+  version: 0.1.55
+  resolution: "@swc/cli@npm:0.1.55"
+  dependencies:
+    commander: ^7.1.0
+    fast-glob: ^3.2.5
+    slash: 3.0.0
+    source-map: ^0.7.3
+  peerDependencies:
+    "@swc/core": ^1.2.66
+    chokidar: ^3.5.1
+  peerDependenciesMeta:
+    chokidar:
+      optional: true
+  bin:
+    spack: bin/spack.js
+    swc: bin/swc.js
+  checksum: db6a727716acffd6202158bb47ab1541f9b43f1a8146c8588b33a969330f08ffbc59d813bad192929acb67f6675aabeee20618522b0b7533a9f77b35c49edaa1
   languageName: node
   linkType: hard
 
@@ -4403,21 +4453,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-loader@npm:^8.2.3":
-  version: 8.2.3
-  resolution: "babel-loader@npm:8.2.3"
-  dependencies:
-    find-cache-dir: ^3.3.1
-    loader-utils: ^1.4.0
-    make-dir: ^3.1.0
-    schema-utils: ^2.6.5
-  peerDependencies:
-    "@babel/core": ^7.0.0
-    webpack: ">=2"
-  checksum: 78e1e1a91954d644b6ce66366834d4d245febbc0fde33e4e2831725e83d6e760d12b3a78e9534ce92af69067bef1d9d9674df36d8c1f20ee127bc2354b2203ba
-  languageName: node
-  linkType: hard
-
 "babel-plugin-dynamic-import-node@npm:^2.3.3":
   version: 2.3.3
   resolution: "babel-plugin-dynamic-import-node@npm:2.3.3"
@@ -4760,13 +4795,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"buffer-json@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "buffer-json@npm:2.0.0"
-  checksum: 9b8601d25f50341a02c42cb7ffbd6d6801d961f2beda5648c86da815b3019dd8503ebf106cdc2ff2b98f78a463d8b6754f6797419d25ec60a90bb9192fccf40c
-  languageName: node
-  linkType: hard
-
 "buffer@npm:^5.5.0":
   version: 5.7.1
   resolution: "buffer@npm:5.7.1"
@@ -4831,22 +4859,6 @@ __metadata:
     union-value: ^1.0.0
     unset-value: ^1.0.0
   checksum: 9114b8654fe2366eedc390bad0bcf534e2f01b239a888894e2928cb58cdc1e6ea23a73c6f3450dcfd2058aa73a8a981e723cd1e7c670c047bf11afdc65880107
-  languageName: node
-  linkType: hard
-
-"cache-loader@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "cache-loader@npm:4.1.0"
-  dependencies:
-    buffer-json: ^2.0.0
-    find-cache-dir: ^3.0.0
-    loader-utils: ^1.2.3
-    mkdirp: ^0.5.1
-    neo-async: ^2.6.1
-    schema-utils: ^2.0.0
-  peerDependencies:
-    webpack: ^4.0.0
-  checksum: 0339778bddbd3368dc420e5a58b569153334fb74226d15b76832a1246ce8990bb5fcdfa8811557f0b0605bbd06aea12bb069abd906aeb114ae0e7d0a9fde7f59
   languageName: node
   linkType: hard
 
@@ -5294,7 +5306,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^7.0.0":
+"commander@npm:^7.0.0, commander@npm:^7.1.0":
   version: 7.2.0
   resolution: "commander@npm:7.2.0"
   checksum: 53501cbeee61d5157546c0bef0fedb6cdfc763a882136284bed9a07225f09a14b82d2a84e7637edfd1a679fb35ed9502fd58ef1d091e6287f60d790147f68ddc
@@ -5317,13 +5329,6 @@ __metadata:
     has-own-prop: ^2.0.0
     repeat-string: ^1.6.1
   checksum: 1e52aa6ddc7aaab4b66b2fbca8758f1035c9ea42bacf7ccd3c446a46b635fff83366cd8a490043675a345402a13675a9e22581671ebbd202e6987ecb6d4d5280
-  languageName: node
-  linkType: hard
-
-"commondir@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "commondir@npm:1.0.1"
-  checksum: 59715f2fc456a73f68826285718503340b9f0dd89bfffc42749906c5cf3d4277ef11ef1cca0350d0e79204f00f1f6d83851ececc9095dc88512a697ac0b9bdcb
   languageName: node
   linkType: hard
 
@@ -6133,7 +6138,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"enhanced-resolve@npm:^5.0.0, enhanced-resolve@npm:^5.7.0, enhanced-resolve@npm:^5.8.3":
+"enhanced-resolve@npm:^5.7.0, enhanced-resolve@npm:^5.8.3":
   version: 5.8.3
   resolution: "enhanced-resolve@npm:5.8.3"
   dependencies:
@@ -7234,7 +7239,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.1.1, fast-glob@npm:^3.2.2":
+"fast-glob@npm:^3.1.1, fast-glob@npm:^3.2.2, fast-glob@npm:^3.2.5":
   version: 3.2.7
   resolution: "fast-glob@npm:3.2.7"
   dependencies:
@@ -7351,17 +7356,6 @@ __metadata:
     statuses: ~1.5.0
     unpipe: ~1.0.0
   checksum: 617880460c5138dd7ccfd555cb5dde4d8f170f4b31b8bd51e4b646bb2946c30f7db716428a1f2882d730d2b72afb47d1f67cc487b874cb15426f95753a88965e
-  languageName: node
-  linkType: hard
-
-"find-cache-dir@npm:^3.0.0, find-cache-dir@npm:^3.3.1":
-  version: 3.3.2
-  resolution: "find-cache-dir@npm:3.3.2"
-  dependencies:
-    commondir: ^1.0.1
-    make-dir: ^3.0.2
-    pkg-dir: ^4.1.0
-  checksum: 1e61c2e64f5c0b1c535bd85939ae73b0e5773142713273818cc0b393ee3555fb0fd44e1a5b161b8b6c3e03e98c2fcc9c227d784850a13a90a8ab576869576817
   languageName: node
   linkType: hard
 
@@ -10145,14 +10139,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"loader-utils@npm:^1.2.3, loader-utils@npm:^1.4.0":
-  version: 1.4.0
-  resolution: "loader-utils@npm:1.4.0"
+"loader-utils@npm:^2.0.0":
+  version: 2.0.2
+  resolution: "loader-utils@npm:2.0.2"
   dependencies:
     big.js: ^5.2.2
     emojis-list: ^3.0.0
-    json5: ^1.0.1
-  checksum: d150b15e7a42ac47d935c8b484b79e44ff6ab4c75df7cc4cb9093350cf014ec0b17bdb60c5d6f91a37b8b218bd63b973e263c65944f58ca2573e402b9a27e717
+    json5: ^2.1.2
+  checksum: 9078d1ed47cadc57f4c6ddbdb2add324ee7da544cea41de3b7f1128e8108fcd41cd3443a85b7ee8d7d8ac439148aa221922774efe4cf87506d4fb054d5889303
   languageName: node
   linkType: hard
 
@@ -10286,7 +10280,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"make-dir@npm:^3.0.0, make-dir@npm:^3.0.2, make-dir@npm:^3.1.0":
+"make-dir@npm:^3.0.0":
   version: 3.1.0
   resolution: "make-dir@npm:3.1.0"
   dependencies:
@@ -10446,7 +10440,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"micromatch@npm:^4.0.0, micromatch@npm:^4.0.2, micromatch@npm:^4.0.4":
+"micromatch@npm:^4.0.2, micromatch@npm:^4.0.4":
   version: 4.0.4
   resolution: "micromatch@npm:4.0.4"
   dependencies:
@@ -10761,7 +10755,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"neo-async@npm:^2.6.1, neo-async@npm:^2.6.2":
+"neo-async@npm:^2.6.2":
   version: 2.6.2
   resolution: "neo-async@npm:2.6.2"
   checksum: deac9f8d00eda7b2e5cd1b2549e26e10a0faa70adaa6fdadca701cc55f49ee9018e427f424bac0c790b7c7e2d3068db97f3093f1093975f2acb8f8818b936ed9
@@ -11641,7 +11635,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pkg-dir@npm:^4.1.0, pkg-dir@npm:^4.2.0":
+"pkg-dir@npm:^4.2.0":
   version: 4.2.0
   resolution: "pkg-dir@npm:4.2.0"
   dependencies:
@@ -12715,17 +12709,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"schema-utils@npm:^2.0.0, schema-utils@npm:^2.6.5":
-  version: 2.7.1
-  resolution: "schema-utils@npm:2.7.1"
-  dependencies:
-    "@types/json-schema": ^7.0.5
-    ajv: ^6.12.4
-    ajv-keywords: ^3.5.2
-  checksum: 32c62fc9e28edd101e1bd83453a4216eb9bd875cc4d3775e4452b541908fa8f61a7bbac8ffde57484f01d7096279d3ba0337078e85a918ecbeb72872fb09fb2b
-  languageName: node
-  linkType: hard
-
 "schema-utils@npm:^3.1.0, schema-utils@npm:^3.1.1":
   version: 3.1.1
   resolution: "schema-utils@npm:3.1.1"
@@ -12801,7 +12784,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.1.2, semver@npm:^7.2.1, semver@npm:^7.3.2, semver@npm:^7.3.4, semver@npm:^7.3.5":
+"semver@npm:^7.1.2, semver@npm:^7.2.1, semver@npm:^7.3.2, semver@npm:^7.3.5":
   version: 7.3.5
   resolution: "semver@npm:7.3.5"
   dependencies:
@@ -13018,7 +13001,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"slash@npm:^3.0.0":
+"slash@npm:3.0.0, slash@npm:^3.0.0":
   version: 3.0.0
   resolution: "slash@npm:3.0.0"
   checksum: 94a93fff615f25a999ad4b83c9d5e257a7280c90a32a7cb8b4a87996e4babf322e469c42b7f649fd5796edd8687652f3fb452a86dc97a816f01113183393f11c
@@ -13617,6 +13600,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"swc-loader@npm:^0.1.15":
+  version: 0.1.15
+  resolution: "swc-loader@npm:0.1.15"
+  dependencies:
+    loader-utils: ^2.0.0
+  peerDependencies:
+    "@swc/core": ^1.2.52
+    webpack: ">=2"
+  checksum: dd3b5893cc04abba85f7f3abbd97f4e810da5df24fe87123d4c0b4ac8559df37b59b3b044e88661e9ae52cbb111e0eb6eff02c96e243f984f26cba651eb90f15
+  languageName: node
+  linkType: hard
+
 "symbol-tree@npm:^3.2.4":
   version: 3.2.4
   resolution: "symbol-tree@npm:3.2.4"
@@ -13928,21 +13923,6 @@ __metadata:
   version: 1.1.0
   resolution: "treeify@npm:1.1.0"
   checksum: aa00dded220c1dd052573bd6fc2c52862f09870851a284f0d3650d72bf913ba9b4f6b824f4f1ab81899bae29375f4266b07fe47cbf82343a1efa13cc09ce87af
-  languageName: node
-  linkType: hard
-
-"ts-loader@npm:^9.2.6":
-  version: 9.2.6
-  resolution: "ts-loader@npm:9.2.6"
-  dependencies:
-    chalk: ^4.1.0
-    enhanced-resolve: ^5.0.0
-    micromatch: ^4.0.0
-    semver: ^7.3.4
-  peerDependencies:
-    typescript: "*"
-    webpack: ^5.0.0
-  checksum: 309d8fb6348c0c3a7166d42c1238c585ede00f816155b24217dbca489406a72409395d7954bc5801ddb9ca71c71e7e0b2375dbc342337e0ab1a461944598a7fe
   languageName: node
   linkType: hard
 

@@ -9,7 +9,7 @@
 	},
 	"scripts": {
 		"clean": "rimraf dist lib",
-		"build": "tsc -b ."
+		"build": "swc src -d lib & tsc --emitDeclarationOnly &"
 	},
 	"repository": {
 		"type": "git",
@@ -25,6 +25,8 @@
 		"tsconfig": "^7.0.0"
 	},
 	"devDependencies": {
+		"@swc/cli": "^0.1.55",
+		"@swc/core": "^1.2.126",
 		"@tsconfig/node14": "^1.0.1",
 		"@types/glob": "^7.2.0",
 		"@types/gulp": "^4.0.9",
