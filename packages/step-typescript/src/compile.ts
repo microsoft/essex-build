@@ -4,9 +4,9 @@
  */
 import fs from 'fs/promises'
 import path from 'path'
-import * as swc from '@swc/core'
-import { printPerf, subtaskInfo, traceFile } from '@essex/tasklogger'
 import { performance } from 'perf_hooks'
+import { printPerf, subtaskInfo, traceFile } from '@essex/tasklogger'
+import * as swc from '@swc/core'
 
 const ESM_PATH = 'dist/esm'
 const CJS_PATH = 'dist/cjs'

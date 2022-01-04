@@ -1621,6 +1621,7 @@ __metadata:
     jest: ^27.4.2
     jszip: ^3.7.1
     npm-run-all: ^4.1.5
+    regenerator-runtime: ^0.13.9
     shx: ^0.3.3
   languageName: unknown
   linkType: soft
@@ -1889,6 +1890,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/jest-config@workspace:packages/config-jest"
   dependencies:
+    "@swc/core": ^1.2.126
     "@swc/jest": ^0.2.15
     "@tsconfig/node14": ^1.0.1
     "@types/jest": ^27.0.3
@@ -12234,7 +12236,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"regenerator-runtime@npm:^0.13.4":
+"regenerator-runtime@npm:^0.13.4, regenerator-runtime@npm:^0.13.9":
   version: 0.13.9
   resolution: "regenerator-runtime@npm:0.13.9"
   checksum: 65ed455fe5afd799e2897baf691ca21c2772e1a969d19bb0c4695757c2d96249eb74ee3553ea34a91062b2a676beedf630b4c1551cc6299afb937be1426ec55e

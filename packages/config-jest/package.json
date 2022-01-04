@@ -15,6 +15,7 @@
 		"directory": "packages/config-jest"
 	},
 	"dependencies": {
+		"@swc/core": "^1.2.126",
 		"@swc/jest": "^0.2.15",
 		"@types/jest": "^27.0.3",
 		"identity-obj-proxy": "^3.0.0"

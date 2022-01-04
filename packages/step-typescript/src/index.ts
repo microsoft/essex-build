@@ -6,9 +6,9 @@ import { performance } from 'perf_hooks'
 import { subtaskSuccess, subtaskFail, printPerf } from '@essex/tasklogger'
 import gulp from 'gulp'
 import ts from 'typescript'
+import { checkAndEmitTypings } from './checkAndEmitTypings'
 import { compile as compileTS } from './compile'
 import { getSourceFiles } from './getSourceFiles'
-import { checkAndEmitTypings } from './checkAndEmitTypings'
 
 function getBuildTask(
 	stripInternal: boolean,

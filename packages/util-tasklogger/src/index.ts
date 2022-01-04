@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import chalk from 'chalk'
 import { performance } from 'perf_hooks'
+import chalk from 'chalk'
 
 export function info(text: string, ...args: unknown[]): void {
 	console.log(chalk.white(text), ...args)

@@ -3010,6 +3010,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#npm:27.4.2"],
             ["jszip", "npm:3.7.1"],
             ["npm-run-all", "npm:4.1.5"],
+            ["regenerator-runtime", "npm:0.13.9"],
             ["shx", "npm:0.3.3"]
           ],
           "linkType": "SOFT",
@@ -3596,6 +3597,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/__virtual__/@essex-jest-config-virtual-a6447df8ab/1/packages/config-jest/",
           "packageDependencies": [
             ["@essex/jest-config", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#workspace:packages/config-jest"],
+            ["@swc/core", "npm:1.2.126"],
             ["@swc/jest", "virtual:a6447df8ab44c8850477c02cbd6e97afbd142afe130f836a918fc0e8143080239f5f61e619223ccf22c614aa9d13e64c717ddfb74343050a1d8c839d436d57d6#npm:0.2.15"],
             ["@tsconfig/node14", "npm:1.0.1"],
             ["@types/jest", "npm:27.0.3"],
@@ -3615,6 +3617,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/config-jest/",
           "packageDependencies": [
             ["@essex/jest-config", "workspace:packages/config-jest"],
+            ["@swc/core", "npm:1.2.126"],
             ["@swc/jest", "virtual:a6447df8ab44c8850477c02cbd6e97afbd142afe130f836a918fc0e8143080239f5f61e619223ccf22c614aa9d13e64c717ddfb74343050a1d8c839d436d57d6#npm:0.2.15"],
             ["@tsconfig/node14", "npm:1.0.1"],
             ["@types/jest", "npm:27.0.3"],
@@ -4817,7 +4820,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@swc/jest", "virtual:a6447df8ab44c8850477c02cbd6e97afbd142afe130f836a918fc0e8143080239f5f61e619223ccf22c614aa9d13e64c717ddfb74343050a1d8c839d436d57d6#npm:0.2.15"],
             ["@jest/create-cache-key-function", "npm:27.4.2"],
-            ["@swc/core", null],
+            ["@swc/core", "npm:1.2.126"],
             ["@types/swc__core", null]
           ],
           "packagePeers": [
