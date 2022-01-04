@@ -3,20 +3,12 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { performance } from 'perf_hooks'
-import {
-	subtaskSuccess,
-	subtaskFail,
-	printPerf,
-	traceFile,
-} from '@essex/tasklogger'
+import { subtaskSuccess, subtaskFail, printPerf } from '@essex/tasklogger'
 import gulp from 'gulp'
-import ts, { FileWatcher } from 'typescript'
+import ts from 'typescript'
 import { compile as compileTS } from './compile'
-import { loadTSConfig, parseTSConfig } from './config'
 import { getSourceFiles } from './getSourceFiles'
-import { generateTypings } from './generateTypings'
-
-const TYPESCRIPT_GLOBS = ['src/**/*.ts*', '!**/__tests__/**']
+import { checkAndEmitTypings } from './checkAndEmitTypings'
 
 function getBuildTask(
 	stripInternal: boolean,
@@ -30,49 +22,17 @@ function getBuildTask(
 		}
 		const start = performance.now()
 		try {
-			const [sourceFiles, config] = await Promise.all([
-				getSourceFiles(),
-				loadTSConfig(),
-			])
-			if (logFiles) {
-				sourceFiles.forEach(file => traceFile(file, title))
-			}
-			const options = parseTSConfig(config)
-			// transpile task
-			const result = await compileTS(sourceFiles)
-
-			// emit types to dist/ folder; no emit expected
-			generateTypings(sourceFiles, {
-				...options,
-				declaration: true,
-				emitDeclarationOnly: true,
-				stripInternal,
-				outDir: 'dist/types',
-			})
-			const end = performance.now()
-			if (result === 0) {
-				subtaskSuccess(`${title} ${printPerf(start, end)}`)
-			} else {
-				throw new Error(`tsc did not emit anything`)
-			}
+			const sourceFiles = await getSourceFiles()
+			await compileTS(sourceFiles, logFiles)
+			await checkAndEmitTypings(sourceFiles, stripInternal)
+			subtaskSuccess(`${title} ${printPerf(start)}`)
 		} catch (err) {
-			const end = performance.now()
-			subtaskFail(`${title} ${printPerf(start, end)}`)
+			subtaskFail(`${title} ${printPerf(start)}`)
 			if (listen) {
 				throw err
 			}
 		}
 	}
-}
-
-/**
- * Watches typescript from src/ to the lib/ folder
- */
-export function watchTypescript(stripInternalTypes: boolean): FileWatcher {
-	return gulp.watch(
-		TYPESCRIPT_GLOBS,
-		gulp.parallel(getBuildTask(stripInternalTypes, true, false)),
-	)
 }
 
 /**

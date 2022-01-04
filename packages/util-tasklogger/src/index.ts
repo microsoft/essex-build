@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import chalk from 'chalk'
+import { performance } from 'perf_hooks'
 
 export function info(text: string, ...args: unknown[]): void {
 	console.log(chalk.white(text), ...args)
@@ -47,7 +48,7 @@ export function subtaskComplete(): void {
 	console.log(chalk.green('      ✔ Complete'))
 }
 
-export function printPerf(start: number, end: number): string {
+export function printPerf(start: number, end = performance.now()): string {
 	const span = end - start
 	return `(${span.toFixed(2)}ms)`
 }

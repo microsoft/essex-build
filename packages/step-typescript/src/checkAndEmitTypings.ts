@@ -2,12 +2,25 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { performance } from 'perf_hooks'
+import { printPerf, subtaskInfo } from '@essex/tasklogger'
 import * as ts from 'typescript'
+import { loadTSConfig, parseTSConfig } from './config'
 
-export function generateTypings(
+export async function checkAndEmitTypings(
 	fileNames: string[],
-	options: ts.CompilerOptions,
-): number {
+	stripInternal: boolean,
+): Promise<number> {
+	const start = performance.now()
+	const config = await loadTSConfig()
+	const options = {
+		...parseTSConfig(config),
+		declaration: true,
+		emitDeclarationOnly: true,
+		stripInternal,
+		outDir: 'dist/types',
+	}
+
 	const program = ts.createProgram(fileNames, options)
 	const emitResult = program.emit()
 	const allDiagnostics = ts
@@ -34,5 +47,6 @@ export function generateTypings(
 		}
 	})
 
+	subtaskInfo(`typings ${printPerf(start)}`)
 	return emitResult.emitSkipped ? 1 : 0
 }
