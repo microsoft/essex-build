@@ -14,6 +14,7 @@ import ts, { FileWatcher } from 'typescript'
 import { compile as compileTS } from './compile'
 import { loadTSConfig, parseTSConfig } from './config'
 import { getSourceFiles } from './getSourceFiles'
+import { generateTypings } from './generateTypings'
 
 const TYPESCRIPT_GLOBS = ['src/**/*.ts*', '!**/__tests__/**']
 
@@ -22,7 +23,7 @@ function getBuildTask(
 	logFiles: boolean,
 	listen: boolean,
 ): gulp.TaskFunction {
-	const title = 'tsc'
+	const title = 'compile'
 	return async function execute(): Promise<void> {
 		if (process.env.ESSEX_DEBUG) {
 			console.log('Using TypeScript version ', ts.version)
@@ -39,14 +40,15 @@ function getBuildTask(
 			const options = parseTSConfig(config)
 			// transpile task
 			const result = await compileTS(sourceFiles)
+
 			// emit types to dist/ folder; no emit expected
-			// compileTS(sourceFiles, {
-			// 	...options,
-			// 	declaration: true,
-			// 	emitDeclarationOnly: true,
-			// 	stripInternal,
-			// 	outDir: 'dist/types',
-			// })
+			generateTypings(sourceFiles, {
+				...options,
+				declaration: true,
+				emitDeclarationOnly: true,
+				stripInternal,
+				outDir: 'dist/types',
+			})
 			const end = performance.now()
 			if (result === 0) {
 				subtaskSuccess(`${title} ${printPerf(start, end)}`)

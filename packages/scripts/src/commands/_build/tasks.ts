@@ -5,7 +5,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { existsSync } from 'fs'
 import { join } from 'path'
-import { buildBabel } from '@essex/build-step-babel'
 import { generateTypedocsGulp } from '@essex/build-step-typedoc'
 import { compile as compileTypescript } from '@essex/build-step-typescript'
 import { noopTask } from '@essex/build-utils'
@@ -27,7 +26,6 @@ export function configureTasks({
 
 	const generateDocs = docs ? generateTypedocsGulp(verbose) : noopTask
 	const compileTS = compileTypescript(stripInternalTypes)
-	const compileJS = buildBabel(env)
 
 	return gulp.series(
 		generateDocs,
@@ -35,6 +33,6 @@ export function configureTasks({
 		// The primary transpilation pipeline
 		//  tsc -> babel -> bundlers
 		//
-		gulp.series(compileTS, compileJS),
+		gulp.series(compileTS),
 	)
 }
