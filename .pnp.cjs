@@ -59,10 +59,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/step-azure"
       },
       {
-        "name": "@essex/build-step-babel",
-        "reference": "workspace:packages/step-babel"
-      },
-      {
         "name": "@essex/build-step-clean",
         "reference": "workspace:packages/step-clean"
       },
@@ -133,7 +129,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@essex/alpha-build-utils", ["workspace:."]],
       ["@essex/babel-config", ["workspace:packages/config-babel"]],
       ["@essex/build-step-azure", ["workspace:packages/step-azure"]],
-      ["@essex/build-step-babel", ["workspace:packages/step-babel"]],
       ["@essex/build-step-clean", ["workspace:packages/step-clean"]],
       ["@essex/build-step-eslint", ["workspace:packages/step-eslint"]],
       ["@essex/build-step-init", ["workspace:packages/step-init"]],
@@ -3108,30 +3103,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "SOFT",
         }]
       ]],
-      ["@essex/build-step-babel", [
-        ["workspace:packages/step-babel", {
-          "packageLocation": "./packages/step-babel/",
-          "packageDependencies": [
-            ["@essex/build-step-babel", "workspace:packages/step-babel"],
-            ["@babel/core", "npm:7.16.0"],
-            ["@babel/types", "npm:7.16.0"],
-            ["@essex/babel-config", "workspace:packages/config-babel"],
-            ["@essex/build-utils", "workspace:packages/util-utils"],
-            ["@essex/tasklogger", "workspace:packages/util-tasklogger"],
-            ["@tsconfig/node14", "npm:1.0.1"],
-            ["@types/babel__core", "npm:7.1.16"],
-            ["@types/glob", "npm:7.2.0"],
-            ["@types/gulp", "npm:4.0.9"],
-            ["@types/node", "npm:16.11.11"],
-            ["chalk", "npm:4.1.2"],
-            ["glob", "npm:7.2.0"],
-            ["gulp", "npm:4.0.2"],
-            ["rimraf", "npm:3.0.2"],
-            ["typescript", "patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=493e53"]
-          ],
-          "linkType": "SOFT",
-        }]
-      ]],
       ["@essex/build-step-clean", [
         ["workspace:packages/step-clean", {
           "packageLocation": "./packages/step-clean/",
@@ -3688,7 +3659,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex/scripts", "virtual:04634ac6be101f21c9f62e3dd0c2d609954aa83a27d90480365c1606853fee68918a86ffd783a6f6cf5f838ce81ba2b6ec2e520f999c782b5854c13adbc64e75#workspace:packages/scripts"],
             ["@babel/core", "npm:7.16.0"],
             ["@essex/build-step-azure", "workspace:packages/step-azure"],
-            ["@essex/build-step-babel", "workspace:packages/step-babel"],
             ["@essex/build-step-clean", "workspace:packages/step-clean"],
             ["@essex/build-step-eslint", "workspace:packages/step-eslint"],
             ["@essex/build-step-init", "workspace:packages/step-init"],
@@ -3778,7 +3748,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex/scripts", "virtual:54148b93f0922a929e01c6f4b7ff38989f1a590079f6bd74fd069f03f8f97e3cb9f6744f4f6a4235b2ac22a6a6d4cb4cf0ca874a0779c3d64a29fad5262aa553#workspace:packages/scripts"],
             ["@babel/core", "npm:7.16.0"],
             ["@essex/build-step-azure", "workspace:packages/step-azure"],
-            ["@essex/build-step-babel", "workspace:packages/step-babel"],
             ["@essex/build-step-clean", "workspace:packages/step-clean"],
             ["@essex/build-step-eslint", "workspace:packages/step-eslint"],
             ["@essex/build-step-init", "workspace:packages/step-init"],
@@ -3868,7 +3837,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex/scripts", "virtual:a587321aa60f8ec817810254ffb7bac6d1d904e9b3b6950ecbc7c40f53f2f1e53e6bd61a2925bbdc0cee47c5643a5d655776af82c1c001d898eb90881e63e5da#workspace:packages/scripts"],
             ["@babel/core", "npm:7.16.0"],
             ["@essex/build-step-azure", "workspace:packages/step-azure"],
-            ["@essex/build-step-babel", "workspace:packages/step-babel"],
             ["@essex/build-step-clean", "workspace:packages/step-clean"],
             ["@essex/build-step-eslint", "workspace:packages/step-eslint"],
             ["@essex/build-step-init", "workspace:packages/step-init"],
@@ -3958,7 +3926,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex/scripts", "virtual:b6573bf4eb5015b0bbbf65140eaedcce5fbc2c002e034c046ef89e12db4e9054cc40fb930cdec0854c518ddaabcc9f994ca42adb6f6898173d6a77c168c6e612#workspace:packages/scripts"],
             ["@babel/core", "npm:7.16.0"],
             ["@essex/build-step-azure", "workspace:packages/step-azure"],
-            ["@essex/build-step-babel", "workspace:packages/step-babel"],
             ["@essex/build-step-clean", "workspace:packages/step-clean"],
             ["@essex/build-step-eslint", "workspace:packages/step-eslint"],
             ["@essex/build-step-init", "workspace:packages/step-init"],
@@ -4047,7 +4014,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex/scripts", "virtual:f19415532c05520732652a858c542438713d02572cdadddef40ea5a3c67a8a7d804247639fb7bf4562bcec4519e1d8007d1c7de09997abff09f4d25ecdd63c95#workspace:packages/scripts"],
             ["@babel/core", "npm:7.16.0"],
             ["@essex/build-step-azure", "workspace:packages/step-azure"],
-            ["@essex/build-step-babel", "workspace:packages/step-babel"],
             ["@essex/build-step-clean", "workspace:packages/step-clean"],
             ["@essex/build-step-eslint", "workspace:packages/step-eslint"],
             ["@essex/build-step-init", "workspace:packages/step-init"],
@@ -4136,7 +4102,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@essex/scripts", "workspace:packages/scripts"],
             ["@babel/core", "npm:7.16.0"],
             ["@essex/build-step-azure", "workspace:packages/step-azure"],
-            ["@essex/build-step-babel", "workspace:packages/step-babel"],
             ["@essex/build-step-clean", "workspace:packages/step-clean"],
             ["@essex/build-step-eslint", "workspace:packages/step-eslint"],
             ["@essex/build-step-init", "workspace:packages/step-init"],
