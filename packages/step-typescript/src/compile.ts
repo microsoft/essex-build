@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+/* eslint-disable @essex/adjacent-await */
 import fs from 'fs/promises'
 import path from 'path'
 import { performance } from 'perf_hooks'

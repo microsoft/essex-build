@@ -24,9 +24,9 @@
 		"@essex/build-utils": "workspace:packages/util-utils",
 		"@essex/eslint-config": "workspace:packages/config-eslint",
 		"@essex/eslint-plugin": "workspace:packages/config-eslint-plugin",
-		"@typescript-eslint/eslint-plugin": "^5.5.0",
-		"@typescript-eslint/parser": "^5.5.0",
-		"eslint": "^8.3.0",
+		"@typescript-eslint/eslint-plugin": "^5.9.0",
+		"@typescript-eslint/parser": "^5.9.0",
+		"eslint": "^8.6.0",
 		"eslint-import-resolver-node": "^0.3.6"
 	},
 	"devDependencies": {
@@ -36,6 +36,6 @@
 		"@types/eslint": "^8.2.0",
 		"@types/node": "^16.11.11",
 		"rimraf": "^3.0.2",
-		"typescript": "^4.5.2"
+		"typescript": "^4.5.4"
 	}
 }

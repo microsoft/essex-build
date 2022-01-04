@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { existsSync, fstat } from 'fs'
+import { existsSync } from 'fs'
 import { join } from 'path'
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import TsConfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
