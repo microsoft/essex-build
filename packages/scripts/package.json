@@ -25,7 +25,6 @@
 		}
 	},
 	"dependencies": {
-		"@babel/core": "^7.16.0",
 		"@essex/build-step-azure": "workspace:packages/step-azure",
 		"@essex/build-step-clean": "workspace:packages/step-clean",
 		"@essex/build-step-eslint": "workspace:packages/step-eslint",
@@ -55,10 +54,12 @@
 		"@types/gulp-debug": "^2.0.32",
 		"@types/node": "^16.11.11",
 		"crlf": "^1.1.1",
+		"esbuild": "^0.14.10",
+		"esbuild-register": "^3.3.1",
 		"npm-run-all": "^4.1.5",
 		"rimraf": "^3.0.2",
 		"shx": "^0.3.3",
-		"ts-node": "^10.4.0",
+		"tslib": "^2.3.1",
 		"typescript": "^4.5.2"
 	},
 	"peerDependencies": {

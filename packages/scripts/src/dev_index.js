@@ -3,18 +3,17 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-/* eslint-disable import/order */
-const { join } = require('path')
-const { performance } = require('perf_hooks')
-const chalk = require('chalk')
 
+/* eslint-disable import/order */
+const { performance } = require('perf_hooks')
 const start = performance.now()
-require('ts-node').register({
-	project: join(__dirname, '..', 'tsconfig.json'),
-})
+
+const chalk = require('chalk')
+const { register } = require('esbuild-register/dist/node')
+register()
 const { info, printPerf } = require('@essex/tasklogger')
-const end = performance.now()
+
 if (process.env.ESSEX_DEBUG) {
-	info(chalk.green(`initialize ts-node ${printPerf(start, end)}`))
+	info(chalk.green(`initialize devMode ${printPerf(start)}`))
 }
 require('./entry')
