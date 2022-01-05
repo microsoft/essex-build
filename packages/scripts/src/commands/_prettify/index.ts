@@ -3,8 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { performance } from 'perf_hooks'
-import { success, fail, printPerf } from '@essex/tasklogger'
+import { success, fail, printPerf } from '../../util/tasklogger'
 import { Command } from 'commander'
+import { prettyQuick } from '../../steps/pretty-quick'
 
 interface PrettifyCommandOptions {
 	verbose?: boolean
@@ -22,7 +23,7 @@ export default function prettify(program: Command): void {
 		.option('--staged', 'run on staged files')
 		.action(({ staged, verbose }: PrettifyCommandOptions) => {
 			// eslint-disable-next-line @typescript-eslint/no-var-requires
-			const { prettyQuick } = require('@essex/build-step-pretty-quick')
+
 			return prettyQuick({
 				staged,
 				verbose,

@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { eslint } from '@essex/build-step-eslint'
-import { prettyQuick } from '@essex/build-step-pretty-quick'
+import { eslint } from '../../steps/eslint'
+import { prettyQuick } from '../../steps/pretty-quick'
 import { LintCommandOptions } from './types'
 
 export function execute(

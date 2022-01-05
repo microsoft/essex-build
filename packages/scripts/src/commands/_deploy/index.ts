@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { performance } from 'perf_hooks'
-import { success, fail, printPerf } from '@essex/tasklogger'
+import { success, fail, printPerf } from '../../util/tasklogger'
 import { Command } from 'commander'
 import { execute } from './tasks'
 import { DeployCommandOptions } from './types'

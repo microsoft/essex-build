@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { deployBlob } from '@essex/build-step-azure'
+import { deployBlob } from '../../steps/azure'
 import { DeployCommandOptions, DeployType } from './types'
 
 export function execute(options: DeployCommandOptions): Promise<void> {

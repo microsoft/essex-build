@@ -5,8 +5,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { existsSync } from 'fs'
 import { join } from 'path'
-import { generateTypedocs } from '@essex/build-step-typedoc'
-import { compile as compileTypescript } from '@essex/build-step-typescript'
+import { generateTypedocs } from '../../steps/typedoc'
+import { compile as compileTypescript } from '../../steps/typescript'
 
 import { BuildCommandOptions } from './types'
 

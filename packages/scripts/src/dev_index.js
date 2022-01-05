@@ -5,7 +5,7 @@
  */
 
 /* eslint-disable import/order */
-const { join } = require('path');
+const { join } = require('path')
 const { performance } = require('perf_hooks')
 const start = performance.now()
 
@@ -16,9 +16,9 @@ const chalk = require('chalk')
 // })
 require('ts-node').register({
 	project: join(__dirname, '..', 'tsconfig.json'),
-	transpileOnly: true
+	transpileOnly: true,
 })
-const { info, printPerf } = require('@essex/tasklogger')
+const { info, printPerf } = require('./util/tasklogger')
 
 if (process.env.ESSEX_DEBUG) {
 	info(chalk.green(`initialize devMode ${printPerf(start)}`))

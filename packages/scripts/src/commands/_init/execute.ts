@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { initLib, initMonorepo } from '@essex/build-step-init'
+import { initLib, initMonorepo } from '../../steps/init'
 
 export interface InitCommandOptions {
 	lib?: boolean

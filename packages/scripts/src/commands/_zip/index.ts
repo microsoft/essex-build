@@ -3,8 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { performance } from 'perf_hooks'
-import { zip, ZipCommandOptions } from '@essex/build-step-zip'
-import { fail, printPerf, success } from '@essex/tasklogger'
+import { zip, ZipCommandOptions } from '../../steps/zip'
+import { fail, printPerf, success } from '../../util/tasklogger'
 import { Command } from 'commander'
 
 export default function zipCommand(program: Command): void {

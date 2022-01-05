@@ -14,7 +14,7 @@
 		"Chris Trevino <chtrevin@microsoft.com>"
 	],
 	"scripts": {
-		"build": "swc src -d lib & tsc --emitDeclarationOnly &",
+		"build": "tsc --emitDeclarationOnly && swc src -d lib",
 		"clean": "rimraf lib"
 	},
 	"dependencies": {
