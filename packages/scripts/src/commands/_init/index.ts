@@ -2,7 +2,6 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { performance } from 'perf_hooks'
 import { Command } from 'commander'
 import { fail, printPerf, success } from '../../util/tasklogger'
 import type { InitCommandOptions } from './execute'
@@ -17,10 +16,10 @@ export default function init(program: Command): void {
 			const { execute } = require('./execute')
 			return Promise.resolve()
 				.then(() => execute(options))
-				.then(() => success(`init ${printPerf(0, performance.now())}`))
+				.then(() => success(`init ${printPerf()}`))
 				.catch(err => {
 					console.log('error with init', err)
-					fail(`init ${printPerf(0, performance.now())}`)
+					fail(`init ${printPerf()}`)
 					process.exitCode = 1
 				})
 		})

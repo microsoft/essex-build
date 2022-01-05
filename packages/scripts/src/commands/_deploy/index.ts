@@ -2,7 +2,6 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { performance } from 'perf_hooks'
 import { Command } from 'commander'
 import { success, fail, printPerf } from '../../util/tasklogger'
 import { execute } from './tasks'
@@ -31,11 +30,11 @@ export default function deploy(program: Command): void {
 		.action((options: DeployCommandOptions): Promise<any> => {
 			return Promise.resolve()
 				.then(() => execute(options))
-				.then(() => success(`deploy ${printPerf(0, performance.now())}`))
+				.then(() => success(`deploy ${printPerf()}`))
 				.catch(err => {
 					console.log('error in deploy', err)
 					process.exitCode = 1
-					fail(`deploy ${printPerf(0, performance.now())}`)
+					fail(`deploy ${printPerf()}`)
 				})
 		})
 }

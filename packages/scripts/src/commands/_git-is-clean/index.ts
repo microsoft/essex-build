@@ -2,7 +2,6 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { performance } from 'perf_hooks'
 import { run, Job } from '@essex/shellrunner'
 import { Command } from 'commander'
 import * as logger from '../../util/tasklogger'
@@ -20,13 +19,9 @@ export default function start(program: Command): void {
 				.then(code => {
 					process.exitCode = code
 					if (code === 0) {
-						logger.success(
-							`git is clean ${logger.printPerf(0, performance.now())}`,
-						)
+						logger.success(`git is clean ${logger.printPerf()}`)
 					} else {
-						logger.fail(
-							`git is clean ${logger.printPerf(0, performance.now())}`,
-						)
+						logger.fail(`git is clean ${logger.printPerf()}`)
 					}
 				})
 				.catch(err => {

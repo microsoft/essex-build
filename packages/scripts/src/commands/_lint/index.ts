@@ -2,7 +2,6 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { performance } from 'perf_hooks'
 import { Command } from 'commander'
 import { success, fail, printPerf } from '../../util/tasklogger'
 import { execute } from './tasks'
@@ -25,10 +24,10 @@ export default function lint(program: Command): void {
 				// for some reason CLI arguments were being picked up by the eslint core and throwing errors
 				process.argv = [...process.argv.filter(t => !restricted[t])]
 				await execute(options, files)
-				success(`lint ${printPerf(0, performance.now())}`)
+				success(`lint ${printPerf()}`)
 			} catch (err) {
 				console.log('error in lint', err)
-				fail(`lint ${printPerf(0, performance.now())}`)
+				fail(`lint ${printPerf()}`)
 				process.exit(1)
 			}
 		})
