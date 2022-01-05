@@ -42,5 +42,7 @@ function execute(
 		? prettyQuick({ staged: true })
 		: prettyQuick({ check: !fix })
 
-	return Promise.all([checkCode, checkFormatting]).then(() => {})
+	return Promise.all([checkCode, checkFormatting]).then(() => {
+		/* do nothing */
+	})
 }

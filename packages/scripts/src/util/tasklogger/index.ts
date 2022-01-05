@@ -34,10 +34,10 @@ export function subtaskInfo(text: string): void {
 }
 
 export function subtaskFail(text: string, err?: Error | undefined): void {
-	console.log(chalk.red(`    ✘ ${text}`))
 	if (err) {
 		console.error(err)
 	}
+	console.log(chalk.red(`    ✘ ${text}`))
 }
 
 export function subtaskSuccess(text: string, ...args: unknown[]): void {

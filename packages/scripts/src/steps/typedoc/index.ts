@@ -22,7 +22,7 @@ const DEFAULT_ENTRY_POINT = 'src/index.ts'
 /**
  * Generates API documentation using TypeDoc
  */
-export function generateTypedocs(verbose: boolean): Promise<void> {
+export function generateTypedocs(): Promise<void> {
 	try {
 		const { title, name } = packageJson
 		return typedoc({
@@ -49,7 +49,7 @@ export function generateTypedocs(verbose: boolean): Promise<void> {
  * @param options TypeDoc options
  */
 async function typedoc(options: Partial<TypeDocOptions>): Promise<void> {
-	let start = performance.now()
+	const start = performance.now()
 	return new Promise((resolve, reject) => {
 		try {
 			const app = new Application()
