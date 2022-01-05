@@ -9,7 +9,7 @@ import { performance } from 'perf_hooks'
 import { exit } from 'process'
 import chalk from 'chalk'
 import { program } from 'commander'
-import { error, info, printPerf } from './util/tasklogger'
+import { error, info, printPerf, fail, success } from './util/tasklogger'
 
 const commandDir = join(__dirname, '/commands')
 
@@ -52,9 +52,8 @@ function loadAllCommands(): void {
 	commands.forEach(file => loadCommand(file))
 }
 
-async function bootstrap() {
+async function bootstrap(command: string) {
 	const { version } = require('../package.json')
-	const command = process.argv[2]
 	program.version(version)
 
 	if (command !== '-h' && command !== '--help') {
@@ -81,16 +80,24 @@ async function bootstrap() {
 }
 
 async function execute() {
+	const command = process.argv[2]
 	try {
 		establishErrorHandlers()
-		await bootstrap()
+		await bootstrap(command)
 		const end = performance.now()
 		if (process.env.ESSEX_DEBUG) {
 			info(chalk.green(`essex scripts ready (${(end - 0).toFixed(2)}ms)`))
 		}
 		await program.parseAsync(process.argv)
+
+		if (process.exitCode === 0) {
+			success(command, printPerf())
+		} else {
+			fail(command, printPerf())
+		}
 	} catch (err) {
-		console.log('error in command', err)
+		console.log(err)
+		fail(command)
 		exit(1)
 	}
 }

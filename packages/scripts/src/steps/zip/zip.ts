@@ -20,7 +20,7 @@ export async function zip(
 	destination: string,
 	sources: string[],
 	{ baseDir }: ZipCommandOptions,
-): Promise<number> {
+): Promise<void> {
 	const outputDir = resolve(dirname(destination))
 	if (!existsSync(outputDir)) {
 		info('creating output folder', outputDir)
@@ -38,7 +38,6 @@ export async function zip(
 		fileEntries.forEach(e => traceFile(e, 'zip'))
 	}
 	await archive(destination, fileEntries, baseDir)
-	return 0
 }
 
 async function getFileEntries(

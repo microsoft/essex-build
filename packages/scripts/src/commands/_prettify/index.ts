@@ -4,7 +4,6 @@
  */
 import { Command } from 'commander'
 import { prettyQuick } from '../../steps/pretty-quick'
-import { success, fail, printPerf } from '../../util/tasklogger'
 
 interface PrettifyCommandOptions {
 	verbose?: boolean
@@ -20,18 +19,10 @@ export default function prettify(program: Command): void {
 		.command('prettify')
 		.option('-v, --verbose', 'verbose output')
 		.option('--staged', 'run on staged files')
-		.action(({ staged, verbose }: PrettifyCommandOptions) => {
-			// eslint-disable-next-line @typescript-eslint/no-var-requires
-
-			return prettyQuick({
+		.action(async ({ staged, verbose }: PrettifyCommandOptions) => {
+			await prettyQuick({
 				staged,
 				verbose,
 			})
-				.then(() => success(`prettify ${printPerf()}`))
-				.catch((err: Error) => {
-					console.log('error in prettify', err)
-					process.exitCode = 1
-					fail(`prettify ${printPerf()}`)
-				})
 		})
 }

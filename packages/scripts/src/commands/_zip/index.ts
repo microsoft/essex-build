@@ -4,7 +4,6 @@
  */
 import { Command } from 'commander'
 import { zip, ZipCommandOptions } from '../../steps/zip'
-import { fail, printPerf, success } from '../../util/tasklogger'
 
 export default function zipCommand(program: Command): void {
 	program
@@ -20,13 +19,7 @@ export default function zipCommand(program: Command): void {
 				sources: string[],
 				{ baseDir }: ZipCommandOptions,
 			) => {
-				const code = await zip(destination, sources, { baseDir })
-				if (code === 0) {
-					success(`zip ${printPerf()}`)
-				} else {
-					fail(`zip ${printPerf()}`)
-				}
-				process.exit(code)
+				await zip(destination, sources, { baseDir })
 			},
 		)
 }
