@@ -9,12 +9,14 @@ import { generateTypedocs } from '../steps/typedoc'
 import { compile as compileTypescript } from '../steps/typescript'
 
 export interface BuildCommandOptions {
-	verbose?: boolean
 	/**
 	 * Emits TypeDoc documentation generation
 	 */
 	docs?: boolean
 
+	/**
+	 * Strips internal types in documentation
+	 */
 	stripInternalTypes?: boolean
 }
 
@@ -22,7 +24,6 @@ export default function build(program: Command): void {
 	program
 		.command('build')
 		.description('builds a library package')
-		.option('-v, --verbose', 'verbose output')
 		.option('-d, --docs', 'generates TypeDoc documentation')
 		.option(
 			'--stripInternalTypes',
@@ -34,7 +35,6 @@ export default function build(program: Command): void {
 }
 
 export function executeBuild({
-	verbose = false,
 	docs = false,
 	stripInternalTypes = false,
 }: BuildCommandOptions): Promise<void> {
@@ -46,7 +46,7 @@ export function executeBuild({
 
 	const transpileSource = compileTypescript(stripInternalTypes)
 	return docs
-		? Promise.all([generateTypedocs(verbose), transpileSource]).then(() => {
+		? Promise.all([generateTypedocs(), transpileSource]).then(() => {
 				/* nothing */
 		  })
 		: transpileSource
