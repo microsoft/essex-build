@@ -88,7 +88,7 @@ async function execute() {
 		}
 		await program.parseAsync(process.argv)
 
-		if (process.exitCode === 0) {
+		if (!process.exitCode) {
 			success(command, printPerf())
 		} else {
 			fail(command, printPerf())
