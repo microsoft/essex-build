@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
 	"scripts": {
-		"build": "swc src -d lib & tsc --emitDeclarationOnly &",
+		"build": "tsc --emitDeclarationOnly && swc src -d lib",
 		"clean": "rimraf lib"
 	},
 	"files": [

@@ -6,7 +6,7 @@
 	"license": "MIT",
 	"scripts": {
 		"clean": "rimraf lib",
-		"build": "swc src -d lib & tsc --emitDeclarationOnly &"
+		"build": "tsc --emitDeclarationOnly && swc src -d lib"
 	},
 	"repository": {
 		"type": "git",
