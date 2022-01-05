@@ -16,7 +16,6 @@ const tsConfigPath = join(cwd, 'tsconfig.json')
 export function executeBuild({
 	verbose = false,
 	docs = false,
-	env = 'production',
 	stripInternalTypes = false,
 }: BuildCommandOptions): Promise<void> {
 	if (!existsSync(tsConfigPath)) {

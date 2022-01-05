@@ -14,11 +14,6 @@ export default function build(program: Command): void {
 		.option('-v, --verbose', 'verbose output')
 		.option('-d, --docs', 'generates TypeDoc documentation')
 		.option(
-			'--env <env>',
-			'build environment (used by babel and webpack)',
-			'production',
-		)
-		.option(
 			'--stripInternalTypes',
 			'strip out internal types from typings declarations',
 		)
