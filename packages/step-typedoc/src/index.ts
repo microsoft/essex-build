@@ -4,7 +4,6 @@
  */
 import { existsSync } from 'fs'
 import { join } from 'path'
-import { gulpify, wrapPromiseTask } from '@essex/build-utils'
 import {
 	Application,
 	TSConfigReader,
@@ -42,10 +41,6 @@ export function generateTypedocs(verbose: boolean): Promise<void> {
 		return Promise.reject(err)
 	}
 }
-
-export const generateTypedocsGulp = gulpify(
-	wrapPromiseTask('typedocs', false, generateTypedocs),
-)
 
 /**
  * Generate TypeDoc documentation

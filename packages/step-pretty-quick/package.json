@@ -17,7 +17,6 @@
 		"directory": "packages/step-pretty-quick"
 	},
 	"dependencies": {
-		"@essex/build-utils": "workspace:packages/util-utils",
 		"@essex/tasklogger": "workspace:packages/util-tasklogger",
 		"chalk": "^4.1.2",
 		"prettier": "^2.5.1",

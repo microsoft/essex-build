@@ -17,7 +17,6 @@
 		"directory": "packages/step-init"
 	},
 	"dependencies": {
-		"@essex/build-utils": "workspace:packages/util-utils",
 		"@essex/tasklogger": "workspace:packages/util-tasklogger"
 	},
 	"devDependencies": {

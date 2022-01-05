@@ -5,34 +5,26 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { existsSync } from 'fs'
 import { join } from 'path'
-import { generateTypedocsGulp } from '@essex/build-step-typedoc'
+import { generateTypedocs } from '@essex/build-step-typedoc'
 import { compile as compileTypescript } from '@essex/build-step-typescript'
-import { noopTask } from '@essex/build-utils'
-import gulp from 'gulp'
+
 import { BuildCommandOptions } from './types'
 
 const cwd = process.cwd()
 const tsConfigPath = join(cwd, 'tsconfig.json')
 
-export function configureTasks({
+export function executeBuild({
 	verbose = false,
 	docs = false,
 	env = 'production',
 	stripInternalTypes = false,
-}: BuildCommandOptions): gulp.TaskFunction {
+}: BuildCommandOptions): Promise<void> {
 	if (!existsSync(tsConfigPath)) {
 		throw new Error('tsconfig.json must exist')
 	}
 
-	const generateDocs = docs ? generateTypedocsGulp(verbose) : noopTask
+	const generateDocs = docs ? generateTypedocs(verbose) : Promise.resolve()
 	const compileTS = compileTypescript(stripInternalTypes)
 
-	return gulp.series(
-		generateDocs,
-		//
-		// The primary transpilation pipeline
-		//  tsc -> babel -> bundlers
-		//
-		gulp.series(compileTS),
-	)
+	return Promise.all([generateDocs, compileTS]).then()
 }

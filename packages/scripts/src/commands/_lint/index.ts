@@ -3,10 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { performance } from 'perf_hooks'
-import { execGulpTask } from '@essex/build-utils'
 import { success, fail, printPerf } from '@essex/tasklogger'
 import { Command } from 'commander'
-import { configureTasks } from './tasks'
+import { execute } from './tasks'
 import { LintCommandOptions } from './types'
 
 export default function lint(program: Command): void {
@@ -18,8 +17,7 @@ export default function lint(program: Command): void {
 		.option('--strict', 'strict linting, warnings will cause failure')
 		.action((files: string[], options: LintCommandOptions = {}) => {
 			return Promise.resolve()
-				.then(() => configureTasks(options, files))
-				.then(lint => execGulpTask(lint))
+				.then(() => execute(options, files))
 				.then(() => success(`lint ${printPerf(0, performance.now())}`))
 				.catch(err => {
 					console.log('error in lint', err)

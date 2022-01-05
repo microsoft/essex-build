@@ -17,11 +17,9 @@
 		"directory": "packages/step-typescript"
 	},
 	"dependencies": {
-		"@essex/build-utils": "workspace:packages/util-utils",
 		"@essex/tasklogger": "workspace:packages/util-tasklogger",
 		"@swc/core": "^1.2.126",
 		"glob": "^7.2.0",
-		"gulp": "^4.0.2",
 		"tsconfig": "^7.0.0"
 	},
 	"devDependencies": {
@@ -29,7 +27,6 @@
 		"@swc/core": "^1.2.126",
 		"@tsconfig/node14": "^1.0.1",
 		"@types/glob": "^7.2.0",
-		"@types/gulp": "^4.0.9",
 		"@types/node": "^16.11.11",
 		"rimraf": "^3.0.2",
 		"typescript": "^4.5.4"

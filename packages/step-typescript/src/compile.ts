@@ -24,12 +24,11 @@ const ENV_CONFIG: swc.EnvConfig = {
 export async function compile(
 	fileNames: string[],
 	logFiles: boolean,
-): Promise<number> {
+): Promise<void> {
 	const start = performance.now()
 	await createOutputFolders()
 	await Promise.all(fileNames.map(f => transpileFile(f, logFiles)))
 	subtaskInfo(`transpile ${printPerf(start)}`)
-	return 0
 }
 
 function createOutputFolders() {

@@ -21,7 +21,6 @@
 		"config/"
 	],
 	"dependencies": {
-		"@essex/build-utils": "workspace:packages/util-utils",
 		"@essex/eslint-config": "workspace:packages/config-eslint",
 		"@essex/eslint-plugin": "workspace:packages/config-eslint-plugin",
 		"@essex/tasklogger": "workspace:packages/util-tasklogger",

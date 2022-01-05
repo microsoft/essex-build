@@ -2,20 +2,19 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { eslintGulp as eslint } from '@essex/build-step-eslint'
-import { prettyQuickGulp as prettyQuick } from '@essex/build-step-pretty-quick'
-import gulp from 'gulp'
+import { eslint } from '@essex/build-step-eslint'
+import { prettyQuick } from '@essex/build-step-pretty-quick';
 import { LintCommandOptions } from './types'
 
-export function configureTasks(
+export function execute(
 	{ fix = false, staged = false, strict = false }: LintCommandOptions,
 	files: string[] | undefined,
-): gulp.TaskFunction {
+): Promise<void> {
 	const checkCode = eslint(fix, strict, files || ['.'])
 
 	const checkFormatting = staged
 		? prettyQuick({ staged: true })
 		: prettyQuick({ check: !fix })
 
-	return gulp.parallel(checkCode, checkFormatting)
+	return Promise.all([checkCode, checkFormatting]).then()
 }

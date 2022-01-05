@@ -3,10 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { performance } from 'perf_hooks'
-import { execGulpTask } from '@essex/build-utils'
 import { success, fail, printPerf } from '@essex/tasklogger'
 import type { Command } from 'commander'
-import { configureTasks } from './tasks'
+import { executeBuild } from './tasks'
 import type { BuildCommandOptions } from './types'
 
 export default function build(program: Command): void {
@@ -26,8 +25,7 @@ export default function build(program: Command): void {
 		)
 		.action((options: BuildCommandOptions): Promise<any> => {
 			return Promise.resolve()
-				.then(() => configureTasks(options))
-				.then(build => execGulpTask(build))
+				.then(() => executeBuild(options))
 				.then(() => {
 					const end = performance.now()
 					success(`build ${printPerf(0, end)}`)
@@ -39,3 +37,4 @@ export default function build(program: Command): void {
 				})
 		})
 }
+;

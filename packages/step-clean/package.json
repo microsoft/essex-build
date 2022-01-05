@@ -17,7 +17,6 @@
 		"directory": "packages/step-clean"
 	},
 	"dependencies": {
-		"@essex/build-utils": "workspace:packages/util-utils",
 		"rimraf": "^3.0.2"
 	},
 	"devDependencies": {

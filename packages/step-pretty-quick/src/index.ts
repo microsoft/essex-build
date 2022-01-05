@@ -2,7 +2,6 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { gulpify, wrapPromiseTask } from '@essex/build-utils'
 import chalk from 'chalk'
 
 /* eslint-disable-next-line @typescript-eslint/no-var-requires */
@@ -77,7 +76,3 @@ export function prettyQuick(args: PrettyQuickArgs): Promise<void> {
 		return Promise.reject(err)
 	}
 }
-
-export const prettyQuickGulp = gulpify(
-	wrapPromiseTask('pretty-quick', false, prettyQuick),
-)

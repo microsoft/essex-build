@@ -9,17 +9,10 @@ import { performance } from 'perf_hooks'
 import { error, info, printPerf } from '@essex/tasklogger'
 import chalk from 'chalk'
 import { program } from 'commander'
-import gulp from 'gulp'
 
 const commandDir = join(__dirname, '/commands')
 
 function establishErrorHandlers(): void {
-	gulp.on('error', () => {
-		if (!process.env.ESSEX_DEBUG) {
-			process.exit(1)
-		}
-	})
-
 	process
 		.on('unhandledRejection', (reason, p) => {
 			console.log(reason, 'unhandled promise rejection', p)
