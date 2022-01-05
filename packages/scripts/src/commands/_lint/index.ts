@@ -8,21 +8,28 @@ import { Command } from 'commander'
 import { execute } from './tasks'
 import { LintCommandOptions } from './types'
 
+const restricted: Record<string, boolean> = {
+	'--fix': true,
+	'--staged': true,
+	'--strict': true,
+}
 export default function lint(program: Command): void {
 	program
 		.command('lint [...files]')
 		.description('performs static analysis checks')
-		.option('-s, --strict', 'strict linting, warnings will cause failure')
-		.option('-f, --fix', 'correct fixable problems')
+		.option('--strict', 'strict linting, warnings will cause failure')
+		.option('--fix', 'correct fixable problems')
 		.option('--staged', 'only do git-stage verifications')
-		.action((files: string[], options: LintCommandOptions = {}) => {
-			return Promise.resolve()
-				.then(() => execute(options, files))
-				.then(() => success(`lint ${printPerf(0, performance.now())}`))
-				.catch(err => {
-					console.log('error in lint', err)
-					process.exitCode = 1
-					fail(`lint ${printPerf(0, performance.now())}`)
-				})
+		.action(async (files: string[], options: LintCommandOptions = {}) => {
+			try {
+				// for some reason CLI arguments were being picked up by the eslint core and throwing errors
+				process.argv = [...process.argv.filter(t => !restricted[t])]
+				await execute(options, files)
+				success(`lint ${printPerf(0, performance.now())}`)
+			} catch (err) {
+				console.log('error in lint', err)
+				fail(`lint ${printPerf(0, performance.now())}`)
+				process.exit(1)
+			}
 		})
 }

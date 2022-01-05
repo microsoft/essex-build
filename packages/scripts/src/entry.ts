@@ -6,6 +6,7 @@
 import { readdirSync, existsSync } from 'fs'
 import { join } from 'path'
 import { performance } from 'perf_hooks'
+import { exit } from 'process'
 import { error, info, printPerf } from '@essex/tasklogger'
 import chalk from 'chalk'
 import { program } from 'commander'
@@ -80,13 +81,17 @@ async function bootstrap() {
 }
 
 async function execute() {
-	establishErrorHandlers()
-	await bootstrap()
-	const end = performance.now()
-	if (process.env.ESSEX_DEBUG) {
-		info(chalk.green(`essex scripts ready (${(end - 0).toFixed(2)}ms)`))
+	try {
+		establishErrorHandlers()
+		await bootstrap()
+		const end = performance.now()
+		if (process.env.ESSEX_DEBUG) {
+			info(chalk.green(`essex scripts ready (${(end - 0).toFixed(2)}ms)`))
+		}
+		await program.parseAsync(process.argv)
+	} catch (err) {
+		console.log('error in command', err)
+		exit(1)
 	}
-	program.help()
-	program.parse(process.argv)
 }
 execute()

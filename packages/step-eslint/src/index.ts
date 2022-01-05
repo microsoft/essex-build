@@ -3,7 +3,6 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @essex/adjacent-await */
-import { traceFile } from '@essex/tasklogger'
 import { ESLint } from 'eslint'
 import { getConfigFile, getIgnorePath } from './config'
 
@@ -15,7 +14,6 @@ export async function eslint(
 	try {
 		const configFile = getConfigFile(strict)
 		const ignorePath = getIgnorePath()
-
 		const linter = new ESLint({
 			fix,
 			overrideConfigFile: configFile,
@@ -25,8 +23,6 @@ export async function eslint(
 			extensions: ['js', 'jsx', 'ts', 'tsx'],
 			ignorePath,
 		})
-
-		files.forEach(f => traceFile(f, 'lint'))
 
 		const results = await linter.lintFiles(files)
 		await ESLint.outputFixes(results)
@@ -48,4 +44,3 @@ export async function eslint(
 		return Promise.reject(err)
 	}
 }
-

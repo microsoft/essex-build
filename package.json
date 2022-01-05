@@ -19,7 +19,7 @@
 		"version:": "yarn workspaces foreach --exclude @essex/alpha-build-utils -iv version -d",
 		"publish:": "yarn workspaces foreach --exclude '@essex-build/test-suite-*' --exclude '@essex/alpha-build-utils' -pv npm publish --tolerate-republish --access public",
 		"unit:test": "jest",
-		"lint:": "ESSEX_DEBUG=1 yarn essex lint -f",
+		"lint:": "ESSEX_DEBUG=1 yarn essex lint --fix",
 		"prettify": "essex prettify",
 		"git_is_clean": "yarn essex git-is-clean",
 		"ci": "run-s build: lint: lint:packages test: unit:test git_is_clean"
