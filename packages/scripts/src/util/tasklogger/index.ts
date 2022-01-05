@@ -48,7 +48,7 @@ export function subtaskComplete(): void {
 	console.log(chalk.green('      ✔ Complete'))
 }
 
-export function printPerf(start: number = 0, end = performance.now()): string {
+export function printPerf(start = 0, end = performance.now()): string {
 	const span = end - start
 	return `(${span.toFixed(2)}ms)`
 }
