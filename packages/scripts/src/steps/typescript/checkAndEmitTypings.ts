@@ -4,7 +4,7 @@
  */
 import { performance } from 'perf_hooks'
 import * as ts from 'typescript'
-import { printPerf, subtaskInfo } from '../../util/tasklogger'
+import { printPerf, subtaskSuccess } from '../../util/tasklogger'
 import { loadTSConfig, parseTSConfig } from './config'
 
 export async function checkAndEmitTypings(
@@ -47,6 +47,6 @@ export async function checkAndEmitTypings(
 		}
 	})
 
-	subtaskInfo(`typings ${printPerf(start)}`)
+	subtaskSuccess('typings', printPerf(start))
 	return emitResult.emitSkipped ? 1 : 0
 }

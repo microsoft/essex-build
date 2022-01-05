@@ -7,7 +7,7 @@ import fs from 'fs/promises'
 import path from 'path'
 import { performance } from 'perf_hooks'
 import * as swc from '@swc/core'
-import { printPerf, subtaskInfo, traceFile } from '../../util/tasklogger'
+import { printPerf, subtaskSuccess, traceFile } from '../../util/tasklogger'
 
 const ESM_PATH = 'dist/esm'
 const CJS_PATH = 'dist/cjs'
@@ -28,7 +28,7 @@ export async function compile(
 	const start = performance.now()
 	await createOutputFolders()
 	await Promise.all(fileNames.map(f => transpileFile(f, logFiles)))
-	subtaskInfo(`transpile ${printPerf(start)}`)
+	subtaskSuccess('transpile', printPerf(start))
 }
 
 function createOutputFolders() {
@@ -39,7 +39,9 @@ function createOutputFolders() {
 }
 
 async function transpileFile(filename: string, logFiles: boolean) {
-	if (logFiles) traceFile(filename, 'transpile')
+	if (logFiles) {
+		traceFile(filename, 'transpile')
+	}
 
 	const code = await fs.readFile(filename, { encoding: 'utf8' })
 	const esmResult = writeOutput(code, filename, ESM_PATH, {

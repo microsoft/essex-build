@@ -21,7 +21,7 @@ export async function compile(stripInternal: boolean): Promise<void> {
 		const sourceFiles = await getSourceFiles()
 		await compileTS(sourceFiles, logFiles)
 		await checkAndEmitTypings(sourceFiles, stripInternal)
-		subtaskSuccess(`${title} ${printPerf(start)}`)
+		subtaskSuccess(title, printPerf(start))
 	} catch (err) {
 		subtaskFail(`${title} ${printPerf(start)}`)
 		throw err

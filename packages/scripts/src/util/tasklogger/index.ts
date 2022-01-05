@@ -40,8 +40,8 @@ export function subtaskFail(text: string, err?: Error | undefined): void {
 	}
 }
 
-export function subtaskSuccess(text: string): void {
-	console.log(chalk.green(`    ✔ ${text}`))
+export function subtaskSuccess(text: string, ...args: unknown[]): void {
+	console.log(chalk.green(`    ✔ ${text}`), ...args)
 }
 
 export function subtaskComplete(): void {

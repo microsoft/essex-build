@@ -4,12 +4,14 @@
  */
 import { existsSync } from 'fs'
 import { join } from 'path'
+import { performance } from 'perf_hooks'
 import {
 	Application,
 	TSConfigReader,
 	TypeDocReader,
 	TypeDocOptions,
 } from 'typedoc'
+import { printPerf, subtaskFail, subtaskSuccess } from '../../util/tasklogger'
 
 const packageJsonPath = join(process.cwd(), 'package.json')
 const readmePath = join(process.cwd(), 'README.md')
@@ -47,6 +49,7 @@ export function generateTypedocs(verbose: boolean): Promise<void> {
  * @param options TypeDoc options
  */
 async function typedoc(options: Partial<TypeDocOptions>): Promise<void> {
+	let start = performance.now()
 	return new Promise((resolve, reject) => {
 		try {
 			const app = new Application()
@@ -56,8 +59,10 @@ async function typedoc(options: Partial<TypeDocOptions>): Promise<void> {
 			const project = app.convert()
 			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 			app.generateDocs(project!, 'dist/docs')
+			subtaskSuccess('typedoc', printPerf(start))
 			resolve()
 		} catch (err) {
+			subtaskFail('typedoc')
 			reject(err)
 		}
 	})
