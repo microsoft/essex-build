@@ -7,9 +7,9 @@ import { readdirSync, existsSync } from 'fs'
 import { join } from 'path'
 import { performance } from 'perf_hooks'
 import { exit } from 'process'
-import { error, info, printPerf } from './util/tasklogger'
 import chalk from 'chalk'
 import { program } from 'commander'
+import { error, info, printPerf } from './util/tasklogger'
 
 const commandDir = join(__dirname, '/commands')
 

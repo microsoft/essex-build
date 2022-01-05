@@ -3,8 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { performance } from 'perf_hooks'
-import { subtaskSuccess, subtaskFail, printPerf } from '../../util/tasklogger'
 import ts from 'typescript'
+import { subtaskSuccess, subtaskFail, printPerf } from '../../util/tasklogger'
 import { checkAndEmitTypings } from './checkAndEmitTypings'
 import { compile as compileTS } from './compile'
 import { getSourceFiles } from './getSourceFiles'

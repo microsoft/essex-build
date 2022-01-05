@@ -3,9 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { performance } from 'perf_hooks'
+import { Command } from 'commander'
 import { clean as cleanTask } from '../../steps/clean'
 import { success, fail, printPerf } from '../../util/tasklogger'
-import { Command } from 'commander'
 
 export default function clean(program: Command): void {
 	program

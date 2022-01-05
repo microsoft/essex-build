@@ -6,8 +6,8 @@
 import fs from 'fs/promises'
 import path from 'path'
 import { performance } from 'perf_hooks'
-import { printPerf, subtaskInfo, traceFile } from '../../util/tasklogger'
 import * as swc from '@swc/core'
+import { printPerf, subtaskInfo, traceFile } from '../../util/tasklogger'
 
 const ESM_PATH = 'dist/esm'
 const CJS_PATH = 'dist/cjs'

@@ -3,8 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { performance } from 'perf_hooks'
-import { fail, printPerf, success } from '../../util/tasklogger'
 import { Command } from 'commander'
+import { fail, printPerf, success } from '../../util/tasklogger'
 import type { InitCommandOptions } from './execute'
 
 export default function init(program: Command): void {

@@ -3,8 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { performance } from 'perf_hooks'
-import { printPerf, subtaskInfo } from '../../util/tasklogger'
 import * as ts from 'typescript'
+import { printPerf, subtaskInfo } from '../../util/tasklogger'
 import { loadTSConfig, parseTSConfig } from './config'
 
 export async function checkAndEmitTypings(

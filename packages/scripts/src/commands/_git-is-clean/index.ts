@@ -4,8 +4,8 @@
  */
 import { performance } from 'perf_hooks'
 import { run, Job } from '@essex/shellrunner'
-import * as logger from '../../util/tasklogger'
 import { Command } from 'commander'
+import * as logger from '../../util/tasklogger'
 
 export default function start(program: Command): void {
 	program
