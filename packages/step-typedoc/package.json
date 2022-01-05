@@ -25,7 +25,7 @@
 		"@swc/cli": "^0.1.55",
 		"@swc/core": "^1.2.126",
 		"@tsconfig/node14": "^1.0.1",
-		"@types/node": "^16.11.11",
+		"@types/node": "^16.11.19",
 		"rimraf": "^3.0.2"
 	},
 	"peerDependencies": {

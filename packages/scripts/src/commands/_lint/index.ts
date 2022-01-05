@@ -12,9 +12,9 @@ export default function lint(program: Command): void {
 	program
 		.command('lint [...files]')
 		.description('performs static analysis checks')
+		.option('-s, --strict', 'strict linting, warnings will cause failure')
 		.option('-f, --fix', 'correct fixable problems')
 		.option('--staged', 'only do git-stage verifications')
-		.option('--strict', 'strict linting, warnings will cause failure')
 		.action((files: string[], options: LintCommandOptions = {}) => {
 			return Promise.resolve()
 				.then(() => execute(options, files))

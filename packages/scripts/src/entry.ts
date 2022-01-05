@@ -37,9 +37,8 @@ function loadCommand(file: string): void {
 		} else {
 			command(program)
 		}
-		const end = performance.now()
 		if (process.env.ESSEX_DEBUG) {
-			info(`load command ${file} ${printPerf(start, end)}`)
+			info(`load command ${file} ${printPerf(start)}`)
 		}
 	} catch (err) {
 		console.log('error loading %s', commandPath, err)
@@ -87,6 +86,7 @@ async function execute() {
 	if (process.env.ESSEX_DEBUG) {
 		info(chalk.green(`essex scripts ready (${(end - 0).toFixed(2)}ms)`))
 	}
+	program.help()
 	program.parse(process.argv)
 }
 execute()

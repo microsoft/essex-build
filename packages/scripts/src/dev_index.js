@@ -5,13 +5,18 @@
  */
 
 /* eslint-disable import/order */
+const { join } = require('path');
 const { performance } = require('perf_hooks')
 const start = performance.now()
 
 const chalk = require('chalk')
-const { register } = require('esbuild-register/dist/node')
-register({
-	sourcemap: false
+// const { register } = require('esbuild-register/dist/node')
+// register({
+// 	sourcemap: false
+// })
+require('ts-node').register({
+	project: join(__dirname, '..', 'tsconfig.json'),
+	transpileOnly: true
 })
 const { info, printPerf } = require('@essex/tasklogger')
 
