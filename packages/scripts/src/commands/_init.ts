@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Command } from 'commander'
-import { initLib, initMonorepo } from '../../steps/init'
+import { initLib, initMonorepo } from '../steps/init'
 
 export default function init(program: Command): void {
 	program

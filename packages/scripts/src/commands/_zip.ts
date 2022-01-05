@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Command } from 'commander'
-import { zip, ZipCommandOptions } from '../../steps/zip'
+import { zip, ZipCommandOptions } from '../steps/zip'
 
 export default function zipCommand(program: Command): void {
 	program

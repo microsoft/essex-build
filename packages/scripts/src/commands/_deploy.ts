@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Command } from 'commander'
-import { deployBlob } from '../../steps/azure'
+import { deployBlob } from '../steps/azure'
 
 interface DeployCommandOptions {
 	verbose: boolean

@@ -5,8 +5,8 @@
 import { existsSync } from 'fs'
 import { join } from 'path'
 import type { Command } from 'commander'
-import { generateTypedocs } from '../../steps/typedoc'
-import { compile as compileTypescript } from '../../steps/typescript'
+import { generateTypedocs } from '../steps/typedoc'
+import { compile as compileTypescript } from '../steps/typescript'
 
 export interface BuildCommandOptions {
 	verbose?: boolean

@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { Command } from 'commander'
-import { clean as cleanTask } from '../../steps/clean'
+import { clean as cleanTask } from '../steps/clean'
 
 export default function clean(program: Command): void {
 	program

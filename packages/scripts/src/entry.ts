@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { readdirSync, existsSync } from 'fs'
+import { readdirSync } from 'fs'
 import { join } from 'path'
 import { performance } from 'perf_hooks'
 import { exit } from 'process'
@@ -28,9 +28,6 @@ function establishErrorHandlers(): void {
 function loadCommand(file: string): void {
 	const start = performance.now()
 	const commandPath = join(commandDir, file)
-	if (!existsSync(commandPath)) {
-		throw new Error(`command not found: ${commandPath}`)
-	}
 	try {
 		const command = require(commandPath)
 		if (command.default) {
@@ -42,8 +39,9 @@ function loadCommand(file: string): void {
 			info(`load command ${file} ${printPerf(start)}`)
 		}
 	} catch (err) {
-		console.log('error loading %s', commandPath, err)
-		throw err
+		if (process.env.ESSEX_DEBUG) {
+			console.error(`unable to load command ${file}`, err)
+		}
 	}
 }
 
