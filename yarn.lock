@@ -1672,7 +1672,7 @@ __metadata:
   dependencies:
     "@essex/eslint-plugin": "workspace:packages/config-eslint-plugin"
   peerDependencies:
-    "@essex/eslint-plugin": ">=19.0.0"
+    "@essex/eslint-plugin": ">=19.0.1"
     "@typescript-eslint/eslint-plugin": ">= 4.4.1"
     "@typescript-eslint/parser": ">= 4.4.1"
     eslint-import-resolver-node: ">= 0.3.4"
@@ -1782,8 +1782,8 @@ __metadata:
     typedoc: ^0.22.10
     typescript: ^4.5.4
   peerDependencies:
-    "@essex/eslint-config": ">=19.0.0"
-    "@essex/jest-config": ">=19.0.0"
+    "@essex/eslint-config": ">=19.0.1"
+    "@essex/jest-config": ">=19.0.1"
     "@essex/prettier-config": ">=18.0.2"
     "@typescript-eslint/eslint-plugin": ">= 4.4.1"
     "@typescript-eslint/parser": ">= 4.4.1"
