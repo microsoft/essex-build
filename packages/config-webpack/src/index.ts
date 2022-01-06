@@ -14,7 +14,7 @@ import {
 	getHomePage,
 	getTitle,
 	getIndexFile,
-	getBabelConfiguration,
+	getSwcOptions,
 } from './configValues'
 import { log } from './log'
 import { validateConfiguration } from './validate'
@@ -24,12 +24,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 // Webpack Loaders
-const babelLoader = require.resolve('babel-loader')
-const cacheLoader = require.resolve('cache-loader')
 const cssLoader = require.resolve('css-loader')
 const sassLoader = require.resolve('sass-loader')
 const styleLoader = require.resolve('style-loader')
-const tsLoader = require.resolve('ts-loader')
+const swcLoader = require.resolve('swc-loader')
 
 function tryToDetermineIfUsesTsconfigPaths(): boolean {
 	const tsconfigJsonPath = join(process.cwd(), 'tsconfig.json')
@@ -41,7 +39,6 @@ function tryToDetermineIfUsesTsconfigPaths(): boolean {
 	}
 	return false
 }
-
 export interface Configuration {
 	env?: string
 	mode?: 'development' | 'production' | 'none'
@@ -107,7 +104,6 @@ export function configure({
 	]
 
 	const buildPath = join(process.cwd(), 'build/')
-	const babelConfig = getBabelConfiguration(env)
 
 	const result: webpack.Configuration & { devServer: any } = {
 		mode: isDevelopment ? 'development' : 'production',
@@ -140,20 +136,7 @@ export function configure({
 				{
 					test: /\.tsx?$/,
 					exclude: /node_modules/,
-					use: [
-						cacheLoader,
-						{
-							loader: babelLoader,
-							options: babelConfig,
-						},
-						{
-							loader: tsLoader,
-							options: {
-								configFile: join(process.cwd(), 'tsconfig.json'),
-								transpileOnly: true,
-							},
-						},
-					],
+					use: { loader: swcLoader, options: getSwcOptions() },
 				},
 				/**
 				 * Sass Modules
@@ -207,11 +190,12 @@ export function configure({
 			],
 		},
 		devServer: {
-			stats: 'minimal',
 			hot: true,
 			compress: true,
 			historyApiFallback: true,
-			clientLogLevel: 'error',
+			client: {
+				logging: 'error',
+			},
 			headers: {
 				'Access-Control-Allow-Origin': '*',
 				'Access-Control-Allow-Methods':

@@ -1,0 +1,12 @@
+releases:
+  "@essex-build/test-suite-library": major
+  "@essex-build/test-suite-webapp-vite": major
+  "@essex-build/test-suite-webapp-webpack": major
+  "@essex-build/test-suite-zips": major
+  "@essex/babel-config": major
+  "@essex/eslint-config": major
+  "@essex/eslint-plugin": major
+  "@essex/jest-config": major
+  "@essex/scripts": major
+  "@essex/shellrunner": major
+  "@essex/webpack-config": major
