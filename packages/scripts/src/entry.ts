@@ -3,23 +3,17 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { readdirSync, existsSync } from 'fs'
+import { readdirSync } from 'fs'
 import { join } from 'path'
 import { performance } from 'perf_hooks'
-import { error, info, printPerf } from '@essex/tasklogger'
+import { exit } from 'process'
 import chalk from 'chalk'
 import { program } from 'commander'
-import gulp from 'gulp'
+import { error, info, printPerf, fail, success } from './util/tasklogger'
 
 const commandDir = join(__dirname, '/commands')
 
 function establishErrorHandlers(): void {
-	gulp.on('error', () => {
-		if (!process.env.ESSEX_DEBUG) {
-			process.exit(1)
-		}
-	})
-
 	process
 		.on('unhandledRejection', (reason, p) => {
 			console.log(reason, 'unhandled promise rejection', p)
@@ -34,9 +28,6 @@ function establishErrorHandlers(): void {
 function loadCommand(file: string): void {
 	const start = performance.now()
 	const commandPath = join(commandDir, file)
-	if (!existsSync(commandPath)) {
-		throw new Error(`command not found: ${commandPath}`)
-	}
 	try {
 		const command = require(commandPath)
 		if (command.default) {
@@ -44,13 +35,13 @@ function loadCommand(file: string): void {
 		} else {
 			command(program)
 		}
-		const end = performance.now()
 		if (process.env.ESSEX_DEBUG) {
-			info(`load command ${file} ${printPerf(start, end)}`)
+			info(`load command ${file} ${printPerf(start)}`)
 		}
 	} catch (err) {
-		console.log('error loading %s', commandPath, err)
-		throw err
+		if (process.env.ESSEX_DEBUG) {
+			console.error(`unable to load command ${file}`, err)
+		}
 	}
 }
 
@@ -59,9 +50,8 @@ function loadAllCommands(): void {
 	commands.forEach(file => loadCommand(file))
 }
 
-async function bootstrap() {
+async function bootstrap(command: string) {
 	const { version } = require('../package.json')
-	const command = process.argv[2]
 	program.version(version)
 
 	if (command !== '-h' && command !== '--help') {
@@ -88,12 +78,25 @@ async function bootstrap() {
 }
 
 async function execute() {
-	establishErrorHandlers()
-	await bootstrap()
-	const end = performance.now()
-	if (process.env.ESSEX_DEBUG) {
-		info(chalk.green(`essex scripts ready (${(end - 0).toFixed(2)}ms)`))
+	const command = process.argv[2]
+	try {
+		establishErrorHandlers()
+		await bootstrap(command)
+		const end = performance.now()
+		if (process.env.ESSEX_DEBUG) {
+			info(chalk.green(`essex scripts ready (${(end - 0).toFixed(2)}ms)`))
+		}
+		await program.parseAsync(process.argv)
+
+		if (!process.exitCode) {
+			success(command, printPerf())
+		} else {
+			fail(command, printPerf())
+		}
+	} catch (err) {
+		console.log(err)
+		fail(command)
+		exit(1)
 	}
-	program.parse(process.argv)
 }
 execute()
