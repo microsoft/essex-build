@@ -1,3 +1,0 @@
-releases:
-  "@essex-build/test-suite-webapp-webpack": patch
-  "@essex/webpack-config": patch
