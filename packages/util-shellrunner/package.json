@@ -1,6 +1,6 @@
 {
 	"name": "@essex/shellrunner",
-	"version": "19.0.1",
+	"version": "19.0.2",
 	"description": "A set of utility libraries for executing shell commands",
 	"license": "MIT",
 	"main": "src/index.ts",
@@ -23,7 +23,7 @@
 	},
 	"devDependencies": {
 		"@swc/cli": "^0.1.55",
-		"@swc/core": "^1.2.126",
+		"@swc/core": "^1.2.128",
 		"@tsconfig/node14": "^1.0.1",
 		"@types/debug": "^4.1.7",
 		"@types/node": "^16.11.19",
