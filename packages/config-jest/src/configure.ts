@@ -8,7 +8,7 @@ import { getSetupFiles } from './overrides'
 export function configure(setupFiles: string[] = getSetupFiles()): any {
 	return {
 		transform: {
-			'^.+\\.(t|j)sx?$': [require.resolve('@swc/jest')],
+			'^.+\\.(t|j)sx?$': [require.resolve('@swc/jest'), {}],
 		},
 		testMatch: ['**/__tests__/**/?(*.)+(spec|test).[jt]s?(x)'],
 		rootDir: process.cwd(),
