@@ -1,6 +1,6 @@
 {
 	"name": "@essex/jest-config",
-	"version": "19.0.1",
+	"version": "19.0.2",
 	"author": "Chris Trevino <chtrevin@microsoft.com>",
 	"license": "MIT",
 	"main": "lib/index.js",
@@ -15,8 +15,8 @@
 		"directory": "packages/config-jest"
 	},
 	"dependencies": {
-		"@swc/core": "^1.2.126",
-		"@swc/jest": "^0.2.15",
+		"@swc/core": "^1.2.128",
+		"@swc/jest": "^0.2.16",
 		"@types/jest": "^27.4.0",
 		"identity-obj-proxy": "^3.0.0"
 	},
