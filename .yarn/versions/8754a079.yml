@@ -1,6 +1,0 @@
-releases:
-  "@essex/jest-config": patch
-
-declined:
-  - "@essex-build/test-suite-library"
-  - "@essex-build/test-suite-zips"

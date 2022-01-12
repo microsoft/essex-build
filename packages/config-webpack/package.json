@@ -15,20 +15,20 @@
 	},
 	"dependencies": {
 		"@swc/cli": "^0.1.55",
-		"@swc/core": "^1.2.126",
+		"@swc/core": "^1.2.128",
 		"@types/webpack": "^5.28.0",
-		"@types/webpack-dev-server": "^4.5.1",
+		"@types/webpack-dev-server": "^4.7.1",
 		"css-loader": "^6.5.1",
 		"debug": "^4.3.3",
 		"fork-ts-checker-webpack-plugin": "^6.5.0",
 		"html-webpack-plugin": "^5.5.0",
-		"mini-css-extract-plugin": "^2.4.5",
+		"mini-css-extract-plugin": "^2.4.6",
 		"sass-loader": "^12.4.0",
 		"style-loader": "^3.3.1",
 		"swc-loader": "^0.1.15",
 		"tsconfig-paths-webpack-plugin": "^3.5.2",
-		"webpack": "^5.65.0",
-		"webpack-dev-server": "^4.7.2"
+		"webpack": "^5.66.0",
+		"webpack-dev-server": "^4.7.3"
 	},
 	"devDependencies": {
 		"@tsconfig/node14": "^1.0.1",
