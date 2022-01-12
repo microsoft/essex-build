@@ -1,6 +1,6 @@
 {
 	"name": "@essex-build/test-suite-library",
-	"version": "19.0.1",
+	"version": "19.0.2",
 	"private": true,
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
