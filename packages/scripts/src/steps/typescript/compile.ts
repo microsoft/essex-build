@@ -31,8 +31,11 @@ function createOutputFolders() {
 }
 
 async function transpileFile(filename: string, logFiles: boolean) {
+	const esmOutputPath = path.dirname(filename).replace(/^src/, ESM_PATH)
+	const cjsOutputPath = path.dirname(filename).replace(/^src/, CJS_PATH)
+
 	if (logFiles) {
-		traceFile(filename, 'transpile')
+		traceFile(`${filename}`, 'transpile')
 	}
 
 	const options = getSwcOptions()
@@ -41,7 +44,7 @@ async function transpileFile(filename: string, logFiles: boolean) {
 		...options,
 		filename,
 		isModule: true,
-		outputPath: path.dirname(filename).replace(/^src/, CJS_PATH),
+		outputPath: esmOutputPath,
 		module: {
 			...(options.module || {}),
 			type: 'es6',
@@ -51,7 +54,7 @@ async function transpileFile(filename: string, logFiles: boolean) {
 		...options,
 		filename,
 		isModule: true,
-		outputPath: path.dirname(filename).replace(/^src/, CJS_PATH),
+		outputPath: cjsOutputPath,
 		module: {
 			...(options.module || {}),
 			type: 'commonjs',
@@ -67,9 +70,11 @@ function writeOutput(
 	options: swc.Options,
 ) {
 	return swc.transform(code, options).then(async ({ code, map }) => {
-		const outputFile = path.join(outputRoot, filename).replace(/\.tsx?$/, '.js')
+		const outputFile = path
+			.join(outputRoot, filename.replace(/^src/, ''))
+			.replace(/\.tsx?$/, '.js')
 		const mapFile = `${outputFile}.map`
-		const outputDir = path.dirname(outputFile).replace(/^src/, outputRoot)
+		const outputDir = path.dirname(outputFile)
 
 		await fs.mkdir(outputDir, { recursive: true })
 		await Promise.all([
