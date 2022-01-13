@@ -71,10 +71,10 @@ function writeOutput(
 ) {
 	return swc.transform(code, options).then(async ({ code, map }) => {
 		const outputFile = path
-			.join(outputRoot, filename.replace(/src/, ''))
+			.join(outputRoot, filename.replace(/^src/, ''))
 			.replace(/\.tsx?$/, '.js')
 		const mapFile = `${outputFile}.map`
-		const outputDir = path.dirname(outputFile).replace(/^src/, outputRoot)
+		const outputDir = path.dirname(outputFile)
 
 		await fs.mkdir(outputDir, { recursive: true })
 		await Promise.all([
