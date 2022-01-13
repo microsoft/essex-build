@@ -94,6 +94,15 @@ const DEFAULT_SWC_CONFIG: swc.Config = {
 		},
 		mode: 'usage',
 	},
+	jsc: {
+		parser: {
+			syntax: 'typescript',
+			tsx: true,
+		},
+		transform: {
+			react: { runtime: 'automatic', useBuiltins: true },
+		},
+	},
 }
 
 function getSwcOptions() {
