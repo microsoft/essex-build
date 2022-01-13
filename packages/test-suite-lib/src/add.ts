@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import dataJson from './data.json'
-
+export * from './rendering'
 export const data = dataJson
 export function add(...nums: number[]): number {
 	return nums.reduce((prev, cur) => prev + cur, 0)

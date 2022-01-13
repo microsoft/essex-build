@@ -1,6 +1,6 @@
 {
 	"name": "@essex-build/test-suite-webapp-webpack",
-	"version": "19.0.4",
+	"version": "19.0.5",
 	"private": true,
 	"scripts": {
 		"clean": "essex clean",
