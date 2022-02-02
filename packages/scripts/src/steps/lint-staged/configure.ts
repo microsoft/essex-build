@@ -7,7 +7,7 @@ import { join } from 'path'
 import { Job } from '@essex/shellrunner'
 
 const pkgJsonPath = join(process.cwd(), 'package.json')
-const defaultConfigPath = join(__dirname, '../../config/lintstagedrc.json')
+const defaultConfigPath = join(__dirname, '../../../config/lintstagedrc.json')
 const configFileOptions = [
 	join(process.cwd(), '.lintstagedrc'),
 	join(process.cwd(), '.lintstagedrc.js'),
