@@ -7,7 +7,7 @@ import { join } from 'path'
 import * as log from '../../util/tasklogger'
 
 export function copyConfigFile(file: string, dot = false): Promise<number> {
-	const scriptPath = join(__dirname, `../../config/init/${file}`)
+	const scriptPath = join(__dirname, `../../../config/init/${file}`)
 	const pkgPath = join(process.cwd(), `${dot ? '.' : ''}${file}`)
 
 	return fileExists(pkgPath).then(pkgFileExists => {
