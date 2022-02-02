@@ -15,22 +15,22 @@
 		"directory": "packages/config-babel"
 	},
 	"dependencies": {
-		"@babel/core": "^7.16.7",
+		"@babel/core": "^7.16.12",
 		"@babel/plugin-proposal-class-properties": "^7.16.7",
 		"@babel/plugin-proposal-nullish-coalescing-operator": "^7.16.7",
 		"@babel/plugin-proposal-object-rest-spread": "^7.16.7",
 		"@babel/plugin-proposal-optional-chaining": "^7.16.7",
-		"@babel/preset-env": "^7.16.8",
+		"@babel/preset-env": "^7.16.11",
 		"@babel/preset-react": "^7.16.7",
 		"@babel/preset-typescript": "^7.16.7",
 		"babel-plugin-transform-typescript-metadata": "^0.3.2"
 	},
 	"devDependencies": {
 		"@swc/cli": "^0.1.55",
-		"@swc/core": "^1.2.128",
+		"@swc/core": "^1.2.135",
 		"@tsconfig/node14": "^1.0.1",
-		"@types/node": "^16.11.19",
+		"@types/node": "^16.11.22",
 		"rimraf": "^3.0.2",
-		"typescript": "^4.5.4"
+		"typescript": "^4.5.5"
 	}
 }

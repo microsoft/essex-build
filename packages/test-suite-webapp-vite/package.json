@@ -20,7 +20,7 @@
 		"@essex/vite-config": "workspace:packages/config-vite",
 		"@types/react": "^17.0.38",
 		"@types/react-dom": "^17.0.11",
-		"typescript": "^4.5.4",
-		"vite": "^2.7.10"
+		"typescript": "^4.5.5",
+		"vite": "^2.7.13"
 	}
 }
