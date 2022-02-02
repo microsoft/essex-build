@@ -15,17 +15,17 @@
 		"directory": "packages/config-jest"
 	},
 	"dependencies": {
-		"@swc/core": "^1.2.128",
-		"@swc/jest": "^0.2.16",
+		"@swc/core": "^1.2.135",
+		"@swc/jest": "^0.2.17",
 		"@types/jest": "^27.4.0",
 		"identity-obj-proxy": "^3.0.0"
 	},
 	"devDependencies": {
 		"@swc/cli": "^0.1.55",
 		"@tsconfig/node14": "^1.0.1",
-		"@types/node": "^16.11.19",
+		"@types/node": "^16.11.22",
 		"rimraf": "^3.0.2",
-		"typescript": "^4.5.4"
+		"typescript": "^4.5.5"
 	},
 	"peerDependencies": {
 		"jest": ">= 26.4"

@@ -31,18 +31,18 @@
 		"@essex/jest-config": "workspace:packages/config-jest",
 		"@essex/prettier-config": "workspace:packages/config-prettier",
 		"@essex/scripts": "workspace:packages/scripts",
-		"@types/eslint": "^8.2.2",
+		"@types/eslint": "^8.4.1",
 		"@types/jest": "^27.4.0",
-		"@typescript-eslint/eslint-plugin": "^5.9.1",
-		"@typescript-eslint/parser": "^5.9.1",
-		"eslint": "^8.6.0",
+		"@typescript-eslint/eslint-plugin": "^5.10.2",
+		"@typescript-eslint/parser": "^5.10.2",
+		"eslint": "^8.8.0",
 		"eslint-import-resolver-node": "^0.3.6",
 		"husky": "^7.0.4",
 		"jest": "^27.4.7",
-		"lint-staged": "^12.1.7",
+		"lint-staged": "^12.3.3",
 		"npm-run-all": "^4.1.5",
 		"prettier": "^2.5.1",
-		"typescript": "^4.5.4"
+		"typescript": "^4.5.5"
 	},
 	"workspaces": [
 		"packages/*"
