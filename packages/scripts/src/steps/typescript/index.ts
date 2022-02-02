@@ -7,7 +7,6 @@ import { checkAndEmitTypings } from './checkAndEmitTypings'
 import { compile as compileTS } from './compile'
 import { getSourceFiles } from './getSourceFiles'
 
-const title = 'compile'
 const logFiles = !!process.env.ESSEX_DEBUG
 
 export async function compile(stripInternal: boolean): Promise<void> {
