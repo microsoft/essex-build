@@ -8,16 +8,24 @@ import { Configuration } from 'webpack-dev-server'
 import { log } from './log'
 
 const DEFAULT_SWC_CONFIG = {
+	sourceMaps: true,
+	env: {
+		coreJs: '3',
+		targets: {
+			node: 14,
+			browsers: ['>0.5%', 'not IE 11', 'not dead'],
+		},
+		mode: 'usage',
+	},
 	jsc: {
 		parser: {
 			syntax: 'typescript',
 			tsx: true,
+			decorators: true,
+			dynamicImport: true,
 		},
 		transform: {
-			react: {
-				runtime: 'automatic',
-				useBuiltins: true,
-			},
+			react: { runtime: 'automatic', useBuiltins: true },
 		},
 	},
 }

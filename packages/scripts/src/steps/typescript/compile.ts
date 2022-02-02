@@ -98,6 +98,8 @@ const DEFAULT_SWC_CONFIG: swc.Config = {
 		parser: {
 			syntax: 'typescript',
 			tsx: true,
+			decorators: true,
+			dynamicImport: true,
 		},
 		transform: {
 			react: { runtime: 'automatic', useBuiltins: true },
