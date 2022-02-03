@@ -27,7 +27,7 @@
 	},
 	"devDependencies": {
 		"@swc/cli": "^0.1.55",
-		"@swc/core": "^1.2.135",
+		"@swc/core": "^1.2.136",
 		"@tsconfig/node14": "^1.0.1",
 		"@types/node": "^16.11.22",
 		"rimraf": "^3.0.2",
