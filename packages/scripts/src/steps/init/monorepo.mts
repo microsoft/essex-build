@@ -4,12 +4,9 @@
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { writeFileSync } from 'fs'
-import { join } from 'path'
-import * as log from '../../util/tasklogger'
-import { copyConfigFile } from './util'
-
-const pkgJsonPath = join(process.cwd(), 'package.json')
-const pkgJson = require(pkgJsonPath)
+import { readTargetPackageJson, TARGET_PACKAGE_JSON_PATH } from '../../util/package.mjs'
+import * as log from '../../util/tasklogger.mjs'
+import { copyConfigFile } from './util.mjs'
 
 const INIT_INSTRUCTIONS = `
 To utilize the essex build system, you should define scripts in your package.json file that utilize the build system.
@@ -57,7 +54,8 @@ export function initMonorepo(): Promise<number> {
 		})
 }
 
-function configurePackageJsonForMonorepo(): Promise<number> {
+async function configurePackageJsonForMonorepo(): Promise<number> {
+	const pkgJson = await readTargetPackageJson()
 	let writeNeeded = false
 	if (!pkgJson.scripts['preinstall']) {
 		pkgJson.scripts['preinstall'] = 'npx only-allow yarn'
@@ -106,7 +104,7 @@ function configurePackageJsonForMonorepo(): Promise<number> {
 		writeNeeded = true
 	}
 	if (writeNeeded) {
-		writeFileSync(pkgJsonPath, JSON.stringify(pkgJson, null, 2))
+		writeFileSync(TARGET_PACKAGE_JSON_PATH, JSON.stringify(pkgJson, null, 2))
 	}
 	log.info(`
 	You should install these recommended peer dependencies

@@ -6,23 +6,22 @@
 	"author": "David Tittsworth <datittsw@microsoft.com>",
 	"license": "MIT",
 	"scripts": {
-		"build:transpile": "swc src -d lib",
-		"build:typecheck": "tsc --noEmit",
-		"build:crlf": "crlf --set=LF \"lib/**/*.js\"",
-		"build:perms": "shx chmod +x lib/index.js",
-		"build": "npm-run-all -p build:typecheck build:transpile -s build:crlf build:perms",
+		"build:transpile": "tsc -b .",
+		"build:crlf": "crlf --set=LF \"lib/**/*.mjs\"",
+		"build:perms": "shx chmod +x lib/index.mjs",
+		"build": "npm-run-all -p build:transpile -s build:crlf build:perms",
 		"clean": "rimraf lib"
 	},
-	"main": "src/dev_index.js",
+	"main": "lib/index.mjs",
 	"bin": {
-		"essex": "./src/dev_index.js",
-		"essex-scripts": "./src/dev_index.js"
+		"essex": "./lib/index.mjs",
+		"essex-scripts": "./lib/index.mjs"
 	},
 	"publishConfig": {
-		"main": "lib/index.js",
+		"main": "lib/index.mjs",
 		"bin": {
-			"essex": "./lib/index.js",
-			"essex-scripts": "./lib/index.js"
+			"essex": "./lib/index.mjs",
+			"essex-scripts": "./lib/index.mjs"
 		}
 	},
 	"dependencies": {
@@ -30,9 +29,9 @@
 		"@essex/eslint-config": "workspace:packages/config-eslint",
 		"@essex/eslint-plugin": "workspace:packages/config-eslint-plugin",
 		"@essex/shellrunner": "workspace:packages/util-shellrunner",
-		"@swc/core": "^1.2.135",
-		"@typescript-eslint/eslint-plugin": "^5.10.2",
-		"@typescript-eslint/parser": "^5.10.2",
+		"@swc/core": "^1.2.137",
+		"@typescript-eslint/eslint-plugin": "^5.11.0",
+		"@typescript-eslint/parser": "^5.11.0",
 		"archiver": "^5.3.0",
 		"chalk": "^4.1.2",
 		"commander": "^9.0.0",
@@ -60,14 +59,13 @@
 		"@types/glob": "^7.2.0",
 		"@types/mime-types": "^2.1.1",
 		"@types/node": "^16.11.22",
+		"@types/pretty-quick": "^3.1.0",
 		"@types/progress": "^2.0.5",
 		"@types/rimraf": "^3.0.2",
 		"crlf": "^1.1.1",
 		"npm-run-all": "^4.1.5",
 		"rimraf": "^3.0.2",
 		"shx": "^0.3.4",
-		"ts-node": "^10.4.0",
-		"tslib": "^2.3.1",
 		"typescript": "^4.5.5"
 	},
 	"peerDependencies": {

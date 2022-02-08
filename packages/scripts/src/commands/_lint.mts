@@ -3,8 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import type { Command } from 'commander'
-import { eslint } from '../steps/eslint'
-import { prettyQuick } from '../steps/pretty-quick'
+import { eslint } from '../steps/eslint/index.mjs'
+import { prettyQuick } from '../steps/pretty-quick/index.mjs'
 
 interface LintCommandOptions {
 	fix?: boolean

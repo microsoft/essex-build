@@ -4,7 +4,10 @@
  */
 /* eslint-disable @essex/adjacent-await */
 import { ESLint } from 'eslint'
-import { getConfigFile, getIgnorePath } from './config'
+import { getConfigFile, getIgnorePath } from './config.mjs'
+import { createRequire } from 'module'
+
+const require = createRequire(import.meta.url)
 
 export async function eslint(
 	fix: boolean,

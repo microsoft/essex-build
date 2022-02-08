@@ -8,10 +8,10 @@ import archiver from 'archiver'
 import chalk from 'chalk'
 import glob from 'glob'
 import ProgressBar from 'progress'
-import { error, info, traceFile } from '../../util/tasklogger'
-import { isDebug } from '../../util/isDebug'
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const format = require('human-format')
+import { error, info, traceFile } from '../../util/tasklogger.mjs'
+import { isDebug } from '../../util/isDebug.mjs'
+// @ts-ignore
+import format from 'human-format'
 
 export interface ZipCommandOptions {
 	baseDir: string

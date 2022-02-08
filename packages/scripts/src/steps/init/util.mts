@@ -3,12 +3,16 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { exists, copyFile } from 'fs'
-import { join } from 'path'
-import * as log from '../../util/tasklogger'
+import path from 'path'
+import * as log from '../../util/tasklogger.mjs'
+import { fileURLToPath } from "url"
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 export function copyConfigFile(file: string, dot = false): Promise<number> {
-	const scriptPath = join(__dirname, `../../../config/init/${file}`)
-	const pkgPath = join(process.cwd(), `${dot ? '.' : ''}${file}`)
+	const scriptPath = path.join(__dirname, `../../../config/init/${file}`)
+	const pkgPath = path.join(process.cwd(), `${dot ? '.' : ''}${file}`)
 
 	return fileExists(pkgPath).then(pkgFileExists => {
 		if (pkgFileExists) {

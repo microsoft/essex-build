@@ -15,7 +15,7 @@
 	},
 	"dependencies": {
 		"@swc/cli": "^0.1.55",
-		"@swc/core": "^1.2.135",
+		"@swc/core": "^1.2.137",
 		"@types/webpack": "^5.28.0",
 		"@types/webpack-dev-server": "^4.7.2",
 		"css-loader": "^6.6.0",

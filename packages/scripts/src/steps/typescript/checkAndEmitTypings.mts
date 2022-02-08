@@ -3,9 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { performance } from 'perf_hooks'
-import * as ts from 'typescript'
-import { printPerf, subtaskSuccess } from '../../util/tasklogger'
-import { loadTSConfig, parseTSConfig } from './config'
+import ts from 'typescript'
+import { printPerf, subtaskSuccess } from '../../util/tasklogger.mjs'
+import { loadTSConfig, parseTSConfig } from './config.mjs'
 
 export async function checkAndEmitTypings(
 	fileNames: string[],

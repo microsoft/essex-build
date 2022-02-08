@@ -3,9 +3,10 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import chalk from 'chalk'
+import pqLib from 'pretty-quick'
 
-/* eslint-disable-next-line @typescript-eslint/no-var-requires */
-const pq = require('pretty-quick').default
+// TODO: this is a hack to work around non-standard ESM in pretty-quick
+const pq = (pqLib as any).default as typeof pqLib
 
 export interface PrettyQuickArgs {
 	staged?: boolean | undefined

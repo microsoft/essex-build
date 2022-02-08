@@ -1,14 +1,14 @@
 /* eslint-disable */
 import fs from 'fs/promises'
-import { walk } from '../../util/walk'
+import { walk } from '../../util/walk.mjs'
 
 const has = (l: string, search: string) => l.indexOf(search) !== -1
 const isLocalImport = (l: string) =>
-	has(l, 'import ') && has(l, './') && has(l, '.js')
+	has(l, 'import ') && has(l, './') && has(l, '.js\'')
 const isLocalExport = (l: string) =>
-	has(l, 'export ') && has(l, './') && has(l, '.js')
+	has(l, 'export ') && has(l, './') && has(l, '.js\'')
 const isSourceMap = (l: string) =>
-	has(l, '//# sourceMappingURL=') && has(l, '.js')
+	has(l, '//# sourceMappingURL=') && has(l, '.js\'')
 const isReactImport = (l: string) => has(l, 'react/jsx-runtime')
 
 export async function esmify(dir: string) {

@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import type { Command } from 'commander'
-import { deployBlob } from '../steps/azure'
+import { deployBlob } from '../steps/azure/index.mjs'
 
 interface DeployCommandOptions {
 	verbose: boolean

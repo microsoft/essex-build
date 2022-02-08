@@ -3,13 +3,10 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { writeFileSync } from 'fs'
-import { join } from 'path'
-import * as log from '../../util/tasklogger'
-import { copyConfigFile } from './util'
-
-const pkgJsonPath = join(process.cwd(), 'package.json')
-const pkgJson = require(pkgJsonPath)
+import { writeFile } from 'fs/promises' 
+import { readTargetPackageJson, TARGET_PACKAGE_JSON_PATH } from '../../util/package.mjs'
+import * as log from '../../util/tasklogger.mjs'
+import { copyConfigFile } from './util.mjs'
 
 const INIT_MSG_FAIL = 'An error occurred initializing the library'
 const INIT_INSTRUCTIONS = `Congratulations! The package has been configured as TypeScript library. 
@@ -19,7 +16,8 @@ Please ensure that the "typescript" dependency is installed as a devDependency e
 If you are in a monorepo context, you may need to update your tsconfig.json file to extend from the monorepo root's tsconfig.json
 `
 
-function configurePackageJsonForLib(): Promise<number> {
+async function configurePackageJsonForLib(): Promise<number> {
+	const pkgJson = await readTargetPackageJson()
 	let writeNeeded = false
 	if (!pkgJson.scripts.build) {
 		pkgJson.scripts.build = 'essex build'
@@ -46,7 +44,7 @@ function configurePackageJsonForLib(): Promise<number> {
 		writeNeeded = true
 	}
 	if (writeNeeded) {
-		writeFileSync(pkgJsonPath, JSON.stringify(pkgJson, null, 2))
+		await writeFile(TARGET_PACKAGE_JSON_PATH, JSON.stringify(pkgJson, null, 2))
 	}
 	return Promise.resolve(0)
 }

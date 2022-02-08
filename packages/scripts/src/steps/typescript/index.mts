@@ -3,10 +3,10 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import ts from 'typescript'
-import { isDebug } from '../../util/isDebug'
-import { checkAndEmitTypings } from './checkAndEmitTypings'
-import { compile as compileTS } from './compile'
-import { getSourceFiles } from './getSourceFiles'
+import { isDebug } from '../../util/isDebug.mjs'
+import { checkAndEmitTypings } from './checkAndEmitTypings.mjs'
+import { compile as compileTS } from './compile.mjs'
+import { getSourceFiles } from './getSourceFiles.mjs'
 
 const logFiles = isDebug()
 

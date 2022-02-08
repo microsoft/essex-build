@@ -5,10 +5,10 @@
 import { existsSync } from 'fs'
 import { join } from 'path'
 import type { Command } from 'commander'
-import { generateTypedocs } from '../steps/typedoc'
-import { compile as compileTypescript } from '../steps/typescript'
-import { esmify as processEsm } from '../steps/esmify'
-import { noop } from '../util/noop'
+import { generateTypedocs } from '../steps/typedoc/index.mjs'
+import { compile as compileTypescript } from '../steps/typescript/index.mjs'
+import { esmify as processEsm } from '../steps/esmify/index.mjs'
+import { noop } from '../util/noop.mjs'
 
 export interface BuildCommandOptions {
 	/**

@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import type { Command } from 'commander'
-import { prettyQuick } from '../steps/pretty-quick'
+import { prettyQuick } from '../steps/pretty-quick/index.mjs'
 
 interface PrettifyCommandOptions {
 	verbose?: boolean | undefined

@@ -11,23 +11,30 @@ import {
 	TypeDocReader,
 	TypeDocOptions,
 } from 'typedoc'
-import { printPerf, subtaskFail, subtaskSuccess } from '../../util/tasklogger'
+import { readTargetPackageJson } from '../../util/package.mjs'
+import {
+	printPerf,
+	subtaskFail,
+	subtaskSuccess,
+} from '../../util/tasklogger.mjs'
 
-const packageJsonPath = join(process.cwd(), 'package.json')
 const readmePath = join(process.cwd(), 'README.md')
-/* eslint-disable-next-line @typescript-eslint/no-var-requires */
-const packageJson = require(packageJsonPath)
-const DEFAULT_ENTRY_POINT = 'src/index.ts'
+const DEFAULT_ENTRY_POINT = [
+	'src/index.ts',
+	'src/index.tsx',
+	'src/index.mts',
+	'src/index.cts',
+]
 
 /**
  * Generates API documentation using TypeDoc
  */
-export function generateTypedocs(): Promise<void> {
+export async function generateTypedocs(): Promise<void> {
 	try {
-		const { title, name } = packageJson
+		const { title, name } = await readTargetPackageJson()
 		return typedoc({
 			name: title || name || 'API Documentation',
-			entryPoints: [DEFAULT_ENTRY_POINT],
+			entryPoints: DEFAULT_ENTRY_POINT,
 			excludeInternal: true,
 			excludeExternals: true,
 			excludeProtected: true,
@@ -57,11 +64,15 @@ async function typedoc(options: Partial<TypeDocOptions>): Promise<void> {
 			app.options.addReader(new TypeDocReader())
 			app.bootstrap(options)
 			const project = app.convert()
-			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-			app.generateDocs(project!, 'dist/docs')
-			subtaskSuccess('typedoc', printPerf(start))
-			resolve()
+			if (project) {
+				app.generateDocs(project, 'dist/docs')
+				subtaskSuccess('typedoc', printPerf(start))
+				resolve()
+			} else {
+				reject(new Error('could not create TypeDoc project'))
+			}
 		} catch (err) {
+			console.error('typedoc error', err)
 			subtaskFail('typedoc')
 			reject(err)
 		}

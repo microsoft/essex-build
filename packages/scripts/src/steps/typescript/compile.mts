@@ -8,8 +8,8 @@ import fs from 'fs/promises'
 import path, { join } from 'path'
 import { performance } from 'perf_hooks'
 import * as swc from '@swc/core'
-import { printPerf, subtaskSuccess, traceFile } from '../../util/tasklogger'
-import { isDebug } from '../../util/isDebug'
+import { printPerf, subtaskSuccess, traceFile } from '../../util/tasklogger.mjs'
+import { isDebug } from '../../util/isDebug.mjs'
 
 const ESM_PATH = 'dist/esm'
 const CJS_PATH = 'dist/cjs'
@@ -87,15 +87,8 @@ function writeOutput(
 
 const DEFAULT_SWC_CONFIG: swc.Config = {
 	sourceMaps: true,
-	env: {
-		coreJs: '3',
-		targets: {
-			node: 14,
-			browsers: ['>0.5%', 'not IE 11', 'not dead'],
-		},
-		mode: 'usage',
-	},
 	jsc: {
+		target: 'es2020',
 		parser: {
 			syntax: 'typescript',
 			tsx: true,

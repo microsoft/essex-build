@@ -2,17 +2,21 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-/* eslint-disable @typescript-eslint/no-var-requires */
 import { readdirSync } from 'fs'
-import { join } from 'path'
+import path from 'path'
 import { performance } from 'perf_hooks'
 import { exit } from 'process'
 import chalk from 'chalk'
 import { program } from 'commander'
-import { error, info, printPerf, fail, success } from './util/tasklogger'
-import { isDebug } from './util/isDebug'
+import { error, info, printPerf, fail, success } from './util/tasklogger.mjs'
+import { isDebug } from './util/isDebug.mjs'
+import { fileURLToPath } from 'url'
+import { readScriptsPackageJson } from './util/package.mjs'
+import { toFileUrl } from './util/toFIleUrl.mjs'
 
-const commandDir = join(__dirname, '/commands')
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const commandDir = path.join(__dirname, '/commands')
 
 function establishErrorHandlers(): void {
 	process
@@ -26,11 +30,11 @@ function establishErrorHandlers(): void {
 		})
 }
 
-function loadCommand(file: string): void {
+async function loadCommand(file: string): Promise<void> {
 	const start = performance.now()
-	const commandPath = join(commandDir, file)
+	const commandPath = toFileUrl(commandDir, file)
 	try {
-		const command = require(commandPath)
+		const command = await import(commandPath)
 		if (command.default) {
 			command.default(program)
 		} else {
@@ -46,26 +50,26 @@ function loadCommand(file: string): void {
 	}
 }
 
-function loadAllCommands(): void {
+function loadAllCommands(): Promise<void> {
 	const commands = readdirSync(commandDir)
-	commands.forEach(file => loadCommand(file))
+	return Promise.all(commands.map(loadCommand)).then(() => {})
 }
 
 async function bootstrap(command: string) {
-	const { version } = require('../package.json')
+	const { version } = await readScriptsPackageJson()
 	program.version(version)
 
 	if (command !== '-h' && command !== '--help') {
 		// Hot route: instead of requiring all commands, only require the one necessary
 		try {
-			loadCommand(`_${command}`)
+			await loadCommand(`_${command}.mjs`)
 		} catch (err) {
 			error(
 				`unknown command "${command}".\nSee --help for a list of available commands.`,
 			)
 		}
 	} else {
-		loadAllCommands()
+		await loadAllCommands()
 	}
 
 	// error on unknown commands
