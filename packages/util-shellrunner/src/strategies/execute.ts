@@ -3,9 +3,10 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import type { SpawnOptions, ChildProcess } from 'child_process'
-import type { Job, JobResult } from '../types.js'
-// @ts-ignore no-typedef
 import spawn from 'cross-spawn'
+import type { Job, JobResult } from '../types.js'
+/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
+// @ts-ignore no-typedef
 
 /**
  * Runs the given executable with the given args
