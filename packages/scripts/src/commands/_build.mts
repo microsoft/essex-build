@@ -26,7 +26,7 @@ export interface BuildCommandOptions {
 	/**
 	 * Opt-out of ESM processing and verification
 	 */
-	legacyEsm?: boolean
+	skipEsmChecks?: boolean
 }
 
 export default function build(program: Command): void {
@@ -38,7 +38,7 @@ export default function build(program: Command): void {
 			'--stripInternalTypes',
 			'strip out internal types from typings declarations',
 		)
-		.option('--legacyEsm', 'opt-out of ESM processing and verification')
+		.option('--skipEsmChecks', 'opt-out of ESM processing and verification')
 		.action(async (options: BuildCommandOptions): Promise<any> => {
 			await executeBuild(options)
 		})
@@ -47,7 +47,7 @@ export default function build(program: Command): void {
 export async function executeBuild({
 	docs = false,
 	stripInternalTypes = false,
-	legacyEsm = false,
+	skipEsmChecks = false,
 }: BuildCommandOptions): Promise<void> {
 	const cwd = process.cwd()
 	const tsConfigPath = path.join(cwd, 'tsconfig.json')
@@ -56,7 +56,7 @@ export async function executeBuild({
 	}
 	const generateDocs = docs ? generateTypedocs() : noop()
 	await compileTypescript(stripInternalTypes)
-	if (!legacyEsm) {
+	if (!skipEsmChecks) {
 		await processEsm('dist/esm')
 		await verifyExports()
 		await verifyPackage()

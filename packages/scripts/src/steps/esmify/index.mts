@@ -15,8 +15,6 @@ export async function esmify(dir: string) {
 	await walk(dir, async entryPath => {
 		if (entryPath.endsWith('.js')) {
 			await rewriteJsReferencesToMjs(entryPath)
-		}
-		if (entryPath.endsWith('.js')) {
 			await renameJsToMjs(entryPath)
 		}
 	})
