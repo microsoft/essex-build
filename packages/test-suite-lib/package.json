@@ -36,9 +36,11 @@
 		"react": "^17.0.2",
 		"typescript": "4.5.5"
 	},
-	"essex:exports": {
-		"HelloWorld": "function",
-		"a": "string",
-		"add": "function"
+	"essex": {
+		"exports": {
+			"HelloWorld": "function",
+			"a": "string",
+			"add": "function"
+		}
 	}
 }

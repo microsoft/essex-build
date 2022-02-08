@@ -4,16 +4,17 @@ import path from 'path'
 import { performance } from 'perf_hooks'
 import { fileUrl } from '../../util/fileUrl.mjs'
 import * as logger from '../../util/tasklogger.mjs'
+import get from 'lodash/get.js'
 
 const require = createRequire(import.meta.url)
 
 export async function verifyExports(): Promise<void> {
 	const pkg = await readTargetPackageJson()
 
-	const expected = pkg['essex:exports']
+	const expected = get(pkg, 'essex.exports')
 	if (!expected) {
 		throw new Error(
-			`package.json must contain an "essex:exports" property. This object should have keys for each named export and values of 'typeof <exported>'`,
+			`package.json must contain an "essex.exports" property. This object should have keys for each named export and values of 'typeof <exported>'`,
 		)
 	}
 	try {
