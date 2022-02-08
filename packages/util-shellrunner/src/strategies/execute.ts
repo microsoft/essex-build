@@ -3,10 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import type { SpawnOptions, ChildProcess } from 'child_process'
-import type { Job, JobResult } from '../types'
-
-/* eslint-disable-next-line @typescript-eslint/no-var-requires */
-const spawn = require('cross-spawn')
+import type { Job, JobResult } from '../types.js'
+// @ts-ignore no-typedef
+import spawn from 'cross-spawn'
 
 /**
  * Runs the given executable with the given args
