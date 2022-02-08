@@ -9,4 +9,5 @@ releases:
   "@essex/jest-config": major
   "@essex/scripts": major
   "@essex/shellrunner": major
+  "@essex/vite-config": major
   "@essex/webpack-config": major
