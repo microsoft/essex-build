@@ -21,7 +21,7 @@
 	},
 	"devDependencies": {
 		"@swc/cli": "^0.1.55",
-		"@swc/core": "^1.2.137",
+		"@swc/core": "^1.2.138",
 		"@tsconfig/strictest": "^1.0.0",
 		"@types/debug": "^4.1.7",
 		"@types/node": "^16.11.22",

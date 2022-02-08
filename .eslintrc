@@ -2,6 +2,8 @@
 	"extends": "@essex/eslint-config/release",
 	"parser": "@typescript-eslint/parser",
 	"rules": {
-		"@typescript-eslint/no-explicit-any": "off"
+		"@typescript-eslint/no-explicit-any": "off",
+		"import/no-unresolved": "off",
+		"import/named": "off"
 	}
 }

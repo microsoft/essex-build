@@ -23,7 +23,7 @@ export async function eslint(
 			resolvePluginsRelativeTo: require
 				.resolve('@essex/eslint-plugin')
 				.replace('lib/index.js', ''),
-			extensions: ['js', 'jsx', 'ts', 'tsx'],
+			extensions: ['js', 'jsx', 'ts', 'tsx', 'mts', 'cts'],
 			ignorePath,
 		})
 
