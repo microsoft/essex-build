@@ -10,6 +10,7 @@ import { compile as compileTypescript } from '../steps/typescript/index.mjs'
 import { esmify as processEsm } from '../steps/esmify/index.mjs'
 import { noop } from '../util/noop.mjs'
 import { verifyExports } from '../steps/verifyExports/index.mjs'
+import { verifyPackage } from '../steps/verifyPackage/index.mjs'
 
 export interface BuildCommandOptions {
 	/**
@@ -21,6 +22,11 @@ export interface BuildCommandOptions {
 	 * Strips internal types in documentation
 	 */
 	stripInternalTypes?: boolean
+
+	/**
+	 * Opt-out of ESM processing and verification
+	 */
+	legacyEsm?: boolean
 }
 
 export default function build(program: Command): void {
@@ -32,6 +38,7 @@ export default function build(program: Command): void {
 			'--stripInternalTypes',
 			'strip out internal types from typings declarations',
 		)
+		.option('--legacyEsm', 'opt-out of ESM processing and verification')
 		.action(async (options: BuildCommandOptions): Promise<any> => {
 			await executeBuild(options)
 		})
@@ -40,6 +47,7 @@ export default function build(program: Command): void {
 export async function executeBuild({
 	docs = false,
 	stripInternalTypes = false,
+	legacyEsm = false,
 }: BuildCommandOptions): Promise<void> {
 	const cwd = process.cwd()
 	const tsConfigPath = path.join(cwd, 'tsconfig.json')
@@ -48,41 +56,10 @@ export async function executeBuild({
 	}
 	const generateDocs = docs ? generateTypedocs() : noop()
 	await compileTypescript(stripInternalTypes)
-	// await copyAssets()
-	await processEsm('dist/esm')
-	await verifyExports()
+	if (!legacyEsm) {
+		await processEsm('dist/esm')
+		await verifyExports()
+		await verifyPackage()
+	}
 	await generateDocs
 }
-
-// async function copyAssets() {
-// 	const files = await new Promise<string[]>((resolve, reject) => {
-// 		glob(
-// 			'src/**/*.json',
-// 			{
-// 				cwd: process.cwd(),
-// 			},
-// 			(err, res) => {
-// 				if (err) {
-// 					reject(err)
-// 				} else {
-// 					resolve(res)
-// 				}
-// 			},
-// 		)
-// 	})
-
-// 	for (const file of files) {
-// 		console.log('processing %s', file)
-// 		const esmPath = file.replace('src/', 'dist/esm/')
-// 		const cjsPath = file.replace('src/', 'dist/cjs/')
-// 		console.log("%s -> '%s'", file, esmPath)
-// 		console.log("%s -> '%s'", file, cjsPath)
-
-// 		await Promise.all([
-// 			mkdir(path.dirname(esmPath), { recursive: true }),
-// 			mkdir(path.dirname(cjsPath), { recursive: true }),
-// 		])
-// 		console.log("copying files")
-// 		await Promise.all([copyFile(file, esmPath), copyFile(file, cjsPath)])
-// 	}
-// }
