@@ -15,8 +15,9 @@ require('ts-node').register({
 	transpileOnly: true,
 })
 const { info, printPerf } = require('./util/tasklogger')
+const { isDebug } = require('./util/isDebug')
 
-if (process.env.ESSEX_DEBUG) {
+if (isDebug()) {
 	info(chalk.green(`initialize devMode ${printPerf(start)}`))
 }
 require('./entry')

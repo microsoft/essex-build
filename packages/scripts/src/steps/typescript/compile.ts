@@ -9,6 +9,7 @@ import path, { join } from 'path'
 import { performance } from 'perf_hooks'
 import * as swc from '@swc/core'
 import { printPerf, subtaskSuccess, traceFile } from '../../util/tasklogger'
+import { isDebug } from '../../util/isDebug'
 
 const ESM_PATH = 'dist/esm'
 const CJS_PATH = 'dist/cjs'
@@ -111,12 +112,12 @@ function getSwcOptions() {
 	if (existsSync(join(process.cwd(), '.swcrc'))) {
 		const swcrc = readFileSync(join(process.cwd(), '.swcrc'), 'utf8')
 		const result = JSON.parse(swcrc)
-		if (process.env.ESSEX_DEBUG) {
+		if (isDebug()) {
 			console.log('using custom swc configuration', result)
 		}
 		return result
 	} else {
-		if (process.env.ESSEX_DEBUG) {
+		if (isDebug()) {
 			console.log('using default swc configuration')
 		}
 		return DEFAULT_SWC_CONFIG

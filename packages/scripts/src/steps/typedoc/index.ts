@@ -36,7 +36,7 @@ export function generateTypedocs(): Promise<void> {
 			tsconfig: join(process.cwd(), 'tsconfig.json'),
 			out: 'dist/docs',
 			logger: 'none',
-			readme: existsSync(readmePath) ? readmePath : undefined,
+			readme: existsSync(readmePath) ? readmePath : (undefined as any),
 		})
 	} catch (err) {
 		console.log('error running typedoc', err)

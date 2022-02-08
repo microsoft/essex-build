@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import * as log from '../log'
-import { Job, JobResult } from '../types'
+import type { Job, JobResult } from '../types'
 import { single } from './single'
 
 /**

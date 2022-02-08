@@ -8,9 +8,9 @@ import chalk from 'chalk'
 const pq = require('pretty-quick').default
 
 export interface PrettyQuickArgs {
-	staged?: boolean
-	check?: boolean
-	verbose?: boolean
+	staged?: boolean | undefined
+	check?: boolean | undefined
+	verbose?: boolean | undefined
 }
 export function prettyQuick(args: PrettyQuickArgs): Promise<void> {
 	try {

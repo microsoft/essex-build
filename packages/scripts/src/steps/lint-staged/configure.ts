@@ -4,7 +4,7 @@
  */
 import { existsSync } from 'fs'
 import { join } from 'path'
-import { Job } from '@essex/shellrunner'
+import type { Job } from '@essex/shellrunner'
 
 const pkgJsonPath = join(process.cwd(), 'package.json')
 const defaultConfigPath = join(__dirname, '../../../config/lintstagedrc.json')

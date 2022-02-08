@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { run, Job } from '@essex/shellrunner'
-import { Command } from 'commander'
+import type { Command } from 'commander'
 
 export default function start(program: Command): void {
 	program

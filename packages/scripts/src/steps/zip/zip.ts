@@ -9,6 +9,7 @@ import chalk from 'chalk'
 import glob from 'glob'
 import ProgressBar from 'progress'
 import { error, info, traceFile } from '../../util/tasklogger'
+import { isDebug } from '../../util/isDebug'
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const format = require('human-format')
 
@@ -34,7 +35,7 @@ export async function zip(
 	)
 
 	info(`including ${fileEntries.length} files`)
-	if (process.env.ESSEX_DEBUG) {
+	if (isDebug()) {
 		fileEntries.forEach(e => traceFile(e, 'zip'))
 	}
 	await archive(destination, fileEntries, baseDir)
@@ -56,7 +57,7 @@ async function getFileEntries(
 		const isIncluded = await Promise.all(foundFiles.map(isZippable))
 		const filteredFiles = foundFiles.filter((_t, i) => isIncluded[i])
 
-		if (process.env.ESSEX_DEBUG) {
+		if (isDebug()) {
 			filteredFiles.forEach(f => traceFile(f, `expand ${source}`))
 		}
 		result.push(...filteredFiles)
@@ -65,7 +66,7 @@ async function getFileEntries(
 }
 
 function getGlobSource(source: string): Promise<string[]> {
-	if (process.env.ESSEX_DEBUG) {
+	if (isDebug()) {
 		info('handle source glob: ' + source)
 	}
 	return new Promise<string[]>((resolve, reject) => {
@@ -81,7 +82,7 @@ function getGlobSource(source: string): Promise<string[]> {
 }
 
 async function getSourceFiles(source: string): Promise<string[]> {
-	if (process.env.ESSEX_DEBUG) {
+	if (isDebug()) {
 		info('handle source file: ' + source)
 	}
 	const stats = await fs.stat(source)

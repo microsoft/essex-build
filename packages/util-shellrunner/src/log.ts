@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import dbg from 'debug'
-import { Job } from './types'
+import type { Job } from './types'
 const debugLog = dbg('essex:shellrunner')
 
 export function debug(

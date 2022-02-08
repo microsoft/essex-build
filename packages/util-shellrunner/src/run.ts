@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { parallel, single } from './strategies'
-import { Job, JobResult } from './types'
+import type { Job, JobResult } from './types'
 
 /**
  * Runs a series of jobs.
