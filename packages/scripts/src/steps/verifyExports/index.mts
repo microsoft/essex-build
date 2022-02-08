@@ -12,11 +12,6 @@ export async function verifyExports(): Promise<void> {
 	const pkg = await readTargetPackageJson()
 
 	const expected = get(pkg, 'essex.exports')
-	if (!expected) {
-		throw new Error(
-			`package.json must contain an "essex.exports" property. This object should have keys for each named export and values of 'typeof <exported>'`,
-		)
-	}
 	try {
 		const start = performance.now()
 		await verifyEsm(pkg.exports.import, expected)
@@ -48,8 +43,14 @@ async function verifyCjs(pkgName: string, expected: Record<string, any>) {
 
 export function check(
 	imported: Record<string, unknown>,
-	expected: Record<string, string>,
+	expected: Record<string, string> | undefined,
 ): void {
+	if (expected == null) {
+		logger.warn(
+			`essex.exports not defined in package.json; skipping export verification`,
+		)
+		return
+	}
 	Object.keys(imported).forEach(key => {
 		if (!expected[key]) {
 			throw new Error(
