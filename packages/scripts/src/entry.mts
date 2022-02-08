@@ -12,7 +12,7 @@ import { error, info, printPerf, fail, success } from './util/tasklogger.mjs'
 import { isDebug } from './util/isDebug.mjs'
 import { fileURLToPath } from 'url'
 import { readScriptsPackageJson } from './util/package.mjs'
-import { toFileUrl } from './util/toFIleUrl.mjs'
+import { fileUrl } from './util/fileUrl.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -32,7 +32,7 @@ function establishErrorHandlers(): void {
 
 async function loadCommand(file: string): Promise<void> {
 	const start = performance.now()
-	const commandPath = toFileUrl(commandDir, file)
+	const commandPath = fileUrl(commandDir, file)
 	try {
 		const command = await import(commandPath)
 		if (command.default) {

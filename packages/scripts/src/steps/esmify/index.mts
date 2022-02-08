@@ -4,11 +4,11 @@ import { walk } from '../../util/walk.mjs'
 
 const has = (l: string, search: string) => l.indexOf(search) !== -1
 const isLocalImport = (l: string) =>
-	has(l, 'import ') && has(l, './') && has(l, '.js\'')
+	has(l, 'import ') && has(l, './') && has(l, ".js'")
 const isLocalExport = (l: string) =>
-	has(l, 'export ') && has(l, './') && has(l, '.js\'')
+	has(l, 'export ') && has(l, './') && has(l, ".js'")
 const isSourceMap = (l: string) =>
-	has(l, '//# sourceMappingURL=') && has(l, '.js\'')
+	has(l, '//# sourceMappingURL=') && has(l, ".js'")
 const isReactImport = (l: string) => has(l, 'react/jsx-runtime')
 
 export async function esmify(dir: string) {
@@ -16,7 +16,7 @@ export async function esmify(dir: string) {
 		if (entryPath.endsWith('.js')) {
 			await rewriteJsReferencesToMjs(entryPath)
 		}
-		if (entryPath.indexOf('.js') >= 0) {
+		if (entryPath.endsWith('.js')) {
 			await renameJsToMjs(entryPath)
 		}
 	})
@@ -24,7 +24,6 @@ export async function esmify(dir: string) {
 
 function renameJsToMjs(entryPath: string) {
 	const newPath = entryPath.replace('.js', '.mjs')
-	console.log(`${entryPath} => ${newPath}`)
 	return fs.rename(entryPath, newPath)
 }
 

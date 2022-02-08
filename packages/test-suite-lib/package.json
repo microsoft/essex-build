@@ -3,11 +3,15 @@
 	"version": "19.0.5",
 	"private": true,
 	"main": "dist/cjs/index.js",
-	"module": "dist/esm/index.js",
 	"types": "dist/types/index.d.ts",
+	"exports": {
+		"import": "./dist/esm/index.mjs",
+		"require": "./dist/cjs/index.js",
+		"types": "./dist/types/index.d.ts"
+	},
 	"scripts": {
 		"clean": "essex clean",
-		"build": "ESSEX_DEBUG=1 essex build --docs --esmify",
+		"build": "ESSEX_DEBUG=1 essex build --docs",
 		"lint": "essex lint",
 		"test": "jest",
 		"watch": "essex watch"
@@ -31,5 +35,10 @@
 		"npm-run-all": "^4.1.5",
 		"react": "^17.0.2",
 		"typescript": "4.5.5"
+	},
+	"essex:exports": {
+		"HelloWorld": "function",
+		"a": "string",
+		"add": "function"
 	}
 }
