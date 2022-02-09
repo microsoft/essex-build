@@ -2000,9 +2000,9 @@ __metadata:
     "@babel/preset-env": ^7.16.11
     "@babel/preset-react": ^7.16.7
     "@babel/preset-typescript": ^7.16.7
+    "@essex/tsconfig-node": "workspace:packages/config-ts-node"
     "@swc/cli": ^0.1.55
     "@swc/core": ^1.2.138
-    "@tsconfig/node14": ^1.0.1
     "@types/node": ^17.0.16
     babel-plugin-transform-typescript-metadata: ^0.3.2
     rimraf: ^3.0.2
@@ -2033,6 +2033,9 @@ __metadata:
     npm-run-all: ^4.1.5
     prettier: ^2.5.1
     typescript: ^4.5.5
+  dependenciesMeta:
+    "@tsconfig/strictest@1.0.0":
+      unplugged: true
   languageName: unknown
   linkType: soft
 
@@ -2042,7 +2045,7 @@ __metadata:
   dependencies:
     "@essex/eslint-plugin": "workspace:packages/config-eslint-plugin"
   peerDependencies:
-    "@essex/eslint-plugin": ">=19.0.2"
+    "@essex/eslint-plugin": ">=20.0.0"
     "@typescript-eslint/eslint-plugin": ">= 4.4.1"
     "@typescript-eslint/parser": ">= 4.4.1"
     eslint-import-resolver-node: ">= 0.3.4"
@@ -2055,9 +2058,9 @@ __metadata:
   dependencies:
     "@babel/core": ^7.17.2
     "@babel/types": ^7.17.0
+    "@essex/tsconfig-node": "workspace:packages/config-ts-node"
     "@swc/cli": ^0.1.55
     "@swc/core": ^1.2.138
-    "@tsconfig/node14": ^1.0.1
     "@types/node": ^17.0.16
     "@typescript-eslint/eslint-plugin": ^5.11.0
     "@typescript-eslint/parser": ^5.11.0
@@ -2086,10 +2089,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/jest-config@workspace:packages/config-jest"
   dependencies:
+    "@essex/tsconfig-node": "workspace:packages/config-ts-node"
     "@swc/cli": ^0.1.55
     "@swc/core": ^1.2.138
     "@swc/jest": ^0.2.17
-    "@tsconfig/node14": ^1.0.1
     "@types/jest": ^27.4.0
     "@types/node": ^17.0.16
     identity-obj-proxy: ^3.0.0
@@ -2117,10 +2120,9 @@ __metadata:
     "@essex/eslint-config": "workspace:packages/config-eslint"
     "@essex/eslint-plugin": "workspace:packages/config-eslint-plugin"
     "@essex/shellrunner": "workspace:packages/util-shellrunner"
+    "@essex/tsconfig-node": "workspace:packages/config-ts-node"
     "@swc/cli": ^0.1.55
     "@swc/core": ^1.2.138
-    "@tsconfig/node14": ^1.0.1
-    "@tsconfig/strictest": ^1.0.0
     "@types/archiver": ^5.3.1
     "@types/debug": ^4.1.7
     "@types/eslint": ^8.4.1
@@ -2154,8 +2156,8 @@ __metadata:
     typedoc: ^0.22.11
     typescript: ^4.5.5
   peerDependencies:
-    "@essex/eslint-config": ">=19.0.2"
-    "@essex/jest-config": ">=19.0.2"
+    "@essex/eslint-config": ">=20.0.0"
+    "@essex/jest-config": ">=20.0.0"
     "@essex/prettier-config": ">=18.0.2"
     "@typescript-eslint/eslint-plugin": ">= 4.4.1"
     "@typescript-eslint/parser": ">= 4.4.1"
@@ -2195,6 +2197,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/shellrunner@workspace:packages/util-shellrunner"
   dependencies:
+    "@essex/tsconfig-node": "workspace:packages/config-ts-node"
     "@swc/cli": ^0.1.55
     "@swc/core": ^1.2.138
     "@tsconfig/strictest": ^1.0.0
@@ -2215,6 +2218,7 @@ __metadata:
     "@essex/eslint-config": "workspace:packages/config-eslint"
     "@essex/jest-config": "workspace:packages/config-jest"
     "@essex/scripts": "workspace:packages/scripts"
+    "@essex/tsconfig-base": "workspace:packages/config-ts-base"
     "@types/jest": ^27.4.0
     "@types/react": ^17.0.39
     "@typescript-eslint/eslint-plugin": ^5.11.0
@@ -2227,11 +2231,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/test-suite-webapp-vite@workspace:packages/test-suite-webapp-vite":
+"@essex/test-suite-webapp-vite@workspace:packages/test-suite-vite":
   version: 0.0.0-use.local
-  resolution: "@essex/test-suite-webapp-vite@workspace:packages/test-suite-webapp-vite"
+  resolution: "@essex/test-suite-webapp-vite@workspace:packages/test-suite-vite"
   dependencies:
     "@essex/scripts": "workspace:packages/scripts"
+    "@essex/tsconfig-base": "workspace:packages/config-ts-base"
     "@essex/vite-config": "workspace:packages/config-vite"
     "@types/react": ^17.0.39
     "@types/react-dom": ^17.0.11
@@ -2242,12 +2247,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/test-suite-webapp-webpack@workspace:packages/test-suite-webapp-webpack":
+"@essex/test-suite-webapp-webpack@workspace:packages/test-suite-webpack":
   version: 0.0.0-use.local
-  resolution: "@essex/test-suite-webapp-webpack@workspace:packages/test-suite-webapp-webpack"
+  resolution: "@essex/test-suite-webapp-webpack@workspace:packages/test-suite-webpack"
   dependencies:
     "@essex/eslint-config": "workspace:packages/config-eslint"
     "@essex/scripts": "workspace:packages/scripts"
+    "@essex/tsconfig-base": "workspace:packages/config-ts-base"
     "@essex/webpack-config": "workspace:packages/config-webpack"
     "@types/react": ^17.0.39
     "@types/react-dom": ^17.0.11
@@ -2271,6 +2277,7 @@ __metadata:
     "@essex/eslint-config": "workspace:packages/config-eslint"
     "@essex/jest-config": "workspace:packages/config-jest"
     "@essex/scripts": "workspace:packages/scripts"
+    "@essex/tsconfig-node": "workspace:packages/config-ts-node"
     "@types/jest": ^27.4.0
     "@types/node": ^17.0.16
     "@typescript-eslint/eslint-plugin": ^5.11.0
@@ -2281,6 +2288,22 @@ __metadata:
     npm-run-all: ^4.1.5
     regenerator-runtime: ^0.13.9
     shx: ^0.3.4
+  languageName: unknown
+  linkType: soft
+
+"@essex/tsconfig-base@workspace:packages/config-ts-base":
+  version: 0.0.0-use.local
+  resolution: "@essex/tsconfig-base@workspace:packages/config-ts-base"
+  dependencies:
+    "@tsconfig/strictest": ^1.0.0
+  languageName: unknown
+  linkType: soft
+
+"@essex/tsconfig-node@workspace:packages/config-ts-node":
+  version: 0.0.0-use.local
+  resolution: "@essex/tsconfig-node@workspace:packages/config-ts-node"
+  dependencies:
+    "@essex/tsconfig-base": "workspace:packages/config-ts-base"
   languageName: unknown
   linkType: soft
 
@@ -2300,9 +2323,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/webpack-config@workspace:packages/config-webpack"
   dependencies:
+    "@essex/tsconfig-node": "workspace:packages/config-ts-node"
     "@swc/cli": ^0.1.55
     "@swc/core": ^1.2.138
-    "@tsconfig/node14": ^1.0.1
     "@types/debug": ^4.1.7
     "@types/express": ^4.17.13
     "@types/node": ^17.0.16
@@ -2876,13 +2899,6 @@ __metadata:
   version: 1.1.2
   resolution: "@tootallnate/once@npm:1.1.2"
   checksum: e1fb1bbbc12089a0cb9433dc290f97bddd062deadb6178ce9bcb93bb7c1aecde5e60184bc7065aec42fe1663622a213493c48bbd4972d931aae48315f18e1be9
-  languageName: node
-  linkType: hard
-
-"@tsconfig/node14@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@tsconfig/node14@npm:1.0.1"
-  checksum: 976345e896c0f059867f94f8d0f6ddb8b1844fb62bf36b727de8a9a68f024857e5db97ed51d3325e23e0616a5e48c034ff51a8d595b3fe7e955f3587540489be
   languageName: node
   linkType: hard
 

@@ -17,7 +17,7 @@
 		"lint": "yarn workspaces foreach -piv --all run lint",
 		"test": "yarn workspaces foreach -piv --all run test",
 		"version": "yarn workspaces foreach --all -ivd version",
-		"release": "yarn workspaces foreach --all --exclude '*test-suite-*' -pv npm publish --tolerate-republish --access public",
+		"release": "yarn workspaces foreach --all --exclude '@essex/test-suite-*' -pv npm publish --tolerate-republish --access public",
 		"jest": "jest",
 		"eslint": "ESSEX_DEBUG=1 yarn essex lint --fix",
 		"prettify": "essex prettify",
@@ -53,5 +53,10 @@
 		"react-dom": "17.0.2",
 		"@types/react": "17.0.15",
 		"@types/react-dom": "17.0.9"
+	},
+	"dependenciesMeta": {
+		"@tsconfig/strictest@1.0.0": {
+			"unplugged": true
+		}
 	}
 }

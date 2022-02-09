@@ -1,0 +1,11 @@
+{
+	"extends": "@tsconfig/strictest",
+	"compilerOptions": {
+		// The base configuration uses a bleeding-edge setup.
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "Node",
+		"lib": ["ESNext"],
+		"noImplicitReturns": false
+	}
+}

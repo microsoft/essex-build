@@ -1,6 +1,6 @@
 {
 	"name": "@essex/test-suite-library",
-	"version": "19.0.5",
+	"version": "20.0.0",
 	"private": true,
 	"main": "dist/cjs/index.js",
 	"types": "dist/types/index.d.ts",
@@ -26,6 +26,7 @@
 		"@essex/eslint-config": "workspace:packages/config-eslint",
 		"@essex/jest-config": "workspace:packages/config-jest",
 		"@essex/scripts": "workspace:packages/scripts",
+		"@essex/tsconfig-base": "workspace:packages/config-ts-base",
 		"@types/jest": "^27.4.0",
 		"@types/react": "^17.0.39",
 		"@typescript-eslint/eslint-plugin": "^5.11.0",

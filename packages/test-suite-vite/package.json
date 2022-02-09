@@ -1,6 +1,7 @@
 {
 	"name": "@essex/test-suite-webapp-vite",
-	"version": "19.0.5",
+	"version": "20.0.0",
+	"private": true,
 	"scripts": {
 		"clean": "essex clean",
 		"start": "vite",
@@ -17,6 +18,7 @@
 	},
 	"devDependencies": {
 		"@essex/scripts": "workspace:packages/scripts",
+		"@essex/tsconfig-base": "workspace:packages/config-ts-base",
 		"@essex/vite-config": "workspace:packages/config-vite",
 		"@types/react": "^17.0.39",
 		"@types/react-dom": "^17.0.11",

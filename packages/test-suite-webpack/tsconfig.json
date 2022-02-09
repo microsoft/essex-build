@@ -1,0 +1,10 @@
+{
+	"extends": "@essex/tsconfig-base",
+	"compilerOptions": {
+		"lib": ["ESNext", "DOM"],
+		"jsx": "react-jsx",
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true
+	},
+	"include": ["src"]
+}

@@ -1,14 +1,8 @@
 {
+	"extends": "@essex/tsconfig-node",
 	"compilerOptions": {
 		"outDir": "lib",
-		"target": "ESNext",
-		"module": "ESNext",
-		"moduleResolution": "Node",
-		"lib": ["ESNext"],
-		"strict": true,
-		"forceConsistentCasingInFileNames": true,
-		"resolveJsonModule": true,
-		"allowSyntheticDefaultImports": true
+		"resolveJsonModule": true
 	},
 	"include": ["src/index.ts"]
 }

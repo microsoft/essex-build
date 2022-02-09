@@ -1,0 +1,7 @@
+{
+	"name": "@essex/tsconfig-base",
+	"version": "1.0.0",
+	"dependencies": {
+		"@tsconfig/strictest": "^1.0.0"
+	}
+}
