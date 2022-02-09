@@ -1,5 +1,5 @@
 {
-	"name": "@essex/alpha-build-utils",
+	"name": "@essex/build",
 	"private": true,
 	"license": "MIT",
 	"contributors": [
@@ -10,14 +10,14 @@
 	"scripts": {
 		"preinstall": "npx only-allow yarn",
 		"postinstall": "husky install",
-		"clean_primary": "yarn workspaces foreach --exclude '@essex-build/test-suite-*' --exclude @essex/alpha-build-utils -piv run clean",
-		"clean_tests": "yarn workspaces foreach --include '@essex-build/test-suite-*' -piv run clean",
+		"clean_primary": "yarn workspaces foreach --exclude '@essex/test-suite-*' --exclude @essex/build -piv run clean",
+		"clean_tests": "yarn workspaces foreach --include '@essex/test-suite-*' -piv run clean",
 		"clean": "run-s clean_tests clean_primary",
 		"build": "yarn workspaces foreach -piv --all --exclude @essex/alpha-build-util --topological-dev run build",
-		"lint_packages": "yarn workspaces foreach -piv --all--exclude @essex/alpha-build-util run lint",
-		"test_packages": "yarn workspaces foreach -piv --all --exclude @essex/alpha-build-util run test",
-		"version": "yarn workspaces foreach --all --exclude @essex/alpha-build-utils --exclude @essex/alpha-build-util -iv version -d",
-		"release": "yarn workspaces foreach --all --exclude '@essex-build/test-suite-*' --exclude '@essex/alpha-build-utils' -pv npm publish --tolerate-republish --access public",
+		"lint_packages": "yarn workspaces foreach -piv --all --exclude @essex/build run lint",
+		"test_packages": "yarn workspaces foreach -piv --all --exclude @essex/build run test",
+		"version": "yarn workspaces foreach --all --exclude @essex/build --exclude @essex/alpha-build-util -iv version -d",
+		"release": "yarn workspaces foreach --all --exclude '@essex/test-suite-*' --exclude '@essex/build' -pv npm publish --tolerate-republish --access public",
 		"run_jest": "jest",
 		"lint": "ESSEX_DEBUG=1 yarn essex lint --fix",
 		"prettify": "essex prettify",

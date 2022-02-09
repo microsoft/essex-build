@@ -1,5 +1,5 @@
 {
-	"name": "@essex-build/test-suite-webapp-vite",
+	"name": "@essex/test-suite-webapp-vite",
 	"version": "19.0.5",
 	"scripts": {
 		"clean": "essex clean",

@@ -1,5 +1,5 @@
 {
-	"name": "@essex-build/test-suite-webapp-webpack",
+	"name": "@essex/test-suite-webapp-webpack",
 	"version": "19.0.6",
 	"private": true,
 	"scripts": {

@@ -1,5 +1,5 @@
 {
-	"name": "@essex-build/test-suite-zips",
+	"name": "@essex/test-suite-zips",
 	"version": "19.0.5",
 	"private": true,
 	"main": "dist/cjs/index.js",
