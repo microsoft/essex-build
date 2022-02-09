@@ -1,0 +1,9 @@
+declined:
+  - "@essex/babel-config"
+  - "@essex/eslint-plugin"
+  - "@essex/jest-config"
+  - "@essex/webpack-config"
+  - "@essex/scripts"
+  - "@essex/test-suite-webapp-vite"
+  - "@essex/test-suite-zips"
+  - "@essex/shellrunner"
