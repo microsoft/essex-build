@@ -2,10 +2,11 @@
 	"extends": "@tsconfig/strictest",
 	"compilerOptions": {
 		"target": "ES2020",
-		"lib": "es2020",
+		"esModuleInterop": false,
 		"module": "ESNext",
 		"moduleResolution": "Node",
 		"outDir": "lib",
+		"strict": true,
 		"declaration": true
 	},
 	"include": ["src/**/*.*ts"]
