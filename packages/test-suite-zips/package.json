@@ -1,6 +1,6 @@
 {
 	"name": "@essex/test-suite-zips",
-	"version": "19.0.5",
+	"version": "20.0.0",
 	"private": true,
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
