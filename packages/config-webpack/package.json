@@ -31,7 +31,7 @@
 		"webpack-dev-server": "^4.7.4"
 	},
 	"devDependencies": {
-		"@tsconfig/node14": "^1.0.1",
+		"@essex/tsconfig-node": "workspace:packages/config-ts-node",
 		"@types/debug": "^4.1.7",
 		"@types/express": "^4.17.13",
 		"@types/node": "^17.0.16",

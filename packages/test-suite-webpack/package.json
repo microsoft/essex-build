@@ -23,6 +23,7 @@
 	"devDependencies": {
 		"@essex/eslint-config": "workspace:packages/config-eslint",
 		"@essex/scripts": "workspace:packages/scripts",
+		"@essex/tsconfig-base": "workspace:packages/config-ts-base",
 		"@essex/webpack-config": "workspace:packages/config-webpack",
 		"@typescript-eslint/eslint-plugin": "^5.11.0",
 		"@typescript-eslint/parser": "^5.11.0",

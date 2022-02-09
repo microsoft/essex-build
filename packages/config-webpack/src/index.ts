@@ -6,9 +6,9 @@ import { existsSync } from 'fs'
 import { join } from 'path'
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import TsConfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
-import { ResolvePluginInstance } from 'tsconfig-paths-webpack-plugin/lib/plugin.temp.types'
+import type { ResolvePluginInstance } from 'tsconfig-paths-webpack-plugin/lib/plugin.temp.types'
 import webpack from 'webpack'
-import { Configuration as WdsConfiguration } from 'webpack-dev-server'
+import type { Configuration as WdsConfiguration } from 'webpack-dev-server'
 import {
 	getWdsStaticConfig,
 	getHomePage,

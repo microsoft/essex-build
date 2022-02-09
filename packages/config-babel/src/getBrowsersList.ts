@@ -11,7 +11,7 @@ export function getBrowsersList(
 	} else if (Array.isArray(setting)) {
 		return setting
 	} else {
-		return setting[env]
+		return setting[env] || DEFAULT_ESSEX_BROWSERSLIST
 	}
 }
 

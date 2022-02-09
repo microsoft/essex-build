@@ -1,0 +1,6 @@
+{
+	"name": "@essex/tsconfig-node",
+	"dependencies": {
+		"@essex/tsconfig-base": "workspace:packages/config-ts-base"
+	}
+}

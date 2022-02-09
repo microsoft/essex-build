@@ -1,0 +1,13 @@
+{
+	"extends": "@essex/tsconfig-base",
+	"compilerOptions": {
+		// Node 14 Standards (https://stackoverflow.com/questions/61305578/what-typescript-configuration-produces-output-closest-to-node-js-14-capabilities)
+		// https://www.npmjs.com/package/@tsconfig/node14
+		"target": "ES2020",
+		"lib": ["ES2020"],
+		"module": "CommonJS",
+		"moduleResolution": "Node",
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true
+	}
+}

@@ -4,7 +4,7 @@
  */
 import { existsSync, readFileSync } from 'fs'
 import { join } from 'path'
-import { Configuration } from 'webpack-dev-server'
+import type { Configuration } from 'webpack-dev-server'
 import { log } from './log'
 
 const DEFAULT_SWC_CONFIG = {
