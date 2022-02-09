@@ -2287,9 +2287,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/tsconfig-base@workspace:packages/config-ts":
+"@essex/tsconfig-base@workspace:packages/config-ts-base":
   version: 0.0.0-use.local
-  resolution: "@essex/tsconfig-base@workspace:packages/config-ts"
+  resolution: "@essex/tsconfig-base@workspace:packages/config-ts-base"
   dependencies:
     "@tsconfig/strictest": ^1.0.0
   languageName: unknown
