@@ -1,9 +1,14 @@
 {
-	"extends": "@tsconfig/node14",
+	"extends": "@tsconfig/strictest",
 	"compilerOptions": {
+		// Node 14
+		"lib": ["es2020"],
+		"target": "es2020",
+		"module": "ESNext",
+		"moduleResolution": "node",
+
 		"outDir": "lib",
-		"strict": true,
 		"declaration": true
 	},
-	"include": ["src/**/*.ts"]
+	"include": ["src"]
 }

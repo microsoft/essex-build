@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { parallel, single } from './strategies'
-import { Job, JobResult } from './types'
+import { parallel, single } from './strategies/index.js'
+import type { Job, JobResult } from './types.js'
 
 /**
  * Runs a series of jobs.

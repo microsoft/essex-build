@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { add } from '../add'
+import { add } from '../add.js'
 
 describe('the adder', () => {
 	it('can add 2 and 2', () => {

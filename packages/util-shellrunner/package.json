@@ -3,18 +3,16 @@
 	"version": "19.0.2",
 	"description": "A set of utility libraries for executing shell commands",
 	"license": "MIT",
-	"main": "src/index.ts",
-	"publishConfig": {
-		"main": "lib/index.js",
-		"typings": "lib/index.d.ts"
-	},
+	"type": "module",
+	"main": "lib/index.js",
+	"types": "lib/index.d.ts",
 	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
 	"author": "David Tittsworth <datittsw@microsoft.com>",
 	"contributors": [
 		"Chris Trevino <chtrevin@microsoft.com>"
 	],
 	"scripts": {
-		"build": "tsc --emitDeclarationOnly && swc src -d lib",
+		"build": "tsc -b .",
 		"clean": "rimraf lib"
 	},
 	"dependencies": {
@@ -23,8 +21,8 @@
 	},
 	"devDependencies": {
 		"@swc/cli": "^0.1.55",
-		"@swc/core": "^1.2.135",
-		"@tsconfig/node14": "^1.0.1",
+		"@swc/core": "^1.2.138",
+		"@tsconfig/strictest": "^1.0.0",
 		"@types/debug": "^4.1.7",
 		"@types/node": "^16.11.22",
 		"rimraf": "^3.0.2",

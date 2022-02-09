@@ -1,5 +1,5 @@
 {
-	"name": "@essex-build/test-suite-webapp-webpack",
+	"name": "@essex/test-suite-webapp-webpack",
 	"version": "19.0.6",
 	"private": true,
 	"scripts": {
@@ -14,7 +14,7 @@
 		"directory": "packages/test-suite-webapp-webpack"
 	},
 	"dependencies": {
-		"@types/react": "^17.0.38",
+		"@types/react": "^17.0.39",
 		"@types/react-dom": "^17.0.11",
 		"@types/webpack-dev-server": "^4.7.2",
 		"react": "^17.0.2",
@@ -24,8 +24,8 @@
 		"@essex/eslint-config": "workspace:packages/config-eslint",
 		"@essex/scripts": "workspace:packages/scripts",
 		"@essex/webpack-config": "workspace:packages/config-webpack",
-		"@typescript-eslint/eslint-plugin": "^5.10.2",
-		"@typescript-eslint/parser": "^5.10.2",
+		"@typescript-eslint/eslint-plugin": "^5.11.0",
+		"@typescript-eslint/parser": "^5.11.0",
 		"eslint-import-resolver-node": "^0.3.6",
 		"webpack": "^5.68.0",
 		"webpack-cli": "^4.9.2",
