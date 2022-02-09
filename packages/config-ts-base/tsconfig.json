@@ -6,6 +6,9 @@
 		"module": "ESNext",
 		"moduleResolution": "Node",
 		"lib": ["ESNext"],
-		"noImplicitReturns": false
+
+		// Tone down the strictness
+		"noImplicitReturns": false,
+		"exactOptionalPropertyTypes": false
 	}
 }
