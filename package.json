@@ -53,5 +53,10 @@
 		"react-dom": "17.0.2",
 		"@types/react": "17.0.15",
 		"@types/react-dom": "17.0.9"
+	},
+	"dependenciesMeta": {
+		"@tsconfig/strictest@1.0.0": {
+			"unplugged": true
+		}
 	}
 }
