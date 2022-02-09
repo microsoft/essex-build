@@ -12,12 +12,18 @@ export async function verifyExports(): Promise<void> {
 	const pkg = await readTargetPackageJson()
 
 	const expected = get(pkg, 'essex.exports')
+	if (expected == null) {
+		logger.warn(
+			`    essex.exports not defined in package.json; skipping named export verification`,
+		)
+	}
 	try {
 		const start = performance.now()
 		await verifyEsm(pkg.exports.import, expected)
 		logger.subtaskSuccess('verify esm exports', logger.printPerf(start))
 	} catch (err) {
 		logger.subtaskFail('verify esm exports')
+		throw err
 	}
 	try {
 		const start = performance.now()
@@ -25,32 +31,30 @@ export async function verifyExports(): Promise<void> {
 		logger.subtaskSuccess('verify cjs exports', logger.printPerf(start))
 	} catch (err) {
 		logger.subtaskFail('verify cjs exports')
+		throw err
 	}
 }
 
 async function verifyEsm(
 	pkgName: string,
-	expected: Record<string, any>,
+	expected: Record<string, any> | undefined,
 ): Promise<void> {
 	const api = await import(fileUrl(path.join(process.cwd()), pkgName))
-	check(api, expected)
+	if (expected) check(api, expected)
 }
 
-async function verifyCjs(pkgName: string, expected: Record<string, any>) {
+async function verifyCjs(
+	pkgName: string,
+	expected: Record<string, any> | undefined,
+) {
 	const api = require(path.join(process.cwd(), pkgName))
-	check(api, expected)
+	if (expected) check(api, expected)
 }
 
 export function check(
 	imported: Record<string, unknown>,
-	expected: Record<string, string> | undefined,
+	expected: Record<string, string>,
 ): void {
-	if (expected == null) {
-		logger.warn(
-			`essex.exports not defined in package.json; skipping export verification`,
-		)
-		return
-	}
 	Object.keys(imported).forEach(key => {
 		if (!expected[key]) {
 			throw new Error(

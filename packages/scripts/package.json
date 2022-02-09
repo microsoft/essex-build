@@ -6,10 +6,11 @@
 	"author": "David Tittsworth <datittsw@microsoft.com>",
 	"license": "MIT",
 	"scripts": {
-		"build:transpile": "tsc -b .",
-		"build:crlf": "crlf --set=LF \"lib/**/*.mjs\"",
-		"build:perms": "shx chmod +x lib/index.mjs",
-		"build": "npm-run-all -p build:transpile -s build:crlf build:perms",
+		"transpile": "tsc -b .",
+		"crlf": "crlf --set=LF \"lib/**/*.mjs\"",
+		"perms": "shx chmod +x lib/index.mjs",
+		"build": "npm-run-all -p transpile -s crlf perms",
+		"build:scripts": "yarn build",
 		"clean": "rimraf lib"
 	},
 	"main": "lib/index.mjs",

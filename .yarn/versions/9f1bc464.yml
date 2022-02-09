@@ -1,0 +1,8 @@
+releases:
+  "@essex/scripts": patch
+
+declined:
+  - "@essex/test-suite-library"
+  - "@essex/test-suite-webapp-vite"
+  - "@essex/test-suite-webapp-webpack"
+  - "@essex/test-suite-zips"
