@@ -10,8 +10,8 @@
 	"scripts": {
 		"preinstall": "npx only-allow yarn",
 		"postinstall": "husky install",
-		"clean_primary": "yarn workspaces foreach --exclude '@essex/build' --exclude '*test-suite-*' -piv run clean",
-		"clean_tests": "yarn workspaces foreach --include '*test-suite-*' -piv run clean",
+		"clean_primary": "yarn workspaces foreach --exclude '@essex/build' --exclude '@essex/test-suite-*' -piv run clean",
+		"clean_tests": "yarn workspaces foreach --include '@essex/test-suite-*' -piv run clean",
 		"clean": "run-s clean_tests clean_primary",
 		"build": "yarn workspaces foreach -piv --topological-dev run build",
 		"lint": "yarn workspaces foreach -piv --all run lint",
