@@ -93,12 +93,12 @@ export function check(
 	const errors: string[] = []
 	Object.keys(imported).forEach(key => {
 		if (!expected[key]) {
-			errors.push(`unexpected export "${key}: ${typeof imported[key]}`)
+			errors.push(`unexpected export "${key}": "${typeof imported[key]}"`)
 		}
 		const expectedType = expected[key]
 		const actualType = typeof imported[key]
 
-		if (expectedType !== actualType) {
+		if (expectedType && expectedType !== actualType) {
 			errors.push(
 				`type mismatch on key "${key}": expected ${expectedType}, got ${actualType}`,
 			)
