@@ -58,26 +58,27 @@ export async function executeBuild({
 	mode = BuildMode.esm,
 }: BuildCommandOptions): Promise<void> {
 	const performImportChecks = mode !== BuildMode.legacy && !skipChecks
+	const rewriteEsmToMjs = mode === BuildMode.dual
+	const esmOnly = mode === BuildMode.esm
 	const cwd = process.cwd()
 	const tsConfigPath = path.join(cwd, 'tsconfig.json')
+
 	if (!existsSync(tsConfigPath)) {
 		throw new Error('tsconfig.json must exist')
 	}
 
 	const generateDocs = docs ? generateTypedocs() : noop()
-	await compileTypescript(stripInternalTypes, mode === BuildMode.esm)
+	await compileTypescript(stripInternalTypes, esmOnly)
 
 	if (mode !== BuildMode.legacy) {
-		await processEsm(
-			mode === BuildMode.dual,
-			mode === BuildMode.esm ? 'dist' : 'dist/esm',
-		)
+		await processEsm(rewriteEsmToMjs, esmOnly ? 'dist' : 'dist/esm')
 	}
 	if (performImportChecks) await performChecks(mode)
 	await generateDocs
 }
 
 async function performChecks(mode: BuildMode) {
+	const esmOnly = mode === BuildMode.esm
 	await verifyPackage(mode)
-	await verifyExports(mode === BuildMode.esm)
+	await verifyExports(esmOnly)
 }
