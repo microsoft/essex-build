@@ -2,9 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { getSetupFiles } from './overrides.js'
+/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
 // @ts-ignore
 import { resolve } from '@essex/jest-config/resolve'
+import { getSetupFiles } from './overrides.js'
 
 export function configure(setupFiles: string[] = getSetupFiles()): any {
 	return {

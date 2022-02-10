@@ -4,12 +4,13 @@
  */
 import { existsSync } from 'fs'
 import { join } from 'path'
-import { BabelSpecification, createBabelConfig } from './createBabelConfig.js'
-import { getBrowsersList } from './getBrowsersList.js'
-export * from './createBabelConfig.js'
-
+/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
 // @ts-ignore
 import { resolve, loadJson } from '@essex/babel-config/resolve'
+import { BabelSpecification, createBabelConfig } from './createBabelConfig.js'
+import { getBrowsersList } from './getBrowsersList.js'
+
+export * from './createBabelConfig.js'
 
 const cwd = process.cwd()
 const packageJsonPath = join(cwd, 'package.json')
