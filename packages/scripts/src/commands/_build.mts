@@ -58,8 +58,8 @@ export async function executeBuild({
 	await compileTypescript(stripInternalTypes)
 	if (!skipEsmChecks) {
 		await processEsm('dist/esm')
-		await verifyExports()
 		await verifyPackage()
+		await verifyExports()
 	}
 	await generateDocs
 }
