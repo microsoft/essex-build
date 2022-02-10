@@ -1,8 +1,10 @@
 releases:
-  "@essex/scripts": patch
+  "@essex/scripts": minor
 
 declined:
-  - "@essex/test-suite-library"
-  - "@essex/test-suite-webapp-vite"
-  - "@essex/test-suite-webapp-webpack"
-  - "@essex/test-suite-zips"
+  - "@essex/test-lib-dual"
+  - "@essex/test-lib-esm"
+  - "@essex/test-lib-legacy"
+  - "@essex/test-webapp-vite"
+  - "@essex/test-webapp-webpack"
+  - "@essex/test-zips"
