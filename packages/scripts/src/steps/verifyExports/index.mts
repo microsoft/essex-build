@@ -90,24 +90,27 @@ export function check(
 	imported: Record<string, unknown>,
 	expected: Record<string, string>,
 ): void {
+	const errors: string[] = []
 	Object.keys(imported).forEach(key => {
 		if (!expected[key]) {
-			throw new Error(
-				`unexpected export "${key}" of type ${typeof imported[key]}`,
-			)
+			errors.push(`unexpected export "${key}: ${typeof imported[key]}`)
 		}
 		const expectedType = expected[key]
 		const actualType = typeof imported[key]
 
 		if (expectedType !== actualType) {
-			throw new Error(
-				`export type mismatch on key "${key}: expected ${expectedType}, got ${actualType}`,
+			errors.push(
+				`type mismatch on key "${key}": expected ${expectedType}, got ${actualType}`,
 			)
 		}
 	})
 	Object.keys(expected).forEach(key => {
 		if (!imported[key]) {
-			throw new Error(`missing export: ${key} of type ${expected[key]}`)
+			errors.push(`missing export "${key}": "${expected[key]}"`)
 		}
 	})
+
+	if (errors.length > 0) {
+		throw new Error(errors.join('\n'))
+	}
 }
