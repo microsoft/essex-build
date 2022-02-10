@@ -11,11 +11,11 @@ const isSourceMap = (l: string) =>
 	has(l, '//# sourceMappingURL=') && has(l, ".js'")
 const isReactImport = (l: string) => has(l, 'react/jsx-runtime')
 
-export async function esmify(dir: string) {
+export async function esmify(rewriteToMjs: boolean, dir: string) {
 	await walk(dir, async entryPath => {
 		if (entryPath.endsWith('.js')) {
-			await rewriteJsReferencesToMjs(entryPath)
-			await renameJsToMjs(entryPath)
+			await rewriteImports(entryPath, rewriteToMjs)
+			if (rewriteToMjs) await renameJsToMjs(entryPath)
 		}
 	})
 }
@@ -25,17 +25,23 @@ function renameJsToMjs(entryPath: string) {
 	return fs.rename(entryPath, newPath)
 }
 
-async function rewriteJsReferencesToMjs(entryPath: string) {
+async function rewriteImports(entryPath: string, rewriteToMjs: boolean) {
 	const content = await fs.readFile(entryPath, 'utf8')
-	await fs.writeFile(entryPath, rewriteFile(content), 'utf8')
+	await fs.writeFile(entryPath, rewriteFile(content, rewriteToMjs), 'utf8')
 }
 
-function rewriteFile(content: string): string {
-	return content.split('\n').map(rewriteLine).join('\n')
+function rewriteFile(content: string, rewriteToMjs: boolean): string {
+	return content
+		.split('\n')
+		.map(l => rewriteLine(l, rewriteToMjs))
+		.join('\n')
 }
 
-function rewriteLine(l: string): string {
-	if (isLocalImport(l) || isLocalExport(l) || isSourceMap(l)) {
+function rewriteLine(l: string, rewriteToMjs: boolean): string {
+	if (
+		rewriteToMjs &&
+		(isLocalImport(l) || isLocalExport(l) || isSourceMap(l))
+	) {
 		return l.replace('.js', '.mjs')
 	}
 	if (isReactImport(l)) {

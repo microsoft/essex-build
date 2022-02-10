@@ -3,11 +3,21 @@
 	"version": "20.0.0",
 	"author": "Chris Trevino <chtrevin@microsoft.com>",
 	"license": "MIT",
-	"main": "lib/index.js",
-	"typings": "lib/index.d.ts",
+	"main": "dist/cjs/index.js",
+	"types": "dist/types/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/esm/index.mjs",
+			"require": "./dist/cjs/index.js",
+			"types": "./dist/types/index.d.ts"
+		},
+		"./resolve": "./resolve.cjs",
+		"./resolver": "./resolver.cjs",
+		"./filemock": "./filemock.cjs"
+	},
 	"scripts": {
 		"clean": "rimraf dist lib",
-		"build": "tsc --emitDeclarationOnly && swc src -d lib"
+		"build": "essex build --mode dual --skipPackageCheck"
 	},
 	"repository": {
 		"type": "git",
@@ -21,6 +31,7 @@
 		"identity-obj-proxy": "^3.0.0"
 	},
 	"devDependencies": {
+		"@essex/scripts": "workspace:packages/scripts",
 		"@essex/tsconfig-node": "workspace:packages/config-ts-node",
 		"@swc/cli": "^0.1.55",
 		"@types/node": "^17.0.16",

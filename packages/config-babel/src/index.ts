@@ -4,13 +4,17 @@
  */
 import { existsSync } from 'fs'
 import { join } from 'path'
-import { BabelSpecification, createBabelConfig } from './createBabelConfig'
-import { getBrowsersList } from './getBrowsersList'
-export * from './createBabelConfig'
+/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
+// @ts-ignore
+import { resolve, loadJson } from '@essex/babel-config/resolve'
+import { BabelSpecification, createBabelConfig } from './createBabelConfig.js'
+import { getBrowsersList } from './getBrowsersList.js'
+
+export * from './createBabelConfig.js'
 
 const cwd = process.cwd()
 const packageJsonPath = join(cwd, 'package.json')
-const packageJson = existsSync('package.json') ? require(packageJsonPath) : {}
+const packageJson = existsSync('package.json') ? loadJson(packageJsonPath) : {}
 const babelEsmOverride = join(cwd, 'babel.esm.js')
 const babelCjsOverride = join(cwd, 'babel.cjs.js')
 
@@ -28,7 +32,7 @@ export function getCjsConfiguration(
 	// ALlows users to override default cjs emission
 	// during build by defining 'babel.cjs.js'
 	if (existsSync(babelCjsOverride)) {
-		return require(babelCjsOverride)
+		return loadJson(babelCjsOverride)
 	}
 	return createBabelConfig({
 		modules: 'cjs',
@@ -50,7 +54,7 @@ export function getEsmConfiguration(
 	// ALlows users to override default esm emission
 	// during build by defining 'babel.esm.js'
 	if (existsSync(babelEsmOverride)) {
-		return require(babelEsmOverride)
+		return loadJson(babelEsmOverride)
 	}
 	return createBabelConfig({
 		modules: 'esm',

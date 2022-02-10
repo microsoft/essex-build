@@ -2,6 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-ignore
+import { resolve } from '@essex/babel-config/resolve'
 
 export interface BabelSpecification {
 	modules: 'cjs' | 'esm'
@@ -22,7 +25,7 @@ export function createBabelConfig({
 	return {
 		presets: [
 			[
-				require('@babel/preset-env'),
+				resolve('@babel/preset-env'),
 				{
 					modules: modules === 'cjs' ? 'cjs' : false,
 					targets,
@@ -33,11 +36,11 @@ export function createBabelConfig({
 			...presets,
 		],
 		plugins: [
-			require('babel-plugin-transform-typescript-metadata'),
-			require('@babel/plugin-proposal-class-properties'),
-			require('@babel/plugin-proposal-object-rest-spread'),
-			require('@babel/plugin-proposal-optional-chaining'),
-			require('@babel/plugin-proposal-nullish-coalescing-operator'),
+			resolve('babel-plugin-transform-typescript-metadata'),
+			resolve('@babel/plugin-proposal-class-properties'),
+			resolve('@babel/plugin-proposal-object-rest-spread'),
+			resolve('@babel/plugin-proposal-optional-chaining'),
+			resolve('@babel/plugin-proposal-nullish-coalescing-operator'),
 			...plugins,
 		],
 	} as any

@@ -1,6 +1,7 @@
 {
 	"extends": "@essex/tsconfig-node",
 	"compilerOptions": {
+		"module": "ES2020",
 		"outDir": "lib",
 		"declaration": true
 	},

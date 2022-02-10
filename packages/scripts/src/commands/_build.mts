@@ -11,6 +11,7 @@ import { esmify as processEsm } from '../steps/esmify/index.mjs'
 import { noop } from '../util/noop.mjs'
 import { verifyExports } from '../steps/verifyExports/index.mjs'
 import { verifyPackage } from '../steps/verifyPackage/index.mjs'
+import { BuildMode } from '../types.mjs'
 
 export interface BuildCommandOptions {
 	/**
@@ -26,7 +27,10 @@ export interface BuildCommandOptions {
 	/**
 	 * Opt-out of ESM processing and verification
 	 */
-	skipEsmChecks?: boolean
+	skipPackageCheck?: boolean
+	skipExportCheck?: boolean
+
+	mode?: BuildMode
 }
 
 export default function build(program: Command): void {
@@ -38,7 +42,9 @@ export default function build(program: Command): void {
 			'--stripInternalTypes',
 			'strip out internal types from typings declarations',
 		)
-		.option('--skipEsmChecks', 'opt-out of ESM processing and verification')
+		.option('--skipPackageCheck', 'skips package.json verification check')
+		.option('--skipExportCheck', 'skips esm/cjs export check')
+		.option('--mode [mode]', 'options are "legacy", "dual", and "esm"')
 		.action(async (options: BuildCommandOptions): Promise<any> => {
 			await executeBuild(options)
 		})
@@ -47,19 +53,30 @@ export default function build(program: Command): void {
 export async function executeBuild({
 	docs = false,
 	stripInternalTypes = false,
-	skipEsmChecks = false,
+	skipExportCheck = false,
+	skipPackageCheck = false,
+	mode = BuildMode.esm,
 }: BuildCommandOptions): Promise<void> {
+	const checkPackage = mode !== BuildMode.legacy && !skipPackageCheck
+	const checkExports = mode !== BuildMode.legacy && !skipExportCheck
+	const rewriteEsmToMjs = mode === BuildMode.dual
+	const esmOnly = mode === BuildMode.esm
 	const cwd = process.cwd()
 	const tsConfigPath = path.join(cwd, 'tsconfig.json')
+
 	if (!existsSync(tsConfigPath)) {
 		throw new Error('tsconfig.json must exist')
 	}
+
 	const generateDocs = docs ? generateTypedocs() : noop()
-	await compileTypescript(stripInternalTypes)
-	if (!skipEsmChecks) {
-		await processEsm('dist/esm')
-		await verifyExports()
-		await verifyPackage()
+	await compileTypescript(stripInternalTypes, esmOnly)
+
+	if (mode !== BuildMode.legacy) {
+		await processEsm(rewriteEsmToMjs, esmOnly ? 'dist' : 'dist/esm')
 	}
+
+	if (checkPackage) await verifyPackage(mode)
+	if (checkExports) await verifyExports(esmOnly)
+
 	await generateDocs
 }

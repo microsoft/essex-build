@@ -8,7 +8,7 @@ import get from 'lodash/get.js'
 
 const require = createRequire(import.meta.url)
 
-export async function verifyExports(): Promise<void> {
+export async function verifyExports(esmOnly: boolean): Promise<void> {
 	const pkg = await readTargetPackageJson()
 
 	const expected = get(pkg, 'essex.exports')
@@ -17,38 +17,73 @@ export async function verifyExports(): Promise<void> {
 			`    essex.exports not defined in package.json; skipping named export verification`,
 		)
 	}
-	try {
-		const start = performance.now()
-		await verifyEsm(pkg.exports.import, expected)
-		logger.subtaskSuccess('verify esm exports', logger.printPerf(start))
-	} catch (err) {
-		logger.subtaskFail('verify esm exports')
-		throw err
+
+	doChecks('verify esm export', async () => {
+		// pkg.exports.imports is used in dual mode; pkg.main is used in esm-only mode
+		const api = await loadEsm(esmEntry(pkg))
+		if (expected) check(api, expected)
+	})
+	if (!esmOnly) {
+		doChecks('verify cjs export', async () => {
+			const api = await loadCjs(cjsEntry(pkg))
+			if (expected) check(api, expected)
+		})
 	}
+}
+
+function esmEntry(pkg: any): string {
+	let result = null
+	if (pkg.exports) {
+		if (pkg.exports.import) {
+			result = pkg.exports.import
+		} else if (pkg.exports['.']) {
+			result = pkg.exports['.'].import
+		}
+	} else {
+		result = pkg.main
+	}
+
+	if (!result) {
+		throw new Error('could not locate esm entrypoint')
+	}
+	return result
+}
+
+function cjsEntry(pkg: any): string {
+	let result = null
+	if (pkg.exports) {
+		if (pkg.exports.require) {
+			result = pkg.exports.require
+		} else if (pkg.exports['.']) {
+			result = pkg.exports['.'].require
+		}
+	} else {
+		result = pkg.main
+	}
+
+	if (!result) {
+		throw new Error('could not locate esm entrypoint')
+	}
+	return result
+}
+
+async function doChecks(task: string, callback: () => Promise<void>) {
 	try {
 		const start = performance.now()
-		await verifyCjs(pkg.exports.require, expected)
-		logger.subtaskSuccess('verify cjs exports', logger.printPerf(start))
+		await callback()
+		logger.subtaskSuccess(task, logger.printPerf(start))
 	} catch (err) {
-		logger.subtaskFail('verify cjs exports')
+		logger.subtaskFail(task)
 		throw err
 	}
 }
 
-async function verifyEsm(
-	pkgName: string,
-	expected: Record<string, any> | undefined,
-): Promise<void> {
-	const api = await import(fileUrl(path.join(process.cwd()), pkgName))
-	if (expected) check(api, expected)
+async function loadEsm(pkgName: string): Promise<Record<string, unknown>> {
+	return import(fileUrl(path.join(process.cwd()), pkgName))
 }
 
-async function verifyCjs(
-	pkgName: string,
-	expected: Record<string, any> | undefined,
-) {
-	const api = require(path.join(process.cwd(), pkgName))
-	if (expected) check(api, expected)
+async function loadCjs(pkgName: string): Promise<Record<string, any>> {
+	return require(path.join(process.cwd(), pkgName))
 }
 
 export function check(
