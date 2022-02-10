@@ -2210,9 +2210,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/test-suite-library@workspace:packages/test-suite-lib":
+"@essex/test-lib-dual@workspace:packages/test-lib-dual":
   version: 0.0.0-use.local
-  resolution: "@essex/test-suite-library@workspace:packages/test-suite-lib"
+  resolution: "@essex/test-lib-dual@workspace:packages/test-lib-dual"
   dependencies:
     "@essex/babel-config": "workspace:packages/config-babel"
     "@essex/eslint-config": "workspace:packages/config-eslint"
@@ -2231,9 +2231,51 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/test-suite-webapp-vite@workspace:packages/test-suite-vite":
+"@essex/test-lib-esm@workspace:packages/test-lib-esm":
   version: 0.0.0-use.local
-  resolution: "@essex/test-suite-webapp-vite@workspace:packages/test-suite-vite"
+  resolution: "@essex/test-lib-esm@workspace:packages/test-lib-esm"
+  dependencies:
+    "@essex/babel-config": "workspace:packages/config-babel"
+    "@essex/eslint-config": "workspace:packages/config-eslint"
+    "@essex/jest-config": "workspace:packages/config-jest"
+    "@essex/scripts": "workspace:packages/scripts"
+    "@essex/tsconfig-base": "workspace:packages/config-ts-base"
+    "@types/jest": ^27.4.0
+    "@types/react": ^17.0.39
+    "@typescript-eslint/eslint-plugin": ^5.11.0
+    "@typescript-eslint/parser": ^5.11.0
+    eslint-import-resolver-node: ^0.3.6
+    jest: ^27.5.1
+    npm-run-all: ^4.1.5
+    react: ^17.0.2
+    typescript: 4.5.5
+  languageName: unknown
+  linkType: soft
+
+"@essex/test-lib-legacy@workspace:packages/test-lib-legacy":
+  version: 0.0.0-use.local
+  resolution: "@essex/test-lib-legacy@workspace:packages/test-lib-legacy"
+  dependencies:
+    "@essex/babel-config": "workspace:packages/config-babel"
+    "@essex/eslint-config": "workspace:packages/config-eslint"
+    "@essex/jest-config": "workspace:packages/config-jest"
+    "@essex/scripts": "workspace:packages/scripts"
+    "@essex/tsconfig-base": "workspace:packages/config-ts-base"
+    "@types/jest": ^27.4.0
+    "@types/react": ^17.0.39
+    "@typescript-eslint/eslint-plugin": ^5.11.0
+    "@typescript-eslint/parser": ^5.11.0
+    eslint-import-resolver-node: ^0.3.6
+    jest: ^27.5.1
+    npm-run-all: ^4.1.5
+    react: ^17.0.2
+    typescript: 4.5.5
+  languageName: unknown
+  linkType: soft
+
+"@essex/test-webapp-vite@workspace:packages/test-vite":
+  version: 0.0.0-use.local
+  resolution: "@essex/test-webapp-vite@workspace:packages/test-vite"
   dependencies:
     "@essex/scripts": "workspace:packages/scripts"
     "@essex/tsconfig-base": "workspace:packages/config-ts-base"
@@ -2247,9 +2289,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/test-suite-webapp-webpack@workspace:packages/test-suite-webpack":
+"@essex/test-webapp-webpack@workspace:packages/test-webpack":
   version: 0.0.0-use.local
-  resolution: "@essex/test-suite-webapp-webpack@workspace:packages/test-suite-webpack"
+  resolution: "@essex/test-webapp-webpack@workspace:packages/test-webpack"
   dependencies:
     "@essex/eslint-config": "workspace:packages/config-eslint"
     "@essex/scripts": "workspace:packages/scripts"
@@ -2269,9 +2311,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/test-suite-zips@workspace:packages/test-suite-zips":
+"@essex/test-zips@workspace:packages/test-zips":
   version: 0.0.0-use.local
-  resolution: "@essex/test-suite-zips@workspace:packages/test-suite-zips"
+  resolution: "@essex/test-zips@workspace:packages/test-zips"
   dependencies:
     "@essex/babel-config": "workspace:packages/config-babel"
     "@essex/eslint-config": "workspace:packages/config-eslint"

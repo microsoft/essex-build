@@ -1,4 +1,4 @@
-export declare enum BuildMode {
+export enum BuildMode {
 	legacy = 'legacy',
 	dual = 'dual',
 	esm = 'esm',

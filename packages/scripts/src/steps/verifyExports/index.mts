@@ -19,7 +19,8 @@ export async function verifyExports(esmOnly: boolean): Promise<void> {
 	}
 
 	doChecks('verify esm export', async () => {
-		const api = await loadEsm(pkg.exports.import)
+		// pkg.exports.imports is used in dual mode; pkg.main is used in esm-only mode
+		const api = await loadEsm(pkg.exports?.import || pkg.main)
 		if (expected) check(api, expected)
 	})
 	if (!esmOnly) {

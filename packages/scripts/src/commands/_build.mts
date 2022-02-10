@@ -67,8 +67,11 @@ export async function executeBuild({
 	const generateDocs = docs ? generateTypedocs() : noop()
 	await compileTypescript(stripInternalTypes, mode === BuildMode.esm)
 
-	if (mode === BuildMode.dual) {
-		await processEsm()
+	if (mode !== BuildMode.legacy) {
+		await processEsm(
+			mode === BuildMode.dual,
+			mode === BuildMode.esm ? 'dist' : 'dist/esm',
+		)
 	}
 	if (performImportChecks) await performChecks(mode)
 	await generateDocs

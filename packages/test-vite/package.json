@@ -1,5 +1,5 @@
 {
-	"name": "@essex/test-suite-webapp-vite",
+	"name": "@essex/test-webapp-vite",
 	"version": "20.0.0",
 	"private": true,
 	"scripts": {
