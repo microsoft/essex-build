@@ -1,7 +1,7 @@
 /* eslint-disable */
 const exts = ['.ts', '.tsx', '.cts', '.mts']
 
-module.exports = (request: any, options: any) => {
+module.exports = (request, options) => {
 	const defaultResolver =
 		options.defaultResolver ||
 		require('jest-resolve/build/defaultResolver').default

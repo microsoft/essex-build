@@ -20,15 +20,51 @@ export async function verifyExports(esmOnly: boolean): Promise<void> {
 
 	doChecks('verify esm export', async () => {
 		// pkg.exports.imports is used in dual mode; pkg.main is used in esm-only mode
-		const api = await loadEsm(pkg.exports?.import || pkg.main)
+		const api = await loadEsm(esmEntry(pkg))
 		if (expected) check(api, expected)
 	})
 	if (!esmOnly) {
 		doChecks('verify cjs export', async () => {
-			const api = await loadCjs(pkg.exports.require)
+			const api = await loadCjs(cjsEntry(pkg))
 			if (expected) check(api, expected)
 		})
 	}
+}
+
+function esmEntry(pkg: any): string {
+	let result = null
+	if (pkg.exports) {
+		if (pkg.exports.import) {
+			result = pkg.exports.import
+		} else if (pkg.exports['.']) {
+			result = pkg.exports['.'].import
+		}
+	} else {
+		result = pkg.main
+	}
+
+	if (!result) {
+		throw new Error('could not locate esm entrypoint')
+	}
+	return result
+}
+
+function cjsEntry(pkg: any): string {
+	let result = null
+	if (pkg.exports) {
+		if (pkg.exports.require) {
+			result = pkg.exports.require
+		} else if (pkg.exports['.']) {
+			result = pkg.exports['.'].require
+		}
+	} else {
+		result = pkg.main
+	}
+
+	if (!result) {
+		throw new Error('could not locate esm entrypoint')
+	}
+	return result
 }
 
 async function doChecks(task: string, callback: () => Promise<void>) {

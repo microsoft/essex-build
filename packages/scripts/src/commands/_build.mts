@@ -27,7 +27,8 @@ export interface BuildCommandOptions {
 	/**
 	 * Opt-out of ESM processing and verification
 	 */
-	skipChecks?: boolean
+	skipPackageCheck?: boolean
+	skipExportCheck?: boolean
 
 	mode?: BuildMode
 }
@@ -41,10 +42,8 @@ export default function build(program: Command): void {
 			'--stripInternalTypes',
 			'strip out internal types from typings declarations',
 		)
-		.option(
-			'--skipChecks',
-			'skips package.json and esm/cjs verification checks',
-		)
+		.option('--skipPackageCheck', 'skips package.json verification check')
+		.option('--skipExportCheck', 'skips esm/cjs export check')
 		.option('--mode [mode]', 'options are "legacy", "dual", and "esm"')
 		.action(async (options: BuildCommandOptions): Promise<any> => {
 			await executeBuild(options)
@@ -54,10 +53,12 @@ export default function build(program: Command): void {
 export async function executeBuild({
 	docs = false,
 	stripInternalTypes = false,
-	skipChecks = false,
+	skipExportCheck = false,
+	skipPackageCheck = false,
 	mode = BuildMode.esm,
 }: BuildCommandOptions): Promise<void> {
-	const performImportChecks = mode !== BuildMode.legacy && !skipChecks
+	const checkPackage = mode !== BuildMode.legacy && !skipPackageCheck
+	const checkExports = mode !== BuildMode.legacy && !skipExportCheck
 	const rewriteEsmToMjs = mode === BuildMode.dual
 	const esmOnly = mode === BuildMode.esm
 	const cwd = process.cwd()
@@ -73,12 +74,9 @@ export async function executeBuild({
 	if (mode !== BuildMode.legacy) {
 		await processEsm(rewriteEsmToMjs, esmOnly ? 'dist' : 'dist/esm')
 	}
-	if (performImportChecks) await performChecks(mode)
-	await generateDocs
-}
 
-async function performChecks(mode: BuildMode) {
-	const esmOnly = mode === BuildMode.esm
-	await verifyPackage(mode)
-	await verifyExports(esmOnly)
+	if (checkPackage) await verifyPackage(mode)
+	if (checkExports) await verifyExports(esmOnly)
+
+	await generateDocs
 }
