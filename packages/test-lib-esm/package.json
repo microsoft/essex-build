@@ -7,7 +7,7 @@
 	"type": "module",
 	"scripts": {
 		"clean": "essex clean",
-		"build": "ESSEX_DEBUG=1 essex build --docs --mode esm",
+		"build": "ESSEX_DEBUG=1 essex build --docs",
 		"lint": "essex lint",
 		"test": "jest",
 		"watch": "essex watch"

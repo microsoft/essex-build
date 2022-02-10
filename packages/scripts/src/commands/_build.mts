@@ -55,7 +55,7 @@ export async function executeBuild({
 	docs = false,
 	stripInternalTypes = false,
 	skipChecks = false,
-	mode = BuildMode.dual,
+	mode = BuildMode.esm,
 }: BuildCommandOptions): Promise<void> {
 	const performImportChecks = mode !== BuildMode.legacy && !skipChecks
 	const cwd = process.cwd()
