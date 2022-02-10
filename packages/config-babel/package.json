@@ -3,11 +3,19 @@
 	"version": "20.0.0",
 	"license": "MIT",
 	"author": "Chris Trevino <chtrevin@microsoft.com>",
-	"main": "lib/index.js",
-	"typings": "lib/index.d.ts",
+	"main": "dist/cjs/index.js",
+	"types": "dist/types/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/esm/index.mjs",
+			"require": "./dist/cjs/index.js",
+			"types": "./dist/types/index.d.ts"
+		},
+		"./resolve": "./resolve.cjs"
+	},
 	"scripts": {
 		"clean": "rimraf dist lib",
-		"build": "tsc --emitDeclarationOnly && swc src -d lib"
+		"build": "essex build --mode dual  --skipPackageCheck"
 	},
 	"repository": {
 		"type": "git",
@@ -26,6 +34,7 @@
 		"babel-plugin-transform-typescript-metadata": "^0.3.2"
 	},
 	"devDependencies": {
+		"@essex/scripts": "workspace:packages/scripts",
 		"@essex/tsconfig-node": "workspace:packages/config-ts-node",
 		"@swc/cli": "^0.1.55",
 		"@swc/core": "^1.2.138",

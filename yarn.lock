@@ -2000,6 +2000,7 @@ __metadata:
     "@babel/preset-env": ^7.16.11
     "@babel/preset-react": ^7.16.7
     "@babel/preset-typescript": ^7.16.7
+    "@essex/scripts": "workspace:packages/scripts"
     "@essex/tsconfig-node": "workspace:packages/config-ts-node"
     "@swc/cli": ^0.1.55
     "@swc/core": ^1.2.138
@@ -2091,7 +2092,6 @@ __metadata:
   dependencies:
     "@essex/scripts": "workspace:packages/scripts"
     "@essex/tsconfig-node": "workspace:packages/config-ts-node"
-    "@essex/util-resolve": "workspace:packages/util-resolve"
     "@swc/cli": ^0.1.55
     "@swc/core": ^1.2.138
     "@swc/jest": ^0.2.17
@@ -2348,12 +2348,6 @@ __metadata:
   resolution: "@essex/tsconfig-node@workspace:packages/config-ts-node"
   dependencies:
     "@essex/tsconfig-base": "workspace:packages/config-ts-base"
-  languageName: unknown
-  linkType: soft
-
-"@essex/util-resolve@workspace:packages/util-resolve":
-  version: 0.0.0-use.local
-  resolution: "@essex/util-resolve@workspace:packages/util-resolve"
   languageName: unknown
   linkType: soft
 

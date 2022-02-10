@@ -25,7 +25,6 @@
 		"directory": "packages/config-jest"
 	},
 	"dependencies": {
-		"@essex/util-resolve": "workspace:packages/util-resolve",
 		"@swc/core": "^1.2.138",
 		"@swc/jest": "^0.2.17",
 		"@types/jest": "^27.4.0",
