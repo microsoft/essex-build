@@ -10,11 +10,14 @@ import { getSourceFiles } from './getSourceFiles.mjs'
 
 const logFiles = isDebug()
 
-export async function compile(stripInternal: boolean): Promise<void> {
+export async function compile(
+	stripInternal: boolean,
+	esmOnly: boolean,
+): Promise<void> {
 	if (isDebug()) {
 		console.log('Using TypeScript version ', ts.version)
 	}
 	const sourceFiles = await getSourceFiles()
-	await compileTS(sourceFiles, logFiles)
-	await checkAndEmitTypings(sourceFiles, stripInternal)
+	await compileTS(sourceFiles, logFiles, esmOnly)
+	await checkAndEmitTypings(sourceFiles, stripInternal, esmOnly)
 }

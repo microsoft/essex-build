@@ -10,6 +10,7 @@ import { loadTSConfig, parseTSConfig } from './config.mjs'
 export async function checkAndEmitTypings(
 	fileNames: string[],
 	stripInternal: boolean,
+	esmOnly: boolean,
 ): Promise<number> {
 	const start = performance.now()
 	const config = await loadTSConfig()
@@ -18,7 +19,7 @@ export async function checkAndEmitTypings(
 		declaration: true,
 		emitDeclarationOnly: true,
 		stripInternal,
-		outDir: 'dist/types',
+		outDir: esmOnly ? 'dist' : 'dist/types',
 	}
 
 	const program = ts.createProgram(fileNames, options)

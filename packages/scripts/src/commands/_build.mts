@@ -11,6 +11,7 @@ import { esmify as processEsm } from '../steps/esmify/index.mjs'
 import { noop } from '../util/noop.mjs'
 import { verifyExports } from '../steps/verifyExports/index.mjs'
 import { verifyPackage } from '../steps/verifyPackage/index.mjs'
+import { BuildMode } from '../types.mjs'
 
 export interface BuildCommandOptions {
 	/**
@@ -26,7 +27,9 @@ export interface BuildCommandOptions {
 	/**
 	 * Opt-out of ESM processing and verification
 	 */
-	skipEsmChecks?: boolean
+	skipChecks?: boolean
+
+	mode?: BuildMode
 }
 
 export default function build(program: Command): void {
@@ -38,7 +41,11 @@ export default function build(program: Command): void {
 			'--stripInternalTypes',
 			'strip out internal types from typings declarations',
 		)
-		.option('--skipEsmChecks', 'opt-out of ESM processing and verification')
+		.option(
+			'--skipChecks',
+			'skips package.json and esm/cjs verification checks',
+		)
+		.option('--mode [mode]', 'options are "legacy", "dual", and "esm"')
 		.action(async (options: BuildCommandOptions): Promise<any> => {
 			await executeBuild(options)
 		})
@@ -47,19 +54,27 @@ export default function build(program: Command): void {
 export async function executeBuild({
 	docs = false,
 	stripInternalTypes = false,
-	skipEsmChecks = false,
+	skipChecks = false,
+	mode = BuildMode.dual,
 }: BuildCommandOptions): Promise<void> {
+	const performImportChecks = mode !== BuildMode.legacy && !skipChecks
 	const cwd = process.cwd()
 	const tsConfigPath = path.join(cwd, 'tsconfig.json')
 	if (!existsSync(tsConfigPath)) {
 		throw new Error('tsconfig.json must exist')
 	}
+
 	const generateDocs = docs ? generateTypedocs() : noop()
-	await compileTypescript(stripInternalTypes)
-	if (!skipEsmChecks) {
-		await processEsm('dist/esm')
-		await verifyPackage()
-		await verifyExports()
+	await compileTypescript(stripInternalTypes, mode === BuildMode.esm)
+
+	if (mode === BuildMode.dual) {
+		await processEsm()
 	}
+	if (performImportChecks) await performChecks(mode)
 	await generateDocs
+}
+
+async function performChecks(mode: BuildMode) {
+	await verifyPackage(mode)
+	await verifyExports(mode === BuildMode.esm)
 }

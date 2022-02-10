@@ -8,7 +8,7 @@ import get from 'lodash/get.js'
 
 const require = createRequire(import.meta.url)
 
-export async function verifyExports(): Promise<void> {
+export async function verifyExports(esmOnly: boolean): Promise<void> {
 	const pkg = await readTargetPackageJson()
 
 	const expected = get(pkg, 'essex.exports')
@@ -17,38 +17,36 @@ export async function verifyExports(): Promise<void> {
 			`    essex.exports not defined in package.json; skipping named export verification`,
 		)
 	}
-	try {
-		const start = performance.now()
-		await verifyEsm(pkg.exports.import, expected)
-		logger.subtaskSuccess('verify esm exports', logger.printPerf(start))
-	} catch (err) {
-		logger.subtaskFail('verify esm exports')
-		throw err
+
+	doChecks('verify esm export', async () => {
+		const api = await loadEsm(pkg.exports.import)
+		if (expected) check(api, expected)
+	})
+	if (!esmOnly) {
+		doChecks('verify cjs export', async () => {
+			const api = await loadCjs(pkg.exports.require)
+			if (expected) check(api, expected)
+		})
 	}
+}
+
+async function doChecks(task: string, callback: () => Promise<void>) {
 	try {
 		const start = performance.now()
-		await verifyCjs(pkg.exports.require, expected)
-		logger.subtaskSuccess('verify cjs exports', logger.printPerf(start))
+		await callback()
+		logger.subtaskSuccess(task, logger.printPerf(start))
 	} catch (err) {
-		logger.subtaskFail('verify cjs exports')
+		logger.subtaskFail(task)
 		throw err
 	}
 }
 
-async function verifyEsm(
-	pkgName: string,
-	expected: Record<string, any> | undefined,
-): Promise<void> {
-	const api = await import(fileUrl(path.join(process.cwd()), pkgName))
-	if (expected) check(api, expected)
+async function loadEsm(pkgName: string): Promise<Record<string, unknown>> {
+	return import(fileUrl(path.join(process.cwd()), pkgName))
 }
 
-async function verifyCjs(
-	pkgName: string,
-	expected: Record<string, any> | undefined,
-) {
-	const api = require(path.join(process.cwd(), pkgName))
-	if (expected) check(api, expected)
+async function loadCjs(pkgName: string): Promise<Record<string, any>> {
+	return require(path.join(process.cwd(), pkgName))
 }
 
 export function check(

@@ -10,28 +10,39 @@ import { performance } from 'perf_hooks'
 import * as swc from '@swc/core'
 import { printPerf, subtaskSuccess, traceFile } from '../../util/tasklogger.mjs'
 import { isDebug } from '../../util/isDebug.mjs'
+import { noop } from '../../util/noop.mjs'
 
+const ESM_ONLY_PATH = 'dist/'
 const ESM_PATH = 'dist/esm'
 const CJS_PATH = 'dist/cjs'
 
 export async function compile(
 	fileNames: string[],
 	logFiles: boolean,
+	esmOnly: boolean,
 ): Promise<void> {
 	const start = performance.now()
-	await createOutputFolders()
-	await Promise.all(fileNames.map(f => transpileFile(f, logFiles)))
+	await createOutputFolders(esmOnly)
+	await Promise.all(fileNames.map(f => transpileFile(f, logFiles, esmOnly)))
 	subtaskSuccess('transpile', printPerf(start))
 }
 
-function createOutputFolders() {
-	return Promise.all([
-		fs.mkdir(ESM_PATH, { recursive: true }),
-		fs.mkdir(CJS_PATH, { recursive: true }),
-	])
+function createOutputFolders(esmOnly: boolean) {
+	if (esmOnly) {
+		return fs.mkdir(ESM_ONLY_PATH, { recursive: true })
+	} else {
+		return Promise.all([
+			fs.mkdir(ESM_PATH, { recursive: true }),
+			fs.mkdir(CJS_PATH, { recursive: true }),
+		])
+	}
 }
 
-async function transpileFile(filename: string, logFiles: boolean) {
+async function transpileFile(
+	filename: string,
+	logFiles: boolean,
+	esmOnly: boolean,
+) {
 	const esmOutputPath = path.dirname(filename).replace(/^src/, ESM_PATH)
 	const cjsOutputPath = path.dirname(filename).replace(/^src/, CJS_PATH)
 
@@ -41,26 +52,35 @@ async function transpileFile(filename: string, logFiles: boolean) {
 
 	const options = getSwcOptions()
 	const code = await fs.readFile(filename, { encoding: 'utf8' })
-	const esmResult = writeOutput(code, filename, ESM_PATH, {
-		...options,
+	const esmResult = writeOutput(
+		code,
 		filename,
-		isModule: true,
-		outputPath: esmOutputPath,
-		module: {
-			...(options.module || {}),
-			type: 'es6',
+		esmOnly ? ESM_ONLY_PATH : ESM_PATH,
+		{
+			...options,
+			filename,
+			isModule: true,
+			outputPath: esmOutputPath,
+			module: {
+				...(options.module || {}),
+				type: 'es6',
+			},
 		},
-	})
-	const cjsResult = writeOutput(code, filename, CJS_PATH, {
-		...options,
-		filename,
-		isModule: true,
-		outputPath: cjsOutputPath,
-		module: {
-			...(options.module || {}),
-			type: 'commonjs',
-		},
-	})
+	)
+
+	const cjsResult = esmOnly
+		? noop
+		: writeOutput(code, filename, CJS_PATH, {
+				...options,
+				filename,
+				isModule: true,
+				outputPath: cjsOutputPath,
+				module: {
+					...(options.module || {}),
+					type: 'commonjs',
+				},
+		  })
+
 	await Promise.all([esmResult, cjsResult])
 }
 

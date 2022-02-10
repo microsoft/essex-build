@@ -11,7 +11,7 @@ const isSourceMap = (l: string) =>
 	has(l, '//# sourceMappingURL=') && has(l, ".js'")
 const isReactImport = (l: string) => has(l, 'react/jsx-runtime')
 
-export async function esmify(dir: string) {
+export async function esmify(dir: string = 'dist/esm') {
 	await walk(dir, async entryPath => {
 		if (entryPath.endsWith('.js')) {
 			await rewriteJsReferencesToMjs(entryPath)
