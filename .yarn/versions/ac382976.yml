@@ -1,4 +1,6 @@
 releases:
+  "@essex/babel-config": minor
+  "@essex/jest-config": minor
   "@essex/scripts": minor
 
 declined:
