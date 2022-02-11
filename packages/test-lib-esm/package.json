@@ -5,9 +5,9 @@
 	"main": "src/index.ts",
 	"publishConfig": {
 		"main": "dist/index.js",
-		"types": "dist/index.d.ts"
+		"types": "dist/index.d.ts",
+		"type": "module"
 	},
-	"type": "module",
 	"scripts": {
 		"clean": "essex clean",
 		"build": "ESSEX_DEBUG=1 essex build --docs",
@@ -19,6 +19,9 @@
 		"type": "git",
 		"url": "https://github.com/microsoft/essex-js-build.git",
 		"directory": "packages/test-suite-lib"
+	},
+	"dependencies": {
+		"@essex/test-lib-dual": "workspace:packages/test-lib-dual"
 	},
 	"devDependencies": {
 		"@essex/babel-config": "workspace:packages/config-babel",
@@ -38,9 +41,8 @@
 	},
 	"essex": {
 		"exports": {
-			"HelloWorld": "function",
-			"a": "string",
-			"add": "function"
+			"bar": "number",
+			"foo": "string"
 		}
 	}
 }

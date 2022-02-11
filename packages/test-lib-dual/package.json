@@ -42,9 +42,7 @@
 	},
 	"essex": {
 		"exports": {
-			"HelloWorld": "function",
-			"a": "string",
-			"add": "function"
+			"bar": "number"
 		}
 	}
 }
