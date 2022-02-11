@@ -2007,6 +2007,7 @@ __metadata:
     "@types/node": ^17.0.16
     babel-plugin-transform-typescript-metadata: ^0.3.2
     rimraf: ^3.0.2
+    tslib: ^2.3.1
     typescript: ^4.5.5
   languageName: unknown
   linkType: soft
@@ -11504,7 +11505,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.0, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.2.0":
+"tslib@npm:^2.0.0, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.2.0, tslib@npm:^2.3.1":
   version: 2.3.1
   resolution: "tslib@npm:2.3.1"
   checksum: de17a98d4614481f7fcb5cd53ffc1aaf8654313be0291e1bfaee4b4bb31a20494b7d218ff2e15017883e8ea9626599b3b0e0229c18383ba9dce89da2adf15cb9
