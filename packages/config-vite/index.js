@@ -15,6 +15,18 @@ module.exports = {
 		reactRefresh(),
 		tsconfigPaths(),
 		reactJsx(),
-		resolve({ extensions: ['.js', '.ts'] }),
+		resolve({
+			extensions: [
+				// JS Variants
+				'.js',
+				'.cjs',
+				'.mjs',
+				// TS Variants
+				'.ts',
+				'.cts',
+				'.mts',
+				'.tsx',
+			],
+		}),
 	],
 }
