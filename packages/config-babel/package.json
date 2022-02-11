@@ -1,6 +1,6 @@
 {
 	"name": "@essex/babel-config",
-	"version": "20.1.0",
+	"version": "20.1.1",
 	"license": "MIT",
 	"author": "Chris Trevino <chtrevin@microsoft.com>",
 	"main": "dist/cjs/index.js",
@@ -31,7 +31,8 @@
 		"@babel/preset-env": "^7.16.11",
 		"@babel/preset-react": "^7.16.7",
 		"@babel/preset-typescript": "^7.16.7",
-		"babel-plugin-transform-typescript-metadata": "^0.3.2"
+		"babel-plugin-transform-typescript-metadata": "^0.3.2",
+		"tslib": "^2.3.1"
 	},
 	"devDependencies": {
 		"@essex/scripts": "workspace:packages/scripts",
