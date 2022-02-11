@@ -1,0 +1,5 @@
+releases:
+  "@essex/vite-config": patch
+
+declined:
+  - "@essex/test-webapp-vite"
