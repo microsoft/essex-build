@@ -1,5 +1,4 @@
 {
-	"extends": "@tsconfig/strictest",
 	"compilerOptions": {
 		// The base configuration uses a bleeding-edge setup.
 		"target": "ESNext",
@@ -7,7 +6,25 @@
 		"moduleResolution": "Node",
 		"lib": ["ESNext"],
 
-		// Tone down the strictness
+		"importHelpers": true,
+
+		// From @tsconfig/strictest
+		"alwaysStrict": true,
+		"strict": true,
+		"allowUnusedLabels": false,
+		"allowUnreachableCode": false,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitOverride": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"noUncheckedIndexedAccess": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"importsNotUsedAsValues": "error",
+		"checkJs": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		// tone down these strictness rules
 		"noImplicitReturns": false,
 		"exactOptionalPropertyTypes": false
 	}
