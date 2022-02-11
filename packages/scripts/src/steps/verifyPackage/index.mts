@@ -1,17 +1,21 @@
-import { readPublishedPackageJson } from '../../util/package.mjs'
+import {
+	readPublishedPackageJson,
+	readTargetPackageJson,
+} from '../../util/package.mjs'
 import { subtaskSuccess, warn } from '../../util/tasklogger.mjs'
 import { BuildMode } from '../../types.mjs'
 
 const note = `Encountered package verification errors. Note that these may be fixed directly or using the "pkg.publishConfig" field used by yarn.
 `
 export async function verifyPackage(mode: BuildMode) {
+	const raw = await readTargetPackageJson()
 	const pkg = await readPublishedPackageJson()
 	switch (mode) {
 		case BuildMode.dual:
 			verifyDualMode(pkg)
 			break
 		case BuildMode.esm:
-			verifyEsmMode(pkg)
+			verifyEsmMode(pkg, raw)
 			break
 		case BuildMode.legacy:
 			verifyLegacyMode(pkg)
@@ -20,7 +24,7 @@ export async function verifyPackage(mode: BuildMode) {
 	subtaskSuccess('verify package.json')
 }
 
-function verifyEsmMode(pkg: any) {
+function verifyEsmMode(pkg: any, raw: any) {
 	if (pkg.module) {
 		warn('package.module should be removed')
 	}
@@ -31,7 +35,11 @@ function verifyEsmMode(pkg: any) {
 		'package.main should be "dist/index.js"',
 		errors,
 	)
-	invariant(pkg.type === 'module', 'package.type should be "module"', errors)
+	invariant(
+		raw.type === 'module',
+		'package.type should be "module" (outside publishConfig)',
+		errors,
+	)
 	invariant(
 		pkg.types === 'dist/index.d.ts',
 		'package.main should be "dist/index.d.ts"',
