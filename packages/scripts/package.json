@@ -15,14 +15,12 @@
 	},
 	"main": "lib/index.mjs",
 	"bin": {
-		"essex": "./lib/index.mjs",
-		"essex-scripts": "./lib/index.mjs"
+		"essex": "NODE_OPTIONS=\"--loader ts-node/esm\" node ./lib/index.mjs"
 	},
 	"publishConfig": {
 		"main": "lib/index.mjs",
 		"bin": {
-			"essex": "./lib/index.mjs",
-			"essex-scripts": "./lib/index.mjs"
+			"essex": "NODE_OPTIONS=\"--loader ts-node/esm\" node ./lib/index.mjs"
 		}
 	},
 	"dependencies": {
@@ -47,6 +45,7 @@
 		"pretty-quick": "^3.1.3",
 		"progress": "^2.0.3",
 		"rimraf": "^3.0.2",
+		"ts-node": "^10.5.0",
 		"tsconfig": "^7.0.0",
 		"typedoc": "^0.22.11",
 		"typescript": "^4.5.5"

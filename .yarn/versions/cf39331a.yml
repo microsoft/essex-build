@@ -1,0 +1,18 @@
+releases:
+  "@essex/babel-config": patch
+  "@essex/scripts": patch
+  "@essex/test-lib-dual": patch
+  "@essex/test-lib-esm": patch
+  "@essex/tsconfig-base": patch
+  "@essex/tsconfig-node": patch
+  "@essex/vite-config": patch
+
+declined:
+  - "@essex/eslint-plugin"
+  - "@essex/jest-config"
+  - "@essex/webpack-config"
+  - "@essex/test-lib-legacy"
+  - "@essex/test-webapp-vite"
+  - "@essex/test-webapp-webpack"
+  - "@essex/test-zips"
+  - "@essex/shellrunner"
