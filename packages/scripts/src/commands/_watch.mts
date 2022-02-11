@@ -11,7 +11,7 @@ import { BuildMode } from '../types.mjs'
 import chokidar from 'chokidar'
 import chalk from 'chalk'
 
-export interface BuildCommandOptions {
+export interface WatchCommandOptions {
 	/**
 	 * Strips internal types from typings output
 	 */
@@ -28,7 +28,7 @@ export default function build(program: Command): void {
 			'strip out internal types from typings declarations',
 		)
 		.option('--mode [mode]', 'options are "legacy", "dual", and "esm"')
-		.action(async (options: BuildCommandOptions): Promise<any> => {
+		.action(async (options: WatchCommandOptions): Promise<any> => {
 			await executeBuild(options)
 		})
 }
@@ -36,7 +36,7 @@ export default function build(program: Command): void {
 export async function executeBuild({
 	stripInternalTypes = false,
 	mode = BuildMode.esm,
-}: BuildCommandOptions): Promise<void> {
+}: WatchCommandOptions): Promise<void> {
 	const rewriteEsmToMjs = mode === BuildMode.dual
 	const esmOnly = mode === BuildMode.esm
 	const cwd = process.cwd()
