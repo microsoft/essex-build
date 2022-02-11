@@ -20,7 +20,7 @@ export interface BuildCommandOptions {
 	docs?: boolean
 
 	/**
-	 * Strips internal types in documentation
+	 * Strips internal types from typings output
 	 */
 	stripInternalTypes?: boolean
 

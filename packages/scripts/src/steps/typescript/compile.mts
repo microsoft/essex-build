@@ -73,6 +73,7 @@ async function transpileFile(
 		: writeOutput(code, filename, CJS_PATH, {
 				...options,
 				filename,
+
 				isModule: true,
 				outputPath: cjsOutputPath,
 				module: {

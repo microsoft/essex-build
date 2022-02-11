@@ -2137,6 +2137,7 @@ __metadata:
     "@typescript-eslint/parser": ^5.11.0
     archiver: ^5.3.0
     chalk: ^4.1.2
+    chokidar: ^3.5.3
     commander: ^9.0.0
     crlf: ^1.1.1
     debug: ^4.3.3
