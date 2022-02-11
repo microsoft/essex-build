@@ -57,7 +57,7 @@ export async function executeBuild({
 	skipPackageCheck = false,
 	mode = BuildMode.esm,
 }: BuildCommandOptions): Promise<void> {
-	const checkPackage = mode !== BuildMode.legacy && !skipPackageCheck
+	const checkPackage = !skipPackageCheck
 	const checkExports = mode !== BuildMode.legacy && !skipExportCheck
 	const rewriteEsmToMjs = mode === BuildMode.dual
 	const esmOnly = mode === BuildMode.esm

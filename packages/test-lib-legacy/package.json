@@ -2,9 +2,12 @@
 	"name": "@essex/test-lib-legacy",
 	"version": "20.0.0",
 	"private": true,
-	"main": "dist/cjs/index.js",
-	"module": "dist/esm/index.js",
-	"types": "dist/types/index.d.ts",
+	"main": "src/index.ts",
+	"publishConfig": {
+		"main": "dist/cjs/index.js",
+		"module": "dist/esm/index.js",
+		"types": "dist/types/index.d.ts"
+	},
 	"scripts": {
 		"clean": "essex clean",
 		"build": "ESSEX_DEBUG=1 essex build --docs --mode legacy",

@@ -1,15 +1,16 @@
-import { readTargetPackageJson } from '../../util/package.mjs'
+import { readPublishedPackageJson } from '../../util/package.mjs'
 import { createRequire } from 'module'
 import path from 'path'
 import { performance } from 'perf_hooks'
 import { fileUrl } from '../../util/fileUrl.mjs'
 import * as logger from '../../util/tasklogger.mjs'
 import get from 'lodash/get.js'
+import { checkApi } from './checkApi.mjs'
 
 const require = createRequire(import.meta.url)
 
 export async function verifyExports(esmOnly: boolean): Promise<void> {
-	const pkg = await readTargetPackageJson()
+	const pkg = await readPublishedPackageJson()
 
 	const expected = get(pkg, 'essex.exports')
 	if (expected == null) {
@@ -21,61 +22,33 @@ export async function verifyExports(esmOnly: boolean): Promise<void> {
 	doChecks('verify esm export', async () => {
 		// pkg.exports.imports is used in dual mode; pkg.main is used in esm-only mode
 		const api = await loadEsm(esmEntry(pkg))
-		if (expected) check(api, expected)
+		if (expected) checkApi(api, expected)
 	})
 	if (!esmOnly) {
 		doChecks('verify cjs export', async () => {
 			const api = await loadCjs(cjsEntry(pkg))
-			if (expected) check(api, expected)
+			if (expected) checkApi(api, expected)
 		})
 	}
 }
 
 function esmEntry(pkg: any): string {
-	let result = null
-	if (pkg.exports) {
-		if (pkg.exports.import) {
-			result = pkg.exports.import
-		} else if (pkg.exports['.']) {
-			result = pkg.exports['.'].import
-		}
-	} else {
-		result = pkg.main
-	}
-
-	if (!result) {
-		throw new Error('could not locate esm entrypoint')
-	}
-	return result
+	return tryEntries(pkg, 'exports.import', 'exports[.].import', 'main')
 }
 
 function cjsEntry(pkg: any): string {
-	let result = null
-	if (pkg.exports) {
-		if (pkg.exports.require) {
-			result = pkg.exports.require
-		} else if (pkg.exports['.']) {
-			result = pkg.exports['.'].require
-		}
-	} else {
-		result = pkg.main
-	}
-
-	if (!result) {
-		throw new Error('could not locate esm entrypoint')
-	}
-	return result
+	return tryEntries(pkg, 'exports.require', 'exports[.].require', 'main')
 }
 
-async function doChecks(task: string, callback: () => Promise<void>) {
-	try {
-		const start = performance.now()
-		await callback()
-		logger.subtaskSuccess(task, logger.printPerf(start))
-	} catch (err) {
-		logger.subtaskFail(task)
-		throw err
+function tryEntries(pkg: any, ...entries: string[]) {
+	for (const entry of entries) {
+		const entryValue = get(pkg, entry)
+		if (entryValue) {
+			return entryValue
+		}
 	}
+
+	throw new Error('could not locate entrypoint')
 }
 
 async function loadEsm(pkgName: string): Promise<Record<string, unknown>> {
@@ -86,31 +59,13 @@ async function loadCjs(pkgName: string): Promise<Record<string, any>> {
 	return require(path.join(process.cwd(), pkgName))
 }
 
-export function check(
-	imported: Record<string, unknown>,
-	expected: Record<string, string>,
-): void {
-	const errors: string[] = []
-	Object.keys(imported).forEach(key => {
-		if (!expected[key]) {
-			errors.push(`unexpected export "${key}": "${typeof imported[key]}"`)
-		}
-		const expectedType = expected[key]
-		const actualType = typeof imported[key]
-
-		if (expectedType && expectedType !== actualType) {
-			errors.push(
-				`type mismatch on key "${key}": expected ${expectedType}, got ${actualType}`,
-			)
-		}
-	})
-	Object.keys(expected).forEach(key => {
-		if (!imported[key]) {
-			errors.push(`missing export "${key}": "${expected[key]}"`)
-		}
-	})
-
-	if (errors.length > 0) {
-		throw new Error(errors.join('\n'))
+async function doChecks(task: string, callback: () => Promise<void>) {
+	try {
+		const start = performance.now()
+		await callback()
+		logger.subtaskSuccess(task, logger.printPerf(start))
+	} catch (err) {
+		logger.subtaskFail(task)
+		throw err
 	}
 }
