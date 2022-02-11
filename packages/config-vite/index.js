@@ -11,4 +11,12 @@ module.exports = {
 		target: 'es2020',
 	},
 	plugins: [reactRefresh(), tsconfigPaths(), reactJsx()],
+	resolve: {
+		alias: [
+			{
+				find: /^(.*)\.js$/,
+				replacement: '$1',
+			},
+		],
+	},
 }

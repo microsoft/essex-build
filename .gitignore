@@ -11,6 +11,8 @@ packages/*/build/
 coverage/
 test-report.xml
 
+linked_data/
+
 # Yarn Gitignores
 .pnp.*
 .yarn/*
