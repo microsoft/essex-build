@@ -17,7 +17,7 @@
 		"build": "ESSEX_DEBUG=1 essex build --docs --mode dual",
 		"lint": "essex lint",
 		"test": "jest",
-		"watch": "essex watch"
+		"start": "essex watch"
 	},
 	"repository": {
 		"type": "git",

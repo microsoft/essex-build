@@ -27,7 +27,10 @@ function renameJsToMjs(entryPath: string) {
 
 async function rewriteImports(entryPath: string, rewriteToMjs: boolean) {
 	const content = await fs.readFile(entryPath, 'utf8')
-	await fs.writeFile(entryPath, rewriteFile(content, rewriteToMjs), 'utf8')
+	const rewritten = rewriteFile(content, rewriteToMjs)
+	if (rewritten !== content) {
+		await fs.writeFile(entryPath, rewriteFile(content, rewriteToMjs), 'utf8')
+	}
 }
 
 function rewriteFile(content: string, rewriteToMjs: boolean): string {
