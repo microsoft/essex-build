@@ -22,7 +22,7 @@
 	"devDependencies": {
 		"@essex/tsconfig-node": "workspace:packages/config-ts-node",
 		"@swc/cli": "^0.1.55",
-		"@swc/core": "^1.2.138",
+		"@swc/core": "^1.2.139",
 		"@tsconfig/strictest": "^1.0.0",
 		"@types/debug": "^4.1.7",
 		"@types/node": "^17.0.16",
