@@ -6,7 +6,7 @@ import { FC, useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
 
-const App: FC = function App() {
+export const App: FC = function App() {
 	const [count, setCount] = useState(0)
 
 	return (
@@ -45,5 +45,3 @@ const App: FC = function App() {
 		</div>
 	)
 }
-
-export default App
