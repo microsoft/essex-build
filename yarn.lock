@@ -2356,6 +2356,9 @@ __metadata:
   dependencies:
     "@essex/eslint-config": "workspace:packages/config-eslint"
     "@essex/scripts": "workspace:packages/scripts"
+    "@essex/test-lib-dual": "workspace:packages/test-lib-dual"
+    "@essex/test-lib-esm": "workspace:packages/test-lib-esm"
+    "@essex/test-lib-legacy": "workspace:packages/test-lib-legacy"
     "@essex/tsconfig-base": "workspace:packages/config-ts-base"
     "@essex/webpack-config": "workspace:packages/config-webpack"
     "@types/react": ^17.0.39
