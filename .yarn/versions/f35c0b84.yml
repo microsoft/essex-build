@@ -1,0 +1,12 @@
+releases:
+  "@essex/scripts": minor
+  "@essex/test-lib-esm": patch
+
+declined:
+  - "@essex/babel-config"
+  - "@essex/jest-config"
+  - "@essex/test-lib-dual"
+  - "@essex/test-lib-legacy"
+  - "@essex/test-webapp-vite"
+  - "@essex/test-webapp-webpack"
+  - "@essex/test-zips"
