@@ -1,8 +1,0 @@
-releases:
-  "@essex/jest-config": patch
-
-declined:
-  - "@essex/test-lib-dual"
-  - "@essex/test-lib-esm"
-  - "@essex/test-lib-legacy"
-  - "@essex/test-zips"
