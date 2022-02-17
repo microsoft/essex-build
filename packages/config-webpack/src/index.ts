@@ -22,6 +22,7 @@ import { validateConfiguration } from './validate'
 /* eslint-disable @typescript-eslint/no-var-requires */
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const ResolveTypescriptPlugin = require('resolve-typescript-plugin')
 
 // Webpack Loaders
 const cssLoader = require.resolve('css-loader')
@@ -122,7 +123,11 @@ export function configure({
 				...extendedAliases,
 			},
 			plugins: [
+				// Allows us to resolve paths defined with tsconfig.paths
 				useTsConfigPaths ? new TsConfigPathsPlugin() : undefined,
+				// Resolves TypeScript paths that use ".js" extensions. This will be removed
+				// as the ES2020 moduleResolution strategies are baked into the core tooling
+				new ResolveTypescriptPlugin(),
 			].filter(t => !!t) as ResolvePluginInstance[],
 		},
 		resolveLoader: {
