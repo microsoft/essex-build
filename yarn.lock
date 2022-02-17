@@ -182,9 +182,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.17.4":
-  version: 7.17.4
-  resolution: "@babel/core@npm:7.17.4"
+"@babel/core@npm:^7.17.5":
+  version: 7.17.5
+  resolution: "@babel/core@npm:7.17.5"
   dependencies:
     "@ampproject/remapping": ^2.1.0
     "@babel/code-frame": ^7.16.7
@@ -201,7 +201,7 @@ __metadata:
     gensync: ^1.0.0-beta.2
     json5: ^2.1.2
     semver: ^6.3.0
-  checksum: d367259b188fde69493fea407a1c134d6bb7a0d859cbe2c0f0d1f2464143bdee0fdfd3c8d45a2cdabdf321b95dd392cbc4f55e2d0c41a842a581d37fee4cef64
+  checksum: c5e7dddb4feaacb91175d22a6edc8e93804242328a82b80732c6e84a0647bc0a9c9d5b05f3ce13138b8e59bf7aba4ff9f7b7446302f141f243ba51df02c318a5
   languageName: node
   linkType: hard
 
@@ -2052,7 +2052,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/babel-config@workspace:packages/config-babel"
   dependencies:
-    "@babel/core": ^7.17.4
+    "@babel/core": ^7.17.5
     "@babel/plugin-proposal-class-properties": ^7.16.7
     "@babel/plugin-proposal-nullish-coalescing-operator": ^7.16.7
     "@babel/plugin-proposal-object-rest-spread": ^7.17.3
@@ -2115,7 +2115,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/eslint-plugin@workspace:packages/config-eslint-plugin"
   dependencies:
-    "@babel/core": ^7.17.4
+    "@babel/core": ^7.17.5
     "@babel/types": ^7.17.0
     "@essex/tsconfig-node": "workspace:packages/config-ts-node"
     "@swc/cli": ^0.1.55
@@ -2339,6 +2339,9 @@ __metadata:
   resolution: "@essex/test-webapp-vite@workspace:packages/test-vite"
   dependencies:
     "@essex/scripts": "workspace:packages/scripts"
+    "@essex/test-lib-dual": "workspace:packages/test-lib-dual"
+    "@essex/test-lib-esm": "workspace:packages/test-lib-esm"
+    "@essex/test-lib-legacy": "workspace:packages/test-lib-legacy"
     "@essex/tsconfig-base": "workspace:packages/config-ts-base"
     "@essex/vite-config": "workspace:packages/config-vite"
     "@types/react": ^17.0.39
@@ -2356,6 +2359,9 @@ __metadata:
   dependencies:
     "@essex/eslint-config": "workspace:packages/config-eslint"
     "@essex/scripts": "workspace:packages/scripts"
+    "@essex/test-lib-dual": "workspace:packages/test-lib-dual"
+    "@essex/test-lib-esm": "workspace:packages/test-lib-esm"
+    "@essex/test-lib-legacy": "workspace:packages/test-lib-legacy"
     "@essex/tsconfig-base": "workspace:packages/config-ts-base"
     "@essex/webpack-config": "workspace:packages/config-webpack"
     "@types/react": ^17.0.39
@@ -2366,7 +2372,7 @@ __metadata:
     eslint-import-resolver-node: ^0.3.6
     react: ^17.0.2
     react-dom: ^17.0.2
-    webpack: ^5.69.0
+    webpack: ^5.69.1
     webpack-cli: ^4.9.2
     webpack-dev-server: ^4.7.4
   languageName: unknown
@@ -2444,7 +2450,7 @@ __metadata:
     swc-loader: ^0.1.15
     tsconfig-paths-webpack-plugin: ^3.5.2
     typescript: ^4.5.5
-    webpack: ^5.69.0
+    webpack: ^5.69.1
     webpack-dev-server: ^4.7.4
   peerDependencies:
     typescript: ">= 4 <5"
@@ -5743,16 +5749,6 @@ __metadata:
     graceful-fs: ^4.2.4
     tapable: ^2.2.0
   checksum: d79fbe531106448b768bb0673fb623ec0202d7ee70373ab7d4f4745d5dfe0806f38c9db7e7da8c941288fe475ab3d538db3791fce522056eeea40ca398c9e287
-  languageName: node
-  linkType: hard
-
-"enhanced-resolve@npm:^5.9.0":
-  version: 5.9.0
-  resolution: "enhanced-resolve@npm:5.9.0"
-  dependencies:
-    graceful-fs: ^4.2.4
-    tapable: ^2.2.0
-  checksum: 06435f52670229eb7fd8d92ea2d988a275f9a1b8c08b9023ba45767c6ed844bc87aa9c9c7e6d044eef99ad73fc3b066b78101163696e5c53121909e5bf8efe8b
   languageName: node
   linkType: hard
 
@@ -12215,9 +12211,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:^5.69.0":
-  version: 5.69.0
-  resolution: "webpack@npm:5.69.0"
+"webpack@npm:^5.69.1":
+  version: 5.69.1
+  resolution: "webpack@npm:5.69.1"
   dependencies:
     "@types/eslint-scope": ^3.7.3
     "@types/estree": ^0.0.51
@@ -12228,7 +12224,7 @@ __metadata:
     acorn-import-assertions: ^1.7.6
     browserslist: ^4.14.5
     chrome-trace-event: ^1.0.2
-    enhanced-resolve: ^5.9.0
+    enhanced-resolve: ^5.8.3
     es-module-lexer: ^0.9.0
     eslint-scope: 5.1.1
     events: ^3.2.0
@@ -12248,7 +12244,7 @@ __metadata:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 0b0fc2ffcb926fc7506ec56901ae9a69f1ae969a6afc63395a3ed56f938d385c1d16d1dea39fd56dbb9362189c05da49174219904e5a337040aed5a46080e926
+  checksum: 490a6e9e4cd9d0ed3b6c7ca08015da2628919fda8fcf9c36f0f6c0e3ad71eaaaf4b0d12753109f22a4faf79fe9a9063552d9708e0ee2352cf8568433b8e296a7
   languageName: node
   linkType: hard
 

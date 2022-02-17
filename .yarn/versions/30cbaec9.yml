@@ -1,0 +1,8 @@
+declined:
+  - "@essex/babel-config"
+  - "@essex/eslint-plugin"
+  - "@essex/webpack-config"
+  - "@essex/test-lib-esm"
+  - "@essex/test-lib-legacy"
+  - "@essex/test-webapp-vite"
+  - "@essex/test-webapp-webpack"

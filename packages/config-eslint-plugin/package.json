@@ -13,7 +13,7 @@
 		"msHeader.js"
 	],
 	"dependencies": {
-		"@babel/core": "^7.17.4",
+		"@babel/core": "^7.17.5",
 		"@babel/types": "^7.17.0",
 		"@swc/cli": "^0.1.55",
 		"@swc/core": "^1.2.141",
