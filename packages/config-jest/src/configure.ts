@@ -20,6 +20,9 @@ export function configure(setupFiles: string[] = getSetupFiles()): any {
 			'\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
 				'@essex/jest-config/filemock',
 			'\\.(css|less|scss|sass)$': 'identity-obj-proxy',
+			// lodash-es presents issues in test, even when running in experimental ESM mode. Hacky fix is to use
+			// main lodash at test time
+			'^lodash-es/(.*)$': 'lodash/$1',
 		},
 		collectCoverageFrom: [
 			'**/src/**/*.{js,jsx,ts,tsx}',
