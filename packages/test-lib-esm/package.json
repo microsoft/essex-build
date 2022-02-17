@@ -39,7 +39,7 @@
 	"essex": {
 		"exports": {
 			"HelloWorld": "function",
-			"a": "string",
+			"b": "string",
 			"add": "function"
 		}
 	}
