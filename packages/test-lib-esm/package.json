@@ -41,6 +41,11 @@
 			"HelloWorld": "function",
 			"b": "string",
 			"add": "function"
+		},
+		"swc": {
+			"jsc": {
+				"target": "es2017"
+			}
 		}
 	}
 }
