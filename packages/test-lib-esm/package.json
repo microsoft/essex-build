@@ -1,6 +1,6 @@
 {
 	"name": "@essex/test-lib-esm",
-	"version": "20.0.0",
+	"version": "20.0.1",
 	"private": true,
 	"type": "module",
 	"main": "src/index.ts",
@@ -41,6 +41,11 @@
 			"HelloWorld": "function",
 			"b": "string",
 			"add": "function"
+		},
+		"swc": {
+			"jsc": {
+				"target": "es2017"
+			}
 		}
 	}
 }

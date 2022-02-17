@@ -8,9 +8,12 @@ import fs from 'fs/promises'
 import path, { join } from 'path'
 import { performance } from 'perf_hooks'
 import * as swc from '@swc/core'
+import merge from 'lodash/merge.js'
+import get from 'lodash/get.js'
 import { printPerf, subtaskSuccess, traceFile } from '../../util/tasklogger.mjs'
 import { isDebug } from '../../util/isDebug.mjs'
 import { noop } from '../../util/noop.mjs'
+import { readTargetPackageJson } from '../../util/package.mjs'
 
 const ESM_ONLY_PATH = 'dist/'
 const ESM_PATH = 'dist/esm'
@@ -50,7 +53,7 @@ async function transpileFile(
 		traceFile(`${filename}`, 'transpile')
 	}
 
-	const options = getSwcOptions()
+	const options = await getSwcOptions()
 	const code = await fs.readFile(filename, { encoding: 'utf8' })
 	const esmResult = writeOutput(
 		code,
@@ -122,7 +125,7 @@ const DEFAULT_SWC_CONFIG: swc.Config = {
 	},
 }
 
-function getSwcOptions() {
+async function getSwcOptions() {
 	if (existsSync(join(process.cwd(), '.swcrc'))) {
 		const swcrc = readFileSync(join(process.cwd(), '.swcrc'), 'utf8')
 		const result = JSON.parse(swcrc)
@@ -131,9 +134,22 @@ function getSwcOptions() {
 		}
 		return result
 	} else {
-		if (isDebug()) {
-			console.log('using default swc configuration')
+		const pkg = await readTargetPackageJson()
+		const swcOverrides = get(pkg, 'essex.swc')
+		if (swcOverrides) {
+			const merged = merge(DEFAULT_SWC_CONFIG, swcOverrides)
+			if (isDebug()) {
+				console.log(
+					'applying essex.swc overrides to default swc configuration\n\n',
+					merged,
+				)
+			}
+			return merged
+		} else {
+			if (isDebug()) {
+				console.log('using default swc configuration')
+			}
+			return DEFAULT_SWC_CONFIG
 		}
-		return DEFAULT_SWC_CONFIG
 	}
 }
