@@ -4,6 +4,7 @@
  */
 import { existsSync } from 'fs'
 import { join } from 'path'
+import { getSwcOptions } from '@essex/swc-opts'
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import TsConfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import type { ResolvePluginInstance } from 'tsconfig-paths-webpack-plugin/lib/plugin.temp.types'
@@ -15,7 +16,6 @@ import {
 	getTitle,
 	getIndexFile,
 } from './configValues'
-import { getSwcOptions } from '@essex/swc-opts'
 import { log } from './log'
 import { validateConfiguration } from './validate'
 
