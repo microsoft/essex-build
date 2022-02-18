@@ -4,4 +4,4 @@
  */
 const { configure } = require('@essex/jest-config')
 
-module.exports = configure([])
+module.exports = configure()

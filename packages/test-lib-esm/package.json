@@ -20,6 +20,9 @@
 		"url": "https://github.com/microsoft/essex-js-build.git",
 		"directory": "packages/test-suite-lib"
 	},
+	"dependencies": {
+		"lodash-es": "^4.17.21"
+	},
 	"devDependencies": {
 		"@essex/babel-config": "workspace:packages/config-babel",
 		"@essex/eslint-config": "workspace:packages/config-eslint",
@@ -27,6 +30,7 @@
 		"@essex/scripts": "workspace:packages/scripts",
 		"@essex/tsconfig-base": "workspace:packages/config-ts-base",
 		"@types/jest": "^27.4.0",
+		"@types/lodash-es": "^4",
 		"@types/react": "^17.0.39",
 		"@typescript-eslint/eslint-plugin": "^5.12.0",
 		"@typescript-eslint/parser": "^5.12.0",

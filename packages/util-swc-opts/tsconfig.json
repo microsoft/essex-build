@@ -1,0 +1,10 @@
+{
+	"extends": "@essex/tsconfig-node",
+	"compilerOptions": {
+		"module": "CommonJS",
+		"moduleResolution": "Node",
+		"outDir": "lib",
+		"declaration": true
+	},
+	"include": ["src/**/*.*ts"]
+}

@@ -30,6 +30,7 @@
 		"@essex/eslint-config": "workspace:packages/config-eslint",
 		"@essex/eslint-plugin": "workspace:packages/config-eslint-plugin",
 		"@essex/shellrunner": "workspace:packages/util-shellrunner",
+		"@essex/swc-opts": "workspace:packages/util-swc-opts",
 		"@swc/core": "^1.2.142",
 		"@typescript-eslint/eslint-plugin": "^5.12.0",
 		"@typescript-eslint/parser": "^5.12.0",
