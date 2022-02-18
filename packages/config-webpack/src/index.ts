@@ -15,9 +15,9 @@ import {
 	getTitle,
 	getIndexFile,
 } from './configValues'
+import { getSwcOptions } from './getSwcOptions'
 import { log } from './log'
 import { validateConfiguration } from './validate'
-import { getSwcOptions } from './getSwcOptions'
 
 /* eslint-disable @typescript-eslint/no-var-requires */
 const HtmlWebpackPlugin = require('html-webpack-plugin')

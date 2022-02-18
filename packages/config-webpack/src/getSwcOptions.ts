@@ -2,9 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import type * as swc from '@swc/core'
 import { existsSync, readFileSync } from 'fs'
 import path from 'path'
+import type * as swc from '@swc/core'
 import { get, merge } from 'lodash'
 
 const TARGET_PACKAGE_JSON_PATH = path.join(process.cwd(), './package.json')
