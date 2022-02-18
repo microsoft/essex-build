@@ -10,13 +10,30 @@ import { resolve } from '@essex/jest-config/resolve'
 import { getSwcOptions } from '@essex/swc-opts'
 
 export interface EssexJestOptions {
+	/**
+	 * Whether to treat .ts, .tsx as esm; default = true
+	 */
 	esm: boolean
+
+	/**
+	 * The jest setup files to include
+	 * default (if jest.setup.js exists) = ['<rootDir>/jest.setup.js']
+	 * default (if jest.setup.js does not exist) = []
+	 *
+	 * This argument will be used in place of the default
+	 */
 	setupFiles: string[]
+
+	/**
+	 * Whether to rewrite lodash-es imports to lodash, default = true
+	 */
+	rewriteLodashEs: boolean
 }
 
 export function configure({
-	esm,
-	setupFiles,
+	esm = true,
+	setupFiles = getSetupFiles(),
+	rewriteLodashEs = true,
 }: Partial<EssexJestOptions> = {}): any {
 	const result: any = {
 		transform: {
@@ -35,9 +52,6 @@ export function configure({
 			'\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
 				'@essex/jest-config/filemock',
 			'\\.(css|less|scss|sass)$': resolve('identity-obj-proxy'),
-			// lodash-es presents issues in test, even when running in experimental ESM mode. Hacky fix is to use
-			// main lodash at test time
-			'^lodash-es/(.*)$': resolve('lodash').replace('lodash.js', '$1'),
 		},
 		collectCoverageFrom: [
 			'**/src/**/*.{js,jsx,ts,tsx}',
@@ -57,6 +71,13 @@ export function configure({
 	if (esm) {
 		result.extensionsToTreatAsEsm = ['.ts', '.tsx']
 	}
+	if (rewriteLodashEs) {
+		// lodash-es presents issues in test, even when running in experimental ESM mode. Hacky fix is to use main lodash at test time
+		result.moduleNameMapper['^lodash-es/(.*)$'] = resolve('lodash').replace(
+			'lodash.js',
+			'$1',
+		)
+	}
 
 	return result
 }
@@ -64,7 +85,7 @@ export function configure({
 /**
  * Gets the setupFiles to use
  */
-export function getSetupFiles(): string[] {
+function getSetupFiles(): string[] {
 	const setupFile = join(process.cwd(), 'jest.setup.js')
 	return existsSync(setupFile) ? ['<rootDir>/jest.setup.js'] : []
 }
