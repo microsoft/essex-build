@@ -14,7 +14,12 @@ export function configure(
 ): any {
 	const result: any = {
 		transform: {
-			'^.+\\.(t|j)sx?$': [resolve('@swc/jest'), getSwcOptions()],
+			'^.+\\.(t|j)sx?$': [
+				resolve('@swc/jest'),
+				getSwcOptions({
+					module: { type: esm ? 'es6' : 'commonjs' },
+				}),
+			],
 		},
 		testMatch: ['**/__tests__/**/?(*.)+(spec|test).[jt]s?(x)'],
 		rootDir: process.cwd(),
