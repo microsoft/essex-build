@@ -1,5 +1,5 @@
 releases:
-  "@essex/jest-config": patch
+  "@essex/jest-config": major
   "@essex/scripts": patch
   "@essex/shellrunner": patch
   "@essex/swc-opts": patch
