@@ -4,6 +4,8 @@
  */
 export * from './rendering.js'
 
+import reduce from 'lodash-es/reduceRight.js'
+
 export function add(...nums: number[]): number {
-	return nums.reduce((prev, cur) => prev + cur, 0)
+	return reduce(nums, (prev, curr) => prev + curr, 0)
 }

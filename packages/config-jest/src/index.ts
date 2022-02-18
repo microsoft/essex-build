@@ -4,10 +4,10 @@
  */
 /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
 // @ts-ignore
-import { resolve } from '@essex/jest-config/resolve'
-import { getSwcOptions } from '@essex/swc-opts'
 import { existsSync } from 'fs'
 import { join } from 'path'
+import { resolve } from '@essex/jest-config/resolve'
+import { getSwcOptions } from '@essex/swc-opts'
 
 export interface EssexJestOptions {
 	esm: boolean
@@ -34,10 +34,10 @@ export function configure({
 		moduleNameMapper: {
 			'\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
 				'@essex/jest-config/filemock',
-			'\\.(css|less|scss|sass)$': 'identity-obj-proxy',
+			'\\.(css|less|scss|sass)$': resolve('identity-obj-proxy'),
 			// lodash-es presents issues in test, even when running in experimental ESM mode. Hacky fix is to use
 			// main lodash at test time
-			'^lodash-es/(.*)$': 'lodash/$1',
+			'^lodash-es/(.*)$': resolve('lodash').replace('lodash.js', '$1'),
 		},
 		collectCoverageFrom: [
 			'**/src/**/*.{js,jsx,ts,tsx}',
