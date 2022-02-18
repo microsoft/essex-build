@@ -14,8 +14,8 @@ import {
 	getHomePage,
 	getTitle,
 	getIndexFile,
-	getSwcOptions,
 } from './configValues'
+import { getSwcOptions } from './getSwcOptions'
 import { log } from './log'
 import { validateConfiguration } from './validate'
 
