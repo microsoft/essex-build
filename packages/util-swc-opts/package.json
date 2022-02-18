@@ -3,7 +3,6 @@
 	"version": "20.0.1",
 	"description": "shared utility for generating swc configuration",
 	"license": "MIT",
-	"type": "module",
 	"main": "lib/index.js",
 	"types": "lib/index.d.ts",
 	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
@@ -14,7 +13,8 @@
 	},
 	"dependencies": {
 		"@swc/core": "^1.2.142",
-		"lodash": "^4.17.21"
+		"lodash": "^4.17.21",
+		"tslib": "^2.3.1"
 	},
 	"devDependencies": {
 		"@essex/tsconfig-node": "workspace:packages/config-ts-node",

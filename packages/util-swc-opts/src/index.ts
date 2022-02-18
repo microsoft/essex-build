@@ -5,7 +5,8 @@
 import { existsSync, readFileSync } from 'fs'
 import path from 'path'
 import type * as swc from '@swc/core'
-import { get, merge } from 'lodash'
+import get from 'lodash/get.js'
+import merge from 'lodash/merge.js'
 
 const TARGET_PACKAGE_JSON_PATH = path.join(process.cwd(), './package.json')
 const SWCRC_FILE = path.join(process.cwd(), '.swcrc')
