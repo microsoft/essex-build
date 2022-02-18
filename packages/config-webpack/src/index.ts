@@ -14,10 +14,10 @@ import {
 	getHomePage,
 	getTitle,
 	getIndexFile,
-	getSwcOptions,
 } from './configValues'
 import { log } from './log'
 import { validateConfiguration } from './validate'
+import { getSwcOptions } from './getSwcOptions'
 
 /* eslint-disable @typescript-eslint/no-var-requires */
 const HtmlWebpackPlugin = require('html-webpack-plugin')
