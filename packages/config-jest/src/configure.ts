@@ -5,12 +5,13 @@
 /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
 // @ts-ignore
 import { resolve } from '@essex/jest-config/resolve'
+import { getSwcOptions } from '@essex/swc-opts'
 import { getSetupFiles } from './overrides.js'
 
 export function configure(setupFiles: string[] = getSetupFiles()): any {
 	return {
 		transform: {
-			'^.+\\.(t|j)sx?$': [resolve('@swc/jest'), {}],
+			'^.+\\.(t|j)sx?$': [resolve('@swc/jest'), getSwcOptions()],
 		},
 		testMatch: ['**/__tests__/**/?(*.)+(spec|test).[jt]s?(x)'],
 		rootDir: process.cwd(),

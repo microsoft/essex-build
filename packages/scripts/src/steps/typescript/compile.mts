@@ -3,17 +3,13 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @essex/adjacent-await */
-import { existsSync, readFileSync } from 'fs'
 import fs from 'fs/promises'
-import path, { join } from 'path'
+import path from 'path'
 import { performance } from 'perf_hooks'
 import * as swc from '@swc/core'
-import merge from 'lodash/merge.js'
-import get from 'lodash/get.js'
 import { printPerf, subtaskSuccess, traceFile } from '../../util/tasklogger.mjs'
-import { isDebug } from '../../util/isDebug.mjs'
 import { noop } from '../../util/noop.mjs'
-import { readTargetPackageJson } from '../../util/package.mjs'
+import { getSwcOptions } from '@essex/swc-opts'
 
 const ESM_ONLY_PATH = 'dist/'
 const ESM_PATH = 'dist/esm'
@@ -107,49 +103,4 @@ function writeOutput(
 			map ? fs.writeFile(mapFile, map, { encoding: 'utf8' }) : null,
 		])
 	})
-}
-
-const DEFAULT_SWC_CONFIG: swc.Config = {
-	sourceMaps: true,
-	jsc: {
-		target: 'es2020',
-		parser: {
-			syntax: 'typescript',
-			tsx: true,
-			decorators: true,
-			dynamicImport: true,
-		},
-		transform: {
-			react: { runtime: 'automatic', useBuiltins: true },
-		},
-	},
-}
-
-async function getSwcOptions() {
-	if (existsSync(join(process.cwd(), '.swcrc'))) {
-		const swcrc = readFileSync(join(process.cwd(), '.swcrc'), 'utf8')
-		const result = JSON.parse(swcrc)
-		if (isDebug()) {
-			console.log('using custom swc configuration', result)
-		}
-		return result
-	} else {
-		const pkg = await readTargetPackageJson()
-		const swcOverrides = get(pkg, 'essex.swc')
-		if (swcOverrides) {
-			const merged = merge(DEFAULT_SWC_CONFIG, swcOverrides)
-			if (isDebug()) {
-				console.log(
-					'applying essex.swc overrides to default swc configuration\n\n',
-					merged,
-				)
-			}
-			return merged
-		} else {
-			if (isDebug()) {
-				console.log('using default swc configuration')
-			}
-			return DEFAULT_SWC_CONFIG
-		}
-	}
 }

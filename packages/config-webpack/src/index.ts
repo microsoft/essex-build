@@ -15,7 +15,7 @@ import {
 	getTitle,
 	getIndexFile,
 } from './configValues'
-import { getSwcOptions } from './getSwcOptions'
+import { getSwcOptions } from '@essex/swc-opts'
 import { log } from './log'
 import { validateConfiguration } from './validate'
 
