@@ -4,5 +4,5 @@
  */
 const { configure } = require('@essex/jest-config')
 
-const configuration = configure()
+const configuration = configure({ esm: true })
 module.exports = configuration
