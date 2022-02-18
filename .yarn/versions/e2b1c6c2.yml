@@ -1,0 +1,3 @@
+releases:
+  "@essex/test-webapp-webpack": minor
+  "@essex/webpack-config": minor
