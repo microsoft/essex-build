@@ -3,8 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { createRequire } from 'module'
-
 const require = createRequire(import.meta.url)
 const { configure } = require('@essex/jest-config')
 
-export default configure([])
+export default configure({ esm: true })

@@ -14,7 +14,10 @@ export interface EssexJestOptions {
 	setupFiles: string[]
 }
 
-export function configure({ esm, setupFiles }: Partial<EssexJestOptions>): any {
+export function configure({
+	esm,
+	setupFiles,
+}: Partial<EssexJestOptions> = {}): any {
 	const result: any = {
 		transform: {
 			'^.+\\.(t|j)sx?$': [
