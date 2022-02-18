@@ -11,11 +11,6 @@ import { getSwcOptions } from '@essex/swc-opts'
 
 export interface EssexJestOptions {
 	/**
-	 * Whether to treat .ts, .tsx as esm; default = true
-	 */
-	esm: boolean
-
-	/**
 	 * The jest setup files to include
 	 * default (if jest.setup.js exists) = ['<rootDir>/jest.setup.js']
 	 * default (if jest.setup.js does not exist) = []
@@ -31,23 +26,18 @@ export interface EssexJestOptions {
 }
 
 export function configure({
-	esm = true,
 	setupFiles = getSetupFiles(),
 	rewriteLodashEs = true,
 }: Partial<EssexJestOptions> = {}): any {
 	const result: any = {
 		transform: {
-			'^.+\\.(t|j)sx?$': [
-				resolve('@swc/jest'),
-				getSwcOptions({
-					module: { type: esm ? 'es6' : 'commonjs' },
-				}),
-			],
+			'^.+\\.(t|j)sx?$': [resolve('@swc/jest'), getSwcOptions()],
 		},
 		testMatch: ['**/__tests__/**/?(*.)+(spec|test).[jt]s?(x)'],
 		rootDir: process.cwd(),
 		roots: [process.cwd()],
 		resolver: resolve('@essex/jest-config/resolver'),
+		extensionsToTreatAsEsm: ['.ts', '.tsx', '.mts'],
 		moduleNameMapper: {
 			'\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
 				'@essex/jest-config/filemock',
@@ -68,9 +58,6 @@ export function configure({
 		setupFilesAfterEnv: setupFiles,
 	}
 
-	if (esm) {
-		result.extensionsToTreatAsEsm = ['.ts', '.tsx']
-	}
 	if (rewriteLodashEs) {
 		// lodash-es presents issues in test, even when running in experimental ESM mode. Hacky fix is to use main lodash at test time
 		result.moduleNameMapper['^lodash-es/(.*)$'] = resolve('lodash').replace(
