@@ -2104,7 +2104,7 @@ __metadata:
   dependencies:
     "@essex/eslint-plugin": "workspace:packages/config-eslint-plugin"
   peerDependencies:
-    "@essex/eslint-plugin": ">=20.0.0"
+    "@essex/eslint-plugin": ">=20.0.1"
     "@typescript-eslint/eslint-plugin": ">= 4.4.1"
     "@typescript-eslint/parser": ">= 4.4.1"
     eslint-import-resolver-node: ">= 0.3.4"
@@ -2218,7 +2218,7 @@ __metadata:
     typescript: ^4.5.5
   peerDependencies:
     "@essex/eslint-config": ">=20.0.0"
-    "@essex/jest-config": ">=20.1.1"
+    "@essex/jest-config": ">=20.1.2"
     "@essex/prettier-config": ">=18.0.2"
     "@typescript-eslint/eslint-plugin": ">= 4.4.1"
     "@typescript-eslint/parser": ">= 4.4.1"
