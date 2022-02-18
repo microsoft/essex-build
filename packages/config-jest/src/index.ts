@@ -4,13 +4,20 @@
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { configure } from './configure.js'
-import { getJestConfigOverride, getSetupFiles } from './overrides.js'
+import { getSetupFiles } from './overrides.js'
 export * from './configure.js'
 export * from './overrides.js'
+
+export interface EssexJestOptions {
+	esm?: boolean | undefined
+}
 
 /**
  * If a Jest config is present, use that - otherwise get the override
  */
-export function getJestConfiguration(): any {
-	return getJestConfigOverride() || configure(getSetupFiles())
+export function getJestConfiguration(
+	opts: Partial<EssexJestOptions> = {},
+): any {
+	const esm = opts.esm ?? false
+	return configure(esm, getSetupFiles())
 }

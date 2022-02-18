@@ -8,8 +8,11 @@ import { resolve } from '@essex/jest-config/resolve'
 import { getSwcOptions } from '@essex/swc-opts'
 import { getSetupFiles } from './overrides.js'
 
-export function configure(setupFiles: string[] = getSetupFiles()): any {
-	return {
+export function configure(
+	esm: boolean,
+	setupFiles: string[] = getSetupFiles(),
+): any {
+	const result: any = {
 		transform: {
 			'^.+\\.(t|j)sx?$': [resolve('@swc/jest'), getSwcOptions()],
 		},
@@ -38,4 +41,10 @@ export function configure(setupFiles: string[] = getSetupFiles()): any {
 		coverageReporters: ['json', 'lcov', 'text', 'clover', 'cobertura'],
 		setupFilesAfterEnv: setupFiles,
 	}
+
+	if (esm) {
+		result.extensionsToTreatAsEsm = ['.ts', '.tsx']
+	}
+
+	return result
 }
