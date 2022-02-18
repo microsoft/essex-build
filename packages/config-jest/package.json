@@ -25,6 +25,7 @@
 		"directory": "packages/config-jest"
 	},
 	"dependencies": {
+		"@essex/swc-opts": "workspace:packages/util-swc-opts",
 		"@swc/core": "^1.2.142",
 		"@swc/jest": "^0.2.17",
 		"@types/jest": "^27.4.0",

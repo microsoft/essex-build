@@ -2149,6 +2149,7 @@ __metadata:
   resolution: "@essex/jest-config@workspace:packages/config-jest"
   dependencies:
     "@essex/scripts": "workspace:packages/scripts"
+    "@essex/swc-opts": "workspace:packages/util-swc-opts"
     "@essex/tsconfig-node": "workspace:packages/config-ts-node"
     "@swc/cli": ^0.1.55
     "@swc/core": ^1.2.142
@@ -2180,6 +2181,7 @@ __metadata:
     "@essex/eslint-config": "workspace:packages/config-eslint"
     "@essex/eslint-plugin": "workspace:packages/config-eslint-plugin"
     "@essex/shellrunner": "workspace:packages/util-shellrunner"
+    "@essex/swc-opts": "workspace:packages/util-swc-opts"
     "@essex/tsconfig-node": "workspace:packages/config-ts-node"
     "@swc/cli": ^0.1.55
     "@swc/core": ^1.2.142
@@ -2261,11 +2263,24 @@ __metadata:
     "@essex/tsconfig-node": "workspace:packages/config-ts-node"
     "@swc/cli": ^0.1.55
     "@swc/core": ^1.2.142
-    "@tsconfig/strictest": ^1.0.0
     "@types/debug": ^4.1.7
     "@types/node": ^17.0.18
     cross-spawn: ^7.0.3
     debug: ^4.3.3
+    rimraf: ^3.0.2
+    typescript: ^4.5.5
+  languageName: unknown
+  linkType: soft
+
+"@essex/swc-opts@workspace:packages/util-swc-opts":
+  version: 0.0.0-use.local
+  resolution: "@essex/swc-opts@workspace:packages/util-swc-opts"
+  dependencies:
+    "@essex/tsconfig-node": "workspace:packages/config-ts-node"
+    "@swc/core": ^1.2.142
+    "@types/lodash": ^4.14.178
+    "@types/node": ^17.0.18
+    lodash: ^4.17.21
     rimraf: ^3.0.2
     typescript: ^4.5.5
   languageName: unknown
@@ -2430,6 +2445,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/webpack-config@workspace:packages/config-webpack"
   dependencies:
+    "@essex/swc-opts": "workspace:packages/util-swc-opts"
     "@essex/tsconfig-node": "workspace:packages/config-ts-node"
     "@swc/cli": ^0.1.55
     "@swc/core": ^1.2.142
@@ -3010,13 +3026,6 @@ __metadata:
   version: 1.1.2
   resolution: "@tootallnate/once@npm:1.1.2"
   checksum: e1fb1bbbc12089a0cb9433dc290f97bddd062deadb6178ce9bcb93bb7c1aecde5e60184bc7065aec42fe1663622a213493c48bbd4972d931aae48315f18e1be9
-  languageName: node
-  linkType: hard
-
-"@tsconfig/strictest@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@tsconfig/strictest@npm:1.0.0"
-  checksum: 9a198086c29ecef1108e0c5a94bb59d0f3d53daf7c5a8e16424283b0cc8d7d27361d707b1a91be56f0c850551a853d64c087c3e9f1c341558adb12902b3d4f9a
   languageName: node
   linkType: hard
 
