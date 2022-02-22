@@ -69,7 +69,9 @@ export function configure({
 	modules,
 	loaderModules,
 	htmlWebpackPlugin,
-}: Configuration): webpack.Configuration & { devServer: WdsConfiguration } {
+}: Configuration = {}): webpack.Configuration & {
+	devServer: WdsConfiguration
+} {
 	validateConfiguration()
 	const isDevelopment = mode !== 'production'
 	const extendedAliases = aliases ? aliases(env, mode) : {}
