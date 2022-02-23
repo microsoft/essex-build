@@ -7,6 +7,7 @@ import { a } from '@essex/test-lib-dual'
 import { b } from '@essex/test-lib-esm'
 import { c } from '@essex/test-lib-legacy'
 import { memo } from 'react'
+import { state } from '~state'
 
 export const App: React.FC = memo(function App() {
 	return (
@@ -15,6 +16,7 @@ export const App: React.FC = memo(function App() {
 			<div>Dual: {a === 'a' ? '✅' : '❌'}</div>
 			<div>ESM:{b === 'b' ? '✅' : '❌'}</div>
 			<div>Legacy: {c === 'c' ? '✅' : '❌'}</div>
+			<div>{JSON.stringify(state)}</div>
 		</div>
 	)
 })

@@ -69,7 +69,9 @@ export function configure({
 	modules,
 	loaderModules,
 	htmlWebpackPlugin,
-}: Configuration): webpack.Configuration & { devServer: WdsConfiguration } {
+}: Configuration = {}): webpack.Configuration & {
+	devServer: WdsConfiguration
+} {
 	validateConfiguration()
 	const isDevelopment = mode !== 'production'
 	const extendedAliases = aliases ? aliases(env, mode) : {}
@@ -98,11 +100,7 @@ export function configure({
 		log('extend resolveLoaderModules', extendedResolveLoaderModules)
 	}
 
-	const standardModulePaths = [
-		// config package node modules
-		join(__dirname, '../node_modules'),
-		'node_modules',
-	]
+	const standardModulePaths = ['node_modules']
 
 	const buildPath = join(process.cwd(), 'build/')
 
