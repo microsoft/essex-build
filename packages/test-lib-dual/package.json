@@ -1,6 +1,6 @@
 {
 	"name": "@essex/test-lib-dual",
-	"version": "20.0.0",
+	"version": "20.0.1",
 	"private": true,
 	"main": "src/index.ts",
 	"publishConfig": {
