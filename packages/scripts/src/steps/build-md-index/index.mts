@@ -13,7 +13,7 @@ export async function buildMdIndex(include: string): Promise<void> {
 		const content = await fs.readFile(filePath, { encoding: 'utf-8' })
 		const localFilePath = filePath.replace(include, 'dist')
 		const outputPathJs = localFilePath.replace('.md', '.js')
-		const outputPathDts = localFilePath.replace('.js', '.d.ts')
+		const outputPathDts = localFilePath.replace('.md', '.d.ts')
 		const outputDir = path.dirname(localFilePath)
 		const indexFilePath = path.basename(localFilePath, '.md')
 
@@ -52,19 +52,6 @@ function getMarkdownFiles(include: string): Promise<string[]> {
 	})
 }
 
-function jsContent(content: string) {
-	return `
-const content = \`${content}\`;
-export default content;
-`
-}
-function dtsContent(content: string) {
-	return `
-declare const content = \`${content}\`;
-export default content;
-`
-}
-
 function writeIndex(imports: string[]): Promise<void> {
 	let importsArea = ''
 	let mapArea = 'const index = {};\n'
@@ -91,4 +78,17 @@ export default index;
 	]).then(() => {
 		/* nothing*/
 	})
+}
+
+function jsContent(content: string) {
+	return `
+const content = \`${content}\`;
+export default content;
+`
+}
+function dtsContent(content: string) {
+	return `
+declare const content = \`${content}\`;
+export default content;
+`
 }
