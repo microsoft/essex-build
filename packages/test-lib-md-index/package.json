@@ -1,19 +1,13 @@
 {
-	"name": "@essex/test-lib-esm",
+	"name": "@essex/test-lib-md-index",
 	"version": "20.0.2",
 	"private": true,
 	"type": "module",
-	"main": "src/index.ts",
-	"publishConfig": {
-		"main": "dist/index.js",
-		"types": "dist/index.d.ts"
-	},
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"scripts": {
 		"clean": "essex clean",
-		"build": "ESSEX_DEBUG=1 essex build --docs",
-		"lint": "essex lint",
-		"test": "jest",
-		"start": "essex watch"
+		"build": "ESSEX_DEBUG=1 essex build-md-index --include docs"
 	},
 	"repository": {
 		"type": "git",
@@ -44,8 +38,7 @@
 		"exports": {
 			"HelloWorld": "function",
 			"b": "string",
-			"add": "function",
-			"default": "string"
+			"add": "function"
 		},
 		"swc": {
 			"jsc": {

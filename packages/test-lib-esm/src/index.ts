@@ -4,3 +4,6 @@
  */
 export * from './add.js'
 export * from './letters/index.js'
+
+const defaultExport = 'defaultExportValue'
+export default defaultExport

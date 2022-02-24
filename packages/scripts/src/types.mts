@@ -1,5 +1,16 @@
 export enum BuildMode {
+	/**
+	 * Legacy package structure: main, module, types
+	 */
 	legacy = 'legacy',
+
+	/**
+	 * Modern dual-mode CJS/ESM package (default CJS, include MJS)
+	 */
 	dual = 'dual',
+
+	/**
+	 * Modern ESM package (type: module)
+	 */
 	esm = 'esm',
 }
