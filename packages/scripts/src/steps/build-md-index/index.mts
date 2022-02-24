@@ -55,7 +55,6 @@ function getMarkdownFiles(include: string): Promise<string[]> {
 function writeIndex(imports: string[]): Promise<void> {
 	let importsArea = ''
 	let mapArea = 'const index = {};\n'
-
 	imports.forEach(imp => {
 		const impVar = imp.replace('/', '_')
 		const impKey = imp.replace('/', '.')
@@ -82,13 +81,17 @@ export default index;
 
 function jsContent(content: string) {
 	return `
-const content = \`${content}\`;
+const content = \`${escapeBackticks(content)}\`;
 export default content;
 `
 }
 function dtsContent(content: string) {
 	return `
-declare const content = \`${content}\`;
+declare const content = \`${escapeBackticks(content)}\`;
 export default content;
 `
+}
+
+function escapeBackticks(content: string): string {
+	return content.replaceAll('`', '\\`')
 }
