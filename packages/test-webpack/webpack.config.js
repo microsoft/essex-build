@@ -3,5 +3,4 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 const { configure } = require('@essex/webpack-config')
-const webpackConfig = configure({ pnp: true })
-module.exports = webpackConfig
+module.exports = configure()
