@@ -12,7 +12,7 @@
 		"clean": "rimraf lib"
 	},
 	"dependencies": {
-		"@swc/core": "^1.2.143",
+		"@swc/core": "^1.2.145",
 		"lodash": "^4.17.21",
 		"tslib": "^2.3.1"
 	},
