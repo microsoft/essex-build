@@ -44,7 +44,8 @@
 		"exports": {
 			"HelloWorld": "function",
 			"b": "string",
-			"add": "function"
+			"add": "function",
+			"default": "string"
 		},
 		"swc": {
 			"jsc": {
