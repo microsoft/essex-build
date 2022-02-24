@@ -30,7 +30,7 @@
 		"@essex/jest-config": "workspace:packages/config-jest",
 		"@essex/scripts": "workspace:packages/scripts",
 		"@essex/tsconfig-base": "workspace:packages/config-ts-base",
-		"@types/jest": "^27.4.0",
+		"@types/jest": "^27.4.1",
 		"@types/react": "^17.0.39",
 		"@typescript-eslint/eslint-plugin": "^5.12.1",
 		"@typescript-eslint/parser": "^5.12.1",
