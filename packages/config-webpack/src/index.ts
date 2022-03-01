@@ -40,6 +40,7 @@ function tryToDetermineIfUsesTsconfigPaths(): boolean {
 	}
 	return false
 }
+
 export interface Configuration {
 	env?: string
 	mode?: 'development' | 'production' | 'none'
@@ -87,18 +88,12 @@ export function configure({
 		? htmlWebpackPlugin(env, mode)
 		: {}
 
-	if (aliases) {
-		log('extend resolve', aliases)
-	}
-	if (extendedDevServer) {
-		log('extend devServer', extendedDevServer)
-	}
-	if (extendedResolveModules) {
+	if (aliases) log('extend resolve', aliases)
+	if (extendedDevServer) log('extend devServer', extendedDevServer)
+	if (extendedResolveModules)
 		log('extend resolveModules', extendedResolveModules)
-	}
-	if (extendedResolveLoaderModules) {
+	if (extendedResolveLoaderModules)
 		log('extend resolveLoaderModules', extendedResolveLoaderModules)
-	}
 
 	const standardModulePaths = ['node_modules']
 
@@ -108,9 +103,6 @@ export function configure({
 		mode: isDevelopment ? 'development' : 'production',
 		entry: getIndexFile(),
 		devtool: 'cheap-module-source-map',
-		stats: {
-all: true
-		},
 		output: {
 			path: buildPath,
 			chunkFilename: '[name].[chunkhash].js',
@@ -213,7 +205,14 @@ all: true
 			...extendedDevServer,
 		},
 		plugins: [
-			typecheck ? new ForkTsCheckerWebpackPlugin() : undefined,
+			typecheck
+				? new ForkTsCheckerWebpackPlugin({
+						async: true,
+						typescript: {
+							mode: 'readonly',
+						},
+				  })
+				: undefined,
 			new HtmlWebpackPlugin({
 				title: getTitle(),
 				base: isDevelopment ? false : getHomePage(),

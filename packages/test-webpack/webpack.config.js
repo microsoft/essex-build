@@ -3,4 +3,6 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 const { configure } = require('@essex/webpack-config')
-module.exports = configure()
+module.exports = configure({
+	typecheck: false
+})
