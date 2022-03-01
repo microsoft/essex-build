@@ -6,7 +6,7 @@
 		"David Tittsworth <datit@microsoft.com>",
 		"Chris Trevino <chtrevin@microsoft.com>"
 	],
-	"packageManager": "yarn@3.1.1",
+	"packageManager": "yarn@3.2.0",
 	"scripts": {
 		"preinstall": "npx only-allow yarn",
 		"postinstall": "husky install",
