@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"clean": "essex clean",
-		"build": "webpack-cli",
+		"build": "DEBUG='*' webpack-cli",
 		"lint": "essex lint",
 		"start": "webpack serve --progress"
 	},
@@ -19,7 +19,7 @@
 		"@essex/test-lib-legacy": "workspace:packages/test-lib-legacy",
 		"@essex/test-lib-md-index": "workspace:packages/test-lib-md-index",
 		"@types/react": "^17.0.39",
-		"@types/react-dom": "^17.0.11",
+		"@types/react-dom": "^17.0.12",
 		"@types/webpack-dev-server": "^4.7.2",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2"
@@ -32,8 +32,8 @@
 		"@typescript-eslint/eslint-plugin": "^5.13.0",
 		"@typescript-eslint/parser": "^5.13.0",
 		"eslint-import-resolver-node": "^0.3.6",
-		"webpack": "^5.69.1",
-		"webpack-cli": "^4.9.2",
+		"webpack": "5.69.1",
+		"webpack-cli": "4.9.2",
 		"webpack-dev-server": "^4.7.4"
 	}
 }

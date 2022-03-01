@@ -19,10 +19,10 @@
 		"version": "yarn workspaces foreach --all -ivd version",
 		"release": "yarn workspaces foreach --all -pv npm publish --tolerate-republish --access public",
 		"jest:": "jest",
-		"eslint": "ESSEX_DEBUG=1 yarn essex lint --fix",
+		"eslint:": "ESSEX_DEBUG=1 yarn essex lint --fix",
 		"prettify": "essex prettify",
-		"git_is_clean": "yarn essex git-is-clean",
-		"ci": "run-s build: lint: eslint test: jest: git_is_clean"
+		"git_is_clean:": "yarn essex git-is-clean",
+		"ci": "run-s build: lint: eslint: test: jest: git_is_clean:"
 	},
 	"devDependencies": {
 		"@essex/babel-config": "workspace:packages/config-babel",

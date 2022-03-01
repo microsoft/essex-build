@@ -108,6 +108,9 @@ export function configure({
 		mode: isDevelopment ? 'development' : 'production',
 		entry: getIndexFile(),
 		devtool: 'cheap-module-source-map',
+		stats: {
+all: true
+		},
 		output: {
 			path: buildPath,
 			chunkFilename: '[name].[chunkhash].js',
