@@ -5,6 +5,7 @@
 import type { Command } from 'commander'
 import { eslint } from '../steps/eslint/index.mjs'
 import { prettyQuick } from '../steps/pretty-quick/index.mjs'
+import { run } from '@essex/shellrunner'
 
 interface LintCommandOptions {
 	fix?: boolean
@@ -13,6 +14,8 @@ interface LintCommandOptions {
 	strict?: boolean
 	docsOnly?: boolean
 }
+
+const DEFAULT_FILESET = ['.']
 
 const restricted: Record<string, boolean> = {
 	'--fix': true,
@@ -33,16 +36,46 @@ export default function lint(program: Command): void {
 		})
 }
 
-function execute(
+async function execute(
 	{ fix = false, staged = false, strict = false }: LintCommandOptions,
 	files: string[] | undefined,
 ): Promise<void> {
-	const checkCode = eslint(fix, strict, files || ['.'])
+	files = await getFiles(staged, files)
+	const checkCode = eslint(fix, strict, files)
 	const checkFormatting = staged
 		? prettyQuick({ staged: true })
 		: prettyQuick({ check: !fix })
 
-	return Promise.all([checkCode, checkFormatting]).then(() => {
-		/* do nothing */
+	await Promise.all([checkCode, checkFormatting])
+}
+
+async function getFiles(
+	staged: boolean,
+	filesListed: string[] | undefined,
+): Promise<string[]> {
+	// lint everything
+	if (!filesListed && !staged) {
+		return DEFAULT_FILESET
+	} else if (staged) {
+		return getStagedFiles()
+	} else {
+		return filesListed ?? DEFAULT_FILESET
+	}
+}
+
+async function getStagedFiles(): Promise<string[]> {
+	const result = await run({
+		exec: 'git',
+		args: ['--no-pager', 'diff', '--name-only', '--cached'],
+		toConsole: false,
 	})
+	if (result.code !== 0) {
+		throw new Error('error listing staged files')
+	} else {
+		const files = result.output?.split('\n').filter(t => !!t) ?? []
+		if (files.length === 0) {
+			return DEFAULT_FILESET
+		}
+		return files
+	}
 }

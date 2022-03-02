@@ -19,5 +19,9 @@ export async function parallel(...jobs: Job[]): Promise<JobResult> {
 	const results = await Promise.all(jobs.map(job => single(job)))
 	const codes = results.map(r => r.code)
 	const code = Math.max(...codes)
-	return { code }
+	return {
+		code,
+		output: results.map(r => r.output).join(''),
+		error: results.map(r => r.error).join(''),
+	}
 }
