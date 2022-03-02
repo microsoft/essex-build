@@ -5,5 +5,5 @@ lib/
 coverage/
 public/
 .yarn/
-.pnp.js
-.pnp.cjs
+.pnp.*
+yarn.lock

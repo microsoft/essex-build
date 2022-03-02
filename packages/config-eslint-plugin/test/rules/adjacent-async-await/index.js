@@ -11,8 +11,8 @@ const { code, errors } = adaptTslintTestCase(join(__dirname, './test.es.lint'))
 
 RuleTester.setDefaultConfig({
 	parserOptions: {
-		parser: 'babel-eslint',
-		ecmaVersion: 2018,
+		parser: '@babel/eslint-parser',
+		ecmaVersion: 2022,
 		sourceType: 'module',
 		ecmaFeatures: {
 			jsx: true,
