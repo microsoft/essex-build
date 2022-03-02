@@ -16,7 +16,7 @@
 		"@babel/core": "^7.17.5",
 		"@babel/types": "^7.17.0",
 		"@swc/cli": "^0.1.55",
-		"@swc/core": "1.2.146",
+		"@swc/core": "1.2.147",
 		"@typescript-eslint/eslint-plugin": "^5.13.0",
 		"@typescript-eslint/parser": "^5.13.0",
 		"babel-eslint": "^10.1.0",
