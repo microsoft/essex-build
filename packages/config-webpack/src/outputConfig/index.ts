@@ -1,3 +1,7 @@
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
 export * from './getResolvePlugins.js'
 export * from './tsRule.js'
 export * from './getStyleRules.js'

@@ -1,8 +1,12 @@
-import { EnvironmentPlugin, WebpackPluginInstance } from 'webpack'
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
-import type { ConfigurationManager } from '../inputConfig'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { EnvironmentPlugin, WebpackPluginInstance } from 'webpack'
+import type { ConfigurationManager } from '../inputConfig'
 
 export function getPlugins({
 	isDevelopment,

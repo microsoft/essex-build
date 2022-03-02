@@ -5,6 +5,7 @@
 import type { Configuration as WebpackConfiguration } from 'webpack'
 import type { Configuration as WdsConfiguration } from 'webpack-dev-server'
 import { ConfigurationManager } from './inputConfig'
+import { log } from './log'
 import {
 	getResolvePlugins,
 	tsRule,
@@ -14,7 +15,6 @@ import {
 	getOutput,
 	getPlugins,
 } from './outputConfig'
-import { log } from './log'
 import type { Configuration } from './types.js'
 
 export function configure(config: Configuration = {}): WebpackConfiguration & {

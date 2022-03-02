@@ -1,6 +1,10 @@
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
 import type { RuleSetRule } from 'webpack'
 
-// Webpack Loaders
+// Webpack Loader
 /* eslint-disable @typescript-eslint/no-var-requires */
 const cssLoader = require.resolve('css-loader')
 const sassLoader = require.resolve('sass-loader')

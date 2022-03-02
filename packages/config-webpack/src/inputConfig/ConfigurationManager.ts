@@ -1,15 +1,19 @@
-import type { Configuration } from '../types.js'
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
+import type { Options as HtmlPluginConfig } from 'html-webpack-plugin'
 import type {
 	Configuration as WebpackConfig,
 	WebpackPluginInstance,
 } from 'webpack'
-import { validate } from './validate.js'
 import type { Configuration as WdsConfig } from 'webpack-dev-server'
-import { isTsConfigPathsConfigured } from './isTsConfigPathsConfigured'
+import type { Configuration } from '../types.js'
+import { getHomePage } from './getHomePage.js'
 import { getIndexFile } from './getIndexFile.js'
 import { getTitle } from './getTitle.js'
-import { getHomePage } from './getHomePage.js'
-import type { Options as HtmlPluginConfig } from 'html-webpack-plugin'
+import { isTsConfigPathsConfigured } from './isTsConfigPathsConfigured'
+import { validate } from './validate.js'
 
 export class ConfigurationManager {
 	public constructor(private _config: Configuration) {
