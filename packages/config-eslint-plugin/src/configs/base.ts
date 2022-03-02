@@ -299,9 +299,9 @@ const baseConfig = {
 		{
 			files: ['**/*.js?(x)'],
 			extends: [...commonRuleSets],
-			parser: 'babel-eslint',
+			parser: '@babel/eslint-parser',
 			parserOptions: {
-				ecmaVersion: 2018,
+				ecmaVersion: 2022,
 				sourceType: 'module',
 				ecmaFeatures: {
 					jsx: true,
