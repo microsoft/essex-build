@@ -11,13 +11,18 @@ import type { Job, JobResult } from './types.js'
  * @param runs The jobs to run
  */
 export async function run(...jobs: Array<Job | Job[]>): Promise<JobResult> {
-	let code = 0
+	const result = { code: 0, output: '', error: '' }
 	for (const job of jobs) {
-		const result = await (Array.isArray(job) ? parallel(...job) : single(job))
-		code = result.code
-		if (code !== 0) {
+		const batchResult = await (Array.isArray(job)
+			? parallel(...job)
+			: single(job))
+		result.code += batchResult.code
+		result.output += batchResult.output
+		result.error += batchResult.error
+
+		if (result.code !== 0) {
 			break
 		}
 	}
-	return { code }
+	return result
 }

@@ -7,7 +7,7 @@ import type { Job, JobResult } from '../types.js'
 import { execute } from './execute.js'
 
 export async function single(job: Job): Promise<JobResult> {
-	const { code } = await execute(job)
+	const result = await execute(job)
 	log.printJob(job)
-	return { code }
+	return result
 }

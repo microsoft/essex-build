@@ -271,7 +271,7 @@ const baseConfig = {
 			version: 'detect',
 		},
 		jest: {
-			version: 26,
+			version: 27,
 		},
 	},
 	overrides: [
