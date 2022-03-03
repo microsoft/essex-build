@@ -1,0 +1,4 @@
+releases:
+  "@essex/test-webapp-webpack": patch
+  "@essex/test-zips": patch
+  "@essex/webpack-config": patch
