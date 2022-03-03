@@ -5,6 +5,6 @@
 		".": "./tsconfig.json"
 	},
 	"dependencies": {
-		"@essex/tsconfig-base": "workspace:packages/config-ts-base"
+		"@essex/tsconfig-base": "workspace:^"
 	}
 }

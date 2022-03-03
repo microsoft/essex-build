@@ -2062,7 +2062,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@essex/babel-config@workspace:packages/config-babel":
+"@essex/babel-config@workspace:^, @essex/babel-config@workspace:packages/config-babel":
   version: 0.0.0-use.local
   resolution: "@essex/babel-config@workspace:packages/config-babel"
   dependencies:
@@ -2074,8 +2074,8 @@ __metadata:
     "@babel/preset-env": ^7.16.11
     "@babel/preset-react": ^7.16.7
     "@babel/preset-typescript": ^7.16.7
-    "@essex/scripts": "workspace:packages/scripts"
-    "@essex/tsconfig-node": "workspace:packages/config-ts-node"
+    "@essex/scripts": "workspace:^"
+    "@essex/tsconfig-node": "workspace:^"
     "@swc/cli": ^0.1.55
     "@swc/core": 1.2.147
     "@types/node": ^17.0.21
@@ -2090,12 +2090,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/build@workspace:."
   dependencies:
-    "@essex/babel-config": "workspace:packages/config-babel"
-    "@essex/eslint-config": "workspace:packages/config-eslint"
-    "@essex/eslint-plugin": "workspace:packages/config-eslint-plugin"
-    "@essex/jest-config": "workspace:packages/config-jest"
-    "@essex/prettier-config": "workspace:packages/config-prettier"
-    "@essex/scripts": "workspace:packages/scripts"
+    "@essex/babel-config": "workspace:^"
+    "@essex/eslint-config": "workspace:^"
+    "@essex/eslint-plugin": "workspace:^"
+    "@essex/jest-config": "workspace:^"
+    "@essex/prettier-config": "workspace:^"
+    "@essex/scripts": "workspace:^"
     "@types/eslint": ^8.4.1
     "@types/jest": ^27.4.1
     "@typescript-eslint/eslint-plugin": ^5.13.0
@@ -2112,11 +2112,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/eslint-config@workspace:packages/config-eslint":
+"@essex/eslint-config@workspace:^, @essex/eslint-config@workspace:packages/config-eslint":
   version: 0.0.0-use.local
   resolution: "@essex/eslint-config@workspace:packages/config-eslint"
   dependencies:
-    "@essex/eslint-plugin": "workspace:packages/config-eslint-plugin"
+    "@essex/eslint-plugin": "workspace:^"
   peerDependencies:
     "@essex/eslint-plugin": ">=20.0.2"
     "@typescript-eslint/eslint-plugin": ">= 4.4.1"
@@ -2125,14 +2125,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/eslint-plugin@workspace:packages/config-eslint-plugin":
+"@essex/eslint-plugin@workspace:^, @essex/eslint-plugin@workspace:packages/config-eslint-plugin":
   version: 0.0.0-use.local
   resolution: "@essex/eslint-plugin@workspace:packages/config-eslint-plugin"
   dependencies:
     "@babel/core": ^7.17.5
     "@babel/eslint-parser": ^7.17.0
     "@babel/types": ^7.17.0
-    "@essex/tsconfig-node": "workspace:packages/config-ts-node"
+    "@essex/tsconfig-node": "workspace:^"
     "@swc/cli": ^0.1.55
     "@swc/core": 1.2.147
     "@types/node": ^17.0.21
@@ -2141,7 +2141,7 @@ __metadata:
     babel-eslint: ^10.1.0
     confusing-browser-globals: ^1.0.11
     eslint: ^8.10.0
-    eslint-config-prettier: ^8.4.0
+    eslint-config-prettier: ^8.5.0
     eslint-import-resolver-node: ^0.3.6
     eslint-plugin-header: ^3.1.1
     eslint-plugin-import: ^2.25.4
@@ -2159,13 +2159,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/jest-config@workspace:packages/config-jest":
+"@essex/jest-config@workspace:^, @essex/jest-config@workspace:packages/config-jest":
   version: 0.0.0-use.local
   resolution: "@essex/jest-config@workspace:packages/config-jest"
   dependencies:
-    "@essex/scripts": "workspace:packages/scripts"
-    "@essex/swc-opts": "workspace:packages/util-swc-opts"
-    "@essex/tsconfig-node": "workspace:packages/config-ts-node"
+    "@essex/scripts": "workspace:^"
+    "@essex/swc-opts": "workspace:^"
+    "@essex/tsconfig-node": "workspace:^"
     "@swc/cli": ^0.1.55
     "@swc/core": 1.2.147
     "@swc/jest": ^0.2.20
@@ -2184,22 +2184,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/prettier-config@workspace:packages/config-prettier":
+"@essex/prettier-config@workspace:^, @essex/prettier-config@workspace:packages/config-prettier":
   version: 0.0.0-use.local
   resolution: "@essex/prettier-config@workspace:packages/config-prettier"
   languageName: unknown
   linkType: soft
 
-"@essex/scripts@workspace:packages/scripts":
+"@essex/scripts@workspace:^, @essex/scripts@workspace:packages/scripts":
   version: 0.0.0-use.local
   resolution: "@essex/scripts@workspace:packages/scripts"
   dependencies:
     "@azure/storage-blob": ^12.8.0
-    "@essex/eslint-config": "workspace:packages/config-eslint"
-    "@essex/eslint-plugin": "workspace:packages/config-eslint-plugin"
-    "@essex/shellrunner": "workspace:packages/util-shellrunner"
-    "@essex/swc-opts": "workspace:packages/util-swc-opts"
-    "@essex/tsconfig-node": "workspace:packages/config-ts-node"
+    "@essex/eslint-config": "workspace:^"
+    "@essex/eslint-plugin": "workspace:^"
+    "@essex/shellrunner": "workspace:^"
+    "@essex/swc-opts": "workspace:^"
+    "@essex/tsconfig-node": "workspace:^"
     "@swc/cli": ^0.1.55
     "@swc/core": 1.2.147
     "@types/archiver": ^5.3.1
@@ -2245,7 +2245,6 @@ __metadata:
     lint-staged: "*"
     react: ">= 16.13.1"
     react-dom: ">= 16.13.1"
-    typescript: ">= 4"
   peerDependenciesMeta:
     "@essex/eslint-config":
       optional: true
@@ -2265,19 +2264,17 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-    typescript:
-      optional: true
   bin:
     essex: ./lib/index.mjs
     essex-scripts: ./lib/index.mjs
   languageName: unknown
   linkType: soft
 
-"@essex/shellrunner@workspace:packages/util-shellrunner":
+"@essex/shellrunner@workspace:^, @essex/shellrunner@workspace:packages/util-shellrunner":
   version: 0.0.0-use.local
   resolution: "@essex/shellrunner@workspace:packages/util-shellrunner"
   dependencies:
-    "@essex/tsconfig-node": "workspace:packages/config-ts-node"
+    "@essex/tsconfig-node": "workspace:^"
     "@swc/cli": ^0.1.55
     "@swc/core": 1.2.147
     "@types/debug": ^4.1.7
@@ -2289,11 +2286,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/swc-opts@workspace:packages/util-swc-opts":
+"@essex/swc-opts@workspace:^, @essex/swc-opts@workspace:packages/util-swc-opts":
   version: 0.0.0-use.local
   resolution: "@essex/swc-opts@workspace:packages/util-swc-opts"
   dependencies:
-    "@essex/tsconfig-node": "workspace:packages/config-ts-node"
+    "@essex/tsconfig-node": "workspace:^"
     "@swc/core": 1.2.147
     "@types/lodash": ^4.14.179
     "@types/node": ^17.0.21
@@ -2304,19 +2301,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/test-lib-dual@workspace:packages/test-lib-dual":
+"@essex/test-lib-dual@workspace:^, @essex/test-lib-dual@workspace:packages/test-lib-dual":
   version: 0.0.0-use.local
   resolution: "@essex/test-lib-dual@workspace:packages/test-lib-dual"
   dependencies:
-    "@essex/babel-config": "workspace:packages/config-babel"
-    "@essex/eslint-config": "workspace:packages/config-eslint"
-    "@essex/jest-config": "workspace:packages/config-jest"
-    "@essex/scripts": "workspace:packages/scripts"
-    "@essex/tsconfig-base": "workspace:packages/config-ts-base"
+    "@essex/babel-config": "workspace:^"
+    "@essex/eslint-config": "workspace:^"
+    "@essex/jest-config": "workspace:^"
+    "@essex/scripts": "workspace:^"
+    "@essex/tsconfig-base": "workspace:^"
     "@types/jest": ^27.4.1
     "@types/react": ^17.0.39
     "@typescript-eslint/eslint-plugin": ^5.13.0
     "@typescript-eslint/parser": ^5.13.0
+    eslint: ^8.10.0
     eslint-import-resolver-node: ^0.3.6
     jest: ^27.5.1
     npm-run-all: ^4.1.5
@@ -2325,20 +2323,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/test-lib-esm@workspace:packages/test-lib-esm":
+"@essex/test-lib-esm@workspace:^, @essex/test-lib-esm@workspace:packages/test-lib-esm":
   version: 0.0.0-use.local
   resolution: "@essex/test-lib-esm@workspace:packages/test-lib-esm"
   dependencies:
-    "@essex/babel-config": "workspace:packages/config-babel"
-    "@essex/eslint-config": "workspace:packages/config-eslint"
-    "@essex/jest-config": "workspace:packages/config-jest"
-    "@essex/scripts": "workspace:packages/scripts"
-    "@essex/tsconfig-base": "workspace:packages/config-ts-base"
+    "@essex/babel-config": "workspace:^"
+    "@essex/eslint-config": "workspace:^"
+    "@essex/jest-config": "workspace:^"
+    "@essex/scripts": "workspace:^"
+    "@essex/tsconfig-base": "workspace:^"
     "@types/jest": ^27.4.1
     "@types/lodash-es": ^4.17.6
     "@types/react": ^17.0.39
     "@typescript-eslint/eslint-plugin": ^5.13.0
     "@typescript-eslint/parser": ^5.13.0
+    eslint: ^8.10.0
     eslint-import-resolver-node: ^0.3.6
     jest: ^27.5.1
     lodash-es: ^4.17.21
@@ -2348,19 +2347,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/test-lib-legacy@workspace:packages/test-lib-legacy":
+"@essex/test-lib-legacy@workspace:^, @essex/test-lib-legacy@workspace:packages/test-lib-legacy":
   version: 0.0.0-use.local
   resolution: "@essex/test-lib-legacy@workspace:packages/test-lib-legacy"
   dependencies:
-    "@essex/babel-config": "workspace:packages/config-babel"
-    "@essex/eslint-config": "workspace:packages/config-eslint"
-    "@essex/jest-config": "workspace:packages/config-jest"
-    "@essex/scripts": "workspace:packages/scripts"
-    "@essex/tsconfig-base": "workspace:packages/config-ts-base"
+    "@essex/babel-config": "workspace:^"
+    "@essex/eslint-config": "workspace:^"
+    "@essex/jest-config": "workspace:^"
+    "@essex/scripts": "workspace:^"
+    "@essex/tsconfig-base": "workspace:^"
     "@types/jest": ^27.4.1
     "@types/react": ^17.0.39
     "@typescript-eslint/eslint-plugin": ^5.13.0
     "@typescript-eslint/parser": ^5.13.0
+    eslint: ^8.10.0
     eslint-import-resolver-node: ^0.3.6
     jest: ^27.5.1
     npm-run-all: ^4.1.5
@@ -2369,20 +2369,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/test-lib-md-index@workspace:packages/test-lib-md-index":
+"@essex/test-lib-md-index@workspace:^, @essex/test-lib-md-index@workspace:packages/test-lib-md-index":
   version: 0.0.0-use.local
   resolution: "@essex/test-lib-md-index@workspace:packages/test-lib-md-index"
   dependencies:
-    "@essex/babel-config": "workspace:packages/config-babel"
-    "@essex/eslint-config": "workspace:packages/config-eslint"
-    "@essex/jest-config": "workspace:packages/config-jest"
-    "@essex/scripts": "workspace:packages/scripts"
-    "@essex/tsconfig-base": "workspace:packages/config-ts-base"
+    "@essex/babel-config": "workspace:^"
+    "@essex/eslint-config": "workspace:^"
+    "@essex/jest-config": "workspace:^"
+    "@essex/scripts": "workspace:^"
+    "@essex/tsconfig-base": "workspace:^"
     "@types/jest": ^27.4.1
     "@types/lodash-es": ^4.17.6
     "@types/react": ^17.0.39
     "@typescript-eslint/eslint-plugin": ^5.13.0
     "@typescript-eslint/parser": ^5.13.0
+    eslint: ^8.10.0
     eslint-import-resolver-node: ^0.3.6
     jest: ^27.5.1
     lodash-es: ^4.17.21
@@ -2396,12 +2397,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/test-webapp-vite@workspace:packages/test-vite"
   dependencies:
-    "@essex/scripts": "workspace:packages/scripts"
-    "@essex/test-lib-dual": "workspace:packages/test-lib-dual"
-    "@essex/test-lib-esm": "workspace:packages/test-lib-esm"
-    "@essex/test-lib-legacy": "workspace:packages/test-lib-legacy"
-    "@essex/tsconfig-base": "workspace:packages/config-ts-base"
-    "@essex/vite-config": "workspace:packages/config-vite"
+    "@essex/scripts": "workspace:^"
+    "@essex/test-lib-dual": "workspace:^"
+    "@essex/test-lib-esm": "workspace:^"
+    "@essex/test-lib-legacy": "workspace:^"
+    "@essex/tsconfig-base": "workspace:^"
+    "@essex/vite-config": "workspace:^"
     "@types/react": ^17.0.39
     "@types/react-dom": ^17.0.13
     react: ^17.0.2
@@ -2415,14 +2416,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/test-webapp-webpack@workspace:packages/test-webpack"
   dependencies:
-    "@essex/eslint-config": "workspace:packages/config-eslint"
-    "@essex/scripts": "workspace:packages/scripts"
-    "@essex/test-lib-dual": "workspace:packages/test-lib-dual"
-    "@essex/test-lib-esm": "workspace:packages/test-lib-esm"
-    "@essex/test-lib-legacy": "workspace:packages/test-lib-legacy"
-    "@essex/test-lib-md-index": "workspace:packages/test-lib-md-index"
-    "@essex/tsconfig-base": "workspace:packages/config-ts-base"
-    "@essex/webpack-config": "workspace:packages/config-webpack"
+    "@essex/eslint-config": "workspace:^"
+    "@essex/scripts": "workspace:^"
+    "@essex/test-lib-dual": "workspace:^"
+    "@essex/test-lib-esm": "workspace:^"
+    "@essex/test-lib-legacy": "workspace:^"
+    "@essex/test-lib-md-index": "workspace:^"
+    "@essex/tsconfig-base": "workspace:^"
+    "@essex/webpack-config": "workspace:^"
     "@types/react": ^17.0.39
     "@types/react-dom": ^17.0.13
     "@types/webpack-dev-server": ^4.7.2
@@ -2431,7 +2432,7 @@ __metadata:
     eslint-import-resolver-node: ^0.3.6
     react: ^17.0.2
     react-dom: ^17.0.2
-    webpack: 5.69.1
+    webpack: 5.70.0
     webpack-cli: 4.9.2
     webpack-dev-server: ^4.7.4
   languageName: unknown
@@ -2441,15 +2442,16 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/test-zips@workspace:packages/test-zips"
   dependencies:
-    "@essex/babel-config": "workspace:packages/config-babel"
-    "@essex/eslint-config": "workspace:packages/config-eslint"
-    "@essex/jest-config": "workspace:packages/config-jest"
-    "@essex/scripts": "workspace:packages/scripts"
-    "@essex/tsconfig-node": "workspace:packages/config-ts-node"
+    "@essex/babel-config": "workspace:^"
+    "@essex/eslint-config": "workspace:^"
+    "@essex/jest-config": "workspace:^"
+    "@essex/scripts": "workspace:^"
+    "@essex/tsconfig-node": "workspace:^"
     "@types/jest": ^27.4.1
     "@types/node": ^17.0.21
     "@typescript-eslint/eslint-plugin": ^5.13.0
     "@typescript-eslint/parser": ^5.13.0
+    eslint: ^8.10.0
     eslint-import-resolver-node: ^0.3.6
     jest: ^27.5.1
     jszip: ^3.7.1
@@ -2459,21 +2461,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/tsconfig-base@workspace:packages/config-ts-base":
+"@essex/tsconfig-base@workspace:^, @essex/tsconfig-base@workspace:packages/config-ts-base":
   version: 0.0.0-use.local
   resolution: "@essex/tsconfig-base@workspace:packages/config-ts-base"
   languageName: unknown
   linkType: soft
 
-"@essex/tsconfig-node@workspace:packages/config-ts-node":
+"@essex/tsconfig-node@workspace:^, @essex/tsconfig-node@workspace:packages/config-ts-node":
   version: 0.0.0-use.local
   resolution: "@essex/tsconfig-node@workspace:packages/config-ts-node"
   dependencies:
-    "@essex/tsconfig-base": "workspace:packages/config-ts-base"
+    "@essex/tsconfig-base": "workspace:^"
   languageName: unknown
   linkType: soft
 
-"@essex/vite-config@workspace:packages/config-vite":
+"@essex/vite-config@workspace:^, @essex/vite-config@workspace:packages/config-vite":
   version: 0.0.0-use.local
   resolution: "@essex/vite-config@workspace:packages/config-vite"
   dependencies:
@@ -2485,12 +2487,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/webpack-config@workspace:packages/config-webpack":
+"@essex/webpack-config@workspace:^, @essex/webpack-config@workspace:packages/config-webpack":
   version: 0.0.0-use.local
   resolution: "@essex/webpack-config@workspace:packages/config-webpack"
   dependencies:
-    "@essex/swc-opts": "workspace:packages/util-swc-opts"
-    "@essex/tsconfig-node": "workspace:packages/config-ts-node"
+    "@essex/swc-opts": "workspace:^"
+    "@essex/tsconfig-node": "workspace:^"
     "@swc/cli": ^0.1.55
     "@swc/core": 1.2.147
     "@types/debug": ^4.1.7
@@ -2513,7 +2515,7 @@ __metadata:
     tsconfig-paths-webpack-plugin: ^3.5.2
     tslib: ^2.3.1
     typescript: ^4.6.2
-    webpack: ^5.69.1
+    webpack: ^5.70.0
     webpack-dev-server: ^4.7.4
   peerDependencies:
     typescript: ">= 4 <5"
@@ -5819,6 +5821,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"enhanced-resolve@npm:^5.9.2":
+  version: 5.9.2
+  resolution: "enhanced-resolve@npm:5.9.2"
+  dependencies:
+    graceful-fs: ^4.2.4
+    tapable: ^2.2.0
+  checksum: 792b7a01abb4ee4433b658c71f92d5948675938e0c03cad1732abe843b87395f15cb880ace4f819f78ead94163278283afc79b8be63c0eddca8ab45f7d8c515d
+  languageName: node
+  linkType: hard
+
 "entities@npm:^2.0.0":
   version: 2.2.0
   resolution: "entities@npm:2.2.0"
@@ -6159,14 +6171,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^8.4.0":
-  version: 8.4.0
-  resolution: "eslint-config-prettier@npm:8.4.0"
+"eslint-config-prettier@npm:^8.5.0":
+  version: 8.5.0
+  resolution: "eslint-config-prettier@npm:8.5.0"
   peerDependencies:
     eslint: ">=7.0.0"
   bin:
     eslint-config-prettier: bin/cli.js
-  checksum: ee8dc343f1fed15dc0658e190a966cc23644477f2331a7f56ae2bb79dd74892e3cde8ea5c142e7a3329a8291a1de041e13ca96e54d0c85ff4a2aba13390c5f10
+  checksum: 0d0f5c32e7a0ad91249467ce71ca92394ccd343178277d318baf32063b79ea90216f4c81d1065d60f96366fdc60f151d4d68ae7811a58bd37228b84c2083f893
   languageName: node
   linkType: hard
 
@@ -12238,9 +12250,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:5.69.1, webpack@npm:^5.69.1":
-  version: 5.69.1
-  resolution: "webpack@npm:5.69.1"
+"webpack@npm:5.70.0, webpack@npm:^5.70.0":
+  version: 5.70.0
+  resolution: "webpack@npm:5.70.0"
   dependencies:
     "@types/eslint-scope": ^3.7.3
     "@types/estree": ^0.0.51
@@ -12251,7 +12263,7 @@ __metadata:
     acorn-import-assertions: ^1.7.6
     browserslist: ^4.14.5
     chrome-trace-event: ^1.0.2
-    enhanced-resolve: ^5.8.3
+    enhanced-resolve: ^5.9.2
     es-module-lexer: ^0.9.0
     eslint-scope: 5.1.1
     events: ^3.2.0
@@ -12271,7 +12283,7 @@ __metadata:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 490a6e9e4cd9d0ed3b6c7ca08015da2628919fda8fcf9c36f0f6c0e3ad71eaaaf4b0d12753109f22a4faf79fe9a9063552d9708e0ee2352cf8568433b8e296a7
+  checksum: 00439884a9cdd5305aed3ce93735635785a15c5464a6d2cfce87e17727a07585de02420913e82aa85ddd2ae7322175d2cfda6ac0878a17f061cb605e6a7db57a
   languageName: node
   linkType: hard
 

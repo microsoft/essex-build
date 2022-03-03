@@ -25,12 +25,12 @@
 		"ci": "run-s build lint eslint test jest git_is_clean"
 	},
 	"devDependencies": {
-		"@essex/babel-config": "workspace:packages/config-babel",
-		"@essex/eslint-config": "workspace:packages/config-eslint",
-		"@essex/eslint-plugin": "workspace:packages/config-eslint-plugin",
-		"@essex/jest-config": "workspace:packages/config-jest",
-		"@essex/prettier-config": "workspace:packages/config-prettier",
-		"@essex/scripts": "workspace:packages/scripts",
+		"@essex/babel-config": "workspace:^",
+		"@essex/eslint-config": "workspace:^",
+		"@essex/eslint-plugin": "workspace:^",
+		"@essex/jest-config": "workspace:^",
+		"@essex/prettier-config": "workspace:^",
+		"@essex/scripts": "workspace:^",
 		"@types/eslint": "^8.4.1",
 		"@types/jest": "^27.4.1",
 		"@typescript-eslint/eslint-plugin": "^5.13.0",
