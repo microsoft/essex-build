@@ -1,9 +1,14 @@
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
+/* eslint-disable @essex/adjacent-await */
+import { BuildMode } from '../../types.mjs'
 import {
 	readPublishedPackageJson,
 	readTargetPackageJson,
 } from '../../util/package.mjs'
 import { subtaskSuccess, warn } from '../../util/tasklogger.mjs'
-import { BuildMode } from '../../types.mjs'
 
 const note = `Encountered package verification errors. Note that these may be fixed directly or using the "pkg.publishConfig" field used by yarn.
 `
@@ -20,6 +25,8 @@ export async function verifyPackage(mode: BuildMode) {
 		case BuildMode.legacy:
 			verifyLegacyMode(pkg)
 			break
+		default:
+			throw new Error(`unknown mode "${mode}"`)
 	}
 	subtaskSuccess('verify package.json')
 }

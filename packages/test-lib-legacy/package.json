@@ -12,7 +12,7 @@
 		"clean": "essex clean",
 		"build": "ESSEX_DEBUG=1 essex build --docs --mode legacy",
 		"lint": "essex lint",
-		"test": "jest",
+		"jest": "NODE_OPTIONS=--experimental-vm-modules yarn node $(yarn bin jest) --runInBand",
 		"start": "essex watch"
 	},
 	"repository": {

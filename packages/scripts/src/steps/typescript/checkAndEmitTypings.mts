@@ -3,8 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { performance } from 'perf_hooks'
-import ts from 'typescript'
 import chalk from 'chalk'
+import ts from 'typescript'
 import {
 	printPerf,
 	subtaskSuccess,
@@ -36,7 +36,7 @@ export async function checkAndEmitTypings(
 	let hasErrors = false
 	allDiagnostics.forEach(diagnostic => {
 		if (diagnostic.file && diagnostic.start) {
-			if (diagnostic.category == ts.DiagnosticCategory.Error) {
+			if (diagnostic.category === ts.DiagnosticCategory.Error) {
 				hasErrors = true
 			}
 			const { line, character } = ts.getLineAndCharacterOfPosition(

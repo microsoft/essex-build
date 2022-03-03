@@ -2,10 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import fs from 'fs/promises'
+/* eslint-disable @essex/adjacent-await */
 import { existsSync } from 'fs'
-import glob from 'glob'
+import fs from 'fs/promises'
 import path from 'path'
+import glob from 'glob'
 
 export async function buildMdIndex(include: string): Promise<void> {
 	const indexImports: string[] = []

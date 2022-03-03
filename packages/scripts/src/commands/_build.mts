@@ -2,16 +2,17 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+/* eslint-disable @essex/adjacent-await */
 import { existsSync } from 'fs'
 import path from 'path'
 import type { Command } from 'commander'
+import { esmify as processEsm } from '../steps/esmify/index.mjs'
 import { generateTypedocs } from '../steps/typedoc/index.mjs'
 import { compile as compileTypescript } from '../steps/typescript/index.mjs'
-import { esmify as processEsm } from '../steps/esmify/index.mjs'
-import { noop } from '../util/noop.mjs'
 import { verifyExports } from '../steps/verifyExports/index.mjs'
 import { verifyPackage } from '../steps/verifyPackage/index.mjs'
 import { BuildMode } from '../types.mjs'
+import { noop } from '../util/noop.mjs'
 
 export interface BuildCommandOptions {
 	/**

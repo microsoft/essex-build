@@ -1,3 +1,7 @@
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
 export function checkApi(
 	imported: Record<string, unknown>,
 	expected: Record<string, string>,

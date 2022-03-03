@@ -4,12 +4,12 @@
  */
 import { existsSync } from 'fs'
 import path from 'path'
-import type { Command } from 'commander'
-import { compile as compileTypescript } from '../steps/typescript/index.mjs'
-import { esmify as processEsm } from '../steps/esmify/index.mjs'
-import { BuildMode } from '../types.mjs'
-import chokidar from 'chokidar'
 import chalk from 'chalk'
+import chokidar from 'chokidar'
+import type { Command } from 'commander'
+import { esmify as processEsm } from '../steps/esmify/index.mjs'
+import { compile as compileTypescript } from '../steps/typescript/index.mjs'
+import { BuildMode } from '../types.mjs'
 
 export interface WatchCommandOptions {
 	/**

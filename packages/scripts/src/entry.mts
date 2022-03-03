@@ -6,13 +6,13 @@ import { readdirSync } from 'fs'
 import path from 'path'
 import { performance } from 'perf_hooks'
 import { exit } from 'process'
+import { fileURLToPath } from 'url'
 import chalk from 'chalk'
 import { program } from 'commander'
-import { error, info, printPerf, fail, success } from './util/tasklogger.mjs'
-import { isDebug } from './util/isDebug.mjs'
-import { fileURLToPath } from 'url'
-import { readScriptsPackageJson } from './util/package.mjs'
 import { fileUrl } from './util/fileUrl.mjs'
+import { isDebug } from './util/isDebug.mjs'
+import { readScriptsPackageJson } from './util/package.mjs'
+import { error, info, printPerf, fail, success } from './util/tasklogger.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -50,9 +50,9 @@ async function loadCommand(file: string): Promise<void> {
 	}
 }
 
-function loadAllCommands(): Promise<void> {
+async function loadAllCommands(): Promise<void> {
 	const commands = readdirSync(commandDir)
-	return Promise.all(commands.map(loadCommand)).then(() => {})
+	await Promise.all(commands.map(loadCommand))
 }
 
 async function bootstrap(command: string) {
