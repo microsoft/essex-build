@@ -18,7 +18,7 @@
 		"test": "yarn workspaces foreach -piv --all run test",
 		"version": "yarn workspaces foreach --all -ivd version",
 		"release": "yarn workspaces foreach --all -pv npm publish --tolerate-republish --access public",
-		"jest": "jest",
+		"jest": "NODE_OPTIONS=--experimental-vm-modules yarn node $(yarn bin jest) --runInBand",
 		"eslint": "ESSEX_DEBUG=1 yarn essex lint --fix",
 		"prettify": "essex prettify",
 		"git_is_clean": "yarn essex git-is-clean",

@@ -5,7 +5,10 @@
 import fs from 'fs'
 import path from 'path'
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const jszip = require('jszip')
+import { fileURLToPath } from 'url'
+import jszip from 'jszip'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 describe('zipped archives', () => {
 	it('can unpack a flat star glob', async () => {
