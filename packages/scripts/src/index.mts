@@ -11,7 +11,10 @@
  * @author Chris Ferdinandi
  * @license MIT
  */
+import './entry.mjs'
+
 if (!String.prototype.replaceAll) {
+	/* eslint-disable-next-line @typescript-eslint/no-extra-semi */
 	;(String as any).prototype.replaceAll = function (
 		str: string | RegExp,
 		newStr: string,
@@ -27,5 +30,3 @@ if (!String.prototype.replaceAll) {
 		return this.replace(new RegExp(str, 'g'), newStr)
 	}
 }
-
-import './entry.mjs'

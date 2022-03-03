@@ -4,8 +4,8 @@
  */
 import { existsSync } from 'fs'
 import path from 'path'
-import type { Job } from '@essex/shellrunner'
 import { fileURLToPath } from 'url'
+import type { Job } from '@essex/shellrunner'
 import { readTargetPackageJson } from '../../util/package.mjs'
 
 const __filename = fileURLToPath(import.meta.url)

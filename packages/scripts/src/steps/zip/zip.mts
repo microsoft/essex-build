@@ -2,16 +2,17 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { promises as fs, createWriteStream, existsSync, mkdirSync } from 'fs'
 import { resolve, dirname, join, relative } from 'path'
 import archiver from 'archiver'
 import chalk from 'chalk'
 import glob from 'glob'
-import ProgressBar from 'progress'
-import { error, info, traceFile } from '../../util/tasklogger.mjs'
-import { isDebug } from '../../util/isDebug.mjs'
 // @ts-ignore
 import format from 'human-format'
+import ProgressBar from 'progress'
+import { isDebug } from '../../util/isDebug.mjs'
+import { error, info, traceFile } from '../../util/tasklogger.mjs'
 
 export interface ZipCommandOptions {
 	baseDir: string

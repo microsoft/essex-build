@@ -2,10 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { run } from '@essex/shellrunner'
 import type { Command } from 'commander'
 import { eslint } from '../steps/eslint/index.mjs'
 import { prettyQuick } from '../steps/pretty-quick/index.mjs'
-import { run } from '@essex/shellrunner'
 
 interface LintCommandOptions {
 	fix?: boolean

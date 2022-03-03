@@ -5,6 +5,10 @@
 import type { Command } from 'commander'
 import { initLib, initMonorepo } from '../steps/init/index.mjs'
 
+interface InitCommandOptions {
+	lib?: boolean
+}
+
 export default function init(program: Command): void {
 	program
 		.command('init')
@@ -13,10 +17,6 @@ export default function init(program: Command): void {
 		.action(async (options: InitCommandOptions): Promise<any> => {
 			await execute(options)
 		})
-}
-
-interface InitCommandOptions {
-	lib?: boolean
 }
 
 function execute(config: InitCommandOptions): Promise<number> {

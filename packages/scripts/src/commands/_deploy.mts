@@ -5,16 +5,16 @@
 import type { Command } from 'commander'
 import { deployBlob } from '../steps/azure/index.mjs'
 
+enum DeployType {
+	AzureBlobStorage = 'azure-blob-storage',
+}
+
 interface DeployCommandOptions {
 	verbose: boolean
 	type: DeployType
 	storageAccount: string
 	storageAccountKey: string
 	paths: string
-}
-
-enum DeployType {
-	AzureBlobStorage = 'azure-blob-storage',
 }
 
 export default function deploy(program: Command): void {
