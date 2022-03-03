@@ -4,7 +4,7 @@
 	"version": "20.0.1",
 	"license": "MIT",
 	"devDependencies": {
-		"@essex/eslint-plugin": "workspace:packages/config-eslint-plugin"
+		"@essex/eslint-plugin": "workspace:^"
 	},
 	"peerDependencies": {
 		"@essex/eslint-plugin": ">=20.0.2",
