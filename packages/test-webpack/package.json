@@ -1,6 +1,6 @@
 {
 	"name": "@essex/test-webapp-webpack",
-	"version": "20.0.1",
+	"version": "20.0.2",
 	"private": true,
 	"scripts": {
 		"clean": "essex clean",

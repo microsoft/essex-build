@@ -1,6 +1,6 @@
 {
 	"name": "@essex/test-lib-legacy",
-	"version": "20.0.1",
+	"version": "20.0.2",
 	"private": true,
 	"main": "src/index.ts",
 	"publishConfig": {
