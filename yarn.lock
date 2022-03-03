@@ -2086,32 +2086,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/build@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@essex/build@workspace:."
-  dependencies:
-    "@essex/babel-config": "workspace:^"
-    "@essex/eslint-config": "workspace:^"
-    "@essex/eslint-plugin": "workspace:^"
-    "@essex/jest-config": "workspace:^"
-    "@essex/prettier-config": "workspace:^"
-    "@essex/scripts": "workspace:^"
-    "@types/eslint": ^8.4.1
-    "@types/jest": ^27.4.1
-    "@typescript-eslint/eslint-plugin": ^5.13.0
-    "@typescript-eslint/parser": ^5.13.0
-    cross-env: ^7.0.3
-    eslint: ^8.10.0
-    eslint-import-resolver-node: ^0.3.6
-    husky: ^7.0.4
-    jest: ^27.5.1
-    lint-staged: ^12.3.4
-    npm-run-all: ^4.1.5
-    prettier: ^2.5.1
-    typescript: ^4.6.2
-  languageName: unknown
-  linkType: soft
-
 "@essex/eslint-config@workspace:^, @essex/eslint-config@workspace:packages/config-eslint":
   version: 0.0.0-use.local
   resolution: "@essex/eslint-config@workspace:packages/config-eslint"
@@ -6448,6 +6422,32 @@ __metadata:
   checksum: ebc17b1a33c51cef46fdc28b958994b1dc43cd2e86237515cbc3b4e5d2be6a811b2315d0a1a4d9d340b6d2308b15322f5c8291059521cc5f4802f65e7ec32837
   languageName: node
   linkType: hard
+
+"essex-js-build@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "essex-js-build@workspace:."
+  dependencies:
+    "@essex/babel-config": "workspace:^"
+    "@essex/eslint-config": "workspace:^"
+    "@essex/eslint-plugin": "workspace:^"
+    "@essex/jest-config": "workspace:^"
+    "@essex/prettier-config": "workspace:^"
+    "@essex/scripts": "workspace:^"
+    "@types/eslint": ^8.4.1
+    "@types/jest": ^27.4.1
+    "@typescript-eslint/eslint-plugin": ^5.13.0
+    "@typescript-eslint/parser": ^5.13.0
+    cross-env: ^7.0.3
+    eslint: ^8.10.0
+    eslint-import-resolver-node: ^0.3.6
+    husky: ^7.0.4
+    jest: ^27.5.1
+    lint-staged: ^12.3.4
+    npm-run-all: ^4.1.5
+    prettier: ^2.5.1
+    typescript: ^4.6.2
+  languageName: unknown
+  linkType: soft
 
 "estraverse@npm:^4.1.1":
   version: 4.3.0

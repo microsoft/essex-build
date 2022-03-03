@@ -1,5 +1,5 @@
 {
-	"name": "@essex/build",
+	"name": "essex-js-build",
 	"private": true,
 	"license": "MIT",
 	"contributors": [
@@ -10,14 +10,14 @@
 	"scripts": {
 		"preinstall": "npx only-allow yarn",
 		"postinstall": "husky install",
-		"clean_primary": "yarn workspaces foreach --exclude '@essex/build' --exclude '@essex/test-*' -piv run clean",
+		"clean_primary": "yarn workspaces foreach --exclude essex-js-build --exclude '@essex/test-*' -piv run clean",
 		"clean_tests": "yarn workspaces foreach --include '@essex/test-*' -piv run clean",
 		"clean": "run-s clean_tests clean_primary",
 		"build": "yarn workspaces foreach -piv --topological-dev run build",
 		"lint": "yarn workspaces foreach -piv --all run lint",
 		"test": "yarn workspaces foreach -piv --all run test",
 		"version": "yarn workspaces foreach --all -ivd version",
-		"release": "yarn workspaces foreach --all -pv npm publish --tolerate-republish --access public",
+		"release": "yarn workspaces foreach --all --exclude '@essex/test-*' --exclude essex-js-build -pv npm publish --tolerate-republish --access public",
 		"jest": "NODE_OPTIONS=--experimental-vm-modules yarn node $(yarn bin jest) --runInBand",
 		"eslint": "ESSEX_DEBUG=1 yarn essex lint --fix",
 		"prettify": "essex prettify",
