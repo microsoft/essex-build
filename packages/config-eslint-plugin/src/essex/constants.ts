@@ -5,4 +5,3 @@
 export const TYPESCRIPT_FILES = ['**/*.ts', '**/*.tsx', '**/*.cts', '**/*.mts']
 export const JEST_FILES = ['**/*.spec.*', '**/*.test.*']
 export const REACT_FILES = ['**/*.jsx', '**/*.tsx']
-export const REACT_TS_FILES = ['**/*.tsx']
