@@ -9,13 +9,11 @@ import {
 	TYPESCRIPT_FILES,
 	JEST_FILES,
 	REACT_FILES,
-	REACT_TS_FILES,
 } from '../essex/constants.js'
 import {
 	defaultRules,
 	tsRules,
 	reactRules,
-	reactTsRules,
 	jestRules,
 } from '../essex/ruleConfigurations.js'
 
@@ -65,8 +63,6 @@ const baseConfig = {
 				// typescript-eslint specific options
 				warnOnUnsupportedTypeScriptVersion: false,
 			},
-			// If adding a typescript-eslint version of an existing ESLint rule,
-			// make sure to disable the ESLint rule here.
 			rules: tsRules,
 		},
 		/**
@@ -99,13 +95,6 @@ const baseConfig = {
 				},
 			},
 			rules: reactRules,
-		},
-		/**
-		 * TypeScript+React Rules
-		 */
-		{
-			files: REACT_TS_FILES,
-			rules: reactTsRules,
 		},
 	],
 }
