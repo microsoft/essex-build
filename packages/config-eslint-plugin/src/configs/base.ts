@@ -23,7 +23,17 @@ const baseConfig = {
 		'eslint-plugin-import',
 		'eslint-plugin-react-hooks',
 	],
-	parser: '@babel/eslint-parser',
+	parser: '@typescript-eslint/parser',
+	parserOptions: {
+		ecmaVersion: 'latest',
+		sourceType: 'module',
+		lib: ['ESNext'],
+		ecmaFeatures: {
+			jsx: true,
+		},
+		// typescript-eslint specific options
+		warnOnUnsupportedTypeScriptVersion: false,
+	},
 	extends: [
 		'prettier',
 		'plugin:import/recommended',
@@ -49,11 +59,6 @@ const baseConfig = {
 		{
 			files: ['**/*.ts', '**/*.tsx', '**/*.cts', '**/*.mts'],
 			parser: '@typescript-eslint/parser',
-			plugins: ['@typescript-eslint/eslint-plugin'],
-			extends: [
-				'plugin:import/typescript',
-				'plugin:@typescript-eslint/recommended',
-			],
 			parserOptions: {
 				ecmaVersion: 'latest',
 				sourceType: 'module',
@@ -64,6 +69,11 @@ const baseConfig = {
 				// typescript-eslint specific options
 				warnOnUnsupportedTypeScriptVersion: false,
 			},
+			plugins: ['@typescript-eslint/eslint-plugin'],
+			extends: [
+				'plugin:import/typescript',
+				'plugin:@typescript-eslint/recommended',
+			],
 			rules: { ...defaultRules, ...reactRules, ...tsRules },
 		},
 		/**
@@ -72,7 +82,9 @@ const baseConfig = {
 		{
 			files: ['**/*.js', '**/*.jsx', '**/*.cjs', '**/*.mjs'],
 			parser: '@babel/eslint-parser',
-			plugins: ['@typescript-eslint/eslint-plugin'],
+			parserOptions: {
+				requireConfigFile: false,
+			},
 			rules: { ...defaultRules, ...reactRules },
 		},
 		/**

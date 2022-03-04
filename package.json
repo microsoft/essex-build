@@ -25,7 +25,6 @@
 		"ci": "run-s build lint eslint test jest git_is_clean"
 	},
 	"devDependencies": {
-		"@essex/babel-config": "workspace:^",
 		"@essex/eslint-config": "workspace:^",
 		"@essex/eslint-plugin": "workspace:^",
 		"@essex/jest-config": "workspace:^",

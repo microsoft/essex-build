@@ -2,9 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { existsSync } from 'fs'
 import { run } from '@essex/shellrunner'
 import type { Command } from 'commander'
-import { existsSync } from 'fs'
 import { eslint } from '../steps/eslint/index.mjs'
 import { prettyQuick } from '../steps/pretty-quick/index.mjs'
 
