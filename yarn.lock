@@ -2077,7 +2077,7 @@ __metadata:
     "@essex/scripts": "workspace:^"
     "@essex/tsconfig-node": "workspace:^"
     "@swc/cli": ^0.1.55
-    "@swc/core": 1.2.147
+    "@swc/core": 1.2.148
     "@types/node": ^17.0.21
     babel-plugin-transform-typescript-metadata: ^0.3.2
     rimraf: ^3.0.2
@@ -2108,7 +2108,7 @@ __metadata:
     "@babel/types": ^7.17.0
     "@essex/tsconfig-node": "workspace:^"
     "@swc/cli": ^0.1.55
-    "@swc/core": 1.2.147
+    "@swc/core": 1.2.148
     "@types/node": ^17.0.21
     "@typescript-eslint/eslint-plugin": ^5.13.0
     "@typescript-eslint/parser": ^5.13.0
@@ -2141,7 +2141,7 @@ __metadata:
     "@essex/swc-opts": "workspace:^"
     "@essex/tsconfig-node": "workspace:^"
     "@swc/cli": ^0.1.55
-    "@swc/core": 1.2.147
+    "@swc/core": 1.2.148
     "@swc/jest": ^0.2.20
     "@types/jest": ^27.4.1
     "@types/lodash": ^4.14.179
@@ -2175,7 +2175,7 @@ __metadata:
     "@essex/swc-opts": "workspace:^"
     "@essex/tsconfig-node": "workspace:^"
     "@swc/cli": ^0.1.55
-    "@swc/core": 1.2.147
+    "@swc/core": 1.2.148
     "@types/archiver": ^5.3.1
     "@types/debug": ^4.1.7
     "@types/eslint": ^8.4.1
@@ -2250,7 +2250,7 @@ __metadata:
   dependencies:
     "@essex/tsconfig-node": "workspace:^"
     "@swc/cli": ^0.1.55
-    "@swc/core": 1.2.147
+    "@swc/core": 1.2.148
     "@types/debug": ^4.1.7
     "@types/node": ^17.0.21
     cross-spawn: ^7.0.3
@@ -2265,7 +2265,7 @@ __metadata:
   resolution: "@essex/swc-opts@workspace:packages/util-swc-opts"
   dependencies:
     "@essex/tsconfig-node": "workspace:^"
-    "@swc/core": 1.2.147
+    "@swc/core": 1.2.148
     "@types/lodash": ^4.14.179
     "@types/node": ^17.0.21
     lodash: ^4.17.21
@@ -2468,14 +2468,14 @@ __metadata:
     "@essex/swc-opts": "workspace:^"
     "@essex/tsconfig-node": "workspace:^"
     "@swc/cli": ^0.1.55
-    "@swc/core": 1.2.147
+    "@swc/core": 1.2.148
     "@types/debug": ^4.1.7
     "@types/express": ^4.17.13
     "@types/lodash": ^4.14.179
     "@types/node": ^17.0.21
     "@types/webpack": ^5.28.0
     "@types/webpack-dev-server": ^4.7.2
-    css-loader: ^6.6.0
+    css-loader: ^6.7.0
     debug: ^4.3.3
     fork-ts-checker-webpack-plugin: ^7.2.1
     html-webpack-plugin: ^5.5.0
@@ -2892,114 +2892,114 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core-android-arm-eabi@npm:1.2.147":
-  version: 1.2.147
-  resolution: "@swc/core-android-arm-eabi@npm:1.2.147"
+"@swc/core-android-arm-eabi@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-android-arm-eabi@npm:1.2.148"
   conditions: os=android & cpu=arm
   languageName: node
   linkType: hard
 
-"@swc/core-android-arm64@npm:1.2.147":
-  version: 1.2.147
-  resolution: "@swc/core-android-arm64@npm:1.2.147"
+"@swc/core-android-arm64@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-android-arm64@npm:1.2.148"
   conditions: os=android & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-arm64@npm:1.2.147":
-  version: 1.2.147
-  resolution: "@swc/core-darwin-arm64@npm:1.2.147"
+"@swc/core-darwin-arm64@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-darwin-arm64@npm:1.2.148"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-x64@npm:1.2.147":
-  version: 1.2.147
-  resolution: "@swc/core-darwin-x64@npm:1.2.147"
+"@swc/core-darwin-x64@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-darwin-x64@npm:1.2.148"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core-freebsd-x64@npm:1.2.147":
-  version: 1.2.147
-  resolution: "@swc/core-freebsd-x64@npm:1.2.147"
+"@swc/core-freebsd-x64@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-freebsd-x64@npm:1.2.148"
   conditions: os=freebsd & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm-gnueabihf@npm:1.2.147":
-  version: 1.2.147
-  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.2.147"
+"@swc/core-linux-arm-gnueabihf@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.2.148"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-gnu@npm:1.2.147":
-  version: 1.2.147
-  resolution: "@swc/core-linux-arm64-gnu@npm:1.2.147"
+"@swc/core-linux-arm64-gnu@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-linux-arm64-gnu@npm:1.2.148"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-musl@npm:1.2.147":
-  version: 1.2.147
-  resolution: "@swc/core-linux-arm64-musl@npm:1.2.147"
+"@swc/core-linux-arm64-musl@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-linux-arm64-musl@npm:1.2.148"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-gnu@npm:1.2.147":
-  version: 1.2.147
-  resolution: "@swc/core-linux-x64-gnu@npm:1.2.147"
+"@swc/core-linux-x64-gnu@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-linux-x64-gnu@npm:1.2.148"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-musl@npm:1.2.147":
-  version: 1.2.147
-  resolution: "@swc/core-linux-x64-musl@npm:1.2.147"
+"@swc/core-linux-x64-musl@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-linux-x64-musl@npm:1.2.148"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core-win32-arm64-msvc@npm:1.2.147":
-  version: 1.2.147
-  resolution: "@swc/core-win32-arm64-msvc@npm:1.2.147"
+"@swc/core-win32-arm64-msvc@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-win32-arm64-msvc@npm:1.2.148"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-win32-ia32-msvc@npm:1.2.147":
-  version: 1.2.147
-  resolution: "@swc/core-win32-ia32-msvc@npm:1.2.147"
+"@swc/core-win32-ia32-msvc@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-win32-ia32-msvc@npm:1.2.148"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@swc/core-win32-x64-msvc@npm:1.2.147":
-  version: 1.2.147
-  resolution: "@swc/core-win32-x64-msvc@npm:1.2.147"
+"@swc/core-win32-x64-msvc@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core-win32-x64-msvc@npm:1.2.148"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core@npm:1.2.147":
-  version: 1.2.147
-  resolution: "@swc/core@npm:1.2.147"
+"@swc/core@npm:1.2.148":
+  version: 1.2.148
+  resolution: "@swc/core@npm:1.2.148"
   dependencies:
-    "@swc/core-android-arm-eabi": 1.2.147
-    "@swc/core-android-arm64": 1.2.147
-    "@swc/core-darwin-arm64": 1.2.147
-    "@swc/core-darwin-x64": 1.2.147
-    "@swc/core-freebsd-x64": 1.2.147
-    "@swc/core-linux-arm-gnueabihf": 1.2.147
-    "@swc/core-linux-arm64-gnu": 1.2.147
-    "@swc/core-linux-arm64-musl": 1.2.147
-    "@swc/core-linux-x64-gnu": 1.2.147
-    "@swc/core-linux-x64-musl": 1.2.147
-    "@swc/core-win32-arm64-msvc": 1.2.147
-    "@swc/core-win32-ia32-msvc": 1.2.147
-    "@swc/core-win32-x64-msvc": 1.2.147
+    "@swc/core-android-arm-eabi": 1.2.148
+    "@swc/core-android-arm64": 1.2.148
+    "@swc/core-darwin-arm64": 1.2.148
+    "@swc/core-darwin-x64": 1.2.148
+    "@swc/core-freebsd-x64": 1.2.148
+    "@swc/core-linux-arm-gnueabihf": 1.2.148
+    "@swc/core-linux-arm64-gnu": 1.2.148
+    "@swc/core-linux-arm64-musl": 1.2.148
+    "@swc/core-linux-x64-gnu": 1.2.148
+    "@swc/core-linux-x64-musl": 1.2.148
+    "@swc/core-win32-arm64-msvc": 1.2.148
+    "@swc/core-win32-ia32-msvc": 1.2.148
+    "@swc/core-win32-x64-msvc": 1.2.148
   dependenciesMeta:
     "@swc/core-android-arm-eabi":
       optional: true
@@ -3029,7 +3029,7 @@ __metadata:
       optional: true
   bin:
     swcx: run_swcx.js
-  checksum: 6cf22c758e1a2fd018b809662a3a12e1d3e1be3a261ed76e7372e5325ad9447ae1538cce54964bdbe00343318b6810524715e0d294bc4c32d5e8cd4c170e9a23
+  checksum: 3c3c68b36b2a1913246c029e73b84a1615eb4ba78bc478e70c3ba51d0c467d6d2e55d55b3936366a0a99bc7370028b5bd82931626515501d639e42397e039d2e
   languageName: node
   linkType: hard
 
@@ -5335,12 +5335,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-loader@npm:^6.6.0":
-  version: 6.6.0
-  resolution: "css-loader@npm:6.6.0"
+"css-loader@npm:^6.7.0":
+  version: 6.7.0
+  resolution: "css-loader@npm:6.7.0"
   dependencies:
     icss-utils: ^5.1.0
-    postcss: ^8.4.5
+    postcss: ^8.4.7
     postcss-modules-extract-imports: ^3.0.0
     postcss-modules-local-by-default: ^4.0.0
     postcss-modules-scope: ^3.0.0
@@ -5349,7 +5349,7 @@ __metadata:
     semver: ^7.3.5
   peerDependencies:
     webpack: ^5.0.0
-  checksum: cc4117320c2bfbbc3e84cdf811fb29219f1900cf4dcebb7dbf916b7cbdfc193cd9017d19b62be2d57d22baeb791919de52bf2e3086213d184875813817ac290f
+  checksum: 222bbde35315f4cf723fb1dd3a7c5a21e073de2018e8a9475f89631a090f6fd829ef756972a0f15ed6298f6c852d0f45e46ee729625256397ee17638c0b4ae9d
   languageName: node
   linkType: hard
 
@@ -9236,16 +9236,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoid@npm:^3.1.30":
-  version: 3.1.30
-  resolution: "nanoid@npm:3.1.30"
-  bin:
-    nanoid: bin/nanoid.cjs
-  checksum: 276d0d4b0c41c46aeefec5f09f093e4085a2352d06881c845db22b84f8ef72cc8defae6d76bfb1d8a2a128eb2dec42ab148d16582be4e7754c97905806ef57b6
-  languageName: node
-  linkType: hard
-
-"nanoid@npm:^3.2.0":
+"nanoid@npm:^3.2.0, nanoid@npm:^3.3.1":
   version: 3.3.1
   resolution: "nanoid@npm:3.3.1"
   bin:
@@ -9934,17 +9925,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.5":
-  version: 8.4.5
-  resolution: "postcss@npm:8.4.5"
-  dependencies:
-    nanoid: ^3.1.30
-    picocolors: ^1.0.0
-    source-map-js: ^1.0.1
-  checksum: b78abdd89c10f7b48f4bdcd376104a19d6e9c7495ab521729bdb3df315af6c211360e9f06887ad3bc0ab0f61a04b91d68ea11462997c79cced58b9ccd66fac07
-  languageName: node
-  linkType: hard
-
 "postcss@npm:^8.4.6":
   version: 8.4.6
   resolution: "postcss@npm:8.4.6"
@@ -9953,6 +9933,17 @@ __metadata:
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
   checksum: 60e7808f39c4a9d0fa067bfd5eb906168c4eb6d3ff0093f7d314d1979b001a16363deedccd368a7df869c63ad4ae350d27da439c94ff3fb0f8fc93d49fe38a90
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.4.7":
+  version: 8.4.7
+  resolution: "postcss@npm:8.4.7"
+  dependencies:
+    nanoid: ^3.3.1
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: a515ed36622edbee1d3ba153298d3b62ae9826dfa6de19204c2a6f975c8d3ad36808423b5119a9d82b78efd486de3ce35a1faf882a36ac8aa09492be4fbb7fe1
   languageName: node
   linkType: hard
 
@@ -11031,13 +11022,6 @@ __metadata:
     ip: ^1.1.5
     smart-buffer: ^4.1.0
   checksum: 2ca9d616e424f645838ebaabb04f85d94ea999e0f8393dc07f86c435af22ed88cb83958feeabd1bb7bc537c635ed47454255635502c6808a6df61af1f41af750
-  languageName: node
-  linkType: hard
-
-"source-map-js@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "source-map-js@npm:1.0.1"
-  checksum: 22606113d62bbd468712b0cb0c46e9a8629de7eb081049c62a04d977a211abafd7d61455617f8b78daba0b6c0c7e7c88f8c6b5aaeacffac0a6676ecf5caac5ce
   languageName: node
   linkType: hard
 

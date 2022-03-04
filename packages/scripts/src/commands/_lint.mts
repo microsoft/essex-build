@@ -77,6 +77,21 @@ async function getStagedFiles(): Promise<string[]> {
 		if (files.length === 0) {
 			return DEFAULT_FILESET
 		}
-		return files.filter(f => existsSync(f))
+		return files.filter(existsSync).filter(isLintable)
 	}
 }
+
+function isLintable(file: string): boolean {
+	return LINTABLE_EXTENSIONS.some(x => file.endsWith(x))
+}
+
+const LINTABLE_EXTENSIONS = [
+	'.ts',
+	'.tsx',
+	'.cts',
+	'.mts',
+	'.js',
+	'.jsx',
+	'.cjs',
+	'.mjs',
+]
