@@ -4,6 +4,7 @@
  */
 import { run } from '@essex/shellrunner'
 import type { Command } from 'commander'
+import { existsSync } from 'fs'
 import { eslint } from '../steps/eslint/index.mjs'
 import { prettyQuick } from '../steps/pretty-quick/index.mjs'
 
@@ -76,6 +77,6 @@ async function getStagedFiles(): Promise<string[]> {
 		if (files.length === 0) {
 			return DEFAULT_FILESET
 		}
-		return files
+		return files.filter(f => existsSync(f))
 	}
 }
