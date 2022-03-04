@@ -1,5 +1,0 @@
-releases:
-  "@essex/webpack-config": patch
-
-declined:
-  - "@essex/test-webapp-webpack"
