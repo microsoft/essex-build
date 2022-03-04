@@ -11,7 +11,6 @@ import type { ConfigurationManager } from '../inputConfig'
 export function getPlugins({
 	isDevelopment,
 	typecheck,
-	env,
 	extendedEnvironment,
 	extendedHtmlWebpackPlugin,
 	extendedPlugins,
@@ -25,7 +24,6 @@ export function getPlugins({
 			...extendedHtmlWebpackPlugin,
 		}),
 		new EnvironmentPlugin({
-			NODE_ENV: env,
 			...extendedEnvironment,
 		}),
 		new MiniCssExtractPlugin({
