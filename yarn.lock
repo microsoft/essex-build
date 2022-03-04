@@ -6427,7 +6427,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "essex-js-build@workspace:."
   dependencies:
-    "@essex/babel-config": "workspace:^"
     "@essex/eslint-config": "workspace:^"
     "@essex/eslint-plugin": "workspace:^"
     "@essex/jest-config": "workspace:^"
