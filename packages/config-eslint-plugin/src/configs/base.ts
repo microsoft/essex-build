@@ -6,11 +6,6 @@
 // Based on eslint-config-react-app
 // https://github.com/facebook/create-react-app/blob/master/packages/eslint-config-react-app/index.js
 import {
-	TYPESCRIPT_FILES,
-	JEST_FILES,
-	REACT_FILES,
-} from '../essex/constants.js'
-import {
 	defaultRules,
 	tsRules,
 	reactRules,
@@ -28,11 +23,23 @@ const baseConfig = {
 		'eslint-plugin-import',
 		'eslint-plugin-react-hooks',
 	],
-	parser: '@babel/eslint-parser',
+	parser: '@typescript-eslint/parser',
+	parserOptions: {
+		ecmaVersion: 'latest',
+		sourceType: 'module',
+		lib: ['ESNext'],
+		ecmaFeatures: {
+			jsx: true,
+		},
+		// typescript-eslint specific options
+		warnOnUnsupportedTypeScriptVersion: false,
+	},
 	extends: [
-		'plugin:react-hooks/recommended',
 		'prettier',
 		'plugin:import/recommended',
+		'plugin:react/recommended',
+		'plugin:react-hooks/recommended',
+		'plugin:jsx-a11y/recommended',
 	],
 	env: {
 		browser: true,
@@ -40,19 +47,18 @@ const baseConfig = {
 		es6: true,
 		node: true,
 	},
-	rules: defaultRules,
+	settings: {
+		react: {
+			version: 'detect',
+		},
+	},
 	overrides: [
 		/**
 		 * TypeScript Rules
 		 */
 		{
-			files: TYPESCRIPT_FILES,
+			files: ['**/*.ts', '**/*.tsx', '**/*.cts', '**/*.mts'],
 			parser: '@typescript-eslint/parser',
-			plugins: ['@typescript-eslint/eslint-plugin'],
-			extends: [
-				'plugin:import/typescript',
-				'plugin:@typescript-eslint/recommended',
-			],
 			parserOptions: {
 				ecmaVersion: 'latest',
 				sourceType: 'module',
@@ -63,13 +69,29 @@ const baseConfig = {
 				// typescript-eslint specific options
 				warnOnUnsupportedTypeScriptVersion: false,
 			},
-			rules: tsRules,
+			plugins: ['@typescript-eslint/eslint-plugin'],
+			extends: [
+				'plugin:import/typescript',
+				'plugin:@typescript-eslint/recommended',
+			],
+			rules: { ...defaultRules, ...reactRules, ...tsRules },
+		},
+		/**
+		 * JS Rules
+		 */
+		{
+			files: ['**/*.js', '**/*.jsx', '**/*.cjs', '**/*.mjs'],
+			parser: '@babel/eslint-parser',
+			parserOptions: {
+				requireConfigFile: false,
+			},
+			rules: { ...defaultRules, ...reactRules },
 		},
 		/**
 		 * Jest Rules
 		 */
 		{
-			files: JEST_FILES,
+			files: ['**/*.spec.*', '**/*.test.*'],
 			plugins: ['eslint-plugin-jest'],
 			extends: ['plugin:jest/recommended', 'plugin:jest/style'],
 			settings: {
@@ -80,21 +102,7 @@ const baseConfig = {
 			env: {
 				'jest/globals': true,
 			},
-			rules: jestRules,
-		},
-		/**
-		 * React Rules
-		 */
-		{
-			files: REACT_FILES,
-			extends: ['plugin:react/recommended', 'plugin:jsx-a11y/recommended'],
-			plugins: ['eslint-plugin-react', 'eslint-plugin-jsx-a11y'],
-			settings: {
-				react: {
-					version: 'detect',
-				},
-			},
-			rules: reactRules,
+			rules: { ...jestRules },
 		},
 	],
 }

@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { existsSync } from 'fs'
 import { run } from '@essex/shellrunner'
 import type { Command } from 'commander'
 import { eslint } from '../steps/eslint/index.mjs'
@@ -76,6 +77,6 @@ async function getStagedFiles(): Promise<string[]> {
 		if (files.length === 0) {
 			return DEFAULT_FILESET
 		}
-		return files
+		return files.filter(f => existsSync(f))
 	}
 }
