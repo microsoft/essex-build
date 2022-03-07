@@ -4,10 +4,10 @@
  */
 import { promises as fs } from 'fs'
 import path from 'path'
+import type { ContainerClient } from '@azure/storage-blob'
 import {
 	BlobServiceClient,
 	StorageSharedKeyCredential,
-	ContainerClient,
 } from '@azure/storage-blob'
 import glob from 'glob'
 import mime from 'mime-types'

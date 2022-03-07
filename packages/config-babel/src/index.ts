@@ -7,7 +7,8 @@ import { join } from 'path'
 /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
 // @ts-ignore
 import { loadJson } from '@essex/babel-config/resolve'
-import { BabelSpecification, createBabelConfig } from './createBabelConfig.js'
+import type { BabelSpecification } from './createBabelConfig.js'
+import { createBabelConfig } from './createBabelConfig.js'
 import { getBrowsersList } from './getBrowsersList.js'
 
 export * from './createBabelConfig.js'

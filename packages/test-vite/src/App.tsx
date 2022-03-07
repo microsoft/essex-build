@@ -2,7 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { FC, useState } from 'react'
+import type { FC } from 'react'
+import { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
 

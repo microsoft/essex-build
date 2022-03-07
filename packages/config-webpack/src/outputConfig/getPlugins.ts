@@ -5,7 +5,8 @@
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import { EnvironmentPlugin, WebpackPluginInstance } from 'webpack'
+import type { WebpackPluginInstance } from 'webpack'
+import { EnvironmentPlugin } from 'webpack'
 import type { ConfigurationManager } from '../inputConfig'
 
 export function getPlugins({
