@@ -1,15 +1,14 @@
 releases:
-  "@essex/eslint-config": minor
-  "@essex/eslint-plugin": minor
-  "@essex/scripts": minor
-
-declined:
-  - "@essex/babel-config"
-  - "@essex/jest-config"
-  - "@essex/test-lib-dual"
-  - "@essex/test-lib-esm"
-  - "@essex/test-lib-legacy"
-  - "@essex/test-lib-md-index"
-  - "@essex/test-webapp-vite"
-  - "@essex/test-webapp-webpack"
-  - "@essex/test-zips"
+  "@essex/babel-config": patch
+  "@essex/eslint-config": patch
+  "@essex/eslint-plugin": patch
+  "@essex/jest-config": patch
+  "@essex/scripts": patch
+  "@essex/test-lib-dual": patch
+  "@essex/test-lib-esm": patch
+  "@essex/test-lib-legacy": patch
+  "@essex/test-lib-md-index": patch
+  "@essex/test-webapp-vite": patch
+  "@essex/test-webapp-webpack": patch
+  "@essex/test-zips": patch
+  "@essex/webpack-config": patch
