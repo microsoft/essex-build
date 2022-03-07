@@ -194,6 +194,14 @@ export const tsRules: Record<string, unknown> = {
 	'no-dupe-class-members': 'off',
 	// 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/477)
 	'no-undef': 'off',
+
+	// Some tooling breaks on joint type/value imports (Vite) - this forces types and values to be imported separately
+	'@typescript-eslint/consistent-type-imports': [
+		'error',
+		{
+			prefer: 'type-imports',
+		},
+	],
 }
 
 export const reactRules: Record<string, unknown> = {
