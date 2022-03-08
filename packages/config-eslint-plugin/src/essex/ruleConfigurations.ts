@@ -243,4 +243,7 @@ export const reactRules: Record<string, unknown> = {
 export const jestRules: Record<string, unknown> = {
 	// Jest @jest-environment directive cause header rule to fail
 	'header/header': 'off',
+
+	// Not helpful for tests where clarity > optimal flow. This rule also actively interferes with acceptance tests
+	'@essex/adjacent-await': 'off',
 }
