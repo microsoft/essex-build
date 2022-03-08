@@ -6,6 +6,7 @@
 	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
 	"scripts": {
 		"build": "tsc --emitDeclarationOnly && swc src -d lib",
+		"build:eslint-plugin": "yarn build",
 		"clean": "rimraf lib"
 	},
 	"files": [
