@@ -5,7 +5,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { existsSync } from 'fs'
 import { join } from 'path'
-import { msHeader } from '../essex/msHeader'
+import { msHeader } from '../essex/msHeader.js'
 
 const HEADER_OVERRIDE = join(process.cwd(), 'header.js')
 const headerFile = existsSync(HEADER_OVERRIDE) ? HEADER_OVERRIDE : msHeader
@@ -140,6 +140,7 @@ export const defaultRules: Record<string, unknown> = {
 	'import/no-amd': 'error',
 	'import/no-anonymous-default-export': 'warn',
 	'import/no-webpack-loader-syntax': 'error',
+	'import/extensions': ['error', 'always', { ignorePackages: true }],
 
 	// Essex Prefs
 	'no-plusplus': 'off',

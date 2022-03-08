@@ -51,6 +51,17 @@ const baseConfig = {
 		react: {
 			version: 'detect',
 		},
+		'import/extensions': [
+			'.js',
+			'.jsx',
+			'.cjs',
+			'.mjs',
+			'.ts',
+			'.tsx',
+			'.cts',
+			'.mts',
+		],
+		'import/ignore': [/\\.(json)$/, /\\.(scss|less|css)$/],
 	},
 	overrides: [
 		/**
