@@ -2,7 +2,7 @@
 	"extends": "@essex/tsconfig-node",
 	"compilerOptions": {
 		"outDir": "lib",
-		"resolveJsonModule": true
+		"declaration": true
 	},
-	"include": ["src/**/*.ts"]
+	"include": ["__tests__"]
 }

@@ -5,13 +5,10 @@
 import dbg from 'debug'
 
 import type { Job } from './types'
+
 const debugLog = dbg('essex:shellrunner')
 
-export function debug(
-	text: string,
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	...args: any[]
-): void {
+export function debug(text: string, ...args: unknown[]): void {
 	debugLog(text, ...args)
 }
 

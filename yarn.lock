@@ -6451,6 +6451,7 @@ __metadata:
     "@essex/jest-config": "workspace:^"
     "@essex/prettier-config": "workspace:^"
     "@essex/scripts": "workspace:^"
+    "@essex/tsconfig-node": "workspace:^"
     "@types/eslint": ^8.4.1
     "@types/jest": ^27.4.1
     "@typescript-eslint/eslint-plugin": ^5.14.0
