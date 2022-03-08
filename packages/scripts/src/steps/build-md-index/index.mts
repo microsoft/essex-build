@@ -5,8 +5,8 @@
 /* eslint-disable @essex/adjacent-await */
 import { existsSync } from 'fs'
 import fs from 'fs/promises'
-import path from 'path'
 import glob from 'glob'
+import path from 'path'
 
 export async function buildMdIndex(include: string): Promise<void> {
 	const indexImports: string[] = []

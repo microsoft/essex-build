@@ -3,9 +3,10 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @essex/adjacent-await */
+import type { Command } from 'commander'
 import { existsSync } from 'fs'
 import path from 'path'
-import type { Command } from 'commander'
+
 import { esmify as processEsm } from '../steps/esmify/index.mjs'
 import { generateTypedocs } from '../steps/typedoc/index.mjs'
 import { compile as compileTypescript } from '../steps/typescript/index.mjs'

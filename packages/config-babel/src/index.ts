@@ -2,11 +2,12 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { existsSync } from 'fs'
-import { join } from 'path'
 /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
 // @ts-ignore
 import { loadJson } from '@essex/babel-config/resolve'
+import { existsSync } from 'fs'
+import { join } from 'path'
+
 import type { BabelSpecification } from './createBabelConfig.js'
 import { createBabelConfig } from './createBabelConfig.js'
 import { getBrowsersList } from './getBrowsersList.js'

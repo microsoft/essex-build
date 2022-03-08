@@ -2,11 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { existsSync, readFileSync } from 'fs'
-import path from 'path'
 import type * as swc from '@swc/core'
+import { existsSync, readFileSync } from 'fs'
 import get from 'lodash/get.js'
 import merge from 'lodash/merge.js'
+import path from 'path'
 
 const SWCRC_FILE = path.join(process.cwd(), '.swcrc')
 

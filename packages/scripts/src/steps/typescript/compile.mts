@@ -3,11 +3,12 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @essex/adjacent-await */
+import { getSwcOptions } from '@essex/swc-opts'
+import * as swc from '@swc/core'
 import fs from 'fs/promises'
 import path from 'path'
 import { performance } from 'perf_hooks'
-import { getSwcOptions } from '@essex/swc-opts'
-import * as swc from '@swc/core'
+
 import { noop } from '../../util/noop.mjs'
 import { printPerf, subtaskSuccess, traceFile } from '../../util/tasklogger.mjs'
 

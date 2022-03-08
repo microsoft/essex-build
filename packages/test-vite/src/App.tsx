@@ -2,10 +2,12 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import './App.css'
+
 import type { FC } from 'react'
 import { useState } from 'react'
+
 import logo from './logo.svg'
-import './App.css'
 
 export const App: FC = function App() {
 	const [count, setCount] = useState(0)

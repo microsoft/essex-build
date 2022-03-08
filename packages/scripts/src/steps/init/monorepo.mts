@@ -4,7 +4,11 @@
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { writeFileSync } from 'fs'
-import { readTargetPackageJson, TARGET_PACKAGE_JSON_PATH } from '../../util/package.mjs'
+
+import {
+	readTargetPackageJson,
+	TARGET_PACKAGE_JSON_PATH,
+} from '../../util/package.mjs'
 import * as log from '../../util/tasklogger.mjs'
 import { copyConfigFile } from './util.mjs'
 

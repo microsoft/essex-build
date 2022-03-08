@@ -2,10 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import get from 'lodash/get.js'
 import { createRequire } from 'module'
 import path from 'path'
 import { performance } from 'perf_hooks'
-import get from 'lodash/get.js'
+
 import { fileUrl } from '../../util/fileUrl.mjs'
 import { readPublishedPackageJson } from '../../util/package.mjs'
 import * as logger from '../../util/tasklogger.mjs'

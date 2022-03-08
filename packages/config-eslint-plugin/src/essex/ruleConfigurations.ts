@@ -5,6 +5,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { existsSync } from 'fs'
 import { join } from 'path'
+
 import { msHeader } from '../essex/msHeader.js'
 
 const HEADER_OVERRIDE = join(process.cwd(), 'header.js')
@@ -141,7 +142,12 @@ export const defaultRules: Record<string, unknown> = {
 	'import/no-anonymous-default-export': 'warn',
 	'import/no-webpack-loader-syntax': 'error',
 	'import/extensions': ['error', 'always', { ignorePackages: true }],
-	'import/order': ['warn', { alphabetize: { order: 'asc' } }],
+	// use simple-import-sort
+	'import/order': 'off',
+
+	// https://github.com/lydell/eslint-plugin-simple-import-sort#usage
+	'simple-import-sort/imports': 'error',
+	'simple-import-sort/exports': 'error',
 
 	// Essex Prefs
 	'no-plusplus': 'off',

@@ -3,11 +3,13 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import './index.css'
+
 import { a } from '@essex/test-lib-dual'
 import { b } from '@essex/test-lib-esm'
 import { c } from '@essex/test-lib-legacy'
 import docs from '@essex/test-lib-md-index'
 import { memo } from 'react'
+
 import { state } from '~state'
 
 const docsContent = Object.keys(docs)

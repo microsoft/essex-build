@@ -2,10 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import type { Job } from '@essex/shellrunner'
 import { existsSync } from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import type { Job } from '@essex/shellrunner'
+
 import { readTargetPackageJson } from '../../util/package.mjs'
 
 const __filename = fileURLToPath(import.meta.url)

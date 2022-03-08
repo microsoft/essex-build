@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import type { Command } from 'commander'
+
 import type { ZipCommandOptions } from '../steps/zip/index.mjs'
 import { zip } from '../steps/zip/index.mjs'
 

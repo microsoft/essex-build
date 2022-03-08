@@ -3,14 +3,15 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { promises as fs, createWriteStream, existsSync, mkdirSync } from 'fs'
-import { resolve, dirname, join, relative } from 'path'
 import archiver from 'archiver'
 import chalk from 'chalk'
+import { createWriteStream, existsSync, mkdirSync, promises as fs } from 'fs'
 import glob from 'glob'
 // @ts-ignore
 import format from 'human-format'
+import { dirname, join, relative, resolve } from 'path'
 import ProgressBar from 'progress'
+
 import { isDebug } from '../../util/isDebug.mjs'
 import { error, info, traceFile } from '../../util/tasklogger.mjs'
 

@@ -3,8 +3,12 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { writeFile } from 'fs/promises' 
-import { readTargetPackageJson, TARGET_PACKAGE_JSON_PATH } from '../../util/package.mjs'
+import { writeFile } from 'fs/promises'
+
+import {
+	readTargetPackageJson,
+	TARGET_PACKAGE_JSON_PATH,
+} from '../../util/package.mjs'
 import * as log from '../../util/tasklogger.mjs'
 import { copyConfigFile } from './util.mjs'
 

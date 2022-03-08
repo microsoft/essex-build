@@ -2,17 +2,18 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import chalk from 'chalk'
+import { program } from 'commander'
 import { readdirSync } from 'fs'
 import path from 'path'
 import { performance } from 'perf_hooks'
 import { exit } from 'process'
 import { fileURLToPath } from 'url'
-import chalk from 'chalk'
-import { program } from 'commander'
+
 import { fileUrl } from './util/fileUrl.mjs'
 import { isDebug } from './util/isDebug.mjs'
 import { readScriptsPackageJson } from './util/package.mjs'
-import { error, info, printPerf, fail, success } from './util/tasklogger.mjs'
+import { error, fail, info, printPerf, success } from './util/tasklogger.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)

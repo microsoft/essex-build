@@ -2,13 +2,14 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { performance } from 'perf_hooks'
 import chalk from 'chalk'
+import { performance } from 'perf_hooks'
 import ts from 'typescript'
+
 import {
 	printPerf,
-	subtaskSuccess,
 	subtaskFail,
+	subtaskSuccess,
 } from '../../util/tasklogger.mjs'
 import { loadTSConfig, parseTSConfig } from './config.mjs'
 

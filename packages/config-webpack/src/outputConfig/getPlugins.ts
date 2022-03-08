@@ -7,6 +7,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import type { WebpackPluginInstance } from 'webpack'
 import { EnvironmentPlugin } from 'webpack'
+
 import type { ConfigurationManager } from '../inputConfig'
 
 export function getPlugins({

@@ -3,11 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import fs from 'fs'
-import path from 'path'
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-import { fileURLToPath } from 'url'
 import jszip from 'jszip'
-
+import path from 'path'
+import { fileURLToPath } from 'url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 describe('zipped archives', () => {
