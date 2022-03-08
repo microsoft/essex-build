@@ -140,21 +140,20 @@ export const defaultRules: Record<string, unknown> = {
 	'import/no-amd': 'error',
 	'import/no-anonymous-default-export': 'warn',
 	'import/no-webpack-loader-syntax': 'error',
-	'import/no-unresolved': 'error',
 	'import/extensions': ['error', 'always', { ignorePackages: true }],
+	'import/order': ['warn', { alphabetize: { order: 'asc' } }],
 
 	// Essex Prefs
 	'no-plusplus': 'off',
 	'header/header': [2, headerFile],
 	'@essex/adjacent-await': 'warn',
-	'import/order': ['warn', { alphabetize: { order: 'asc' } }],
 }
 
 // If adding a typescript-eslint version of an existing ESLint rule,
 // make sure to disable the ESLint rule here.
 export const tsRules: Record<string, unknown> = {
 	'@typescript-eslint/interface-name-prefix': 'off',
-	// Conflicts with tsconfig paths settingss
+	// Conflicts with tsconfig paths, and with ts using es6 style imports e.g. (from './module.js')
 	'import/no-unresolved': 'off',
 
 	// Add TypeScript specific rules (and turn off ESLint equivalents)
