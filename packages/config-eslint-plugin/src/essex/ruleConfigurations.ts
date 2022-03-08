@@ -140,6 +140,7 @@ export const defaultRules: Record<string, unknown> = {
 	'import/no-amd': 'error',
 	'import/no-anonymous-default-export': 'warn',
 	'import/no-webpack-loader-syntax': 'error',
+	'import/no-unresolved': 'error',
 	'import/extensions': ['error', 'always', { ignorePackages: true }],
 
 	// Essex Prefs

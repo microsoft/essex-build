@@ -62,6 +62,10 @@ const baseConfig = {
 			'.mts',
 		],
 		'import/ignore': [/\\.(json)$/, /\\.(scss|less|css)$/],
+		'import/parsers': {
+			'@typescript-eslint/parser': ['.ts', '.tsx', '.cts', '.mts'],
+			'@babel/eslint-parser': ['.js', '.jsx', '.cjs', '.mjs'],
+		},
 	},
 	overrides: [
 		/**
