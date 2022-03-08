@@ -1,0 +1,9 @@
+{
+	"extends": "@essex/tsconfig-node",
+	"compilerOptions": {
+		"outDir": "lib",
+		"declaration": true,
+		"skipLibCheck": true
+	},
+	"include": ["src/**/*.ts"]
+}

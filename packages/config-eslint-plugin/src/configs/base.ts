@@ -6,6 +6,7 @@
 // Based on eslint-config-react-app
 // https://github.com/facebook/create-react-app/blob/master/packages/eslint-config-react-app/index.js
 import { existsSync } from 'fs'
+
 import {
 	defaultRules,
 	jestRules,

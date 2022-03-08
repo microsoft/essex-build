@@ -14,10 +14,11 @@
 import './entry.mjs'
 
 if (!String.prototype.replaceAll) {
-	;(String as any).prototype.replaceAll = function (
+	;(String as any).prototype.replaceAll = function replaceAll(
+		this: string,
 		str: string | RegExp,
 		newStr: string,
-	) {
+	): string {
 		// If a regex pattern
 		if (
 			Object.prototype.toString.call(str).toLowerCase() === '[object regexp]'
