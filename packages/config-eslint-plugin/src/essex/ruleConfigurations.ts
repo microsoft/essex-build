@@ -162,6 +162,9 @@ export const tsRules: Record<string, unknown> = {
 	// Conflicts with tsconfig paths, and with ts using es6 style imports e.g. (from './module.js')
 	'import/no-unresolved': 'off',
 
+	// let prettier handle semis
+	'@typescript-eslint/no-extra-semi': 'off',
+
 	// Add TypeScript specific rules (and turn off ESLint equivalents)
 	'@typescript-eslint/consistent-type-assertions': 'warn',
 	'no-array-constructor': 'off',
