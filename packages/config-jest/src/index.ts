@@ -2,12 +2,12 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { existsSync } from 'fs'
-import { join } from 'path'
 /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
 // @ts-ignore
 import { resolve } from '@essex/jest-config/resolve'
 import { getSwcOptions } from '@essex/swc-opts'
+import { existsSync } from 'fs'
+import { join } from 'path'
 
 export interface EssexJestOptions {
 	/**

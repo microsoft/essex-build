@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import type { Command } from 'commander'
+
 import { buildMdIndex as executeBuildMdIndex } from '../steps/build-md-index/index.mjs'
 
 export interface BuildMdIndexCommandOptions {

@@ -2,9 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { exists, copyFile } from 'fs'
+import { copyFile, exists } from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+
 import * as log from '../../util/tasklogger.mjs'
 
 const __filename = fileURLToPath(import.meta.url)

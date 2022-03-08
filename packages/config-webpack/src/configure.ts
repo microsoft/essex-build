@@ -4,17 +4,18 @@
  */
 import type { Configuration as WebpackConfiguration } from 'webpack'
 import type { Configuration as WdsConfiguration } from 'webpack-dev-server'
-import { ConfigurationManager } from './inputConfig'
-import { log } from './log'
+
+import { ConfigurationManager } from './inputConfig/index.js'
+import { log } from './log.js'
 import {
-	getResolvePlugins,
-	tsRule,
-	getStyleRules,
-	getWdsConfig,
 	getMode,
 	getOutput,
 	getPlugins,
-} from './outputConfig'
+	getResolvePlugins,
+	getStyleRules,
+	getWdsConfig,
+	tsRule,
+} from './outputConfig/index.js'
 import type { Configuration } from './types.js'
 
 export function configure(config: Configuration = {}): WebpackConfiguration & {

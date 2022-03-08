@@ -8,11 +8,12 @@ import type {
 	WebpackPluginInstance,
 } from 'webpack'
 import type { Configuration as WdsConfig } from 'webpack-dev-server'
+
 import type { Configuration } from '../types.js'
 import { getHomePage } from './getHomePage.js'
 import { getIndexFile } from './getIndexFile.js'
 import { getTitle } from './getTitle.js'
-import { isTsConfigPathsConfigured } from './isTsConfigPathsConfigured'
+import { isTsConfigPathsConfigured } from './isTsConfigPathsConfigured.js'
 import { validate } from './validate.js'
 
 export class ConfigurationManager {

@@ -7,6 +7,7 @@ import { join } from 'path'
 import { performance } from 'perf_hooks'
 import type { TypeDocOptions } from 'typedoc'
 import { Application, TSConfigReader, TypeDocReader } from 'typedoc'
+
 import { readTargetPackageJson } from '../../util/package.mjs'
 import {
 	printPerf,

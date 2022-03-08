@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { run } from '@essex/shellrunner'
+
 import { configureJob } from './configure.mjs'
 
 export async function lintStaged(): Promise<void> {

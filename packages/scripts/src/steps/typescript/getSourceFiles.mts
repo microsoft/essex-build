@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import glob from 'glob'
+
 import { difference } from './sets.mjs'
 
 const SOURCE_GLOB = 'src/**/*.ts*'

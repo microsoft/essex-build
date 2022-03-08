@@ -7,9 +7,9 @@
 // https://github.com/facebook/create-react-app/blob/master/packages/eslint-config-react-app/index.js
 import {
 	defaultRules,
-	tsRules,
-	reactRules,
 	jestRules,
+	reactRules,
+	tsRules,
 } from '../essex/ruleConfigurations.js'
 
 // Force PnP's Hand (is this still necessary?)
@@ -19,9 +19,10 @@ Object.keys(dependencies).forEach(dep => require(dep))
 const baseConfig = {
 	plugins: [
 		'@essex/eslint-plugin',
-		'eslint-plugin-header',
-		'eslint-plugin-import',
-		'eslint-plugin-react-hooks',
+		'header',
+		'import',
+		'simple-import-sort',
+		'react-hooks',
 	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
@@ -50,6 +51,21 @@ const baseConfig = {
 	settings: {
 		react: {
 			version: 'detect',
+		},
+		'import/extensions': [
+			'.js',
+			'.jsx',
+			'.cjs',
+			'.mjs',
+			'.ts',
+			'.tsx',
+			'.cts',
+			'.mts',
+		],
+		'import/ignore': [/\\.(json)$/, /\\.(scss|less|css)$/],
+		'import/parsers': {
+			'@typescript-eslint/parser': ['.ts', '.tsx', '.cts', '.mts'],
+			'@babel/eslint-parser': ['.js', '.jsx', '.cjs', '.mjs'],
 		},
 	},
 	overrides: [

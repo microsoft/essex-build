@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import type { Command } from 'commander'
+
 import { initLib, initMonorepo } from '../steps/init/index.mjs'
 
 interface InitCommandOptions {

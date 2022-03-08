@@ -2,10 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import type { SpawnOptions, ChildProcess } from 'child_process'
+import type { ChildProcess, SpawnOptions } from 'child_process'
 /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
 // @ts-ignore no-typedef
 import spawn from 'cross-spawn'
+
 import type { Job, JobResult } from '../types.js'
 
 /**

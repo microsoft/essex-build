@@ -4,14 +4,16 @@
  */
 import { existsSync } from 'fs'
 import path from 'path'
-
-import { fileURLToPath } from "url"
+import { fileURLToPath } from 'url'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 const releaseConfig = path.join(__dirname, '../../../config/eslintrc-release')
-const experimentConfig = path.join(__dirname, '../../../config/eslintrc-experiment')
+const experimentConfig = path.join(
+	__dirname,
+	'../../../config/eslintrc-experiment',
+)
 const projectConfig = path.join(process.cwd(), '.eslintrc')
 
 export function getConfigFile(strict: boolean): string {

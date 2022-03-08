@@ -4,5 +4,13 @@
 		"@typescript-eslint/no-explicit-any": "off",
 		"import/no-unresolved": "off",
 		"import/named": "off"
-	}
+	},
+	"overrides": [
+		{
+			"files": "packages/test-vite/**",
+			"rules": {
+				"import/extensions": "off"
+			}
+		}
+	]
 }

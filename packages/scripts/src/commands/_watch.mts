@@ -2,11 +2,12 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { existsSync } from 'fs'
-import path from 'path'
 import chalk from 'chalk'
 import chokidar from 'chokidar'
 import type { Command } from 'commander'
+import { existsSync } from 'fs'
+import path from 'path'
+
 import { esmify as processEsm } from '../steps/esmify/index.mjs'
 import { compile as compileTypescript } from '../steps/typescript/index.mjs'
 import { BuildMode } from '../types.mjs'
