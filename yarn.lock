@@ -2442,11 +2442,27 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@essex/tsconfig-node14@workspace:^, @essex/tsconfig-node14@workspace:packages/config-ts-node14":
+  version: 0.0.0-use.local
+  resolution: "@essex/tsconfig-node14@workspace:packages/config-ts-node14"
+  dependencies:
+    "@essex/tsconfig-base": "workspace:^"
+  languageName: unknown
+  linkType: soft
+
+"@essex/tsconfig-node16@workspace:packages/config-ts-node16":
+  version: 0.0.0-use.local
+  resolution: "@essex/tsconfig-node16@workspace:packages/config-ts-node16"
+  dependencies:
+    "@essex/tsconfig-base": "workspace:^"
+  languageName: unknown
+  linkType: soft
+
 "@essex/tsconfig-node@workspace:^, @essex/tsconfig-node@workspace:packages/config-ts-node":
   version: 0.0.0-use.local
   resolution: "@essex/tsconfig-node@workspace:packages/config-ts-node"
   dependencies:
-    "@essex/tsconfig-base": "workspace:^"
+    "@essex/tsconfig-node14": "workspace:^"
   languageName: unknown
   linkType: soft
 
