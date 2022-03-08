@@ -4,6 +4,8 @@ releases:
   "@essex/eslint-plugin": patch
   "@essex/jest-config": patch
   "@essex/scripts": patch
+  "@essex/shellrunner": patch
+  "@essex/swc-opts": patch
   "@essex/test-lib-dual": patch
   "@essex/test-lib-esm": patch
   "@essex/test-lib-legacy": patch
