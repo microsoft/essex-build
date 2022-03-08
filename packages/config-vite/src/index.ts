@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import reactRefresh from '@vitejs/plugin-react-refresh'
-import { UserConfigExport } from 'vite'
+import type { UserConfigExport } from 'vite'
 import reactJsx from 'vite-react-jsx'
 import tsconfigPaths from 'vite-tsconfig-paths'
 

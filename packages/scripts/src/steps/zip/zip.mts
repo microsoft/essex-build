@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unsafe-call */
 import archiver from 'archiver'
 import chalk from 'chalk'
 import { createWriteStream, existsSync, mkdirSync, promises as fs } from 'fs'
@@ -137,10 +137,11 @@ async function archive(
 		complete: '=',
 		incomplete: '-',
 	})
-	return new Promise(async (resolve, reject) => {
-		const output = createWriteStream(destination)
-		const archive = archiver('zip')
+	const output = createWriteStream(destination)
+	const archive = archiver('zip')
+	archive.on('entry', () => bar.tick())
 
+	const writeOutputPromise = new Promise<void>((resolve, reject) => {
 		output.on('close', () => {
 			console.log(
 				`archive complete - ${chalk.green(destination)} ${chalk.grey(
@@ -152,23 +153,25 @@ async function archive(
 			)
 			resolve()
 		})
-		archive.on('entry', () => {
-			bar.tick()
-		})
-
 		archive.on('warning', reject)
 		archive.on('error', reject)
 		archive.pipe(output)
+	})
 
+	// defer loading these so the event handlers can register
+	await new Promise(() => {
 		for (const entry of fileEntries) {
 			const entryPath = join(cwd, entry)
 			archive.file(entryPath, {
 				name: entry,
 			})
 		}
+	})
 
-		info('finalizing archive')
-		archive.finalize()
+	info('finalizing archive')
+	const finalization = archive.finalize()
+	await Promise.all([writeOutputPromise, finalization]).then(() => {
+		/*nothing*/
 	})
 }
 

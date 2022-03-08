@@ -4,9 +4,11 @@
  */
 /* eslint-disable @essex/adjacent-await */
 import { BuildMode } from '../../types.mjs'
+import type {
+	PackageJsonData} from '../../util/package.mjs';
 import {
 	readPublishedPackageJson,
-	readTargetPackageJson,
+	readTargetPackageJson
 } from '../../util/package.mjs'
 import { subtaskSuccess, warn } from '../../util/tasklogger.mjs'
 
@@ -31,7 +33,7 @@ export async function verifyPackage(mode: BuildMode) {
 	subtaskSuccess('verify package.json')
 }
 
-function verifyEsmMode(pkg: any, raw: any) {
+function verifyEsmMode(pkg: PackageJsonData, raw: any) {
 	if (pkg.module) {
 		warn('package.module should be removed')
 	}
