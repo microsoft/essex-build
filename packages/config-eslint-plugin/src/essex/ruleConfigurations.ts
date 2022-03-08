@@ -212,6 +212,9 @@ export const tsRules: Record<string, unknown> = {
 			prefer: 'type-imports',
 		},
 	],
+
+	'no-redeclare': 'off',
+	'@typescript-eslint/no-redeclare': ['warn'],
 }
 
 export const reactRules: Record<string, unknown> = {
