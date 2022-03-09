@@ -9,7 +9,9 @@ import { join } from 'path'
 export function isTsConfigPathsConfigured(): boolean {
 	const tsconfigJsonPath = join(process.cwd(), 'tsconfig.json')
 	if (existsSync(tsconfigJsonPath)) {
-		const tsconfig = require(tsconfigJsonPath)
+		const tsconfig = require(tsconfigJsonPath) as {
+			compilerOptions?: { paths?: any }
+		}
 		if (tsconfig?.compilerOptions?.paths) {
 			return true
 		}

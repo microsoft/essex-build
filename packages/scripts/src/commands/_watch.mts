@@ -29,15 +29,15 @@ export default function build(program: Command): void {
 			'strip out internal types from typings declarations',
 		)
 		.option('--mode [mode]', 'options are "legacy", "dual", and "esm"')
-		.action(async (options: WatchCommandOptions): Promise<any> => {
-			await executeBuild(options)
+		.action((options: WatchCommandOptions): any => {
+			executeWatch(options)
 		})
 }
 
-export async function executeBuild({
+export function executeWatch({
 	stripInternalTypes = false,
 	mode = BuildMode.esm,
-}: WatchCommandOptions): Promise<void> {
+}: WatchCommandOptions): void {
 	const rewriteEsmToMjs = mode === BuildMode.dual
 	const esmOnly = mode === BuildMode.esm
 	const cwd = process.cwd()
@@ -49,16 +49,24 @@ export async function executeBuild({
 
 	let initialAddsComplete = false
 
-	chokidar.watch('./src').on('all', async (event, path) => {
+	chokidar.watch('./src').on('all', (event, path) => {
 		if (event !== 'add' && event !== 'addDir') {
 			initialAddsComplete = true
 		}
 		if (initialAddsComplete) {
 			console.log(chalk.yellow(`    [${event}] ${path}`))
-			await compileTypescript(stripInternalTypes, esmOnly)
-			if (mode !== BuildMode.legacy) {
-				await processEsm(rewriteEsmToMjs, esmOnly ? 'dist' : 'dist/esm')
-			}
+			compileTypescript(stripInternalTypes, esmOnly)
+				.then(() => {
+					if (mode !== BuildMode.legacy) {
+						return processEsm(rewriteEsmToMjs, esmOnly ? 'dist' : 'dist/esm')
+					}
+				})
+				.then(() => {
+					/* nothing */
+				})
+				.catch(() => {
+					/* nothing */
+				})
 		}
 	})
 }

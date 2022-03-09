@@ -15,8 +15,10 @@ import {
 } from '../essex/ruleConfigurations.js'
 
 // Force PnP's Hand (is this still necessary?)
-const { dependencies } = require('../../package.json')
-Object.keys(dependencies).forEach(dep => require(dep))
+const { dependencies } = require('../../package.json') as {
+	dependencies: Record<string, string>
+}
+Object.keys(dependencies).forEach(dep => require(dep) as unknown)
 
 function getTsConfigRoots(): string[] {
 	const result: string[] = []

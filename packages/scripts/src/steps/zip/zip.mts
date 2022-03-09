@@ -2,11 +2,12 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import archiver from 'archiver'
 import chalk from 'chalk'
 import { createWriteStream, existsSync, mkdirSync, promises as fs } from 'fs'
 import glob from 'glob'
+/* eslint-disable-next-line  @typescript-eslint/ban-ts-comment */
 // @ts-ignore
 import format from 'human-format'
 import { dirname, join, relative, resolve } from 'path'

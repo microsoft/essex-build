@@ -21,15 +21,34 @@ export const TARGET_PACKAGE_JSON_PATH = path.join(
 export interface PackageJsonData {
 	name: string
 	version: string
-	scripts?: Record<string, string>
+	/**
+	 * for websites and docgen
+	 */
+	title?: string
+	scripts?: {
+		build?: string
+		clean?: string
+		start?: string
+		[key: string]: string | undefined
+	}
 	dependencies?: Record<string, string>
 	devDependencies?: Record<string, string>
 	peerDependencies?: Record<string, string>
+	exports?: {
+		import?: string
+		require?: string
+		types?: string
+		[key: string]: string | undefined
+	}
 	type?: string
 	main?: string
 	module?: string
 	types?: string
 	publishConfig?: Partial<Omit<PackageJsonData, 'publishConfig'>>
+	essex?: {
+		exports?: Record<string, string>
+	}
+	['lint-staged']: Record<string, string[]>
 }
 
 export async function readScriptsPackageJson(): Promise<PackageJsonData> {

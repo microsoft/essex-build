@@ -2,7 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types*/
+/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call */
+/* eslint-disable  @typescript-eslint/no-unsafe-argument */
 
 function findAncestorParentedByType(node: any, type: string): any {
 	while (node && node.parent && node.parent.type !== type) {
@@ -100,9 +103,8 @@ const noAdjacentAwait = {
 						node.parent.type === 'ArrayPattern')
 				) {
 					if (variableDeclarationStack.length > 0) {
-						const { declaration, identifiers } = variableDeclarationStack[
-							variableDeclarationStack.length - 1
-						]
+						const { declaration, identifiers } =
+							variableDeclarationStack[variableDeclarationStack.length - 1]
 						identifiers.push(node)
 
 						let list = definedIdentifiers.get(declaration) as any[]
@@ -126,7 +128,7 @@ const noAdjacentAwait = {
 				let hasAdjacentAsyncAwaits = false
 				node.body.forEach((statement: any) => {
 					if (statement.type === 'VariableDeclaration') {
-						(statement.declarations || []).forEach((declaration: any) => {
+						;(statement.declarations || []).forEach((declaration: any) => {
 							identifiersToIgnore.push(
 								...((definedIdentifiers.get(declaration) as any[]) || []),
 							)

@@ -6,6 +6,7 @@ import chalk from 'chalk'
 import pqLib from 'pretty-quick'
 
 // TODO: this is a hack to work around non-standard ESM in pretty-quick
+/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 const pq = (pqLib as any).default as typeof pqLib
 
 export interface PrettyQuickArgs {

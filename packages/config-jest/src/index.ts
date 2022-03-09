@@ -2,8 +2,6 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
-// @ts-ignore
 import { resolve } from '@essex/jest-config/resolve'
 import { getSwcOptions } from '@essex/swc-opts'
 import { existsSync } from 'fs'
@@ -25,11 +23,24 @@ export interface EssexJestOptions {
 	rewriteLodashEs: boolean
 }
 
+export interface JestConfig {
+	transform: Record<string, string | [string, unknown]>
+	testMatch: string[]
+	rootDir: string
+	roots: string[]
+	resolver: string
+	extensionsToTreatAsEsm: string[]
+	moduleNameMapper: Record<string, string>
+	collectCoverageFrom: string[]
+	coverageReporters: string[]
+	setupFilesAfterEnv: string[]
+}
+
 export function configure({
 	setupFiles = getSetupFiles(),
 	rewriteLodashEs = true,
-}: Partial<EssexJestOptions> = {}): any {
-	const result: any = {
+}: Partial<EssexJestOptions> = {}): JestConfig {
+	const result: JestConfig = {
 		transform: {
 			'^.+\\.(t|j)sx?$': [resolve('@swc/jest'), getSwcOptions()],
 		},
@@ -60,6 +71,7 @@ export function configure({
 
 	if (rewriteLodashEs) {
 		// lodash-es presents issues in test, even when running in experimental ESM mode. Hacky fix is to use main lodash at test time
+		/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 		result.moduleNameMapper['^lodash-es/(.*)$'] = resolve('lodash').replace(
 			'lodash.js',
 			'$1',

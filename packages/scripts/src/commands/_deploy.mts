@@ -52,7 +52,7 @@ function execute(options: DeployCommandOptions): Promise<void> {
 			return executeAzureBlobDeploy(options)
 		}
 		default:
-			throw new Error(`Unhandled deploy type: ${options.type}`)
+			throw new Error(`Unhandled deploy type: ${options.type as string}`)
 	}
 }
 
