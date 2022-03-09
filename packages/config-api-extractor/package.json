@@ -1,0 +1,15 @@
+{
+	"name": "@essex/api-extractor-config",
+	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
+	"version": "0.0.1",
+	"license": "MIT",
+	"files": [
+		"api-extractor.json",
+		"LICENSE",
+		"README.md"
+	],
+	"exports": {
+		"./api-extractor.json": "./api-extractor.json",
+		"./package.json": "./package.json"
+	}
+}

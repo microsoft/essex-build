@@ -7,8 +7,8 @@ import type { Command } from 'commander'
 import { existsSync } from 'fs'
 import path from 'path'
 
+import { generateApiExtractorReport } from '../steps/api-extractor/index.mjs'
 import { esmify as processEsm } from '../steps/esmify/index.mjs'
-import { generateTypedocs } from '../steps/typedoc/index.mjs'
 import { compile as compileTypescript } from '../steps/typescript/index.mjs'
 import { verifyExports } from '../steps/verifyExports/index.mjs'
 import { verifyPackage } from '../steps/verifyPackage/index.mjs'
@@ -39,7 +39,7 @@ export default function build(program: Command): void {
 	program
 		.command('build')
 		.description('builds a library package')
-		.option('-d, --docs', 'generates TypeDoc documentation')
+		.option('-d, --docs', 'generates api-extractor documentation')
 		.option(
 			'--stripInternalTypes',
 			'strip out internal types from typings declarations',
@@ -70,8 +70,8 @@ export async function executeBuild({
 		throw new Error('tsconfig.json must exist')
 	}
 
-	const generateDocs = docs ? generateTypedocs() : noop()
 	await compileTypescript(stripInternalTypes, esmOnly)
+	const generateDocs = docs ? generateApiExtractorReport() : noop()
 
 	if (mode !== BuildMode.legacy) {
 		await processEsm(rewriteEsmToMjs, esmOnly ? 'dist' : 'dist/esm')
