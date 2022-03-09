@@ -1,0 +1,6 @@
+releases:
+  "@essex/api-extractor-config": major
+  "@essex/scripts": patch
+  "@essex/test-lib-dual": patch
+  "@essex/test-lib-esm": patch
+  "@essex/test-lib-legacy": patch

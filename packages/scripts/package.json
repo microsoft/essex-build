@@ -27,10 +27,12 @@
 	},
 	"dependencies": {
 		"@azure/storage-blob": "^12.8.0",
+		"@essex/api-extractor-config": "workspace:^",
 		"@essex/eslint-config": "workspace:^",
 		"@essex/eslint-plugin": "workspace:^",
 		"@essex/shellrunner": "workspace:^",
 		"@essex/swc-opts": "workspace:^",
+		"@microsoft/api-extractor": "^7.19.4",
 		"@swc/core": "1.2.151",
 		"@typescript-eslint/eslint-plugin": "^5.14.0",
 		"@typescript-eslint/parser": "^5.14.0",

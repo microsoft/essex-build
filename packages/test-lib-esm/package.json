@@ -24,6 +24,8 @@
 		"lodash-es": "^4.17.21"
 	},
 	"devDependencies": {
+		"@essex/api-extractor-config": "workspace:^",
+		"@essex/babel-config": "workspace:^",
 		"@essex/eslint-config": "workspace:^",
 		"@essex/jest-config": "workspace:^",
 		"@essex/scripts": "workspace:^",
