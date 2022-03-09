@@ -2107,6 +2107,7 @@ __metadata:
     "@babel/eslint-parser": ^7.17.0
     "@babel/types": ^7.17.0
     "@essex/tsconfig-node": "workspace:^"
+    "@essex/tsconfig-node14": "workspace:^"
     "@swc/cli": ^0.1.55
     "@swc/core": 1.2.151
     "@types/node": ^17.0.21
