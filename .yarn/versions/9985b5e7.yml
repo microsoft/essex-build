@@ -1,6 +1,15 @@
 releases:
   "@essex/api-extractor-config": major
-  "@essex/scripts": patch
+  "@essex/scripts": minor
   "@essex/test-lib-dual": patch
   "@essex/test-lib-esm": patch
   "@essex/test-lib-legacy": patch
+
+declined:
+  - "@essex/babel-config"
+  - "@essex/jest-config"
+  - "@essex/vite-config"
+  - "@essex/test-lib-md-index"
+  - "@essex/test-webapp-vite"
+  - "@essex/test-webapp-webpack"
+  - "@essex/test-zips"
