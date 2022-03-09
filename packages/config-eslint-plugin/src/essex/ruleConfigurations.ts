@@ -5,7 +5,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-argument */
 import { existsSync } from 'fs'
 import { join } from 'path'
-
 import { msHeader } from '../essex/msHeader.js'
 
 const HEADER_OVERRIDE = join(process.cwd(), 'header.js')
@@ -18,9 +17,7 @@ const headerFile = existsSync(HEADER_OVERRIDE) ? HEADER_OVERRIDE : msHeader
 // To use them, explicitly reference them, e.g. `window.name` or `window.status`.
 const restrictedGlobals = require('confusing-browser-globals')
 
-// Based on eslint-config-react-app
-// https://github.com/facebook/create-react-app/blob/master/packages/eslint-config-react-app/index.js
-export const defaultRules: Record<string, unknown> = {
+const baselineRules: Record<string, unknown> = {
 	// http://eslint.org/docs/rules/
 	'array-callback-return': 'warn',
 	'default-case': ['warn', { commentPattern: '^no default$' }],
@@ -28,24 +25,11 @@ export const defaultRules: Record<string, unknown> = {
 	'no-array-constructor': 'warn',
 	'no-caller': 'warn',
 	'no-cond-assign': ['warn', 'except-parens'],
-	'no-const-assign': 'warn',
-	'no-control-regex': 'warn',
-	'no-delete-var': 'warn',
-	'no-dupe-args': 'warn',
-	'no-dupe-class-members': 'warn',
-	'no-dupe-keys': 'warn',
-	'no-duplicate-case': 'warn',
-	'no-empty-character-class': 'warn',
-	'no-empty-pattern': 'warn',
 	'no-eval': 'warn',
-	'no-ex-assign': 'warn',
 	'no-extend-native': 'warn',
 	'no-extra-bind': 'warn',
 	'no-extra-label': 'warn',
-	'no-fallthrough': 'warn',
-	'no-func-assign': 'warn',
 	'no-implied-eval': 'warn',
-	'no-invalid-regexp': 'warn',
 	'no-iterator': 'warn',
 	'no-label-var': 'warn',
 	'no-labels': ['warn', { allowLoop: true, allowSwitch: false }],
@@ -56,28 +40,19 @@ export const defaultRules: Record<string, unknown> = {
 	'no-negated-in-lhs': 'warn',
 	'no-new-func': 'warn',
 	'no-new-object': 'warn',
-	'no-new-symbol': 'warn',
 	'no-new-wrappers': 'warn',
-	'no-obj-calls': 'warn',
-	'no-octal': 'warn',
 	'no-octal-escape': 'warn',
 	// TODO: Remove this option in the next major release of CRA.
 	// https://eslint.org/docs/user-guide/migrating-to-6.0.0#-the-no-redeclare-rule-is-now-more-strict-by-default
 	'no-redeclare': ['warn', { builtinGlobals: false }],
-	'no-regex-spaces': 'warn',
 	'no-restricted-syntax': ['warn', 'WithStatement'],
 	'no-script-url': 'warn',
 	'no-self-assign': 'warn',
 	'no-self-compare': 'warn',
 	'no-sequences': 'warn',
-	'no-shadow-restricted-names': 'warn',
-	'no-sparse-arrays': 'warn',
 	'no-template-curly-in-string': 'warn',
-	'no-this-before-super': 'warn',
 	'no-throw-literal': 'warn',
-	'no-undef': 'error',
 	'no-restricted-globals': ['error'].concat(restrictedGlobals),
-	'no-unreachable': 'warn',
 	'no-unused-expressions': [
 		'error',
 		{
@@ -86,9 +61,8 @@ export const defaultRules: Record<string, unknown> = {
 			allowTaggedTemplates: true,
 		},
 	],
-	'no-unused-labels': 'warn',
 	'no-unused-vars': [
-		'warn',
+		'error',
 		{
 			args: 'none',
 			ignoreRestSiblings: true,
@@ -105,7 +79,6 @@ export const defaultRules: Record<string, unknown> = {
 	'no-useless-computed-key': 'warn',
 	'no-useless-concat': 'warn',
 	'no-useless-constructor': 'warn',
-	'no-useless-escape': 'warn',
 	'no-useless-rename': [
 		'warn',
 		{
@@ -114,11 +87,8 @@ export const defaultRules: Record<string, unknown> = {
 			ignoreExport: false,
 		},
 	],
-	'no-with': 'warn',
 	'require-yield': 'warn',
 	strict: ['warn', 'never'],
-	'use-isnan': 'warn',
-	'valid-typeof': 'warn',
 	'no-restricted-properties': [
 		'error',
 		{
@@ -134,8 +104,8 @@ export const defaultRules: Record<string, unknown> = {
 				'Please use import() instead. More info: https://facebook.github.io/create-react-app/docs/code-splitting',
 		},
 	],
-	'getter-return': 'warn',
-
+}
+const importRules: Record<string, unknown> = {
 	// https://github.com/benmosher/eslint-plugin-import/tree/master/docs/rules
 	'import/first': 'error',
 	'import/no-amd': 'error',
@@ -148,11 +118,20 @@ export const defaultRules: Record<string, unknown> = {
 	// https://github.com/lydell/eslint-plugin-simple-import-sort#usage
 	'simple-import-sort/imports': 'error',
 	'simple-import-sort/exports': 'error',
+}
 
-	// Essex Prefs
+const essexPrefs: Record<string, unknown> = {
 	'no-plusplus': 'off',
 	'header/header': [2, headerFile],
 	'@essex/adjacent-await': 'warn',
+}
+
+// Based on eslint-config-react-app
+// https://github.com/facebook/create-react-app/blob/master/packages/eslint-config-react-app/index.js
+export const defaultRules: Record<string, unknown> = {
+	...baselineRules,
+	...importRules,
+	...essexPrefs,
 }
 
 // If adding a typescript-eslint version of an existing ESLint rule,
