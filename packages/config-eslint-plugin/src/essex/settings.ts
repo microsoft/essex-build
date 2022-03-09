@@ -2,7 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-export function importSettings() {
+import type { Linter } from 'eslint'
+
+export function importSettings(): Linter.Config['settings'] {
 	return {
 		'import/extensions': [
 			'.js',
@@ -22,7 +24,7 @@ export function importSettings() {
 	}
 }
 
-export function reactSettings() {
+export function reactSettings(): Linter.Config['settings'] {
 	return {
 		react: {
 			version: 'detect',

@@ -2,6 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import type { Linter } from 'eslint'
+
 import { typescriptParserOptions } from './parserOptions.js'
 import {
 	defaultRules,
@@ -10,7 +12,9 @@ import {
 	tsRules,
 } from './ruleConfigurations.js'
 
-export function typescriptOverride(useTypeAwareLinting: boolean) {
+export function typescriptOverride(
+	useTypeAwareLinting: boolean,
+): Linter.ConfigOverride {
 	const result = {
 		files: ['**/*.ts', '**/*.tsx', '**/*.cts', '**/*.mts'],
 		parser: '@typescript-eslint/parser',
@@ -30,7 +34,7 @@ export function typescriptOverride(useTypeAwareLinting: boolean) {
 	}
 	return result
 }
-export function javascriptOverride() {
+export function javascriptOverride(): Linter.ConfigOverride {
 	return {
 		files: ['**/*.js', '**/*.jsx', '**/*.cjs', '**/*.mjs'],
 		parser: '@babel/eslint-parser',
@@ -41,7 +45,7 @@ export function javascriptOverride() {
 	}
 }
 
-export function jestOverride() {
+export function jestOverride(): Linter.ConfigOverride {
 	return {
 		files: ['**/*.spec.*', '**/*.test.*'],
 		plugins: ['eslint-plugin-jest'],

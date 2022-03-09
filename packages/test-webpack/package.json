@@ -5,7 +5,7 @@
 	"scripts": {
 		"clean": "essex clean",
 		"build": "DEBUG='*' webpack-cli",
-		"lint": "essex lint",
+		"lint": "essex lint --fix",
 		"start": "webpack serve --progress"
 	},
 	"repository": {

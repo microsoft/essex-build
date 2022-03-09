@@ -4,7 +4,7 @@ Contains a baseline .eslintrc, which adds the rules from [eslint-plugin](eslint-
 
 ```
 {
-    "extends": "@essex/eslint-config/release",
+    "extends": "@essex/eslint-config",
     "rules": {
       ...your overrides
     }

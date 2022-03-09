@@ -3,5 +3,5 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { createConfiguration } from '../essex/createConfiguration.js'
-const baseConfig = createConfiguration(true)
-export default baseConfig
+const noTypeaware = createConfiguration(false)
+export default noTypeaware
