@@ -2,12 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import archiver from 'archiver'
 import chalk from 'chalk'
 import { createWriteStream, existsSync, mkdirSync, promises as fs } from 'fs'
 import glob from 'glob'
-/* eslint-disable-next-line  @typescript-eslint/ban-ts-comment */
 // @ts-ignore
 import format from 'human-format'
 import { dirname, join, relative, resolve } from 'path'
@@ -138,42 +137,45 @@ async function archive(
 		complete: '=',
 		incomplete: '-',
 	})
-	const output = createWriteStream(destination)
 	const archive = archiver('zip')
+	const output = createWriteStream(destination)
 	archive.on('entry', () => bar.tick())
+	archive.pipe(output)
+	let resolve = (_value?: unknown) => {
+		/* nothing*/
+	}
+	let reject = (_err: unknown) => {
+		/* nothing*/
+	}
+	const loadPromise = new Promise((res, rej) => {
+		resolve = res
+		reject = rej
+	})
+	output.on('close', () => {
+		console.log(
+			`archive complete - ${chalk.green(destination)} ${chalk.grey(
+				/* eslint-disable-next-line @typescript-eslint/no-unsafe-call */
+				format(archive.pointer(), {
+					scale: 'binary',
+					unit: 'B',
+				}),
+			)}`,
+		)
+		resolve()
+	})
+	archive.on('warning', reject)
+	archive.on('error', reject)
 
-	const writeOutputPromise = new Promise<void>((resolve, reject) => {
-		output.on('close', () => {
-			console.log(
-				`archive complete - ${chalk.green(destination)} ${chalk.grey(
-					format(archive.pointer(), {
-						scale: 'binary',
-						unit: 'B',
-					}),
-				)}`,
-			)
-			resolve()
+	for (const entry of fileEntries) {
+		const entryPath = join(cwd, entry)
+		archive.file(entryPath, {
+			name: entry,
 		})
-		archive.on('warning', reject)
-		archive.on('error', reject)
-		archive.pipe(output)
-	})
-
-	// defer loading these so the event handlers can register
-	await new Promise(() => {
-		for (const entry of fileEntries) {
-			const entryPath = join(cwd, entry)
-			archive.file(entryPath, {
-				name: entry,
-			})
-		}
-	})
+	}
 
 	info('finalizing archive')
-	const finalization = archive.finalize()
-	await Promise.all([writeOutputPromise, finalization]).then(() => {
-		/*nothing*/
-	})
+	const finalize = archive.finalize()
+	await Promise.all([loadPromise, finalize])
 }
 
 async function isZippable(file: string): Promise<boolean> {
