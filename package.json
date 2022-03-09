@@ -30,6 +30,8 @@
 		"@essex/jest-config": "workspace:^",
 		"@essex/prettier-config": "workspace:^",
 		"@essex/scripts": "workspace:^",
+		"@essex/tsconfig-node": "workspace:^",
+		"@essex/tsconfig-node14": "workspace:^",
 		"@types/eslint": "^8.4.1",
 		"@types/jest": "^27.4.1",
 		"@typescript-eslint/eslint-plugin": "^5.14.0",

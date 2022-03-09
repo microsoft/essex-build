@@ -50,7 +50,7 @@ async function transpileFile(
 		traceFile(`${filename}`, 'transpile')
 	}
 
-	const options = await getSwcOptions()
+	const options = getSwcOptions()
 	const code = await fs.readFile(filename, { encoding: 'utf8' })
 	const esmResult = writeOutput(
 		code,

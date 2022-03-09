@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import chalk from 'chalk'
+import type { Command } from 'commander'
 import { program } from 'commander'
 import { readdirSync } from 'fs'
 import path from 'path'
@@ -35,11 +36,11 @@ async function loadCommand(file: string): Promise<void> {
 	const start = performance.now()
 	const commandPath = fileUrl(commandDir, file)
 	try {
-		const command = await import(commandPath)
+		const command = (await import(commandPath)) as {
+			default: (program: Command) => void
+		}
 		if (command.default) {
 			command.default(program)
-		} else {
-			command(program)
 		}
 		if (isDebug()) {
 			info(`load command ${file} ${printPerf(start)}`)
@@ -98,11 +99,13 @@ async function execute() {
 			success(command, printPerf())
 		} else {
 			fail(command, printPerf())
+			exit(1)
 		}
 	} catch (err) {
 		console.log(err)
 		fail(command)
-		exit(1)
 	}
 }
 execute()
+	.then(() => exit(0))
+	.catch(() => exit(1))

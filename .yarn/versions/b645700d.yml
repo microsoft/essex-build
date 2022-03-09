@@ -1,0 +1,19 @@
+releases:
+  "@essex/babel-config": patch
+  "@essex/eslint-config": minor
+  "@essex/eslint-plugin": minor
+  "@essex/jest-config": patch
+  "@essex/scripts": patch
+  "@essex/shellrunner": patch
+  "@essex/swc-opts": patch
+  "@essex/vite-config": patch
+  "@essex/webpack-config": patch
+
+declined:
+  - "@essex/test-lib-dual"
+  - "@essex/test-lib-esm"
+  - "@essex/test-lib-legacy"
+  - "@essex/test-lib-md-index"
+  - "@essex/test-webapp-vite"
+  - "@essex/test-webapp-webpack"
+  - "@essex/test-zips"

@@ -5,6 +5,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 // Based on eslint-config-react-app
 // https://github.com/facebook/create-react-app/blob/master/packages/eslint-config-react-app/index.js
+import { existsSync } from 'fs'
+
 import {
 	defaultRules,
 	jestRules,
@@ -13,8 +15,30 @@ import {
 } from '../essex/ruleConfigurations.js'
 
 // Force PnP's Hand (is this still necessary?)
-const { dependencies } = require('../../package.json')
-Object.keys(dependencies).forEach(dep => require(dep))
+const { dependencies } = require('../../package.json') as {
+	dependencies: Record<string, string>
+}
+Object.keys(dependencies).forEach(dep => require(dep) as unknown)
+
+function getTsConfigRoots(): string[] {
+	const result: string[] = []
+	// root override
+	if (existsSync('./tsconfig.eslint.json')) {
+		result.push('./tsconfig.eslint.json')
+	} else if (existsSync('./tsconfig.json')) {
+		result.push('./tsconfig.json')
+	}
+
+	// standard monorepo
+	if (existsSync('./packages')) {
+		result.push('./packages/*/tsconfig.json')
+	}
+	// multi-language monorepo
+	if (existsSync('./javascript')) {
+		result.push('./javascript/*/tsconfig.json')
+	}
+	return result
+}
 
 const baseConfig = {
 	plugins: [
@@ -36,6 +60,7 @@ const baseConfig = {
 		warnOnUnsupportedTypeScriptVersion: false,
 	},
 	extends: [
+		'eslint:recommended',
 		'prettier',
 		'plugin:import/recommended',
 		'plugin:react/recommended',
@@ -84,11 +109,14 @@ const baseConfig = {
 				},
 				// typescript-eslint specific options
 				warnOnUnsupportedTypeScriptVersion: false,
+				tsconfigRootDir: process.cwd(),
+				project: getTsConfigRoots(),
 			},
 			plugins: ['@typescript-eslint/eslint-plugin'],
 			extends: [
 				'plugin:import/typescript',
 				'plugin:@typescript-eslint/recommended',
+				'plugin:@typescript-eslint/recommended-requiring-type-checking',
 			],
 			rules: { ...defaultRules, ...reactRules, ...tsRules },
 		},

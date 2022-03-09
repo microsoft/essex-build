@@ -8,6 +8,7 @@ import path from 'path'
 import { performance } from 'perf_hooks'
 
 import { fileUrl } from '../../util/fileUrl.mjs'
+import type { PackageJsonData } from '../../util/package.mjs'
 import { readPublishedPackageJson } from '../../util/package.mjs'
 import * as logger from '../../util/tasklogger.mjs'
 import { checkApi } from './checkApi.mjs'
@@ -17,37 +18,37 @@ const require = createRequire(import.meta.url)
 export async function verifyExports(esmOnly: boolean): Promise<void> {
 	const pkg = await readPublishedPackageJson()
 
-	const expected = get(pkg, 'essex.exports')
+	const expected = pkg?.essex?.exports
 	if (expected == null) {
 		logger.warn(
 			`    essex.exports not defined in package.json; skipping named export verification`,
 		)
 	}
 
-	doChecks('verify esm export', async () => {
+	await doChecks('verify esm export', async () => {
 		// pkg.exports.imports is used in dual mode; pkg.main is used in esm-only mode
 		const api = await loadEsm(esmEntry(pkg))
 		if (expected) checkApi(api, expected)
 	})
 	if (!esmOnly) {
-		doChecks('verify cjs export', async () => {
+		await doChecks('verify cjs export', async () => {
 			const api = await loadCjs(cjsEntry(pkg))
 			if (expected) checkApi(api, expected)
 		})
 	}
 }
 
-function esmEntry(pkg: any): string {
+function esmEntry(pkg: PackageJsonData): string {
 	return tryEntries(pkg, 'exports.import', 'exports[.].import', 'main')
 }
 
-function cjsEntry(pkg: any): string {
+function cjsEntry(pkg: PackageJsonData): string {
 	return tryEntries(pkg, 'exports.require', 'exports[.].require', 'main')
 }
 
-function tryEntries(pkg: any, ...entries: string[]) {
+function tryEntries(pkg: PackageJsonData, ...entries: string[]): string {
 	for (const entry of entries) {
-		const entryValue = get(pkg, entry)
+		const entryValue: string = get(pkg, entry) as string
 		if (entryValue) {
 			return entryValue
 		}
@@ -57,11 +58,14 @@ function tryEntries(pkg: any, ...entries: string[]) {
 }
 
 async function loadEsm(pkgName: string): Promise<Record<string, unknown>> {
-	return import(fileUrl(path.join(process.cwd()), pkgName))
+	return import(fileUrl(path.join(process.cwd()), pkgName)) as Promise<
+		Record<string, unknown>
+	>
 }
 
 async function loadCjs(pkgName: string): Promise<Record<string, any>> {
-	return require(path.join(process.cwd(), pkgName))
+	await Promise.resolve()
+	return require(path.join(process.cwd(), pkgName)) as Record<string, any>
 }
 
 async function doChecks(task: string, callback: () => Promise<void>) {
