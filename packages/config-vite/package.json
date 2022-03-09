@@ -3,15 +3,12 @@
 	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
 	"version": "19.0.4",
 	"license": "MIT",
-	"main": "src/index.ts",
-	"publishConfig": {
-		"main": "dist/cjs/index.js",
-		"types": "dist/types/index.d.ts",
-		"exports": {
-			"import": "./dist/esm/index.mjs",
-			"require": "./dist/cjs/index.js",
-			"types": "./dist/types/index.d.ts"
-		}
+	"main": "dist/cjs/index.js",
+	"types": "dist/types/index.d.ts",
+	"exports": {
+		"import": "./dist/esm/index.mjs",
+		"require": "./dist/cjs/index.js",
+		"types": "./dist/types/index.d.ts"
 	},
 	"scripts": {
 		"clean": "yarn essex clean",
