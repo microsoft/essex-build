@@ -72,7 +72,7 @@
 		"shx": "^0.3.4"
 	},
 	"peerDependencies": {
-		"@essex/eslint-config": ">=20.2.0",
+		"@essex/eslint-config": ">=20.2.1",
 		"@essex/jest-config": ">=21.0.6",
 		"@essex/prettier-config": ">=18.0.2",
 		"@typescript-eslint/eslint-plugin": ">= 4.4.1",
