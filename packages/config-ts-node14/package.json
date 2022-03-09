@@ -1,10 +1,10 @@
 {
-	"name": "@essex/tsconfig-node",
+	"name": "@essex/tsconfig-node14",
 	"version": "1.0.3",
 	"exports": {
 		".": "./tsconfig.json"
 	},
 	"dependencies": {
-		"@essex/tsconfig-node14": "workspace:^"
+		"@essex/tsconfig-base": "workspace:^"
 	}
 }
