@@ -2303,7 +2303,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/test-lib-esm@workspace:packages/test-lib-esm"
   dependencies:
-    "@essex/babel-config": "workspace:^"
     "@essex/eslint-config": "workspace:^"
     "@essex/jest-config": "workspace:^"
     "@essex/scripts": "workspace:^"
