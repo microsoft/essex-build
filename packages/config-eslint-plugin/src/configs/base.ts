@@ -5,40 +5,19 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 // Based on eslint-config-react-app
 // https://github.com/facebook/create-react-app/blob/master/packages/eslint-config-react-app/index.js
-import { existsSync } from 'fs'
-
 import {
-	defaultRules,
-	jestRules,
-	reactRules,
-	tsRules,
-} from '../essex/ruleConfigurations.js'
+	javascriptOverride,
+	jestOverride,
+	typescriptOverride,
+} from '../essex/overrides.js'
+import { typescriptParserOptions } from '../essex/parserOptions.js'
+import { importSettings, reactSettings } from '../essex/settings.js'
 
 // Force PnP's Hand (is this still necessary?)
 const { dependencies } = require('../../package.json') as {
 	dependencies: Record<string, string>
 }
 Object.keys(dependencies).forEach(dep => require(dep) as unknown)
-
-function getTsConfigRoots(): string[] {
-	const result: string[] = []
-	// root override
-	if (existsSync('./tsconfig.eslint.json')) {
-		result.push('./tsconfig.eslint.json')
-	} else if (existsSync('./tsconfig.json')) {
-		result.push('./tsconfig.json')
-	}
-
-	// standard monorepo
-	if (existsSync('./packages')) {
-		result.push('./packages/*/tsconfig.json')
-	}
-	// multi-language monorepo
-	if (existsSync('./javascript')) {
-		result.push('./javascript/*/tsconfig.json')
-	}
-	return result
-}
 
 const baseConfig = {
 	plugins: [
@@ -49,16 +28,7 @@ const baseConfig = {
 		'react-hooks',
 	],
 	parser: '@typescript-eslint/parser',
-	parserOptions: {
-		ecmaVersion: 'latest',
-		sourceType: 'module',
-		lib: ['ESNext'],
-		ecmaFeatures: {
-			jsx: true,
-		},
-		// typescript-eslint specific options
-		warnOnUnsupportedTypeScriptVersion: false,
-	},
+	parserOptions: typescriptParserOptions(true),
 	extends: [
 		'eslint:recommended',
 		'prettier',
@@ -74,81 +44,10 @@ const baseConfig = {
 		node: true,
 	},
 	settings: {
-		react: {
-			version: 'detect',
-		},
-		'import/extensions': [
-			'.js',
-			'.jsx',
-			'.cjs',
-			'.mjs',
-			'.ts',
-			'.tsx',
-			'.cts',
-			'.mts',
-		],
-		'import/ignore': [/\\.(json)$/, /\\.(scss|less|css)$/],
-		'import/parsers': {
-			'@typescript-eslint/parser': ['.ts', '.tsx', '.cts', '.mts'],
-			'@babel/eslint-parser': ['.js', '.jsx', '.cjs', '.mjs'],
-		},
+		...reactSettings(),
+		...importSettings(),
 	},
-	overrides: [
-		/**
-		 * TypeScript Rules
-		 */
-		{
-			files: ['**/*.ts', '**/*.tsx', '**/*.cts', '**/*.mts'],
-			parser: '@typescript-eslint/parser',
-			parserOptions: {
-				ecmaVersion: 'latest',
-				sourceType: 'module',
-				lib: ['ESNext'],
-				ecmaFeatures: {
-					jsx: true,
-				},
-				// typescript-eslint specific options
-				warnOnUnsupportedTypeScriptVersion: false,
-				tsconfigRootDir: process.cwd(),
-				project: getTsConfigRoots(),
-			},
-			plugins: ['@typescript-eslint/eslint-plugin'],
-			extends: [
-				'plugin:import/typescript',
-				'plugin:@typescript-eslint/recommended',
-				'plugin:@typescript-eslint/recommended-requiring-type-checking',
-			],
-			rules: { ...defaultRules, ...reactRules, ...tsRules },
-		},
-		/**
-		 * JS Rules
-		 */
-		{
-			files: ['**/*.js', '**/*.jsx', '**/*.cjs', '**/*.mjs'],
-			parser: '@babel/eslint-parser',
-			parserOptions: {
-				requireConfigFile: false,
-			},
-			rules: { ...defaultRules, ...reactRules },
-		},
-		/**
-		 * Jest Rules
-		 */
-		{
-			files: ['**/*.spec.*', '**/*.test.*'],
-			plugins: ['eslint-plugin-jest'],
-			extends: ['plugin:jest/recommended', 'plugin:jest/style'],
-			settings: {
-				jest: {
-					version: 27,
-				},
-			},
-			env: {
-				'jest/globals': true,
-			},
-			rules: { ...jestRules },
-		},
-	],
+	overrides: [typescriptOverride(true), javascriptOverride(), jestOverride()],
 }
 
 export default baseConfig
