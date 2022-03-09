@@ -1,4 +1,6 @@
 {
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"display": "Essex Base Config",
 	"compilerOptions": {
 		// The base configuration uses a bleeding-edge setup.
 		"target": "ESNext",

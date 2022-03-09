@@ -1,0 +1,19 @@
+releases:
+  "@essex/tsconfig-node": patch
+
+declined:
+  - "@essex/babel-config"
+  - "@essex/eslint-plugin"
+  - "@essex/jest-config"
+  - "@essex/tsconfig-base"
+  - "@essex/tsconfig-node14"
+  - "@essex/tsconfig-node16"
+  - "@essex/webpack-config"
+  - "@essex/scripts"
+  - "@essex/test-lib-dual"
+  - "@essex/test-lib-esm"
+  - "@essex/test-lib-legacy"
+  - "@essex/test-webapp-vite"
+  - "@essex/test-zips"
+  - "@essex/shellrunner"
+  - "@essex/swc-opts"
