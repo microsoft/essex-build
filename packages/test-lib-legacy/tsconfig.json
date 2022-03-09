@@ -6,6 +6,5 @@
 		"allowSyntheticDefaultImports": true,
 		"jsx": "react-jsx"
 	},
-	"include": ["src/index.ts"],
-	"exclude": ["**/*.spec.ts*"]
+	"include": ["./src"]
 }

@@ -2,8 +2,6 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
-// @ts-ignore
 import { loadJson } from '@essex/babel-config/resolve'
 import { existsSync } from 'fs'
 import { join } from 'path'
@@ -14,14 +12,23 @@ import { getBrowsersList } from './getBrowsersList.js'
 
 export * from './createBabelConfig.js'
 
+interface PackageJson {
+	useBuiltIns?: false | 'usage' | 'entry'
+	corejs?: { version: number; proposals: boolean } | 2 | 3
+	browserslist?: string[] | Record<string, string[]>
+}
 const cwd = process.cwd()
 const packageJsonPath = join(cwd, 'package.json')
-const packageJson = existsSync('package.json') ? loadJson(packageJsonPath) : {}
+const packageJson: PackageJson = existsSync('package.json')
+	? loadJson(packageJsonPath)
+	: {}
 const babelEsmOverride = join(cwd, 'babel.esm.js')
 const babelCjsOverride = join(cwd, 'babel.cjs.js')
 
 const useBuiltIns = packageJson.useBuiltIns || 'usage'
-const corejs = packageJson.corejs || (useBuiltIns ? { version: 3 } : undefined)
+const corejs =
+	packageJson.corejs ||
+	(useBuiltIns ? { version: 3, proposals: false } : undefined)
 
 /**
  * Gets the babel CJS configuration
@@ -38,7 +45,7 @@ export function getCjsConfiguration(
 	}
 	return createBabelConfig({
 		modules: 'cjs',
-		targets: getBrowsersList(env, packageJson.browserslist),
+		targets: getBrowsersList(env, packageJson?.browserslist),
 		useBuiltIns,
 		corejs,
 		...spec,

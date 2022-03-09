@@ -61,50 +61,53 @@ export function initMonorepo(): Promise<number> {
 async function configurePackageJsonForMonorepo(): Promise<number> {
 	const pkgJson = await readTargetPackageJson()
 	let writeNeeded = false
-	if (!pkgJson.scripts['preinstall']) {
-		pkgJson.scripts['preinstall'] = 'npx only-allow yarn'
+	let scripts = pkgJson.scripts
+	if (!scripts) {
+		scripts = pkgJson.scripts = {}
+	}
+	if (!scripts['preinstall']) {
+		scripts['preinstall'] = 'npx only-allow yarn'
 		writeNeeded = true
 	}
-	if (!pkgJson.scripts['postinstall']) {
-		pkgJson.scripts['postinstall'] = 'husky install'
+	if (!scripts['postinstall']) {
+		scripts['postinstall'] = 'husky install'
 		writeNeeded = true
 	}
-	if (!pkgJson.scripts['build:all']) {
-		pkgJson.scripts['build:all'] =
+	if (!scripts['build:all']) {
+		scripts['build:all'] =
 			'yarn workspaces foreach -pivt --topological-dev run build'
 		writeNeeded = true
 	}
-	if (!pkgJson.scripts['test:all']) {
-		pkgJson.scripts['test:all'] = 'yarn workspaces foreach -piv run test'
+	if (!scripts['test:all']) {
+		scripts['test:all'] = 'yarn workspaces foreach -piv run test'
 		writeNeeded = true
 	}
-	if (!pkgJson.scripts['clean:all']) {
-		pkgJson.scripts['clean:all'] = 'yarn workspaces foreach -piv run clean'
+	if (!scripts['clean:all']) {
+		scripts['clean:all'] = 'yarn workspaces foreach -piv run clean'
 		writeNeeded = true
 	}
-	if (!pkgJson.scripts['start:all']) {
-		pkgJson.scripts['start:all'] = 'yarn workspaces foreach -piv run start'
+	if (!scripts['start:all']) {
+		scripts['start:all'] = 'yarn workspaces foreach -piv run start'
 		writeNeeded = true
 	}
-	if (!pkgJson.scripts['publish:all']) {
-		pkgJson.scripts['publish:all'] =
+	if (!scripts['publish:all']) {
+		scripts['publish:all'] =
 			"yarn workspaces foreach --exclude '<YOUR_TOP_LEVEL_PACKAGE_NAME>' -pv npm publish --tolerate-republish --access public"
 	}
-	if (!pkgJson.scripts['unit:test']) {
-		pkgJson.scripts['unit:test'] = 'jest'
+	if (!scripts['unit:test']) {
+		scripts['unit:test'] = 'jest'
 		writeNeeded = true
 	}
-	if (!pkgJson.scripts['lint:all']) {
-		pkgJson.scripts['lint:all'] = 'essex lint --fix'
+	if (!scripts['lint:all']) {
+		scripts['lint:all'] = 'essex lint --fix'
 		writeNeeded = true
 	}
-	if (!pkgJson.scripts['git_is_clean']) {
-		pkgJson.scripts['git_is_clean'] = 'essex git-is-clean'
+	if (!scripts['git_is_clean']) {
+		scripts['git_is_clean'] = 'essex git-is-clean'
 		writeNeeded = true
 	}
-	if (!pkgJson.scripts['ci']) {
-		pkgJson.scripts['ci'] =
-			'run-s build:all test:all lint:all unit:test git_is_clean'
+	if (!scripts['ci']) {
+		scripts['ci'] = 'run-s build:all test:all lint:all unit:test git_is_clean'
 		writeNeeded = true
 	}
 	if (writeNeeded) {

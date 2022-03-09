@@ -22,7 +22,7 @@ export function checkApi(
 	})
 	Object.keys(expected).forEach(key => {
 		if (!imported[key]) {
-			errors.push(`missing export "${key}": "${expected[key]}"`)
+			errors.push(`missing export "${key}": "${expected[key] || 'undefined'}"`)
 		}
 	})
 

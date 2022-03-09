@@ -33,9 +33,9 @@ function isDebug() {
 	return Boolean(process.env['ESSEX_DEBUG'])
 }
 
-function readPackageJson(pkgPath: string) {
+function readPackageJson(pkgPath: string): Record<string, unknown> {
 	const data = readFileSync(pkgPath, 'utf-8')
-	return JSON.parse(data)
+	return JSON.parse(data) as Record<string, unknown>
 }
 
 /**
@@ -44,11 +44,11 @@ function readPackageJson(pkgPath: string) {
  */
 function readCustomSwcrc(): swc.Options {
 	const swcrc = readFileSync(SWCRC_FILE, 'utf8')
-	const result = JSON.parse(swcrc)
+	const result = JSON.parse(swcrc) as Record<string, unknown>
 	if (isDebug()) {
 		console.log('using custom swc configuration')
 	}
-	return result
+	return result as swc.Options
 }
 
 /**
@@ -58,7 +58,7 @@ function readCustomSwcrc(): swc.Options {
 function readSwcOverrides(): Partial<swc.Options> {
 	const pkgJsonPath = path.join(process.cwd(), './package.json')
 	const pkg = readPackageJson(pkgJsonPath)
-	return get(pkg, 'essex.swc')
+	return get(pkg, 'essex.swc') as Partial<swc.Options>
 }
 
 /**

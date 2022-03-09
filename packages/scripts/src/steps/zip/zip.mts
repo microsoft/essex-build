@@ -137,39 +137,45 @@ async function archive(
 		complete: '=',
 		incomplete: '-',
 	})
-	return new Promise(async (resolve, reject) => {
-		const output = createWriteStream(destination)
-		const archive = archiver('zip')
-
-		output.on('close', () => {
-			console.log(
-				`archive complete - ${chalk.green(destination)} ${chalk.grey(
-					format(archive.pointer(), {
-						scale: 'binary',
-						unit: 'B',
-					}),
-				)}`,
-			)
-			resolve()
-		})
-		archive.on('entry', () => {
-			bar.tick()
-		})
-
-		archive.on('warning', reject)
-		archive.on('error', reject)
-		archive.pipe(output)
-
-		for (const entry of fileEntries) {
-			const entryPath = join(cwd, entry)
-			archive.file(entryPath, {
-				name: entry,
-			})
-		}
-
-		info('finalizing archive')
-		archive.finalize()
+	const archive = archiver('zip')
+	const output = createWriteStream(destination)
+	archive.on('entry', () => bar.tick())
+	archive.pipe(output)
+	let resolve = (_value?: unknown) => {
+		/* nothing*/
+	}
+	let reject = (_err: unknown) => {
+		/* nothing*/
+	}
+	const loadPromise = new Promise((res, rej) => {
+		resolve = res
+		reject = rej
 	})
+	output.on('close', () => {
+		console.log(
+			`archive complete - ${chalk.green(destination)} ${chalk.grey(
+				/* eslint-disable-next-line @typescript-eslint/no-unsafe-call */
+				format(archive.pointer(), {
+					scale: 'binary',
+					unit: 'B',
+				}),
+			)}`,
+		)
+		resolve()
+	})
+	archive.on('warning', reject)
+	archive.on('error', reject)
+
+	for (const entry of fileEntries) {
+		const entryPath = join(cwd, entry)
+		archive.file(entryPath, {
+			name: entry,
+		})
+	}
+
+	info('finalizing archive')
+	const finalize = archive.finalize()
+	await Promise.all([loadPromise, finalize])
 }
 
 async function isZippable(file: string): Promise<boolean> {

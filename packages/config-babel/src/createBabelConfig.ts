@@ -2,8 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-ignore
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { resolve } from '@essex/babel-config/resolve'
 
 export interface BabelSpecification {

@@ -4,6 +4,7 @@
  */
 /* eslint-disable @essex/adjacent-await */
 import { BuildMode } from '../../types.mjs'
+import type { PackageJsonData } from '../../util/package.mjs'
 import {
 	readPublishedPackageJson,
 	readTargetPackageJson,
@@ -26,12 +27,12 @@ export async function verifyPackage(mode: BuildMode) {
 			verifyLegacyMode(pkg)
 			break
 		default:
-			throw new Error(`unknown mode "${mode}"`)
+			throw new Error(`unknown mode "${mode as string}"`)
 	}
 	subtaskSuccess('verify package.json')
 }
 
-function verifyEsmMode(pkg: any, raw: any) {
+function verifyEsmMode(pkg: PackageJsonData, raw: PackageJsonData) {
 	if (pkg.module) {
 		warn('package.module should be removed')
 	}
@@ -58,7 +59,7 @@ function verifyEsmMode(pkg: any, raw: any) {
 	}
 }
 
-function verifyDualMode(pkg: any) {
+function verifyDualMode(pkg: PackageJsonData) {
 	if (pkg.module) {
 		warn('package.module should be removed')
 	}
@@ -69,19 +70,19 @@ function verifyDualMode(pkg: any) {
 		'pkg.main should be "dist/cjs/index.js" for legacy module support',
 		errors,
 	)
-	invariant(pkg.exports, 'package.exports should be an object', errors)
+	invariant(pkg.exports != null, 'package.exports should be an object', errors)
 	invariant(
-		pkg.exports.import === './dist/esm/index.mjs',
+		pkg.exports?.import === './dist/esm/index.mjs',
 		'package.exports.import should be "./dist/esm/index.mjs"',
 		errors,
 	)
 	invariant(
-		pkg.exports.require === './dist/cjs/index.js',
+		pkg.exports?.require === './dist/cjs/index.js',
 		'package.exports.require should be "./dist/esm/index.mjs"',
 		errors,
 	)
 	invariant(
-		pkg.exports.types === './dist/types/index.d.ts',
+		pkg.exports?.types === './dist/types/index.d.ts',
 		'package.exports.types should be "./dist/types/index.d.ts"',
 		errors,
 	)
@@ -96,7 +97,7 @@ function verifyDualMode(pkg: any) {
 	}
 }
 
-function verifyLegacyMode(pkg: any) {
+function verifyLegacyMode(pkg: PackageJsonData) {
 	const errors: string[] = []
 	invariant(
 		pkg.main === 'dist/cjs/index.js',

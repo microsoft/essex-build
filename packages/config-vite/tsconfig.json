@@ -2,7 +2,8 @@
 	"extends": "@essex/tsconfig-node",
 	"compilerOptions": {
 		"outDir": "lib",
-		"resolveJsonModule": true
+		"declaration": true,
+		"skipLibCheck": true
 	},
 	"include": ["src/**/*.ts"]
 }

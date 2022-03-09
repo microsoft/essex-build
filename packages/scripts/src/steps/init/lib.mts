@@ -22,6 +22,9 @@ If you are in a monorepo context, you may need to update your tsconfig.json file
 
 async function configurePackageJsonForLib(): Promise<number> {
 	const pkgJson = await readTargetPackageJson()
+	if (!pkgJson.scripts) {
+		pkgJson.scripts = {}
+	}
 	let writeNeeded = false
 	if (!pkgJson.scripts.build) {
 		pkgJson.scripts.build = 'essex build'
@@ -43,8 +46,8 @@ async function configurePackageJsonForLib(): Promise<number> {
 		pkgJson.module = 'dist/esm/index.js'
 		writeNeeded = true
 	}
-	if (!pkgJson.typings) {
-		pkgJson.typings = 'dist/types/index.d.ts'
+	if (!pkgJson.types) {
+		pkgJson.types = 'dist/types/index.d.ts'
 		writeNeeded = true
 	}
 	if (writeNeeded) {

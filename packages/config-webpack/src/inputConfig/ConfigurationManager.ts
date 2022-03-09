@@ -57,7 +57,7 @@ export class ConfigurationManager {
 
 	public get extendedEnvironment(): Record<string, any> {
 		return this._config.environment
-			? this._config.environment(this.env, this.mode)
+			? (this._config.environment(this.env, this.mode) as Record<string, any>)
 			: {}
 	}
 

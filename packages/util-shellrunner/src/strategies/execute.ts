@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import type { ChildProcess, SpawnOptions } from 'child_process'
 /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
 // @ts-ignore no-typedef
@@ -39,8 +40,16 @@ export function execute({
 		let error = ''
 		if (!toConsole) {
 			if (spawned && spawned.stdout && spawned.stderr) {
-				spawned.stdout.on('data', data => (output += data.toString()))
-				spawned.stderr.on('data', data => (error += data.toString()))
+				spawned.stdout.on('data', (data: { toString?: () => string }) => {
+					if (data?.toString) {
+						output += data.toString()
+					}
+				})
+				spawned.stderr.on('data', (data: { toString?: () => string }) => {
+					if (data?.toString) {
+						error += data.toString()
+					}
+				})
 			}
 		}
 
