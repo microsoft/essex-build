@@ -3,6 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-argument */
+import type { Linter } from 'eslint'
 import { existsSync } from 'fs'
 import { join } from 'path'
 
@@ -18,7 +19,7 @@ const headerFile = existsSync(HEADER_OVERRIDE) ? HEADER_OVERRIDE : msHeader
 // To use them, explicitly reference them, e.g. `window.name` or `window.status`.
 const restrictedGlobals = require('confusing-browser-globals')
 
-const baselineRules: Record<string, unknown> = {
+const baselineRules: Linter.RulesRecord = {
 	// http://eslint.org/docs/rules/
 	'array-callback-return': 'warn',
 	'default-case': ['warn', { commentPattern: '^no default$' }],
@@ -53,7 +54,9 @@ const baselineRules: Record<string, unknown> = {
 	'no-sequences': 'warn',
 	'no-template-curly-in-string': 'warn',
 	'no-throw-literal': 'warn',
-	'no-restricted-globals': ['error'].concat(restrictedGlobals),
+	'no-restricted-globals': ['error'].concat(
+		restrictedGlobals,
+	) as Linter.RuleEntry,
 	'no-unused-expressions': [
 		'error',
 		{
@@ -106,7 +109,7 @@ const baselineRules: Record<string, unknown> = {
 		},
 	],
 }
-const importRules: Record<string, unknown> = {
+const importRules: Linter.RulesRecord = {
 	// https://github.com/benmosher/eslint-plugin-import/tree/master/docs/rules
 	'import/first': 'error',
 	'import/no-amd': 'error',
@@ -121,7 +124,7 @@ const importRules: Record<string, unknown> = {
 	'simple-import-sort/exports': 'error',
 }
 
-const essexPrefs: Record<string, unknown> = {
+const essexPrefs: Linter.RulesRecord = {
 	'no-plusplus': 'off',
 	'header/header': [2, headerFile],
 	'@essex/adjacent-await': 'warn',
@@ -129,7 +132,7 @@ const essexPrefs: Record<string, unknown> = {
 
 // Based on eslint-config-react-app
 // https://github.com/facebook/create-react-app/blob/master/packages/eslint-config-react-app/index.js
-export const defaultRules: Record<string, unknown> = {
+export const defaultRules: Linter.RulesRecord = {
 	...baselineRules,
 	...importRules,
 	...essexPrefs,
@@ -137,7 +140,7 @@ export const defaultRules: Record<string, unknown> = {
 
 // If adding a typescript-eslint version of an existing ESLint rule,
 // make sure to disable the ESLint rule here.
-export const tsRules: Record<string, unknown> = {
+export const tsRules: Linter.RulesRecord = {
 	'@typescript-eslint/interface-name-prefix': 'off',
 	// Conflicts with tsconfig paths, and with ts using es6 style imports e.g. (from './module.js')
 	'import/no-unresolved': 'off',
@@ -197,7 +200,7 @@ export const tsRules: Record<string, unknown> = {
 	'@typescript-eslint/no-redeclare': ['warn'],
 }
 
-export const reactRules: Record<string, unknown> = {
+export const reactRules: Linter.RulesRecord = {
 	// This isn't necessary in React 17
 	'react/react-in-jsx-scope': 'off',
 	// https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
@@ -233,7 +236,7 @@ export const reactRules: Record<string, unknown> = {
 	'react/prop-types': 'off',
 }
 
-export const jestRules: Record<string, unknown> = {
+export const jestRules: Linter.RulesRecord = {
 	// Jest @jest-environment directive cause header rule to fail
 	'header/header': 'off',
 

@@ -1,4 +1,4 @@
 {
-	"extends": "@essex/eslint-config/release",
+	"extends": "@essex/eslint-config",
 	"parser": "@typescript-eslint/parser"
 }
