@@ -3,5 +3,5 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 module.exports = {
-	extends: ['plugin:@essex/fast'],
+	extends: ['plugin:@essex/eslint-plugin/fast'],
 }
