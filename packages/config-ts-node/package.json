@@ -1,6 +1,6 @@
 {
 	"name": "@essex/tsconfig-node",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"exports": {
 		".": "./tsconfig.json"
 	},
