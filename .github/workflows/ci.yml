@@ -1,24 +1,54 @@
 name: CI
 on: [push, pull_request]
 jobs:
+  update-lockfile: 
+    runs-on: ubuntu-latest
+    if: "github.actor == 'dependabot[bot]'"
+    strategy: 
+      matrix: 
+        node-version: [16.x]
+    env:
+      HUSKY: 0
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - run: yarn install --no-immutable --mode=update-lockfile
+      - run: yarn dedupe --mode=update-lockfile
+      - name: git add yarn.lock && git commit
+        run: |
+          git config --global user.name 'darthtrevino'
+          git config --global user.email 'darthtrevino@users.noreply.github.com'
+          git add yarn.lock
+          git commit -m 'build: fix yarn.lock [dependabot skip]'
+          git push
+
+  version-check: 
+    runs-on: ubuntu-latest
+    if: "!contains(github.ref , 'release/') && !contains(github.head_ref , 'release/') && !contains(github.ref , 'dependabot/') && !contains(github.head_ref , 'dependabot/')"
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - run: yarn version check
+
   build:
     runs-on: ubuntu-latest
+    if: "github.actor != 'dependabot[bot]'"
     strategy:
       matrix:
         node-version: [14.x, 16.x]
 
     steps:
-      - run: echo "actor is ${{github.actor}}"
+      - run: echo "actor is ${{github.actor}}, ref is ${{github.ref}} head_ref is ${{github.head_ref}}"
       - name: Use Node ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
 
       - uses: actions/checkout@v1
-
-      - run: yarn version check
-        if: "github.actor != 'dependabot[bot]' && !contains(github.ref , 'release/') && !contains(github.head_ref , 'release/')"
-        name: Version Check
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
@@ -32,22 +62,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      #
-      # Explicitly update the lockfile when processing a dependabot update
-      #
-      - run: yarn update-lockfile
-        if: "github.actor == 'dependabot[bot]'"
-        name: Update Yarn Lockfile
-
       - run: yarn install
-        name: Install Dependencies
-
       - run: yarn ci
-        name: Execute Tests
-
-      #
-      # Verify a clean repo; expected to fail for dependabot
-      #
       - run: yarn git_is_clean
         if: "github.actor != 'dependabot[bot]'"
         name: Git is clean
