@@ -16,7 +16,6 @@ jobs:
         with:
           node-version: 16
       - run: yarn install --no-immutable --mode=update-lockfile
-      - run: yarn dedupe --mode=update-lockfile
       - name: git add yarn.lock && git commit
         run: |
           git config --global user.name 'darthtrevino'
