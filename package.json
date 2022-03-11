@@ -22,7 +22,7 @@
 		"eslint": "ESSEX_DEBUG=1 yarn essex lint --fix",
 		"prettify": "essex prettify",
 		"git_is_clean": "yarn essex git-is-clean",
-		"ci": "run-s build lint eslint test jest git_is_clean"
+		"ci": "run-s build lint eslint test jest"
 	},
 	"devDependencies": {
 		"@essex/eslint-config": "workspace:^",
