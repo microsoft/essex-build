@@ -4,6 +4,7 @@ dist/
 lib/
 coverage/
 public/
+docs/
 pnpm-lock.yaml
 pnpm-workspace.yaml
 .yarn/

@@ -1,6 +1,6 @@
 {
 	"name": "@essex/scripts",
-	"version": "20.4.9",
+	"version": "20.5.1",
 	"description": "A set of scripts to make a essex javascript engineer's life easier",
 	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
 	"author": "David Tittsworth <datittsw@microsoft.com>",
@@ -27,11 +27,13 @@
 	},
 	"dependencies": {
 		"@azure/storage-blob": "^12.8.0",
+		"@essex/api-extractor-config": "workspace:^",
 		"@essex/eslint-config": "workspace:^",
 		"@essex/eslint-plugin": "workspace:^",
 		"@essex/shellrunner": "workspace:^",
 		"@essex/swc-opts": "workspace:^",
-		"@swc/core": "1.2.151",
+		"@microsoft/api-extractor": "^7.19.4",
+		"@swc/core": "1.2.152",
 		"@typescript-eslint/eslint-plugin": "^5.14.0",
 		"@typescript-eslint/parser": "^5.14.0",
 		"archiver": "^5.3.0",
@@ -73,7 +75,7 @@
 	},
 	"peerDependencies": {
 		"@essex/eslint-config": ">=20.3.0",
-		"@essex/jest-config": ">=21.0.6",
+		"@essex/jest-config": ">=21.0.7",
 		"@essex/prettier-config": ">=18.0.2",
 		"@typescript-eslint/eslint-plugin": ">= 4.4.1",
 		"@typescript-eslint/parser": ">= 4.4.1",

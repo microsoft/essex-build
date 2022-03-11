@@ -1,0 +1,1 @@
+# @essex/api-extractor-config

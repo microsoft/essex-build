@@ -1,6 +1,6 @@
 {
 	"name": "@essex/jest-config",
-	"version": "21.0.6",
+	"version": "21.0.7",
 	"author": "Chris Trevino <chtrevin@microsoft.com>",
 	"license": "MIT",
 	"main": "dist/cjs/index.js",
@@ -26,7 +26,7 @@
 	},
 	"dependencies": {
 		"@essex/swc-opts": "workspace:^",
-		"@swc/core": "1.2.151",
+		"@swc/core": "1.2.152",
 		"@swc/jest": "^0.2.20",
 		"@types/jest": "^27.4.1",
 		"identity-obj-proxy": "^3.0.0",
