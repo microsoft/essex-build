@@ -198,6 +198,9 @@ export const tsRules: Linter.RulesRecord = {
 
 	'no-redeclare': 'off',
 	'@typescript-eslint/no-redeclare': ['warn'],
+
+	// TS/ESlint clashing
+	'@typescript-eslint/no-unnecessary-type-assertion': 0,
 }
 
 export const reactRules: Linter.RulesRecord = {

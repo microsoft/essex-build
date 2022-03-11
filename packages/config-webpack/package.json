@@ -1,6 +1,6 @@
 {
 	"name": "@essex/webpack-config",
-	"version": "20.1.8",
+	"version": "20.1.9",
 	"main": "lib/index.js",
 	"types": "lib/index.d.ts",
 	"license": "MIT",
@@ -16,7 +16,7 @@
 	"dependencies": {
 		"@essex/swc-opts": "workspace:^",
 		"@swc/cli": "^0.1.55",
-		"@swc/core": "1.2.151",
+		"@swc/core": "1.2.152",
 		"@types/webpack": "^5.28.0",
 		"@types/webpack-dev-server": "^4.7.2",
 		"css-loader": "^6.7.1",
