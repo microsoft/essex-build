@@ -32,13 +32,25 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
+      #
+      # Explicitly update the lockfile when processing a dependabot update
+      #
+      - run: yarn update-lockfile
+        if: "github.actor == 'dependabot[bot]'"
+        name: Update Yarn Lockfile
+
       - run: yarn install
         name: Install Dependencies
 
       - run: yarn ci
         name: Execute Tests
-        env:
-          CI: true
+
+      #
+      # Verify a clean repo; expected to fail for dependabot
+      #
+      - run: yarn git_is_clean
+        if: "github.actor != 'dependabot[bot]'"
+        name: Git is clean
 
       - name: Publish coverage to codecov.io
         uses: codecov/codecov-action@v1.0.13
