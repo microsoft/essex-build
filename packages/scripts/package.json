@@ -33,7 +33,7 @@
 		"@essex/shellrunner": "workspace:^",
 		"@essex/swc-opts": "workspace:^",
 		"@microsoft/api-extractor": "^7.19.4",
-		"@swc/core": "1.2.152",
+		"@swc/core": "1.2.153",
 		"@typescript-eslint/eslint-plugin": "^5.14.0",
 		"@typescript-eslint/parser": "^5.14.0",
 		"archiver": "^5.3.0",
