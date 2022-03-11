@@ -28,7 +28,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - run: yarn version check
-        if: "github.actor != 'dependabot-preview[bot]' && !contains(github.ref , 'release/') && !contains(github.head_ref , 'release/')"
+        if: "github.actor != 'dependabot[bot]' && !contains(github.ref , 'release/') && !contains(github.head_ref , 'release/')"
         name: Version Check
 
       - run: yarn install
@@ -47,12 +47,12 @@ jobs:
   auto-merge:
     name: Auto-Merge Dependabot PRs
     runs-on: ubuntu-latest
-    if: github.actor == 'dependabot-preview[bot]'
+    if: github.actor == 'dependabot[bot]'
     needs:
       - build
     steps:
       - name: auto-merge
-        if: github.actor == 'dependabot-preview[bot]'
+        if: github.actor == 'dependabot[bot]'
         uses: ridedott/dependabot-auto-merge-action@master
         with:
           GITHUB_TOKEN: ${{ secrets.AUTOMERGE_PAT }}
