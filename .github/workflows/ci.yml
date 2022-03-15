@@ -32,26 +32,16 @@ jobs:
         node-version: [14.x, 16.x]
     steps:
       - run: echo "actor is ${{github.actor}}, ref is ${{github.ref}} head_ref is ${{github.head_ref}}"
+
       - name: Get branch name
         id: branch-name
         uses: tj-actions/branch-names@v5.1
-
-      - name: Running on the default branch.
-        if: steps.branch-name.outputs.is_default == 'true'
-        run: |
-          echo "Running on default: ${{ steps.branch-name.outputs.current_branch }}"
-        # Outputs: "Running on default: main".
-
-      - name: Running on a pull request branch.
-        if: steps.branch-name.outputs.is_default == 'false'
-        run: |
-          echo "Running on pr: ${{ steps.branch-name.outputs.current_branch }}"
-        # Outputs: "Running on pr: feature/test".
 
       - name: Use Node ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+
       - uses: actions/checkout@v3
 
       - name: Get yarn cache directory path
@@ -73,3 +63,21 @@ jobs:
         uses: codecov/codecov-action@v1.0.13
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+
+      - # It is often a desired behavior to merge only when a workflow execution
+        # succeeds. This can be changed as needed.
+        if: contains(steps.branch-name.outputs.current_branch , 'dependabot/')
+        name: Automerge
+        uses: ridedott/merge-me-action@v2
+        with:
+          # Depending on branch protection rules, a  manually populated
+          # `GITHUB_TOKEN_WORKAROUND` secret with permissions to push to
+          # a protected branch must be used. This secret can have an arbitrary
+          # name, as an example, this repository uses `DOTTBOTT_TOKEN`.
+          #
+          # When using a custom token, it is recommended to leave the following
+          # comment for other developers to be aware of the reasoning behind it:
+          #
+          # This must be used as GitHub Actions token does not support pushing
+          # to protected branches.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
