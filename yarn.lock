@@ -1814,7 +1814,7 @@ __metadata:
     eslint: 8.11.0
     eslint-import-resolver-node: ^0.3.6
     glob: ^7.2.0
-    human-format: ^0.11.0
+    human-format: ^1.0.0
     lodash: ^4.17.21
     mime-types: ^2.1.34
     npm-run-all: ^4.1.5
@@ -6976,10 +6976,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"human-format@npm:^0.11.0":
-  version: 0.11.0
-  resolution: "human-format@npm:0.11.0"
-  checksum: 177bfa53febb3e686eb78933fb5826b230b0cd4f10d0e087d7b47d9b0a51a7c59ea0bb32974c49b192a5726196a9796b558a49540d51883e15c3953374c6277f
+"human-format@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "human-format@npm:1.0.0"
+  checksum: 19abc036128d81899a64e08945e5b34b1ada796f85c6a9dc83dd4498f2d4595a91e08ca6508b2386d2a7c2ef4841192af185ea013887ce6b0ad150352978bb5d
   languageName: node
   linkType: hard
 
