@@ -68,3 +68,15 @@ jobs:
         uses: codecov/codecov-action@v1.0.13
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Automatically Merge Dependabot PR
+        uses: plm9606/automerge_actions@1.2.2
+        with:
+          # The number of reviewers to automatically merge. Default is 1.
+          reviewers-number: 0
+          # The merge method ("merge", "squash", "rebase"). Default is "merge"
+          merge-method: 'squash'
+          # Let the bot delete the merged branch. true or false.
+          auto-delete: true
+          # GitHub WebHook Secret Token
+          github-token: ${{ secrets.GITHUB_TOKEN }}
