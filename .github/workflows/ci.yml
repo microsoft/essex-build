@@ -16,7 +16,16 @@ jobs:
         with:
           node-version: 16
       - uses: actions/checkout@v3
+        with:
+          depth: 0
+
+      # If this run was triggered by a pull request event, then checkout
+      # the head of the pull request instead of the merge commit.
+      - run: git checkout HEAD^2
+        if: ${{ github.event_name == 'pull_request' }}
+
       - run: yarn install --no-immutable --mode=update-lockfile
+      - run: git status
       - name: git add yarn.lock && git commit
         run: |
           git config --global user.name 'darthtrevino'
