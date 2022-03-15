@@ -16,14 +16,17 @@ jobs:
         with:
           node-version: 16
       - uses: actions/checkout@v3
+        with:
+          depth: 0
+
       - run: yarn install --no-immutable --mode=update-lockfile
+      - run: git status
       - name: git add yarn.lock && git commit
         run: |
           git config --global user.name 'darthtrevino'
           git config --global user.email 'darthtrevino@users.noreply.github.com'
           git add yarn.lock
           git commit -m 'build: fix yarn.lock [dependabot skip]'
-          git push
 
   version-check:
     runs-on: ubuntu-latest
@@ -39,7 +42,6 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    if: "github.actor != 'dependabot[bot]'"
     strategy:
       matrix:
         node-version: [14.x, 16.x]
