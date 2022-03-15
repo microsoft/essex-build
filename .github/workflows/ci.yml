@@ -1,12 +1,11 @@
 name: CI
 on: [push, pull_request]
+env:
+  DEFAULT_NODE_VERSION: 16
 jobs:
   update-lockfile:
     runs-on: ubuntu-latest
     if: "github.actor == 'dependabot[bot]'"
-    strategy:
-      matrix:
-        node-version: [16.x]
     env:
       HUSKY: 0
     permissions:
@@ -14,11 +13,8 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: 16
+          node-version: ${{env.DEFAULT_NODE_VERSION}}
       - uses: actions/checkout@v3
-        with:
-          depth: 0
-
       - run: yarn install --no-immutable --mode=update-lockfile
       - run: git status
       - name: git add yarn.lock && git commit
@@ -28,20 +24,9 @@ jobs:
           git add yarn.lock
           git commit -m 'build: fix yarn.lock [dependabot skip]'
 
-  version-check:
-    runs-on: ubuntu-latest
-    if: "!contains(github.ref , 'release/') && !contains(github.head_ref , 'release/') && !contains(github.ref , 'dependabot/') && !contains(github.head_ref , 'dependabot/')"
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 16
-      - run: yarn version check
-
   build:
     runs-on: ubuntu-latest
+    if: "github.actor != 'dependabot[bot]'"
     strategy:
       matrix:
         node-version: [14.x, 16.x]
@@ -77,15 +62,3 @@ jobs:
         uses: codecov/codecov-action@v1.0.13
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-
-  auto-merge:
-    name: Auto-Merge Dependabot PRs
-    runs-on: ubuntu-latest
-    if: github.actor == 'darthtrevino' && (contains(github.ref , 'dependabot/') || contains(github.head_ref , 'dependabot/'))
-    needs:
-      - build
-    steps:
-      - name: auto-merge
-        uses: ridedott/merge-me-action@v2
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
