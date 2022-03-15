@@ -68,12 +68,3 @@ jobs:
         uses: codecov/codecov-action@v1.0.13
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-
-      - name: Automatically Merge Dependabot PR
-        uses: plm9606/automerge_actions@1.2.2
-        with:
-          label-name: 'dependencies'
-          reviewers-number: 0
-          merge-method: 'squash'
-          auto-delete: true
-          github-token: ${{ secrets.GITHUB_TOKEN }}
