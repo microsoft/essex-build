@@ -11,6 +11,7 @@ jobs:
     name: Merge me!
     runs-on: ubuntu-latest
     steps:
+      - run: echo "conclusion is ${{ github.event.workflow_run.conclusion }}, actor is ${{ github.actor }}, ref is ${{github.ref}} head_ref is ${{github.head_ref}}"
       - # It is often a desired behavior to merge only when a workflow execution
         # succeeds. This can be changed as needed.
         if: github.event.workflow_run.conclusion == 'success' &&  github.actor == 'darthtrevino' && (contains(github.ref , 'dependabot/') || contains(github.head_ref , 'dependabot/'))
