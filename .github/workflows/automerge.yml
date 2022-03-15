@@ -1,10 +1,8 @@
 name: Automerge
 on:
-  workflow_run:
+  check_suite:
     types:
       - completed
-    workflows:
-      - 'CI'
 
 jobs:
   merge-me:
