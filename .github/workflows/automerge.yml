@@ -10,11 +10,27 @@ jobs:
   merge-me:
     name: Merge me!
     runs-on: ubuntu-latest
+    if: github.event.workflow_run.conclusion == 'success' && github.actor == 'darthtrevino'
     steps:
-      - run: echo "conclusion is ${{ github.event.workflow_run.conclusion }}, actor is ${{ github.actor }}, ref is ${{github.ref}} head_ref is ${{github.head_ref}}"
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v5.1
+
+      - name: Running on the default branch.
+        if: steps.branch-name.outputs.is_default == 'true'
+        run: |
+          echo "Running on default: ${{ steps.branch-name.outputs.current_branch }}"
+        # Outputs: "Running on default: main".
+
+      - name: Running on a pull request branch.
+        if: steps.branch-name.outputs.is_default == 'false'
+        run: |
+          echo "Running on pr: ${{ steps.branch-name.outputs.current_branch }}"
+        # Outputs: "Running on pr: feature/test".
+      - run: echo "ref is ${{github.ref}} head_ref is ${{github.head_ref}}"
       - # It is often a desired behavior to merge only when a workflow execution
         # succeeds. This can be changed as needed.
-        if: github.event.workflow_run.conclusion == 'success' &&  github.actor == 'darthtrevino' && (contains(github.ref , 'dependabot/') || contains(github.head_ref , 'dependabot/'))
+        if: (contains(github.ref , 'dependabot/') || contains(github.head_ref , 'dependabot/'))
         name: Merge me!
         uses: ridedott/merge-me-action@v2
         with:
