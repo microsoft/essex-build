@@ -70,6 +70,7 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Automatically Merge Dependabot PR
+        if: (contains(github.ref , 'dependabot/') || contains(github.head_ref , 'dependabot/'))
         uses: plm9606/automerge_actions@1.2.2
         with:
           label-name: 'dependencies'
