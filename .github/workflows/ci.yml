@@ -47,6 +47,7 @@ jobs:
         node-version: [14.x, 16.x]
 
     steps:
+      - run: echo "actor is ${{github.actor}}, ref is ${{github.ref}} head_ref is ${{github.head_ref}}"
       - name: Use Node ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
