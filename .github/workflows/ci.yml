@@ -38,10 +38,6 @@ jobs:
     steps:
       - run: echo "actor is ${{github.actor}}, ref is ${{github.ref}} head_ref is ${{github.head_ref}}"
 
-      - name: Get branch name
-        id: branch-name
-        uses: tj-actions/branch-names@v5.1
-
       - name: Use Node ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
