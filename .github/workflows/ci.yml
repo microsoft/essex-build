@@ -86,7 +86,6 @@ jobs:
       - build
     steps:
       - name: auto-merge
-        if: github.actor == 'dependabot[bot]'
         uses: ridedott/merge-me-action@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
