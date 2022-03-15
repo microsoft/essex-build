@@ -30,7 +30,7 @@ jobs:
 
   version-check:
     runs-on: ubuntu-latest
-    if: "!contains(github.ref , 'release/') && !contains(github.head_ref , 'release/') && !contains(github.ref , 'dependabot/') && !contains(github.head_ref , 'dependabot/')"
+    if: "!contains(github.head_ref , 'release/') && !contains(github.head_ref , 'dependabot/')"
     steps:
       - uses: actions/checkout@v3
         with:
@@ -81,7 +81,7 @@ jobs:
   auto-merge:
     name: Auto-Merge Dependabot PRs
     runs-on: ubuntu-latest
-    if: github.event.workflow_run.conclusion == 'success' && github.actor == 'darthtrevino' && (contains(github.ref , 'dependabot/') || contains(github.head_ref , 'dependabot/'))
+    if: github.event.workflow_run.conclusion == 'success' && github.actor == 'darthtrevino' && contains(github.head_ref , 'dependabot/')
     needs:
       - build
     steps:
