@@ -84,7 +84,7 @@ export async function executeBuild({
 	const generateDocs = docs ? generateApiExtractorReport() : noop()
 
 	if (mode !== BuildMode.legacy) {
-		await processEsm(rewriteEsmToMjs, esmOnly ? 'dist' : 'dist/esm')
+		await processEsm(rewriteEsmToMjs, esmOnly ? 'dist/lib' : 'dist/esm')
 	}
 
 	if (checkPackage) await verifyPackage(mode)

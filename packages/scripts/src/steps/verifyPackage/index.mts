@@ -39,8 +39,8 @@ function verifyEsmMode(pkg: PackageJsonData, raw: PackageJsonData) {
 
 	const errors: string[] = []
 	invariant(
-		pkg.main === 'dist/index.js',
-		'package.main should be "dist/index.js"',
+		pkg.main === 'dist/lib/index.js',
+		'package.main should be "dist/lib/index.js"',
 		errors,
 	)
 	invariant(
@@ -49,8 +49,8 @@ function verifyEsmMode(pkg: PackageJsonData, raw: PackageJsonData) {
 		errors,
 	)
 	invariant(
-		pkg.types === 'dist/index.d.ts',
-		'package.main should be "dist/index.d.ts"',
+		pkg.types === 'dist/lib/index.d.ts',
+		'package.main should be "dist/lib/index.d.ts"',
 		errors,
 	)
 
