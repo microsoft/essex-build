@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+/* eslint-disable @essex/adjacent-await */
 import type { Command } from 'commander'
 
 import { checkAndEmitTypings } from '../steps/typescript/checkAndEmitTypings.mjs'

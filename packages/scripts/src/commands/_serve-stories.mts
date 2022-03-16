@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+/* eslint-disable @typescript-eslint/no-empty-interface */
 import type { Command } from 'commander'
 
 import { serveStories as execServeStories } from '../steps/stories/index.mjs'
@@ -16,7 +17,7 @@ export default function serveStories(program: Command): void {
 	program
 		.command('serve-stories')
 		.description('Start component stories server')
-		.action(async ({}: ServeStoriesOptions) => {
+		.action(async (_opts: ServeStoriesOptions) => {
 			await execServeStories()
 		})
 }
