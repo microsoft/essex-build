@@ -17,13 +17,15 @@ export async function checkAndEmitTypings(
 	fileNames: string[],
 	stripInternal: boolean,
 	esmOnly: boolean,
+	noEmit = false,
 ): Promise<number> {
 	const start = performance.now()
 	const config = await loadTSConfig()
 	const options = {
 		...parseTSConfig(config),
-		declaration: true,
-		emitDeclarationOnly: true,
+		declaration: !noEmit,
+		emitDeclarationOnly: !noEmit,
+		noEmit,
 		stripInternal,
 		outDir: esmOnly ? 'dist/lib' : 'dist/types',
 	}
@@ -61,9 +63,9 @@ export async function checkAndEmitTypings(
 	})
 
 	if (hasErrors) {
-		subtaskFail('typings')
-		throw new Error(`typings failure`)
+		subtaskFail('check types')
+		throw new Error(`check types failure`)
 	}
-	subtaskSuccess('typings', printPerf(start))
+	subtaskSuccess('check types', printPerf(start))
 	return emitResult.emitSkipped ? 1 : 0
 }
