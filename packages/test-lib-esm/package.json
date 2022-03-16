@@ -13,7 +13,8 @@
 		"build": "ESSEX_DEBUG=1 essex build --stories",
 		"lint": "essex lint --fix",
 		"jest": "NODE_OPTIONS=--experimental-vm-modules yarn node $(yarn bin jest) --runInBand",
-		"start": "essex watch"
+		"start": "essex watch",
+		"stories": "essex serve-stories"
 	},
 	"repository": {
 		"type": "git",
