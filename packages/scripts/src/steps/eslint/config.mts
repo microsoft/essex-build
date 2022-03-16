@@ -9,18 +9,14 @@ import { fileURLToPath } from 'url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const releaseConfig = path.join(__dirname, '../../../config/eslintrc-release')
-const experimentConfig = path.join(
-	__dirname,
-	'../../../config/eslintrc-experiment',
-)
+const eslintConfig = path.join(__dirname, '../../../config/eslintrc')
 const projectConfig = path.join(process.cwd(), '.eslintrc')
 
-export function getConfigFile(strict: boolean): string {
+export function getConfigFile(): string {
 	if (existsSync(projectConfig)) {
 		return projectConfig
 	}
-	return strict ? releaseConfig : experimentConfig
+	return eslintConfig
 }
 
 export function getIgnorePath(): string {

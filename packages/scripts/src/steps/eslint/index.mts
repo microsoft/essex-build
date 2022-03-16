@@ -16,7 +16,7 @@ export async function eslint(
 	files: string[] = ['.'],
 ): Promise<void> {
 	try {
-		const configFile = getConfigFile(strict)
+		const configFile = getConfigFile()
 		const ignorePath = getIgnorePath()
 		const linter = new ESLint({
 			fix,
