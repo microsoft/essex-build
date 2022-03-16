@@ -1,4 +1,4 @@
 {
-	"*": ["yarn essex prettify --staged"],
-	"*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}": ["yarn essex lint --fix --staged"]
+	"*": ["essex prettify --staged"],
+	"*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}": ["essex lint --fix --staged"]
 }
