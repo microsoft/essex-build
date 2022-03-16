@@ -1,4 +1,0 @@
-{
-	"extends": "@essex/eslint-config",
-	"parser": "@typescript-eslint/parser"
-}

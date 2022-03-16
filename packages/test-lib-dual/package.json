@@ -25,14 +25,11 @@
 		"directory": "packages/test-suite-lib"
 	},
 	"devDependencies": {
-		"@essex/babel-config": "workspace:^",
-		"@essex/eslint-config": "workspace:^",
 		"@essex/jest-config": "workspace:^",
 		"@essex/scripts": "workspace:^",
 		"@essex/tsconfig-base": "workspace:^",
 		"@types/jest": "^27.4.1",
 		"@types/react": "^17.0.40",
-		"eslint": "^8.11.0",
 		"jest": "^27.5.1",
 		"npm-run-all": "^4.1.5",
 		"react": "^17.0.2",

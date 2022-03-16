@@ -1926,14 +1926,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/test-lib-dual@workspace:packages/test-lib-dual"
   dependencies:
-    "@essex/babel-config": "workspace:^"
-    "@essex/eslint-config": "workspace:^"
     "@essex/jest-config": "workspace:^"
     "@essex/scripts": "workspace:^"
     "@essex/tsconfig-base": "workspace:^"
     "@types/jest": ^27.4.1
     "@types/react": ^17.0.40
-    eslint: ^8.11.0
     jest: ^27.5.1
     npm-run-all: ^4.1.5
     react: ^17.0.2
@@ -1947,14 +1944,12 @@ __metadata:
   dependencies:
     "@essex/api-extractor-config": "workspace:^"
     "@essex/babel-config": "workspace:^"
-    "@essex/eslint-config": "workspace:^"
     "@essex/jest-config": "workspace:^"
     "@essex/scripts": "workspace:^"
     "@essex/tsconfig-base": "workspace:^"
     "@types/jest": ^27.4.1
     "@types/lodash-es": ^4.17.6
     "@types/react": ^17.0.40
-    eslint: ^8.11.0
     jest: ^27.5.1
     lodash-es: ^4.17.21
     npm-run-all: ^4.1.5
@@ -1967,14 +1962,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/test-lib-legacy@workspace:packages/test-lib-legacy"
   dependencies:
-    "@essex/babel-config": "workspace:^"
-    "@essex/eslint-config": "workspace:^"
     "@essex/jest-config": "workspace:^"
     "@essex/scripts": "workspace:^"
     "@essex/tsconfig-base": "workspace:^"
     "@types/jest": ^27.4.1
     "@types/react": ^17.0.40
-    eslint: ^8.11.0
     jest: ^27.5.1
     npm-run-all: ^4.1.5
     react: ^17.0.2
@@ -2027,19 +2019,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/test-webapp-webpack@workspace:packages/test-webpack"
   dependencies:
-    "@essex/eslint-config": "workspace:^"
     "@essex/scripts": "workspace:^"
     "@essex/test-lib-dual": "workspace:^"
     "@essex/test-lib-esm": "workspace:^"
     "@essex/test-lib-legacy": "workspace:^"
     "@essex/test-lib-md-index": "workspace:^"
     "@essex/tsconfig-base": "workspace:^"
-    "@essex/webpack-config": "workspace:^"
     "@types/react": ^17.0.40
     "@types/react-dom": ^17.0.13
-    "@typescript-eslint/eslint-plugin": ^5.15.0
-    "@typescript-eslint/parser": ^5.15.0
-    eslint-import-resolver-node: ^0.3.6
     react: ^17.0.2
     react-dom: ^17.0.2
   languageName: unknown
