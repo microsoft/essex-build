@@ -9,6 +9,7 @@ import path from 'path'
 
 import { generateApiExtractorReport } from '../steps/api-extractor/index.mjs'
 import { esmify as processEsm } from '../steps/esmify/index.mjs'
+import { buildStories as buildStoriesStep } from '../steps/stories/index.mjs'
 import { compile as compileTypescript } from '../steps/typescript/index.mjs'
 import { verifyExports } from '../steps/verifyExports/index.mjs'
 import { verifyPackage } from '../steps/verifyPackage/index.mjs'
@@ -32,6 +33,11 @@ export interface BuildCommandOptions {
 	skipPackageCheck?: boolean
 	skipExportCheck?: boolean
 
+	/**
+	 * Builds UI component stories
+	 */
+	stories?: boolean
+
 	mode?: BuildMode
 }
 
@@ -46,6 +52,7 @@ export default function build(program: Command): void {
 		)
 		.option('--skipPackageCheck', 'skips package.json verification check')
 		.option('--skipExportCheck', 'skips esm/cjs export check')
+		.option('--stories', 'builds component stories')
 		.option('--mode [mode]', 'options are "legacy", "dual", and "esm"')
 		.action(async (options: BuildCommandOptions): Promise<any> => {
 			await executeBuild(options)
@@ -57,6 +64,7 @@ export async function executeBuild({
 	stripInternalTypes = false,
 	skipExportCheck = false,
 	skipPackageCheck = false,
+	stories = false,
 	mode = BuildMode.esm,
 }: BuildCommandOptions): Promise<void> {
 	const checkPackage = !skipPackageCheck
@@ -70,15 +78,18 @@ export async function executeBuild({
 		throw new Error('tsconfig.json must exist')
 	}
 
+	const buildStories = stories ? buildStoriesStep() : noop()
+
 	await compileTypescript(stripInternalTypes, esmOnly)
 	const generateDocs = docs ? generateApiExtractorReport() : noop()
 
 	if (mode !== BuildMode.legacy) {
-		await processEsm(rewriteEsmToMjs, esmOnly ? 'dist' : 'dist/esm')
+		await processEsm(rewriteEsmToMjs, esmOnly ? 'dist/lib' : 'dist/esm')
 	}
 
 	if (checkPackage) await verifyPackage(mode)
 	if (checkExports) await verifyExports(esmOnly)
 
-	await generateDocs
+	// wrap up long-running tasks
+	await Promise.all([generateDocs, buildStories])
 }

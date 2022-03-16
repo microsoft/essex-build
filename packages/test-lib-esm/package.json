@@ -5,15 +5,16 @@
 	"type": "module",
 	"main": "src/index.ts",
 	"publishConfig": {
-		"main": "dist/index.js",
-		"types": "dist/index.d.ts"
+		"main": "dist/lib/index.js",
+		"types": "dist/lib/index.d.ts"
 	},
 	"scripts": {
 		"clean": "essex clean",
-		"build": "ESSEX_DEBUG=1 essex build --docs",
+		"build": "ESSEX_DEBUG=1 essex build --stories",
 		"lint": "essex lint --fix",
 		"jest": "NODE_OPTIONS=--experimental-vm-modules yarn node $(yarn bin jest) --runInBand",
-		"start": "essex watch"
+		"start": "essex watch",
+		"stories": "essex serve-stories"
 	},
 	"repository": {
 		"type": "git",

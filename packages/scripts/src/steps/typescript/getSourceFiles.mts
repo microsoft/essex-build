@@ -4,22 +4,21 @@
  */
 import glob from 'glob'
 
-import { difference } from './sets.mjs'
-
 const SOURCE_GLOB = 'src/**/*.ts*'
-const TEST_GLOB = 'src/**/__tests__/**'
 
 /**
  * Get a set of source files to compile
  * @returns
  */
 export async function getSourceFiles(): Promise<string[]> {
-	const [sourceFiles, testFiles] = await Promise.all([
-		resolveGlob(SOURCE_GLOB),
-		resolveGlob(TEST_GLOB),
-	])
-	const diff = difference(sourceFiles, testFiles)
-	return [...diff.values()]
+	const sourceFiles = [...(await resolveGlob(SOURCE_GLOB))]
+	return sourceFiles.filter(
+		t =>
+			t.indexOf('/__tests__/') === -1 &&
+			t.indexOf('.spec.') === -1 &&
+			t.indexOf('.test.') === -1 &&
+			t.indexOf('.stories.') === -1,
+	)
 }
 
 function resolveGlob(globSpec: string): Promise<Set<string>> {

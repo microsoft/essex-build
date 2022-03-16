@@ -25,7 +25,7 @@ export async function checkAndEmitTypings(
 		declaration: true,
 		emitDeclarationOnly: true,
 		stripInternal,
-		outDir: esmOnly ? 'dist' : 'dist/types',
+		outDir: esmOnly ? 'dist/lib' : 'dist/types',
 	}
 
 	const program = ts.createProgram(fileNames, options)
