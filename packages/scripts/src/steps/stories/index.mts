@@ -10,6 +10,8 @@ import build from '@ladle/react/api/build.js'
 import serve from '@ladle/react/api/serve.js'
 import fs from 'fs'
 
+import { never } from '../util/never.mjs'
+
 export async function buildStories() {
 	fs.mkdirSync('./dist/stories', { recursive: true })
 	await build({
@@ -22,7 +24,5 @@ export async function serveStories() {
 		port: 6006,
 		open: true,
 	})
-	return new Promise(() => {
-		/* never */
-	})
+	return never()
 }

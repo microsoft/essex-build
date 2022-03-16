@@ -11,6 +11,7 @@ import path from 'path'
 import { esmify as processEsm } from '../steps/esmify/index.mjs'
 import { compile as compileTypescript } from '../steps/typescript/index.mjs'
 import { BuildMode } from '../types.mjs'
+import { never } from '../util/never.mjs'
 
 export interface WatchCommandOptions {
 	/**
@@ -70,7 +71,5 @@ export function executeWatch({
 		}
 	})
 
-	return new Promise(() => {
-		/* never */
-	})
+	return never()
 }
