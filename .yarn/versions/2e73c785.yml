@@ -1,4 +1,6 @@
 releases:
+  "@essex/eslint-config": patch
+  "@essex/eslint-plugin": patch
   "@essex/scripts": minor
   "@essex/webpack-config": major
 
