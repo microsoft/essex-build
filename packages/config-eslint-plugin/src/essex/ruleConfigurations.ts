@@ -128,6 +128,7 @@ const essexPrefs: Linter.RulesRecord = {
 	'no-plusplus': 'off',
 	'header/header': [2, headerFile],
 	'@essex/adjacent-await': 'warn',
+	'no-inner-declarations': 'off',
 }
 
 // Based on eslint-config-react-app

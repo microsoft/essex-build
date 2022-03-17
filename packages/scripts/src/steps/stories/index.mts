@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable-next-line */
 // @ts-ignore
 import build from '@ladle/react/api/build.js'

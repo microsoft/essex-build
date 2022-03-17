@@ -30,7 +30,7 @@ export class ConfigurationManager {
 	}
 
 	public get typecheck(): boolean {
-		return this._config.typecheck ?? true
+		return this._config.typecheck ?? false
 	}
 
 	public get isDevelopment(): boolean {
