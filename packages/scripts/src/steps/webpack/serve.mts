@@ -27,6 +27,7 @@ export function webpackServe({
 						throw new Error('webpack config missing devServer')
 					}
 
+					/* eslint-disable-next-line @typescript-eslint/no-unsafe-argument */
 					const server = new Server(compiler as any, wpConfig.devServer)
 					server.listen(port, host, (err?: Error | undefined) => {
 						if (err) {
