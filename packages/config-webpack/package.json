@@ -16,11 +16,11 @@
 	"dependencies": {
 		"@essex/swc-opts": "workspace:^",
 		"@swc/cli": "^0.1.55",
-		"@swc/core": "1.2.155",
+		"@swc/core": "1.2.158",
 		"@types/webpack": "^5.28.0",
 		"@types/webpack-dev-server": "^4.7.2",
 		"css-loader": "^6.7.1",
-		"debug": "^4.3.3",
+		"debug": "^4.3.4",
 		"fork-ts-checker-webpack-plugin": "^7.2.1",
 		"html-webpack-plugin": "^5.5.0",
 		"lodash": "^4.17.21",
