@@ -39,7 +39,7 @@
 		"@essex/tsconfig-node": "workspace:^",
 		"@essex/tsconfig-node14": "workspace:^",
 		"@swc/cli": "^0.1.55",
-		"@swc/core": "1.2.155",
+		"@swc/core": "1.2.158",
 		"@types/eslint": "^8.4.1",
 		"@types/lodash": "^4.14.180",
 		"@types/node": "^17.0.21",
