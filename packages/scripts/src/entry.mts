@@ -84,7 +84,7 @@ async function bootstrap(command: string) {
 	})
 }
 
-async function execute() {
+async function execute(): Promise<number> {
 	const command = process.argv[2] as string
 	try {
 		establishErrorHandlers()
@@ -97,15 +97,19 @@ async function execute() {
 
 		if (!process.exitCode) {
 			success(command, printPerf())
+			return 0
 		} else {
 			fail(command, printPerf())
-			exit(1)
+			return 1
 		}
 	} catch (err) {
-		console.log(err)
 		fail(command)
+		throw err
 	}
 }
 execute()
-	.then(() => exit(0))
-	.catch(() => exit(1))
+	.then(code => exit(code))
+	.catch(err => {
+		console.log(err)
+		exit(1)
+	})
