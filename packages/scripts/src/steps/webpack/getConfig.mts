@@ -13,7 +13,7 @@ import type { WebpackCompilerOptions } from './types.mjs'
 
 const require = createRequire(import.meta.url)
 
-export type WebpackConfigWithWDS = Configuration & {
+export interface WebpackConfigWithWDS extends Configuration {
 	devServer?: WdsConfiguration
 }
 
