@@ -13,13 +13,17 @@ import type { WebpackCompilerOptions } from './types.mjs'
 
 const require = createRequire(import.meta.url)
 
+export type WebpackConfigWithWDS = Configuration & {
+	devServer?: WdsConfiguration
+}
+
 export function getConfig({
 	env,
 	mode,
-}: WebpackCompilerOptions): Configuration & { devServer?: WdsConfiguration } {
+}: WebpackCompilerOptions): WebpackConfigWithWDS {
 	const webpackConfigFile = join(process.cwd(), 'webpack.config.js')
 	if (existsSync(webpackConfigFile)) {
-		return require(webpackConfigFile)
+		return require(webpackConfigFile) as WebpackConfigWithWDS
 	} else {
 		return configure({ env, mode })
 	}
