@@ -22,8 +22,8 @@
 	"devDependencies": {
 		"@essex/scripts": "workspace:^",
 		"@essex/tsconfig-node": "workspace:^",
-		"@types/node": "^17.0.21",
-		"vite": "^2.8.6"
+		"@types/node": "^17.0.23",
+		"vite": "^2.9.4"
 	},
 	"peerDependencies": {
 		"vite": "*"
