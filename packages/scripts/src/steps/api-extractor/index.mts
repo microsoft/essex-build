@@ -2,13 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import type {
-	ExtractorResult,
-	IConfigFile} from '@microsoft/api-extractor';
-import {
-	Extractor,
-	ExtractorConfig
-} from '@microsoft/api-extractor'
+import type { ExtractorResult, IConfigFile } from '@microsoft/api-extractor'
+import { Extractor, ExtractorConfig } from '@microsoft/api-extractor'
 import { existsSync, promises as fs } from 'fs'
 import { createRequire } from 'module'
 import { dirname, resolve } from 'path'
@@ -57,7 +52,6 @@ export async function generateApiExtractorReport(): Promise<void> {
 
 	const extractorResult: ExtractorResult = Extractor.invoke(extractorConfig, {
 		localBuild: true,
-		showVerboseMessages: true,
 	})
 
 	if (extractorResult.succeeded) {
