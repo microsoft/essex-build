@@ -9,8 +9,6 @@ const isLocalExport = (l: string) =>
 	has(l, 'export ') && has(l, './') && has(l, ".js'")
 const isSourceMap = (l: string) =>
 	has(l, '//# sourceMappingURL=') && has(l, ".js'")
-const isReactImport = (l: string) => has(l, 'react/jsx-runtime')
-
 export async function esmify(rewriteToMjs: boolean, dir: string) {
 	await walk(dir, async entryPath => {
 		if (entryPath.endsWith('.js')) {
@@ -46,9 +44,6 @@ function rewriteLine(l: string, rewriteToMjs: boolean): string {
 		(isLocalImport(l) || isLocalExport(l) || isSourceMap(l))
 	) {
 		return l.replace('.js', '.mjs')
-	}
-	if (isReactImport(l)) {
-		return l.replace('react/jsx-runtime', 'react/jsx-runtime.js')
 	}
 	return l
 }

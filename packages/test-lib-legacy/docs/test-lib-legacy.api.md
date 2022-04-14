@@ -6,21 +6,13 @@
 
 /// <reference types="react" />
 
-// Warning: (ae-missing-release-tag) "add" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
-//
-// @public (undocumented)
+// @public
 export function add(...nums: number[]): number;
 
-// Warning: (ae-missing-release-tag) "c" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
-//
-// @public (undocumented)
+// @public
 export const c = "c";
 
-// Warning: (ae-missing-release-tag) "HelloWorld" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
-//
-// @public (undocumented)
+// @public
 export function HelloWorld(): JSX.Element;
-
-// (No @packageDocumentation comment for this package)
 
 ```
