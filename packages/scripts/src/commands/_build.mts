@@ -6,7 +6,6 @@
 import type { Command } from 'commander'
 import { existsSync } from 'fs'
 import path from 'path'
-
 import { generateApiExtractorReport } from '../steps/api-extractor/index.mjs'
 import { esmify as processEsm } from '../steps/esmify/index.mjs'
 import { buildStories as buildStoriesStep } from '../steps/stories/index.mjs'
@@ -15,6 +14,7 @@ import { verifyExports } from '../steps/verifyExports/index.mjs'
 import { verifyPackage } from '../steps/verifyPackage/index.mjs'
 import { BuildMode } from '../types.mjs'
 import { noop } from '../util/noop.mjs'
+
 
 export interface BuildCommandOptions {
 	/**
@@ -84,7 +84,7 @@ export async function executeBuild({
 	const generateDocs = docs ? generateApiExtractorReport() : noop()
 
 	if (mode !== BuildMode.legacy) {
-		await processEsm(rewriteEsmToMjs, esmOnly ? 'dist/lib' : 'dist/esm')
+		await processEsm(rewriteEsmToMjs, esmOnly ? 'dist/' : 'dist/esm')
 	}
 
 	if (checkPackage) await verifyPackage(mode)
