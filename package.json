@@ -49,9 +49,8 @@
 	"workspaces": [
 		"packages/*"
 	],
-	"dependenciesMeta": {
-		"@ladle/react@0.8.3": {
-			"unplugged": true
-		}
+	"resolutions": {
+		"@types/react": "18.0.6",
+		"@types/react-dom": "18.0.0"
 	}
 }

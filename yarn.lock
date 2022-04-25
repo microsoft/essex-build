@@ -3375,27 +3375,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^18.0.2":
-  version: 18.0.2
-  resolution: "@types/react-dom@npm:18.0.2"
+"@types/react-dom@npm:18.0.0":
+  version: 18.0.0
+  resolution: "@types/react-dom@npm:18.0.0"
   dependencies:
     "@types/react": "*"
-  checksum: 2b0b138d8634ccfd8a86b17cb5414b122ee0cb6f650377d772f6008761a27e4c2531c08e3cab71aaa19b6893af6a508c664aa314db3ebcff5b8179173c9c9307
+  checksum: 0d8c9cb3e72aefe0dd2b58a49845a200369f01ae92f3f11f642e04efc95dfd1c9380b6592d4273dd6113fb8707947d15b66d56c75c41f39f28bd897f0c08dfa9
   languageName: node
   linkType: hard
 
-"@types/react@npm:*":
-  version: 18.0.4
-  resolution: "@types/react@npm:18.0.4"
-  dependencies:
-    "@types/prop-types": "*"
-    "@types/scheduler": "*"
-    csstype: ^3.0.2
-  checksum: a82ccb4b386a8be9edd0381093ebbccfb0cca94fdb772fd0b0221421efbdf304d76641a218d99b1be62bd2e037e25316a7203e7065e0fd8eca14ab568d4af307
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:^18.0.6":
+"@types/react@npm:18.0.6":
   version: 18.0.6
   resolution: "@types/react@npm:18.0.6"
   dependencies:
@@ -6351,9 +6340,6 @@ __metadata:
     npm-run-all: ^4.1.5
     prettier: ^2.6.2
     typescript: ^4.6.3
-  dependenciesMeta:
-    "@ladle/react@0.8.3":
-      unplugged: true
   languageName: unknown
   linkType: soft
 
