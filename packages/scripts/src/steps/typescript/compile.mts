@@ -8,6 +8,7 @@ import * as swc from '@swc/core'
 import fs from 'fs/promises'
 import path from 'path'
 import { performance } from 'perf_hooks'
+
 import { noop } from '../../util/noop.mjs'
 import { printPerf, subtaskSuccess, traceFile } from '../../util/tasklogger.mjs'
 

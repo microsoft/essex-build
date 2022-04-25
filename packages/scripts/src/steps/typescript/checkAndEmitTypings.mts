@@ -5,6 +5,7 @@
 import chalk from 'chalk'
 import { performance } from 'perf_hooks'
 import ts from 'typescript'
+
 import {
 	printPerf,
 	subtaskFail,
