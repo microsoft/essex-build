@@ -16,6 +16,7 @@ import { verifyPackage } from '../steps/verifyPackage/index.mjs'
 import { BuildMode } from '../types.mjs'
 import { noop } from '../util/noop.mjs'
 
+
 export interface BuildCommandOptions {
 	/**
 	 * Emits TypeDoc documentation generation
@@ -84,7 +85,7 @@ export async function executeBuild({
 	const generateDocs = docs ? generateApiExtractorReport() : noop()
 
 	if (mode !== BuildMode.legacy) {
-		await processEsm(rewriteEsmToMjs, esmOnly ? 'dist/lib' : 'dist/esm')
+		await processEsm(rewriteEsmToMjs, esmOnly ? 'dist/' : 'dist/esm')
 	}
 
 	if (checkPackage) await verifyPackage(mode)

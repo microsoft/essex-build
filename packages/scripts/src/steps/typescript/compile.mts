@@ -12,7 +12,8 @@ import { performance } from 'perf_hooks'
 import { noop } from '../../util/noop.mjs'
 import { printPerf, subtaskSuccess, traceFile } from '../../util/tasklogger.mjs'
 
-const ESM_ONLY_PATH = 'dist/lib'
+
+const ESM_ONLY_PATH = 'dist/'
 const ESM_PATH = 'dist/esm'
 const CJS_PATH = 'dist/cjs'
 

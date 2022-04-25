@@ -1,7 +1,7 @@
 {
 	"extends": "@essex/tsconfig-base",
 	"compilerOptions": {
-		"outDir": "dist/lib",
+		"outDir": "dist/",
 		"resolveJsonModule": true,
 		"allowSyntheticDefaultImports": true,
 		"jsx": "react-jsx"

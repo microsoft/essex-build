@@ -9,9 +9,10 @@ import ts from 'typescript'
 import {
 	printPerf,
 	subtaskFail,
-	subtaskSuccess,
+	subtaskSuccess
 } from '../../util/tasklogger.mjs'
 import { loadTSConfig, parseTSConfig } from './config.mjs'
+
 
 export async function checkAndEmitTypings(
 	fileNames: string[],
@@ -27,7 +28,7 @@ export async function checkAndEmitTypings(
 		emitDeclarationOnly: !noEmit,
 		noEmit,
 		stripInternal,
-		outDir: esmOnly ? 'dist/lib' : 'dist/types',
+		outDir: esmOnly ? 'dist/' : 'dist/types',
 	}
 
 	const program = ts.createProgram(fileNames, options)
