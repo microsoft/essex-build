@@ -1,9 +1,10 @@
 releases:
+  "@essex/api-extractor-config": major
   "@essex/babel-config": patch
   "@essex/eslint-config": patch
   "@essex/eslint-plugin": patch
   "@essex/jest-config": patch
-  "@essex/scripts": patch
+  "@essex/scripts": major
   "@essex/shellrunner": patch
   "@essex/swc-opts": patch
   "@essex/test-lib-dual": patch
