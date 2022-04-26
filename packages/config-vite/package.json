@@ -23,7 +23,7 @@
 		"@essex/scripts": "workspace:^",
 		"@essex/tsconfig-node": "workspace:^",
 		"@types/node": "^17.0.27",
-		"vite": "^2.9.5"
+		"vite": "^2.9.6"
 	},
 	"peerDependencies": {
 		"vite": "*"
