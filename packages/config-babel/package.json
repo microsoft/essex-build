@@ -1,6 +1,6 @@
 {
 	"name": "@essex/babel-config",
-	"version": "20.1.10",
+	"version": "20.1.11",
 	"license": "MIT",
 	"author": "Chris Trevino <chtrevin@microsoft.com>",
 	"main": "dist/cjs/index.js",
