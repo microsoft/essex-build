@@ -33,7 +33,7 @@
 		"@essex/shellrunner": "workspace:^",
 		"@essex/swc-opts": "workspace:^",
 		"@essex/webpack-config": "workspace:^",
-		"@ladle/react": "^0.12.2",
+		"@ladle/react": "^0.14.1",
 		"@microsoft/api-extractor": "^7.23.0",
 		"@swc/core": "1.2.172",
 		"@typescript-eslint/eslint-plugin": "^5.21.0",
