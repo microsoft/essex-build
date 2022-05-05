@@ -4,6 +4,7 @@
  */
 import webpack from 'webpack'
 import Server from 'webpack-dev-server'
+
 import { getConfig } from './getConfig.mjs'
 import type { WebpackCompilerOptions } from './types.mjs'
 
