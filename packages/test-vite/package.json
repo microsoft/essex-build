@@ -17,7 +17,7 @@
 		"@essex/test-lib-esm": "workspace:^",
 		"@essex/test-lib-legacy": "workspace:^",
 		"react": "^18.0.0",
-		"react-dom": "18.0.0"
+		"react-dom": "18.1.0"
 	},
 	"devDependencies": {
 		"@essex/scripts": "workspace:^",
