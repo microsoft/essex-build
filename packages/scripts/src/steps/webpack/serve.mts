@@ -28,8 +28,10 @@ export function webpackServe({
 					}
 
 					/* eslint-disable-next-line @typescript-eslint/no-unsafe-argument */
-					const server = new Server(compiler as any, wpConfig.devServer)
-					server.listen(port, host, (err?: Error | undefined) => {
+					const server = new Server(wpConfig.devServer, compiler)
+					server.options.port = port
+					server.options.host = host
+					server.startCallback((err?: Error | undefined) => {
 						if (err) {
 							console.log(`error listening`, err)
 							reject(err)
