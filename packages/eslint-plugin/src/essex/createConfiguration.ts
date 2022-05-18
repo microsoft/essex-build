@@ -24,6 +24,7 @@ export function createConfiguration(
 			'import',
 			'simple-import-sort',
 			'react-hooks',
+			'esm',
 		],
 		parser: '@babel/eslint-parser',
 		parserOptions: {

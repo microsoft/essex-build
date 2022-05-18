@@ -28,8 +28,8 @@
 	"dependencies": {
 		"@azure/storage-blob": "^12.10.0",
 		"@essex/api-extractor-config": "workspace:^",
-		"@essex/eslint-config": "workspace:^",
-		"@essex/eslint-plugin": "workspace:^",
+		"@essex/eslint-config": "portal:../config-eslint",
+		"@essex/eslint-plugin": "portal:../eslint-plugin",
 		"@essex/shellrunner": "workspace:^",
 		"@essex/swc-opts": "workspace:^",
 		"@essex/webpack-config": "workspace:^",

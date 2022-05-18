@@ -7,6 +7,8 @@
  *
  * Test library
  */
+
+/* eslint-disable-next-line */
 import './index.css'
 export * from './add.js'
 export * from './letters/index.js'
