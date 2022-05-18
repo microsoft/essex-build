@@ -1,4 +1,0 @@
-declined:
-  - "@essex/eslint-plugin"
-  - "@essex/test-webapp-vite"
-  - "@essex/test-webapp-webpack"
