@@ -13,7 +13,10 @@ import type { TSESLint } from '@typescript-eslint/utils'
 import { TSESTree } from '@typescript-eslint/utils'
 import { extname } from 'path'
 import { ExtensionMessageIds } from './extensions.messages.js'
-import { ExtensionsArguments, ExtensionsOptions } from './extensions.schema.js'
+import type {
+	ExtensionsArguments,
+	ExtensionsOptions,
+} from './extensions.schema.js'
 
 export function createExtensionsValidator(
 	{

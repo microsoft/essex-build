@@ -2562,7 +2562,6 @@ __metadata:
     "@babel/core": ^7.17.12
     "@babel/eslint-parser": ^7.17.0
     "@babel/types": ^7.17.12
-    "@essex/tsconfig-node": "workspace:^"
     "@essex/tsconfig-node14": "workspace:^"
     "@swc/cli": ^0.1.57
     "@swc/core": 1.2.186
@@ -2577,6 +2576,7 @@ __metadata:
     eslint: ^8.15.0
     eslint-config-prettier: ^8.5.0
     eslint-import-resolver-node: ^0.3.6
+    eslint-plugin-esm: "workspace:^"
     eslint-plugin-header: ^3.1.1
     eslint-plugin-import: ^2.26.0
     eslint-plugin-jest: ^26.2.2
@@ -7096,26 +7096,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-esm@workspace:packages/eslint-plugin-esm":
+"eslint-plugin-esm@workspace:^, eslint-plugin-esm@workspace:packages/eslint-plugin-esm":
   version: 0.0.0-use.local
   resolution: "eslint-plugin-esm@workspace:packages/eslint-plugin-esm"
   dependencies:
     "@essex/jest-config": "workspace:^"
-    "@essex/scripts": "workspace:^"
-    "@essex/tsconfig-base": "workspace:^"
+    "@essex/tsconfig-node14": "workspace:^"
     "@sinclair/typebox": ^0.23.5
+    "@swc/cli": ^0.1.57
+    "@swc/core": 1.2.186
     "@types/eslint": ^8.4.2
     "@types/jest": ^27.5.1
     "@types/micromatch": ^4.0.2
     "@types/node": ^17.0.31
+    "@types/rimraf": ^3.0.2
     "@typescript-eslint/parser": ^5.22.0
     "@typescript-eslint/utils": ^5.23.0
     eslint: ^8.14.0
     jest: ^28.1.0
     micromatch: ^4.0.5
     npm-run-all: ^4.1.5
+    rimraf: ^3.0.2
     ts-jest: ^28.0.2
     ts-node: ^10.7.0
+    tslib: ^2.4.0
     typescript: ^4.6.4
   peerDependencies:
     eslint: ">=7"

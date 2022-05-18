@@ -2,6 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+
+/* eslint-disable-next-line esm/extensions */
 import './index.css'
 
 import { a } from '@essex/test-lib-dual'

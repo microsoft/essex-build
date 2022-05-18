@@ -6,7 +6,6 @@
 import type { Linter } from 'eslint'
 import { existsSync } from 'fs'
 import { join } from 'path'
-
 import { msHeader } from '../essex/msHeader.js'
 
 const HEADER_OVERRIDE = join(process.cwd(), 'header.js')
@@ -115,9 +114,10 @@ const importRules: Linter.RulesRecord = {
 	'import/no-amd': 'error',
 	'import/no-anonymous-default-export': 'warn',
 	'import/no-webpack-loader-syntax': 'error',
-	'import/extensions': ['error', 'always', { ignorePackages: true }],
+	// 'import/extensions': ['error', 'always', { ignorePackages: true }],
 	// use simple-import-sort
 	'import/order': 'off',
+	'esm/extensions': 'error',
 
 	// https://github.com/lydell/eslint-plugin-simple-import-sort#usage
 	'simple-import-sort/imports': 'error',

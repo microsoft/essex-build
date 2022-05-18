@@ -4,7 +4,6 @@
  */
 import chalk from 'chalk'
 import type { Linter } from 'eslint'
-
 import {
 	javascriptOverride,
 	jestOverride,
@@ -24,6 +23,7 @@ export function createConfiguration(
 			'import',
 			'simple-import-sort',
 			'react-hooks',
+			'esm',
 		],
 		parser: '@babel/eslint-parser',
 		parserOptions: {
