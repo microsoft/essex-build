@@ -2526,17 +2526,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/eslint-config@portal:../config-eslint::locator=%40essex%2Fscripts%40workspace%3Apackages%2Fscripts":
-  version: 0.0.0-use.local
-  resolution: "@essex/eslint-config@portal:../config-eslint::locator=%40essex%2Fscripts%40workspace%3Apackages%2Fscripts"
-  peerDependencies:
-    "@essex/eslint-plugin": ">=20.3.6"
-    "@typescript-eslint/eslint-plugin": ">= 4.4.1"
-    "@typescript-eslint/parser": ">= 4.4.1"
-    eslint-import-resolver-node: ">= 0.3.4"
-  languageName: node
-  linkType: soft
-
 "@essex/eslint-config@workspace:^, @essex/eslint-config@workspace:packages/config-eslint":
   version: 0.0.0-use.local
   resolution: "@essex/eslint-config@workspace:packages/config-eslint"
@@ -2548,40 +2537,6 @@ __metadata:
     "@typescript-eslint/parser": ">= 4.4.1"
     eslint-import-resolver-node: ">= 0.3.4"
   languageName: unknown
-  linkType: soft
-
-"@essex/eslint-plugin@portal:../eslint-plugin::locator=%40essex%2Fscripts%40workspace%3Apackages%2Fscripts":
-  version: 0.0.0-use.local
-  resolution: "@essex/eslint-plugin@portal:../eslint-plugin::locator=%40essex%2Fscripts%40workspace%3Apackages%2Fscripts"
-  dependencies:
-    "@babel/core": ^7.17.12
-    "@babel/eslint-parser": ^7.17.0
-    "@babel/types": ^7.17.12
-    "@sinclair/typebox": ^0.23.5
-    "@typescript-eslint/eslint-plugin": ^5.25.0
-    "@typescript-eslint/parser": ^5.25.0
-    "@typescript-eslint/utils": ^5.23.0
-    babel-eslint: ^10.1.0
-    chalk: ^4.1.2
-    confusing-browser-globals: ^1.0.11
-    eslint: ^8.15.0
-    eslint-config-prettier: ^8.5.0
-    eslint-import-resolver-node: ^0.3.6
-    eslint-plugin-header: ^3.1.1
-    eslint-plugin-import: ^2.26.0
-    eslint-plugin-jest: ^26.2.2
-    eslint-plugin-jsx-a11y: ^6.5.1
-    eslint-plugin-react: ^7.29.4
-    eslint-plugin-react-hooks: ^4.5.0
-    eslint-plugin-simple-import-sort: ^7.0.0
-    lodash: ^4.17.21
-    micromatch: ^4.0.5
-    prettier: ^2.6.2
-  peerDependencies:
-    "@typescript-eslint/eslint-plugin": ">= 4.4.1"
-    "@typescript-eslint/parser": ">= 4.4.1"
-    eslint-import-resolver-node: ">= 0.3.4"
-  languageName: node
   linkType: soft
 
 "@essex/eslint-plugin@workspace:^, @essex/eslint-plugin@workspace:packages/eslint-plugin":
@@ -2665,8 +2620,8 @@ __metadata:
   dependencies:
     "@azure/storage-blob": ^12.10.0
     "@essex/api-extractor-config": "workspace:^"
-    "@essex/eslint-config": "portal:../config-eslint"
-    "@essex/eslint-plugin": "portal:../eslint-plugin"
+    "@essex/eslint-config": "workspace:^"
+    "@essex/eslint-plugin": "workspace:^"
     "@essex/shellrunner": "workspace:^"
     "@essex/swc-opts": "workspace:^"
     "@essex/tsconfig-node": "workspace:^"
