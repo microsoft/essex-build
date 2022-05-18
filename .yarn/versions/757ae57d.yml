@@ -1,2 +1,17 @@
+releases:
+  "@essex/babel-config": patch
+  "@essex/jest-config": patch
+  "@essex/scripts": patch
+  "@essex/swc-opts": patch
+  "@essex/test-lib-dual": patch
+  "@essex/test-lib-legacy": patch
+  "@essex/test-webapp-webpack": patch
+  "@essex/test-zips": patch
+  "@essex/vite-config": patch
+  "@essex/webpack-config": patch
+
 declined:
   - eslint-plugin-esm
+  - "@essex/test-lib-esm"
+  - "@essex/test-lib-md-index"
+  - "@essex/test-webapp-vite"
