@@ -6,7 +6,7 @@
 		"David Tittsworth <datit@microsoft.com>",
 		"Chris Trevino <chtrevin@microsoft.com>"
 	],
-	"packageManager": "yarn@3.2.0",
+	"packageManager": "yarn@3.2.1",
 	"scripts": {
 		"preinstall": "npx only-allow yarn",
 		"postinstall": "husky install",
@@ -32,19 +32,19 @@
 		"@essex/scripts": "workspace:^",
 		"@essex/tsconfig-node": "workspace:^",
 		"@essex/tsconfig-node14": "workspace:^",
-		"@types/eslint": "^8.4.1",
-		"@types/jest": "^27.4.1",
-		"@typescript-eslint/eslint-plugin": "^5.21.0",
-		"@typescript-eslint/parser": "^5.21.0",
+		"@types/eslint": "^8.4.2",
+		"@types/jest": "^27.5.1",
+		"@typescript-eslint/eslint-plugin": "^5.25.0",
+		"@typescript-eslint/parser": "^5.25.0",
 		"cross-env": "^7.0.3",
-		"eslint": "^8.14.0",
+		"eslint": "^8.15.0",
 		"eslint-import-resolver-node": "^0.3.6",
-		"husky": "^7.0.4",
-		"jest": "^28.0.1",
+		"husky": "^8.0.1",
+		"jest": "^28.1.0",
 		"lint-staged": "^12.4.1",
 		"npm-run-all": "^4.1.5",
 		"prettier": "^2.6.2",
-		"typescript": "^4.6.3"
+		"typescript": "^4.6.4"
 	},
 	"workspaces": [
 		"packages/*"

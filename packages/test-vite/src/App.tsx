@@ -2,49 +2,28 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import './App.css'
+import './index.css'
 
-import type { FC } from 'react'
-import { useState } from 'react'
+import { a } from '@essex/test-lib-dual'
+import { b } from '@essex/test-lib-esm'
+import { c } from '@essex/test-lib-legacy'
+import docs from '@essex/test-lib-md-index'
+import { memo } from 'react'
 
-import logo from './logo.svg'
 
-export const App: FC = function App() {
-	const [count, setCount] = useState(0)
 
+const docsContent = Object.keys(docs)
+	.map(key => docs[key])
+	.join('\n\n')
+
+export const App: React.FC = memo(function App() {
 	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>Hello Vite + React!</p>
-				<p>
-					<button type="button" onClick={() => setCount(count => count + 1)}>
-						count is: {count}
-					</button>
-				</p>
-				<p>
-					Edit <code>App.tsx</code> and save to test HMR updates.aueoeu
-				</p>
-				<p>
-					<a
-						className="App-link"
-						href="https://reactjs.org"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Learn React
-					</a>
-					{' | '}
-					<a
-						className="App-link"
-						href="https://vitejs.dev/guide/features.html"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Vite Docs
-					</a>
-				</p>
-			</header>
+		<div>
+			<h2>webpack tester</h2>
+			<div>Dual: {a === 'a' ? '✅' : '❌'}</div>
+			<div>ESM:{b === 'b' ? '✅' : '❌'}</div>
+			<div>Legacy: {c === 'c' ? '✅' : '❌'}</div>
+			<div>{docsContent}</div>
 		</div>
 	)
-}
+})
