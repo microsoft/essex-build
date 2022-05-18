@@ -4,6 +4,7 @@ import { RuleTester } from 'eslint'
 import { readFileSync } from 'fs'
 import { basename, dirname, extname, relative, resolve } from 'path'
 import { fileURLToPath } from 'url'
+
 import { extensionsRule } from '../../rules/extensions.js'
 import { ExtensionMessageIds } from '../../rules/extensions.messages.js'
 
