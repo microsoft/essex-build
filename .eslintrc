@@ -9,19 +9,11 @@
 		{
 			"files": "packages/test-vite/**",
 			"rules": {
-				"import/extensions": "off",
 				"@essex/extensions": [
 					"error",
 					[
 						{
-							"expectedExtensions": [
-								".js",
-								".cjs",
-								".mjs",
-								".jsx",
-								".css",
-								".scss"
-							]
+							"expectedExtensions": [".js", ".css"]
 						}
 					]
 				]
@@ -30,19 +22,11 @@
 		{
 			"files": "packages/test-webpack/**",
 			"rules": {
-				"import/extensions": "off",
 				"@essex/extensions": [
 					"error",
 					[
 						{
-							"expectedExtensions": [
-								".js",
-								".cjs",
-								".mjs",
-								".jsx",
-								".css",
-								".scss"
-							]
+							"expectedExtensions": [".js", ".css"]
 						}
 					]
 				]
