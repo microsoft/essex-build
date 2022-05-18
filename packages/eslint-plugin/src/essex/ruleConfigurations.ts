@@ -6,6 +6,7 @@
 import type { Linter } from 'eslint'
 import { existsSync } from 'fs'
 import { join } from 'path'
+
 import { msHeader } from '../essex/msHeader.js'
 
 const HEADER_OVERRIDE = join(process.cwd(), 'header.js')
