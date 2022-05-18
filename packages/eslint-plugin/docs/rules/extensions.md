@@ -1,4 +1,4 @@
-# esm/extensions - Enforce the use of file extensions in import/export paths within esm modules or prevent the use of file extensions in import/export paths within commonjs modules.
+# @essex/extensions - Enforce the use of file extensions in import/export paths within esm modules or prevent the use of file extensions in import/export paths within commonjs modules.
 
 ESM modules require the use of file extensions within relative import/export path specifiers while commonjs modules are expected to omit file extensions in relative import/export specifiers. This rule allows specifying which files are expected to include file extensions in relative import/export paths and which files are not allowed to use file extensions.
 
@@ -11,11 +11,11 @@ ESM modules require the use of file extensions within relative import/export pat
 This rule accepts either a single string argument or a string argument and an array of settings that specify how extension rules should be applied to different sets of files.
 
 ```
-"esm/extensions": "error" | "warning" | "off"
+"@essex/extensions": "error" | "warning" | "off"
 ```
 
 ```
-"esm/extensions": ["error', Array<SETTINGS_OBJECT>]
+"@essex/extensions": ["error', Array<SETTINGS_OBJECT>]
 ```
 
 ### Require the use of file extensions
@@ -24,9 +24,9 @@ Here is a basic example requiring the use of file extensions in esm modules.
 
 ```json
 {
-  "plugins": ["esm"],
+  "plugins": ["@essex/eslint-plugin"],
   "rules": {
-    "esm/extensions": [
+    "@essex/extensions": [
       "error",
       [
         {
@@ -53,7 +53,7 @@ Here is a basic example requiring the use of file extensions in esm modules.
 The above example is the default set of options and is geared towards enforcing the use of file extensions within esm modules. Thefore the following rule configuration is equivalent.
 
 ```
-"esm/extensions": "error"
+"@essex/extensions": "error"
 ```
 
 ### Disallow the use of file extensions
@@ -62,9 +62,9 @@ Example of preventing the use of file extensions in commonjs modules.
 
 ```json
 {
-  "plugins": ["esm"],
+  "plugins": ["@essex/eslint-plugin"],
   "rules": {
-    "esm/extensions": [
+    "@essex/extensions": [
       "error",
       [
         {
@@ -84,9 +84,9 @@ It is possible to mix esm modules and commonjs modules in a single project throu
 
 ```json
 {
-  "plugins": ["esm"],
+  "plugins": ["@essex/eslint-plugin"],
   "rules": {
-    "esm/extensions": [
+    "@essex/extensions": [
       "error",
       [
         {
@@ -110,9 +110,9 @@ Suppose the project is using a transpiler that supports importing other file typ
 
 ```json
 {
-  "plugins": ["esm"],
+  "plugins": ["@essex/eslint-plugin"],
   "rules": {
-    "esm/extensions": [
+    "@essex/extensions": [
       "error",
       [
         {
@@ -164,9 +164,9 @@ With `relativeModulePrefixes` set to `["./", "~"]`, imports/exports using ts pat
 
 ```json
 {
-  "plugins": ["esm"],
+  "plugins": ["@essex/eslint-plugin"],
   "rules": {
-    "esm/extensions": [
+    "@essex/extensions": [
       "error",
       [
         {
