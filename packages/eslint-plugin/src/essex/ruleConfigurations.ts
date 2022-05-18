@@ -115,9 +115,13 @@ const importRules: Linter.RulesRecord = {
 	'import/no-amd': 'error',
 	'import/no-anonymous-default-export': 'warn',
 	'import/no-webpack-loader-syntax': 'error',
+	// use essex extensions
+	'import/extensions': 'off',
 	// use simple-import-sort
 	'import/order': 'off',
-	'esm/extensions': 'error',
+
+	// Enforce ESM Extensions
+	'@essex/extensions': 'error',
 
 	// https://github.com/lydell/eslint-plugin-simple-import-sort#usage
 	'simple-import-sort/imports': 'error',
