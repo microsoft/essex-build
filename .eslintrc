@@ -9,7 +9,43 @@
 		{
 			"files": "packages/test-vite/**",
 			"rules": {
-				"import/extensions": "off"
+				"import/extensions": "off",
+				"@essex/extensions": [
+					"error",
+					[
+						{
+							"expectedExtensions": [
+								".js",
+								".cjs",
+								".mjs",
+								".jsx",
+								".css",
+								".scss"
+							]
+						}
+					]
+				]
+			}
+		},
+		{
+			"files": "packages/test-webpack/**",
+			"rules": {
+				"import/extensions": "off",
+				"@essex/extensions": [
+					"error",
+					[
+						{
+							"expectedExtensions": [
+								".js",
+								".cjs",
+								".mjs",
+								".jsx",
+								".css",
+								".scss"
+							]
+						}
+					]
+				]
 			}
 		}
 	]

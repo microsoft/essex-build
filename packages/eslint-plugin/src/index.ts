@@ -5,10 +5,12 @@
 import { createConfiguration } from './essex/createConfiguration.js'
 import rules from './rules/index.js'
 
-export = {
+const defaultExport = {
 	rules,
 	configs: {
 		base: createConfiguration(true),
 		fast: createConfiguration(false),
 	},
 }
+// @ts-ignore
+export = defaultExport

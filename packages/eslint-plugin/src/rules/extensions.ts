@@ -15,7 +15,6 @@ import type { ExtensionsArguments } from './extensions.schema.js'
 import { extensionsArgSchema } from './extensions.schema.js'
 import { createExtensionsValidator } from './extensions.validator.js'
 
-
 export const extensionsRule: TSESLint.RuleModule<
 	ExtensionMessageIds,
 	[ExtensionsArguments]

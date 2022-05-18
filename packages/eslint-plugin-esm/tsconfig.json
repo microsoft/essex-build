@@ -1,9 +1,0 @@
-{
-	"extends": "@essex/tsconfig-node14",
-	"compilerOptions": {
-		"module": "ESNext",
-		"outDir": "lib",
-		"declaration": true
-	},
-	"include": ["src"]
-}

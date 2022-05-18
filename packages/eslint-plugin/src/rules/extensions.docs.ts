@@ -11,5 +11,5 @@ export const ExtensionsDoc: TSESLint.RuleMetaDataDocs = {
 		'within esm modules or prevent the use of file extensions in ' +
 		'import/export paths within commonjs modules.',
 	recommended: 'error',
-	url: 'https://github.com/microsoft/essex-js-build/blob/main/packages/eslint-plugin-esm/docs/rules/extensions.md',
+	url: 'https://github.com/microsoft/essex-js-build/blob/main/packages/eslint-plugin/docs/rules/extensions.md',
 }
