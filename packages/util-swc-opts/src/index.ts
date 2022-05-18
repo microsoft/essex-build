@@ -73,7 +73,7 @@ function determineDefaultSwcOptions(
 	const DEFAULT_SWC_CONFIG: swc.Config = {
 		sourceMaps: true,
 		jsc: {
-			target: 'es2020',
+			target: 'es2021',
 			parser: {
 				syntax: 'typescript',
 				tsx: true,

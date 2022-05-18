@@ -40,7 +40,7 @@
 		},
 		"swc": {
 			"jsc": {
-				"target": "es2017"
+				"target": "es2021"
 			}
 		}
 	}
