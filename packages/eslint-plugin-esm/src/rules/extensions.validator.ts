@@ -1,17 +1,12 @@
-/**
- * Validate relative import/export paths.
- *
- * Process AST Nodes produced by eslint and if the
- * node represents an import/export of a string literal
- * that is relative path according to provided settings
- * then lint for the presence of file extensions according
- * to provided settings, e.g., enforce extensins for
- * esm modules and disallow extensions for cjs modules.
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
  */
 
 import type { TSESLint } from '@typescript-eslint/utils'
 import { TSESTree } from '@typescript-eslint/utils'
 import { extname } from 'path'
+
 import { ExtensionMessageIds } from './extensions.messages.js'
 import type {
 	ExtensionsArguments,

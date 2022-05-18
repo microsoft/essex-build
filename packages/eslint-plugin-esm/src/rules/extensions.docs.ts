@@ -1,9 +1,6 @@
-/**
- * Documentation to accompany the extensions rule
- *
- * eslint will use this to recommend default settings
- * and editors will display this documentation and a link
- * to the url for external docs
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
  */
 
 import type { TSESLint } from '@typescript-eslint/utils'

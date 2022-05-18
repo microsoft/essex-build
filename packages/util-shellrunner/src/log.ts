@@ -4,7 +4,7 @@
  */
 import dbg from 'debug'
 
-import type { Job } from './types'
+import type { Job } from './types.js'
 
 const debugLog = dbg('essex:shellrunner')
 

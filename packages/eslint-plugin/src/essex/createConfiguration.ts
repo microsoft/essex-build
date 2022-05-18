@@ -4,6 +4,7 @@
  */
 import chalk from 'chalk'
 import type { Linter } from 'eslint'
+
 import {
 	javascriptOverride,
 	jestOverride,

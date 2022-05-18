@@ -6,7 +6,7 @@
 /**
  * Renders hello world text
  *
- * @returns {JSX.Element} The rendered hello world text
+ * @returns The rendered hello world text
  *
  * @public
  */

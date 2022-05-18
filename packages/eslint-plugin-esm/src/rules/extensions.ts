@@ -1,29 +1,20 @@
-/**
- * Lint relative import/export paths for the presence of
- * file extensions according to provided settings.
- *
- * Allow to apply different linting rules to different
- * sets of files. This aligns with Nodes capability of allowing
- * both esm (.mjs) and commonjs (.cjs) modules to exist in
- * one project.
- * - Allow for enforcing file extensions to be used in esm modules
- * - Allow for forbidding the use of file extensionsin cjs modules
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
  */
 
 import type { TSESLint } from '@typescript-eslint/utils'
 import micromatch from 'micromatch'
 import { relative } from 'path'
+
 import { defaultSettings } from './extensions.defaults.js'
 import { ExtensionsDoc } from './extensions.docs.js'
-import {
-	ExtensionMessageIds,
-	ExtensionMessages,
-} from './extensions.messages.js'
-import {
-	extensionsArgSchema,
-	ExtensionsArguments,
-} from './extensions.schema.js'
+import type { ExtensionMessageIds } from './extensions.messages.js'
+import { ExtensionMessages } from './extensions.messages.js'
+import type { ExtensionsArguments } from './extensions.schema.js'
+import { extensionsArgSchema } from './extensions.schema.js'
 import { createExtensionsValidator } from './extensions.validator.js'
+
 
 export const extensionsRule: TSESLint.RuleModule<
 	ExtensionMessageIds,
@@ -36,6 +27,7 @@ export const extensionsRule: TSESLint.RuleModule<
 		schema: [extensionsArgSchema],
 	},
 	create: context => {
+		/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */
 		const filename = relative(context.getCwd!(), context.getFilename())
 		const allOptions = [...(context.options[0] ?? [defaultSettings])].map(
 			opt => ({

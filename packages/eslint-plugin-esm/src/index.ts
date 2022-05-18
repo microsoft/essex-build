@@ -1,3 +1,7 @@
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
 import { extensionsRule } from './rules/extensions.js'
 
 // Export for commonjs modules
@@ -6,4 +10,5 @@ export const rules = {
 }
 
 // Export for esm modules
-export default { rules }
+const defaultExport = { rules }
+export default defaultExport

@@ -1,7 +1,9 @@
-/**
- * JSON schema and TS type definitions for eslint plugin options
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { Static, Type } from '@sinclair/typebox'
+import type { Static } from '@sinclair/typebox'
+import { Type } from '@sinclair/typebox'
 
 const optionSchema = Type.Object(
 	{
