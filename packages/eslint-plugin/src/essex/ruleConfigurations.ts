@@ -8,7 +8,6 @@ import { existsSync } from 'fs'
 import { join } from 'path'
 import { msHeader } from '../essex/msHeader.js'
 
-
 const HEADER_OVERRIDE = join(process.cwd(), 'header.js')
 const headerFile = existsSync(HEADER_OVERRIDE) ? HEADER_OVERRIDE : msHeader
 
@@ -115,6 +114,8 @@ const importRules: Linter.RulesRecord = {
 	'import/no-amd': 'error',
 	'import/no-anonymous-default-export': 'warn',
 	'import/no-webpack-loader-syntax': 'error',
+	// use essex extensions
+	'import/extensions': 'off',
 	// use simple-import-sort
 	'import/order': 'off',
 
