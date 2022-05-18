@@ -6,7 +6,8 @@
 		"clean": "essex clean",
 		"build": "DEBUG='*' essex bundle",
 		"lint": "essex lint --fix",
-		"start": "essex serve"
+		"start": "essex serve",
+		"start:webpack": "yarn start"
 	},
 	"repository": {
 		"type": "git",

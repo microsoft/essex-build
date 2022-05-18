@@ -2809,6 +2809,7 @@ __metadata:
     "@essex/test-lib-dual": "workspace:^"
     "@essex/test-lib-esm": "workspace:^"
     "@essex/test-lib-legacy": "workspace:^"
+    "@essex/test-lib-md-index": "workspace:^"
     "@essex/tsconfig-base": "workspace:^"
     "@essex/vite-config": "workspace:^"
     "@types/node": ^17.0.34
