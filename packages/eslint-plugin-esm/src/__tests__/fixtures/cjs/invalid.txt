@@ -1,0 +1,116 @@
+
+import nodeModule from './local.js'
+
+###
+
+import { namedNodeMod } from './local.js'
+
+###
+
+import { namedNodeMod as alias } from './local.js'
+
+###
+
+import gbl, { namedNodeMod } from './local.js'
+
+###
+
+import gbl, { namedNodeMod as alias } from './local.js'
+
+###
+
+import mod from './nested/more/local.js'
+
+###
+
+import { namedNodeMod } from './nested/more/local.js'
+
+###
+
+import { namedNodeMod as alias } from './nested/more/local.js'
+
+###
+
+import gbl, { namedNodeMod } from './nested/more/local.js'
+
+###
+
+import gbl, { namedNodeMod as alias } from './nested/more/local.js'
+
+###
+
+import mod from '~tspath/more/local.js'
+
+###
+
+import { namedNodeMod } from '~tspath/more/local.js'
+
+###
+
+import { namedNodeMod as alias } from '~tspath/more/local.js'
+
+###
+
+import gbl, { namedNodeMod } from '~tspath/more/local.js'
+
+###
+
+import gbl, { namedNodeMod as alias } from '~tspath/more/local.js'
+
+###
+
+import mod from './nested/more/base.nested.js'
+
+###
+
+import { namedNodeMod } from './nested/more/base.nested.js'
+
+###
+
+import { namedNodeMod as alias } from './nested/more/base.nested.js'
+
+###
+
+import gbl, { namedNodeMod } from './nested/more/base.nested.js'
+
+###
+
+import gbl, { namedNodeMod as alias } from './nested/more/base.nested.js'
+
+###
+
+import mod from '~tspath/more/base.nested.js'
+
+###
+
+import { namedNodeMod } from '~tspath/more/base.nested.js'
+
+###
+
+import { namedNodeMod as alias } from '~tspath/more/base.nested.js'
+
+###
+
+import gbl, { namedNodeMod } from '~tspath/more/base.nested.js'
+
+###
+
+import gbl, { namedNodeMod as alias } from '~tspath/more/base.nested.js'
+
+###
+
+const test = await import('./local.js')
+
+###
+
+const test = await import('~tspath/more/local.js')
+
+###
+
+const test = await import('./base.nested.js')
+
+###
+
+const test = await import('~tspath/more/base.nested.js')
+
+
