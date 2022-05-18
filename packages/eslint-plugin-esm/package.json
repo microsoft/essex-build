@@ -9,7 +9,7 @@
 		"directory": "packages/eslint-plugin-esm"
 	},
 	"scripts": {
-		"build": "tsc --emitDeclarationOnly && swc src -d lib",
+		"build": "tsc --emitDeclarationOnly && swc src -d lib --ignore **/*.test.js",
 		"clean": "rimraf lib",
 		"test": "NODE_OPTIONS=--experimental-vm-modules yarn node $(yarn bin jest) --runInBand",
 		"watch": "tsc --watch"
