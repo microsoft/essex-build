@@ -8,8 +8,7 @@
 		"build": "tsc --emitDeclarationOnly && swc src -d lib && rimraf lib/__tests__",
 		"build:eslint-plugin": "yarn build",
 		"clean": "rimraf lib",
-		"release": "yarn npm publish --tolerate-republish --access public",
-		"lint": "essex lint --fix"
+		"release": "yarn npm publish --tolerate-republish --access public"
 	},
 	"files": [
 		"lib/",

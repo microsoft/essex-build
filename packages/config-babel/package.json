@@ -15,7 +15,6 @@
 	},
 	"scripts": {
 		"clean": "rimraf dist lib",
-		"lint": "essex lint --fix",
 		"build": "essex build --mode dual  --skipPackageCheck",
 		"release": "yarn npm publish --tolerate-republish --access public"
 	},

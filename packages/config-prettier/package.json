@@ -5,7 +5,9 @@
 	"main": "index.js",
 	"license": "MIT",
 	"scripts": {
-		"release": "yarn npm publish --tolerate-republish --access public",
-		"lint": "essex lint --fix"
+		"release": "yarn npm publish --tolerate-republish --access public"
+	},
+	"devDependencies": {
+		"@essex/scripts": "workspace:^"
 	}
 }

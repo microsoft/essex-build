@@ -15,7 +15,6 @@
 		"build": "tsc -b .",
 		"clean": "rimraf lib",
 		"build:shellrunner": "yarn build",
-		"lint": "essex lint --fix",
 		"release": "yarn npm publish --tolerate-republish --access public"
 	},
 	"dependencies": {

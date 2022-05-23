@@ -10,8 +10,7 @@
 	"scripts": {
 		"build": "tsc -b .",
 		"clean": "rimraf lib",
-		"release": "yarn npm publish --tolerate-republish --access public",
-		"lint": "essex lint --fix"
+		"release": "yarn npm publish --tolerate-republish --access public"
 	},
 	"dependencies": {
 		"@swc/core": "1.2.186",
