@@ -3,5 +3,8 @@
 	"version": "1.0.2",
 	"exports": {
 		".": "./tsconfig.json"
+	},
+	"scripts": {
+		"release": "yarn npm publish --tolerate-republish --access public"
 	}
 }

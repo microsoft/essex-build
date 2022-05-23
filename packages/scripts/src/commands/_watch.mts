@@ -30,7 +30,7 @@ export default function build(program: Command): void {
 			'strip out internal types from typings declarations',
 		)
 		.option('--mode [mode]', 'options are "legacy", "dual", and "esm"')
-		.action(async (options: WatchCommandOptions): Promise<any> => {
+		.action(async (options: WatchCommandOptions): Promise<void> => {
 			await executeWatch(options)
 		})
 }

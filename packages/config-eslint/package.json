@@ -3,6 +3,10 @@
 	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
 	"version": "20.3.5",
 	"license": "MIT",
+	"scripts": {
+		"release": "yarn npm publish --tolerate-republish --access public",
+		"lint": "essex lint --fix"
+	},
 	"devDependencies": {
 		"@essex/eslint-plugin": "workspace:^"
 	},

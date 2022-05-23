@@ -38,7 +38,7 @@ export default function deploy(program: Command): void {
 			'When using Azure-Blob-Storage deployment, the paths to upload into the blob container, comma-delimited.',
 			'build/,public/,/dist',
 		)
-		.action(async (options: DeployCommandOptions): Promise<any> => {
+		.action(async (options: DeployCommandOptions): Promise<void> => {
 			await execute(options)
 		})
 }

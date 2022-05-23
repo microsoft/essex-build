@@ -6,7 +6,9 @@
 	"license": "MIT",
 	"scripts": {
 		"clean": "rimraf lib",
-		"build": "tsc --emitDeclarationOnly && swc src -d lib"
+		"build": "tsc --emitDeclarationOnly && swc src -d lib",
+		"release": "yarn npm publish --tolerate-republish --access public",
+		"lint": "essex lint --fix"
 	},
 	"repository": {
 		"type": "git",

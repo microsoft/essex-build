@@ -15,7 +15,7 @@ export default function init(program: Command): void {
 		.command('init')
 		.description('initializes essex-scripts configuration')
 		.option('--lib', 'add typescript library configuration')
-		.action(async (options: InitCommandOptions): Promise<any> => {
+		.action(async (options: InitCommandOptions): Promise<void> => {
 			await execute(options)
 		})
 }

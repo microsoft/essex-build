@@ -10,19 +10,14 @@
 	"scripts": {
 		"preinstall": "npx only-allow yarn",
 		"postinstall": "husky install",
-		"clean_primary": "yarn workspaces foreach --exclude essex-js-build --exclude '@essex/test-*' -piv run clean",
-		"clean_tests": "yarn workspaces foreach --include '@essex/test-*' -piv run clean",
-		"clean": "run-s clean_tests clean_primary",
-		"build": "yarn workspaces foreach -piv --topological-dev run build",
-		"lint": "yarn workspaces foreach -piv --all run lint",
-		"test": "yarn workspaces foreach -piv --all run test",
-		"version": "yarn workspaces foreach --all -ivd version",
-		"release": "yarn workspaces foreach --all --exclude '@essex/test-*' --exclude essex-js-build -pv npm publish --tolerate-republish --access public",
-		"jest": "NODE_OPTIONS=--experimental-vm-modules yarn node $(yarn bin jest) --runInBand",
-		"eslint": "ESSEX_DEBUG=1 yarn essex lint --fix",
+		"clean": "yarn turbo run clean",
+		"build": "yarn turbo run build",
+		"lint": "yarn turbo run lint",
+		"test": "yarn turbo run test",
+		"release": "yarn turbo run release",
 		"prettify": "essex prettify",
 		"git_is_clean": "yarn essex git-is-clean",
-		"ci": "run-s build lint eslint test jest"
+		"ci": "run-s build lint test git_is_clean"
 	},
 	"devDependencies": {
 		"@essex/eslint-config": "workspace:^",
@@ -44,6 +39,7 @@
 		"lint-staged": "^12.4.1",
 		"npm-run-all": "^4.1.5",
 		"prettier": "^2.6.2",
+		"turbo": "^1.2.11",
 		"typescript": "^4.6.4"
 	},
 	"workspaces": [

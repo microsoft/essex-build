@@ -4,6 +4,9 @@
 	"exports": {
 		".": "./tsconfig.json"
 	},
+	"scripts": {
+		"release": "yarn npm publish --tolerate-republish --access public"
+	},
 	"dependencies": {
 		"@essex/tsconfig-node14": "workspace:^"
 	}

@@ -16,7 +16,6 @@ import { verifyPackage } from '../steps/verifyPackage/index.mjs'
 import { BuildMode } from '../types.mjs'
 import { noop } from '../util/noop.mjs'
 
-
 export interface BuildCommandOptions {
 	/**
 	 * Emits TypeDoc documentation generation
@@ -55,7 +54,7 @@ export default function build(program: Command): void {
 		.option('--skipExportCheck', 'skips esm/cjs export check')
 		.option('--stories', 'builds component stories')
 		.option('--mode [mode]', 'options are "legacy", "dual", and "esm"')
-		.action(async (options: BuildCommandOptions): Promise<any> => {
+		.action(async (options: BuildCommandOptions): Promise<void> => {
 			await executeBuild(options)
 		})
 }

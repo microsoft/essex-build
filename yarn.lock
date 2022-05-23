@@ -2744,6 +2744,7 @@ __metadata:
     jest: ^28.1.0
     npm-run-all: ^4.1.5
     react: ^18.1.0
+    rimraf: ^3.0.2
     typescript: 4.6.4
   languageName: unknown
   linkType: soft
@@ -2764,6 +2765,7 @@ __metadata:
     lodash-es: ^4.17.21
     npm-run-all: ^4.1.5
     react: ^18.1.0
+    rimraf: ^3.0.2
     typescript: 4.6.4
   languageName: unknown
   linkType: soft
@@ -2780,6 +2782,7 @@ __metadata:
     jest: ^28.1.0
     npm-run-all: ^4.1.5
     react: ^18.1.0
+    rimraf: ^3.0.2
     typescript: 4.6.4
   languageName: unknown
   linkType: soft
@@ -2801,6 +2804,7 @@ __metadata:
     lodash-es: ^4.17.21
     npm-run-all: ^4.1.5
     react: ^18.1.0
+    rimraf: ^3.0.2
     typescript: ^4.6.4
   languageName: unknown
   linkType: soft
@@ -2821,6 +2825,7 @@ __metadata:
     "@types/react-dom": ^18.0.4
     react: ^18.1.0
     react-dom: 18.1.0
+    rimraf: ^3.0.2
     typescript: ^4.6.4
     vite: ^2.9.9
   languageName: unknown
@@ -2840,6 +2845,7 @@ __metadata:
     "@types/react-dom": ^18.0.4
     react: ^18.1.0
     react-dom: ^18.1.0
+    rimraf: ^3.0.2
   languageName: unknown
   linkType: soft
 
@@ -2862,6 +2868,7 @@ __metadata:
     jszip: ^3.9.1
     npm-run-all: ^4.1.5
     regenerator-runtime: ^0.13.9
+    rimraf: ^3.0.2
     shx: ^0.3.4
   languageName: unknown
   linkType: soft
@@ -2904,6 +2911,7 @@ __metadata:
     "@essex/tsconfig-node": "workspace:^"
     "@types/node": ^17.0.34
     "@vitejs/plugin-react-refresh": ^1.3.6
+    rimraf: ^3.0.2
     vite: ^2.9.9
     vite-react-jsx: ^1.1.2
     vite-tsconfig-paths: ^3.4.1
@@ -7267,6 +7275,7 @@ __metadata:
     lint-staged: ^12.4.1
     npm-run-all: ^4.1.5
     prettier: ^2.6.2
+    turbo: ^1.2.11
     typescript: ^4.6.4
   languageName: unknown
   linkType: soft
@@ -12896,6 +12905,147 @@ __metadata:
   version: 0.0.6
   resolution: "tunnel@npm:0.0.6"
   checksum: c362948df9ad34b649b5585e54ce2838fa583aa3037091aaed66793c65b423a264e5229f0d7e9a95513a795ac2bd4cb72cda7e89a74313f182c1e9ae0b0994fa
+  languageName: node
+  linkType: hard
+
+"turbo-darwin-64@npm:1.2.11":
+  version: 1.2.11
+  resolution: "turbo-darwin-64@npm:1.2.11"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"turbo-darwin-arm64@npm:1.2.11":
+  version: 1.2.11
+  resolution: "turbo-darwin-arm64@npm:1.2.11"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"turbo-freebsd-64@npm:1.2.11":
+  version: 1.2.11
+  resolution: "turbo-freebsd-64@npm:1.2.11"
+  conditions: os=freebsd & cpu=x64
+  languageName: node
+  linkType: hard
+
+"turbo-freebsd-arm64@npm:1.2.11":
+  version: 1.2.11
+  resolution: "turbo-freebsd-arm64@npm:1.2.11"
+  conditions: os=freebsd & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"turbo-linux-32@npm:1.2.11":
+  version: 1.2.11
+  resolution: "turbo-linux-32@npm:1.2.11"
+  conditions: os=linux & cpu=ia32
+  languageName: node
+  linkType: hard
+
+"turbo-linux-64@npm:1.2.11":
+  version: 1.2.11
+  resolution: "turbo-linux-64@npm:1.2.11"
+  conditions: os=linux & cpu=x64
+  languageName: node
+  linkType: hard
+
+"turbo-linux-arm64@npm:1.2.11":
+  version: 1.2.11
+  resolution: "turbo-linux-arm64@npm:1.2.11"
+  conditions: os=linux & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"turbo-linux-arm@npm:1.2.11":
+  version: 1.2.11
+  resolution: "turbo-linux-arm@npm:1.2.11"
+  conditions: os=linux & cpu=arm
+  languageName: node
+  linkType: hard
+
+"turbo-linux-mips64le@npm:1.2.11":
+  version: 1.2.11
+  resolution: "turbo-linux-mips64le@npm:1.2.11"
+  conditions: os=linux & cpu=mips64el
+  languageName: node
+  linkType: hard
+
+"turbo-linux-ppc64le@npm:1.2.11":
+  version: 1.2.11
+  resolution: "turbo-linux-ppc64le@npm:1.2.11"
+  conditions: os=linux & cpu=ppc64
+  languageName: node
+  linkType: hard
+
+"turbo-windows-32@npm:1.2.11":
+  version: 1.2.11
+  resolution: "turbo-windows-32@npm:1.2.11"
+  conditions: os=win32 & cpu=ia32
+  languageName: node
+  linkType: hard
+
+"turbo-windows-64@npm:1.2.11":
+  version: 1.2.11
+  resolution: "turbo-windows-64@npm:1.2.11"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"turbo-windows-arm64@npm:1.2.11":
+  version: 1.2.11
+  resolution: "turbo-windows-arm64@npm:1.2.11"
+  conditions: os=win32 & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"turbo@npm:^1.2.11":
+  version: 1.2.11
+  resolution: "turbo@npm:1.2.11"
+  dependencies:
+    turbo-darwin-64: 1.2.11
+    turbo-darwin-arm64: 1.2.11
+    turbo-freebsd-64: 1.2.11
+    turbo-freebsd-arm64: 1.2.11
+    turbo-linux-32: 1.2.11
+    turbo-linux-64: 1.2.11
+    turbo-linux-arm: 1.2.11
+    turbo-linux-arm64: 1.2.11
+    turbo-linux-mips64le: 1.2.11
+    turbo-linux-ppc64le: 1.2.11
+    turbo-windows-32: 1.2.11
+    turbo-windows-64: 1.2.11
+    turbo-windows-arm64: 1.2.11
+  dependenciesMeta:
+    turbo-darwin-64:
+      optional: true
+    turbo-darwin-arm64:
+      optional: true
+    turbo-freebsd-64:
+      optional: true
+    turbo-freebsd-arm64:
+      optional: true
+    turbo-linux-32:
+      optional: true
+    turbo-linux-64:
+      optional: true
+    turbo-linux-arm:
+      optional: true
+    turbo-linux-arm64:
+      optional: true
+    turbo-linux-mips64le:
+      optional: true
+    turbo-linux-ppc64le:
+      optional: true
+    turbo-windows-32:
+      optional: true
+    turbo-windows-64:
+      optional: true
+    turbo-windows-arm64:
+      optional: true
+  bin:
+    turbo: bin/turbo
+  checksum: a4ea5b68f82e8f616152eb74d007874730b48114baa6da455e36671b907410a2d8cbdf2e0cc18d932a9b5c54becdbfce021629f77e8a114f126b69ec760f4770
   languageName: node
   linkType: hard
 
