@@ -3,21 +3,21 @@
 	"baseBranch": "origin/main",
 	"pipeline": {
 		"clean": {
-			"outputs": []
+			"outputs": ["dist/", "lib/"]
 		},
 		"build": {
 			"dependsOn": ["^build"],
-			"outputs": [".next/**"]
+			"outputs": ["dist/", "lib/"]
 		},
 		"release": {
 			"outputs": []
 		},
 		"test": {
-			"dependsOn": ["^build"],
+			"dependsOn": ["build"],
 			"outputs": []
 		},
 		"lint": {
-			"dependsOn": ["^build"],
+			"dependsOn": ["build"],
 			"outputs": []
 		},
 		"dev": {
