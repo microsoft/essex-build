@@ -3,8 +3,8 @@
 	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
 	"version": "20.3.5",
 	"license": "MIT",
-	"devDependencies": {
-		"@essex/eslint-plugin": "workspace:^"
+	"scripts": {
+		"release": "yarn npm publish --tolerate-republish --access public"
 	},
 	"peerDependencies": {
 		"@essex/eslint-plugin": ">=20.3.6",

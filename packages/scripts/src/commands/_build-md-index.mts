@@ -6,6 +6,7 @@ import type { Command } from 'commander'
 
 import { buildMdIndex as executeBuildMdIndex } from '../steps/build-md-index/index.mjs'
 
+
 export interface BuildMdIndexCommandOptions {
 	include: string
 }
@@ -15,7 +16,7 @@ export default function buildMdIndex(program: Command): void {
 		.command('build-md-index')
 		.description('builds a markdown index package')
 		.option('--include <folder>', 'the markdown path to walk')
-		.action(async (options: BuildMdIndexCommandOptions): Promise<any> => {
+		.action(async (options: BuildMdIndexCommandOptions): Promise<void> => {
 			await executeBuildMdIndex(options.include)
 		})
 }

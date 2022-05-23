@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any */
 import { resolve } from '@essex/babel-config/resolve'
 
 export interface BabelSpecification {
@@ -13,6 +13,7 @@ export interface BabelSpecification {
 	presets?: any[]
 	plugins?: any[]
 }
+
 export function createBabelConfig({
 	modules,
 	targets,

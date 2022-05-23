@@ -14,7 +14,8 @@
 	"scripts": {
 		"build": "tsc -b .",
 		"clean": "rimraf lib",
-		"build:shellrunner": "yarn build"
+		"build:shellrunner": "yarn build",
+		"release": "yarn npm publish --tolerate-republish --access public"
 	},
 	"dependencies": {
 		"cross-spawn": "^7.0.3",

@@ -3,7 +3,7 @@
 	"version": "20.0.8",
 	"private": true,
 	"scripts": {
-		"clean": "essex clean",
+		"clean": "rimraf dist docsTemp build",
 		"build": "DEBUG='*' essex bundle",
 		"lint": "essex lint --fix",
 		"start": "essex serve",
@@ -22,7 +22,8 @@
 		"@types/react": "^18.0.9",
 		"@types/react-dom": "^18.0.4",
 		"react": "^18.1.0",
-		"react-dom": "^18.1.0"
+		"react-dom": "^18.1.0",
+		"rimraf": "^3.0.2"
 	},
 	"devDependencies": {
 		"@essex/scripts": "workspace:^",

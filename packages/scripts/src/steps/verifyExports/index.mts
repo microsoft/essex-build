@@ -63,9 +63,9 @@ async function loadEsm(pkgName: string): Promise<Record<string, unknown>> {
 	>
 }
 
-async function loadCjs(pkgName: string): Promise<Record<string, any>> {
+async function loadCjs(pkgName: string): Promise<Record<string, unknown>> {
 	await Promise.resolve()
-	return require(path.join(process.cwd(), pkgName)) as Record<string, any>
+	return require(path.join(process.cwd(), pkgName)) as Record<string, unknown>
 }
 
 async function doChecks(task: string, callback: () => Promise<void>) {

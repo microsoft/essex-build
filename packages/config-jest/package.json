@@ -17,7 +17,8 @@
 	},
 	"scripts": {
 		"clean": "rimraf dist lib",
-		"build": "essex build --mode dual --skipPackageCheck"
+		"build": "essex build --mode dual --skipPackageCheck",
+		"release": "yarn npm publish --tolerate-republish --access public"
 	},
 	"repository": {
 		"type": "git",

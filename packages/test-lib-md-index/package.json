@@ -6,7 +6,7 @@
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"scripts": {
-		"clean": "essex clean",
+		"clean": "rimraf dist docsTemp",
 		"build": "ESSEX_DEBUG=1 essex build-md-index --include docs"
 	},
 	"repository": {
@@ -30,6 +30,7 @@
 		"jest": "^28.1.0",
 		"npm-run-all": "^4.1.5",
 		"react": "^18.1.0",
+		"rimraf": "^3.0.2",
 		"typescript": "^4.6.4"
 	},
 	"essex": {

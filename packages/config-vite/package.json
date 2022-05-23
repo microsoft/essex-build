@@ -11,8 +11,9 @@
 		"types": "./dist/types/index.d.ts"
 	},
 	"scripts": {
-		"clean": "yarn essex clean",
-		"build": "yarn essex build --mode dual --skipExportCheck"
+		"clean": "rimraf dist docsTemp",
+		"build": "yarn essex build --mode dual --skipExportCheck",
+		"release": "yarn npm publish --tolerate-republish --access public"
 	},
 	"dependencies": {
 		"@vitejs/plugin-react-refresh": "^1.3.6",
@@ -23,6 +24,7 @@
 		"@essex/scripts": "workspace:^",
 		"@essex/tsconfig-node": "workspace:^",
 		"@types/node": "^17.0.34",
+		"rimraf": "^3.0.2",
 		"vite": "^2.9.9"
 	},
 	"peerDependencies": {

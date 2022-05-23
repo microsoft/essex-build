@@ -11,7 +11,8 @@
 		"perms": "shx chmod +x lib/index.mjs",
 		"build": "npm-run-all -p transpile -s crlf perms",
 		"build:scripts": "yarn build",
-		"clean": "rimraf lib"
+		"clean": "rimraf lib",
+		"release": "yarn npm publish --tolerate-republish --access public"
 	},
 	"main": "lib/index.mjs",
 	"bin": {
