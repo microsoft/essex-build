@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { loadJson } from '@essex/babel-config/resolve'
 import { existsSync } from 'fs'
 import { join } from 'path'
