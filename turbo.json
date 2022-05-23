@@ -9,9 +9,6 @@
 			"dependsOn": ["^build"],
 			"outputs": ["dist/", "lib/"]
 		},
-		"release": {
-			"outputs": []
-		},
 		"test": {
 			"dependsOn": ["build"],
 			"outputs": []
@@ -19,6 +16,9 @@
 		"lint": {
 			"dependsOn": ["build"],
 			"outputs": []
+		},
+		"ci": {
+			"dependsOn": ["build", "lint", "test"]
 		},
 		"dev": {
 			"cache": false
