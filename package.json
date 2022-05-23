@@ -10,11 +10,11 @@
 	"scripts": {
 		"preinstall": "npx only-allow yarn",
 		"postinstall": "husky install",
-		"clean": "yarn turbo run clean",
-		"build": "yarn turbo run build",
-		"lint": "yarn turbo run lint",
-		"test": "yarn turbo run test",
-		"release": "yarn turbo run release",
+		"clean": "turbo run clean",
+		"build": "turbo run build",
+		"lint": "turbo run lint",
+		"test": "turbo run test",
+		"release": "turbo run release",
 		"prettify": "essex prettify",
 		"git_is_clean": "yarn essex git-is-clean",
 		"ci": "run-s build lint test git_is_clean"
