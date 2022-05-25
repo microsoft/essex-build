@@ -18,7 +18,8 @@
 		"prettify": "essex prettify",
 		"ci_packages": "turbo run ci",
 		"lint_all": "essex lint --fix",
-		"is_clean": "essex git-is-clean"
+		"is_clean": "essex git-is-clean",
+		"update_sdks": "yarn dlx @yarnpkg/sdks vscode"
 	},
 	"devDependencies": {
 		"@essex/eslint-config": "workspace:^",

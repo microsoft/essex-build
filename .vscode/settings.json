@@ -25,8 +25,8 @@
     "*.jsx": "${capture}.js",
     "*.tsx": "${capture}.ts, ${capture}.hooks.ts, ${capture}.hooks.tsx, ${capture}.stories.tsx, ${capture}.spec.tsx, ${capture}.base.ts, ${capture}.base.tsx, ${capture}.types.ts, ${capture}.styles.ts, ${capture}.styles.tsx, ${capture}.utils.ts, ${capture}.utils.tsx, ${capture}.module.scss, ${capture}.module.css, ${capture}.md",
     "tsconfig.json": "tsconfig.*.json",
-    "package.json": "LICENSE, package-lock.json, yarn.lock, .yarnrc.yml, .pnp.cjs, .pnp.loader.mjs, .eslintrc, .eslintignore, .prettierrc, .prettierignore, .gitattributes, .gitignore, turbo.json",
-    "README.md": "SECURITY.md, SUPPORT.md, CODE_OF_CONDUCT.md, CODEOWNERS",
+    "package.json": "package-lock.json, yarn.lock, .yarnrc.yml, .pnp.cjs, .pnp.loader.mjs, .eslintrc, .eslintignore, .prettierrc, .prettierignore, .gitattributes, .gitignore, turbo.json",
+    "README.md": "SECURITY.md, SUPPORT.md, CODE_OF_CONDUCT.md, CODEOWNERS, LICENSE",
     "jest.config.js": "jest.setup.mjs"
   }
 }
