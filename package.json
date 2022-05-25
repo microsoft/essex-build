@@ -14,12 +14,11 @@
 		"build": "turbo run build",
 		"lint": "turbo run lint",
 		"test": "turbo run test",
-		"release": "yarn workspaces foreach -piv run release",
+		"release": "turbo run release",
 		"prettify": "essex prettify",
+		"ci_packages": "turbo run ci",
 		"lint_all": "essex lint --fix",
-		"_ci_packages": "turbo run ci",
-		"_git_is_clean": "essex git-is-clean",
-		"ci": "run-s _ci_packages lint_all _git_is_clean"
+		"is_clean": "essex git-is-clean"
 	},
 	"devDependencies": {
 		"@essex/eslint-config": "workspace:^",
