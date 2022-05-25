@@ -14,7 +14,7 @@
 		"build": "turbo run build",
 		"lint": "turbo run lint",
 		"test": "turbo run test",
-		"release": "yarn workspaces foreach -piv run release",
+		"release": "turbo run release",
 		"prettify": "essex prettify",
 		"ci_packages": "turbo run ci",
 		"lint_all": "essex lint --fix",
