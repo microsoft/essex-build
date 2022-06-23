@@ -3,21 +3,21 @@
 	"version": "21.0.12",
 	"author": "Chris Trevino <chtrevin@microsoft.com>",
 	"license": "MIT",
-	"main": "dist/cjs/index.js",
-	"types": "dist/types/index.d.ts",
+	"main": "lib/index.js",
+	"types": "lib/index.d.ts",
 	"exports": {
 		".": {
-			"import": "./dist/esm/index.mjs",
-			"require": "./dist/cjs/index.js",
-			"types": "./dist/types/index.d.ts"
+			"require": "./lib/index.js",
+			"import": "./lib/index.js",
+			"types": "./libs/index.d.ts"
 		},
 		"./resolve": "./resolve.cjs",
 		"./resolver": "./resolver.cjs",
 		"./filemock": "./filemock.cjs"
 	},
 	"scripts": {
-		"clean": "rimraf dist lib",
-		"build": "essex build --mode dual --skipPackageCheck",
+		"clean": "rimraf lib",
+		"build": "tsc --emitDeclarationOnly && swc src -d lib",
 		"release": "yarn npm publish --tolerate-republish --access public"
 	},
 	"repository": {
@@ -34,7 +34,6 @@
 		"lodash": "^4.17.21"
 	},
 	"devDependencies": {
-		"@essex/scripts": "workspace:^",
 		"@essex/tsconfig-node": "workspace:^",
 		"@swc/cli": "^0.1.57",
 		"@types/lodash": "^4.14.182",

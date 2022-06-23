@@ -28,7 +28,6 @@
 		"tslib": "^2.4.0"
 	},
 	"devDependencies": {
-		"@essex/scripts": "workspace:^",
 		"@essex/tsconfig-node": "workspace:^",
 		"@swc/cli": "^0.1.57",
 		"@swc/core": "1.2.204",
