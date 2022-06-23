@@ -3,19 +3,11 @@
 	"version": "20.1.13",
 	"license": "MIT",
 	"author": "Chris Trevino <chtrevin@microsoft.com>",
-	"main": "dist/cjs/index.js",
-	"types": "dist/types/index.d.ts",
-	"exports": {
-		".": {
-			"import": "./dist/esm/index.mjs",
-			"require": "./dist/cjs/index.js",
-			"types": "./dist/types/index.d.ts"
-		},
-		"./resolve": "./resolve.cjs"
-	},
+	"main": "lib/index.js",
+	"types": "lib/index.d.ts",
 	"scripts": {
-		"clean": "rimraf dist lib",
-		"build": "essex build --mode dual --skipPackageCheck",
+		"clean": "rimraf lib",
+		"build": "tsc --emitDeclarationOnly && swc src -d lib",
 		"release": "yarn npm publish --tolerate-republish --access public"
 	},
 	"repository": {
