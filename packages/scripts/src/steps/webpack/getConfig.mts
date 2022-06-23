@@ -3,28 +3,45 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { configure } from '@essex/webpack-config'
+import debug from 'debug'
 import { existsSync } from 'fs'
-import { createRequire } from 'module'
 import { join } from 'path'
 import type { Configuration } from 'webpack'
 import type { Configuration as WdsConfiguration } from 'webpack-dev-server'
 
 import type { WebpackCompilerOptions } from './types.mjs'
 
-const require = createRequire(import.meta.url)
+const log = debug('essex:webpack')
 
 export interface WebpackConfigWithWDS extends Configuration {
 	devServer?: WdsConfiguration
 }
 
-export function getConfig({
+export async function getConfig({
 	env,
 	mode,
-}: WebpackCompilerOptions): WebpackConfigWithWDS {
-	const webpackConfigFile = join(process.cwd(), 'webpack.config.js')
-	if (existsSync(webpackConfigFile)) {
-		return require(webpackConfigFile) as WebpackConfigWithWDS
+}: WebpackCompilerOptions): Promise<WebpackConfigWithWDS> {
+	const fileOptions = [
+		join(process.cwd(), 'webpack.config.js'),
+		join(process.cwd(), 'webpack.config.mjs'),
+		join(process.cwd(), 'webpack.config.cjs'),
+	]
+	const webpackConfigFile = fileOptions.find(existsSync)
+
+	if (webpackConfigFile != null) {
+		log('using custom webpack.config file: ', webpackConfigFile)
+		// Note: this allows us to pass env and mode settings to
+		// the webpack configuration library, which _may_ be used
+		// by the client configruration
+		process.env['__ESSEX_WEBPACK_CONFIG_ENV'] = env
+		process.env['__ESSEX_WEBPACK_CONFIG_MODE'] = mode
+
+		const module = (await import(webpackConfigFile)) as {
+			default: WebpackConfigWithWDS
+		}
+		return module.default
 	} else {
+		log('using default essex webpack configuration')
 		return configure({ env, mode })
 	}
 }

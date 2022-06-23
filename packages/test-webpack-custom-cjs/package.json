@@ -1,10 +1,10 @@
 {
-	"name": "@essex/test-webapp-webpack",
+	"name": "@essex/test-webapp-webpack-custom-cjs",
 	"version": "20.0.9",
 	"private": true,
 	"scripts": {
 		"clean": "rimraf dist docsTemp build",
-		"build": "essex bundle",
+		"build": "DEBUG='*' essex bundle",
 		"lint": "essex lint --fix",
 		"start": "essex serve",
 		"start:webpack": "yarn start"
@@ -27,6 +27,7 @@
 	},
 	"devDependencies": {
 		"@essex/scripts": "workspace:^",
-		"@essex/tsconfig-base": "workspace:^"
+		"@essex/tsconfig-base": "workspace:^",
+		"@essex/webpack-config": "workspace:^"
 	}
 }

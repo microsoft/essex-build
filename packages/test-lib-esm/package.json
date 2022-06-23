@@ -30,14 +30,14 @@
 		"@essex/jest-config": "workspace:^",
 		"@essex/scripts": "workspace:^",
 		"@essex/tsconfig-base": "workspace:^",
-		"@types/jest": "^27.5.1",
+		"@types/jest": "^28.1.3",
 		"@types/lodash-es": "^4.17.6",
-		"@types/react": "^18.0.9",
-		"jest": "^28.1.0",
+		"@types/react": "^18.0.14",
+		"jest": "^28.1.1",
 		"npm-run-all": "^4.1.5",
-		"react": "^18.1.0",
+		"react": "^18.2.0",
 		"rimraf": "^3.0.2",
-		"typescript": "4.7.2"
+		"typescript": "4.7.4"
 	},
 	"essex": {
 		"exports": {

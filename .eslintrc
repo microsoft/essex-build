@@ -20,7 +20,7 @@
 			}
 		},
 		{
-			"files": "packages/test-webpack/**",
+			"files": "packages/test-webpack*/**",
 			"rules": {
 				"@essex/extensions": [
 					"error",
