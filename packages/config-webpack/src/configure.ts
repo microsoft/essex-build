@@ -21,6 +21,20 @@ import type { Configuration } from './types.js'
 export function configure(config: Configuration = {}): WebpackConfiguration & {
 	devServer: WdsConfiguration
 } {
+	// Check for ambient env/mode settings from @essex/scripts
+	if (config.env == null) {
+		config.env = process.env['__ESSEX_WEBPACK_CONFIG_ENV'] as string
+	}
+	if (config.mode == null) {
+		const mode = process.env['__ESSEX_WEBPACK_CONFIG_MODE'] as string
+		if (mode !== 'development' && mode !== 'production') {
+			throw new Error(
+				`invalid mode ${mode}; it must be either "development" or "production"`,
+			)
+		}
+		config.mode = mode
+	}
+
 	const mgr = new ConfigurationManager(config)
 	const standardModulePaths = ['node_modules']
 

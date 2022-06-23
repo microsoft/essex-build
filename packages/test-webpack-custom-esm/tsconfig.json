@@ -1,0 +1,14 @@
+{
+	"extends": "@essex/tsconfig-base",
+	"compilerOptions": {
+		"baseUrl": "./src",
+		"lib": ["ESNext", "DOM"],
+		"jsx": "react-jsx",
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"paths": {
+			"~state": ["./state/index.ts"]
+		}
+	},
+	"include": ["src"]
+}

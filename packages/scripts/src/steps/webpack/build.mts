@@ -8,9 +8,11 @@ import { subtaskFail, subtaskSuccess } from '../../util/tasklogger.mjs'
 import { getConfig } from './getConfig.mjs'
 import type { WebpackCompilerOptions } from './types.mjs'
 
-export function webpackBuild(opts: WebpackCompilerOptions): Promise<void> {
+export async function webpackBuild(
+	opts: WebpackCompilerOptions,
+): Promise<void> {
 	try {
-		const config = getConfig(opts)
+		const config = await getConfig(opts)
 		const compiler = webpack(config)
 		return new Promise((resolve, reject) => {
 			compiler.run(

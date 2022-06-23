@@ -1,13 +1,15 @@
 {
-	"name": "@essex/test-webapp-webpack",
+	"name": "@essex/test-webapp-webpack-custom-esm",
+	"type": "module",
 	"version": "20.0.9",
 	"private": true,
 	"scripts": {
 		"clean": "rimraf dist docsTemp build",
-		"build": "essex bundle",
+		"build": "DEBUG='*' essex bundle",
 		"lint": "essex lint --fix",
 		"start": "essex serve",
-		"start:webpack": "yarn start"
+		"start:webpack": "yarn start",
+		"test": "jest"
 	},
 	"repository": {
 		"type": "git",
@@ -26,7 +28,11 @@
 		"rimraf": "^3.0.2"
 	},
 	"devDependencies": {
+		"@essex/jest-config": "workspace:^",
 		"@essex/scripts": "workspace:^",
-		"@essex/tsconfig-base": "workspace:^"
+		"@essex/tsconfig-base": "workspace:^",
+		"@essex/webpack-config": "workspace:^",
+		"@types/jest": "^28.1.3",
+		"jest": "^28.1.1"
 	}
 }

@@ -5,10 +5,10 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable-next-line */
 // @ts-ignore
-import build from '@ladle/react/api/build.js'
+import build from '@ladle/react/build'
 /* eslint-disable-next-line */
 // @ts-ignore
-import serve from '@ladle/react/api/serve.js'
+import serve from '@ladle/react/serve'
 import fs from 'fs'
 
 import { never } from '../../util/never.mjs'
