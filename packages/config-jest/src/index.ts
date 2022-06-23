@@ -2,10 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { resolve } from '@essex/jest-config/resolve'
 import { getSwcOptions } from '@essex/swc-opts'
 import { existsSync } from 'fs'
 import { join } from 'path'
+
+const resolve = require.resolve
 
 export interface EssexJestOptions {
 	/**

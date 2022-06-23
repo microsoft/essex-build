@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any */
-import { resolve } from '@essex/babel-config/resolve'
+const resolve = require.resolve
 
 export interface BabelSpecification {
 	modules: 'cjs' | 'esm'

@@ -11,7 +11,6 @@
 			"import": "./lib/index.js",
 			"types": "./libs/index.d.ts"
 		},
-		"./resolve": "./resolve.cjs",
 		"./resolver": "./resolver.cjs",
 		"./filemock": "./filemock.cjs"
 	},

@@ -2,8 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { loadJson } from '@essex/babel-config/resolve'
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { existsSync } from 'fs'
 import { join } from 'path'
 
@@ -13,6 +12,8 @@ import { getBrowsersList } from './getBrowsersList.js'
 
 export * from './createBabelConfig.js'
 
+const loadJson = require
+
 interface PackageJson {
 	useBuiltIns?: false | 'usage' | 'entry'
 	corejs?: { version: number; proposals: boolean } | 2 | 3
@@ -21,7 +22,7 @@ interface PackageJson {
 const cwd = process.cwd()
 const packageJsonPath = join(cwd, 'package.json')
 const packageJson: PackageJson = existsSync('package.json')
-	? loadJson(packageJsonPath)
+	? (require(packageJsonPath) as PackageJson)
 	: {}
 const babelEsmOverride = join(cwd, 'babel.esm.js')
 const babelCjsOverride = join(cwd, 'babel.cjs.js')
