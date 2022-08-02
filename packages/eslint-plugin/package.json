@@ -42,7 +42,7 @@
 	"devDependencies": {
 		"@essex/tsconfig-node14": "workspace:^",
 		"@swc/cli": "^0.1.57",
-		"@swc/core": "1.2.204",
+		"@swc/core": "1.2.222",
 		"@types/eslint": "^8.4.3",
 		"@types/lodash": "^4.14.182",
 		"@types/micromatch": "^4.0.2",
