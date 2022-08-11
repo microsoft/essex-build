@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { configure } from '@essex/webpack-config'
+import essexWebpackConfig from '@essex/webpack-config'
 import debug from 'debug'
 import { existsSync } from 'fs'
 import { join } from 'path'
@@ -42,6 +42,6 @@ export async function getConfig({
 		return module.default
 	} else {
 		log('using default essex webpack configuration')
-		return configure({ env, mode })
+		return essexWebpackConfig.configure({ env, mode })
 	}
 }

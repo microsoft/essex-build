@@ -2,9 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { configure } from '@essex/webpack-config'
+import essexWebpackConfig from '@essex/webpack-config'
 
-const configuration = configure({
+const configuration = essexWebpackConfig.configure({
 	environment: (mode, env) => {
 		if (mode !== 'production') {
 			throw new Error('expected production mode')
