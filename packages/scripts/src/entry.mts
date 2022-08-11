@@ -74,15 +74,6 @@ async function bootstrap(command: string) {
 	} else {
 		await loadAllCommands()
 	}
-
-	// error on unknown commands
-	program.on('command:*', () => {
-		// console.log(
-		// 	'Invalid command: %s\nSee --help for a list of available commands.',
-		// 	program.args.join(' '),
-		// )
-		// process.exit(1)
-	})
 }
 
 async function execute(): Promise<number> {
