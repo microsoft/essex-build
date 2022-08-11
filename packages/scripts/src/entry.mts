@@ -35,20 +35,19 @@ function establishErrorHandlers(): void {
 async function loadCommand(file: string): Promise<void> {
 	const start = performance.now()
 	const commandPath = fileUrl(commandDir, file)
-	try {
-		const command = (await import(commandPath)) as {
-			default: (program: Command) => void
-		}
-		if (command.default) {
-			command.default(program)
-		}
-		if (isDebug()) {
-			info(`load command ${file} ${printPerf(start)}`)
-		}
-	} catch (err) {
-		if (isDebug()) {
-			console.error(`unable to load command ${file}`, err)
-		}
+
+	const command = (await import(commandPath)) as {
+		default: (program: Command) => void
+	}
+
+	if (command.default) {
+		command.default(program)
+	} else {
+		throw new Error('command.default is not a function')
+	}
+
+	if (isDebug()) {
+		info(`load command ${file} ${printPerf(start)}`)
 	}
 }
 
@@ -66,9 +65,11 @@ async function bootstrap(command: string) {
 		try {
 			await loadCommand(`_${command}.mjs`)
 		} catch (err) {
+			console.error(err)
 			error(
-				`unknown command "${command}".\nSee --help for a list of available commands.`,
+				`could not load command command "${command}".\nSee --help for a list of available commands.`,
 			)
+			process.exit(1)
 		}
 	} else {
 		await loadAllCommands()
@@ -76,11 +77,11 @@ async function bootstrap(command: string) {
 
 	// error on unknown commands
 	program.on('command:*', () => {
-		console.log(
-			'Invalid command: %s\nSee --help for a list of available commands.',
-			program.args.join(' '),
-		)
-		process.exit(1)
+		// console.log(
+		// 	'Invalid command: %s\nSee --help for a list of available commands.',
+		// 	program.args.join(' '),
+		// )
+		// process.exit(1)
 	})
 }
 
