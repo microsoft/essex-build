@@ -19,8 +19,8 @@
 		"@essex/test-lib-esm": "workspace:^",
 		"@essex/test-lib-legacy": "workspace:^",
 		"@essex/test-lib-md-index": "workspace:^",
-		"@types/react": "^18.0.14",
-		"@types/react-dom": "^18.0.5",
+		"@types/react": "^18.0.17",
+		"@types/react-dom": "^18.0.6",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"rimraf": "^3.0.2"
