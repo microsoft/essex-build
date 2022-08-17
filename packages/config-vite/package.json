@@ -19,11 +19,11 @@
 		"@essex/scripts": "workspace:^",
 		"@essex/tsconfig-node": "workspace:^",
 		"@swc/cli": "^0.1.57",
-		"@swc/core": "^1.2.224",
-		"@types/node": "^18.7.1",
+		"@swc/core": "^1.2.237",
+		"@types/node": "^18.7.6",
 		"rimraf": "^3.0.2",
 		"typescript": "^4.7.4",
-		"vite": "^3.0.5"
+		"vite": "^3.0.8"
 	},
 	"peerDependencies": {
 		"vite": "*"

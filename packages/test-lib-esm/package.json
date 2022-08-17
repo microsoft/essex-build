@@ -30,7 +30,7 @@
 		"@essex/jest-config": "workspace:^",
 		"@essex/scripts": "workspace:^",
 		"@essex/tsconfig-base": "workspace:^",
-		"@types/jest": "^28.1.6",
+		"@types/jest": "^28.1.7",
 		"@types/lodash-es": "^4.17.6",
 		"@types/react": "^18.0.17",
 		"jest": "^28.1.3",
