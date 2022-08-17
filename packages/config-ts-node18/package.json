@@ -1,0 +1,13 @@
+{
+	"name": "@essex/tsconfig-node18",
+	"version": "1.0.0",
+	"exports": {
+		".": "./tsconfig.json"
+	},
+	"scripts": {
+		"release": "yarn npm publish --tolerate-republish --access public"
+	},
+	"dependencies": {
+		"@essex/tsconfig-base": "workspace:^"
+	}
+}
