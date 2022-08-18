@@ -7,7 +7,7 @@
 	"types": "lib/index.d.ts",
 	"scripts": {
 		"clean": "rimraf lib",
-		"build": "tsc",
+		"build": "tsc --emitDeclarationOnly && swc src -d lib",
 		"release": "yarn npm publish --tolerate-republish --access public"
 	},
 	"repository": {
@@ -30,7 +30,7 @@
 	"devDependencies": {
 		"@essex/tsconfig-node14": "workspace:^",
 		"@swc/cli": "^0.1.57",
-		"@swc/core": "1.2.237",
+		"@swc/core": "1.2.239",
 		"@types/node": "^18.7.6",
 		"rimraf": "^3.0.2",
 		"typescript": "^4.7.4"

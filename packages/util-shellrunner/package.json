@@ -24,7 +24,7 @@
 	"devDependencies": {
 		"@essex/tsconfig-node": "workspace:^",
 		"@swc/cli": "^0.1.57",
-		"@swc/core": "1.2.237",
+		"@swc/core": "1.2.239",
 		"@types/debug": "^4.1.7",
 		"@types/node": "^18.7.6",
 		"rimraf": "^3.0.2",
