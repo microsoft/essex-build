@@ -7,7 +7,7 @@
 		"release": "yarn npm publish --tolerate-republish --access public"
 	},
 	"peerDependencies": {
-		"@essex/eslint-plugin": ">=20.3.8",
+		"@essex/eslint-plugin": ">=20.3.9",
 		"@typescript-eslint/eslint-plugin": ">= 4.4.1",
 		"@typescript-eslint/parser": ">= 4.4.1",
 		"eslint-import-resolver-node": ">= 0.3.4"
