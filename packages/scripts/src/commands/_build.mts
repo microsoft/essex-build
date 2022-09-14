@@ -8,7 +8,7 @@ import { existsSync } from 'fs'
 import path from 'path'
 
 import { generateApiExtractorReport } from '../steps/api-extractor/index.mjs'
-import { esmify as processEsm } from '../steps/esmify/index.mjs'
+import { esmify } from '../steps/esmify/index.mjs'
 import { buildStories as buildStoriesStep } from '../steps/stories/index.mjs'
 import { compile as compileTypescript } from '../steps/typescript/index.mjs'
 import { verifyExports } from '../steps/verifyExports/index.mjs'
@@ -69,7 +69,6 @@ export async function executeBuild({
 }: BuildCommandOptions): Promise<void> {
 	const checkPackage = !skipPackageCheck
 	const checkExports = mode !== BuildMode.legacy && !skipExportCheck
-	const rewriteEsmToMjs = mode === BuildMode.dual
 	const esmOnly = mode === BuildMode.esm
 	const cwd = process.cwd()
 	const tsConfigPath = path.join(cwd, 'tsconfig.json')
@@ -84,12 +83,11 @@ export async function executeBuild({
 	const generateDocs = docs ? generateApiExtractorReport() : noop()
 
 	if (mode !== BuildMode.legacy) {
-		await processEsm(rewriteEsmToMjs, esmOnly ? 'dist/' : 'dist/esm')
+		await esmify(mode === BuildMode.dual, esmOnly ? 'dist/' : 'dist/esm')
 	}
 
 	if (checkPackage) await verifyPackage(mode)
 	if (checkExports) await verifyExports(esmOnly)
-
 	// wrap up long-running tasks
 	await Promise.all([generateDocs, buildStories])
 }

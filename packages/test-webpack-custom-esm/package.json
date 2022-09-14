@@ -32,7 +32,7 @@
 		"@essex/scripts": "workspace:^",
 		"@essex/tsconfig-base": "workspace:^",
 		"@essex/webpack-config": "workspace:^",
-		"@types/jest": "^28.1.8",
+		"@types/jest": "^29.0.2",
 		"jest": "^29.0.3"
 	}
 }

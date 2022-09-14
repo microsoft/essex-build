@@ -9,10 +9,9 @@ import ts from 'typescript'
 import {
 	printPerf,
 	subtaskFail,
-	subtaskSuccess
+	subtaskSuccess,
 } from '../../util/tasklogger.mjs'
 import { loadTSConfig, parseTSConfig } from './config.mjs'
-
 
 export async function checkAndEmitTypings(
 	fileNames: string[],
