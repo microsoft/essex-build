@@ -2492,7 +2492,7 @@ __metadata:
     "@essex/tsconfig-node": "workspace:^"
     "@essex/webpack-config": "workspace:^"
     "@ladle/react": ^1.3.0
-    "@microsoft/api-extractor": ^7.29.2
+    "@microsoft/api-extractor": 7.29.2
     "@swc/cli": ^0.1.57
     "@swc/core": 1.3.1
     "@types/archiver": ^5.3.1
@@ -3378,7 +3378,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microsoft/api-extractor@npm:^7.29.2":
+"@microsoft/api-extractor@npm:7.29.2":
   version: 7.29.2
   resolution: "@microsoft/api-extractor@npm:7.29.2"
   dependencies:

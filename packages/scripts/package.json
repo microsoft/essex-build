@@ -1,6 +1,6 @@
 {
 	"name": "@essex/scripts",
-	"version": "22.0.6",
+	"version": "22.0.7",
 	"description": "A set of scripts to make a essex javascript engineer's life easier",
 	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
 	"author": "David Tittsworth <datittsw@microsoft.com>",
@@ -36,7 +36,7 @@
 		"@essex/swc-opts": "workspace:^",
 		"@essex/webpack-config": "workspace:^",
 		"@ladle/react": "^1.3.0",
-		"@microsoft/api-extractor": "^7.29.2",
+		"@microsoft/api-extractor": "7.29.2",
 		"@swc/core": "1.3.1",
 		"@typescript-eslint/eslint-plugin": "^5.37.0",
 		"@typescript-eslint/parser": "^5.37.0",
