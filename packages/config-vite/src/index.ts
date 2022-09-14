@@ -2,15 +2,14 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import reactRefresh from '@vitejs/plugin-react-refresh'
+import react from '@vitejs/plugin-react'
 import type { UserConfigExport } from 'vite'
-import reactJsx from 'vite-react-jsx'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 const config: UserConfigExport = {
 	build: {
-		target: 'es2020',
+		target: 'es2021',
 	},
-	plugins: [reactRefresh(), tsconfigPaths(), reactJsx()],
+	plugins: [react(), tsconfigPaths()],
 }
 export default config

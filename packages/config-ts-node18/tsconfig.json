@@ -1,0 +1,18 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": "@essex/tsconfig-base",
+	"display": "Essex Node 18",
+	"compilerOptions": {
+		// Node 14 Standards (https://stackoverflow.com/questions/61305578/what-typescript-configuration-produces-output-closest-to-node-js-14-capabilities)
+		// https://www.npmjs.com/package/@tsconfig/node14
+		"target": "ES2022",
+		"lib": ["ES2022"],
+		"moduleResolution": "Node",
+
+		// Override w/ ESM if using ESM
+		"module": "CommonJS",
+
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true
+	}
+}

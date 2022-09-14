@@ -1,6 +1,7 @@
 {
-	"extends": "@essex/tsconfig-node",
+	"extends": "@essex/tsconfig-node14",
 	"compilerOptions": {
+		"module": "commonjs",
 		"outDir": "lib",
 		"declaration": true
 	},
