@@ -4,11 +4,14 @@ releases:
   "@essex/jest-config": patch
   "@essex/prettier-config": patch
   "@essex/scripts": patch
-  "@essex/test-webapp-webpack": patch
+  "@essex/shellrunner": patch
+  "@essex/swc-opts": patch
+  "@essex/test-webapp-webpack": minor
   "@essex/vite-config": patch
   "@essex/webpack-config": patch
 
-undecided:
+declined:
+  - "@essex/tsconfig-node18"
   - "@essex/test-lib-dual"
   - "@essex/test-lib-esm"
   - "@essex/test-lib-legacy"
@@ -17,5 +20,3 @@ undecided:
   - "@essex/test-webapp-webpack-custom-cjs"
   - "@essex/test-webapp-webpack-custom-esm"
   - "@essex/test-zips"
-  - "@essex/shellrunner"
-  - "@essex/swc-opts"
