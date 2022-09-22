@@ -79,6 +79,10 @@ function determineDefaultSwcOptions(
 				tsx: true,
 				decorators: true,
 				dynamicImport: true,
+				importAssertions: true,
+			} as swc.TsParserConfig,
+			experimental: {
+				keepImportAssertions: true,
 			},
 			transform: {
 				react: { runtime: 'automatic', useBuiltins: true },
