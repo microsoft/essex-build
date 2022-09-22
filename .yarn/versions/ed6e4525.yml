@@ -16,3 +16,6 @@ releases:
   "@essex/test-zips": patch
   "@essex/vite-config": patch
   "@essex/webpack-config": patch
+
+declined:
+  - "@essex/prettier-config"
