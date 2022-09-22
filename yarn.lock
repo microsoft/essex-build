@@ -2396,7 +2396,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/eslint-config@workspace:packages/config-eslint"
   peerDependencies:
-    "@essex/eslint-plugin": ">=20.3.9"
+    "@essex/eslint-plugin": ">=20.3.10"
     "@typescript-eslint/eslint-plugin": ">= 4.4.1"
     "@typescript-eslint/parser": ">= 4.4.1"
     eslint-import-resolver-node: ">= 0.3.4"
@@ -2533,7 +2533,7 @@ __metadata:
     webpack-dev-server: ^4.11.1
   peerDependencies:
     "@essex/eslint-config": ">=20.3.5"
-    "@essex/jest-config": ">=21.0.14"
+    "@essex/jest-config": ">=21.0.15"
     "@essex/prettier-config": ">=18.0.3"
     "@typescript-eslint/eslint-plugin": ">= 4.4.1"
     "@typescript-eslint/parser": ">= 4.4.1"
