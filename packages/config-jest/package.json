@@ -26,7 +26,7 @@
 	},
 	"dependencies": {
 		"@essex/swc-opts": "workspace:^",
-		"@swc/core": "1.3.2",
+		"@swc/core": "1.3.3",
 		"@swc/jest": "^0.2.22",
 		"@types/jest": "^29.0.3",
 		"identity-obj-proxy": "^3.0.0",
