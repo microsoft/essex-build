@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+/* eslint-disable @essex/adjacent-await */
 import { ApiDocumenterCommandLine } from '@microsoft/api-documenter/lib/cli/ApiDocumenterCommandLine.js'
 import type { ExtractorResult, IConfigFile } from '@microsoft/api-extractor'
 import { Extractor, ExtractorConfig } from '@microsoft/api-extractor'
@@ -32,8 +33,7 @@ const apiExtractorPath: string = isLocalConfig
  * Generates API documentation using [api-extractor](https://api-extractor.com/)
  */
 export async function generateApiExtractorReport(): Promise<void> {
-	await rm('docs')
-	await rm('docsTemp')
+	await Promise.all([rm('docs'), rm('docsTemp')])
 	await runExtractor()
 	await runDocumenter()
 }
