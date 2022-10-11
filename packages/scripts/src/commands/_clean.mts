@@ -3,7 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import type { Command } from 'commander'
-import rimraf from 'rimraf'
+
+import { rm } from '../steps/rm.js'
 
 export default function clean(program: Command): void {
 	program
@@ -16,17 +17,4 @@ export default function clean(program: Command): void {
 
 			await Promise.all(files.filter(f => !!f).map(f => rm(f)))
 		})
-}
-
-function rm(fileglob: string): Promise<void> {
-	return new Promise((resolve, reject) => {
-		rimraf(fileglob, (err: Error | null | undefined) => {
-			if (err) {
-				console.log(err)
-				reject(err)
-			} else {
-				resolve()
-			}
-		})
-	})
 }
