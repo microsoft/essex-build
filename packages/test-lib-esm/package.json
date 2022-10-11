@@ -10,7 +10,7 @@
 	},
 	"scripts": {
 		"clean": "rimraf dist docsTemp",
-		"build": "ESSEX_DEBUG=1 essex build --stories",
+		"build": "ESSEX_DEBUG=1 essex build --stories --docs",
 		"lint": "essex lint --fix",
 		"jest": "NODE_OPTIONS=--experimental-vm-modules yarn node $(yarn bin jest) --runInBand",
 		"start": "essex watch",
