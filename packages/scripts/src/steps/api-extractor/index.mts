@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import { ApiDocumenterCommandLine } from '@microsoft/api-documenter/lib/cli/ApiDocumenterCommandLine.js'
 import type { ExtractorResult, IConfigFile } from '@microsoft/api-extractor'
 import { Extractor, ExtractorConfig } from '@microsoft/api-extractor'
 import { existsSync, promises as fs } from 'fs'
@@ -9,6 +10,7 @@ import { createRequire } from 'module'
 import { dirname, resolve } from 'path'
 
 import { readPublishedPackageJson } from '../../util/package.mjs'
+import { rm } from '../rm.js'
 
 const require = createRequire(import.meta.url)
 
@@ -30,6 +32,13 @@ const apiExtractorPath: string = isLocalConfig
  * Generates API documentation using [api-extractor](https://api-extractor.com/)
  */
 export async function generateApiExtractorReport(): Promise<void> {
+	await rm('docs')
+	await rm('docsTemp')
+	await runExtractor()
+	await runDocumenter()
+}
+
+async function runExtractor() {
 	const configFile: IConfigFile = ExtractorConfig.loadFile(apiExtractorPath)
 
 	if (!isLocalConfig) {
@@ -67,4 +76,14 @@ export async function generateApiExtractorReport(): Promise<void> {
 				` and ${extractorResult.warningCount} warnings`,
 		)
 	}
+}
+
+function runDocumenter(): Promise<boolean> {
+	return new ApiDocumenterCommandLine().execute([
+		'markdown',
+		'-i',
+		'docs/report',
+		'-o',
+		'docs/markdown',
+	])
 }

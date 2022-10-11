@@ -13,7 +13,7 @@ export const a = "a";
 
 // Warning: (ae-missing-release-tag) "add" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
 //
-// @public (undocumented)
+// @public
 export function add(...nums: number[]): number;
 
 // Warning: (ae-missing-release-tag) "HelloWorld" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
