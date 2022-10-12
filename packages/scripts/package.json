@@ -37,7 +37,7 @@
 		"@essex/webpack-config": "workspace:^",
 		"@ladle/react": "^1.3.0",
 		"@microsoft/api-documenter": "7.19.17",
-		"@microsoft/api-extractor": "7.29.2",
+		"@microsoft/api-extractor": "7.33.0",
 		"@swc/core": "1.3.6",
 		"@typescript-eslint/eslint-plugin": "^5.40.0",
 		"@typescript-eslint/parser": "^5.40.0",
