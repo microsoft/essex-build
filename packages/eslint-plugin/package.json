@@ -18,7 +18,7 @@
 		"@babel/core": "^7.19.3",
 		"@babel/eslint-parser": "^7.19.1",
 		"@babel/types": "^7.19.4",
-		"@sinclair/typebox": "^0.24.44",
+		"@sinclair/typebox": "^0.24.50",
 		"@typescript-eslint/eslint-plugin": "^5.40.0",
 		"@typescript-eslint/parser": "^5.40.0",
 		"@typescript-eslint/utils": "^5.40.0",
