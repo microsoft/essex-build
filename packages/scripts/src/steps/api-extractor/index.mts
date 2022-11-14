@@ -53,6 +53,7 @@ async function runExtractor() {
 
 	const extractorConfig: ExtractorConfig = ExtractorConfig.prepare({
 		configObject: configFile,
+		ignoreMissingEntryPoint: true,
 		configObjectFullPath: process.cwd(),
 		packageJsonFullPath: localPackageJsonPath,
 	})
