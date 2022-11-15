@@ -1,6 +1,6 @@
 {
 	"name": "@essex/scripts",
-	"version": "22.1.0",
+	"version": "22.2.0",
 	"description": "A set of scripts to make a essex javascript engineer's life easier",
 	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
 	"author": "David Tittsworth <datittsw@microsoft.com>",
@@ -83,8 +83,8 @@
 	},
 	"peerDependencies": {
 		"@essex/eslint-config": ">=20.3.5",
-		"@essex/jest-config": ">=21.0.16",
-		"@essex/prettier-config": ">=18.0.3",
+		"@essex/jest-config": ">=21.0.17",
+		"@essex/prettier-config": ">=18.0.4",
 		"@typescript-eslint/eslint-plugin": ">= 4.4.1",
 		"@typescript-eslint/parser": ">= 4.4.1",
 		"eslint-import-resolver-node": ">= 0.3.4",
