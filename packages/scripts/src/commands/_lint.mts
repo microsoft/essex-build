@@ -8,13 +8,14 @@ import { existsSync } from 'fs'
 
 import { eslint } from '../steps/eslint/index.mjs'
 import { prettyQuick } from '../steps/pretty-quick/index.mjs'
+import { noop } from '../util/noop.mjs'
 
 interface LintCommandOptions {
 	fix?: boolean
 	staged?: boolean
 	docs?: boolean
 	strict?: boolean
-	docsOnly?: boolean
+	noFormat?: boolean
 }
 
 const DEFAULT_FILESET = ['.']
@@ -23,6 +24,7 @@ const restricted: Record<string, boolean> = {
 	'--fix': true,
 	'--staged': true,
 	'--strict': true,
+	'--noFormat': true,
 }
 export default function lint(program: Command): void {
 	program
@@ -31,6 +33,7 @@ export default function lint(program: Command): void {
 		.option('--strict', 'strict linting, warnings will cause failure')
 		.option('--fix', 'correct fixable problems')
 		.option('--staged', 'only do git-stage verifications')
+		.option('--noFormat', 'do not run code formatting')
 		.action(async (files: string[], options: LintCommandOptions = {}) => {
 			// for some reason CLI arguments were being picked up by the eslint core and throwing errors
 			process.argv = [...process.argv.filter(t => !restricted[t])]
@@ -39,12 +42,19 @@ export default function lint(program: Command): void {
 }
 
 async function execute(
-	{ fix = false, staged = false, strict = false }: LintCommandOptions,
+	{
+		fix = false,
+		staged = false,
+		strict = false,
+		noFormat = false,
+	}: LintCommandOptions,
 	files: string[] | undefined,
 ): Promise<void> {
 	files = await getFiles(staged, files)
 	const checkCode = eslint(fix, strict, files)
-	const checkFormatting = staged
+	const checkFormatting = noFormat
+		? noop()
+		: staged
 		? prettyQuick({ staged: true })
 		: prettyQuick({ check: !fix })
 
