@@ -3,7 +3,7 @@ releases:
   "@essex/eslint-plugin": patch
   "@essex/jest-config": patch
   "@essex/prettier-config": patch
-  "@essex/scripts": patch
+  "@essex/scripts": minor
   "@essex/shellrunner": patch
   "@essex/swc-opts": patch
   "@essex/test-lib-dual": patch
