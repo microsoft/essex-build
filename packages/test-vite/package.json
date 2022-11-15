@@ -28,9 +28,9 @@
 		"@essex/vite-config": "workspace:^",
 		"@types/node": "^18.11.9",
 		"@types/react": "^18.0.25",
-		"@types/react-dom": "^18.0.8",
+		"@types/react-dom": "^18.0.9",
 		"rimraf": "^3.0.2",
 		"typescript": "^4.8.4",
-		"vite": "^3.2.3"
+		"vite": "^3.2.4"
 	}
 }
