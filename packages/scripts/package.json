@@ -38,7 +38,7 @@
 		"@ladle/react": "^1.3.0",
 		"@microsoft/api-documenter": "7.19.24",
 		"@microsoft/api-extractor": "7.29.2",
-		"@swc/core": "1.3.17",
+		"@swc/core": "1.3.20",
 		"@typescript-eslint/eslint-plugin": "^5.43.0",
 		"@typescript-eslint/parser": "^5.43.0",
 		"archiver": "^5.3.1",
