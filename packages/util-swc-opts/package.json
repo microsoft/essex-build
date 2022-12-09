@@ -13,7 +13,7 @@
 		"release": "yarn npm publish --tolerate-republish --access public"
 	},
 	"dependencies": {
-		"@swc/core": "1.3.17",
+		"@swc/core": "1.3.22",
 		"lodash": "^4.17.21",
 		"tslib": "^2.4.1"
 	},
