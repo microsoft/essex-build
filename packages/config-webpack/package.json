@@ -17,7 +17,7 @@
 	"dependencies": {
 		"@essex/swc-opts": "workspace:^",
 		"@swc/cli": "^0.1.57",
-		"@swc/core": "1.3.17",
+		"@swc/core": "1.3.23",
 		"@types/webpack": "^5.28.0",
 		"@types/webpack-dev-server": "^4.7.2",
 		"css-loader": "^6.7.2",
@@ -25,7 +25,7 @@
 		"fork-ts-checker-webpack-plugin": "^7.2.13",
 		"html-webpack-plugin": "^5.5.0",
 		"lodash": "^4.17.21",
-		"mini-css-extract-plugin": "^2.6.1",
+		"mini-css-extract-plugin": "^2.7.2",
 		"resolve-typescript-plugin": "^1.2.0",
 		"sass-loader": "^13.2.0",
 		"style-loader": "^3.3.1",
@@ -40,12 +40,12 @@
 		"@essex/eslint-plugin": "workspace:^",
 		"@essex/tsconfig-node": "workspace:^",
 		"@types/debug": "^4.1.7",
-		"@types/express": "^4.17.14",
-		"@types/lodash": "^4.14.189",
-		"@types/node": "^18.11.9",
-		"eslint": "^8.27.0",
+		"@types/express": "^4.17.15",
+		"@types/lodash": "^4.14.191",
+		"@types/node": "^18.11.15",
+		"eslint": "^8.29.0",
 		"rimraf": "^3.0.2",
-		"typescript": "^4.8.4"
+		"typescript": "^4.9.4"
 	},
 	"peerDependencies": {
 		"typescript": ">= 4 <5",
