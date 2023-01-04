@@ -21,7 +21,7 @@ export async function verifyExports(esmOnly: boolean): Promise<void> {
 	const expected = pkg?.essex?.exports
 	if (expected == null) {
 		logger.warn(
-			`    essex.exports not defined in package.json; skipping named export verification`,
+			'    essex.exports not defined in package.json; skipping named export verification',
 		)
 	}
 

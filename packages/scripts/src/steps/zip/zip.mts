@@ -33,12 +33,12 @@ export async function zip(
 	info(
 		`archiving ${chalk.green(destination)} from base dir ${chalk.blueBright(
 			baseDir,
-		)} and sources ${sources.map(s => chalk.blueBright(s)).join(', ')}`,
+		)} and sources ${sources.map((s) => chalk.blueBright(s)).join(', ')}`,
 	)
 
 	info(`including ${fileEntries.length} files`)
 	if (isDebug()) {
-		fileEntries.forEach(e => traceFile(e, 'zip'))
+		fileEntries.forEach((e) => traceFile(e, 'zip'))
 	}
 	await archive(destination, fileEntries, baseDir)
 }
@@ -60,16 +60,16 @@ async function getFileEntries(
 		const filteredFiles = foundFiles.filter((_t, i) => isIncluded[i])
 
 		if (isDebug()) {
-			filteredFiles.forEach(f => traceFile(f, `expand ${source}`))
+			filteredFiles.forEach((f) => traceFile(f, `expand ${source}`))
 		}
 		result.push(...filteredFiles)
 	}
-	return result.map(file => relative(baseDir, file))
+	return result.map((file) => relative(baseDir, file))
 }
 
 function getGlobSource(source: string): Promise<string[]> {
 	if (isDebug()) {
-		info('handle source glob: ' + source)
+		info(`handle source glob: ${source}`)
 	}
 	return new Promise<string[]>((resolve, reject) => {
 		glob(source, { dot: true }, (err, files) => {
@@ -85,7 +85,7 @@ function getGlobSource(source: string): Promise<string[]> {
 
 async function getSourceFiles(source: string): Promise<string[]> {
 	if (isDebug()) {
-		info('handle source file: ' + source)
+		info(`handle source file: ${source}`)
 	}
 	const stats = await fs.stat(source)
 
@@ -180,5 +180,5 @@ async function archive(
 
 async function isZippable(file: string): Promise<boolean> {
 	const stat = await fs.stat(file)
-	return !stat.isSymbolicLink() && !stat.isDirectory() && stat.isFile()
+	return !(stat.isSymbolicLink() || stat.isDirectory()) && stat.isFile()
 }

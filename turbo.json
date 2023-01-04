@@ -14,7 +14,7 @@
 			"outputs": []
 		},
 		"ci": {
-			"dependsOn": ["build", "lint", "test"],
+			"dependsOn": ["lint", "build", "test", "//#lint_all", "//#rome:ci"],
 			"outputs": ["dist/**", "lib/**"]
 		},
 		"release": {
@@ -22,6 +22,13 @@
 		},
 		"clean": {
 			"cache": false
+		},
+		"//#rome:ci": {
+			"dependsOn": ["^lint"],
+			"cache": false
+		},
+		"//#lint_all": {
+			"dependsOn": ["^build"]
 		}
 	}
 }

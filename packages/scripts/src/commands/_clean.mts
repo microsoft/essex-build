@@ -15,6 +15,6 @@ export default function clean(program: Command): void {
 				files = ['lib', 'dist']
 			}
 
-			await Promise.all(files.filter(f => !!f).map(f => rm(f)))
+			await Promise.all(files.filter((f) => !!f).map((f) => rm(f)))
 		})
 }

@@ -12,8 +12,15 @@ import {
 } from './overrides.js'
 import { importSettings, reactSettings } from './settings.js'
 
+/**
+ * Create an ESLint configuration object
+ * @param useTypeAwareLinting - Whether to enable type-aware lint rules
+ * @param useRome - If true, disables rules that conflict with Rome or are covered by Rome
+ * @returns
+ */
 export function createConfiguration(
 	useTypeAwareLinting: boolean,
+	useRome: boolean,
 ): Linter.Config & { overrides: Linter.ConfigOverride[] } {
 	useTypeAwareLinting = getTypeAwareSetting(useTypeAwareLinting)
 	return {
@@ -30,12 +37,12 @@ export function createConfiguration(
 			requireConfigFile: false,
 		},
 		extends: [
-			'eslint:recommended',
-			'prettier',
+			// 'eslint:recommended',
+			// 'prettier',
 			'plugin:import/recommended',
 			'plugin:react/recommended',
 			'plugin:react-hooks/recommended',
-			'plugin:jsx-a11y/recommended',
+			// 'plugin:jsx-a11y/recommended',
 		],
 		env: {
 			browser: true,
@@ -48,8 +55,8 @@ export function createConfiguration(
 			...importSettings(),
 		},
 		overrides: [
-			typescriptOverride(useTypeAwareLinting),
-			javascriptOverride(),
+			typescriptOverride(useTypeAwareLinting, useRome),
+			javascriptOverride(useRome),
 			jestOverride(),
 		],
 	}

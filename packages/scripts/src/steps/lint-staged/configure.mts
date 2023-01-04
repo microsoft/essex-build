@@ -35,6 +35,7 @@ export async function configureJob(): Promise<Job> {
 async function isLintStagedConfigured(): Promise<boolean> {
 	const pkgJson = await readTargetPackageJson()
 	return (
-		pkgJson['lint-staged'] != null || configFileOptions.some(t => existsSync(t))
+		pkgJson['lint-staged'] != null ||
+		configFileOptions.some((t) => existsSync(t))
 	)
 }

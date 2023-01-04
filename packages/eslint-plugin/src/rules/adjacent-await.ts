@@ -8,7 +8,7 @@
 /* eslint-disable  @typescript-eslint/no-unsafe-argument */
 
 function findAncestorParentedByType(node: any, type: string): any {
-	while (node && node.parent && node.parent.type !== type) {
+	while (node?.parent && node.parent.type !== type) {
 		node = node.parent
 	}
 	if (node.parent && node.parent.type === type) {
@@ -26,7 +26,7 @@ const noAdjacentAwait = {
 		function validate(asyncInfo: any, identifiersToIgnore: any[]): any {
 			if (asyncInfo) {
 				const { identifiers, statement } = asyncInfo
-				const usedNames = new Set(identifiersToIgnore.map(n => n.name))
+				const usedNames = new Set(identifiersToIgnore.map((n) => n.name))
 				const usingIdentifiers = identifiers.some((m: any) =>
 					usedNames.has(m.name),
 				)
@@ -85,7 +85,7 @@ const noAdjacentAwait = {
 				variableDeclarationStack.pop()
 			},
 			Identifier(node: any): void {
-				awaitExpressionStack.forEach(item => {
+				awaitExpressionStack.forEach((item) => {
 					const { ancestor } = item
 					let identifiers = referencedIdentifiers.get(ancestor) as any[]
 					if (!identifiers) {
