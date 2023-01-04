@@ -7,7 +7,7 @@
 	"types": "dist/types/index.d.ts",
 	"scripts": {
 		"clean": "rimraf data/bar/linked_data dist",
-		"lint": "essex lint --fix",
+		"lint": "essex lint --fix --noFormat",
 		"test": "run-s clean link_external_data zip_all jest",
 		"test:zips": "yarn test",
 		"jest": "NODE_OPTIONS=--experimental-vm-modules yarn node $(yarn bin jest) --runInBand",

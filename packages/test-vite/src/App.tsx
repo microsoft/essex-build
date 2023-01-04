@@ -13,7 +13,7 @@ import { memo } from 'react'
 import { number } from './number.js'
 
 const docsContent = Object.keys(docs)
-	.map(key => docs[key])
+	.map((key) => docs[key])
 	.join('\n\n')
 
 export const App: React.FC = memo(function App() {
