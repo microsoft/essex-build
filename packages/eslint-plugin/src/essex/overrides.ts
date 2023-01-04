@@ -12,6 +12,10 @@ import {
 	tsRules,
 } from './ruleConfigurations.js'
 
+/**
+ * This list of rules is from a spreadesheet referenced in this issue: https://github.com/rome/tools/issues/3892
+ * See: https://docs.google.com/spreadsheets/d/16PXNlt7XoQG_ByRC9azLcFqPxZbIyppcb2c92O_lCv4/edit#gid=0
+ */
 const RULES_WITH_ROME_EQUIVALENT: string[] = [
 	'@typescript-eslint/array-type',
 	'@typescript-eslint/ban-types',
