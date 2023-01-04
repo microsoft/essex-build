@@ -20,7 +20,7 @@ export async function buildMdIndex(include: string): Promise<void> {
 
 		indexImports.push(
 			path
-				.join(outputDir.replace(`dist`, ''), indexFilePath)
+				.join(outputDir.replace("dist", ''), indexFilePath)
 				.replace(/^\//, ''),
 		)
 

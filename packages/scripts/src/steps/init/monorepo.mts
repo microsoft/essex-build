@@ -43,11 +43,11 @@ export function initMonorepo(): Promise<number> {
 		.then(() =>
 			Promise.all([
 				configurePackageJsonForMonorepo(),
-				...CONFIG_FILES_DOT.map(f => copyConfigFile(f, true)),
-				...CONFIG_FILES_NODOT.map(f => copyConfigFile(f, false)),
+				...CONFIG_FILES_DOT.map((f) => copyConfigFile(f, true)),
+				...CONFIG_FILES_NODOT.map((f) => copyConfigFile(f, false)),
 			]),
 		)
-		.then(results => {
+		.then((results) => {
 			const result = results.reduce((a, b) => a + b, 0)
 			if (result > 0) {
 				log.info(INIT_MSG_FAIL)

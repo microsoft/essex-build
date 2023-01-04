@@ -42,7 +42,9 @@ export function createExtensionsValidator(
 
 		if (
 			ignorePackages &&
-			!relativeModulePrefixes.some(prefix => importedModule.startsWith(prefix))
+			!relativeModulePrefixes.some((prefix) =>
+				importedModule.startsWith(prefix),
+			)
 		) {
 			// current import/export path is not a relative path so skip linting
 			return

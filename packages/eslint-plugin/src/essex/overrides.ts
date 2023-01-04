@@ -53,7 +53,7 @@ export function typescriptOverride(
 		)
 	}
 	if (useRome) {
-		RULES_WITH_ROME_EQUIVALENT.forEach(rule => {
+		RULES_WITH_ROME_EQUIVALENT.forEach((rule) => {
 			result.rules[rule] = 'off'
 		})
 	}
@@ -70,7 +70,7 @@ export function javascriptOverride(useRome: boolean): Linter.ConfigOverride {
 	}
 
 	if (useRome) {
-		RULES_WITH_ROME_EQUIVALENT.forEach(rule => {
+		RULES_WITH_ROME_EQUIVALENT.forEach((rule) => {
 			result.rules[rule] = 'off'
 		})
 	}

@@ -27,17 +27,17 @@ export const extensionsRule: TSESLint.RuleModule<
 	},
 	/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */
 	defaultOptions: [defaultSettings as any],
-	create: context => {
+	create: (context) => {
 		/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */
 		const filename = relative(context.getCwd!(), context.getFilename())
 		const allOptions = [...(context.options[0] ?? [defaultSettings])].map(
-			opt => ({
+			(opt) => ({
 				...defaultSettings,
 				...opt,
 			}),
 		)
 
-		const matchingOptions = allOptions.filter(opt => {
+		const matchingOptions = allOptions.filter((opt) => {
 			return micromatch.isMatch(filename, opt.files)
 		})[0]
 

@@ -57,8 +57,9 @@ export function prettyQuick(args: PrettyQuickArgs): Promise<void> {
 		} else {
 			if (prettyQuickResult.errors.indexOf('PARTIALLY_STAGED_FILE') !== -1) {
 				console.log(
-					'✗ Partially staged files were fixed up.' +
-						` ${chalk.bold('Please update stage before committing')}.`,
+					`✗ Partially staged files were fixed up. ${chalk.bold(
+						'Please update stage before committing',
+					)}.`,
 				)
 			}
 			if (prettyQuickResult.errors.indexOf('BAIL_ON_WRITE') !== -1) {

@@ -7,7 +7,7 @@ import { BuildMode } from '../../types.mjs'
 import type { PackageJsonData } from '../../util/package.mjs'
 import {
 	readPublishedPackageJson,
-	readTargetPackageJson
+	readTargetPackageJson,
 } from '../../util/package.mjs'
 import { subtaskSuccess, warn } from '../../util/tasklogger.mjs'
 

@@ -9,10 +9,9 @@ import ts from 'typescript'
 import {
 	printPerf,
 	subtaskFail,
-	subtaskSuccess
+	subtaskSuccess,
 } from '../../util/tasklogger.mjs'
 import { loadTSConfig, parseTSConfig } from './config.mjs'
-
 
 export async function checkAndEmitTypings(
 	fileNames: string[],
@@ -38,7 +37,7 @@ export async function checkAndEmitTypings(
 		.concat(emitResult.diagnostics)
 
 	let hasErrors = false
-	allDiagnostics.forEach(diagnostic => {
+	allDiagnostics.forEach((diagnostic) => {
 		if (diagnostic.file && diagnostic.start) {
 			if (diagnostic.category === ts.DiagnosticCategory.Error) {
 				hasErrors = true
@@ -65,7 +64,7 @@ export async function checkAndEmitTypings(
 
 	if (hasErrors) {
 		subtaskFail('check types')
-		throw new Error(`check types failure`)
+		throw new Error('check types failure')
 	}
 	subtaskSuccess('check types', printPerf(start))
 	return emitResult.emitSkipped ? 1 : 0

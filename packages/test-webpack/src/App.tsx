@@ -14,7 +14,7 @@ import { memo } from 'react'
 import { state } from '~state'
 
 const docsContent = Object.keys(docs)
-	.map(key => docs[key])
+	.map((key) => docs[key])
 	.join('\n\n')
 
 export const App: React.FC = memo(function App() {

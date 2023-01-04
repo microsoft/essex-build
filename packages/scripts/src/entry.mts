@@ -26,7 +26,7 @@ function establishErrorHandlers(): void {
 			console.log(reason, 'unhandled promise rejection', p)
 			process.exit(1)
 		})
-		.on('uncaughtException', err => {
+		.on('uncaughtException', (err) => {
 			console.log(err, 'uncaught exception')
 			process.exit(1)
 		})
@@ -100,8 +100,8 @@ async function execute(): Promise<number> {
 	}
 }
 execute()
-	.then(code => exit(code))
-	.catch(err => {
+	.then((code) => exit(code))
+	.catch((err) => {
 		console.log(err)
 		exit(1)
 	})

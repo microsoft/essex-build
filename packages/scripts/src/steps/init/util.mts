@@ -15,7 +15,7 @@ export function copyConfigFile(file: string, dot = false): Promise<number> {
 	const scriptPath = path.join(__dirname, `../../../config/init/${file}`)
 	const pkgPath = path.join(process.cwd(), `${dot ? '.' : ''}${file}`)
 
-	return fileExists(pkgPath).then(pkgFileExists => {
+	return fileExists(pkgPath).then((pkgFileExists) => {
 		if (pkgFileExists) {
 			log.error(
 				`cannot init file ${file}; it already exists in the target directory`,
@@ -28,11 +28,11 @@ export function copyConfigFile(file: string, dot = false): Promise<number> {
 }
 
 export const fileExists = (file: string): Promise<boolean> =>
-	new Promise(resolve => exists(file, is => resolve(is)))
+	new Promise((resolve) => exists(file, (is) => resolve(is)))
 
 function copyFilePromise(source: string, target: string): Promise<void> {
 	return new Promise((resolve, reject) => {
-		copyFile(source, target, err => {
+		copyFile(source, target, (err) => {
 			if (err) {
 				reject(err)
 			} else {

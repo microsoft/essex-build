@@ -13,7 +13,7 @@ const SOURCE_GLOB = 'src/**/*.ts*'
 export async function getSourceFiles(): Promise<string[]> {
 	const sourceFiles = [...(await resolveGlob(SOURCE_GLOB))]
 	return sourceFiles.filter(
-		t =>
+		(t) =>
 			t.indexOf('/__tests__/') === -1 &&
 			t.indexOf('.spec.') === -1 &&
 			t.indexOf('.test.') === -1 &&
@@ -28,7 +28,7 @@ function resolveGlob(globSpec: string): Promise<Set<string>> {
 				reject(err)
 			} else {
 				const fileSet = new Set<string>()
-				res.forEach(r => fileSet.add(r))
+				res.forEach((r) => fileSet.add(r))
 				resolve(fileSet)
 			}
 		})
