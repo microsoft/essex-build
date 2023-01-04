@@ -10,8 +10,7 @@
 	"scripts": {
 		"_release_packages": "turbo run release",
 		"_version_cut": "yarn version apply --all",
-		"just_lint": "yarn workspaces foreach -p --exclude essex-js-build run lint",
-		"just_test": "yarn workspaces foreach -p --exclude essex-js-build run test",
+		"lint_all": "essex lint --fix",
 		"clean": "turbo run clean",
 		"build": "turbo run build",
 		"lint": "turbo run lint",
