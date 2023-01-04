@@ -6,7 +6,7 @@
 	"scripts": {
 		"clean": "rimraf dist docsTemp build",
 		"build": "DEBUG='*' essex bundle",
-		"lint": "essex lint --fix",
+		"lint": "essex lint --fix --noFormat",
 		"start": "essex serve",
 		"start:webpack": "yarn start",
 		"test": "jest"
