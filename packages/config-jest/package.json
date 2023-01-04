@@ -34,7 +34,7 @@
 	},
 	"devDependencies": {
 		"@essex/tsconfig-node": "workspace:^",
-		"@swc/cli": "^0.1.57",
+		"@swc/cli": "^0.1.59",
 		"@types/lodash": "^4.14.191",
 		"@types/node": "^18.11.18",
 		"rimraf": "^3.0.2",
