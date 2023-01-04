@@ -3,5 +3,5 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 module.exports = {
-	extends: ['plugin:@essex/eslint-plugin/rome'],
+	extends: ['plugin:@essex/eslint-plugin/romefast'],
 }
