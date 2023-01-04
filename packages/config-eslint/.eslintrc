@@ -1,5 +1,5 @@
 {
-	"extends": "@essex/eslint-config",
+	"extends": "@essex/eslint-config/romefast",
 	"rules": {
 		"@typescript-eslint/no-explicit-any": "off",
 		"import/no-unresolved": "off",

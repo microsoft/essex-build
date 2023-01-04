@@ -12,6 +12,7 @@ const defaultExport = {
 		base: createConfiguration(true, false),
 		fast: createConfiguration(false, false),
 		rome: createConfiguration(true, true),
+		romefast: createConfiguration(false, true),
 	},
 }
 // @ts-ignore
