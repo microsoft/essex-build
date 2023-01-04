@@ -12,8 +12,28 @@ import {
 	tsRules,
 } from './ruleConfigurations.js'
 
+const RULES_WITH_ROME_EQUIVALENT: string[] = [
+	'@typescript-eslint/array-type',
+	'@typescript-eslint/ban-types',
+	'@typescript-eslint/camelcase',
+	'@typescript-eslint/no-empty-interface',
+	'@typescript-eslint/no-explicit-any',
+	'@typescript-eslint/no-unused-vars',
+	'constructor-super',
+	'eqeqeq',
+	'no-cond-assign',
+	'no-debugger',
+	'no-shadow',
+	'no-unreachable',
+	'no-unsafe-finally',
+	'no-var',
+	'one-var',
+	'use-isnan',
+]
+
 export function typescriptOverride(
 	useTypeAwareLinting: boolean,
+	useRome: boolean,
 ): Linter.ConfigOverride {
 	const result = {
 		files: ['**/*.ts', '**/*.tsx', '**/*.cts', '**/*.mts'],
@@ -32,10 +52,15 @@ export function typescriptOverride(
 			'plugin:@typescript-eslint/recommended-requiring-type-checking',
 		)
 	}
+	if (useRome) {
+		RULES_WITH_ROME_EQUIVALENT.forEach(rule => {
+			result.rules[rule] = 'off'
+		})
+	}
 	return result
 }
-export function javascriptOverride(): Linter.ConfigOverride {
-	return {
+export function javascriptOverride(useRome: boolean): Linter.ConfigOverride {
+	const result = {
 		files: ['**/*.js', '**/*.jsx', '**/*.cjs', '**/*.mjs'],
 		parser: '@babel/eslint-parser',
 		parserOptions: {
@@ -43,6 +68,13 @@ export function javascriptOverride(): Linter.ConfigOverride {
 		},
 		rules: { ...defaultRules, ...reactRules },
 	}
+
+	if (useRome) {
+		RULES_WITH_ROME_EQUIVALENT.forEach(rule => {
+			result.rules[rule] = 'off'
+		})
+	}
+	return result
 }
 
 export function jestOverride(): Linter.ConfigOverride {

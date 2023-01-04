@@ -9,8 +9,9 @@ import rules from './rules/index.js'
 const defaultExport = {
 	rules,
 	configs: {
-		base: createConfiguration(true),
-		fast: createConfiguration(false),
+		base: createConfiguration(true, false),
+		fast: createConfiguration(false, false),
+		rome: createConfiguration(true, true),
 	},
 }
 // @ts-ignore

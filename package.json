@@ -10,6 +10,7 @@
 	"scripts": {
 		"_release_packages": "turbo run release",
 		"_version_cut": "yarn version apply --all",
+		"just_lint": "yarn workspaces foreach -pit run lint",
 		"clean": "turbo run clean",
 		"build": "turbo run build",
 		"lint": "turbo run lint",
