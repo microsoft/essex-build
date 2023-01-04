@@ -18,16 +18,15 @@
 		},
 		"lint": {
 			"dependsOn": [
-				"^build",
-				"//#format"
+				"^build"
 			],
 			"outputs": []
 		},
 		"ci": {
 			"dependsOn": [
 				"build",
-				"lint",
-				"test"
+				"test",
+				"//#romeci"
 			],
 			"outputs": [
 				"dist/**",
@@ -40,7 +39,7 @@
 		"clean": {
 			"cache": false
 		},
-		"//#format": {
+		"//#romeci": {
 			"dependsOn": [],
 			"cache": false
 		}

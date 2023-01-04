@@ -30,12 +30,12 @@ export function createConfiguration(
 			requireConfigFile: false,
 		},
 		extends: [
-			'eslint:recommended',
-			'prettier',
+			// 'eslint:recommended',
+			// 'prettier',
 			'plugin:import/recommended',
 			'plugin:react/recommended',
 			'plugin:react-hooks/recommended',
-			'plugin:jsx-a11y/recommended',
+			// 'plugin:jsx-a11y/recommended',
 		],
 		env: {
 			browser: true,

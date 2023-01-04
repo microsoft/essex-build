@@ -12,7 +12,6 @@ import { performance } from 'perf_hooks'
 import { noop } from '../../util/noop.mjs'
 import { printPerf, subtaskSuccess, traceFile } from '../../util/tasklogger.mjs'
 
-
 const ESM_ONLY_PATH = 'dist/'
 const ESM_PATH = 'dist/esm'
 const CJS_PATH = 'dist/cjs'
@@ -24,7 +23,7 @@ export async function compile(
 ): Promise<void> {
 	const start = performance.now()
 	await createOutputFolders(esmOnly)
-	await Promise.all(fileNames.map(f => transpileFile(f, logFiles, esmOnly)))
+	await Promise.all(fileNames.map((f) => transpileFile(f, logFiles, esmOnly)))
 	subtaskSuccess('transpile', printPerf(start))
 }
 

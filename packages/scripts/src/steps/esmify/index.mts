@@ -10,7 +10,7 @@ const isLocalExport = (l: string) =>
 const isSourceMap = (l: string) =>
 	has(l, '//# sourceMappingURL=') && has(l, ".js'")
 export async function esmify(rewriteToMjs: boolean, dir: string) {
-	await walk(dir, async entryPath => {
+	await walk(dir, async (entryPath) => {
 		if (entryPath.endsWith('.js')) {
 			await rewriteImports(entryPath, rewriteToMjs)
 			if (rewriteToMjs) await renameJsToMjs(entryPath)
@@ -34,7 +34,7 @@ async function rewriteImports(entryPath: string, rewriteToMjs: boolean) {
 function rewriteFile(content: string, rewriteToMjs: boolean): string {
 	return content
 		.split('\n')
-		.map(l => rewriteLine(l, rewriteToMjs))
+		.map((l) => rewriteLine(l, rewriteToMjs))
 		.join('\n')
 }
 

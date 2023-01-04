@@ -3,8 +3,16 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
-    }
+      "recommended": true,
+      "suspicious": {
+        "noExplicitAny": "off"
+      }
+    },
+    "ignore": [
+      "dist",
+      "lib",
+      "build"
+    ]
   },
   "javascript": {
     "formatter": {
@@ -15,6 +23,7 @@
     }
   },
   "formatter": {
-    "indentStyle": "tab"
+    "indentStyle": "tab",
+    "ignore": ["dist", "lib", "build"]
   }
 }

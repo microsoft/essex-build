@@ -39,7 +39,7 @@ export function execute({
 		let output = ''
 		let error = ''
 		if (!toConsole) {
-			if (spawned && spawned.stdout && spawned.stderr) {
+			if (spawned?.stdout && spawned.stderr) {
 				spawned.stdout.on('data', (data: { toString?: () => string }) => {
 					if (data?.toString) {
 						output += data.toString()
@@ -54,8 +54,8 @@ export function execute({
 		}
 
 		return new Promise<JobResult>((resolve, reject) => {
-			spawned.on('error', err => reject(err))
-			spawned.on('close', childCode => {
+			spawned.on('error', (err) => reject(err))
+			spawned.on('close', (childCode) => {
 				let code = childCode
 				if (childCode != null && codeMap[childCode] != null) {
 					code = codeMap[childCode] || null
@@ -85,9 +85,9 @@ function getInitialSpawnOptions(toConsole: boolean): SpawnOptions {
 }
 
 function scrubEnvVars(env: Record<string, string | undefined>): void {
-	Object.keys(env).forEach(envVar => {
+	Object.keys(env).forEach((envVar) => {
 		if (envVar.startsWith('npm_')) {
-			delete env[envVar]
+			env[envVar] = undefined
 		}
 	})
 }
@@ -97,6 +97,6 @@ function npxPackages(npx: boolean | string[]): string[] {
 		return []
 	}
 	const result: string[] = []
-	npx.forEach(p => result.push('-p', p))
+	npx.forEach((p) => result.push('-p', p))
 	return result
 }

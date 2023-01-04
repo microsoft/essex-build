@@ -16,12 +16,12 @@ export async function parallel(...jobs: Job[]): Promise<JobResult> {
 		log.printJob(job)
 	}
 	log.debug('-------------------------')
-	const results = await Promise.all(jobs.map(job => single(job)))
-	const codes = results.map(r => r.code)
+	const results = await Promise.all(jobs.map((job) => single(job)))
+	const codes = results.map((r) => r.code)
 	const code = Math.max(...codes)
 	return {
 		code,
-		output: results.map(r => r.output).join(''),
-		error: results.map(r => r.error).join(''),
+		output: results.map((r) => r.output).join(''),
+		error: results.map((r) => r.error).join(''),
 	}
 }

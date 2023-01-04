@@ -7,7 +7,7 @@ export function checkApi(
 	expected: Record<string, string>,
 ): void {
 	const errors: string[] = []
-	Object.keys(imported).forEach(key => {
+	Object.keys(imported).forEach((key) => {
 		if (!expected[key]) {
 			errors.push(`unexpected export "${key}": "${typeof imported[key]}"`)
 		}
@@ -20,7 +20,7 @@ export function checkApi(
 			)
 		}
 	})
-	Object.keys(expected).forEach(key => {
+	Object.keys(expected).forEach((key) => {
 		if (!imported[key]) {
 			errors.push(`missing export "${key}": "${expected[key] || 'undefined'}"`)
 		}

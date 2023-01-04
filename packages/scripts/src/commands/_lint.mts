@@ -36,7 +36,7 @@ export default function lint(program: Command): void {
 		.option('--noFormat', 'do not run code formatting')
 		.action(async (files: string[], options: LintCommandOptions = {}) => {
 			// for some reason CLI arguments were being picked up by the eslint core and throwing errors
-			process.argv = [...process.argv.filter(t => !restricted[t])]
+			process.argv = [...process.argv.filter((t) => !restricted[t])]
 			await execute(options, files)
 		})
 }
@@ -66,7 +66,7 @@ async function getFiles(
 	filesListed: string[] | undefined,
 ): Promise<string[]> {
 	// lint everything
-	if (!filesListed && !staged) {
+	if (!(filesListed || staged)) {
 		return DEFAULT_FILESET
 	} else if (staged) {
 		return getStagedFiles()
@@ -84,7 +84,7 @@ async function getStagedFiles(): Promise<string[]> {
 	if (result.code !== 0) {
 		throw new Error('error listing staged files')
 	} else {
-		const files = result.output?.split('\n').filter(t => !!t) ?? []
+		const files = result.output?.split('\n').filter((t) => !!t) ?? []
 		if (files.length === 0) {
 			return DEFAULT_FILESET
 		}
@@ -93,7 +93,7 @@ async function getStagedFiles(): Promise<string[]> {
 }
 
 function isLintable(file: string): boolean {
-	return LINTABLE_EXTENSIONS.some(x => file.endsWith(x))
+	return LINTABLE_EXTENSIONS.some((x) => file.endsWith(x))
 }
 
 const LINTABLE_EXTENSIONS = [

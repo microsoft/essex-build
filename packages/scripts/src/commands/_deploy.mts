@@ -68,6 +68,6 @@ function executeAzureBlobDeploy({
 	if (!storageAccountKey) {
 		throw new Error('storageAccountKey must be set')
 	}
-	const pathsToPass = paths.split(',').map(p => p.trim())
+	const pathsToPass = paths.split(',').map((p) => p.trim())
 	return deployBlob(storageAccount, storageAccountKey, verbose, pathsToPass)
 }

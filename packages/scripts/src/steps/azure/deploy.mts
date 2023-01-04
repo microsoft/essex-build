@@ -33,8 +33,8 @@ function getBlobContainerClient(account: string, accountKey: string) {
 function getFiles(basePath: string): FileLocation[] {
 	return glob
 		.sync(`${basePath}**`, { nodir: true })
-		.map(f => ({ basePath, file: f.substring(basePath.length) }))
-		.filter(f => f.file)
+		.map((f) => ({ basePath, file: f.substring(basePath.length) }))
+		.filter((f) => f.file)
 }
 
 async function uploadFile(
@@ -72,7 +72,7 @@ export async function deployBlob(
 		storageAccountKey,
 	)
 	const files: FileLocation[] = []
-	directories.forEach(dir => files.push(...getFiles(dir)))
+	directories.forEach((dir) => files.push(...getFiles(dir)))
 
 	for (const fileObj of files) {
 		if (verbose) {

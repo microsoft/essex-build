@@ -70,8 +70,8 @@ describe('zipped archives', () => {
 })
 
 function assertZipIs(entries: string[], ...expected: string[]) {
-	expected.forEach(e => expect(entries).toContain(e))
-	entries.forEach(e => expect(expected).toContain(e))
+	expected.forEach((e) => expect(entries).toContain(e))
+	entries.forEach((e) => expect(expected).toContain(e))
 }
 
 function readZip(file: string): Promise<string[]> {

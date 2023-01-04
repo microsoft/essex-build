@@ -10,19 +10,17 @@ const { readFileSync } = require('fs')
 module.exports = function (testCasePath) {
 	const errors = []
 	let code = readFileSync(testCasePath).toString()
-	code = code.replace(/(~+)\s+\[([^\]]+)\]/g, function (
-		instance,
-		errorHighlight,
-		message,
-		offset,
-	) {
-		const line = code.substring(0, offset).split('\n').length - 1
-		errors.push({
-			message,
-			line,
-		})
-		return ''
-	})
+	code = code.replace(
+		/(~+)\s+\[([^\]]+)\]/g,
+		function (instance, errorHighlight, message, offset) {
+			const line = code.substring(0, offset).split('\n').length - 1
+			errors.push({
+				message,
+				line,
+			})
+			return ''
+		},
+	)
 	return {
 		code,
 		errors,

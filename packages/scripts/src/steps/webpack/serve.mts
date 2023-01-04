@@ -31,7 +31,7 @@ export async function webpackServe({
 			server.options.host = host
 			server.startCallback((err?: Error | undefined) => {
 				if (err) {
-					console.log(`error listening`, err)
+					console.log('error listening', err)
 					reject(err)
 				}
 			})

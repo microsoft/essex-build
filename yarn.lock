@@ -7054,7 +7054,6 @@ __metadata:
     "@essex/scripts": "workspace:^"
     "@essex/tsconfig-node": "workspace:^"
     "@essex/tsconfig-node14": "workspace:^"
-    "@types/eslint": ^8.4.10
     "@types/jest": ^29.2.5
     "@typescript-eslint/eslint-plugin": ^5.48.0
     "@typescript-eslint/parser": ^5.48.0
