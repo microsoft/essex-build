@@ -1,5 +1,6 @@
 releases:
   "@essex/babel-config": patch
+  "@essex/eslint-config": patch
   "@essex/eslint-plugin": patch
   "@essex/jest-config": patch
   "@essex/prettier-config": patch
