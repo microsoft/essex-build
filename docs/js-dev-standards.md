@@ -46,11 +46,11 @@ The following top-level tasks expected to exist in all JavaScript projects.
 
 * __release__ - this task applies semver changes, executes build verification, and publishes artifacts to the package registry.
 * __ci__ - this task is used to chain together an end-to-end continuous verification pipeline. It should run all tests, linting, and other verification tasks.
+* __start__ - this task starts any webapps or servers in the project in development mode.
+* __build__ - this task builds artifacts and performs typechecking for library packages within the project.
+* __test__ - this task runs all tests in the project.
 * __check__ - this task checks code for linting and formatting issues.
 * __fix__ - this task checks code for linting and formatting issues and attempts to fix as many as possible.
-* __start__ - this task starts any webapps or servers in the project in development mode.
-* __test__ - this task runs all tests in the project.
-* __build__ - this task builds artifacts and performs typechecking for library packages within the project.
 
 
 ## CI Tasks
