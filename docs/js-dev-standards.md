@@ -52,7 +52,7 @@ The following top-level tasks expected to exist in all JavaScript projects.
 * __test__ - this task runs all tests in the project.
 * __check__ - this task checks code for linting and formatting issues.
 * __fix__ - this task checks code for linting and formatting issues and attempts to fix as many as possible.
-
+* __update_sdks__ this is a utility command that's occasionally used to update yarn sdks (e.g. `yarn dlx @yarnpkg/sdks vscode`)
 
 ## CI Tasks
 * Code Verification (e.g. `yarn ci`) - perform basic code verification across the project. This task should also verify that the git repository is clean when it is finished.
