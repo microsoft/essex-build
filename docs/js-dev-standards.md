@@ -8,6 +8,7 @@ The goal of this document is to describe how our team’s projects are typically
 * __Familiar__ to developers, and easy to adopt
 * __Fast__ CI/CD and development/testing workflows. To support this principle, we transpile and bundle code _as little as possible_ and support dev-loops that only use source code.
 * __Modern__ We lean into the latest features of the JavaScript ecosystem, including TypeScript, ESM, and modern language features.
+* __Encourage Frequence Committing__ by lowering bars to checking in code and pushing branches. In the past we employed a suite of pre-commit verification, but this discouraged developers from committing code in a partially working state. This ended up being needless friction, especially since our CI/CD pipelines are relatively fast.
 
 ## Project Structure
 Our projects are structured as monorepos using Yarn 3+ (or whatever is latest). Our software is usually composed of many moving parts: libraries, demo applications, full-blown applications, test suites, and more. To manage these in a single repository, we use Yarn workspaces.
@@ -32,27 +33,49 @@ When authoring monorepos with multiple languages, Yarn workspaces are created un
 		- package.json
 	- my-demo
 		- package.json
-- go
+- python
 	- my-backend
-		- go.mod
-		- go.sum
-		- main.go
+		- pyproject.toml
 ```
 
 The rest of this document will focus primarily on JavaScript.
 
 ## Common Build Tasks
-The following top-level tasks expected to exist in all JavaScript projects. 
+The following top-level tasks expected to exist in all JavaScript projects. Tasks that are marked `fully parallel` are expected to be defined in each relevant project, and they are safe to execute concurrently. Tasks marked `sequenced` may perform a chain of operations in order to achieve an end. Tasks marked `topologically-sorted` are not-quite fully parallelizable and need to be run in topological order.
 
-* __clean__ - this task cleans the project, removing any artifacts or temporary files.
-* __release__ - this task applies semver changes, executes build verification, and publishes artifacts to the package registry.
-* __ci__ - this task is used to chain together an end-to-end continuous verification pipeline. It should run all tests, linting, and other verification tasks.
-* __start__ - this task starts any webapps or servers in the project in development mode.
-* __build__ - this task builds artifacts and performs typechecking for library packages within the project.
-* __test__ - this task runs all tests in the project.
-* __check__ - this task checks code for linting and formatting issues.
-* __fix__ - this task checks code for linting and formatting issues and attempts to fix as many as possible.
-* __update_sdks__ this is a utility command that's occasionally used to update yarn sdks (e.g. `yarn dlx @yarnpkg/sdks vscode`)
+We also indicate at what times these scripts are expected to be used: 
+* _Dev Time_ - during day-to-day development on a local machine or Codespaces VM.
+* _CI/CD Time_ - these tasks are executed during in CI/CD pipelines during branch and PR verification.
+* _Release Time_ - these tasks are executed during the release process, and are not expected to be executed during CI/CD pipelines.
+
+### Tasks
+
+* __clean__ (fully parallel, Dev, Release Time) 
+This task cleans the project, removing any artifacts or temporary files.
+
+* __release__ (sequenced, Release Time) 
+This task applies semver changes, executes build verification, and publishes artifacts to the package registry.
+
+* __ci__ (sequenced, CI/CD Time) 
+This task is used to chain together an end-to-end verification suite. It should run all tests, linting, and other verification tasks.
+
+* __start__ (fully parallel, Dev Time) 
+This task starts any webapps or servers in the project in development mode.
+
+* __build__ (topologically-sorted, Dev Time)
+This task builds artifacts and performs typechecking for library packages within the project.
+
+* __test__ (fully parallel, Dev Time)
+This task runs all tests in the project. This could be a sequencing of unit tests, integration tests, and end-to-end tests. If so, `unit_test` and `integration_test` tasks should be defined for developer convenience to execute these tasks in isolation.
+
+* __check__ - (fully parallel, Dev Time)
+This task checks code for linting and formatting issues. Other checks may be performed here as well, which may turn this task into a sequenced task, in which case `check_packages` should be provided as a parallelized task.
+
+* __fix__ (fully parallel, Dev Time)
+This task checks code for linting and formatting issues and attempts to fix as many as possible. Other checks may be performed here as well, which may turn this task into a sequenced task, in which case `fix_packages` should be provided as a parallelized task.
+
+* __update_sdks__ (Dev Time)
+This is a utility command that's occasionally used to update yarn sdks (e.g. `yarn dlx @yarnpkg/sdks vscode`)
 
 ## CI Tasks
 * Code Verification (e.g. `yarn ci`) - perform basic code verification across the project. This task should also verify that the git repository is clean when it is finished.
