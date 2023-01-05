@@ -44,6 +44,7 @@ The rest of this document will focus primarily on JavaScript.
 ## Common Build Tasks
 The following top-level tasks expected to exist in all JavaScript projects. 
 
+* __clean__ - this task cleans the project, removing any artifacts or temporary files.
 * __release__ - this task applies semver changes, executes build verification, and publishes artifacts to the package registry.
 * __ci__ - this task is used to chain together an end-to-end continuous verification pipeline. It should run all tests, linting, and other verification tasks.
 * __start__ - this task starts any webapps or servers in the project in development mode.
