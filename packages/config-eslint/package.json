@@ -1,15 +1,15 @@
 {
-	"name": "@essex/eslint-config",
-	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
-	"version": "20.3.5",
-	"license": "MIT",
-	"scripts": {
-		"release": "yarn npm publish --tolerate-republish --access public"
-	},
-	"peerDependencies": {
-		"@essex/eslint-plugin": "workspace:^",
-		"@typescript-eslint/eslint-plugin": ">= 4.4.1",
-		"@typescript-eslint/parser": ">= 4.4.1",
-		"eslint-import-resolver-node": ">= 0.3.4"
-	}
+  "name": "@essex/eslint-config",
+  "repository": "https://github.com/microsoft/essex-alpha-build-infra/",
+  "version": "20.4.0",
+  "license": "MIT",
+  "scripts": {
+    "release": "yarn npm publish --tolerate-republish --access public"
+  },
+  "peerDependencies": {
+    "@essex/eslint-plugin": "workspace:^",
+    "@typescript-eslint/eslint-plugin": ">= 4.4.1",
+    "@typescript-eslint/parser": ">= 4.4.1",
+    "eslint-import-resolver-node": ">= 0.3.4"
+  }
 }

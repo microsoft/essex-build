@@ -1,13 +1,13 @@
 {
-	"name": "@essex/prettier-config",
-	"repository": "https://github.com/microsoft/essex-alpha-build-infra/",
-	"version": "18.0.4",
-	"main": "index.js",
-	"license": "MIT",
-	"scripts": {
-		"release": "yarn npm publish --tolerate-republish --access public"
-	},
-	"devDependencies": {
-		"@essex/scripts": "workspace:^"
-	}
+  "name": "@essex/prettier-config",
+  "repository": "https://github.com/microsoft/essex-alpha-build-infra/",
+  "version": "18.0.5",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "release": "yarn npm publish --tolerate-republish --access public"
+  },
+  "devDependencies": {
+    "@essex/scripts": "workspace:^"
+  }
 }
