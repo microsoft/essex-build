@@ -77,6 +77,9 @@ This task checks code for linting and formatting issues and attempts to fix as m
 * __update_sdks__ (Dev Time)
 This is a utility command that's occasionally used to update yarn sdks (e.g. `yarn dlx @yarnpkg/sdks vscode`)
 
+* _version check_ (CI/CD + Dev Time)
+`yarn version check` is provided by the `yarn version` plugin and is used to check the semver impact of a PR. The CI/CD pipelines will use `yarn version check` to check for SemVer impact documents, and developers use `yarn version check --interactive` to author SemVer impact documents. At release time, these documents are flattened into a single version bump for each package and removed as resolved.
+
 ## CI Tasks
 * Code Verification (e.g. `yarn ci`) - perform basic code verification across the project. This task should also verify that the git repository is clean when it is finished.
 * SemVer Verification (e.g. `yarn version check`)
