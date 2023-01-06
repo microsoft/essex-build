@@ -7,6 +7,7 @@ The goal of this document is to describe how our team’s projects are typically
 * __Consistent__ workflow across projects
 * __Familiar__ to developers, and easy to adopt
 * __Fast__ CI/CD and development/testing workflows. To support this principle, we transpile and bundle code _as little as possible_ and support dev-loops that only use source code.
+* __Fail Fast__ CI/CD pipeline should fail as soon as possible instead of waiting until pipeline completion to report failures.
 * __Modern__ We lean into stable, modern features of the JavaScript ecosystem, including TypeScript, ESM, and modern language features.
 * __Encourage Frequence Committing__ by lowering bars to checking in code and pushing branches. In the past we employed a suite of pre-commit verification, but this discouraged developers from committing code in a partially working state. This ended up being needless friction, especially since our CI/CD pipelines are relatively fast.
 
