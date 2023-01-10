@@ -24,7 +24,7 @@
 		"build": "turbo run build",
 		"test": "turbo run test",
 		"ci": "run-s  _rome_check _ci_packages _essex_lint",
-		"is_clean": "git diff-index HEAD --quiet || git status && exit 1",
+		"is_clean": "git diff-index HEAD --quiet || (git status && exit 1)",
 		"update_sdks": "yarn dlx @yarnpkg/sdks vscode",
 		"release": "run-s clean _version_cut ci _release_packages"
 	},

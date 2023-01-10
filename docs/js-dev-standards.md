@@ -82,7 +82,7 @@ This is a utility command that's occasionally used to update yarn sdks (e.g. `ya
 `yarn version check` is provided by the `yarn version` plugin and is used to check the semver impact of a PR. The CI/CD pipelines will use `yarn version check` to check for SemVer impact documents, and developers use `yarn version check --interactive` to author SemVer impact documents. At release time, these documents are flattened into a single version bump for each package and removed as resolved.
 
 * _is_clean_ (CI/CD Time)
-This task is used at the end of CI/CD to verify that the git index is clean and that no code modifications have been made by the build system. The standard script is `"is_clean": "git diff-index HEAD --quiet || git status && exit 1"`
+This task is used at the end of CI/CD to verify that the git index is clean and that no code modifications have been made by the build system. The standard script is `"is_clean": "git diff-index HEAD --quiet || (git status && exit 1)"`
 
 ## CI Tasks
 * Code Verification (e.g. `yarn ci`) - perform basic code verification across the project. This task should also verify that the git repository is clean when it is finished.
