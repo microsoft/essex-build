@@ -7,8 +7,8 @@
     "start": "vite dev",
     "build": "tsc && vite build",
     "start:vite": "yarn start",
-    "check": "essex lint --noFormat",
-    "fix": "essex lint --fix --noFormat"
+    "check": "essex lint --formatter none",
+    "fix": "essex fix --formatter none"
   },
   "repository": {
     "type": "git",

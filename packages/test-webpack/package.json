@@ -5,8 +5,8 @@
   "scripts": {
     "clean": "rimraf dist docsTemp build",
     "build": "essex bundle",
-    "check": "essex lint --noFormat",
-    "fix": "essex lint --fix --noFormat",
+    "check": "essex lint --formatter none",
+    "fix": "essex fix --formatter none",
     "start": "essex serve",
     "start:webpack": "yarn start"
   },

@@ -45,16 +45,16 @@ To view detailed options, run `essex <command> --help` or `essex --help`
 	"private": true,
 	"scripts": {
 		/* orchestrate child packages */
-		"clean:all": "yarn workspaces foreach -piv run clean",
-		"build:all": "yarn workspaces foreach -pivt run build",
-		"bundle:all": "yarn workspaces foreach -piv run bundle",
+		"clean": "yarn workspaces foreach -piv run clean",
+		"build": "yarn workspaces foreach -pivt run build",
+		"bundle": "yarn workspaces foreach -piv run bundle",
 
 		/* use @essex/scripts for top-level checks */
-		"lint:all": "essex lint",
-		"unit:test": "jest --coverage",
+		"check": "essex check",
+		"unit_test": "jest --coverage",
 
 		/* hook for CI builds */
-		"ci": "run-s lint:all build:all bundle:all unit:test"
+		"ci": "run-s lint build bundle unit_test"
 	}
 }
 ```

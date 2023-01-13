@@ -20,8 +20,11 @@ export default function format(program: Command): void {
 	program
 		.command('format')
 		.option('-v, --verbose', 'verbose output')
-		.option('--formatter [formatter]', 'the formatter to use ("prettier", "rome", or "none")')
-		.action(async ({ verbose, formatter }: FormatCommandOptions) => {
-			await runFormatter(formatter, true, verbose)
+		.option(
+			'--formatter [formatter]',
+			'the formatter to use ("prettier", "rome", or "none")',
+		)
+		.action(async (opts: FormatCommandOptions) => {
+			await runFormatter({ ...opts, fix: true })
 		})
 }

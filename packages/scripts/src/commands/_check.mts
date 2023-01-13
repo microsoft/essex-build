@@ -6,7 +6,7 @@ import type { Command } from 'commander'
 
 import { eslint } from '../steps/eslint/index.mjs'
 import { runFormatter } from '../steps/runFormatter.js'
-import { Formatter } from '../types.mjs'
+import type { Formatter } from '../types.mjs'
 
 export interface CheckCommandOptions {
 	verbose?: boolean | undefined
@@ -19,6 +19,7 @@ const DEFAULT_FILESET = ['.']
 const restricted: Record<string, boolean> = {
 	'--strict': true,
 	'--formatter': true,
+	'--verbose': true,
 }
 export default function check(program: Command): void {
 	program
@@ -26,7 +27,10 @@ export default function check(program: Command): void {
 		.description('performs static analysis checks')
 		.option('-v, --verbose', 'verbose output')
 		.option('--strict', 'strict linting, warnings will cause failure')
-		.option('--formatter [formatter]', 'the formatter to use ("prettier", "rome", or "none")')
+		.option(
+			'--formatter [formatter]',
+			'the formatter to use ("prettier", "rome", or "none")',
+		)
 		.action(async (files: string[], options: CheckCommandOptions = {}) => {
 			// for some reason CLI arguments were being picked up by the eslint core and throwing errors
 			process.argv = [...process.argv.filter((t) => !restricted[t])]
@@ -35,17 +39,12 @@ export default function check(program: Command): void {
 }
 
 export async function executeCheck(
-	{
-		fix = false,
-		strict = false,
-		verbose = false,
-		formatter = Formatter.Prettier,
-	}: CheckCommandOptions & {fix?: boolean},
+	opts: CheckCommandOptions & { fix?: boolean },
 	files: string[] | undefined,
 ): Promise<void> {
 	files = files ?? DEFAULT_FILESET
-	const lint = eslint(fix, strict, files)
-	const format = runFormatter(formatter, fix, verbose)
+	const lint = eslint(opts.fix, opts.strict, files)
+	const format = runFormatter(opts)
 
 	await Promise.all([lint, format])
 }

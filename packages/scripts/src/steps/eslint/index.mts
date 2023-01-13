@@ -11,8 +11,8 @@ import { getConfigFile, getIgnorePath } from './config.mjs'
 const require = createRequire(import.meta.url)
 
 export async function eslint(
-	fix: boolean,
-	strict: boolean,
+	fix: boolean | undefined,
+	strict: boolean | undefined,
 	files: string[] = ['.'],
 ): Promise<void> {
 	try {
