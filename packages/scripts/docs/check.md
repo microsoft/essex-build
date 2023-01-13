@@ -1,12 +1,11 @@
-# > essex lint
+# > essex check
 
-Performs static checks (linting) operations over a project. Run `essex lint --help` for all options.
+Performs static checks over a project. Run `essex check --help` for all options.
 
 # CLI Options
 
-- `--fix`<br/> attempt to fix correctable errors
-
-- `--staged`<br/> only lint staged files. This is used internally in the default precommit configuration of **@essex/scripts**, and disables all but the `eslint` command.
+- `--strict`<br/> enable strict checks. Warnings will result in a non-zero exit code.
+- `--formatter \[formatter\]`<br/> specify a formatter to use. Defaults to `prettier`. Possible values are `prettier`, `rome`, and `none`.
 
 
 # Details & Customization
@@ -25,7 +24,7 @@ The following static verification checks are performed when this command is invo
     `<rootDir>/.eslintignore`<br/>
     Linting configuration may be overridden by defining this file. By default the `plugin:@essex/experiment` preset will be used for linting. Details on that preset can be found in this repository under `packages/eslint-config`. Essex projects should have an .eslintrc file that extends from `@essex/experiment` and enables or disables certain rules. This ruleset disables stylistic rules, and allows prettier-based tooling to manage those.
 
-- ## pretty-quick --check
+- ## pretty-quick
 
   ### Purpose
 
@@ -40,3 +39,13 @@ The following static verification checks are performed when this command is invo
     /* package.json */
     "prettier": "@essex/prettier-config"
     ```
+
+### rome
+
+### Purpose
+
+rome is a modern linter and formatter. It can be used in essex scripts as the configured formatter.
+
+### Customization
+
+-`<rootDir>/rome.json`, see [rome docs](https://rome.tools) for configuration details.
