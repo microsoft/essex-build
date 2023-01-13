@@ -2,32 +2,15 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import type { Job } from '@essex/shellrunner'
-import { run } from '@essex/shellrunner'
 import type { Command } from 'commander'
+import isGitDirty from 'is-git-dirty'
 
 export default function start(program: Command): void {
 	program
 		.command('git-is-clean')
 		.description('verifies that there are no active git changes')
 		.action(async () => {
-			const { code } = await run(isCleanJob)
-			if (code !== 0) {
-				await run(statusJob, diffJob)
-			}
-			process.exitCode = code
+			const isDirty = isGitDirty()
+			process.exitCode = isDirty ? 1 : 0
 		})
-}
-
-const isCleanJob: Job = {
-	exec: 'git',
-	args: ['diff-index', '--quiet', 'HEAD'],
-}
-const statusJob: Job = {
-	exec: 'git',
-	args: ['status'],
-}
-const diffJob: Job = {
-	exec: 'git',
-	args: ['diff', '--exit-code'],
 }
