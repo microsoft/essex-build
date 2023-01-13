@@ -2274,11 +2274,16 @@ __metadata:
 "@essex/eslint-config@workspace:^, @essex/eslint-config@workspace:packages/config-eslint":
   version: 0.0.0-use.local
   resolution: "@essex/eslint-config@workspace:packages/config-eslint"
-  peerDependencies:
+  dependencies:
     "@essex/eslint-plugin": "workspace:^"
     "@typescript-eslint/eslint-plugin": ">= 4.4.1"
     "@typescript-eslint/parser": ">= 4.4.1"
     eslint-import-resolver-node: ">= 0.3.4"
+  peerDependencies:
+    eslint: ">= 7.0.0"
+  peerDependenciesMeta:
+    eslint:
+      optional: true
   languageName: unknown
   linkType: soft
 
@@ -2735,7 +2740,6 @@ __metadata:
     "@types/lodash": ^4.14.191
     "@types/node": ^18.11.18
     "@types/webpack": ^5.28.0
-    "@types/webpack-dev-server": ^4.7.2
     css-loader: ^6.7.3
     debug: ^4.3.4
     eslint: ^8.31.0
@@ -4230,15 +4234,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/webpack-dev-server@npm:^4.7.2":
-  version: 4.7.2
-  resolution: "@types/webpack-dev-server@npm:4.7.2"
-  dependencies:
-    webpack-dev-server: "*"
-  checksum: 81b0d368b85f33759a3859c23d09c8a2af47997621c6350120ff80e20e9124568e4a30e15abead36e7992abe4e18ce2137785aa677d2041adfcd7e8fff9b2312
-  languageName: node
-  linkType: hard
-
 "@types/webpack@npm:^5.28.0":
   version: 5.28.0
   resolution: "@types/webpack@npm:5.28.0"
@@ -4284,7 +4279,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.48.1":
+"@typescript-eslint/eslint-plugin@npm:>= 4.4.1, @typescript-eslint/eslint-plugin@npm:^5.48.1":
   version: 5.48.1
   resolution: "@typescript-eslint/eslint-plugin@npm:5.48.1"
   dependencies:
@@ -4307,7 +4302,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^5.48.1":
+"@typescript-eslint/parser@npm:>= 4.4.1, @typescript-eslint/parser@npm:^5.48.1":
   version: 5.48.1
   resolution: "@typescript-eslint/parser@npm:5.48.1"
   dependencies:
@@ -7056,7 +7051,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-import-resolver-node@npm:^0.3.7":
+"eslint-import-resolver-node@npm:>= 0.3.4, eslint-import-resolver-node@npm:^0.3.7":
   version: 0.3.7
   resolution: "eslint-import-resolver-node@npm:0.3.7"
   dependencies:
@@ -13704,7 +13699,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack-dev-server@npm:*, webpack-dev-server@npm:^4.11.1":
+"webpack-dev-server@npm:^4.11.1":
   version: 4.11.1
   resolution: "webpack-dev-server@npm:4.11.1"
   dependencies:
