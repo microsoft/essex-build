@@ -22,7 +22,7 @@ export default function format(program: Command): void {
 		.option('-v, --verbose', 'verbose output')
 		.option(
 			'--formatter [formatter]',
-			'the formatter to use ("prettier", "rome", or "none")',
+			'the formatter to use ("prettier" or "none")',
 		)
 		.action(async (opts: FormatCommandOptions) => {
 			await runFormatter({ ...opts, fix: true })

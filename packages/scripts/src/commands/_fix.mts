@@ -21,7 +21,7 @@ export default function fix(program: Command): void {
 		.option('--strict', 'strict linting, warnings will cause failure')
 		.option(
 			'--formatter [formatter]',
-			'the formatter to use ("prettier", "rome", or "none")',
+			'the formatter to use ("prettier" or "none")',
 		)
 		.action(async (files: string[], options: CheckCommandOptions = {}) => {
 			// for some reason CLI arguments were being picked up by the eslint core and throwing errors

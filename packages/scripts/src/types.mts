@@ -20,7 +20,12 @@ export enum BuildMode {
 }
 
 export enum Formatter {
+	/**
+	 * Use prettier to format code
+	 */
 	Prettier = 'prettier',
-	Rome = 'rome',
+	/**
+	 * Do not format code
+	 */
 	None = 'none',
 }
