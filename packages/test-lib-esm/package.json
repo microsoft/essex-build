@@ -11,7 +11,7 @@
   "scripts": {
     "clean": "rimraf dist docsTemp",
     "build": "ESSEX_DEBUG=1 essex build --stories --docs",
-    "check": "essex lint --formatter none",
+    "check": "essex check --formatter none",
     "fix": "essex fix --formatter none",
     "jest": "NODE_OPTIONS=--experimental-vm-modules yarn node $(yarn bin jest) --runInBand",
     "start": "essex watch",
