@@ -4,8 +4,7 @@ releases:
   "@essex/eslint-plugin": patch
   "@essex/jest-config": patch
   "@essex/prettier-config": patch
-  "@essex/scripts": patch
-  "@essex/shellrunner": patch
+  "@essex/scripts": major
   "@essex/swc-opts": patch
   "@essex/vite-config": patch
   "@essex/webpack-config": patch
