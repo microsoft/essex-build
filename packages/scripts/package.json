@@ -90,7 +90,9 @@
     "eslint-import-resolver-node": ">= 0.3.4",
     "lint-staged": "*",
     "react": ">= 16.13.1",
-    "react-dom": ">= 16.13.1"
+    "react-dom": ">= 16.13.1",
+    "typescript": ">= 4",
+    "webpack": ">= 5"
   },
   "peerDependenciesMeta": {
     "@essex/eslint-config": {
@@ -118,6 +120,12 @@
       "optional": true
     },
     "react-dom": {
+      "optional": true
+    },
+    "typescript": {
+      "optional": true
+    },
+    "webpack": {
       "optional": true
     }
   }

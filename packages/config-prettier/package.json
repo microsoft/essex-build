@@ -6,8 +6,5 @@
   "license": "MIT",
   "scripts": {
     "release": "yarn npm publish --tolerate-republish --access public"
-  },
-  "devDependencies": {
-    "@essex/scripts": "workspace:^"
   }
 }
