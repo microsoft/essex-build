@@ -2,7 +2,6 @@ releases:
   "@essex/eslint-config": minor
   "@essex/eslint-plugin": minor
   "@essex/scripts": patch
-  "@essex/shellrunner": patch
   "@essex/vite-config": patch
   "@essex/webpack-config": patch
 
