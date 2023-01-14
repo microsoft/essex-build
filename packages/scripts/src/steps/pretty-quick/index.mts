@@ -10,7 +10,6 @@ import pqLib from 'pretty-quick'
 const pq = (pqLib as any).default as typeof pqLib
 
 export interface PrettyQuickArgs {
-	staged?: boolean | undefined
 	check?: boolean | undefined
 	verbose?: boolean | undefined
 }

@@ -5,8 +5,8 @@
   "scripts": {
     "clean": "rimraf dist docsTemp build",
     "build": "DEBUG='*' essex bundle",
-    "check": "essex lint --noFormat",
-    "fix": "essex lint --fix --noFormat",
+    "check": "essex check --formatter none",
+    "fix": "essex fix --formatter none",
     "start": "essex serve",
     "start:webpack": "yarn start",
     "test": "jest"
@@ -25,7 +25,7 @@
     "@types/react-dom": "^18.0.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rimraf": "^3.0.2"
+    "rimraf": "^4.0.4"
   },
   "devDependencies": {
     "@essex/jest-config": "workspace:^",
