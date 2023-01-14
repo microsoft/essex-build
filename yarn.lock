@@ -2358,8 +2358,6 @@ __metadata:
 "@essex/prettier-config@workspace:^, @essex/prettier-config@workspace:packages/config-prettier":
   version: 0.0.0-use.local
   resolution: "@essex/prettier-config@workspace:packages/config-prettier"
-  dependencies:
-    "@essex/scripts": "workspace:^"
   languageName: unknown
   linkType: soft
 
@@ -2700,7 +2698,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/vite-config@workspace:packages/config-vite"
   dependencies:
-    "@essex/scripts": "workspace:^"
     "@essex/tsconfig-node": "workspace:^"
     "@swc/cli": ^0.1.59
     "@swc/core": ^1.3.26
