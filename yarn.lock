@@ -2426,6 +2426,8 @@ __metadata:
     lint-staged: "*"
     react: ">= 16.13.1"
     react-dom: ">= 16.13.1"
+    typescript: ">= 4"
+    webpack: ">= 5"
   peerDependenciesMeta:
     "@essex/eslint-config":
       optional: true
@@ -2444,6 +2446,10 @@ __metadata:
     react:
       optional: true
     react-dom:
+      optional: true
+    typescript:
+      optional: true
+    webpack:
       optional: true
   bin:
     essex: ./lib/index.mjs
@@ -2744,6 +2750,11 @@ __metadata:
   peerDependencies:
     typescript: ">= 4"
     webpack: ">= 5"
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+    webpack:
+      optional: true
   languageName: unknown
   linkType: soft
 
