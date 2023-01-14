@@ -2742,6 +2742,7 @@ __metadata:
     webpack: ^5.75.0
     webpack-dev-server: ^4.11.1
   peerDependencies:
+    typescript: ">= 4"
     webpack: ">= 5"
   languageName: unknown
   linkType: soft
