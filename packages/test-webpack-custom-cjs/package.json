@@ -1,6 +1,6 @@
 {
   "name": "@essex/test-webapp-webpack-custom-cjs",
-  "version": "20.0.14",
+  "version": "20.0.15",
   "private": true,
   "scripts": {
     "clean": "rimraf dist docsTemp build",

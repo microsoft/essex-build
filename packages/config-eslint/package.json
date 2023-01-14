@@ -1,7 +1,7 @@
 {
   "name": "@essex/eslint-config",
   "repository": "https://github.com/microsoft/essex-alpha-build-infra/",
-  "version": "20.4.0",
+  "version": "20.5.0",
   "license": "MIT",
   "scripts": {
     "release": "yarn npm publish --tolerate-republish --access public"

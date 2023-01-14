@@ -1,6 +1,6 @@
 {
   "name": "@essex/eslint-plugin",
-  "version": "20.4.0",
+  "version": "20.5.0",
   "main": "lib/index.js",
   "license": "MIT",
   "repository": "https://github.com/microsoft/essex-alpha-build-infra/",

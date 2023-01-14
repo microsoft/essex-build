@@ -1,6 +1,6 @@
 {
   "name": "@essex/test-webapp-webpack",
-  "version": "20.1.3",
+  "version": "20.1.4",
   "private": true,
   "scripts": {
     "clean": "rimraf dist docsTemp build",
