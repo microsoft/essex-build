@@ -2,9 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+import 'zx/globals'
+
 import type { Command } from 'commander'
 import isGitDirty from 'is-git-dirty'
-import 'zx/globals'
 
 export default function start(program: Command): void {
 	program
