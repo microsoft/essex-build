@@ -1,6 +1,6 @@
 {
   "name": "@essex/webpack-config",
-  "version": "21.0.12",
+  "version": "21.0.13",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
@@ -49,5 +49,13 @@
   "peerDependencies": {
     "typescript": ">= 4",
     "webpack": ">= 5"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    },
+    "webpack": {
+      "optional": true
+    }
   }
 }
