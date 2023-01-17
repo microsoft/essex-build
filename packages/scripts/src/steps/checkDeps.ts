@@ -21,11 +21,17 @@ export function checkDeps({ ignore = [] }: { ignore?: string[] }) {
 		],
 		ignoreMatches: [
 			// ignore dependencies that matches these globs
+			'tslib',
+			'core-js',
 			'@essex/tsconfig*',
 			'@types/jest',
 			'@types/react',
+			'@types/react-dom',
+			'@types/prop-types',
 			'@types/node',
 			'react',
+			'react-dom',
+			'prop-types',
 			...ignore,
 		],
 		parsers: {
