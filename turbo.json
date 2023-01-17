@@ -45,6 +45,9 @@
 		},
 		"clean": {
 			"cache": false
+		},
+		"check-deps": {
+			"cache": false
 		}
 	}
 }
