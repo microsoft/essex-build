@@ -25,7 +25,7 @@ export function checkDeps({ ignore = [] }: { ignore?: string[] }) {
 			'core-js',
 			// shareable tsconfigs are never used directly
 			'@essex/tsconfig*',
-			'tsconfig*',
+			'@tsconfig/*',
 			// invisible dependencies, rarely imported directly
 			'@types/jest',
 			'@types/react',
