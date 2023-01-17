@@ -20,14 +20,20 @@ export function checkDeps({ ignore = [] }: { ignore?: string[] }) {
 			'lib',
 		],
 		ignoreMatches: [
-			// ignore dependencies that matches these globs
+			// common polyfill libraries, injected by build stack
 			'tslib',
 			'core-js',
+			// shareable tsconfigs are never used directly
 			'@essex/tsconfig*',
+			'tsconfig*',
+			// invisible dependencies, rarely imported directly
 			'@types/jest',
 			'@types/react',
 			'@types/node',
 			'react',
+			// Storybook dependencies
+			'@mdx-js/react',
+			'@storybook/addon-docs',
 			...ignore,
 		],
 		parsers: {
