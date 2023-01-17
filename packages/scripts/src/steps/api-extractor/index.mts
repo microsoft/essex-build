@@ -9,6 +9,7 @@ import { Extractor, ExtractorConfig } from '@microsoft/api-extractor'
 import { existsSync, promises as fs } from 'fs'
 import { createRequire } from 'module'
 import { dirname, resolve } from 'path'
+import { fixLineEndings } from '../../util/fixLineEndings.js'
 
 import { readPublishedPackageJson } from '../../util/package.mjs'
 import { rm } from '../rm.js'
@@ -36,6 +37,7 @@ export async function generateApiExtractorReport(): Promise<void> {
 	await Promise.all([rm('docs'), rm('docsTemp')])
 	await runExtractor()
 	await runDocumenter()
+	await Promise.all([rm('docsTemp'), fixLineEndings('docs/**/*.md')])
 }
 
 async function runExtractor() {
