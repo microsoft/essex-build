@@ -48,7 +48,9 @@
 			"cache": false
 		},
 		"check-deps": {
-			"cache": false
+			"dependsOn": [
+				"@essex/scripts#build"
+			]
 		}
 	}
 }
