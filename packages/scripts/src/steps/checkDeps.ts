@@ -26,12 +26,8 @@ export function checkDeps({ ignore = [] }: { ignore?: string[] }) {
 			'@essex/tsconfig*',
 			'@types/jest',
 			'@types/react',
-			'@types/react-dom',
-			'@types/prop-types',
 			'@types/node',
 			'react',
-			'react-dom',
-			'prop-types',
 			...ignore,
 		],
 		parsers: {
