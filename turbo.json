@@ -33,7 +33,8 @@
 			"dependsOn": [
 				"check",
 				"build",
-				"test"
+				"test",
+				"check-deps"
 			],
 			"outputs": [
 				"dist/**",
