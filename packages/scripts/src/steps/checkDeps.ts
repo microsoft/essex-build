@@ -27,13 +27,15 @@ export function checkDeps({ ignore = [] }: { ignore?: string[] }) {
 			'@essex/tsconfig*',
 			'@tsconfig/*',
 			// invisible dependencies, rarely imported directly
-			'@types/jest',
 			'@types/react',
 			'@types/node',
 			'react',
 			// Storybook dependencies
 			'@mdx-js/react',
 			'@storybook/addon-docs',
+			// Testing Dependencies
+			'@types/jest',
+			'jest-environment*',
 			...ignore,
 		],
 		parsers: {
