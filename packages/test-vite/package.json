@@ -7,6 +7,7 @@
     "start": "vite dev",
     "build": "tsc && vite build",
     "start:vite": "yarn start",
+    "check-deps": "essex check-deps --ignore rimraf",
     "check": "essex check --formatter none",
     "fix": "essex fix --formatter none"
   },
