@@ -7,7 +7,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "clean": "rimraf dist docsTemp",
-    "check-deps": "essex check-deps",
+    "check-deps": "essex check-deps --ignore rimraf",
     "build": "ESSEX_DEBUG=1 essex build-md-index --include docs"
   },
   "repository": {
@@ -16,7 +16,8 @@
     "directory": "packages/test-suite-lib"
   },
   "devDependencies": {
-    "@essex/scripts": "workspace:^"
+    "@essex/scripts": "workspace:^",
+    "rimraf": "^4.1.0"
   },
   "essex": {
     "swc": {
