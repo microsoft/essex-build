@@ -46,6 +46,7 @@
     "commander": "^9.5.0",
     "crlf": "^1.1.1",
     "debug": "^4.3.4",
+    "depcheck": "^1.4.3",
     "eslint": "8.31.0",
     "eslint-import-resolver-node": "^0.3.7",
     "glob": "^8.0.3",
