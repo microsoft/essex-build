@@ -34,7 +34,7 @@
     "@essex/eslint-plugin": "workspace:^",
     "@essex/swc-opts": "workspace:^",
     "@essex/webpack-config": "workspace:^",
-    "@ladle/react": "^1.3.0",
+    "@ladle/react": "^2.4.5",
     "@microsoft/api-documenter": "7.19.24",
     "@microsoft/api-extractor": "7.29.2",
     "@swc/core": "1.3.26",
