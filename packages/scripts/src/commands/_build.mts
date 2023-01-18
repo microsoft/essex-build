@@ -9,7 +9,6 @@ import path from 'path'
 
 import { generateApiExtractorReport } from '../steps/api-extractor/index.mjs'
 import { esmify as processEsm } from '../steps/esmify/index.mjs'
-import { buildStories as buildStoriesStep } from '../steps/stories/index.mjs'
 import { compile as compileTypescript } from '../steps/typescript/index.mjs'
 import { verifyExports } from '../steps/verifyExports/index.mjs'
 import { verifyPackage } from '../steps/verifyPackage/index.mjs'
@@ -52,7 +51,6 @@ export default function build(program: Command): void {
 		)
 		.option('--skipPackageCheck', 'skips package.json verification check')
 		.option('--skipExportCheck', 'skips esm/cjs export check')
-		.option('--stories', 'builds component stories')
 		.option('--mode [mode]', 'options are "legacy", "dual", and "esm"')
 		.action(async (options: BuildCommandOptions): Promise<void> => {
 			await executeBuild(options)
@@ -64,7 +62,6 @@ export async function executeBuild({
 	stripInternalTypes = false,
 	skipExportCheck = false,
 	skipPackageCheck = false,
-	stories = false,
 	mode = BuildMode.esm,
 }: BuildCommandOptions): Promise<void> {
 	const checkPackage = !skipPackageCheck
@@ -78,8 +75,6 @@ export async function executeBuild({
 		throw new Error('tsconfig.json must exist')
 	}
 
-	const buildStories = stories ? buildStoriesStep() : noop()
-
 	await compileTypescript(stripInternalTypes, esmOnly)
 	const generateDocs = docs ? generateApiExtractorReport() : noop()
 
@@ -91,5 +86,5 @@ export async function executeBuild({
 	if (checkExports) await verifyExports(esmOnly)
 
 	// wrap up long-running tasks
-	await Promise.all([generateDocs, buildStories])
+	await generateDocs
 }

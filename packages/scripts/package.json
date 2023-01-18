@@ -12,6 +12,7 @@
     "build": "npm-run-all -p transpile -s crlf perms",
     "build:scripts": "yarn build",
     "clean": "rimraf lib",
+    "check-deps": "essex check-deps --ignore @essex/api-extractor-config,@essex/eslint-plugin",
     "release": "yarn npm publish --tolerate-republish --access public"
   },
   "main": "lib/index.mjs",
@@ -34,7 +35,6 @@
     "@essex/eslint-plugin": "workspace:^",
     "@essex/swc-opts": "workspace:^",
     "@essex/webpack-config": "workspace:^",
-    "@ladle/react": "^1.3.0",
     "@microsoft/api-documenter": "7.19.24",
     "@microsoft/api-extractor": "7.29.2",
     "@swc/core": "1.3.26",

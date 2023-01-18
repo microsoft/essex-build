@@ -40,9 +40,13 @@ export function checkDeps({ ignore = [] }: { ignore?: string[] }) {
 		],
 		parsers: {
 			'**/*.js': depcheck.parser.es6,
+			'**/*.mjs': depcheck.parser.es6,
+			'**/*.cjs': depcheck.parser.es6,
 			'**/*.jsx': depcheck.parser.jsx,
 			'**/*.ts': depcheck.parser.typescript,
 			'**/*.tsx': depcheck.parser.typescript,
+			'**/*.mts': depcheck.parser.typescript,
+			'**/*.cts': depcheck.parser.typescript,
 		},
 		detectors: [
 			// the target detectors
