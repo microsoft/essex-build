@@ -10,7 +10,7 @@
   },
   "scripts": {
     "clean": "rimraf dist docsTemp",
-    "build": "ESSEX_DEBUG=1 essex build --stories --docs",
+    "build": "ESSEX_DEBUG=1 essex build --docs",
     "check": "essex check --formatter none",
     "check-deps": "essex check-deps --ignore rimraf",
     "fix": "essex fix --formatter none",
