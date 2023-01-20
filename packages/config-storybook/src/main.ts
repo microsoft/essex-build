@@ -55,11 +55,12 @@ export function configure({
 
 			config.resolve.alias = {
 				...(config.resolve.alias ?? {}),
-				...resolveAliases,
 				'styled-components': require.resolve('styled-components'),
 				hsluv: require.resolve('hsluv'),
 				'@thematic/react': require.resolve('@thematic/react'),
 				'@thematic/fluent': require.resolve('@thematic/fluent'),
+				'@fluentui/react': require.resolve('@fluentui/react'),
+				...resolveAliases,
 			}
 
 			// resolve files ending with .ts
