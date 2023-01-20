@@ -1,18 +1,27 @@
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import ResolveTypescriptPlugin from 'resolve-typescript-plugin'
-import type { Configuration as WebpackConfig, RuleSetRule } from 'webpack'
+import type {
+	Configuration as WebpackConfig,
+	RuleSetRule,
+	WebpackPluginInstance
+} from 'webpack'
 
 export interface EssexStorybookConfig {
 	stories?: string[]
 	staticDirs?: string[]
-	resolveAliases?: Record<string,string>
+	resolveAliases?: Record<string, string>
 	transpileMatch: (string | RegExp)[]
 }
 
 const DEFAULT_STORIES = [
 	/**
-	 * search sibling packages by default 
+	 * search sibling packages by default
 	 */
-	'../../*/src/**/*.stories.@(mdx|js|jsx|ts|tsx)'
+	'../../*/src/**/*.stories.@(mdx|js|jsx|ts|tsx)',
 ]
 const DEFAULT_STATIC_DIRS: string[] = []
 
@@ -45,7 +54,8 @@ export function configure({
 			if (process.env['CI'] || process.env['SB_QUIET']) {
 				config.stats = 'errors-only'
 				config.plugins = config.plugins?.filter(
-					({ constructor }: any) => constructor.name !== 'ProgressPlugin',
+					(plugin: WebpackPluginInstance) =>
+						plugin.constructor.name !== 'ProgressPlugin',
 				)
 			}
 
@@ -74,21 +84,20 @@ export function configure({
 			const firstRule = config.module?.rules?.[0] as RuleSetRule | undefined
 
 			if (firstRule != null) {
-				const transpileMatchRules: RuleSetRule[] = transpileMatch.map(match => {
-					return {
-						...firstRule,
-						include: match,
-						exclude: undefined,
-					}
-				})
+				const transpileMatchRules: RuleSetRule[] = transpileMatch.map(
+					(match) => {
+						return {
+							...firstRule,
+							include: match,
+							exclude: undefined,
+						}
+					},
+				)
 				const importMeta = {
 					test: /\.js$/,
 					loader: require.resolve('@open-wc/webpack-import-meta-loader'),
 				}
-				config.module!.rules!.push(
-					...transpileMatchRules,
-					importMeta,
-				)
+				config.module!.rules!.push(...transpileMatchRules, importMeta)
 				config.module!.rules!.push({
 					test: /\.mjs$/,
 					include: /node_modules/,

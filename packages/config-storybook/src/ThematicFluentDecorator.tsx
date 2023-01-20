@@ -1,3 +1,7 @@
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
 import { initializeIcons, Toggle } from '@fluentui/react'
 import type { StoryFnReactReturnType } from '@storybook/react/dist/ts3.9/client/preview/types'
 import { loadById } from '@thematic/core'
