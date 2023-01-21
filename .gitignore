@@ -12,6 +12,7 @@ packages/*/docsTemp/
 
 # Testing Output
 coverage/
+storybook-static/
 test-report.xml
 
 linked_data/
