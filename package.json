@@ -15,7 +15,7 @@
 		"_ci_packages": "turbo run ci",
 		"_essex_lint": "essex check --formatter none",
 		"_essex_lint_fix": "essex fix --formatter none",
-		"_rome_check": "rome ci .",
+		"rome_check": "rome ci .",
 		"format": "rome format . --write",
 		"_rome_check_apply": "rome check --apply-suggested .",
 		"clean": "turbo run clean",
@@ -24,7 +24,7 @@
 		"fix": "run-s _fix_packages _essex_lint_fix format _rome_check_apply",
 		"build": "turbo run build",
 		"test": "turbo run test",
-		"ci": "run-s  _rome_check _ci_packages _essex_lint",
+		"ci": "run-s  rome_check _ci_packages _essex_lint",
 		"is_clean": "essex git-is-clean",
 		"update_sdks": "yarn dlx @yarnpkg/sdks vscode",
 		"release": "run-s clean _version_cut ci _release_packages"
