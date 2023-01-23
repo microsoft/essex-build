@@ -38,7 +38,7 @@ export function configure({
 		addons: [
 			// '@storybook/addon-links',
 			'@storybook/addon-essentials',
-			'@storybook/addon-interactions',
+			// '@storybook/addon-interactions',
 		],
 		framework: '@storybook/react',
 		typescript: {
