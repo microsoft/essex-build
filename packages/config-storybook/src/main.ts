@@ -7,7 +7,7 @@ import ResolveTypescriptPlugin from 'resolve-typescript-plugin'
 import type {
 	Configuration as WebpackConfig,
 	RuleSetRule,
-	WebpackPluginInstance,
+	WebpackPluginInstance
 } from 'webpack'
 
 export interface EssexStorybookConfig {
@@ -24,7 +24,7 @@ const DEFAULT_STORIES = [
 	'../../*/src/**/*.stories.@(mdx|js|jsx|ts|tsx)',
 ]
 const DEFAULT_STATIC_DIRS: string[] = []
-const DEFAULT_TRANSPILE_MATCHES = ['@essex/components']
+const DEFAULT_TRANSPILE_MATCHES = [/@essex\/components/]
 
 export function configure({
 	stories = DEFAULT_STORIES,
