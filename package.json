@@ -19,7 +19,7 @@
 		"format": "rome format . --write",
 		"rome_fix": "rome check --apply-suggested .",
 		"clean": "turbo run clean",
-		"check": "run-s _rome_check _check_packages _essex_lint",
+		"check": "run-s rome_check _check_packages _essex_lint",
 		"check-deps": "turbo run check-deps",
 		"fix": "run-s _fix_packages _essex_lint_fix format rome_fix",
 		"build": "turbo run build",
