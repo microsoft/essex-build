@@ -2767,11 +2767,13 @@ __metadata:
     react: ^18.2.0
     react-docgen-typescript: ^2.2.2
     react-is: ^18.2.0
+    require-from-string: ^2.0.2
     resolve-typescript-plugin: ^2.0.0
     rimraf: ^4.1.1
     styled-components: ^5.3.6
     tslib: ^2.4.1
     typescript: ^4.9.4
+    webpack: ^4
   peerDependencies:
     "@babel/core": ">= 7"
     "@babel/preset-env": ">= 7"
@@ -2787,6 +2789,7 @@ __metadata:
     "@thematic/react": ">= 2"
     react: ">= 18"
     react-dom: ">= 18"
+    require-from-string: ">= 2"
     styled-components: ">= 5"
   languageName: unknown
   linkType: soft
@@ -2901,6 +2904,7 @@ __metadata:
     "@types/react-dom": ^18.0.10
     react: ^18.2.0
     react-dom: ^18.2.0
+    require-from-string: ^2.0.2
   languageName: unknown
   linkType: soft
 
@@ -21557,7 +21561,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:4":
+"webpack@npm:4, webpack@npm:^4":
   version: 4.46.0
   resolution: "webpack@npm:4.46.0"
   dependencies:
