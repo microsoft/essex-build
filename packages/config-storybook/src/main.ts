@@ -7,7 +7,7 @@ import ResolveTypescriptPlugin from 'resolve-typescript-plugin'
 import type {
 	Configuration as WebpackConfig,
 	RuleSetRule,
-	WebpackPluginInstance
+	WebpackPluginInstance,
 } from 'webpack'
 
 export interface EssexStorybookConfig {
