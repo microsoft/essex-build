@@ -21,7 +21,7 @@
 		"react-is": "^18.2.0",
 		"resolve-typescript-plugin": "^2.0.0",
 		"tslib": "^2.4.1",
-		"webpack": "^4"
+		"webpack": "^4.46.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.20.12",
