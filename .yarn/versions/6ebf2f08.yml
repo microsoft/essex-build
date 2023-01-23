@@ -1,0 +1,18 @@
+releases:
+  "@essex/eslint-plugin": patch
+  "@essex/scripts": patch
+  "@essex/storybook-config": patch
+
+declined:
+  - "@essex/eslint-config"
+  - "@essex/webpack-config"
+  - "@essex/test-lib-dual"
+  - "@essex/test-lib-esm"
+  - "@essex/test-lib-legacy"
+  - "@essex/test-lib-md-index"
+  - "@essex/test-stories"
+  - "@essex/test-webapp-vite"
+  - "@essex/test-webapp-webpack"
+  - "@essex/test-webapp-webpack-custom-cjs"
+  - "@essex/test-webapp-webpack-custom-esm"
+  - "@essex/test-zips"
