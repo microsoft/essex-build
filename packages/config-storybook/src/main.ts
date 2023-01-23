@@ -7,7 +7,7 @@ import ResolveTypescriptPlugin from 'resolve-typescript-plugin'
 import type {
 	Configuration as WebpackConfig,
 	RuleSetRule,
-	WebpackPluginInstance
+	WebpackPluginInstance,
 } from 'webpack'
 
 export interface EssexStorybookConfig {
@@ -85,15 +85,16 @@ export function configure({
 			const firstRule = config.module?.rules?.[0] as RuleSetRule | undefined
 
 			if (firstRule != null) {
-				const transpileMatchRules: RuleSetRule[] = [...DEFAULT_TRANSPILE_MATCHES, transpileMatch].map(
-					(match) => {
-						return {
-							...firstRule,
-							include: match,
-							exclude: undefined,
-						}
-					},
-				)
+				const transpileMatchRules: RuleSetRule[] = [
+					...DEFAULT_TRANSPILE_MATCHES,
+					transpileMatch,
+				].map((match) => {
+					return {
+						...firstRule,
+						include: match,
+						exclude: undefined,
+					}
+				})
 				const importMeta = {
 					test: /\.js$/,
 					loader: require.resolve('@open-wc/webpack-import-meta-loader'),
@@ -103,7 +104,11 @@ export function configure({
 					include: /node_modules/,
 					type: 'javascript/auto',
 				}
-				config.module!.rules!.push(...transpileMatchRules, importMeta, handleMjs)
+				config.module!.rules!.push(
+					...transpileMatchRules,
+					importMeta,
+					handleMjs,
+				)
 			} else {
 				throw new Error('unexpected incoming webpack config')
 			}
