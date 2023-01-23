@@ -1,0 +1,5 @@
+releases:
+  "@essex/storybook-config": patch
+
+declined:
+  - "@essex/test-stories"
