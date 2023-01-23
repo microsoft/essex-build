@@ -2905,6 +2905,7 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     require-from-string: ^2.0.2
+    rimraf: ^4.1.1
   languageName: unknown
   linkType: soft
 
