@@ -1,0 +1,34 @@
+{
+  "name": "@essex/test-stories",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf dist storybook_static",
+    "build": "build-storybook",
+    "start": "start-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microsoft/essex-js-build.git",
+    "directory": "packages/test-suite-lib"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@essex/scripts": "workspace:^",
+    "@essex/storybook-config": "workspace:^",
+    "@essex/tsconfig-base": "workspace:^",
+    "@storybook/addon-essentials": "^6.5.15",
+    "@storybook/addon-interactions": "^6.5.15",
+    "@storybook/addon-links": "^6.5.15",
+    "@storybook/react": "^6.5.15",
+    "@types/react": "^18.0.27"
+  },
+  "dependencies": {
+    "@types/react-dom": "^18.0.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

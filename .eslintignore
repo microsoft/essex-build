@@ -6,5 +6,6 @@ coverage/
 public/
 docs/
 .yarn/
+storybook-static/
 .pnp.*
 yarn.lock

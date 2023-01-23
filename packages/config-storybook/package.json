@@ -1,0 +1,65 @@
+{
+	"name": "@essex/storybook-config",
+	"version": "0.0.1",
+	"scripts": {
+		"clean": "rimraf dist",
+		"build": "tsc -b ."
+	},
+	"exports": {
+		".": "./lib/index.js",
+		"./main": "./lib/main.js",
+		"./main.js": "./lib/main.js",
+		"./preview": "./lib/preview.js",
+		"./preview.js": "./lib/preview.js",
+		"./babel.config": "./lib/babel.config.js",
+		"./babel.config.js": "./lib/babel.config.js"
+	},
+	"dependencies": {
+		"@open-wc/webpack-import-meta-loader": "^0.4.7",
+		"hsluv": "^1.0.0",
+		"react-docgen-typescript": "^2.2.2",
+		"react-is": "^18.2.0",
+		"resolve-typescript-plugin": "^2.0.0",
+		"tslib": "^2.4.1"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.16.5",
+		"@babel/preset-env": "^7.20.2",
+		"@babel/preset-react": "^7.18.6",
+		"@babel/preset-typescript": "^7.18.6",
+		"@essex/tsconfig-node": "workspace:^",
+		"@fluentui/react": "^8.104.6",
+		"@storybook/addon-essentials": "^6.5.15",
+		"@storybook/addon-interactions": "^6.5.15",
+		"@storybook/addon-links": "^6.5.15",
+		"@storybook/react": "^6.5.15",
+		"@thematic/core": "^4.0.4",
+		"@thematic/fluent": "^5.0.5",
+		"@thematic/react": "^2.1.6",
+		"@types/open-wc__webpack-import-meta-loader": "^0",
+		"@types/react": "^18.0.27",
+		"@types/styled-components": "^5.1.26",
+		"@types/webpack": "^5.28.0",
+		"react": "^18.2.0",
+		"rimraf": "^4.1.1",
+		"styled-components": "^5.3.6",
+		"typescript": "^4.9.4"
+	},
+	"peerDependencies": {
+		"@babel/core": ">= 7",
+		"@babel/preset-env": ">= 7",
+		"@babel/preset-react": ">= 7",
+		"@babel/preset-typescript": ">= 7",
+		"@fluentui/react": ">= 8",
+		"@storybook/addon-essentials": ">= 6",
+		"@storybook/addon-interactions": ">= 6",
+		"@storybook/addon-links": ">= 6",
+		"@storybook/react": ">= 6",
+		"@thematic/core": ">= 4",
+		"@thematic/fluent": ">= 5",
+		"@thematic/react": ">= 2",
+		"react": ">= 18",
+		"react-dom": ">= 18",
+		"styled-components": ">= 5"
+	}
+}
