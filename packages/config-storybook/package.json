@@ -3,7 +3,8 @@
 	"version": "0.0.2",
 	"scripts": {
 		"clean": "rimraf dist",
-		"build": "tsc -b ."
+		"build": "tsc -b .",
+    "release": "yarn npm publish --tolerate-republish --access public"
 	},
 	"exports": {
 		".": "./lib/index.js",
