@@ -24,7 +24,7 @@ const DEFAULT_STORIES = [
 	'../../*/src/**/*.stories.@(mdx|js|jsx|ts|tsx)',
 ]
 const DEFAULT_STATIC_DIRS: string[] = []
-const DEFAULT_TRANSPILE_MATCHES = [/@essex\/components/]
+const DEFAULT_TRANSPILE_MATCHES = [/@essex\/components/, /styled-components/]
 
 export function configure({
 	stories = DEFAULT_STORIES,
@@ -36,13 +36,13 @@ export function configure({
 		stories,
 		staticDirs,
 		addons: [
-			// '@storybook/addon-links',
+			'@storybook/addon-links',
 			'@storybook/addon-essentials',
-			// '@storybook/addon-interactions',
+			'@storybook/addon-interactions',
 		],
 		framework: '@storybook/react',
 		typescript: {
-			reactDocgen: 'react-docgen-typescript',
+			reactDocgen: require.resolve('react-docgen-typescript'),
 			reactDocgenTypescriptOptions: {
 				compilerOptions: {
 					allowSyntheticDefaultImports: false,

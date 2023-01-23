@@ -176,7 +176,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.1.0, @babel/core@npm:^7.12.10, @babel/core@npm:^7.20.12, @babel/core@npm:^7.20.5, @babel/core@npm:^7.7.5":
+"@babel/core@npm:^7.1.0, @babel/core@npm:^7.12.10, @babel/core@npm:^7.16.5, @babel/core@npm:^7.20.12, @babel/core@npm:^7.20.5, @babel/core@npm:^7.7.5":
   version: 7.20.12
   resolution: "@babel/core@npm:7.20.12"
   dependencies:
@@ -2745,7 +2745,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/storybook-config@workspace:packages/config-storybook"
   dependencies:
-    "@babel/core": ^7.20.12
+    "@babel/core": ^7.16.5
     "@babel/preset-env": ^7.20.2
     "@babel/preset-react": ^7.18.6
     "@babel/preset-typescript": ^7.18.6
@@ -2773,7 +2773,14 @@ __metadata:
     tslib: ^2.4.1
     typescript: ^4.9.4
   peerDependencies:
+    "@babel/core": ">= 7"
+    "@babel/preset-env": ">= 7"
+    "@babel/preset-react": ">= 7"
+    "@babel/preset-typescript": ">= 7"
     "@fluentui/react": ">= 8"
+    "@storybook/addon-essentials": ">= 6"
+    "@storybook/addon-interactions": ">= 6"
+    "@storybook/addon-links": ">= 6"
     "@storybook/react": ">= 6"
     "@thematic/core": ">= 4"
     "@thematic/fluent": ">= 5"
@@ -2879,9 +2886,16 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/test-stories@workspace:packages/test-stories"
   dependencies:
+    "@babel/core": ^7.16.5
+    "@babel/preset-env": ^7.20.2
+    "@babel/preset-react": ^7.18.6
+    "@babel/preset-typescript": ^7.18.6
     "@essex/scripts": "workspace:^"
     "@essex/storybook-config": "workspace:^"
     "@essex/tsconfig-base": "workspace:^"
+    "@storybook/addon-essentials": ^6.5.15
+    "@storybook/addon-interactions": ^6.5.15
+    "@storybook/addon-links": ^6.5.15
     "@storybook/react": ^6.5.15
     "@types/react": ^18.0.27
     "@types/react-dom": ^18.0.10
