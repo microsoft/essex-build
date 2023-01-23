@@ -7,7 +7,7 @@ import ResolveTypescriptPlugin from 'resolve-typescript-plugin'
 import type {
 	Configuration as WebpackConfig,
 	RuleSetRule,
-	WebpackPluginInstance,
+	WebpackPluginInstance
 } from 'webpack'
 
 export interface EssexStorybookConfig {
@@ -36,7 +36,7 @@ export function configure({
 		stories,
 		staticDirs,
 		addons: [
-			'@storybook/addon-links',
+			// '@storybook/addon-links',
 			'@storybook/addon-essentials',
 			'@storybook/addon-interactions',
 		],
