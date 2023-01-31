@@ -1,6 +1,6 @@
 releases:
   "@essex/scripts": patch
-  "@essex/storybook-config": major
+  "@essex/storybook-config": minor
 
 declined:
   - "@essex/test-lib-dual"
