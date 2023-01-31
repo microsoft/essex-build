@@ -3,7 +3,6 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { initializeIcons, Toggle } from '@fluentui/react'
-import type { StoryFnReactReturnType } from '@storybook/react/dist/ts3.9/client/preview/types'
 import { loadById } from '@thematic/core'
 import { loadFluentTheme, ThematicFluentProvider } from '@thematic/fluent'
 import { ApplicationStyles } from '@thematic/react'
@@ -15,9 +14,7 @@ initializeIcons()
  * ThematicFluentDecorator configures both Thematic and the Fluent wrapper
  * @param storyFn
  */
-export const ThematicFluentDecorator = (
-	storyFn: any,
-): StoryFnReactReturnType => {
+export const ThematicFluentDecorator = (storyFn: any) => {
 	const [dark, setDark] = useState(false)
 	// load a non-standard theme, so it is obvious that it isn't the default
 	// this helps identify problems with theme application in Fluent, which looks a lot like our default essex theme

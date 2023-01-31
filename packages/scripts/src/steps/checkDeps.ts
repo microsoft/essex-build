@@ -30,9 +30,11 @@ export function checkDeps({ ignore = [] }: { ignore?: string[] }) {
 			'@types/react',
 			'@types/node',
 			'react',
+			'react-dom',
 			// Storybook dependencies
 			'@mdx-js/react',
 			'@storybook/addon-docs',
+			'@storybook/addon-essentials',
 			// Testing Dependencies
 			'@types/jest',
 			'jest-environment*',
