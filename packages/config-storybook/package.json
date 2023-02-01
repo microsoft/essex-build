@@ -1,6 +1,6 @@
 {
 	"name": "@essex/storybook-config",
-	"version": "0.0.3",
+	"version": "0.1.0",
 	"scripts": {
 		"clean": "rimraf dist",
 		"build": "tsc -b .",
