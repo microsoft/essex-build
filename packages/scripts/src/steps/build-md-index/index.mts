@@ -57,8 +57,8 @@ function writeIndex(imports: string[]): Promise<void> {
 	let importsArea = ''
 	let mapArea = 'const index = {};\n'
 	imports.forEach(imp => {
-		const impVar = imp.replace('/', '_')
-		const impKey = imp.replace('/', '.')
+		const impVar = imp.replace(/\//g, '_')
+		const impKey = imp.replace(/\//g, '.')
 		importsArea += `import { default as ${impVar} } from './${imp}.js'\n`
 		mapArea += `index['${impKey}'] = ${impVar};\n`
 	})
