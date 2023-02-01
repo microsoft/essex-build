@@ -3,19 +3,54 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
+import fs from 'fs'
+import path from 'path'
 import ResolveTypescriptPlugin from 'resolve-typescript-plugin'
-import type {
-	Configuration as WebpackConfig,
-	RuleSetRule,
-	WebpackPluginInstance,
-} from 'webpack'
+import type { Configuration as WebpackConfig } from 'webpack'
 
 export interface EssexStorybookConfig {
+	/**
+	 * The stories globs. Default = [../../*\/src/**\/*.stories.@(mdx|js|jsx|ts|tsx)']
+	 */
 	stories?: string[]
+
+	/**
+	 * The static folders to serve
+	 */
 	staticDirs?: string[]
-	resolveAliases?: Record<string, string>
-	transpileMatch: (string | RegExp)[]
+
+	/**
+	 * A config hook for mutating the webpack configuration
+	 * @param config - The webpack to use for stories
+	 * @returns The updated webpack config
+	 */
+	webpackFinal?: (config: WebpackConfig) => WebpackConfig
 }
+
+const DEFAULT_SWC_CONFIG = {
+	sourceMaps: true,
+	jsc: {
+		target: 'es2021',
+		parser: {
+			syntax: 'typescript',
+			tsx: true,
+			decorators: true,
+			dynamicImport: true,
+			importAssertions: true,
+		},
+		experimental: {
+			keepImportAssertions: true,
+		},
+		transform: {
+			react: { runtime: 'automatic', useBuiltins: true },
+		},
+	},
+}
+
+const SWCRC_FILE = path.join(process.cwd(), '.swcrc')
+const SWC_CONFIG = fs.existsSync(path.join(process.cwd(), '.swcrc'))
+	? JSON.parse(fs.readFileSync(SWCRC_FILE, { encoding: 'utf-8' }))
+	: DEFAULT_SWC_CONFIG
 
 const DEFAULT_STORIES = [
 	/**
@@ -24,25 +59,31 @@ const DEFAULT_STORIES = [
 	'../../*/src/**/*.stories.@(mdx|js|jsx|ts|tsx)',
 ]
 const DEFAULT_STATIC_DIRS: string[] = []
-const DEFAULT_TRANSPILE_MATCHES = [/@essex\/components/, /styled-components/]
+
+const identity = <T>(input: T) => input
 
 export function configure({
 	stories = DEFAULT_STORIES,
 	staticDirs = DEFAULT_STATIC_DIRS,
-	resolveAliases = {},
-	transpileMatch = [],
+	webpackFinal = identity,
 }: EssexStorybookConfig) {
 	return {
 		stories,
 		staticDirs,
 		addons: [
-			'@storybook/addon-links',
+			require.resolve('@storybook/addon-links'),
 			'@storybook/addon-essentials',
 			'@storybook/addon-interactions',
 		],
-		framework: '@storybook/react',
+		framework: {
+			name: '@storybook/react-webpack5',
+			options: {},
+		},
+		docs: {
+			autodocs: true,
+		},
 		typescript: {
-			reactDocgen: require.resolve('react-docgen-typescript'),
+			reactDocgen: 'react-docgen-typescript',
 			reactDocgenTypescriptOptions: {
 				compilerOptions: {
 					allowSyntheticDefaultImports: false,
@@ -51,69 +92,21 @@ export function configure({
 			},
 		},
 		webpackFinal(config: WebpackConfig) {
-			// mute build output
-			if (process.env['CI'] || process.env['SB_QUIET']) {
-				config.stats = 'errors-only'
-				config.plugins = config.plugins?.filter(
-					(plugin: WebpackPluginInstance) =>
-						plugin.constructor.name !== 'ProgressPlugin',
-				)
-			}
+			config.resolve!.plugins = [
+				...(config.resolve!.plugins ?? []),
+				new ResolveTypescriptPlugin(),
+			]
 
-			if (!config.resolve) {
-				config.resolve = {}
-			}
-
-			config.resolve.alias = {
-				...(config.resolve.alias ?? {}),
-				'styled-components': require.resolve('styled-components'),
-				hsluv: require.resolve('hsluv'),
-				'@thematic/react': require.resolve('@thematic/react'),
-				'@thematic/fluent': require.resolve('@thematic/fluent'),
-				'@fluentui/react': require.resolve('@fluentui/react'),
-				...resolveAliases,
-			}
-
-			// resolve files ending with .ts
-			if (!config.resolve.plugins) {
-				config.resolve.plugins = []
-			}
-			// Resolve extensions from TS code
-			config.resolve.plugins.push(new ResolveTypescriptPlugin())
-
-			// run transpiler over monorepo linked projects
-			const firstRule = config.module?.rules?.[0] as RuleSetRule | undefined
-
-			if (firstRule != null) {
-				const transpileMatchRules: RuleSetRule[] = [
-					...DEFAULT_TRANSPILE_MATCHES,
-					transpileMatch,
-				].map((match) => {
-					return {
-						...firstRule,
-						include: match,
-						exclude: undefined,
-					}
-				})
-				const importMeta = {
-					test: /\.js$/,
-					loader: require.resolve('@open-wc/webpack-import-meta-loader'),
-				}
-				const handleMjs = {
-					test: /\.mjs$/,
-					include: /node_modules/,
-					type: 'javascript/auto',
-				}
-				config.module!.rules!.push(
-					...transpileMatchRules,
-					importMeta,
-					handleMjs,
-				)
-			} else {
-				throw new Error('unexpected incoming webpack config')
-			}
-
-			return config
+			// Swap out babel w/ swc for transpiling app-assets
+			const babelRule = config.module!.rules![2]!
+			config!.module!.rules!.splice(2, 1, {
+				test: /\.(cjs|mjs|jsx?|cts|mts|tsx?)$/,
+				loader: require.resolve('swc-loader'),
+				options: SWC_CONFIG,
+				include: (babelRule as any).include,
+				exclude: (babelRule as any).exclude,
+			})
+			return webpackFinal(config)
 		},
 	}
 }
