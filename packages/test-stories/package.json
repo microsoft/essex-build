@@ -5,7 +5,8 @@
   "scripts": {
     "clean": "rimraf dist storybook_static",
     "build": "storybook build",
-    "start": "storybook dev"
+    "start": "storybook dev",
+    "start:storybook": "yarn start"
   },
   "repository": {
     "type": "git",
