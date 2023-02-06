@@ -96,6 +96,11 @@ export function configure({
 				...(config.resolve!.plugins ?? []),
 				new ResolveTypescriptPlugin(),
 			]
+			config.resolve!.alias = {
+				...(config.resolve?.alias || {}),
+				'@thematic/react': require.resolve('@thematic/react'),
+				'@fluentui/react': require.resolve('@fluentui/react')
+			}
 
 			// Swap out babel w/ swc for transpiling app-assets
 			const babelRule = config.module!.rules![2]!
