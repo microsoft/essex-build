@@ -99,7 +99,7 @@ export function configure({
 			config.resolve!.alias = {
 				...(config.resolve?.alias || {}),
 				'@thematic/react': require.resolve('@thematic/react'),
-				'@fluentui/react': require.resolve('@fluentui/react')
+				'@fluentui/react': require.resolve('@fluentui/react'),
 			}
 
 			// Swap out babel w/ swc for transpiling app-assets
