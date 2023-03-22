@@ -16,7 +16,7 @@
 		"./babel.config.js": "./lib/babel.config.js"
 	},
 	"dependencies": {
-		"@swc/core": "^1.3.31",
+		"@swc/core": "^1.3.42",
 		"hsluv": "^1.0.0",
 		"react-docgen-typescript": "^2.2.2",
 		"react-is": "^18.2.0",
