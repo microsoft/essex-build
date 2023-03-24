@@ -13,7 +13,7 @@ import { dirname, join, relative, resolve } from 'path'
 import ProgressBar from 'progress'
 
 import { isDebug } from '../../util/isDebug.mjs'
-import { error, info, traceFile } from '../../util/tasklogger.mjs'
+import { info, traceFile } from '../../util/tasklogger.mjs'
 
 export interface ZipCommandOptions {
 	baseDir: string
@@ -71,16 +71,7 @@ function getGlobSource(source: string): Promise<string[]> {
 	if (isDebug()) {
 		info(`handle source glob: ${source}`)
 	}
-	return new Promise<string[]>((resolve, reject) => {
-		glob(source, { dot: true }, (err, files) => {
-			if (err) {
-				error('glob error', error)
-				reject(err)
-			} else {
-				resolve(files)
-			}
-		})
-	})
+	return glob(source, { dot: true })
 }
 
 async function getSourceFiles(source: string): Promise<string[]> {
