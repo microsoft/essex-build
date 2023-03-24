@@ -5,5 +5,7 @@
 import rimraf from 'rimraf'
 
 export function rm(fileglob: string): Promise<void> {
-	return rimraf(fileglob)
+	return rimraf(fileglob).then(() => {
+		/* do nothing */
+	})
 }

@@ -41,16 +41,7 @@ export async function buildMdIndex(include: string): Promise<void> {
 }
 
 function getMarkdownFiles(include: string): Promise<string[]> {
-	return new Promise<string[]>((resolve, reject) => {
-		glob(`${include}/**/*.md`, (err, res) => {
-			if (err) {
-				console.error(err)
-				reject(err)
-			} else {
-				resolve(res)
-			}
-		})
-	})
+	return glob(`${include}/**/*.md`)
 }
 
 function writeIndex(imports: string[]): Promise<void> {

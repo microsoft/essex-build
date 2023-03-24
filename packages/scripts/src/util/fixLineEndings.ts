@@ -12,20 +12,9 @@ import glob from 'glob'
  * @param globPattern - The files pattern to write
  * @returns
  */
-export function fixLineEndings(globPattern: string): Promise<void> {
-	return new Promise<void>((resolve, reject) => {
-		glob(globPattern, (err, files) => {
-			if (err) {
-				reject(err)
-			} else {
-				const xforms = files.map(recodeFile)
-				const allXforms = Promise.all(xforms).then(() => {
-					/*nada*/
-				})
-				resolve(allXforms)
-			}
-		})
-	})
+export async function fixLineEndings(globPattern: string): Promise<void> {
+	const files = await glob(globPattern)
+	await Promise.all(files.map(recodeFile))
 }
 
 function recodeFile(file: string) {
