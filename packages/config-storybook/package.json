@@ -4,54 +4,59 @@
 	"scripts": {
 		"clean": "rimraf dist",
 		"build": "tsc -b .",
+		"build:sbconfig": "yarn build",
 		"release": "yarn npm publish --tolerate-republish --access public"
 	},
 	"exports": {
 		".": "./lib/index.js",
 		"./main": "./lib/main.js",
 		"./main.js": "./lib/main.js",
+		"./manager": "./lib/manager.js",
+		"./manager.js": "./lib/manager.js",
 		"./preview": "./lib/preview.js",
 		"./preview.js": "./lib/preview.js",
 		"./babel.config": "./lib/babel.config.js",
 		"./babel.config.js": "./lib/babel.config.js"
 	},
 	"dependencies": {
-		"@swc/core": "^1.3.31",
+		"@swc/core": "^1.3.42",
 		"hsluv": "^1.0.0",
 		"react-docgen-typescript": "^2.2.2",
 		"react-is": "^18.2.0",
-		"resolve-typescript-plugin": "^2.0.0",
-		"storybook": "^7.0.0-beta.38",
+		"resolve-typescript-plugin": "^2.0.1",
+		"storybook": "^7.0.0-rc.7",
 		"swc-loader": "^0.2.3",
-		"tslib": "^2.4.1",
-		"webpack": "^5.75.0"
+		"tslib": "^2.5.0",
+		"webpack": "^5.76.3"
 	},
 	"devDependencies": {
 		"@essex/tsconfig-node": "workspace:^",
-		"@fluentui/react": "^8.104.6",
-		"@storybook/addon-a11y": "^7.0.0-beta.38",
-		"@storybook/addon-docs": "^7.0.0-beta.38",
-		"@storybook/addon-essentials": "^7.0.0-beta.38",
-		"@storybook/addon-interactions": "^7.0.0-beta.38",
-		"@storybook/addon-links": "^7.0.0-beta.38",
-		"@storybook/addons": "^7.0.0-beta.38",
-		"@storybook/client-api": "^7.0.0-beta.38",
-		"@storybook/core-events": "^7.0.0-beta.38",
-		"@storybook/react": "^7.0.0-beta.38",
-		"@storybook/react-webpack5": "^7.0.0-beta.38",
+		"@fluentui/react": "^8.106.8",
+		"@storybook/addon-a11y": "^7.0.0-rc.7",
+		"@storybook/addon-docs": "^7.0.0-rc.7",
+		"@storybook/addon-essentials": "^7.0.0-rc.7",
+		"@storybook/addon-interactions": "^7.0.0-rc.7",
+		"@storybook/addon-links": "^7.0.0-rc.7",
+		"@storybook/addons": "^7.0.0-rc.7",
+		"@storybook/client-api": "^7.0.0-rc.7",
+		"@storybook/core-events": "^7.0.0-rc.7",
+		"@storybook/react": "^7.0.0-rc.7",
+		"@storybook/react-webpack5": "^7.0.0-rc.7",
+		"@storybook/theming": "^7.0.0-rc.7",
+		"@thematic/color": "^4.0.4",
 		"@thematic/core": "^4.0.4",
 		"@thematic/fluent": "^5.0.5",
 		"@thematic/react": "^2.1.6",
-		"@types/react": "^18.0.27",
+		"@types/react": "^18.0.29",
 		"@types/styled-components": "^5.1.26",
 		"@types/webpack": "^5.28.0",
 		"react": "^18.2.0",
 		"react-is": "^18.2.0",
 		"require-from-string": "^2.0.2",
-		"rimraf": "^4.1.1",
-		"storybook": "^7.0.0-beta.38",
-		"styled-components": "^5.3.6",
-		"typescript": "^4.9.4"
+		"rimraf": "^4.4.1",
+		"storybook": "^7.0.0-rc.7",
+		"styled-components": "^5.3.9",
+		"typescript": "^4.9.5"
 	},
 	"peerDependencies": {
 		"@fluentui/react": ">= 8",
@@ -65,6 +70,8 @@
 		"@storybook/core-events": "^7.0.0-beta.38",
 		"@storybook/react": "^7.0.0-beta.38",
 		"@storybook/react-webpack5": "^7.0.0-beta.38",
+		"@storybook/theming": "^7.0.0-beta.38",
+		"@thematic/color": ">= 4",
 		"@thematic/core": ">= 4",
 		"@thematic/fluent": ">= 5",
 		"@thematic/react": ">= 2",
@@ -75,5 +82,10 @@
 		"storybook": "^7.0.0-beta.38",
 		"styled-components": ">= 5",
 		"typescript": ">= 4"
+	},
+	"peerDependenciesMeta": {
+		"@storybook/theming": {
+			"optional": true
+		}
 	}
 }
