@@ -3003,7 +3003,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/tsconfig-node18@workspace:packages/config-ts-node18":
+"@essex/tsconfig-node18@workspace:^, @essex/tsconfig-node18@workspace:packages/config-ts-node18":
   version: 0.0.0-use.local
   resolution: "@essex/tsconfig-node18@workspace:packages/config-ts-node18"
   dependencies:
@@ -3015,7 +3015,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/tsconfig-node@workspace:packages/config-ts-node"
   dependencies:
-    "@essex/tsconfig-node14": "workspace:^"
+    "@essex/tsconfig-node18": "workspace:^"
   languageName: unknown
   linkType: soft
 

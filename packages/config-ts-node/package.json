@@ -8,6 +8,6 @@
 		"release": "yarn npm publish --tolerate-republish --access public"
 	},
 	"dependencies": {
-		"@essex/tsconfig-node14": "workspace:^"
+		"@essex/tsconfig-node18": "workspace:^"
 	}
 }
