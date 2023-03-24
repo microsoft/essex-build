@@ -2,10 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { addons } from '@storybook/addons'
 import { create, type ThemeVars } from '@storybook/theming'
 import { darken, lighten } from '@thematic/color'
-import { defaultThemes, loadById, Theme } from '@thematic/core'
+import { defaultThemes, loadById, type Theme } from '@thematic/core'
 
 export interface ManagerConfiguration {
 	themeVars?: Partial<ThemeVars>
