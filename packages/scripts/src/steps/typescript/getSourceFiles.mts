@@ -22,7 +22,7 @@ export async function getSourceFiles(): Promise<string[]> {
 }
 
 async function resolveGlob(globSpec: string): Promise<Set<string>> {
-	const found = await  glob(globSpec)
+	const found = await glob(globSpec)
 	const fileSet = new Set<string>()
 	found.forEach((r) => fileSet.add(r))
 	return fileSet
