@@ -41,7 +41,7 @@
 		"@storybook/client-api": "^7.0.0-rc.7",
 		"@storybook/core-events": "^7.0.0-rc.7",
 		"@storybook/react": "^7.0.0-rc.7",
-		"@storybook/react-webpack5": "^7.0.0-rc.7",
+		"@storybook/react-webpack5": "^7.0.0-alpha.0",
 		"@storybook/theming": "^7.0.0-rc.7",
 		"@thematic/color": "^4.0.4",
 		"@thematic/core": "^4.0.4",
@@ -56,7 +56,7 @@
 		"rimraf": "^4.4.1",
 		"storybook": "^7.0.0-rc.7",
 		"styled-components": "^5.3.9",
-		"typescript": "^4.9.5"
+		"typescript": "^5.0.2"
 	},
 	"peerDependencies": {
 		"@fluentui/react": ">= 8",

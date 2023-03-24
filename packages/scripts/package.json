@@ -49,7 +49,7 @@
     "depcheck": "^1.4.3",
     "eslint": "8.36.0",
     "eslint-import-resolver-node": "^0.3.7",
-    "glob": "^8.1.0",
+    "glob": "^9.3.2",
     "human-format": "^1.0.0",
     "is-git-dirty": "^2.0.2",
     "lodash": "^4.17.21",
@@ -61,7 +61,7 @@
     "react-dom": "^18.2.0",
     "rimraf": "^4.4.1",
     "tsconfig": "^7.0.0",
-    "typescript": "^4.9.5",
+    "typescript": "^5.0.2",
     "webpack": "^5.76.3",
     "webpack-dev-server": "^4.13.1",
     "zx": "^7.2.1"
