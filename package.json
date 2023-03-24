@@ -6,7 +6,7 @@
 		"David Tittsworth <datit@microsoft.com>",
 		"Chris Trevino <chtrevin@microsoft.com>"
 	],
-	"packageManager": "yarn@3.3.1",
+	"packageManager": "yarn@3.5.0",
 	"scripts": {
 		"_release_packages": "turbo run release",
 		"_version_cut": "yarn version apply --all",
