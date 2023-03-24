@@ -16,5 +16,10 @@ releases:
   "@essex/test-webapp-webpack-custom-cjs": patch
   "@essex/test-webapp-webpack-custom-esm": patch
   "@essex/test-zips": patch
+  "@essex/tsconfig-base": major
+  "@essex/tsconfig-node": major
+  "@essex/tsconfig-node14": major
+  "@essex/tsconfig-node16": major
+  "@essex/tsconfig-node18": major
   "@essex/vite-config": patch
   "@essex/webpack-config": patch
