@@ -1,6 +1,6 @@
 {
   "name": "@essex/test-webapp-vite",
-  "version": "20.0.16",
+  "version": "20.0.17",
   "private": true,
   "scripts": {
     "clean": "rimraf dist docsTemp",

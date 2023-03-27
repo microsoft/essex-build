@@ -1,6 +1,6 @@
 {
   "name": "@essex/test-lib-esm",
-  "version": "20.0.18",
+  "version": "20.0.19",
   "private": true,
   "type": "module",
   "main": "src/index.ts",

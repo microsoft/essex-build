@@ -1,6 +1,6 @@
 {
   "name": "@essex/test-lib-md-index",
-  "version": "20.0.17",
+  "version": "20.0.18",
   "private": true,
   "type": "module",
   "main": "dist/index.js",
