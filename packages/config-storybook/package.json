@@ -43,7 +43,7 @@
 		"@storybook/react": "^7.0.0-rc.8",
 		"@storybook/react-webpack5": "^7.0.0-rc.8",
 		"@storybook/theming": "^7.0.0-rc.8",
-		"@thematic/color": "^4.0.4",
+		"@thematic/color": "^4.0.5",
 		"@thematic/core": "^4.0.4",
 		"@thematic/fluent": "^5.0.5",
 		"@thematic/react": "^2.1.6",
