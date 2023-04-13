@@ -2,44 +2,24 @@
 	"$schema": "https://turborepo.org/schema.json",
 	"pipeline": {
 		"build": {
-			"dependsOn": [
-				"^build"
-			],
-			"outputs": [
-				"dist/**",
-				"lib/**"
-			]
+			"dependsOn": ["^build"],
+			"outputs": ["dist/**", "lib/**"]
 		},
 		"test": {
-			"dependsOn": [
-				"build"
-			],
+			"dependsOn": ["build"],
 			"outputs": []
 		},
 		"check": {
-			"dependsOn": [
-				"^build",
-				"@essex/scripts#build"
-			],
+			"dependsOn": ["^build", "@essex/scripts#build"],
 			"outputs": []
 		},
 		"fix": {
-			"dependsOn": [
-				"@essex/scripts#build"
-			],
+			"dependsOn": ["@essex/scripts#build"],
 			"outputs": []
 		},
 		"ci": {
-			"dependsOn": [
-				"check",
-				"build",
-				"test",
-				"check-deps"
-			],
-			"outputs": [
-				"dist/**",
-				"lib/**"
-			]
+			"dependsOn": ["check", "build", "test", "check-deps"],
+			"outputs": ["dist/**", "lib/**"]
 		},
 		"release": {
 			"cache": false
@@ -48,9 +28,7 @@
 			"cache": false
 		},
 		"check-deps": {
-			"dependsOn": [
-				"@essex/scripts#build"
-			]
+			"dependsOn": ["@essex/scripts#build"]
 		}
 	}
 }

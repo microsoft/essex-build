@@ -1,34 +1,29 @@
 {
-  "$schema": "./node_modules/rome/configuration_schema.json",
-  "files": {
-    "ignore": [
-      "dist",
-      "lib",
-      "build",
-      "storybook-static",
-      ".turbo",
-      ".pnp.cjs",
-      ".pnp.loader.mjs" 
-    ]
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true,
-      "suspicious": {
-        "noExplicitAny": "off"
-      }
-    }
-  },
-  "javascript": {
-    "formatter": {
-      "semicolons": "asNeeded",
-      "quoteStyle": "single",
-      "trailingComma": "all",
-      "quoteProperties": "asNeeded"
-    }
-  },
-  "formatter": {
-    "indentStyle": "tab"
-  }
+	"$schema": "./node_modules/rome/configuration_schema.json",
+	"files": {
+		"ignore": [
+			"dist", "lib", "build", "storybook-static", ".turbo", ".pnp.cjs",
+			".pnp.loader.mjs"
+		]
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"suspicious": {
+				"noExplicitAny": "off"
+			}
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"semicolons": "asNeeded",
+			"quoteStyle": "single",
+			"trailingComma": "all",
+			"quoteProperties": "asNeeded"
+		}
+	},
+	"formatter": {
+		"indentStyle": "tab"
+	}
 }
