@@ -8,7 +8,7 @@ import {
 	StorageSharedKeyCredential,
 } from '@azure/storage-blob'
 import { promises as fs } from 'fs'
-import glob from 'glob'
+import { glob } from 'glob'
 import mime from 'mime-types'
 import path from 'path'
 

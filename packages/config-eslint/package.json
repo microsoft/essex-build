@@ -8,8 +8,8 @@
   },
   "dependencies": {
     "@essex/eslint-plugin": "workspace:^",
-    "@typescript-eslint/eslint-plugin": "^5.56.0",
-    "@typescript-eslint/parser": "^5.56.0",
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
     "eslint-import-resolver-node": "^0.3.7"
   },
   "peerDependencies": {

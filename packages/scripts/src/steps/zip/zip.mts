@@ -5,8 +5,8 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import archiver from 'archiver'
 import chalk from 'chalk'
-import { createWriteStream, existsSync, mkdirSync, promises as fs } from 'fs'
-import glob from 'glob'
+import { createWriteStream, existsSync, promises as fs, mkdirSync } from 'fs'
+import { glob } from 'glob'
 // @ts-ignore
 import format from 'human-format'
 import { dirname, join, relative, resolve } from 'path'
