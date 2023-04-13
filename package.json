@@ -17,7 +17,7 @@
 		"_essex_lint_fix": "essex fix --formatter none",
 		"rome_check": "rome ci .",
 		"format": "rome format . --write",
-		"rome_fix": "rome check --apply .",
+		"rome_fix": "rome check --apply-unsafe .",
 		"clean": "turbo run clean",
 		"check": "run-s rome_check _check_packages _essex_lint",
 		"check-deps": "turbo run check-deps",

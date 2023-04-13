@@ -23,26 +23,23 @@ export function createConfiguration(
 	useRome: boolean,
 ): Linter.Config & { overrides: Linter.ConfigOverride[] } {
 	useTypeAwareLinting = getTypeAwareSetting(useTypeAwareLinting)
+	const plugins = ['@essex/eslint-plugin', 'header', 'import', 'react-hooks']
+	if (!useRome) {
+		plugins.push('simple-import-sort')
+	}
+
 	return {
 		root: true,
-		plugins: [
-			'@essex/eslint-plugin',
-			'header',
-			'import',
-			'simple-import-sort',
-			'react-hooks',
-		],
+		plugins,
 		parser: '@babel/eslint-parser',
 		parserOptions: {
 			requireConfigFile: false,
 		},
 		extends: [
 			// 'eslint:recommended',
-			// 'prettier',
 			'plugin:import/recommended',
 			'plugin:react/recommended',
 			'plugin:react-hooks/recommended',
-			// 'plugin:jsx-a11y/recommended',
 		],
 		env: {
 			browser: true,

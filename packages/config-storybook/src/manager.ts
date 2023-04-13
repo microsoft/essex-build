@@ -4,13 +4,13 @@
  */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { addons } from '@storybook/addons'
-import { create, type ThemeVars } from '@storybook/theming'
+import { type ThemeVars, create } from '@storybook/theming'
 import { darken, lighten } from '@thematic/color'
 import {
-	defaultThemes,
-	loadById,
 	type Theme,
 	type ThemeListing,
+	defaultThemes,
+	loadById,
 } from '@thematic/core'
 
 export interface ManagerConfiguration {

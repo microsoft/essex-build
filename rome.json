@@ -6,6 +6,9 @@
 			".pnp.loader.mjs", "api-extractor.json", ".devcontainer/"
 		]
 	},
+	"organizeImports": {
+		"enabled": true
+	},
 	"linter": {
 		"enabled": true,
 		"rules": {
