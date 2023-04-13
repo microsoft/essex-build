@@ -29,7 +29,7 @@ export const extensionsRule: TSESLint.RuleModule<
 	defaultOptions: [defaultSettings as any],
 	create: (context) => {
 		/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */
-		const filename = relative(context.getCwd!(), context.getFilename())
+		const filename = relative(context.getCwd?.() ?? './', context.getFilename())
 		const allOptions = [...(context.options[0] ?? [defaultSettings])].map(
 			(opt) => ({
 				...defaultSettings,

@@ -6,7 +6,12 @@
 import { addons } from '@storybook/addons'
 import { create, type ThemeVars } from '@storybook/theming'
 import { darken, lighten } from '@thematic/color'
-import { defaultThemes, loadById, type Theme } from '@thematic/core'
+import {
+	defaultThemes,
+	loadById,
+	type Theme,
+	type ThemeListing,
+} from '@thematic/core'
 
 export interface ManagerConfiguration {
 	themeVars?: Partial<ThemeVars>
@@ -25,7 +30,7 @@ const identity = <T>(x: T) => x
 export function configureManager({
 	themeVars: inputVars = {},
 	addonConfigFinal = identity,
-	thematicTheme: inTheme = loadById(defaultThemes[0]!.id),
+	thematicTheme: inTheme = loadById(firstTheme().id),
 }: ManagerConfiguration): void {
 	const textColor = inTheme.text().fill().hex()
 	const theme = create({
@@ -56,4 +61,12 @@ export function configureManager({
 			theme,
 		}),
 	)
+}
+
+function firstTheme(): ThemeListing {
+	const result = defaultThemes[0]
+	if (result == null) {
+		throw new Error('no themes found')
+	}
+	return result
 }

@@ -3,7 +3,7 @@
 	"files": {
 		"ignore": [
 			"dist", "lib", "build", "storybook-static", ".turbo", ".pnp.cjs",
-			".pnp.loader.mjs"
+			".pnp.loader.mjs", "api-extractor.json", ".devcontainer/"
 		]
 	},
 	"linter": {
