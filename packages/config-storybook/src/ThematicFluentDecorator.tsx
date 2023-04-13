@@ -5,15 +5,21 @@
 import { Toggle, initializeIcons } from '@fluentui/react'
 import {
 	FluentProvider as Fluent9Provider,
+	type Theme as Fluent9Theme,
 	teamsDarkTheme as teamsDarkThemeF9,
 	teamsLightTheme as teamsLightThemeF9,
-	type Theme as Fluent9Theme,
 } from '@fluentui/react-components'
-import { loadById, type Theme as ThematicTheme } from '@thematic/core'
-import { FluentTheme as Fluent8Theme, ThematicFluentProvider as ThematicFluent8Provider, loadFluentTheme as loadFluent8Theme } from '@thematic/fluent'
+import { type Theme as ThematicTheme, loadById } from '@thematic/core'
+import type { FluentTheme as Fluent8Theme } from '@thematic/fluent'
+import {
+	ThematicFluentProvider as ThematicFluent8Provider,
+	loadFluentTheme as loadFluent8Theme,
+} from '@thematic/fluent'
 import { ApplicationStyles } from '@thematic/react'
 import { useCallback, useMemo, useState } from 'react'
-import styled, { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components'
+import styled, {
+	ThemeProvider as StyledComponentsThemeProvider,
+} from 'styled-components'
 
 initializeIcons()
 /**
@@ -67,17 +73,11 @@ function useThematicTheme(dark: boolean): ThematicTheme {
 }
 
 function useFluent8Theme(theme: ThematicTheme): Fluent8Theme {
-	return useMemo(
-		() => loadFluent8Theme(theme),
-		[theme],
-	)
+	return useMemo(() => loadFluent8Theme(theme), [theme])
 }
 
 function useFluent9Theme(dark: boolean): Fluent9Theme {
-	return useMemo(
-		() => (dark ? teamsDarkThemeF9 : teamsLightThemeF9),
-		[dark],
-	)
+	return useMemo(() => (dark ? teamsDarkThemeF9 : teamsLightThemeF9), [dark])
 }
 
 const Container = styled.div`
