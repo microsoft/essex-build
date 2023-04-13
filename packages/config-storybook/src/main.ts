@@ -92,11 +92,14 @@ export function configure({
 			},
 		},
 		webpackFinal(config: WebpackConfig) {
-			config.resolve!.plugins = [
-				...(config.resolve!.plugins ?? []),
+			if (config.resolve == null) {
+				config.resolve = {}
+			}
+			config.resolve.plugins = [
+				...(config.resolve.plugins ?? []),
 				new ResolveTypescriptPlugin(),
 			]
-			config.resolve!.alias = {
+			config.resolve.alias = {
 				...(config.resolve?.alias || {}),
 				'@thematic/react': require.resolve('@thematic/react'),
 				'@fluentui/react': require.resolve('@fluentui/react'),
@@ -104,8 +107,19 @@ export function configure({
 			}
 
 			// Swap out babel w/ swc for transpiling app-assets
-			const babelRule = config.module!.rules![2]!
-			config!.module!.rules!.splice(2, 1, {
+			const rules = config.module?.rules
+			if (rules == null) {
+				throw new Error(
+					'could not inject swc-loader into webpack config, no rules found',
+				)
+			}
+			const babelRule = rules[2]
+			if (babelRule == null) {
+				throw new Error(
+					'could not inject swc-loader into webpack config, no babel rule found',
+				)
+			}
+			rules.splice(2, 1, {
 				test: /\.(cjs|mjs|jsx?|cts|mts|tsx?)$/,
 				loader: require.resolve('swc-loader'),
 				options: SWC_CONFIG,

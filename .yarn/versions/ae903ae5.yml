@@ -1,0 +1,20 @@
+releases:
+  "@essex/babel-config": patch
+  "@essex/eslint-config": patch
+  "@essex/eslint-plugin": patch
+  "@essex/jest-config": patch
+  "@essex/scripts": patch
+  "@essex/storybook-config": patch
+  "@essex/swc-opts": patch
+  "@essex/test-lib-dual": patch
+  "@essex/test-lib-esm": patch
+  "@essex/test-lib-legacy": patch
+  "@essex/test-lib-md-index": patch
+  "@essex/test-stories": patch
+  "@essex/test-webapp-vite": patch
+  "@essex/test-webapp-webpack": patch
+  "@essex/test-webapp-webpack-custom-cjs": patch
+  "@essex/test-webapp-webpack-custom-esm": patch
+  "@essex/test-zips": patch
+  "@essex/vite-config": patch
+  "@essex/webpack-config": patch

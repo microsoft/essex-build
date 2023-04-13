@@ -1,6 +1,10 @@
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
+import { walk } from '../../util/walk.mjs'
 /* eslint-disable */
 import fs from 'fs/promises'
-import { walk } from '../../util/walk.mjs'
 
 const has = (l: string, search: string) => l.indexOf(search) !== -1
 const isLocalImport = (l: string) =>

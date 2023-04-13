@@ -28,11 +28,11 @@
     "@essex/scripts": "workspace:^",
     "@essex/tsconfig-base": "workspace:^",
     "@essex/vite-config": "workspace:^",
-    "@types/node": "^18.15.7",
-    "@types/react": "^18.0.29",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.35",
     "@types/react-dom": "^18.0.11",
-    "rimraf": "^4.4.1",
-    "typescript": "^5.0.2",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.0.4",
     "vite": "^4.2.1"
   }
 }

@@ -5,7 +5,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-ignore
 import crlf from 'crlf'
-import glob from 'glob'
+import { glob } from 'glob'
 
 /**
  * Fixes line endings to LF in the given file glob.

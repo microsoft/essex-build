@@ -6,8 +6,8 @@
 import { writeFileSync } from 'fs'
 
 import {
-	readTargetPackageJson,
 	TARGET_PACKAGE_JSON_PATH,
+	readTargetPackageJson,
 } from '../../util/package.mjs'
 import * as log from '../../util/tasklogger.mjs'
 import { copyConfigFile } from './util.mjs'

@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import glob from 'glob'
+import { glob } from 'glob'
 
 const SOURCE_GLOB = 'src/**/*.ts*'
 

@@ -6,7 +6,7 @@
 import archiver from 'archiver'
 import chalk from 'chalk'
 import { createWriteStream, existsSync, mkdirSync, promises as fs } from 'fs'
-import glob from 'glob'
+import { glob } from 'glob'
 // @ts-ignore
 import format from 'human-format'
 import { dirname, join, relative, resolve } from 'path'

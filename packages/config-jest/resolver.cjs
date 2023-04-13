@@ -8,7 +8,7 @@ module.exports = (request, options) => {
 	try {
 		return defaultResolver(request, options)
 	} catch (err) {
-		for (let ext of exts) {
+		for (const ext of exts) {
 			try {
 				return defaultResolver(request.replace(/\.js$/, ext), options)
 			} catch (err) {

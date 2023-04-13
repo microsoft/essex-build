@@ -2,9 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { initializeIcons, Toggle } from '@fluentui/react'
+import { Toggle, initializeIcons } from '@fluentui/react'
 import { loadById } from '@thematic/core'
-import { loadFluentTheme, ThematicFluentProvider } from '@thematic/fluent'
+import { ThematicFluentProvider, loadFluentTheme } from '@thematic/fluent'
 import { ApplicationStyles } from '@thematic/react'
 import { useCallback, useMemo, useState } from 'react'
 import styled, { ThemeProvider } from 'styled-components'

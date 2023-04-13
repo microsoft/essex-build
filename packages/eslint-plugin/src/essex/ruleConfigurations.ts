@@ -122,7 +122,9 @@ const importRules: Linter.RulesRecord = {
 
 	// Enforce ESM Extensions
 	'@essex/extensions': 'error',
+}
 
+export const importSortRules: Linter.RulesRecord = {
 	// https://github.com/lydell/eslint-plugin-simple-import-sort#usage
 	'simple-import-sort/imports': 'error',
 	'simple-import-sort/exports': 'error',
