@@ -45,7 +45,7 @@
 		"@storybook/react-webpack5": "^7.0.4",
 		"@storybook/theming": "^7.0.4",
 		"@thematic/color": "^4.0.5",
-		"@thematic/core": "^4.0.5",
+		"@thematic/core": "^4.0.7",
 		"@thematic/fluent": "^5.0.6",
 		"@thematic/react": "^2.1.7",
 		"@types/react": "^18.0.35",
