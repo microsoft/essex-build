@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@essex/tsconfig-node": "workspace:^",
-    "@types/lodash": "^4.14.192",
+    "@types/lodash": "^4.14.197",
     "@types/node": "^18.15.11",
     "rimraf": "^5.0.0",
     "typescript": "^5.0.4"
