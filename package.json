@@ -36,7 +36,7 @@
 		"@essex/prettier-config": "workspace:^",
 		"@essex/scripts": "workspace:^",
 		"@essex/tsconfig-node": "workspace:^",
-		"@essex/tsconfig-node14": "workspace:^",
+		"@essex/tsconfig-node18": "workspace:^",
 		"@types/jest": "^29.5.4",
 		"@typescript-eslint/eslint-plugin": "^6.4.1",
 		"@typescript-eslint/parser": "^6.4.1",

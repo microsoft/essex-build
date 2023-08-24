@@ -3,7 +3,7 @@
 	"extends": "@essex/tsconfig-base",
 	"display": "Essex Node 18",
 	"compilerOptions": {
-		// Node 14 Standards (https://stackoverflow.com/questions/61305578/what-typescript-configuration-produces-output-closest-to-node-js-14-capabilities)
+		// Node 18 Standards (https://stackoverflow.com/questions/61305578/what-typescript-configuration-produces-output-closest-to-node-js-14-capabilities)
 		// https://www.npmjs.com/package/@tsconfig/node14
 		"target": "ES2022",
 		"lib": ["ES2022"],

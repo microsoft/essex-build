@@ -14,7 +14,8 @@
 import './entry.mjs'
 
 if (!String.prototype.replaceAll) {
-	;(String as any).prototype.replaceAll = function replaceAll(
+	const target = String as any
+	target.prototype.replaceAll = function replaceAll(
 		this: string,
 		str: string | RegExp,
 		newStr: string,

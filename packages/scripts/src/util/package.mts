@@ -29,7 +29,7 @@ export interface PackageJsonData {
 		build?: string
 		clean?: string
 		start?: string
-		[key: string]: string | undefined
+		[scriptKey: string]: string | undefined
 	}
 	dependencies?: Record<string, string>
 	devDependencies?: Record<string, string>
@@ -38,7 +38,7 @@ export interface PackageJsonData {
 		import?: string
 		require?: string
 		types?: string
-		[key: string]: string | undefined
+		[exportskey: string]: string | undefined
 	}
 	type?: string
 	main?: string
@@ -48,7 +48,7 @@ export interface PackageJsonData {
 	essex?: {
 		exports?: Record<string, string>
 	}
-	['lint-staged']: Record<string, string[]>
+	'lint-staged': Record<string, string[]>
 }
 
 export async function readScriptsPackageJson(): Promise<PackageJsonData> {

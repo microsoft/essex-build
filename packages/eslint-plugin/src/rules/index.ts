@@ -5,7 +5,7 @@
 import adjacentAwait from './adjacent-await.js'
 import { extensionsRule } from './extensions.js'
 
-const rules = {
+const rules: Record<string, any> = {
 	'adjacent-await': adjacentAwait,
 	extensions: extensionsRule,
 }

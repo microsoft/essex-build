@@ -42,8 +42,7 @@ export async function executeCheck(
 	opts: CheckCommandOptions & { fix?: boolean },
 	files: string[] | undefined,
 ): Promise<void> {
-	files = files ?? DEFAULT_FILESET
-	const lint = eslint(opts.fix, opts.strict, files)
+	const lint = eslint(opts.fix, opts.strict, files ?? DEFAULT_FILESET)
 	const format = runFormatter(opts)
 
 	await Promise.all([lint, format])

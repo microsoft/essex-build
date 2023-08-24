@@ -8,11 +8,13 @@
 /* eslint-disable  @typescript-eslint/no-unsafe-argument */
 
 function findAncestorParentedByType(node: any, type: string): any {
-	while (node?.parent && node.parent.type !== type) {
-		node = node.parent
+	let target = node
+
+	while (target?.parent && target.parent.type !== type) {
+		target = node.parent
 	}
-	if (node.parent && node.parent.type === type) {
-		return node
+	if (target.parent && target.parent.type === type) {
+		return target
 	}
 }
 
@@ -97,7 +99,7 @@ const noAdjacentAwait = {
 
 				if (
 					node.parent &&
-					// eslint-disable-next-line no-prototype-builtins
+					// rome-ignore lint/suspicious/noPrototypeBuiltins: Need for Linter Rule
 					((node.parent.hasOwnProperty('shorthand') && node.parent.shorthand) ||
 						node.parent.type === 'VariableDeclarator' ||
 						node.parent.type === 'ArrayPattern')
@@ -128,7 +130,8 @@ const noAdjacentAwait = {
 				let hasAdjacentAsyncAwaits = false
 				node.body.forEach((statement: any) => {
 					if (statement.type === 'VariableDeclaration') {
-						;(statement.declarations || []).forEach((declaration: any) => {
+						const declarations = statement.declarations ?? []
+						declarations.forEach((declaration: any) => {
 							identifiersToIgnore.push(
 								...((definedIdentifiers.get(declaration) as any[]) || []),
 							)

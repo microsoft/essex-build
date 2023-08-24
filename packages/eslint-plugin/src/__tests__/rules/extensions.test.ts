@@ -3,12 +3,12 @@ import type { Rule, RuleTester as RT } from 'eslint'
 import { RuleTester } from 'eslint'
 import { readFileSync } from 'fs'
 import { basename, dirname, extname, relative, resolve } from 'path'
-import { fileURLToPath } from 'url'
+// import { fileURLToPath } from 'url'
 
 import { extensionsRule } from '../../rules/extensions.js'
 import { ExtensionMessageIds } from '../../rules/extensions.messages.js'
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
+// const __dirname = dirname(fileURLToPath(import.meta.url))
 
 /**
  * Arrange tests
