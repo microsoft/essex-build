@@ -1,5 +1,8 @@
 {
-	"recommendations": [
-		"arcanis.vscode-zipfs", "dbaeumer.vscode-eslint", "rome.rome"
-	]
+  "recommendations": [
+    "arcanis.vscode-zipfs",
+    "dbaeumer.vscode-eslint",
+    "rome.rome",
+    "esbenp.prettier-vscode"
+  ]
 }
