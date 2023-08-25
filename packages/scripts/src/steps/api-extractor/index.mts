@@ -2,7 +2,6 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-/* eslint-disable @essex/adjacent-await */
 import { ApiDocumenterCommandLine } from '@microsoft/api-documenter/lib/cli/ApiDocumenterCommandLine.js'
 import type { ExtractorResult, IConfigFile } from '@microsoft/api-extractor'
 import { Extractor, ExtractorConfig } from '@microsoft/api-extractor'

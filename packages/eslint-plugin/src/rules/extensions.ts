@@ -23,7 +23,7 @@ export const extensionsRule: TSESLint.RuleModule<
 		type: 'problem',
 		docs: ExtensionsDoc,
 		messages: ExtensionMessages,
-		schema: [extensionsArgSchema],
+		schema: [extensionsArgSchema as any],
 	},
 	/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */
 	defaultOptions: [defaultSettings as any],

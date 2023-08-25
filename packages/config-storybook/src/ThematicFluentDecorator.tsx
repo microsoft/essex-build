@@ -40,7 +40,7 @@ export const ThematicFluentDecorator = (storyFn: any) => {
 					}`}
 			</style>
 			<ApplicationStyles />
-			<Toggle label="Dark mode" checked={dark} onChange={handleDarkChange} />
+			<Toggle label='Dark mode' checked={dark} onChange={handleDarkChange} />
 			<Fluent9Provider theme={fluent9Theme}>
 				<StyledComponentsThemeProvider theme={fluent8Theme}>
 					<Container>{storyFn(undefined, undefined)}</Container>

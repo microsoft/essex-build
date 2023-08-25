@@ -11,10 +11,11 @@ export default function clean(program: Command): void {
 		.command('clean [files...]')
 		.description('cleans up build artifact directories')
 		.action(async (files: string[]) => {
+			let target = files
 			if (files.length === 0) {
-				files = ['lib', 'dist']
+				target = ['lib', 'dist']
 			}
 
-			await Promise.all(files.filter((f) => !!f).map((f) => rm(f)))
+			await Promise.all(target.filter((f) => !!f).map((f) => rm(f)))
 		})
 }

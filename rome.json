@@ -1,9 +1,15 @@
 {
-	"$schema": "./node_modules/rome/configuration_schema.json",
 	"files": {
 		"ignore": [
-			"dist", "lib", "build", "storybook-static", ".turbo", ".pnp.cjs",
-			".pnp.loader.mjs", "api-extractor.json", ".devcontainer/"
+			"dist",
+			"lib",
+			"build",
+			"storybook-static",
+			".turbo",
+			".pnp.cjs",
+			".pnp.loader.mjs",
+			"api-extractor.json",
+			".devcontainer/"
 		]
 	},
 	"organizeImports": {
