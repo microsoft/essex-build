@@ -47,7 +47,7 @@
     "crlf": "^1.1.1",
     "debug": "^4.3.4",
     "depcheck": "^1.4.5",
-    "eslint": "8.47.0",
+    "eslint": "8.48.0",
     "eslint-import-resolver-node": "^0.3.9",
     "glob": "^10.3.3",
     "human-format": "^1.2.0",
