@@ -26,7 +26,7 @@ const baselineRules: Linter.RulesRecord = {
 	'no-cond-assign': ['warn', 'except-parens'],
 	'no-eval': 'error',
 	'no-extend-native': 'error',
-	'no-extra-bind': 'error', 
+	'no-extra-bind': 'error',
 	'no-implied-eval': 'error',
 	'no-iterator': 'error',
 	'no-lone-blocks': 'error',
