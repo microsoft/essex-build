@@ -27,7 +27,6 @@ const RULES_WITH_ROME_EQUIVALENT: string[] = [
 	'constructor-super',
 	'eqeqeq',
 	'no-cond-assign',
-	'no-cond-assign',
 	'no-debugger',
 	'no-self-compare',
 	'no-sequences',
