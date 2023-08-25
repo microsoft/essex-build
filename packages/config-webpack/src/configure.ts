@@ -23,10 +23,10 @@ export function configure(config: Configuration = {}): WebpackConfiguration & {
 } {
 	// Check for ambient env/mode settings from @essex/scripts
 	if (config.env == null) {
-		config.env = process.env['__ESSEX_WEBPACK_CONFIG_ENV'] as string
+		config.env = process.env.__ESSEX_WEBPACK_CONFIG_ENV as string
 	}
 	if (config.mode == null) {
-		const mode = process.env['__ESSEX_WEBPACK_CONFIG_MODE'] as string
+		const mode = process.env.__ESSEX_WEBPACK_CONFIG_MODE as string
 		if (mode !== 'development' && mode !== 'production') {
 			throw new Error(
 				`invalid mode ${mode}; it must be either "development" or "production"`,

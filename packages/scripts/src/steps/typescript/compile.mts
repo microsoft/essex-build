@@ -2,7 +2,6 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-/* eslint-disable @essex/adjacent-await */
 import { getSwcOptions } from '@essex/swc-opts'
 import * as swc from '@swc/core'
 import fs from 'fs/promises'

@@ -2,7 +2,6 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-/* eslint-disable @essex/adjacent-await */
 import { existsSync } from 'fs'
 import fs from 'fs/promises'
 import { glob } from 'glob'

@@ -133,7 +133,6 @@ export const importSortRules: Linter.RulesRecord = {
 const essexPrefs: Linter.RulesRecord = {
 	'no-plusplus': 'off',
 	'header/header': [2, headerFile],
-	'@essex/adjacent-await': 'warn',
 	'no-inner-declarations': 'off',
 }
 
@@ -249,7 +248,4 @@ export const reactRules: Linter.RulesRecord = {
 export const jestRules: Linter.RulesRecord = {
 	// Jest @jest-environment directive cause header rule to fail
 	'header/header': 'off',
-
-	// Not helpful for tests where clarity > optimal flow. This rule also actively interferes with acceptance tests
-	'@essex/adjacent-await': 'off',
 }
