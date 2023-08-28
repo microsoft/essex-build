@@ -6,7 +6,8 @@ on:
       - 'main'
 
 env:
-  DEFAULT_NODE_VERSION: 16
+  DEFAULT_NODE_VERSION: 18
+
 jobs:
   update-lockfile:
     runs-on: ubuntu-latest
