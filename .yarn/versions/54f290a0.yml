@@ -1,5 +1,0 @@
-releases:
-  "@essex/storybook-config": minor
-
-declined:
-  - "@essex/test-stories"
