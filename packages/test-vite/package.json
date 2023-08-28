@@ -8,8 +8,8 @@
     "build": "tsc && vite build",
     "start:vite": "yarn start",
     "check-deps": "essex check-deps --ignore rimraf",
-    "check": "essex check --formatter none",
-    "fix": "essex fix --formatter none"
+    "check": "essex check",
+    "fix": "essex fix"
   },
   "repository": {
     "type": "git",

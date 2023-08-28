@@ -15,9 +15,9 @@
   "scripts": {
     "clean": "rimraf dist docsTemp",
     "build": "ESSEX_DEBUG=1 essex build --docs --mode dual",
-    "check": "essex check --formatter none",
+    "check": "essex check",
     "check-deps": "essex check-deps --ignore rimraf",
-    "fix": "essex fix --formatter none",
+    "fix": "essex fix",
     "jest": "NODE_OPTIONS=--experimental-vm-modules yarn node $(yarn bin jest) --runInBand",
     "start": "essex watch"
   },

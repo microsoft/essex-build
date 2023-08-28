@@ -29,8 +29,6 @@ const CONFIG_FILES_DOT = [
 	'eslintrc.json',
 	'gitignore',
 	'linstagedrc.json',
-	'prettierignore',
-	'prettierrc',
 ]
 const CONFIG_FILES_NODOT = [
 	'tsconfig.json',
@@ -118,7 +116,6 @@ async function configurePackageJsonForMonorepo(): Promise<number> {
 
 	-- Essex Configs --
 	@essex/scripts
-	@essex/prettier-config
 
 	-- Build Tooling --
 	npm-run-all 

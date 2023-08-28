@@ -10,7 +10,6 @@ import { executeCheck } from './_check.mjs'
 const restricted: Record<string, boolean> = {
 	'--fix': true,
 	'--strict': true,
-	'--formatter': true,
 	'--verbose': true,
 }
 export default function fix(program: Command): void {
@@ -19,10 +18,6 @@ export default function fix(program: Command): void {
 		.description('performs static analysis checks')
 		.option('-v, --verbose', 'verbose output')
 		.option('--strict', 'strict linting, warnings will cause failure')
-		.option(
-			'--formatter [formatter]',
-			'the formatter to use ("prettier" or "none")',
-		)
 		.action(async (files: string[], options: CheckCommandOptions = {}) => {
 			// for some reason CLI arguments were being picked up by the eslint core and throwing errors
 			process.argv = [...process.argv.filter((t) => !restricted[t])]
