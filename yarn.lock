@@ -3357,7 +3357,6 @@ __metadata:
     eslint-plugin-simple-import-sort: "npm:^10.0.0"
     lodash: "npm:^4.17.21"
     micromatch: "npm:^4.0.5"
-    prettier: "npm:^3.0.2"
     rimraf: "npm:^5.0.1"
     tslib: "npm:^2.6.2"
     typescript: "npm:^5.2.2"
@@ -3392,12 +3391,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@essex/prettier-config@workspace:^, @essex/prettier-config@workspace:packages/config-prettier":
-  version: 0.0.0-use.local
-  resolution: "@essex/prettier-config@workspace:packages/config-prettier"
-  languageName: unknown
-  linkType: soft
-
 "@essex/scripts@workspace:^, @essex/scripts@workspace:packages/scripts":
   version: 0.0.0-use.local
   resolution: "@essex/scripts@workspace:packages/scripts"
@@ -3420,7 +3413,6 @@ __metadata:
     "@types/lodash": "npm:^4.14.197"
     "@types/mime-types": "npm:^2.1.1"
     "@types/node": "npm:^20.5.6"
-    "@types/pretty-quick": "npm:^3.1.2"
     "@types/progress": "npm:^2.0.5"
     "@typescript-eslint/eslint-plugin": "npm:^6.4.1"
     "@typescript-eslint/parser": "npm:^6.4.1"
@@ -3439,8 +3431,6 @@ __metadata:
     lodash: "npm:^4.17.21"
     mime-types: "npm:^2.1.35"
     npm-run-all: "npm:^4.1.5"
-    prettier: "npm:^3.0.2"
-    pretty-quick: "npm:^3.1.3"
     progress: "npm:^2.0.3"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
@@ -3454,11 +3444,9 @@ __metadata:
   peerDependencies:
     "@essex/eslint-config": "workspace:^"
     "@essex/jest-config": "workspace:^"
-    "@essex/prettier-config": "workspace:^"
     "@typescript-eslint/eslint-plugin": ">= 5.46.1"
     "@typescript-eslint/parser": ">= 5.46.1"
     eslint-import-resolver-node: ">= 0.3.4"
-    lint-staged: "*"
     react: ">= 16.13.1"
     react-dom: ">= 16.13.1"
     typescript: ">= 4"
@@ -3468,15 +3456,11 @@ __metadata:
       optional: true
     "@essex/jest-config":
       optional: true
-    "@essex/prettier-config":
-      optional: true
     "@typescript-eslint/eslint-plugin":
       optional: true
     "@typescript-eslint/parser":
       optional: true
     eslint-import-resolver-node:
-      optional: true
-    lint-staged:
       optional: true
     react:
       optional: true
@@ -8915,26 +8899,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prettier@npm:^2.0.0":
-  version: 2.7.3
-  resolution: "@types/prettier@npm:2.7.3"
-  checksum: cda84c19acc3bf327545b1ce71114a7d08efbd67b5030b9e8277b347fa57b05178045f70debe1d363ff7efdae62f237260713aafc2d7217e06fc99b048a88497
-  languageName: node
-  linkType: hard
-
 "@types/pretty-hrtime@npm:^1.0.0":
   version: 1.0.1
   resolution: "@types/pretty-hrtime@npm:1.0.1"
   checksum: a6cdee417eea6f7af914e4fcd13e05822864ce10b5d7646525632e86d69b79123eec55a5d3fff0155ba46b61902775e1644bcb80e1e4dffdac28e7febb089083
-  languageName: node
-  linkType: hard
-
-"@types/pretty-quick@npm:^3.1.2":
-  version: 3.1.2
-  resolution: "@types/pretty-quick@npm:3.1.2"
-  dependencies:
-    "@types/prettier": "npm:^2.0.0"
-  checksum: 1768c70c8f33fbc07f9a38c7bb51d0921826a5bec0140ffa61da10733df2f29f1188147e8ba020d6e6f507a7862d7be3d547ff13acc19182b0fe710415d9862e
   languageName: node
   linkType: hard
 
@@ -11013,16 +10981,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "chalk@npm:3.0.0"
-  dependencies:
-    ansi-styles: "npm:^4.1.0"
-    supports-color: "npm:^7.1.0"
-  checksum: 37f90b31fd655fb49c2bd8e2a68aebefddd64522655d001ef417e6f955def0ed9110a867ffc878a533f2dafea5f2032433a37c8a7614969baa7f8a1cd424ddfc
-  languageName: node
-  linkType: hard
-
 "chalk@npm:^4.0.0, chalk@npm:^4.0.2, chalk@npm:^4.1.0, chalk@npm:^4.1.2":
   version: 4.1.2
   resolution: "chalk@npm:4.1.2"
@@ -13042,7 +13000,6 @@ __metadata:
     "@essex/eslint-config": "workspace:^"
     "@essex/eslint-plugin": "workspace:^"
     "@essex/jest-config": "workspace:^"
-    "@essex/prettier-config": "workspace:^"
     "@essex/scripts": "workspace:^"
     "@essex/tsconfig-node": "workspace:^"
     "@essex/tsconfig-node18": "workspace:^"
@@ -13054,7 +13011,6 @@ __metadata:
     eslint-import-resolver-node: "npm:^0.3.9"
     jest: "npm:^29.6.4"
     npm-run-all: "npm:^4.1.5"
-    prettier: "npm:^3.0.2"
     rome: "npm:^12.1.3"
     turbo: "npm:^1.10.13"
     typescript: "npm:^5.2.2"
@@ -13151,7 +13107,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"execa@npm:^4.0.0, execa@npm:^4.0.3":
+"execa@npm:^4.0.3":
   version: 4.1.0
   resolution: "execa@npm:4.1.0"
   dependencies:
@@ -14657,7 +14613,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ignore@npm:^5.1.4, ignore@npm:^5.1.8, ignore@npm:^5.2.0, ignore@npm:^5.2.4":
+"ignore@npm:^5.1.8, ignore@npm:^5.2.0, ignore@npm:^5.2.4":
   version: 5.2.4
   resolution: "ignore@npm:5.2.4"
   checksum: 4f7caf5d2005da21a382d4bd1d2aa741a3bed51de185c8562dd7f899a81a620ac4fd0619b06f7029a38ae79e4e4c134399db3bd0192c703c3ef54bb82df3086c
@@ -16927,7 +16883,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mri@npm:^1.1.5, mri@npm:^1.2.0":
+"mri@npm:^1.2.0":
   version: 1.2.0
   resolution: "mri@npm:1.2.0"
   checksum: 6775a1d2228bb9d191ead4efc220bd6be64f943ad3afd4dcb3b3ac8fc7b87034443f666e38805df38e8d047b29f910c3cc7810da0109af83e42c82c73bd3f6bc
@@ -16971,19 +16927,6 @@ __metadata:
   bin:
     multicast-dns: cli.js
   checksum: e9add8035fb7049ccbc87b1b069f05bb3b31e04fe057bf7d0116739d81295165afc2568291a4a962bee01a5074e475996816eed0f50c8110d652af5abb74f95a
-  languageName: node
-  linkType: hard
-
-"multimatch@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "multimatch@npm:4.0.0"
-  dependencies:
-    "@types/minimatch": "npm:^3.0.3"
-    array-differ: "npm:^3.0.0"
-    array-union: "npm:^2.1.0"
-    arrify: "npm:^2.0.1"
-    minimatch: "npm:^3.0.4"
-  checksum: bdb6a98dad4e919d9a1a2a0db872f44fa2337315f2fd5827d91ae005cf22f4425782bdfa97c10b80d567f0cb3c226c31f4e85f8f6a4a4be4facf9af0de1bb0c2
   languageName: node
   linkType: hard
 
@@ -18005,15 +17948,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "prettier@npm:3.0.2"
-  bin:
-    prettier: bin/prettier.cjs
-  checksum: 9d67f6f57be6e12fa82559f37689a47453d4a59334d88c490a0616d53de947215cdf3c145733f944057ba5158ea0e11524a2b24185c606e124474ca621baa73c
-  languageName: node
-  linkType: hard
-
 "pretty-error@npm:^4.0.0":
   version: 4.0.0
   resolution: "pretty-error@npm:4.0.0"
@@ -18050,24 +17984,6 @@ __metadata:
   version: 1.0.3
   resolution: "pretty-hrtime@npm:1.0.3"
   checksum: 0a462e88a0a3fd3320288fd8307f488974326ae8e13eea8c27f590f8ee767ccb59cf35bcae1cadff241cd8b72f3e373fc76ff1be95243649899bf8c816874af9
-  languageName: node
-  linkType: hard
-
-"pretty-quick@npm:^3.1.3":
-  version: 3.1.3
-  resolution: "pretty-quick@npm:3.1.3"
-  dependencies:
-    chalk: "npm:^3.0.0"
-    execa: "npm:^4.0.0"
-    find-up: "npm:^4.1.0"
-    ignore: "npm:^5.1.4"
-    mri: "npm:^1.1.5"
-    multimatch: "npm:^4.0.0"
-  peerDependencies:
-    prettier: ">=2.0.0"
-  bin:
-    pretty-quick: bin/pretty-quick.js
-  checksum: 95fb5df5a1b5168481c4723d9b4313e3632dcd5f5d45bbba1283005f44543e8b7fd32992d61d116116c83ff9745852f2bb6ea4eb92d8f979c877fffb0d50505a
   languageName: node
   linkType: hard
 

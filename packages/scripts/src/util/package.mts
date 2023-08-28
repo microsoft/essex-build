@@ -48,7 +48,6 @@ export interface PackageJsonData {
 	essex?: {
 		exports?: Record<string, string>
 	}
-	'lint-staged': Record<string, string[]>
 }
 
 export async function readScriptsPackageJson(): Promise<PackageJsonData> {

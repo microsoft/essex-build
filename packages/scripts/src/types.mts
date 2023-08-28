@@ -18,14 +18,3 @@ export enum BuildMode {
 	 */
 	esm = 'esm',
 }
-
-export enum Formatter {
-	/**
-	 * Use prettier to format code
-	 */
-	Prettier = 'prettier',
-	/**
-	 * Do not format code
-	 */
-	None = 'none',
-}

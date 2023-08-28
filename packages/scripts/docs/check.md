@@ -5,8 +5,6 @@ Performs static checks over a project. Run `essex check --help` for all options.
 # CLI Options
 
 - `--strict`<br/> enable strict checks. Warnings will result in a non-zero exit code.
-- `--formatter \[formatter\]`<br/> specify a formatter to use. Defaults to `prettier`. Possible values are `prettier`, `rome`, and `none`.
-
 
 # Details & Customization
 
