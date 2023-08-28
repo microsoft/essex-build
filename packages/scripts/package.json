@@ -85,7 +85,6 @@
     "@typescript-eslint/eslint-plugin": ">= 5.46.1",
     "@typescript-eslint/parser": ">= 5.46.1",
     "eslint-import-resolver-node": ">= 0.3.4",
-    "lint-staged": "*",
     "react": ">= 16.13.1",
     "react-dom": ">= 16.13.1",
     "typescript": ">= 4",
@@ -105,9 +104,6 @@
       "optional": true
     },
     "eslint-import-resolver-node": {
-      "optional": true
-    },
-    "lint-staged": {
       "optional": true
     },
     "react": {

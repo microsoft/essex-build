@@ -119,7 +119,6 @@ async function configurePackageJsonForMonorepo(): Promise<number> {
 
 	-- Build Tooling --
 	npm-run-all 
-	lint-staged 
 
 	-- Required for Jest testing --
 	@essex/babel-config
