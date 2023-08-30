@@ -4,10 +4,8 @@
  */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { createConfiguration } from './essex/createConfiguration.js'
-import rules from './rules/index.js'
 
 const defaultExport = {
-	rules,
 	configs: {
 		base: createConfiguration(true, false),
 		fast: createConfiguration(false, false),

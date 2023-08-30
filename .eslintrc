@@ -4,33 +4,5 @@
 		"@typescript-eslint/no-explicit-any": "off",
 		"import/no-unresolved": "off",
 		"import/named": "off"
-	},
-	"overrides": [
-		{
-			"files": "packages/test-vite/**",
-			"rules": {
-				"@essex/extensions": [
-					"error",
-					[
-						{
-							"expectedExtensions": [".js", ".css"]
-						}
-					]
-				]
-			}
-		},
-		{
-			"files": "packages/test-webpack*/**",
-			"rules": {
-				"@essex/extensions": [
-					"error",
-					[
-						{
-							"expectedExtensions": [".js", ".css"]
-						}
-					]
-				]
-			}
-		}
-	]
+	}
 }

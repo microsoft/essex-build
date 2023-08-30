@@ -9,7 +9,9 @@
 			".pnp.cjs",
 			".pnp.loader.mjs",
 			"api-extractor.json",
-			".devcontainer/"
+			".devcontainer/",
+			"tsconfig.esm.json",
+			"tsconfig.cjs.json"
 		]
 	},
 	"organizeImports": {

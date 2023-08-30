@@ -111,9 +111,6 @@ const importRules: Linter.RulesRecord = {
 	'import/extensions': 'off',
 	// use simple-import-sort
 	'import/order': 'off',
-
-	// Enforce ESM Extensions
-	'@essex/extensions': 'error',
 }
 
 export const importSortRules: Linter.RulesRecord = {

@@ -3687,7 +3687,7 @@ __metadata:
   dependencies:
     "@essex/jest-config": "workspace:^"
     "@essex/scripts": "workspace:^"
-    "@essex/tsconfig-node": "workspace:^"
+    "@essex/tsconfig-node18": "workspace:^"
     "@microsoft/api-documenter": "npm:^7.22.33"
     "@types/jest": "npm:^29.5.4"
     "@types/react": "npm:^18.2.21"
@@ -3706,7 +3706,7 @@ __metadata:
   dependencies:
     "@essex/jest-config": "workspace:^"
     "@essex/scripts": "workspace:^"
-    "@essex/tsconfig-node": "workspace:^"
+    "@essex/tsconfig-node18": "workspace:^"
     "@types/jest": "npm:^29.5.4"
     "@types/lodash-es": "npm:^4.17.9"
     "@types/react": "npm:^18.2.21"
