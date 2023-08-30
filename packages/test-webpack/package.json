@@ -21,14 +21,14 @@
     "@essex/test-lib-dual": "workspace:^",
     "@essex/test-lib-esm": "workspace:^",
     "@essex/test-lib-md-index": "workspace:^",
-    "@types/react": "^18.2.21",
-    "@types/react-dom": "^18.2.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rimraf": "^5.0.1"
   },
   "devDependencies": {
     "@essex/scripts": "workspace:^",
-    "@essex/tsconfig-base": "workspace:^"
+    "@essex/tsconfig-base": "workspace:^",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7"
   }
 }

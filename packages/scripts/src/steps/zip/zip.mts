@@ -7,7 +7,7 @@ import archiver from 'archiver'
 import chalk from 'chalk'
 import { createWriteStream, existsSync, mkdirSync, promises as fs } from 'fs'
 import { glob } from 'glob'
-import { humanFormat } from 'human-format'
+import humanFormat from 'human-format'
 import { dirname, join, relative, resolve } from 'path'
 import ProgressBar from 'progress'
 
@@ -142,10 +142,11 @@ async function archive(
 		reject = rej
 	})
 	output.on('close', () => {
+		const hf = humanFormat as any
 		console.log(
 			`archive complete - ${chalk.green(destination)} ${chalk.grey(
 				/* eslint-disable-next-line @typescript-eslint/no-unsafe-call */
-				humanFormat(archive.pointer(), {
+				hf(archive.pointer(), {
 					scale: 'binary',
 					unit: 'B',
 				}),
