@@ -1,0 +1,24 @@
+releases:
+  "@essex/babel-config": patch
+  "@essex/eslint-config": major
+  "@essex/eslint-plugin": major
+  "@essex/jest-config": minor
+  "@essex/scripts": patch
+  "@essex/storybook-config": minor
+  "@essex/swc-opts": patch
+  "@essex/tsconfig-base": minor
+  "@essex/tsconfig-node": minor
+  "@essex/tsconfig-node16": minor
+  "@essex/tsconfig-node18": minor
+  "@essex/vite-config": patch
+  "@essex/webpack-config": patch
+
+declined:
+  - "@essex/test-lib-dual"
+  - "@essex/test-lib-esm"
+  - "@essex/test-lib-md-index"
+  - "@essex/test-stories"
+  - "@essex/test-webapp-vite"
+  - "@essex/test-webapp-webpack"
+  - "@essex/test-webapp-webpack-custom"
+  - "@essex/test-zips"
