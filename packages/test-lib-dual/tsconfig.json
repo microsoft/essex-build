@@ -1,5 +1,5 @@
 {
-	"extends": "../config-ts-base/tsconfig",
+	"extends": "@essex/tsconfig-node",
 	"compilerOptions": {
 		"outDir": "lib",
 		"resolveJsonModule": true,

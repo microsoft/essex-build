@@ -58,9 +58,7 @@ export function executeWatch({
 			console.log(chalk.yellow(`    [${event}] ${path}`))
 			compileTypescript(stripInternalTypes, esmOnly)
 				.then(() => {
-					if (mode !== BuildMode.legacy) {
-						return processEsm(rewriteEsmToMjs, esmOnly ? 'dist' : 'dist/esm')
-					}
+					return processEsm(rewriteEsmToMjs, esmOnly ? 'dist' : 'dist/esm')
 				})
 				.then(() => {
 					/* nothing */

@@ -30,9 +30,9 @@
   "devDependencies": {
     "@essex/jest-config": "workspace:^",
     "@essex/scripts": "workspace:^",
-    "@essex/tsconfig-base": "workspace:^",
+    "@essex/tsconfig-node": "workspace:^",
     "@types/jest": "^29.5.4",
-    "@types/lodash-es": "^4.17.8",
+    "@types/lodash-es": "^4.17.9",
     "@types/react": "^18.2.21",
     "depcheck": "^1.4.5",
     "jest": "^29.6.4",

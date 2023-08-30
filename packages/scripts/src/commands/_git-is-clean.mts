@@ -12,7 +12,7 @@ export default function start(program: Command): void {
 		.command('git-is-clean')
 		.description('verifies that there are no active git changes')
 		.action(async () => {
-			const isDirty = isGitDirty()
+			const isDirty = isGitDirty.default()
 			if (isDirty) {
 				await $`git status`.pipe(process.stdout)
 			}

@@ -2,7 +2,9 @@
 	"name": "@essex/tsconfig-node18",
 	"version": "3.0.0",
 	"exports": {
-		".": "./tsconfig.json"
+		".": "./tsconfig.esm.json",
+		"./esm": "./tsconfig.esm.json",
+		"./cjs": "./tsconfig.cjs.json"
 	},
 	"scripts": {
 		"release": "yarn npm publish --tolerate-republish --access public"

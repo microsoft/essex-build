@@ -1,7 +1,6 @@
 {
-	"extends": "@essex/tsconfig-node",
+	"extends": "@essex/tsconfig-node/cjs",
 	"compilerOptions": {
-		"module": "CommonJS",
 		"outDir": "lib",
 		"jsx": "react-jsx",
 		"declaration": true

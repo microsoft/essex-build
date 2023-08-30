@@ -3,14 +3,10 @@
 	"extends": "@essex/tsconfig-base",
 	"display": "Essex Node 16",
 	"compilerOptions": {
-		// Node 14 Standards (https://stackoverflow.com/questions/61305578/what-typescript-configuration-produces-output-closest-to-node-js-14-capabilities)
+		// Node Standards (https://stackoverflow.com/questions/61305578/what-typescript-configuration-produces-output-closest-to-node-js-14-capabilities)
 		// https://www.npmjs.com/package/@tsconfig/node14
 		"target": "ES2021",
 		"lib": ["ES2021"],
-		"moduleResolution": "Node",
-
-		// Override w/ ESM if using ESM
-		"module": "CommonJS",
 
 		"allowSyntheticDefaultImports": true,
 		"esModuleInterop": true

@@ -1,7 +1,6 @@
 {
-	"extends": "@essex/tsconfig-node18",
+	"extends": "@essex/tsconfig-node18/cjs",
 	"compilerOptions": {
-		"module": "commonjs",
 		"outDir": "lib",
 		"declaration": true
 	},

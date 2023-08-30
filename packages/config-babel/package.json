@@ -21,7 +21,7 @@
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.18.6",
     "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
     "@babel/plugin-proposal-optional-chaining": "^7.21.0",
-    "@babel/preset-env": "^7.22.10",
+    "@babel/preset-env": "^7.22.14",
     "@babel/preset-react": "^7.22.5",
     "@babel/preset-typescript": "^7.22.11",
     "babel-plugin-transform-typescript-metadata": "^0.3.2",
@@ -30,8 +30,8 @@
   "devDependencies": {
     "@essex/tsconfig-node18": "workspace:^",
     "@swc/cli": "^0.1.62",
-    "@swc/core": "1.3.80",
-    "@types/node": "^20.5.6",
+    "@swc/core": "1.3.81",
+    "@types/node": "^20.5.7",
     "rimraf": "^5.0.1",
     "typescript": "^5.2.2"
   }

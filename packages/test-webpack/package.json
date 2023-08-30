@@ -2,6 +2,7 @@
   "name": "@essex/test-webapp-webpack",
   "version": "21.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "clean": "rimraf dist docsTemp build",
     "build": "essex bundle",
@@ -19,7 +20,6 @@
   "dependencies": {
     "@essex/test-lib-dual": "workspace:^",
     "@essex/test-lib-esm": "workspace:^",
-    "@essex/test-lib-legacy": "workspace:^",
     "@essex/test-lib-md-index": "workspace:^",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
