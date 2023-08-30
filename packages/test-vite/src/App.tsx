@@ -21,7 +21,6 @@ export const App: React.FC = memo(function App() {
 			<h2>webpack tester</h2>
 			<div>Dual: {a === 'a' ? '✅' : '❌'}</div>
 			<div>ESM:{b === 'b' ? '✅' : '❌'}</div>
-			<div>Legacy: {c === 'c' ? '✅' : '❌'}</div>
 			<div>Number: {number}</div>
 			<div>{docsContent}</div>
 		</div>

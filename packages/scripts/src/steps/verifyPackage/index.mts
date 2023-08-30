@@ -61,11 +61,6 @@ function verifyDualMode(pkg: PackageJsonData) {
 	}
 
 	const errors: string[] = []
-	invariant(
-		pkg.main === 'dist/cjs/index.js',
-		'pkg.main should be "dist/cjs/index.js" for legacy module support',
-		errors,
-	)
 	invariant(pkg.exports != null, 'package.exports should be an object', errors)
 	invariant(
 		pkg.exports?.import === './dist/esm/index.mjs',

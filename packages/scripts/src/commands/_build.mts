@@ -50,7 +50,7 @@ export default function build(program: Command): void {
 		)
 		.option('--skipPackageCheck', 'skips package.json verification check')
 		.option('--skipExportCheck', 'skips esm/cjs export check')
-		.option('--mode [mode]', 'options are "legacy", "dual", and "esm"')
+		.option('--mode [mode]', 'options are "dual" and "esm"')
 		.action(async (options: BuildCommandOptions): Promise<void> => {
 			await executeBuild(options)
 		})
