@@ -1,5 +1,5 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig",
-	"extends": "@essex/tsconfig-node18",
+	"extends": "@essex/tsconfig-node18/esm",
 	"display": "Essex Node"
 }

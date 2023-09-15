@@ -50,7 +50,7 @@ export default function build(program: Command): void {
 		)
 		.option('--skipPackageCheck', 'skips package.json verification check')
 		.option('--skipExportCheck', 'skips esm/cjs export check')
-		.option('--mode [mode]', 'options are "legacy", "dual", and "esm"')
+		.option('--mode [mode]', 'options are "dual" and "esm"')
 		.action(async (options: BuildCommandOptions): Promise<void> => {
 			await executeBuild(options)
 		})
@@ -64,7 +64,7 @@ export async function executeBuild({
 	mode = BuildMode.esm,
 }: BuildCommandOptions): Promise<void> {
 	const checkPackage = !skipPackageCheck
-	const checkExports = mode !== BuildMode.legacy && !skipExportCheck
+	const checkExports = !skipExportCheck
 	const rewriteEsmToMjs = mode === BuildMode.dual
 	const esmOnly = mode === BuildMode.esm
 	const cwd = process.cwd()
@@ -77,9 +77,7 @@ export async function executeBuild({
 	await compileTypescript(stripInternalTypes, esmOnly)
 	const generateDocs = docs ? generateApiExtractorReport() : noop()
 
-	if (mode !== BuildMode.legacy) {
-		await processEsm(rewriteEsmToMjs, esmOnly ? 'dist/' : 'dist/esm')
-	}
+	await processEsm(rewriteEsmToMjs, esmOnly ? 'dist/' : 'dist/esm')
 
 	if (checkPackage) await verifyPackage(mode)
 	if (checkExports) await verifyExports(esmOnly)

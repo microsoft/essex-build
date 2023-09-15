@@ -1,0 +1,13 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": "@essex/tsconfig-base",
+	"display": "Essex Node 18",
+	"compilerOptions": {
+		// Node Standards (https://stackoverflow.com/questions/72380007/what-typescript-configuration-produces-output-closest-to-node-js-18-capabilities/72380008#72380008)
+		"target": "ES2022",
+		"lib": ["ES2022"],
+
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true
+	}
+}

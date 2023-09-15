@@ -3,6 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
+
+import { defaultSwcConfig } from '@essex/swc-opts'
 import fs from 'fs'
 import path from 'path'
 import ResolveTypescriptPlugin from 'resolve-typescript-plugin'
@@ -27,30 +29,10 @@ export interface EssexStorybookConfig {
 	webpackFinal?: (config: WebpackConfig) => WebpackConfig
 }
 
-const DEFAULT_SWC_CONFIG = {
-	sourceMaps: true,
-	jsc: {
-		target: 'es2021',
-		parser: {
-			syntax: 'typescript',
-			tsx: true,
-			decorators: true,
-			dynamicImport: true,
-			importAssertions: true,
-		},
-		experimental: {
-			keepImportAssertions: true,
-		},
-		transform: {
-			react: { runtime: 'automatic', useBuiltins: true },
-		},
-	},
-}
-
 const SWCRC_FILE = path.join(process.cwd(), '.swcrc')
 const SWC_CONFIG = fs.existsSync(path.join(process.cwd(), '.swcrc'))
 	? JSON.parse(fs.readFileSync(SWCRC_FILE, { encoding: 'utf-8' }))
-	: DEFAULT_SWC_CONFIG
+	: defaultSwcConfig
 
 const DEFAULT_STORIES = [
 	/**

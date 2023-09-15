@@ -1,5 +1,5 @@
 {
-	"extends": "@essex/tsconfig-node",
+	"extends": "@essex/tsconfig-node/cjs",
 	"compilerOptions": {
 		"outDir": "lib",
 		"declaration": true,

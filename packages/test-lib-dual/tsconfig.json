@@ -1,5 +1,5 @@
 {
-	"extends": "../config-ts-base/tsconfig",
+	"extends": "../config-ts-node18/tsconfig.esm",
 	"compilerOptions": {
 		"outDir": "lib",
 		"resolveJsonModule": true,

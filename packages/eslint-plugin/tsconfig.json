@@ -1,8 +1,6 @@
 {
 	"extends": "@essex/tsconfig-node18",
 	"compilerOptions": {
-		"module": "NodeNext",
-		"moduleResolution": "NodeNext",
 		"outDir": "lib",
 		"declaration": true
 	},

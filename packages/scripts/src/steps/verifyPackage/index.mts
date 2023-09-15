@@ -22,9 +22,6 @@ export async function verifyPackage(mode: BuildMode) {
 		case BuildMode.esm:
 			verifyEsmMode(pkg, raw)
 			break
-		case BuildMode.legacy:
-			verifyLegacyMode(pkg)
-			break
 		default:
 			throw new Error(`unknown mode "${mode as string}"`)
 	}
@@ -64,11 +61,6 @@ function verifyDualMode(pkg: PackageJsonData) {
 	}
 
 	const errors: string[] = []
-	invariant(
-		pkg.main === 'dist/cjs/index.js',
-		'pkg.main should be "dist/cjs/index.js" for legacy module support',
-		errors,
-	)
 	invariant(pkg.exports != null, 'package.exports should be an object', errors)
 	invariant(
 		pkg.exports?.import === './dist/esm/index.mjs',
@@ -91,28 +83,6 @@ function verifyDualMode(pkg: PackageJsonData) {
 		errors,
 	)
 
-	if (errors.length > 0) {
-		throw new Error(note + errors.join('\n'))
-	}
-}
-
-function verifyLegacyMode(pkg: PackageJsonData) {
-	const errors: string[] = []
-	invariant(
-		pkg.main === 'dist/cjs/index.js',
-		'pkg.main should be "dist/cjs/index.js" for legacy module support',
-		errors,
-	)
-	invariant(
-		pkg.module === 'dist/esm/index.js',
-		'package.module should be "dist/esm/index.mjs"',
-		errors,
-	)
-	invariant(
-		pkg.types === 'dist/types/index.d.ts',
-		'package.types should be "dist/types/index.d.ts"',
-		errors,
-	)
 	if (errors.length > 0) {
 		throw new Error(note + errors.join('\n'))
 	}

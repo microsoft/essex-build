@@ -1,5 +1,5 @@
 {
-	"extends": "@essex/tsconfig-base",
+	"extends": "../config-ts-node18/tsconfig.esm",
 	"compilerOptions": {
 		"outDir": "dist/",
 		"resolveJsonModule": true,

@@ -1,5 +1,5 @@
 {
-	"extends": "@essex/tsconfig-node",
+	"extends": "@essex/tsconfig-node/cjs",
 	"compilerOptions": {
 		"module": "ES2020",
 		"outDir": "lib",

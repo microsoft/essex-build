@@ -29,7 +29,7 @@ export default function build(program: Command): void {
 			'--stripInternalTypes',
 			'strip out internal types from typings declarations',
 		)
-		.option('--mode [mode]', 'options are "legacy", "dual", and "esm"')
+		.option('--mode [mode]', 'options are "dual" and "esm"')
 		.action(async (options: WatchCommandOptions): Promise<void> => {
 			await executeWatch(options)
 		})
@@ -58,9 +58,7 @@ export function executeWatch({
 			console.log(chalk.yellow(`    [${event}] ${path}`))
 			compileTypescript(stripInternalTypes, esmOnly)
 				.then(() => {
-					if (mode !== BuildMode.legacy) {
-						return processEsm(rewriteEsmToMjs, esmOnly ? 'dist' : 'dist/esm')
-					}
+					return processEsm(rewriteEsmToMjs, esmOnly ? 'dist' : 'dist/esm')
 				})
 				.then(() => {
 					/* nothing */
