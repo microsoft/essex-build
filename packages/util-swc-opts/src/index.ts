@@ -61,6 +61,23 @@ function readSwcOverrides(): Partial<swc.Options> {
 	return get(pkg, 'essex.swc') as Partial<swc.Options>
 }
 
+export const defaultSwcConfig: swc.Config = {
+	sourceMaps: true,
+	jsc: {
+		target: 'es2021',
+		parser: {
+			syntax: 'typescript',
+			tsx: true,
+			decorators: true,
+			dynamicImport: true,
+			importAssertions: true,
+		} as swc.TsParserConfig,
+		transform: {
+			react: { runtime: 'automatic', useBuiltins: true },
+		},
+	},
+}
+
 /**
  * Determines the default SWC configuration. A utility may layer in its own defaults on top
  * of what's provided here
@@ -70,25 +87,5 @@ function readSwcOverrides(): Partial<swc.Options> {
 function determineDefaultSwcOptions(
 	base: Partial<swc.Config> | undefined,
 ): swc.Options {
-	const DEFAULT_SWC_CONFIG: swc.Config = {
-		sourceMaps: true,
-		jsc: {
-			target: 'es2021',
-			parser: {
-				syntax: 'typescript',
-				tsx: true,
-				decorators: true,
-				dynamicImport: true,
-				importAssertions: true,
-			} as swc.TsParserConfig,
-			experimental: {
-				keepImportAssertions: true,
-			},
-			transform: {
-				react: { runtime: 'automatic', useBuiltins: true },
-			},
-		},
-	}
-
-	return base != null ? merge(DEFAULT_SWC_CONFIG, base) : DEFAULT_SWC_CONFIG
+	return base != null ? merge(defaultSwcConfig, base) : defaultSwcConfig
 }

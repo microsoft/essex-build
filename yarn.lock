@@ -3583,6 +3583,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@essex/storybook-config@workspace:packages/config-storybook"
   dependencies:
+    "@essex/swc-opts": "workspace:^"
     "@essex/tsconfig-node": "workspace:^"
     "@fluentui/react": "npm:^8.111.2"
     "@fluentui/react-components": "npm:^9.31.1"
