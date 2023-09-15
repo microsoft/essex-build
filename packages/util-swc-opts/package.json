@@ -1,6 +1,6 @@
 {
   "name": "@essex/swc-opts",
-  "version": "21.0.0",
+  "version": "21.0.1",
   "description": "shared utility for generating swc configuration",
   "license": "MIT",
   "main": "lib/index.js",

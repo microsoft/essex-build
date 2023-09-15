@@ -1,6 +1,6 @@
 {
   "name": "@essex/webpack-config",
-  "version": "22.0.1",
+  "version": "22.0.2",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
