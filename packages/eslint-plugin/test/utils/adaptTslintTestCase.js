@@ -12,7 +12,7 @@ module.exports = function (testCasePath) {
 	let code = readFileSync(testCasePath).toString()
 	code = code.replace(
 		/(~+)\s+\[([^\]]+)\]/g,
-		function (instance, errorHighlight, message, offset) {
+		function (_instance, _errorHighlight, message, offset) {
 			const line = code.substring(0, offset).split('\n').length - 1
 			errors.push({
 				message,

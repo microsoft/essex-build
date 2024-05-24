@@ -7,11 +7,11 @@ module.exports = (request, options) => {
 		require('jest-resolve/build/defaultResolver').default
 	try {
 		return defaultResolver(request, options)
-	} catch (err) {
+	} catch (_err) {
 		for (const ext of exts) {
 			try {
 				return defaultResolver(request.replace(/\.js$/, ext), options)
-			} catch (err) {
+			} catch (_err) {
 				// do nothing
 			}
 		}

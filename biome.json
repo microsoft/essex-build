@@ -26,21 +26,27 @@
 		"enabled": true,
 		"rules": {
 			"recommended": true,
+			"correctness": {
+				"all": true
+			},
 			"complexity": {
 				"useLiteralKeys": "off",
 				"noForEach": "off",
 				"useArrowFunction": "off"
 			},
 			"suspicious": {
-				"noExplicitAny": "off"
+				"noExplicitAny": "off",
+				"noSkippedTests": "error"
 			},
 			"style": {
 				"noUselessElse": "off",
-				"useNodejsImportProtocol": "off"
+				"useNodejsImportProtocol": "off",
+				"noNamespace": "error"
 			}
 		}
 	},
 	"javascript": {
+		"globals": ["$", "React", "JSX", "describe", "it", "expect"],
 		"formatter": {
 			"semicolons": "asNeeded",
 			"quoteStyle": "single",
