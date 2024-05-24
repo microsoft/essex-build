@@ -86,7 +86,7 @@ export const tsRules: Linter.RulesRecord = {
 	// Conflicts with tsconfig paths, and with ts using es6 style imports e.g. (from './module.js')
 	'import/no-unresolved': 'off',
 
-	// let prettier handle semis
+	// let the formatter handle semis
 	'@typescript-eslint/no-extra-semi': 'off',
 
 	// Add TypeScript specific rules (and turn off ESLint equivalents)

@@ -20,23 +20,7 @@ The following static verification checks are performed when this command is invo
 
   - `<rootDir>/.eslintrc`<br/>
     `<rootDir>/.eslintignore`<br/>
-    Linting configuration may be overridden by defining this file. By default the `plugin:@essex/experiment` preset will be used for linting. Details on that preset can be found in this repository under `packages/eslint-config`. Essex projects should have an .eslintrc file that extends from `@essex/experiment` and enables or disables certain rules. This ruleset disables stylistic rules, and allows prettier-based tooling to manage those.
-
-- ## pretty-quick
-
-  ### Purpose
-
-  prettier performs automated code formatting. This check verifies that all code in the repository **would not be altered** by the formatter. This is useful in CI scenarios where we want to verify that all the source code matches our agreed-upon formatting specifications.
-
-  ### Customization
-
-  - `<rootDir>/.prettierrc` or `package.json::prettier`<br/>
-    Prettier can be configured using these standard vectors. Essex projects should use the default Essex prettier configuration
-
-    ```json
-    /* package.json */
-    "prettier": "@essex/prettier-config"
-    ```
+    Linting configuration may be overridden by defining this file. By default the `plugin:@essex/experiment` preset will be used for linting. Details on that preset can be found in this repository under `packages/eslint-config`. Essex projects should have an .eslintrc file that extends from `@essex/experiment` and enables or disables certain rules. This ruleset disables stylistic rules, and allows formatter tools to manage those.
 
 ### biome
 

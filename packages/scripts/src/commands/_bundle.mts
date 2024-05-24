@@ -14,7 +14,7 @@ interface BundleOptions {
 }
 
 /**
- * Runs the prettier tool to format client source code
+ * Use Webpack to perform a bundle operation.
  * @param program The CLI program
  */
 export default function bundle(program: Command): void {

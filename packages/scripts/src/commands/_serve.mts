@@ -12,7 +12,7 @@ interface ServeOptions {
 }
 
 /**
- * Runs the prettier tool to format client source code
+ * Use Webpack to serve a webpack-based application.
  * @param program The CLI program
  */
 export default function serve(program: Command): void {
