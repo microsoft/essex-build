@@ -46,7 +46,6 @@
 		}
 	},
 	"formatter": {
-		"indentStyle": "tab",
-		"lineEnding": "lf"
+		"indentStyle": "tab"
 	}
 }
