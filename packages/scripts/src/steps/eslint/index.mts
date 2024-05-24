@@ -1,8 +1,9 @@
-import { createRequire } from 'module'
 /*!
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+
+import { createRequire } from 'module'
 import { ESLint } from 'eslint'
 
 import { getConfigFile, getIgnorePath } from './config.mjs'

@@ -1,9 +1,10 @@
-import { promises as fs } from 'fs'
-import path from 'path'
 /*!
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+
+import { promises as fs } from 'fs'
+import path from 'path'
 import type { ContainerClient } from '@azure/storage-blob'
 import {
 	BlobServiceClient,

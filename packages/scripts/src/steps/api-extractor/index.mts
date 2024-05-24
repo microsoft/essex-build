@@ -1,10 +1,11 @@
-import { promises as fs, existsSync } from 'fs'
-import { createRequire } from 'module'
-import { dirname, resolve } from 'path'
 /*!
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+
+import { promises as fs, existsSync } from 'fs'
+import { createRequire } from 'module'
+import { dirname, resolve } from 'path'
 import { ApiDocumenterCommandLine } from '@microsoft/api-documenter/lib/cli/ApiDocumenterCommandLine.js'
 import type { ExtractorResult, IConfigFile } from '@microsoft/api-extractor'
 import { Extractor, ExtractorConfig } from '@microsoft/api-extractor'

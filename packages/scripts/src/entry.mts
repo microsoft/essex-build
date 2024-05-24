@@ -1,10 +1,11 @@
-import { readdirSync } from 'fs'
-import path from 'path'
-import { fileURLToPath } from 'url'
 /*!
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+
+import { readdirSync } from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
 import chalk from 'chalk'
 import type { Command } from 'commander'
 import { program } from 'commander'

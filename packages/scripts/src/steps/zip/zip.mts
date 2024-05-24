@@ -1,10 +1,11 @@
-import { promises as fs, createWriteStream, existsSync, mkdirSync } from 'fs'
-import { dirname, join, relative, resolve } from 'path'
 /*!
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
+
+import { promises as fs, createWriteStream, existsSync, mkdirSync } from 'fs'
+import { dirname, join, relative, resolve } from 'path'
 import archiver from 'archiver'
 import chalk from 'chalk'
 import { glob } from 'glob'

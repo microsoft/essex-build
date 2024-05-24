@@ -1,8 +1,9 @@
-import path from 'path'
 /*!
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+
+import path from 'path'
 import { getSwcOptions } from '@essex/swc-opts'
 import * as swc from '@swc/core'
 import fs from 'fs/promises'
