@@ -73,7 +73,9 @@ export async function deployBlob(
 		storageAccountKey,
 	)
 	const files: FileLocation[] = []
-	directories.forEach((dir) => files.push(...getFiles(dir)))
+	for (const dir of directories) {
+		files.push(...getFiles(dir))
+	}
 
 	for (const fileObj of files) {
 		if (verbose) {

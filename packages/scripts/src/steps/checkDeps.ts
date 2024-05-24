@@ -70,12 +70,12 @@ export function checkDeps({ ignore = [] }: { ignore?: string[] }) {
 		) {
 			return
 		}
-		unused.dependencies.forEach((d) => {
+		for (const d of unused.dependencies) {
 			subtaskFail(`unused dependency: ${d}`)
-		})
-		unused.devDependencies.forEach((d) => {
+		}
+		for (const d of unused.devDependencies) {
 			subtaskFail(`unused dev-dependency: ${d}`)
-		})
+		}
 		throw new Error('unused dependencies detected')
 	})
 }

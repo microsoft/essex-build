@@ -43,7 +43,9 @@ export async function zip(
 
 	info(`including ${fileEntries.length} files`)
 	if (isDebug()) {
-		fileEntries.forEach((e) => traceFile(e, 'zip'))
+		for (const e of fileEntries) {
+			traceFile(e, 'zip')
+		}
 	}
 	await archive(destination, fileEntries, baseDir)
 }
@@ -65,7 +67,9 @@ async function getFileEntries(
 		const filteredFiles = foundFiles.filter((_t, i) => isIncluded[i])
 
 		if (isDebug()) {
-			filteredFiles.forEach((f) => traceFile(f, `expand ${source}`))
+			for (const f of filteredFiles) {
+				traceFile(f, `expand ${source}`)
+			}
 		}
 		result.push(...filteredFiles)
 	}

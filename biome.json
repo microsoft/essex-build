@@ -30,7 +30,7 @@
 				"all": true
 			},
 			"complexity": {
-				"noForEach": "off"
+				"all": true
 			},
 			"suspicious": {
 				"noExplicitAny": "off",

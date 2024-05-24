@@ -46,12 +46,12 @@ function getMarkdownFiles(include: string): Promise<string[]> {
 function writeIndex(imports: string[]): Promise<void> {
 	let importsArea = ''
 	let mapArea = 'const index = {};\n'
-	imports.forEach((imp) => {
+	for (const imp of imports) {
 		const impVar = imp.replace(/\//g, '_')
 		const impKey = imp.replace(/\//g, '.')
 		importsArea += `import { default as ${impVar} } from './${imp}.js'\n`
 		mapArea += `index['${impKey}'] = ${impVar};\n`
-	})
+	}
 
 	const indexJsContent = `${importsArea}
 ${mapArea}

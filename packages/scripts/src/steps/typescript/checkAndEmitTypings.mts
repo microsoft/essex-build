@@ -38,7 +38,7 @@ export async function checkAndEmitTypings(
 		.concat(emitResult.diagnostics)
 
 	let hasErrors = false
-	allDiagnostics.forEach((diagnostic) => {
+	for (const diagnostic of allDiagnostics) {
 		if (diagnostic.file && diagnostic.start) {
 			if (diagnostic.category === ts.DiagnosticCategory.Error) {
 				hasErrors = true
@@ -61,7 +61,7 @@ export async function checkAndEmitTypings(
 		} else {
 			console.log(ts.flattenDiagnosticMessageText(diagnostic.messageText, '\n'))
 		}
-	})
+	}
 
 	if (hasErrors) {
 		subtaskFail('check types')
