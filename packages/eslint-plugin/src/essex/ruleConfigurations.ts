@@ -13,8 +13,19 @@ import { msHeader } from '../essex/msHeader.js'
 const HEADER_OVERRIDE = join(process.cwd(), 'header.js')
 const headerFile = existsSync(HEADER_OVERRIDE) ? HEADER_OVERRIDE : msHeader
 
+// https://eslint.org/docs/latest/rules/
 const baselineRules: Linter.RulesRecord = {
-	// http://eslint.org/docs/rules/
+	// Recommended rules not covered by Biome
+	"no-constant-binary-expression": "error",
+	"no-invalid-regexp": "error",
+	"no-irregular-whitespace": "error",
+	"no-unexpected-multiline": "error",
+	"no-useless-backreference": "error",
+	"no-nonoctal-decimal-escape": "error",
+	"no-octal": "error",
+	"no-useless-escape": "error",
+	
+	// Rules we like
 	'array-callback-return': 'error',
 	'no-caller': 'error',
 	'no-extend-native': 'error',
@@ -22,39 +33,12 @@ const baselineRules: Linter.RulesRecord = {
 	'no-implied-eval': 'error',
 	'no-iterator': 'error',
 	'no-loop-func': 'error',
-	'no-multi-str': 'error',
 	'no-new-func': 'error',
-	'no-new-object': 'error',
 	'no-new-wrappers': 'error',
-	'no-octal-escape': 'error',
-	'no-restricted-syntax': ['error', 'WithStatement'],
 	'no-script-url': 'error',
 	'no-template-curly-in-string': 'warn',
 	'no-throw-literal': 'error',
-	'no-unused-expressions': [
-		'error',
-		{
-			allowShortCircuit: true,
-			allowTernary: true,
-			allowTaggedTemplates: true,
-		},
-	],
 	'no-useless-concat': 'warn',
-	'no-restricted-properties': [
-		'error',
-		{
-			object: 'require',
-			property: 'ensure',
-			message:
-				'Please use import() instead. More info: https://facebook.github.io/create-react-app/docs/code-splitting',
-		},
-		{
-			object: 'System',
-			property: 'import',
-			message:
-				'Please use import() instead. More info: https://facebook.github.io/create-react-app/docs/code-splitting',
-		},
-	],
 }
 const importRules: Linter.RulesRecord = {
 	// https://github.com/benmosher/eslint-plugin-import/tree/master/docs/rules
@@ -82,30 +66,8 @@ export const defaultRules: Linter.RulesRecord = {
 // If adding a typescript-eslint version of an existing ESLint rule,
 // make sure to disable the ESLint rule here.
 export const tsRules: Linter.RulesRecord = {
-	'@typescript-eslint/interface-name-prefix': 'off',
 	// Conflicts with tsconfig paths, and with ts using es6 style imports e.g. (from './module.js')
 	'import/no-unresolved': 'off',
-
-	// let the formatter handle semis
-	'@typescript-eslint/no-extra-semi': 'off',
-
-	// Add TypeScript specific rules (and turn off ESLint equivalents)
-	'@typescript-eslint/consistent-type-assertions': 'warn',
-	'no-array-constructor': 'off',
-	'@typescript-eslint/no-array-constructor': 'warn',
-	'no-unused-expressions': 'off',
-	'@typescript-eslint/no-unused-expressions': [
-		'error',
-		{
-			allowShortCircuit: true,
-			allowTernary: true,
-			allowTaggedTemplates: true,
-		},
-	],
-	// TypeScript's `noFallthroughCasesInSwitch` option is more robust (#6906)
-	'default-case': 'off',
-	// TS/ESlint clashing
-	'@typescript-eslint/no-unnecessary-type-assertion': 0,
 }
 
 export const reactRules: Linter.RulesRecord = {
@@ -113,10 +75,6 @@ export const reactRules: Linter.RulesRecord = {
 	'react/react-in-jsx-scope': 'off',
 	// https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
 	'react/forbid-foreign-prop-types': ['warn', { allowInPropTypes: true }],
-	'react/jsx-no-comment-textnodes': 'warn',
-	'react/jsx-no-duplicate-props': 'warn',
-	'react/jsx-no-target-blank': 'warn',
-	'react/jsx-no-undef': 'error',
 	'react/jsx-pascal-case': [
 		'warn',
 		{
@@ -124,23 +82,37 @@ export const reactRules: Linter.RulesRecord = {
 			ignore: [],
 		},
 	],
-	'react/jsx-uses-react': 'warn',
-	'react/jsx-uses-vars': 'warn',
-	'react/no-danger-with-children': 'warn',
-	// Disabled because of undesirable warnings
-	// See https://github.com/facebook/create-react-app/issues/5204 for
-	// blockers until its re-enabled
-	// 'react/no-deprecated': 'warn',
-	'react/no-direct-mutation-state': 'warn',
-	'react/no-is-mounted': 'warn',
 	'react/no-typos': 'error',
-	'react/require-render-return': 'error',
 	'react/style-prop-object': 'warn',
-
 	'react-hooks/exhaustive-deps': 'warn',
 	// https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks
 	'react-hooks/rules-of-hooks': 'error',
 	'react/prop-types': 'off',
+}
+
+// These rules are handled by Biome (https://github.com/biomejs/biome/discussions/3), and are included in recommendations.
+export const biomeDisablesJS: Linter.RulesRecord = {
+	// These rules are in eslint-plugin-react/recommended (https://github.com/jsx-eslint/eslint-plugin-react/blob/master/configs/recommended.js)
+	'react/jsx-key': 'off',
+	'react/jsx-no-comment-textnodes': 'off',
+	'react/jsx-no-duplicate-props': 'off',
+	'react/jsx-no-target-blank': 'off',
+	'react/jsx-no-undef': 'off',
+	'react/no-children-prop': 'off',
+	'react/no-danger-with-children': 'off',
+}
+
+// These rules are handled by Biome (https://github.com/biomejs/biome/discussions/3), and are included in recommendations.
+export const biomeDisablesTS: Linter.RulesRecord = {
+	// These rules are in @typescript-eslint/recommended (https://typescript-eslint.io/rules/?=recommended)
+	'@typescript-eslint/ban-types': 'off',
+	'@typescript-eslint/no-explicit-any': 'off',
+	'@typescript-eslint/no-extra-non-null-assertion': 'off',
+	'@typescript-eslint/no-misused-new': 'off',
+	'@typescript-eslint/no-namespace': 'off',
+	'@typescript-eslint/no-this-alias': 'off',
+	'@typescript-eslint/no-unsafe-declaration-merging': 'off',
+	'@typescript-eslint/prefer-as-const': 'off',
 }
 
 export const jestRules: Linter.RulesRecord = {

@@ -10,6 +10,8 @@ import {
 	jestRules,
 	reactRules,
 	tsRules,
+	biomeDisablesJS,
+	biomeDisablesTS,
 } from './ruleConfigurations.js'
 
 export function typescriptOverride(
@@ -24,7 +26,13 @@ export function typescriptOverride(
 			'plugin:import/typescript',
 			'plugin:@typescript-eslint/recommended',
 		],
-		rules: { ...defaultRules, ...reactRules, ...tsRules },
+		rules: {
+			...defaultRules,
+			...reactRules,
+			...tsRules,
+			...biomeDisablesJS,
+			...biomeDisablesTS,
+		},
 	}
 
 	if (useTypeAwareLinting) {
@@ -41,7 +49,7 @@ export function javascriptOverride(): Linter.ConfigOverride {
 		parserOptions: {
 			requireConfigFile: false,
 		},
-		rules: { ...defaultRules, ...reactRules },
+		rules: { ...defaultRules, ...reactRules, ...biomeDisablesJS },
 	}
 }
 
