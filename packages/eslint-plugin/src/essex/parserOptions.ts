@@ -2,8 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import type { Linter } from 'eslint'
+
 import { existsSync } from 'fs'
+import type { Linter } from 'eslint'
 
 export function typescriptParserOptions(
 	useTypeAwareLinting: boolean,

@@ -6,8 +6,8 @@
 import { writeFile } from 'fs/promises'
 
 import {
-	readTargetPackageJson,
 	TARGET_PACKAGE_JSON_PATH,
+	readTargetPackageJson,
 } from '../../util/package.mjs'
 import * as log from '../../util/tasklogger.mjs'
 import { copyConfigFile } from './util.mjs'
@@ -64,7 +64,7 @@ export function initLib(): Promise<number> {
 				configurePackageJsonForLib(),
 			]),
 		)
-		.then(results => {
+		.then((results) => {
 			const result = results.reduce((a, b) => a + b, 0)
 			if (result > 0) {
 				log.info(INIT_MSG_FAIL)

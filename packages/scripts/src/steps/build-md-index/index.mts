@@ -3,9 +3,9 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 import { existsSync } from 'fs'
+import path from 'path'
 import fs from 'fs/promises'
 import { glob } from 'glob'
-import path from 'path'
 
 export async function buildMdIndex(include: string): Promise<void> {
 	const indexImports: string[] = []
@@ -19,7 +19,7 @@ export async function buildMdIndex(include: string): Promise<void> {
 
 		indexImports.push(
 			path
-				.join(outputDir.replace("dist", ''), indexFilePath)
+				.join(outputDir.replace('dist', ''), indexFilePath)
 				.replace(/^\//, ''),
 		)
 
@@ -46,7 +46,7 @@ function getMarkdownFiles(include: string): Promise<string[]> {
 function writeIndex(imports: string[]): Promise<void> {
 	let importsArea = ''
 	let mapArea = 'const index = {};\n'
-	imports.forEach(imp => {
+	imports.forEach((imp) => {
 		const impVar = imp.replace(/\//g, '_')
 		const impKey = imp.replace(/\//g, '.')
 		importsArea += `import { default as ${impVar} } from './${imp}.js'\n`

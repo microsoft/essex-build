@@ -7,7 +7,6 @@ import type { Linter } from 'eslint'
 import { typescriptParserOptions } from './parserOptions.js'
 import {
 	defaultRules,
-	importSortRules,
 	jestRules,
 	reactRules,
 	tsRules,
@@ -53,9 +52,6 @@ export function typescriptOverride(
 			'plugin:@typescript-eslint/recommended',
 		],
 		rules: { ...defaultRules, ...reactRules, ...tsRules },
-	}
-	if (!useRome) {
-		result.rules = { ...result.rules, ...importSortRules }
 	}
 
 	if (useTypeAwareLinting) {

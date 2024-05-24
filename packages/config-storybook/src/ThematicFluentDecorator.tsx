@@ -2,6 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+
 import { Toggle, initializeIcons } from '@fluentui/react'
 import {
 	FluentProvider as Fluent9Provider,
@@ -22,6 +23,7 @@ import styled, {
 } from 'styled-components'
 
 initializeIcons()
+
 /**
  * ThematicFluentDecorator configures both Thematic and the Fluent wrapper
  * @param storyFn
@@ -40,7 +42,7 @@ export const ThematicFluentDecorator = (storyFn: any) => {
 					}`}
 			</style>
 			<ApplicationStyles />
-			<Toggle label='Dark mode' checked={dark} onChange={handleDarkChange} />
+			<Toggle label="Dark mode" checked={dark} onChange={handleDarkChange} />
 			<Fluent9Provider theme={fluent9Theme}>
 				<StyledComponentsThemeProvider theme={fluent8Theme}>
 					<Container>{storyFn(undefined, undefined)}</Container>

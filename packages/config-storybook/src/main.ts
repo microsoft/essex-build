@@ -2,11 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 
-import { defaultSwcConfig } from '@essex/swc-opts'
 import fs from 'fs'
 import path from 'path'
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import { defaultSwcConfig } from '@essex/swc-opts'
 import ResolveTypescriptPlugin from 'resolve-typescript-plugin'
 import type { Configuration as WebpackConfig } from 'webpack'
 
