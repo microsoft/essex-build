@@ -5,15 +5,10 @@
 import essexWebpackConfig from '@essex/webpack-config'
 
 const configuration = essexWebpackConfig.configure({
-	environment: (mode, env) => {
-		if (mode !== 'production') {
-			throw new Error('expected production mode')
-		}
-		if (env !== 'production') {
-			throw new Error('expected production env')
-		}
+	environment: (_mode, _env) => {
 		return {
-			testApi: 'http://localhost:8080',
+			// biome-ignore lint/style/useNamingConvention: env var
+			TEST_API: 'http://localhost:8080',
 		}
 	},
 })

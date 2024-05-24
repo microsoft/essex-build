@@ -23,12 +23,12 @@
 		"@swc/core": "^1.5.7",
 		"hsluv": "^1.0.1",
 		"react-docgen-typescript": "^2.2.2",
-		"react-is": "^18.2.0",
+		"react-is": "^18.3.1",
 		"resolve-typescript-plugin": "^2.0.1",
 		"storybook": "^7.4.2",
 		"swc-loader": "^0.2.6",
 		"tslib": "^2.6.2",
-		"webpack": "^5.88.2"
+		"webpack": "^5.91.0"
 	},
 	"devDependencies": {
 		"@essex/tsconfig-node": "workspace:^",
@@ -51,13 +51,13 @@
 		"@thematic/react": "^2.1.9",
 		"@types/react": "^18.2.21",
 		"@types/webpack": "^5.28.2",
-		"react": "^18.2.0",
-		"react-is": "^18.2.0",
+		"react": "^18.3.1",
+		"react-is": "^18.3.1",
 		"require-from-string": "^2.0.2",
-		"rimraf": "^5.0.1",
-		"scheduler": "^0.23.0",
+		"rimraf": "^5.0.7",
+		"scheduler": "^0.23.2",
 		"storybook": "^7.4.2",
-		"styled-components": "^6.0.8",
+		"styled-components": "^6.1.11",
 		"typescript": "^5.2.2"
 	},
 	"peerDependencies": {

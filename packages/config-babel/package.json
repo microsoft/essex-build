@@ -32,7 +32,7 @@
     "@swc/cli": "^0.3.12",
     "@swc/core": "1.5.7",
     "@types/node": "^20.6.1",
-    "rimraf": "^5.0.1",
+    "rimraf": "^5.0.7",
     "typescript": "^5.2.2"
   }
 }
