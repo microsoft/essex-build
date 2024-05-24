@@ -24,9 +24,6 @@ export function createConfiguration(
 ): Linter.Config & { overrides: Linter.ConfigOverride[] } {
 	const useTypeAwareLinting = getTypeAwareSetting(useTypeAwareLintingArg)
 	const plugins = ['@essex/eslint-plugin', 'header', 'import', 'react-hooks']
-	if (!useRome) {
-		plugins.push('simple-import-sort')
-	}
 
 	return {
 		root: true,
