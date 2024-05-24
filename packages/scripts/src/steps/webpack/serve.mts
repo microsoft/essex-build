@@ -37,16 +37,16 @@ export async function webpackServe({
 			})
 			function finish(signal: string) {
 				return function handleSignal() {
-					console.info(`received exit signal (${signal}), shutting down...`)
-					server.close(() => {
-						resolve()
-						process.exit()
-					})
+					console.warn(`received exit signal (${signal}), shutting down...`)
+					server
+						.stop()
+						.then(() => resolve())
+						.then(() => process.exit())
 				}
 			}
 			EXIT_SIGNALS.forEach(finish)
 		} catch (err) {
-			console.info('error running webpack serve', err)
+			console.error('error running webpack serve', err)
 			reject(err)
 		}
 	})
