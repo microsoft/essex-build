@@ -153,7 +153,7 @@ async function archive(
 	})
 	output.on('close', () => {
 		const hf = humanFormat as any
-		console.log(
+		console.info(
 			`archive complete - ${chalk.green(destination)} ${chalk.grey(
 				/* eslint-disable-next-line @typescript-eslint/no-unsafe-call */
 				hf(archive.pointer(), {

@@ -24,11 +24,11 @@ const commandDir = path.join(__dirname, '/commands')
 function establishErrorHandlers(): void {
 	process
 		.on('unhandledRejection', (reason, p) => {
-			console.log(reason, 'unhandled promise rejection', p)
+			console.error(reason, 'unhandled promise rejection', p)
 			process.exit(1)
 		})
 		.on('uncaughtException', (err) => {
-			console.log(err, 'uncaught exception')
+			console.error(err, 'uncaught exception')
 			process.exit(1)
 		})
 }
@@ -103,6 +103,6 @@ async function execute(): Promise<number> {
 execute()
 	.then((code) => exit(code))
 	.catch((err) => {
-		console.log(err)
+		console.error(err)
 		exit(1)
 	})

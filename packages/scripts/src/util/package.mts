@@ -51,11 +51,11 @@ export interface PackageJsonData {
 	}
 }
 
-export async function readScriptsPackageJson(): Promise<PackageJsonData> {
+export function readScriptsPackageJson(): Promise<PackageJsonData> {
 	return readPackageJson(SCRIPTS_PACKAGE_JSON_PATH)
 }
 
-export async function readTargetPackageJson(): Promise<PackageJsonData> {
+export function readTargetPackageJson(): Promise<PackageJsonData> {
 	return readPackageJson(TARGET_PACKAGE_JSON_PATH)
 }
 

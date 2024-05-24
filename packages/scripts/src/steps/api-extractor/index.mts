@@ -67,7 +67,7 @@ async function runExtractor() {
 	})
 
 	if (extractorResult.succeeded) {
-		console.log('API Extractor completed successfully')
+		console.info('API Extractor completed successfully')
 		if (extractorResult.apiReportChanged) {
 			console.warn(
 				`Public API has changed. New API report in ${extractorConfig.reportFilePath}.`,

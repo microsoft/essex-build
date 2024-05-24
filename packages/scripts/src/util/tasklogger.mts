@@ -7,46 +7,46 @@ import { performance } from 'node:perf_hooks'
 import chalk from 'chalk'
 
 export function info(text: string, ...args: unknown[]): void {
-	console.log(chalk.white(text), ...args)
+	console.info(chalk.white(text), ...args)
 }
 
 export function error(text: string, ...args: unknown[]): void {
-	console.log(chalk.red(text), ...args)
+	console.error(chalk.red(text), ...args)
 }
 
 export function warn(text: string, ...args: unknown[]): void {
-	console.log(chalk.yellow.bold(text), ...args)
+	console.warn(chalk.yellow.bold(text), ...args)
 }
 
 export function success(text: string, ...args: unknown[]): void {
-	console.log(chalk.green(`🎉 ${text}`), ...args)
+	console.info(chalk.green(`🎉 ${text}`), ...args)
 }
 
 export function fail(text: string, ...args: unknown[]): void {
-	console.log(chalk.red(`🔥 ${text}`), ...args)
+	console.info(chalk.red(`🔥 ${text}`), ...args)
 }
 
 export function subtask(text: string): void {
-	console.log(chalk.cyan(`  * ${text}`))
+	console.info(chalk.cyan(`  * ${text}`))
 }
 
 export function subtaskInfo(text: string): void {
-	console.log(chalk.white(`    - ${text}`))
+	console.info(chalk.white(`    - ${text}`))
 }
 
 export function subtaskFail(text: string, err?: Error | undefined): void {
 	if (err) {
 		console.error(err)
 	}
-	console.log(chalk.red(`    ✘ ${text}`))
+	console.info(chalk.red(`    ✘ ${text}`))
 }
 
 export function subtaskSuccess(text: string, ...args: unknown[]): void {
-	console.log(chalk.green(`    ✔ ${text}`), ...args)
+	console.info(chalk.green(`    ✔ ${text}`), ...args)
 }
 
 export function subtaskComplete(): void {
-	console.log(chalk.green('      ✔ Complete'))
+	console.info(chalk.green('      ✔ Complete'))
 }
 
 export function printPerf(start = 0, end = performance.now()): string {

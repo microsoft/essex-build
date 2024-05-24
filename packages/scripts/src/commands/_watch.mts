@@ -57,7 +57,7 @@ export function executeWatch({
 			initialAddsComplete = true
 		}
 		if (initialAddsComplete) {
-			console.log(chalk.yellow(`    [${event}] ${path}`))
+			console.info(chalk.yellow(`    [${event}] ${path}`))
 			compileTypescript(stripInternalTypes, esmOnly)
 				.then(() => {
 					return processEsm(rewriteEsmToMjs, esmOnly ? 'dist' : 'dist/esm')

@@ -22,7 +22,7 @@ export async function webpackBuild(
 						subtaskFail('webpack')
 						reject(err)
 					} else {
-						console.log(stats?.toString({ colors: true }))
+						console.info(stats?.toString({ colors: true }))
 						if (stats?.hasErrors()) {
 							subtaskFail('webpack')
 							reject('compilation errors')
@@ -35,7 +35,7 @@ export async function webpackBuild(
 			)
 		})
 	} catch (err) {
-		console.log('error running webpack build', err)
+		console.error('error running webpack build', err)
 		return Promise.reject(err)
 	}
 }

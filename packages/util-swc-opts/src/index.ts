@@ -18,7 +18,7 @@ export function getSwcOptions(base?: Partial<swc.Config>): swc.Config {
 	const defaultSwcOptions = determineDefaultSwcOptions(base)
 	const swcOverrides = readSwcOverrides()
 	if (isDebug()) {
-		console.log(
+		console.info(
 			swcOverrides != null
 				? 'applying essex.swc overrides'
 				: 'using default swc configuration',
@@ -46,7 +46,7 @@ function readCustomSwcrc(): swc.Options {
 	const swcrc = readFileSync(SWCRC_FILE, 'utf8')
 	const result = JSON.parse(swcrc) as Record<string, unknown>
 	if (isDebug()) {
-		console.log('using custom swc configuration')
+		console.info('using custom swc configuration')
 	}
 	return result as swc.Options
 }

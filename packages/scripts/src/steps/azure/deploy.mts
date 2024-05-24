@@ -56,7 +56,7 @@ async function uploadFile(
 		Buffer.byteLength(content),
 		options,
 	)
-	console.log(
+	console.info(
 		`Upload ${fileObj.file} successfully`,
 		uploadBlobResponse.requestId,
 	)
@@ -79,11 +79,11 @@ export async function deployBlob(
 
 	for (const fileObj of files) {
 		if (verbose) {
-			console.log('uploading ', fileObj.file)
+			console.info('uploading ', fileObj.file)
 		}
 		await uploadFile(containerClient, fileObj)
 	}
 	if (verbose) {
-		console.log('uploading complete')
+		console.info('uploading complete')
 	}
 }

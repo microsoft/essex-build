@@ -31,13 +31,13 @@ export async function webpackServe({
 			server.options.host = host
 			server.startCallback((err?: Error | undefined) => {
 				if (err) {
-					console.log('error listening', err)
+					console.error('error listening', err)
 					reject(err)
 				}
 			})
 			function finish(signal: string) {
 				return function handleSignal() {
-					console.log(`received exit signal (${signal}), shutting down...`)
+					console.info(`received exit signal (${signal}), shutting down...`)
 					server.close(() => {
 						resolve()
 						process.exit()
@@ -46,7 +46,7 @@ export async function webpackServe({
 			}
 			EXIT_SIGNALS.forEach(finish)
 		} catch (err) {
-			console.log('error running webpack serve', err)
+			console.info('error running webpack serve', err)
 			reject(err)
 		}
 	})

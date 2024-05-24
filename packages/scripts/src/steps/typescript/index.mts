@@ -16,7 +16,7 @@ export async function compile(
 	esmOnly: boolean,
 ): Promise<void> {
 	if (isDebug()) {
-		console.log('Using TypeScript version ', ts.version)
+		console.info('Using TypeScript version ', ts.version)
 	}
 	const sourceFiles = await getSourceFiles()
 	await compileTS(sourceFiles, logFiles, esmOnly)

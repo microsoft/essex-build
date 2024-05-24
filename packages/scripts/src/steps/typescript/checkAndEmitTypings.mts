@@ -51,7 +51,7 @@ export async function checkAndEmitTypings(
 				diagnostic.messageText,
 				'\n',
 			)
-			console.log(
+			console.info(
 				chalk.red(
 					`${diagnostic.file.fileName} (${line + 1},${
 						character + 1
@@ -59,7 +59,9 @@ export async function checkAndEmitTypings(
 				),
 			)
 		} else {
-			console.log(ts.flattenDiagnosticMessageText(diagnostic.messageText, '\n'))
+			console.info(
+				ts.flattenDiagnosticMessageText(diagnostic.messageText, '\n'),
+			)
 		}
 	}
 

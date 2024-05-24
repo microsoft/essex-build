@@ -67,7 +67,7 @@ function tryEntries(pkg: PackageJsonData, ...entries: string[]): string {
 	throw new Error('could not locate entrypoint')
 }
 
-async function loadEsm(pkgName: string): Promise<Record<string, unknown>> {
+function loadEsm(pkgName: string): Promise<Record<string, unknown>> {
 	return import(fileUrl(path.join(process.cwd()), pkgName)) as Promise<
 		Record<string, unknown>
 	>
