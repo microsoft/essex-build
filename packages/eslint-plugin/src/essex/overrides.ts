@@ -6,12 +6,12 @@ import type { Linter } from 'eslint'
 
 import { typescriptParserOptions } from './parserOptions.js'
 import {
+	biomeDisablesJS,
+	biomeDisablesTS,
 	defaultRules,
 	jestRules,
 	reactRules,
 	tsRules,
-	biomeDisablesJS,
-	biomeDisablesTS,
 } from './ruleConfigurations.js'
 
 export function typescriptOverride(

@@ -112,6 +112,7 @@ export const biomeDisablesTS: Linter.RulesRecord = {
 	'@typescript-eslint/no-namespace': 'off',
 	'@typescript-eslint/no-this-alias': 'off',
 	'@typescript-eslint/no-unsafe-declaration-merging': 'off',
+	'@typescript-eslint/no-unused-vars': 'off',
 	'@typescript-eslint/prefer-as-const': 'off',
 }
 
