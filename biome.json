@@ -1,19 +1,20 @@
 {
 	"files": {
 		"ignore": [
-			"dist",
-			"lib",
-			"docs",
-			"build",
-			"storybook-static",
-			".turbo",
+			".devcontainer/",
 			".pnp.cjs",
 			".pnp.loader.mjs",
+			".swcrc",
+			".turbo",
 			"api-extractor.json",
-			".devcontainer/",
-			"tsconfig.esm.json",
+			"build",
+			"dist",
+			"docs",
+			"lib",
+			"package.json",
+			"storybook-static",
 			"tsconfig.cjs.json",
-			"package.json"
+			"tsconfig.esm.json"
 		]
 	},
 	"organizeImports": {
@@ -45,6 +46,7 @@
 		}
 	},
 	"formatter": {
-		"indentStyle": "tab"
+		"indentStyle": "tab",
+		"lineEnding": "lf"
 	}
 }
