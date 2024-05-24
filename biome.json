@@ -3,6 +3,7 @@
 		"ignore": [
 			"dist",
 			"lib",
+			"docs",
 			"build",
 			"storybook-static",
 			".turbo",
@@ -11,7 +12,8 @@
 			"api-extractor.json",
 			".devcontainer/",
 			"tsconfig.esm.json",
-			"tsconfig.cjs.json"
+			"tsconfig.cjs.json",
+			"package.json"
 		]
 	},
 	"organizeImports": {
@@ -21,8 +23,17 @@
 		"enabled": true,
 		"rules": {
 			"recommended": true,
+			"complexity": {
+				"useLiteralKeys": "off",
+				"noForEach": "off",
+				"useArrowFunction": "off"
+			},
 			"suspicious": {
 				"noExplicitAny": "off"
+			},
+			"style": {
+				"noUselessElse": "off",
+				"useNodejsImportProtocol": "off"
 			}
 		}
 	},
@@ -30,8 +41,7 @@
 		"formatter": {
 			"semicolons": "asNeeded",
 			"quoteStyle": "single",
-			"trailingComma": "all",
-			"quoteProperties": "asNeeded"
+			"trailingComma": "all"
 		}
 	},
 	"formatter": {

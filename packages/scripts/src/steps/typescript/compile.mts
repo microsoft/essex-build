@@ -1,3 +1,4 @@
+import path from 'path'
 /*!
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
@@ -5,7 +6,6 @@
 import { getSwcOptions } from '@essex/swc-opts'
 import * as swc from '@swc/core'
 import fs from 'fs/promises'
-import path from 'path'
 import { performance } from 'perf_hooks'
 
 import { noop } from '../../util/noop.mjs'
@@ -79,7 +79,7 @@ async function transpileFile(
 					...(options.module || {}),
 					type: 'commonjs',
 				},
-		  })
+			})
 
 	await Promise.all([esmResult, cjsResult])
 }

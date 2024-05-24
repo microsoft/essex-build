@@ -1,3 +1,6 @@
+import { readdirSync } from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
 /*!
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
@@ -5,11 +8,8 @@
 import chalk from 'chalk'
 import type { Command } from 'commander'
 import { program } from 'commander'
-import { readdirSync } from 'fs'
-import path from 'path'
 import { performance } from 'perf_hooks'
 import { exit } from 'process'
-import { fileURLToPath } from 'url'
 
 import { fileUrl } from './util/fileUrl.mjs'
 import { isDebug } from './util/isDebug.mjs'

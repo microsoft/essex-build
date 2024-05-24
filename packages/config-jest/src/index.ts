@@ -2,9 +2,10 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { getSwcOptions } from '@essex/swc-opts'
+
 import { existsSync } from 'fs'
 import { join } from 'path'
+import { getSwcOptions } from '@essex/swc-opts'
 
 const resolve = require.resolve
 

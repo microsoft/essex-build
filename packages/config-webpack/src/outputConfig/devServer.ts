@@ -41,6 +41,6 @@ function getStaticConfig(): Configuration {
 					directory: staticFolder,
 					watch: true,
 				},
-		  }
+			}
 		: {}
 }

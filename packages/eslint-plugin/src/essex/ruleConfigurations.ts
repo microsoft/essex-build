@@ -1,11 +1,11 @@
+import { existsSync } from 'fs'
+import { join } from 'path'
 /*!
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-argument */
 import type { Linter } from 'eslint'
-import { existsSync } from 'fs'
-import { join } from 'path'
 
 import { msHeader } from '../essex/msHeader.js'
 

@@ -9,7 +9,7 @@
 		"lib": ["ESNext"],
 
 		"importHelpers": true,
-		
+
 		// From @tsconfig/strictest
 		"alwaysStrict": true,
 		"strict": true,
@@ -19,12 +19,12 @@
 		"noImplicitOverride": true,
 		"noUncheckedIndexedAccess": true,
 		"noUnusedLocals": true,
-		"noUnusedParameters": true,		
+		"noUnusedParameters": true,
 		"checkJs": true,
 		"esModuleInterop": true,
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
-		
+
 		// tone down these strictness rules
 		"noPropertyAccessFromIndexSignature": false,
 		"noImplicitReturns": false,
