@@ -5,7 +5,7 @@
   "license": "MIT",
   "repository": "https://github.com/microsoft/essex-alpha-build-infra/",
   "scripts": {
-    "build": "tsc --emitDeclarationOnly && swc src -d lib && rimraf lib/__tests__",
+    "build": "tsc --emitDeclarationOnly && swc ./src -d lib --strip-leading-paths && rimraf lib/__tests__",
     "build:eslint-plugin": "yarn build",
     "clean": "rimraf lib",
     "release": "yarn npm publish --tolerate-republish --access public"
