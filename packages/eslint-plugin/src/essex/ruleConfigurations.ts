@@ -13,41 +13,24 @@ import { msHeader } from '../essex/msHeader.js'
 const HEADER_OVERRIDE = join(process.cwd(), 'header.js')
 const headerFile = existsSync(HEADER_OVERRIDE) ? HEADER_OVERRIDE : msHeader
 
-// The ESLint browser environment defines all browser globals as valid,
-// even though most people don't know some of them exist (e.g. `name` or `status`).
-// This is dangerous as it hides accidentally undefined variables.
-// We blacklist the globals that we deem potentially confusing.
-// To use them, explicitly reference them, e.g. `window.name` or `window.status`.
-const restrictedGlobals = require('confusing-browser-globals')
-
 const baselineRules: Linter.RulesRecord = {
 	// http://eslint.org/docs/rules/
 	'array-callback-return': 'error',
 	'no-caller': 'error',
-	'no-cond-assign': ['warn', 'except-parens'],
-	'no-eval': 'error',
 	'no-extend-native': 'error',
 	'no-extra-bind': 'error',
 	'no-implied-eval': 'error',
 	'no-iterator': 'error',
-	'no-lone-blocks': 'error',
 	'no-loop-func': 'error',
 	'no-multi-str': 'error',
-	'no-global-assign': 'error',
-	'no-unsafe-negation': 'error',
 	'no-new-func': 'error',
 	'no-new-object': 'error',
 	'no-new-wrappers': 'error',
 	'no-octal-escape': 'error',
-	'no-redeclare': 'error',
 	'no-restricted-syntax': ['error', 'WithStatement'],
 	'no-script-url': 'error',
-	'no-self-assign': 'error',
 	'no-template-curly-in-string': 'warn',
 	'no-throw-literal': 'error',
-	'no-restricted-globals': ['error'].concat(
-		restrictedGlobals,
-	) as Linter.RuleEntry,
 	'no-unused-expressions': [
 		'error',
 		{
@@ -56,28 +39,7 @@ const baselineRules: Linter.RulesRecord = {
 			allowTaggedTemplates: true,
 		},
 	],
-
-	'no-use-before-define': [
-		'warn',
-		{
-			functions: false,
-			classes: false,
-			variables: false,
-		},
-	],
-	'no-useless-computed-key': 'warn',
 	'no-useless-concat': 'warn',
-	'no-useless-constructor': 'warn',
-	'no-useless-rename': [
-		'warn',
-		{
-			ignoreDestructuring: false,
-			ignoreImport: false,
-			ignoreExport: false,
-		},
-	],
-	'require-yield': 'warn',
-	strict: ['warn', 'never'],
 	'no-restricted-properties': [
 		'error',
 		{
@@ -106,9 +68,7 @@ const importRules: Linter.RulesRecord = {
 }
 
 const essexPrefs: Linter.RulesRecord = {
-	'no-plusplus': 'off',
 	'header/header': [2, headerFile],
-	'no-inner-declarations': 'off',
 }
 
 // Based on eslint-config-react-app
@@ -133,16 +93,6 @@ export const tsRules: Linter.RulesRecord = {
 	'@typescript-eslint/consistent-type-assertions': 'warn',
 	'no-array-constructor': 'off',
 	'@typescript-eslint/no-array-constructor': 'warn',
-	'no-use-before-define': 'off',
-	'@typescript-eslint/no-use-before-define': [
-		'warn',
-		{
-			functions: false,
-			classes: false,
-			variables: false,
-			typedefs: false,
-		},
-	],
 	'no-unused-expressions': 'off',
 	'@typescript-eslint/no-unused-expressions': [
 		'error',
@@ -152,26 +102,8 @@ export const tsRules: Linter.RulesRecord = {
 			allowTaggedTemplates: true,
 		},
 	],
-	'no-useless-constructor': 'off',
-	'@typescript-eslint/no-useless-constructor': 'warn',
 	// TypeScript's `noFallthroughCasesInSwitch` option is more robust (#6906)
 	'default-case': 'off',
-	// 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/291)
-	'no-dupe-class-members': 'off',
-	// 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/477)
-	'no-undef': 'off',
-
-	// Some tooling breaks on joint type/value imports (Vite) - this forces types and values to be imported separately
-	'@typescript-eslint/consistent-type-imports': [
-		'error',
-		{
-			prefer: 'type-imports',
-		},
-	],
-
-	'no-redeclare': 'off',
-	'@typescript-eslint/no-redeclare': ['warn'],
-
 	// TS/ESlint clashing
 	'@typescript-eslint/no-unnecessary-type-assertion': 0,
 }
@@ -208,7 +140,6 @@ export const reactRules: Linter.RulesRecord = {
 	'react-hooks/exhaustive-deps': 'warn',
 	// https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks
 	'react-hooks/rules-of-hooks': 'error',
-
 	'react/prop-types': 'off',
 }
 

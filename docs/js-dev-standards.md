@@ -125,7 +125,7 @@ Playwright is a browser automation library that allows us to run end-to-end test
 eslint is our current default linter. We provide a default team configuration: `@essex/eslint-config`. 
 
 ### prettier (optional - but a formatter is required)
-prettier has been our default formatter, and is executed in essex scripts under the `essex lint` command. We provide a default team configuration: `@essex/prettier-config`. Projects may opt into using `rome` for formatting instead.
+prettier has been our default formatter, and is executed in essex scripts under the `essex lint` command. We provide a default team configuration: `@essex/prettier-config`. Projects may opt into using `biome` for formatting instead.
 
-### rome (optional - but a formatter is required)
+### biome (recommended)
 Biome is a JavaScript linter and formatter that is built using native toolchains. It is extremely fast, and can be used as a replacement for `prettier`, but it does not have as rich of a library of linter rules as eslint. We currently recommend that if it is used, that it is used in-tandem with `eslint` using the `@essex/eslint-config/rome` configuration.

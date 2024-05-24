@@ -7,10 +7,8 @@ import { createConfiguration } from './essex/createConfiguration.js'
 
 const defaultExport = {
 	configs: {
-		base: createConfiguration(true, false),
-		fast: createConfiguration(false, false),
-		rome: createConfiguration(true, true),
-		romefast: createConfiguration(false, true),
+		base: createConfiguration(true),
+		fast: createConfiguration(false),
 	},
 }
 // @ts-ignore

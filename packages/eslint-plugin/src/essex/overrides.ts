@@ -12,35 +12,8 @@ import {
 	tsRules,
 } from './ruleConfigurations.js'
 
-/**
- * This list of rules is from a spreadesheet referenced in this issue: https://github.com/rome/tools/issues/3892
- * See: https://docs.google.com/spreadsheets/d/16PXNlt7XoQG_ByRC9azLcFqPxZbIyppcb2c92O_lCv4/edit#gid=0
- */
-const RULES_WITH_ROME_EQUIVALENT: string[] = [
-	'@typescript-eslint/array-type',
-	'@typescript-eslint/ban-types',
-	'@typescript-eslint/camelcase',
-	'@typescript-eslint/no-empty-interface',
-	'@typescript-eslint/no-explicit-any',
-	'@typescript-eslint/no-unused-vars',
-	'constructor-super',
-	'eqeqeq',
-	'no-cond-assign',
-	'no-debugger',
-	'no-self-compare',
-	'no-sequences',
-	'no-shadow',
-	'no-unreachable',
-	'no-unsafe-finally',
-	'no-unused-vars',
-	'no-var',
-	'one-var',
-	'use-isnan',
-]
-
 export function typescriptOverride(
 	useTypeAwareLinting: boolean,
-	useRome: boolean,
 ): Linter.ConfigOverride {
 	const result = {
 		files: ['**/*.ts', '**/*.tsx', '**/*.cts', '**/*.mts'],
@@ -59,15 +32,10 @@ export function typescriptOverride(
 			'plugin:@typescript-eslint/recommended-requiring-type-checking',
 		)
 	}
-	if (useRome) {
-		RULES_WITH_ROME_EQUIVALENT.forEach((rule) => {
-			result.rules[rule] = 'off'
-		})
-	}
 	return result
 }
-export function javascriptOverride(useRome: boolean): Linter.ConfigOverride {
-	const result = {
+export function javascriptOverride(): Linter.ConfigOverride {
+	return {
 		files: ['**/*.js', '**/*.jsx', '**/*.cjs', '**/*.mjs'],
 		parser: '@babel/eslint-parser',
 		parserOptions: {
@@ -75,13 +43,6 @@ export function javascriptOverride(useRome: boolean): Linter.ConfigOverride {
 		},
 		rules: { ...defaultRules, ...reactRules },
 	}
-
-	if (useRome) {
-		RULES_WITH_ROME_EQUIVALENT.forEach((rule) => {
-			result.rules[rule] = 'off'
-		})
-	}
-	return result
 }
 
 export function jestOverride(): Linter.ConfigOverride {

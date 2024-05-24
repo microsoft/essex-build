@@ -23,7 +23,6 @@
     "@typescript-eslint/parser": "^6.7.0",
     "@typescript-eslint/utils": "^6.7.0",
     "chalk": "^4.1.2",
-    "confusing-browser-globals": "^1.0.11",
     "eslint": "^8.49.0",
     "eslint-import-resolver-node": "^0.3.9",
     "eslint-plugin-header": "^3.1.1",
@@ -41,7 +40,7 @@
     "@types/eslint": "^8.44.2",
     "@types/lodash": "^4.14.198",
     "@types/micromatch": "^4.0.2",
-    "@types/node": "^20.6.1",
+    "@types/node": "^20.12.12",
     "rimraf": "^5.0.1",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2"
