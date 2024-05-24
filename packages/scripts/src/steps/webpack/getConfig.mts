@@ -2,10 +2,11 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import essexWebpackConfig from '@essex/webpack-config'
-import debug from 'debug'
+
 import { existsSync } from 'fs'
 import { join } from 'path'
+import essexWebpackConfig from '@essex/webpack-config'
+import debug from 'debug'
 import type { Configuration } from 'webpack'
 import type { Configuration as WdsConfiguration } from 'webpack-dev-server'
 

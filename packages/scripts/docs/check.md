@@ -38,12 +38,12 @@ The following static verification checks are performed when this command is invo
     "prettier": "@essex/prettier-config"
     ```
 
-### rome
+### biome
 
 ### Purpose
 
-rome is a modern linter and formatter. It can be used in essex scripts as the configured formatter.
+Biome is a modern linter and formatter. It can be used in essex scripts as the configured formatter.
 
 ### Customization
 
--`<rootDir>/rome.json`, see [rome docs](https://rome.tools) for configuration details.
+-`<rootDir>/biome.json`, see [Biome docs](https://biomejs.dev) for configuration details.

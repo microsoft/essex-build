@@ -2,12 +2,13 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+
+import { promises as fs, existsSync } from 'fs'
+import { createRequire } from 'module'
+import { dirname, resolve } from 'path'
 import { ApiDocumenterCommandLine } from '@microsoft/api-documenter/lib/cli/ApiDocumenterCommandLine.js'
 import type { ExtractorResult, IConfigFile } from '@microsoft/api-extractor'
 import { Extractor, ExtractorConfig } from '@microsoft/api-extractor'
-import { existsSync, promises as fs } from 'fs'
-import { createRequire } from 'module'
-import { dirname, resolve } from 'path'
 
 import { fixLineEndings } from '../../util/fixLineEndings.js'
 import { readPublishedPackageJson } from '../../util/package.mjs'

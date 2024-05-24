@@ -2,15 +2,16 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+
+import { promises as fs } from 'fs'
+import path from 'path'
 import type { ContainerClient } from '@azure/storage-blob'
 import {
 	BlobServiceClient,
 	StorageSharedKeyCredential,
 } from '@azure/storage-blob'
-import { promises as fs } from 'fs'
 import { glob } from 'glob'
 import mime from 'mime-types'
-import path from 'path'
 
 interface FileLocation {
 	basePath: string

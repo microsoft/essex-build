@@ -1,0 +1,52 @@
+{
+	"files": {
+		"ignore": [
+			".devcontainer/",
+			".pnp.cjs",
+			".pnp.loader.mjs",
+			".swcrc",
+			".turbo",
+			"api-extractor.json",
+			"build",
+			"dist",
+			"docs",
+			"lib",
+			"package.json",
+			"storybook-static",
+			"tsconfig.cjs.json",
+			"tsconfig.esm.json"
+		]
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"complexity": {
+				"useLiteralKeys": "off",
+				"noForEach": "off",
+				"useArrowFunction": "off"
+			},
+			"suspicious": {
+				"noExplicitAny": "off"
+			},
+			"style": {
+				"noUselessElse": "off",
+				"useNodejsImportProtocol": "off"
+			}
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"semicolons": "asNeeded",
+			"quoteStyle": "single",
+			"trailingComma": "all"
+		}
+	},
+	"formatter": {
+		"indentStyle": "tab",
+		"lineEnding": "lf"
+	}
+}

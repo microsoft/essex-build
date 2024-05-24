@@ -3,12 +3,13 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
+
+import { promises as fs, createWriteStream, existsSync, mkdirSync } from 'fs'
+import { dirname, join, relative, resolve } from 'path'
 import archiver from 'archiver'
 import chalk from 'chalk'
-import { createWriteStream, existsSync, mkdirSync, promises as fs } from 'fs'
 import { glob } from 'glob'
 import humanFormat from 'human-format'
-import { dirname, join, relative, resolve } from 'path'
 import ProgressBar from 'progress'
 
 import { isDebug } from '../../util/isDebug.mjs'
@@ -52,9 +53,9 @@ async function getFileEntries(
 		const foundFiles =
 			source.indexOf('*') >= 0
 				? // handle globs
-				  await getGlobSource(sourcePath)
+					await getGlobSource(sourcePath)
 				: // handle files
-				  await getSourceFiles(sourcePath)
+					await getSourceFiles(sourcePath)
 		const isIncluded = await Promise.all(foundFiles.map(isZippable))
 		const filteredFiles = foundFiles.filter((_t, i) => isIncluded[i])
 

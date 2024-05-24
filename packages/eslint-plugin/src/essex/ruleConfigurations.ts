@@ -3,9 +3,10 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-argument */
-import type { Linter } from 'eslint'
+
 import { existsSync } from 'fs'
 import { join } from 'path'
+import type { Linter } from 'eslint'
 
 import { msHeader } from '../essex/msHeader.js'
 
@@ -42,8 +43,6 @@ const baselineRules: Linter.RulesRecord = {
 	'no-restricted-syntax': ['error', 'WithStatement'],
 	'no-script-url': 'error',
 	'no-self-assign': 'error',
-	'no-self-compare': 'error',
-	'no-sequences': 'error',
 	'no-template-curly-in-string': 'warn',
 	'no-throw-literal': 'error',
 	'no-restricted-globals': ['error'].concat(
@@ -57,13 +56,7 @@ const baselineRules: Linter.RulesRecord = {
 			allowTaggedTemplates: true,
 		},
 	],
-	'no-unused-vars': [
-		'error',
-		{
-			args: 'none',
-			ignoreRestSiblings: true,
-		},
-	],
+
 	'no-use-before-define': [
 		'warn',
 		{
@@ -109,14 +102,7 @@ const importRules: Linter.RulesRecord = {
 	'import/no-webpack-loader-syntax': 'error',
 	// use essex extensions
 	'import/extensions': 'off',
-	// use simple-import-sort
 	'import/order': 'off',
-}
-
-export const importSortRules: Linter.RulesRecord = {
-	// https://github.com/lydell/eslint-plugin-simple-import-sort#usage
-	'simple-import-sort/imports': 'error',
-	'simple-import-sort/exports': 'error',
 }
 
 const essexPrefs: Linter.RulesRecord = {
@@ -164,14 +150,6 @@ export const tsRules: Linter.RulesRecord = {
 			allowShortCircuit: true,
 			allowTernary: true,
 			allowTaggedTemplates: true,
-		},
-	],
-	'no-unused-vars': 'off',
-	'@typescript-eslint/no-unused-vars': [
-		'warn',
-		{
-			args: 'none',
-			ignoreRestSiblings: true,
 		},
 	],
 	'no-useless-constructor': 'off',

@@ -6,7 +6,6 @@ import type { Command } from 'commander'
 
 import { buildMdIndex as executeBuildMdIndex } from '../steps/build-md-index/index.mjs'
 
-
 export interface BuildMdIndexCommandOptions {
 	include: string
 }
