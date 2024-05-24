@@ -16,15 +16,15 @@ const headerFile = existsSync(HEADER_OVERRIDE) ? HEADER_OVERRIDE : msHeader
 // https://eslint.org/docs/latest/rules/
 const baselineRules: Linter.RulesRecord = {
 	// Recommended rules not covered by Biome
-	"no-constant-binary-expression": "error",
-	"no-invalid-regexp": "error",
-	"no-irregular-whitespace": "error",
-	"no-unexpected-multiline": "error",
-	"no-useless-backreference": "error",
-	"no-nonoctal-decimal-escape": "error",
-	"no-octal": "error",
-	"no-useless-escape": "error",
-	
+	'no-constant-binary-expression': 'error',
+	'no-invalid-regexp': 'error',
+	'no-irregular-whitespace': 'error',
+	'no-unexpected-multiline': 'error',
+	'no-useless-backreference': 'error',
+	'no-nonoctal-decimal-escape': 'error',
+	'no-octal': 'error',
+	'no-useless-escape': 'error',
+
 	// Rules we like
 	'array-callback-return': 'error',
 	'no-caller': 'error',
