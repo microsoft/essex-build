@@ -10,6 +10,7 @@ interface InitCommandOptions {
 	lib?: boolean
 }
 
+// biome-ignore lint/style/noDefaultExport: this is a CLI command
 export default function init(program: Command): void {
 	program
 		.command('init')

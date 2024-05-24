@@ -6,6 +6,7 @@ import type { Command } from 'commander'
 
 import { rm } from '../steps/rm.js'
 
+// biome-ignore lint/style/noDefaultExport: this is a CLI command
 export default function clean(program: Command): void {
 	program
 		.command('clean [files...]')

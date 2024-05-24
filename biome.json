@@ -37,7 +37,12 @@
 				"noSkippedTests": "error"
 			},
 			"style": {
-				"noNamespace": "error"
+				"all": true,
+				"useNamingConvention": {
+					"options": {
+						"strictCase": false
+					}
+				}
 			}
 		}
 	},

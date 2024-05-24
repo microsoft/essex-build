@@ -6,10 +6,10 @@ export enum BuildMode {
 	/**
 	 * Modern dual-mode CJS/ESM package (default CJS, include MJS)
 	 */
-	dual = 'dual',
+	Dual = 'dual',
 
 	/**
 	 * Modern ESM package (type: module)
 	 */
-	esm = 'esm',
+	Esm = 'esm',
 }

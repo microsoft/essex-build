@@ -10,6 +10,7 @@ export interface BuildMdIndexCommandOptions {
 	include: string
 }
 
+// biome-ignore lint/style/noDefaultExport: this is a CLI command
 export default function buildMdIndex(program: Command): void {
 	program
 		.command('build-md-index')

@@ -18,6 +18,7 @@ interface DeployCommandOptions {
 	paths: string
 }
 
+// biome-ignore lint/style/noDefaultExport: this is a CLI command
 export default function deploy(program: Command): void {
 	program
 		.command('deploy')

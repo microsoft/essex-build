@@ -40,6 +40,7 @@ export interface BuildCommandOptions {
 	mode?: BuildMode
 }
 
+// biome-ignore lint/style/noDefaultExport: this is a CLI command
 export default function build(program: Command): void {
 	program
 		.command('build')
@@ -62,12 +63,12 @@ export async function executeBuild({
 	stripInternalTypes = false,
 	skipExportCheck = false,
 	skipPackageCheck = false,
-	mode = BuildMode.esm,
+	mode = BuildMode.Esm,
 }: BuildCommandOptions): Promise<void> {
 	const checkPackage = !skipPackageCheck
 	const checkExports = !skipExportCheck
-	const rewriteEsmToMjs = mode === BuildMode.dual
-	const esmOnly = mode === BuildMode.esm
+	const rewriteEsmToMjs = mode === BuildMode.Dual
+	const esmOnly = mode === BuildMode.Esm
 	const cwd = process.cwd()
 	const tsConfigPath = path.join(cwd, 'tsconfig.json')
 

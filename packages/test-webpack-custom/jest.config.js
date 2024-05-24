@@ -4,4 +4,5 @@
  */
 import { configure } from '@essex/jest-config'
 
+// biome-ignore lint/style/noDefaultExport: jest config
 export default configure()

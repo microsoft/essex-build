@@ -12,6 +12,8 @@ const restricted: Record<string, boolean> = {
 	'--strict': true,
 	'--verbose': true,
 }
+
+// biome-ignore lint/style/noDefaultExport: this is a CLI command
 export default function fix(program: Command): void {
 	program
 		.command('fix [...files]')

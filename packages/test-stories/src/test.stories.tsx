@@ -8,6 +8,7 @@ const meta = {
 	title: '@essex:components/Tree',
 	component: Component,
 }
+// biome-ignore lint/style/noDefaultExport: this is a story
 export default meta
 
 export const Basic = () => <Component />

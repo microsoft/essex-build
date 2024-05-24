@@ -17,7 +17,10 @@ import { isTsConfigPathsConfigured } from './isTsConfigPathsConfigured.js'
 import { validate } from './validate.js'
 
 export class ConfigurationManager {
-	public constructor(private _config: Configuration) {
+	private _config: Configuration
+
+	public constructor(config: Configuration) {
+		this._config = config
 		validate()
 	}
 

@@ -8,6 +8,7 @@ import 'zx/globals'
 import type { Command } from 'commander'
 import isGitDirty from 'is-git-dirty'
 
+// biome-ignore lint/style/noDefaultExport: this is a CLI command
 export default function start(program: Command): void {
 	program
 		.command('git-is-clean')

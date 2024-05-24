@@ -17,6 +17,7 @@ const restricted: Record<string, boolean> = {
 	'--strict': true,
 	'--verbose': true,
 }
+// biome-ignore lint/style/noDefaultExport: this is a CLI command
 export default function check(program: Command): void {
 	program
 		.command('check [...files]')

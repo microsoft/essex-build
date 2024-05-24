@@ -13,9 +13,10 @@ const configuration = essexWebpackConfig.configure({
 			throw new Error('expected production env')
 		}
 		return {
-			TEST_API: 'http://localhost:8080',
+			testApi: 'http://localhost:8080',
 		}
 	},
 })
 
+// biome-ignore lint/style/noDefaultExport: This is a configuration file
 export default configuration

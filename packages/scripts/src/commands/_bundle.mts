@@ -17,6 +17,7 @@ interface BundleOptions {
  * Use Webpack to perform a bundle operation.
  * @param program The CLI program
  */
+// biome-ignore lint/style/noDefaultExport: this is a CLI command
 export default function bundle(program: Command): void {
 	program
 		.command('bundle')

@@ -22,6 +22,7 @@ export interface WatchCommandOptions {
 	mode?: BuildMode
 }
 
+// biome-ignore lint/style/noDefaultExport: this is a CLI command
 export default function build(program: Command): void {
 	program
 		.command('watch')
@@ -38,10 +39,10 @@ export default function build(program: Command): void {
 
 export function executeWatch({
 	stripInternalTypes = false,
-	mode = BuildMode.esm,
+	mode = BuildMode.Esm,
 }: WatchCommandOptions): Promise<void> {
-	const rewriteEsmToMjs = mode === BuildMode.dual
-	const esmOnly = mode === BuildMode.esm
+	const rewriteEsmToMjs = mode === BuildMode.Dual
+	const esmOnly = mode === BuildMode.Esm
 	const cwd = process.cwd()
 	const tsConfigPath = path.join(cwd, 'tsconfig.json')
 

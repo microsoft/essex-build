@@ -15,6 +15,7 @@ interface ServeOptions {
  * Use Webpack to serve a webpack-based application.
  * @param program The CLI program
  */
+// biome-ignore lint/style/noDefaultExport: this is a CLI command
 export default function serve(program: Command): void {
 	program
 		.command('serve')

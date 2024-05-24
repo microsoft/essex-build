@@ -16,12 +16,14 @@ export async function verifyPackage(mode: BuildMode) {
 	const raw = await readTargetPackageJson()
 	const pkg = await readPublishedPackageJson()
 	switch (mode) {
-		case BuildMode.dual:
+		case BuildMode.Dual: {
 			verifyDualMode(pkg)
 			break
-		case BuildMode.esm:
+		}
+		case BuildMode.Esm: {
 			verifyEsmMode(pkg, raw)
 			break
+		}
 		default:
 			throw new Error(`unknown mode "${mode as string}"`)
 	}

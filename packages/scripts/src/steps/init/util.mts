@@ -6,7 +6,7 @@ import { copyFile, exists } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import * as log from '../../util/tasklogger.mjs'
+import { error } from '../../util/tasklogger.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -17,7 +17,7 @@ export function copyConfigFile(file: string, dot = false): Promise<number> {
 
 	return fileExists(pkgPath).then((pkgFileExists) => {
 		if (pkgFileExists) {
-			log.error(
+			error(
 				`cannot init file ${file}; it already exists in the target directory`,
 			)
 			return 1

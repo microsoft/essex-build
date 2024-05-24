@@ -6,4 +6,5 @@ import essexViteConfig from '@essex/vite-config'
 import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config
+// biome-ignore lint/style/noDefaultExport: vite config needs default export
 export default defineConfig(essexViteConfig)

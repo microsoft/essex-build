@@ -9,6 +9,7 @@ import { checkDeps } from '../steps/checkDeps.js'
 export interface CheckDepsCommandOptions {
 	ignore?: string
 }
+// biome-ignore lint/style/noDefaultExport: this is a CLI command
 export default function checkDepsCommand(program: Command): void {
 	program
 		.command('check-deps')

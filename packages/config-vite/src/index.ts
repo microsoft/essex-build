@@ -12,4 +12,6 @@ const config: UserConfigExport = {
 	},
 	plugins: [react(), tsconfigPaths()],
 }
+
+// biome-ignore lint/style/noDefaultExport: vite config
 export default config

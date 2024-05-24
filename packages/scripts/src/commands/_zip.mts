@@ -7,6 +7,7 @@ import type { Command } from 'commander'
 import type { ZipCommandOptions } from '../steps/zip/index.mjs'
 import { zip } from '../steps/zip/index.mjs'
 
+// biome-ignore lint/style/noDefaultExport: this is a CLI command
 export default function zipCommand(program: Command): void {
 	program
 		.command('zip <destination> <sources...>')
