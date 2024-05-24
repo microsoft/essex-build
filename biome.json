@@ -6,6 +6,8 @@
 			".pnp.loader.mjs",
 			".swcrc",
 			".turbo",
+			".vscode",
+			".yarn",
 			"api-extractor.json",
 			"build",
 			"dist",
@@ -46,7 +48,6 @@
 		}
 	},
 	"formatter": {
-		"indentStyle": "tab",
-		"lineEnding": "lf"
+		"indentStyle": "tab"
 	}
 }
