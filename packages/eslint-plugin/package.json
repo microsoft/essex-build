@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@essex/tsconfig-node18": "workspace:^",
-    "@swc/cli": "^0.1.65",
+    "@swc/cli": "^0.3.12",
     "@swc/core": "1.5.7",
     "@types/eslint": "^8.44.2",
     "@types/lodash": "^4.14.198",
