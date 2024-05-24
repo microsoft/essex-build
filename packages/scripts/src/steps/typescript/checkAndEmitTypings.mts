@@ -1,8 +1,9 @@
-import { performance } from 'node:perf_hooks'
 /*!
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+
+import { performance } from 'node:perf_hooks'
 import chalk from 'chalk'
 import ts from 'typescript'
 
