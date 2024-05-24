@@ -3,8 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 
-import path from 'path'
-import fs from 'fs/promises'
+import fs from 'node:fs/promises'
+import path from 'node:path'
 
 export async function walk(
 	dir: string,

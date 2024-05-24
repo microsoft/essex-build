@@ -2,9 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { copyFile, exists } from 'fs'
-import path from 'path'
-import { fileURLToPath } from 'url'
+import { copyFile, exists } from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 import * as log from '../../util/tasklogger.mjs'
 
@@ -21,9 +21,8 @@ export function copyConfigFile(file: string, dot = false): Promise<number> {
 				`cannot init file ${file}; it already exists in the target directory`,
 			)
 			return 1
-		} else {
-			return copyFilePromise(scriptPath, pkgPath).then(() => 0)
 		}
+		return copyFilePromise(scriptPath, pkgPath).then(() => 0)
 	})
 }
 

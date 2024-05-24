@@ -4,8 +4,13 @@
  */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
-import { promises as fs, createWriteStream, existsSync, mkdirSync } from 'fs'
-import { dirname, join, relative, resolve } from 'path'
+import {
+	promises as fs,
+	createWriteStream,
+	existsSync,
+	mkdirSync,
+} from 'node:fs'
+import { dirname, join, relative, resolve } from 'node:path'
 import archiver from 'archiver'
 import chalk from 'chalk'
 import { glob } from 'glob'
@@ -82,12 +87,12 @@ async function getSourceFiles(source: string): Promise<string[]> {
 
 	if (stats.isDirectory()) {
 		return await walkDir(source)
-	} else if (stats.isFile()) {
-		return [source]
-	} else {
-		console.warn(`${source} is not a file or directory. Unable to compress.`)
-		return []
 	}
+	if (stats.isFile()) {
+		return [source]
+	}
+	console.warn(`${source} is not a file or directory. Unable to compress.`)
+	return []
 }
 
 async function walkDir(directory: string): Promise<string[]> {

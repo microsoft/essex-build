@@ -3,15 +3,20 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 
-import { createRequire } from 'module'
-import path from 'path'
+import { createRequire } from 'node:module'
+import path from 'node:path'
+import { performance } from 'node:perf_hooks'
 import get from 'lodash/get.js'
-import { performance } from 'perf_hooks'
 
 import { fileUrl } from '../../util/fileUrl.mjs'
 import type { PackageJsonData } from '../../util/package.mjs'
 import { readPublishedPackageJson } from '../../util/package.mjs'
-import * as logger from '../../util/tasklogger.mjs'
+import {
+	printPerf,
+	subtaskFail,
+	subtaskSuccess,
+	warn,
+} from '../../util/tasklogger.mjs'
 import { checkApi } from './checkApi.mjs'
 
 const require = createRequire(import.meta.url)
@@ -21,7 +26,7 @@ export async function verifyExports(esmOnly: boolean): Promise<void> {
 
 	const expected = pkg?.essex?.exports
 	if (expected == null) {
-		logger.warn(
+		warn(
 			'    essex.exports not defined in package.json; skipping named export verification',
 		)
 	}
@@ -29,12 +34,16 @@ export async function verifyExports(esmOnly: boolean): Promise<void> {
 	await doChecks('verify esm export', async () => {
 		// pkg.exports.imports is used in dual mode; pkg.main is used in esm-only mode
 		const api = await loadEsm(esmEntry(pkg))
-		if (expected) checkApi(api, expected)
+		if (expected) {
+			checkApi(api, expected)
+		}
 	})
 	if (!esmOnly) {
 		await doChecks('verify cjs export', async () => {
 			const api = await loadCjs(cjsEntry(pkg))
-			if (expected) checkApi(api, expected)
+			if (expected) {
+				checkApi(api, expected)
+			}
 		})
 	}
 }
@@ -73,9 +82,9 @@ async function doChecks(task: string, callback: () => Promise<void>) {
 	try {
 		const start = performance.now()
 		await callback()
-		logger.subtaskSuccess(task, logger.printPerf(start))
+		subtaskSuccess(task, printPerf(start))
 	} catch (err) {
-		logger.subtaskFail(task)
+		subtaskFail(task)
 		throw err
 	}
 }

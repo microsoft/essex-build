@@ -4,8 +4,8 @@
  */
 /* eslint-disable @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-argument */
 
-import { existsSync } from 'fs'
-import { join } from 'path'
+import { existsSync } from 'node:fs'
+import { join } from 'node:path'
 import type { Linter } from 'eslint'
 
 import { msHeader } from '../essex/msHeader.js'

@@ -3,13 +3,13 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { writeFile } from 'fs/promises'
+import { writeFile } from 'node:fs/promises'
 
 import {
 	TARGET_PACKAGE_JSON_PATH,
 	readTargetPackageJson,
 } from '../../util/package.mjs'
-import * as log from '../../util/tasklogger.mjs'
+import { info } from '../../util/tasklogger.mjs'
 import { copyConfigFile } from './util.mjs'
 
 const INIT_MSG_FAIL = 'An error occurred initializing the library'
@@ -67,9 +67,9 @@ export function initLib(): Promise<number> {
 		.then((results) => {
 			const result = results.reduce((a, b) => a + b, 0)
 			if (result > 0) {
-				log.info(INIT_MSG_FAIL)
+				info(INIT_MSG_FAIL)
 			} else {
-				log.info(INIT_INSTRUCTIONS)
+				info(INIT_INSTRUCTIONS)
 			}
 			return result
 		})

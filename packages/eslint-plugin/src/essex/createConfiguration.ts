@@ -57,7 +57,7 @@ function getTypeAwareSetting(defaultValue: boolean): boolean {
 		return false
 	}
 
-	const skipTypecheck = process.env['SKIP_TYPEAWARE_LINTING'] != null
+	const skipTypecheck = process.env.SKIP_TYPEAWARE_LINTING != null
 	if (skipTypecheck) {
 		console.warn(chalk.yellow('skipping type-aware linting'))
 	} else {

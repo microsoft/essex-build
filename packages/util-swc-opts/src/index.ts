@@ -3,8 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 
-import { existsSync, readFileSync } from 'fs'
-import path from 'path'
+import { existsSync, readFileSync } from 'node:fs'
+import path from 'node:path'
 import type * as swc from '@swc/core'
 import get from 'lodash/get.js'
 import merge from 'lodash/merge.js'
@@ -14,24 +14,23 @@ const SWCRC_FILE = path.join(process.cwd(), '.swcrc')
 export function getSwcOptions(base?: Partial<swc.Config>): swc.Config {
 	if (existsSync(SWCRC_FILE)) {
 		return readCustomSwcrc()
-	} else {
-		const defaultSwcOptions = determineDefaultSwcOptions(base)
-		const swcOverrides = readSwcOverrides()
-		if (isDebug()) {
-			console.log(
-				swcOverrides != null
-					? 'applying essex.swc overrides'
-					: 'using default swc configuration',
-			)
-		}
-		return swcOverrides != null
-			? merge(defaultSwcOptions, swcOverrides)
-			: defaultSwcOptions
 	}
+	const defaultSwcOptions = determineDefaultSwcOptions(base)
+	const swcOverrides = readSwcOverrides()
+	if (isDebug()) {
+		console.log(
+			swcOverrides != null
+				? 'applying essex.swc overrides'
+				: 'using default swc configuration',
+		)
+	}
+	return swcOverrides != null
+		? merge(defaultSwcOptions, swcOverrides)
+		: defaultSwcOptions
 }
 
 function isDebug() {
-	return Boolean(process.env['ESSEX_DEBUG'])
+	return Boolean(process.env.ESSEX_DEBUG)
 }
 
 function readPackageJson(pkgPath: string): Record<string, unknown> {

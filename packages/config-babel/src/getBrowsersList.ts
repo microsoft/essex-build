@@ -8,11 +8,12 @@ export function getBrowsersList(
 ): string | string[] {
 	if (setting == null) {
 		return DEFAULT_ESSEX_BROWSERSLIST
-	} else if (Array.isArray(setting)) {
-		return setting
-	} else {
-		return setting[env] || DEFAULT_ESSEX_BROWSERSLIST
 	}
+	if (Array.isArray(setting)) {
+		return setting
+	}
+
+	return setting[env] || DEFAULT_ESSEX_BROWSERSLIST
 }
 
 const DEFAULT_ESSEX_BROWSERSLIST = ['>0.5%', 'not IE 11', 'not dead']

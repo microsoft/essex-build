@@ -1,5 +1,5 @@
 /* eslint-disable */
-import fs from 'fs/promises'
+import fs from 'node:fs/promises'
 /*!
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
@@ -17,7 +17,9 @@ export async function esmify(rewriteToMjs: boolean, dir: string) {
 	await walk(dir, async (entryPath) => {
 		if (entryPath.endsWith('.js')) {
 			await rewriteImports(entryPath, rewriteToMjs)
-			if (rewriteToMjs) await renameJsToMjs(entryPath)
+			if (rewriteToMjs) {
+				await renameJsToMjs(entryPath)
+			}
 		}
 	})
 }

@@ -3,8 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { existsSync } from 'fs'
-import { join } from 'path'
+import { existsSync } from 'node:fs'
+import { join } from 'node:path'
 
 export function isTsConfigPathsConfigured(): boolean {
 	const tsconfigJsonPath = join(process.cwd(), 'tsconfig.json')

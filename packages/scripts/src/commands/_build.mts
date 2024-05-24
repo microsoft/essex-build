@@ -3,8 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 
-import { existsSync } from 'fs'
-import path from 'path'
+import { existsSync } from 'node:fs'
+import path from 'node:path'
 import type { Command } from 'commander'
 
 import { generateApiExtractorReport } from '../steps/api-extractor/index.mjs'
@@ -80,8 +80,12 @@ export async function executeBuild({
 
 	await processEsm(rewriteEsmToMjs, esmOnly ? 'dist/' : 'dist/esm')
 
-	if (checkPackage) await verifyPackage(mode)
-	if (checkExports) await verifyExports(esmOnly)
+	if (checkPackage) {
+		await verifyPackage(mode)
+	}
+	if (checkExports) {
+		await verifyExports(esmOnly)
+	}
 
 	// wrap up long-running tasks
 	await generateDocs

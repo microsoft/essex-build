@@ -2,8 +2,8 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { existsSync } from 'fs'
-import { join } from 'path'
+import { existsSync } from 'node:fs'
+import { join } from 'node:path'
 
 import { log } from '../log.js'
 
@@ -16,14 +16,15 @@ export function getIndexFile(): string {
 	if (existsSync(indexTsx)) {
 		log('entry: index.tsx')
 		return indexTsx
-	} else if (existsSync(indexTs)) {
+	}
+	if (existsSync(indexTs)) {
 		log('entry: index.ts')
 		return indexTs
-	} else if (existsSync(indexJsx)) {
+	}
+	if (existsSync(indexJsx)) {
 		log('entry: index.jsx')
 		return indexJsx
-	} else {
-		log('entry: index.js')
-		return indexJs
 	}
+	log('entry: index.js')
+	return indexJs
 }

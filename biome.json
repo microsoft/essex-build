@@ -30,17 +30,13 @@
 				"all": true
 			},
 			"complexity": {
-				"useLiteralKeys": "off",
-				"noForEach": "off",
-				"useArrowFunction": "off"
+				"noForEach": "off"
 			},
 			"suspicious": {
 				"noExplicitAny": "off",
 				"noSkippedTests": "error"
 			},
 			"style": {
-				"noUselessElse": "off",
-				"useNodejsImportProtocol": "off",
 				"noNamespace": "error"
 			}
 		}

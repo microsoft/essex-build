@@ -3,11 +3,11 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 
-import path from 'path'
+import fs from 'node:fs/promises'
+import path from 'node:path'
+import { performance } from 'node:perf_hooks'
 import { getSwcOptions } from '@essex/swc-opts'
-import * as swc from '@swc/core'
-import fs from 'fs/promises'
-import { performance } from 'perf_hooks'
+import { type Options, transform } from '@swc/core'
 
 import { noop } from '../../util/noop.mjs'
 import { printPerf, subtaskSuccess, traceFile } from '../../util/tasklogger.mjs'
@@ -30,12 +30,12 @@ export async function compile(
 function createOutputFolders(esmOnly: boolean) {
 	if (esmOnly) {
 		return fs.mkdir(ESM_ONLY_PATH, { recursive: true })
-	} else {
-		return Promise.all([
-			fs.mkdir(ESM_PATH, { recursive: true }),
-			fs.mkdir(CJS_PATH, { recursive: true }),
-		])
 	}
+
+	return Promise.all([
+		fs.mkdir(ESM_PATH, { recursive: true }),
+		fs.mkdir(CJS_PATH, { recursive: true }),
+	])
 }
 
 async function transpileFile(
@@ -89,9 +89,9 @@ function writeOutput(
 	code: string,
 	filename: string,
 	outputRoot: string,
-	options: swc.Options,
+	options: Options,
 ) {
-	return swc.transform(code, options).then(async ({ code, map }) => {
+	return transform(code, options).then(async ({ code, map }) => {
 		const outputFile = path
 			.join(outputRoot, filename.replace(/^src/, ''))
 			.replace(/\.tsx?$/, '.js')

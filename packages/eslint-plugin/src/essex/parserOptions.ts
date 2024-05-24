@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 
-import { existsSync } from 'fs'
+import { existsSync } from 'node:fs'
 import type { Linter } from 'eslint'
 
 export function typescriptParserOptions(
@@ -22,8 +22,8 @@ export function typescriptParserOptions(
 		},
 	}
 	if (useTypeAwareLinting) {
-		result['tsconfigRootDir'] = process.cwd()
-		result['project'] = getTsConfigRoots()
+		result.tsconfigRootDir = process.cwd()
+		result.project = getTsConfigRoots()
 	}
 	return result
 }

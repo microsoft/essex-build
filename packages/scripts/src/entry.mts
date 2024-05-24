@@ -3,14 +3,14 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 
-import { readdirSync } from 'fs'
-import path from 'path'
-import { fileURLToPath } from 'url'
+import { readdirSync } from 'node:fs'
+import path from 'node:path'
+import { performance } from 'node:perf_hooks'
+import { exit } from 'node:process'
+import { fileURLToPath } from 'node:url'
 import chalk from 'chalk'
 import type { Command } from 'commander'
 import { program } from 'commander'
-import { performance } from 'perf_hooks'
-import { exit } from 'process'
 
 import { fileUrl } from './util/fileUrl.mjs'
 import { isDebug } from './util/isDebug.mjs'
@@ -91,10 +91,10 @@ async function execute(): Promise<number> {
 		if (!process.exitCode) {
 			success(command, printPerf())
 			return 0
-		} else {
-			fail(command, printPerf())
-			return 1
 		}
+
+		fail(command, printPerf())
+		return 1
 	} catch (err) {
 		fail(command)
 		throw err

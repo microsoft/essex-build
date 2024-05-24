@@ -23,7 +23,6 @@ export default function init(program: Command): void {
 function execute(config: InitCommandOptions): Promise<number> {
 	if (config.lib) {
 		return initLib()
-	} else {
-		return initMonorepo()
 	}
+	return initMonorepo()
 }

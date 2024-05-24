@@ -3,13 +3,13 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { writeFileSync } from 'fs'
+import { writeFileSync } from 'node:fs'
 
 import {
 	TARGET_PACKAGE_JSON_PATH,
 	readTargetPackageJson,
 } from '../../util/package.mjs'
-import * as log from '../../util/tasklogger.mjs'
+import { info } from '../../util/tasklogger.mjs'
 import { copyConfigFile } from './util.mjs'
 
 const INIT_INSTRUCTIONS = `
@@ -48,9 +48,9 @@ export function initMonorepo(): Promise<number> {
 		.then((results) => {
 			const result = results.reduce((a, b) => a + b, 0)
 			if (result > 0) {
-				log.info(INIT_MSG_FAIL)
+				info(INIT_MSG_FAIL)
 			} else {
-				log.info(INIT_INSTRUCTIONS)
+				info(INIT_INSTRUCTIONS)
 			}
 			return result
 		})
@@ -63,12 +63,12 @@ async function configurePackageJsonForMonorepo(): Promise<number> {
 	if (!scripts) {
 		scripts = pkgJson.scripts = {}
 	}
-	if (!scripts['preinstall']) {
-		scripts['preinstall'] = 'npx only-allow yarn'
+	if (!scripts.preinstall) {
+		scripts.preinstall = 'npx only-allow yarn'
 		writeNeeded = true
 	}
-	if (!scripts['postinstall']) {
-		scripts['postinstall'] = 'husky install'
+	if (!scripts.postinstall) {
+		scripts.postinstall = 'husky install'
 		writeNeeded = true
 	}
 	if (!scripts['build:all']) {
@@ -100,18 +100,18 @@ async function configurePackageJsonForMonorepo(): Promise<number> {
 		scripts['lint:all'] = 'essex lint --fix'
 		writeNeeded = true
 	}
-	if (!scripts['git_is_clean']) {
-		scripts['git_is_clean'] = 'essex git-is-clean'
+	if (!scripts.git_is_clean) {
+		scripts.git_is_clean = 'essex git-is-clean'
 		writeNeeded = true
 	}
-	if (!scripts['ci']) {
-		scripts['ci'] = 'run-s build:all test:all lint:all unit:test git_is_clean'
+	if (!scripts.ci) {
+		scripts.ci = 'run-s build:all test:all lint:all unit:test git_is_clean'
 		writeNeeded = true
 	}
 	if (writeNeeded) {
 		writeFileSync(TARGET_PACKAGE_JSON_PATH, JSON.stringify(pkgJson, null, 2))
 	}
-	log.info(`
+	info(`
 	You should install these recommended peer dependencies
 
 	-- Essex Configs --

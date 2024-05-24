@@ -3,8 +3,8 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 
-import fs from 'fs'
-import path from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { defaultSwcConfig } from '@essex/swc-opts'
 import ResolveTypescriptPlugin from 'resolve-typescript-plugin'

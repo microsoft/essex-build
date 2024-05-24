@@ -3,7 +3,7 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  */
 
-import { createRequire } from 'module'
+import { createRequire } from 'node:module'
 import { ESLint } from 'eslint'
 
 import { getConfigFile, getIgnorePath } from './config.mjs'

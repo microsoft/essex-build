@@ -2,9 +2,9 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-import { existsSync } from 'fs'
-import path from 'path'
-import fs from 'fs/promises'
+import { existsSync } from 'node:fs'
+import fs from 'node:fs/promises'
+import path from 'node:path'
 import { glob } from 'glob'
 
 export async function buildMdIndex(include: string): Promise<void> {
