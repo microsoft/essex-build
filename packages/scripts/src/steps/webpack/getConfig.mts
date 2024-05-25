@@ -27,9 +27,10 @@ export async function getConfig({
 		join(process.cwd(), 'webpack.config.mjs'),
 		join(process.cwd(), 'webpack.config.cjs'),
 	]
-	const webpackConfigFile = fileOptions.find(existsSync)
-
-	if (webpackConfigFile != null) {
+	const found = fileOptions.find(existsSync)
+	
+	if (found != null) {
+		const webpackConfigFile = `file://${found.replaceAll("\\", "/")}`
 		log('using custom webpack.config file: ', webpackConfigFile)
 		// Note: this allows us to pass env and mode settings to
 		// the webpack configuration library, which _may_ be used
