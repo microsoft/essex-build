@@ -27,15 +27,15 @@
     "@storybook/core-events": "^7.4.2",
     "@storybook/react": "^7.4.2",
     "@storybook/react-webpack5": "^7.4.2",
-    "@types/react": "^18.2.21",
+    "@types/react": "^18.3.3",
     "require-from-string": "^2.0.2",
     "rimraf": "^5.0.1",
     "storybook": "^7.4.2",
     "webpack": "^5.91.0"
   },
   "dependencies": {
-    "@types/react-dom": "^18.2.7",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "@types/react-dom": "^18.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
