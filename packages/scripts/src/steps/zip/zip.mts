@@ -2,7 +2,6 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 
 import { promises as fs, createWriteStream, existsSync, mkdirSync } from 'fs'
 import { dirname, join, relative, resolve } from 'path'
@@ -146,7 +145,6 @@ async function archive(
 		const hf = humanFormat as any
 		console.log(
 			`archive complete - ${chalk.green(destination)} ${chalk.grey(
-				/* eslint-disable-next-line @typescript-eslint/no-unsafe-call */
 				hf(archive.pointer(), {
 					scale: 'binary',
 					unit: 'B',

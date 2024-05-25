@@ -5,7 +5,6 @@
 
 import fs from 'fs'
 import path from 'path'
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { defaultSwcConfig } from '@essex/swc-opts'
 import ResolveTypescriptPlugin from 'resolve-typescript-plugin'
 import type { Configuration as WebpackConfig } from 'webpack'

@@ -25,7 +25,6 @@ export async function webpackServe({
 				throw new Error('webpack config missing devServer')
 			}
 
-			/* eslint-disable-next-line @typescript-eslint/no-unsafe-argument */
 			const server = new Server(wpConfig.devServer, compiler)
 			server.options.port = port
 			server.options.host = host

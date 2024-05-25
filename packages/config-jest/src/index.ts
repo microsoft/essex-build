@@ -73,7 +73,6 @@ export function configure({
 
 	if (rewriteLodashEs) {
 		// lodash-es presents issues in test, even when running in experimental ESM mode. Hacky fix is to use main lodash at test time
-		/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */
 		result.moduleNameMapper['^lodash-es/(.*)$'] = resolve('lodash').replace(
 			'lodash.js',
 			'$1',

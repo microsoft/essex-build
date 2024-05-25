@@ -9,16 +9,8 @@
 			"dependsOn": ["build"],
 			"outputs": []
 		},
-		"check": {
-			"dependsOn": ["^build", "@essex/scripts#build"],
-			"outputs": []
-		},
-		"fix": {
-			"dependsOn": ["@essex/scripts#build"],
-			"outputs": []
-		},
 		"ci": {
-			"dependsOn": ["check", "build", "test", "check-deps"],
+			"dependsOn": ["build", "test", "check-deps"],
 			"outputs": ["dist/**", "lib/**"]
 		},
 		"release": {
