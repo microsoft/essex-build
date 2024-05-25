@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-const essexWebpackConfig = require('@essex/webpack-config')
+import essexWebpackConfig from '@essex/webpack-config'
 
 const configuration = essexWebpackConfig.configure({
 	environment: (mode, env) => {
@@ -18,4 +18,4 @@ const configuration = essexWebpackConfig.configure({
 	},
 })
 
-module.exports = configuration
+export default configuration

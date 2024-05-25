@@ -1,5 +1,6 @@
 {
   "name": "@essex/test-webapp-webpack-custom",
+  "type": "module",
   "version": "21.0.0",
   "private": true,
   "scripts": {
