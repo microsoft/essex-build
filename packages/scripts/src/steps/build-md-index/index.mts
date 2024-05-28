@@ -20,7 +20,7 @@ export async function buildMdIndex(include: string): Promise<void> {
 		indexImports.push(
 			path
 				.join(outputDir.replace('dist', ''), indexFilePath)
-				.replace(/^\//, ''),
+				.replace(/\\/, '\/').replace(/^\//, ''),
 		)
 
 		if (!existsSync(outputDir)) {
@@ -46,7 +46,8 @@ function getMarkdownFiles(include: string): Promise<string[]> {
 function writeIndex(imports: string[]): Promise<void> {
 	let importsArea = ''
 	let mapArea = 'const index = {};\n'
-	imports.forEach((imp) => {
+	imports.forEach((impRaw) => {
+		const imp = impRaw.replace(/\\/g, '\/')
 		const impVar = imp.replace(/\//g, '_')
 		const impKey = imp.replace(/\//g, '.')
 		importsArea += `import { default as ${impVar} } from './${imp}.js'\n`
