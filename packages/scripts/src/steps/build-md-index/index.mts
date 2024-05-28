@@ -9,6 +9,8 @@ import { glob } from 'glob'
 
 export async function buildMdIndex(include: string): Promise<void> {
 	const indexImports: string[] = []
+	await fs.mkdir('dist', { recursive: true })
+
 	async function processFile(filePath: string) {
 		const content = await fs.readFile(filePath, { encoding: 'utf-8' })
 		const localFilePath = filePath.replace(include, 'dist')
