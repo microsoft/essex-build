@@ -20,7 +20,7 @@
 	},
 	"dependencies": {
 		"@essex/swc-opts": "workspace:^",
-		"@swc/core": "^1.5.7",
+		"@swc/core": "1.5.5",
 		"hsluv": "^1.0.1",
 		"react-docgen-typescript": "^2.2.2",
 		"react-is": "^18.2.0",
@@ -28,7 +28,7 @@
 		"storybook": "^7.4.2",
 		"swc-loader": "^0.2.6",
 		"tslib": "^2.6.2",
-		"webpack": "^5.88.2"
+		"webpack": "^5.91.0"
 	},
 	"devDependencies": {
 		"@essex/tsconfig-node": "workspace:^",
