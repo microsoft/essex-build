@@ -9081,23 +9081,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:18.0.0":
-  version: 18.0.0
-  resolution: "@types/react-dom@npm:18.0.0"
+"@types/react-dom@npm:18.2.7":
+  version: 18.2.7
+  resolution: "@types/react-dom@npm:18.2.7"
   dependencies:
     "@types/react": "npm:*"
-  checksum: 10/ca2de791f89816434d6dba8d0228a7b7bcf3e99e58bfb1adfc37221583abfde389ad0de477a24cd62236294f18a1dbc566829466f58514123f460402a43d8ef6
+  checksum: 10/9b70ef66cbe2d2898ea37eb79ee3697e0e4ad3d950e769a601f79be94097d43b8ef45b98a0b29528203c7d731c81666f637b2b7032deeced99214b4bc0662614
   languageName: node
   linkType: hard
 
-"@types/react@npm:18.0.6":
-  version: 18.0.6
-  resolution: "@types/react@npm:18.0.6"
+"@types/react@npm:18.2.21":
+  version: 18.2.21
+  resolution: "@types/react@npm:18.2.21"
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 10/61d67a4ea32a713a27d46cd423b53b5fd31d75da4ea0100a786cff69dcfc538a81e487de2aaa23451c0b4265da929d815ce9fbcd7749daee8e5cce6309ebb170
+  checksum: 10/7b315e2b14da1cd895719ba957fd71a0a8a35300fd76689d0268ed9afd8065a56b4fdcd1306871e3e16706dd3ecd706a846af74caca8fcad88052469cf0d83a1
   languageName: node
   linkType: hard
 
