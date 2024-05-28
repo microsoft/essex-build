@@ -30,7 +30,7 @@
     "swc-loader": "^0.2.6",
     "tsconfig-paths-webpack-plugin": "^4.1.0",
     "tslib": "^2.6.2",
-    "webpack": "^5.88.2",
+    "webpack": "^5.91.0",
     "webpack-dev-server": "^4.15.1"
   },
   "devDependencies": {

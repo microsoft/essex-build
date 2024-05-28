@@ -60,7 +60,7 @@
     "rimraf": "^5.0.1",
     "tsconfig": "^7.0.0",
     "typescript": "^5.2.2",
-    "webpack": "^5.88.2",
+    "webpack": "^5.91.0",
     "webpack-dev-server": "^4.15.1",
     "zx": "^7.2.3"
   },
