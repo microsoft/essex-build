@@ -1,5 +1,6 @@
 releases:
   "@essex/scripts": patch
+  "@essex/webpack-config": patch
 
 declined:
   - "@essex/test-lib-dual"
