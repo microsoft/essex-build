@@ -49,9 +49,9 @@ async function getFileEntries(
 ): Promise<string[]> {
 	const result: string[] = []
 	for (const source of sources) {
-		const sourcePath = join(baseDir, source)
-		const foundFiles =
-			source.indexOf('*') >= 0
+		const sourcePath = `${baseDir}/${source}`
+		const isGlob = source.indexOf('*') >= 0
+		const foundFiles = isGlob
 				? // handle globs
 					await getGlobSource(sourcePath)
 				: // handle files
