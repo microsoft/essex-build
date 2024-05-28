@@ -25,13 +25,12 @@
     "html-webpack-plugin": "^5.5.3",
     "lodash": "^4.17.21",
     "mini-css-extract-plugin": "^2.7.6",
-    "resolve-typescript-plugin": "^2.0.1",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
     "swc-loader": "^0.2.6",
     "tsconfig-paths-webpack-plugin": "^4.1.0",
     "tslib": "^2.6.2",
-    "webpack": "^5.88.2",
+    "webpack": "^5.91.0",
     "webpack-dev-server": "^4.15.1"
   },
   "devDependencies": {
