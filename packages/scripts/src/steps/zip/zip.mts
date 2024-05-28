@@ -49,13 +49,13 @@ async function getFileEntries(
 ): Promise<string[]> {
 	const result: string[] = []
 	for (const source of sources) {
-		const sourcePath = join(baseDir, source)
-		const foundFiles =
-			source.indexOf('*') >= 0
-				? // handle globs
-					await getGlobSource(sourcePath)
-				: // handle files
-					await getSourceFiles(sourcePath)
+		const sourcePath = `${baseDir}/${source}`
+		const isGlob = source.indexOf('*') >= 0
+		const foundFiles = isGlob
+			? // handle globs
+				await getGlobSource(sourcePath)
+			: // handle files
+				await getSourceFiles(sourcePath)
 		const isIncluded = await Promise.all(foundFiles.map(isZippable))
 		const filteredFiles = foundFiles.filter((_t, i) => isIncluded[i])
 

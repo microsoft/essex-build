@@ -9,6 +9,7 @@
 *.gql text eol=lf
 *.yml text eol=lf
 *.html text eol=lf
+*.md text eol=lf
 .gitattributes text eol=lf
 .gitignore text eol=lf
 .prettierrc text eol=lf
