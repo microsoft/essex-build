@@ -58,7 +58,7 @@
 		"scheduler": "^0.23.0",
 		"storybook": "^7.4.2",
 		"styled-components": "^6.0.8",
-		"typescript": "^5.2.2"
+		"typescript": "^5.4.5"
 	},
 	"peerDependencies": {
 		"@fluentui/react": ">= 8",
