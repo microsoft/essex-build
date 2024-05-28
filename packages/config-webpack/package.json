@@ -17,7 +17,7 @@
   "dependencies": {
     "@essex/swc-opts": "workspace:^",
     "@swc/cli": "^0.3.12",
-    "@swc/core": "1.5.5",
+    "@swc/core": "^1.5.7",
     "@types/webpack": "^5.28.2",
     "css-loader": "^7.1.2",
     "debug": "^4.3.4",
