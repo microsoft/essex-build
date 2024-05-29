@@ -7,9 +7,7 @@
     "start": "vite dev",
     "build": "tsc && vite build",
     "start:vite": "yarn start",
-    "check-deps": "essex check-deps --ignore rimraf",
-    "check": "essex check",
-    "fix": "essex fix"
+    "check-deps": "essex check-deps --ignore rimraf"
   },
   "repository": {
     "type": "git",
