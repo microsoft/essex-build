@@ -38,10 +38,10 @@
     "@essex/tsconfig-node18": "workspace:^",
     "@swc/cli": "^0.3.12",
     "@swc/core": "1.5.7",
-    "@types/eslint": "^8.44.2",
+    "@types/eslint": "^8.56.10",
     "@types/lodash": "^4.14.198",
     "@types/micromatch": "^4.0.2",
-    "@types/node": "^20.6.1",
+    "@types/node": "^20.12.12",
     "rimraf": "^5.0.7",
     "tslib": "^2.6.2",
     "typescript": "^5.4.5"

@@ -28,7 +28,7 @@
     "@essex/swc-opts": "workspace:^",
     "@swc/core": "1.5.7",
     "@swc/jest": "^0.2.36",
-    "@types/jest": "^29.5.5",
+    "@types/jest": "^29.5.12",
     "identity-obj-proxy": "^3.0.0",
     "lodash": "^4.17.21"
   },
@@ -36,7 +36,7 @@
     "@essex/tsconfig-node": "workspace:^",
     "@swc/cli": "^0.3.12",
     "@types/lodash": "^4.14.198",
-    "@types/node": "^20.6.1",
+    "@types/node": "^20.12.12",
     "rimraf": "^5.0.7",
     "typescript": "^5.4.5"
   },
