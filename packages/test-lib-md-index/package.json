@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@essex/scripts": "workspace:^",
-    "rimraf": "^5.0.1"
+    "rimraf": "^5.0.7"
   },
   "essex": {
     "swc": {
