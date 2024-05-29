@@ -9,6 +9,8 @@ import { glob } from 'glob'
 
 export async function buildMdIndex(include: string): Promise<void> {
 	const indexImports: string[] = []
+	await fs.mkdir('dist', { recursive: true })
+
 	async function processFile(filePath: string) {
 		const content = await fs.readFile(filePath, { encoding: 'utf-8' })
 		const localFilePath = filePath.replace(include, 'dist')
@@ -20,6 +22,7 @@ export async function buildMdIndex(include: string): Promise<void> {
 		indexImports.push(
 			path
 				.join(outputDir.replace('dist', ''), indexFilePath)
+				.replace(/\\/, '/')
 				.replace(/^\//, ''),
 		)
 
@@ -46,7 +49,8 @@ function getMarkdownFiles(include: string): Promise<string[]> {
 function writeIndex(imports: string[]): Promise<void> {
 	let importsArea = ''
 	let mapArea = 'const index = {};\n'
-	imports.forEach((imp) => {
+	imports.forEach((impRaw) => {
+		const imp = impRaw.replace(/\\/g, '/')
 		const impVar = imp.replace(/\//g, '_')
 		const impKey = imp.replace(/\//g, '.')
 		importsArea += `import { default as ${impVar} } from './${imp}.js'\n`
