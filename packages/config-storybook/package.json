@@ -24,7 +24,6 @@
 		"hsluv": "^1.0.1",
 		"react-docgen-typescript": "^2.2.2",
 		"react-is": "^18.3.1",
-		"resolve-typescript-plugin": "^2.0.1",
 		"storybook": "^7.4.2",
 		"swc-loader": "^0.2.6",
 		"tslib": "^2.6.2",
