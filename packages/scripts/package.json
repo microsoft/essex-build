@@ -59,7 +59,7 @@
     "react-dom": "^18.2.0",
     "rimraf": "^5.0.1",
     "tsconfig": "^7.0.0",
-    "typescript": "^5.2.2",
+    "typescript": "^5.4.5",
     "webpack": "^5.88.2",
     "webpack-dev-server": "^4.15.1",
     "zx": "^7.2.3"

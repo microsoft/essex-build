@@ -44,7 +44,7 @@
     "@types/node": "^20.6.1",
     "eslint": "^8.49.0",
     "rimraf": "^5.0.1",
-    "typescript": "^5.2.2"
+    "typescript": "^5.4.5"
   },
   "peerDependencies": {
     "typescript": ">= 4",
