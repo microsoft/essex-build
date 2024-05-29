@@ -44,7 +44,21 @@ export function configure(config: Configuration = {}): WebpackConfiguration & {
 		devtool: 'cheap-module-source-map',
 		output: getOutput(mgr.extendedOutput),
 		resolve: {
-			extensions: ['.ts', '.tsx', '.js', '.jsx'],
+			extensions: [
+				'.ts',
+				'.js',
+				'.tsx',
+				'.jsx',
+				'.mts',
+				'.mjs',
+				'.cts',
+				'.cjs',
+			],
+			extensionAlias: {
+				'.js': ['.ts', '.js', '.tsx', '.jsx'],
+				'.mjs': ['mts', '.mjs'],
+				'.cjs': ['cts', '.cjs'],
+			},
 			modules: [...standardModulePaths, ...mgr.extendedResolveModules],
 			alias: mgr.extendedAlias,
 			plugins: getResolvePlugins(mgr.useTsConfigPaths),
