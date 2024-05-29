@@ -1,9 +1,9 @@
-/* eslint-disable */
-import fs from 'fs/promises'
 /*!
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
+
+import fs from 'fs/promises'
 import { walk } from '../../util/walk.mjs'
 
 const has = (l: string, search: string) => l.indexOf(search) !== -1

@@ -13,7 +13,6 @@ export default function start(program: Command): void {
 		.command('git-is-clean')
 		.description('verifies that there are no active git changes')
 		.action(async () => {
-			/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
 			// @ts-ignore
 			const isDirty = isGitDirty()
 			if (isDirty) {

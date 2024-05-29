@@ -113,7 +113,7 @@ The essex build system provides a consistent entry-point for our tooling and all
 * Fast builds using native toolchains - our builds use `swc` internally and our bundling configuration uses `swc` and `esbuild` to optimize bundle times. We also use `swc-jest` for improving test performance.
 * CJS/ESM/Dual Support - our builds can support multiple modes of shipping JavaScript packages, depending on the goals of the library.
 * Documentation Generation - our builds can emit markdown-based documentation using `api-extractor`. This can act as public API documentation for our libraries.
-* Prescriptive Configurations - for common tools like Jest, eslint, webpack, Vite, and others.
+* Prescriptive Configurations - for common tools like Jest, swc, webpack, Vite, and others.
 
 ### Jest (required) 
 Jest is our test runner of choice. It is fast, well-maintained, and has a great community around it. We use `swc-jest` to improve test performance.
@@ -121,11 +121,5 @@ Jest is our test runner of choice. It is fast, well-maintained, and has a great 
 ### Playwright (optional, recommended for projects going beyond experimental phases)
 Playwright is a browser automation library that allows us to run end-to-end tests for our applications. It is ergonomic and well-maintained.
 
-### eslint (required)
-eslint is our current default linter. We provide a default team configuration: `@essex/eslint-config`. 
-
-### prettier (optional - but a formatter is required)
-prettier has been our default formatter, and is executed in essex scripts under the `essex lint` command. We provide a default team configuration: `@essex/prettier-config`. Projects may opt into using `rome` for formatting instead.
-
-### rome (optional - but a formatter is required)
-Biome is a JavaScript linter and formatter that is built using native toolchains. It is extremely fast, and can be used as a replacement for `prettier`, but it does not have as rich of a library of linter rules as eslint. We currently recommend that if it is used, that it is used in-tandem with `eslint` using the `@essex/eslint-config/rome` configuration.
+### Biome
+Biome is a JavaScript linter and formatter that is built using native toolchains.
