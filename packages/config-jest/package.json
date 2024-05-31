@@ -37,7 +37,7 @@
     "@swc/cli": "^0.3.12",
     "@types/lodash": "^4.14.198",
     "@types/node": "^20.6.1",
-    "rimraf": "^5.0.1",
+    "rimraf": "^5.0.7",
     "typescript": "^5.4.5"
   },
   "peerDependencies": {

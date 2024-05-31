@@ -5,9 +5,7 @@
 
 import fs from 'fs'
 import path from 'path'
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { defaultSwcConfig } from '@essex/swc-opts'
-import ResolveTypescriptPlugin from 'resolve-typescript-plugin'
 import type { Configuration as WebpackConfig } from 'webpack'
 
 export interface EssexStorybookConfig {
@@ -77,10 +75,22 @@ export function configure({
 			if (config.resolve == null) {
 				config.resolve = {}
 			}
-			config.resolve.plugins = [
-				...(config.resolve.plugins ?? []),
-				new ResolveTypescriptPlugin(),
+			config.resolve.extensions = [
+				'.ts',
+				'.js',
+				'.tsx',
+				'.jsx',
+				'.mts',
+				'.mjs',
+				'.cts',
+				'.cjs',
 			]
+			config.resolve.extensionAlias = {
+				'.js': ['.ts', '.js', '.tsx', '.jsx'],
+				'.mjs': ['mts', '.mjs'],
+				'.cjs': ['cts', '.cjs'],
+			}
+			config.resolve.plugins = [...(config.resolve.plugins ?? [])]
 			config.resolve.alias = {
 				...(config.resolve?.alias || {}),
 				'@thematic/react': require.resolve('@thematic/react'),

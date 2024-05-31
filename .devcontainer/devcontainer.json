@@ -2,11 +2,11 @@
 	"name": "Essex JS Build",
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"dbaeumer.vscode-eslint",
 		"esbenp.prettier-vscode",
 		"editorconfig.editorconfig",
 		"arcanis.vscode-zipfs",
-		"silvenon.mdx"
+		"silvenon.mdx",
+		"biomejs.biome"
 	],
 	"workspaceFolder": "/ws",
 	"service": "workspace",

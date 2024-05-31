@@ -7,8 +7,6 @@
   "types": "dist/types/index.d.ts",
   "scripts": {
     "clean": "rimraf data/bar/linked_data dist",
-    "check": "essex check",
-    "fix": "essex fix",
     "test": "run-s clean link_external_data zip_all jest",
     "test:zips": "yarn test",
     "jest": "NODE_OPTIONS=--experimental-vm-modules yarn node $(yarn bin jest) --runInBand",
@@ -28,21 +26,16 @@
   },
   "devDependencies": {
     "@essex/babel-config": "workspace:^",
-    "@essex/eslint-config": "workspace:^",
     "@essex/jest-config": "workspace:^",
     "@essex/scripts": "workspace:^",
     "@essex/tsconfig-node": "workspace:^",
     "@types/jest": "^29.5.5",
     "@types/node": "^20.6.1",
-    "@typescript-eslint/eslint-plugin": "^6.7.0",
-    "@typescript-eslint/parser": "^6.7.0",
-    "eslint": "^8.49.0",
-    "eslint-import-resolver-node": "^0.3.9",
     "jest": "^29.7.0",
     "jszip": "^3.10.1",
     "npm-run-all": "^4.1.5",
-    "regenerator-runtime": "^0.14.0",
-    "rimraf": "^5.0.1",
+    "regenerator-runtime": "^0.14.1",
+    "rimraf": "^5.0.7",
     "shx": "^0.3.4"
   }
 }

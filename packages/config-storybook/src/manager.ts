@@ -2,7 +2,6 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { addons } from '@storybook/addons'
 import { type ThemeVars, create } from '@storybook/theming'
 import { darken, lighten } from '@thematic/color'

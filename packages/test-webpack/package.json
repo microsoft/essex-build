@@ -6,9 +6,7 @@
   "scripts": {
     "clean": "rimraf dist docsTemp build",
     "build": "essex bundle",
-    "check": "essex check",
     "check-deps": "essex check-deps --ignore rimraf",
-    "fix": "essex fix",
     "start": "essex serve",
     "start:webpack": "yarn start"
   },
@@ -21,9 +19,9 @@
     "@essex/test-lib-dual": "workspace:^",
     "@essex/test-lib-esm": "workspace:^",
     "@essex/test-lib-md-index": "workspace:^",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "rimraf": "^5.0.1"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rimraf": "^5.0.7"
   },
   "devDependencies": {
     "@essex/scripts": "workspace:^",
