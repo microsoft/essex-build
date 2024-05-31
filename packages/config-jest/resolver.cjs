@@ -1,4 +1,3 @@
-/* eslint-disable */
 const exts = ['.ts', '.tsx', '.cts', '.mts']
 
 module.exports = (request, options) => {

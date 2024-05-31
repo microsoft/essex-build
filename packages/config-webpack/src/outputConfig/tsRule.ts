@@ -5,7 +5,6 @@
 import { getSwcOptions } from '@essex/swc-opts'
 import type { RuleSetRule } from 'webpack'
 
-/* eslint-disable @typescript-eslint/no-var-requires */
 const swcLoader = require.resolve('swc-loader')
 
 export const tsRule: RuleSetRule = {

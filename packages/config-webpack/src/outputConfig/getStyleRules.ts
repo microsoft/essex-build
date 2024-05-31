@@ -5,11 +5,9 @@
 import type { RuleSetRule } from 'webpack'
 
 // Webpack Loader
-/* eslint-disable @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-member-access */
 const cssLoader = require.resolve('css-loader')
 const sassLoader = require.resolve('sass-loader')
 const styleLoader = require.resolve('style-loader')
-/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 export function getStyleRules(isDevelopment: boolean): RuleSetRule[] {

@@ -57,7 +57,6 @@ export function checkDeps({ ignore = [] }: { ignore?: string[] }) {
 		],
 		specials: [
 			// the target special parsers
-			depcheck.special.eslint,
 			depcheck.special.webpack,
 			depcheck.special.bin,
 		],

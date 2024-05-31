@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft. All rights reserved.
  * Licensed under the MIT license. See LICENSE file in the project.
  */
-/* eslint-disable @typescript-eslint/no-var-requires */
+
 import { writeFileSync } from 'fs'
 
 import {
@@ -25,8 +25,6 @@ ${INIT_INSTRUCTIONS}
 const CONFIG_FILES_DOT = [
 	'docsignore',
 	'docsrc.json',
-	'eslintignore',
-	'eslintrc.json',
 	'gitignore',
 	'linstagedrc.json',
 ]
@@ -123,13 +121,6 @@ async function configurePackageJsonForMonorepo(): Promise<number> {
 	-- Required for Jest testing --
 	@essex/babel-config
 	@essex/jest-config
-	
-	-- Required for Eslint to work in PnP mode --
-	@essex/eslint-config
-	@essex/eslint-plugin
-	@typescript-eslint/eslint-plugin 
-	@typescript-eslint/eslint-parser 
-	eslint-import-resolver-node 
 	`)
 	return Promise.resolve(0)
 }
