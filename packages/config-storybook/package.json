@@ -20,19 +20,19 @@
 	},
 	"dependencies": {
 		"@essex/swc-opts": "workspace:^",
-		"@swc/core": "^1.5.7",
+		"@swc/core": "^1.6.5",
 		"hsluv": "^1.0.1",
 		"react-docgen-typescript": "^2.2.2",
 		"react-is": "^18.3.1",
 		"storybook": "^7.4.2",
 		"swc-loader": "^0.2.6",
-		"tslib": "^2.6.2",
-		"webpack": "^5.88.2"
+		"tslib": "^2.6.3",
+		"webpack": "^5.92.1"
 	},
 	"devDependencies": {
 		"@essex/tsconfig-node": "workspace:^",
-		"@fluentui/react": "^8.118.6",
-		"@fluentui/react-components": "^9.53.0",
+		"@fluentui/react": "^8.118.9",
+		"@fluentui/react-components": "^9.54.2",
 		"@storybook/addon-a11y": "^7.4.2",
 		"@storybook/addon-docs": "^7.4.2",
 		"@storybook/addon-essentials": "^7.4.2",
@@ -48,16 +48,16 @@
 		"@thematic/core": "^4.0.7",
 		"@thematic/fluent": "^5.0.8",
 		"@thematic/react": "^2.1.9",
-		"@types/react": "^18.2.21",
-		"@types/webpack": "^5.28.2",
+		"@types/react": "^18.3.3",
+		"@types/webpack": "^5.28.5",
 		"react": "^18.3.1",
 		"react-is": "^18.3.1",
 		"require-from-string": "^2.0.2",
 		"rimraf": "^5.0.7",
 		"scheduler": "^0.23.2",
 		"storybook": "^7.4.2",
-		"styled-components": "^6.0.8",
-		"typescript": "^5.4.5"
+		"styled-components": "^6.1.11",
+		"typescript": "^5.5.2"
 	},
 	"peerDependencies": {
 		"@fluentui/react": ">= 8",

@@ -3,25 +3,25 @@
   "repository": "https://github.com/microsoft/essex-alpha-build-infra/",
   "version": "20.0.1",
   "license": "MIT",
+  "type": "module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "clean": "rimraf lib",
-    "build": "tsc --emitDeclarationOnly && swc src -d lib --strip-leading-paths",
+    "build": "tsc -b .",
+    "build:vite-config": "yarn build",
     "release": "yarn npm publish --tolerate-republish --access public"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "^4.0.4",
+    "@vitejs/plugin-react": "^4.3.1",
     "vite-tsconfig-paths": "^4.3.2"
   },
   "devDependencies": {
     "@essex/tsconfig-node": "workspace:^",
-    "@swc/cli": "^0.3.12",
-    "@swc/core": "^1.5.7",
-    "@types/node": "^20.6.1",
+    "@types/node": "^20.14.8",
     "rimraf": "^5.0.7",
-    "typescript": "^5.4.5",
-    "vite": "^4.4.9"
+    "typescript": "^5.5.2",
+    "vite": "^5.3.1"
   },
   "peerDependencies": {
     "vite": "*"

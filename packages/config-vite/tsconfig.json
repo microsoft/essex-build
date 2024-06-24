@@ -1,6 +1,10 @@
 {
-	"extends": "@essex/tsconfig-node/cjs",
+	"extends": "@essex/tsconfig-node/esm",
 	"compilerOptions": {
+		"module": "ESNext",
+		"moduleResolution": "Node",
+		"esModuleInterop": false,
+		"allowSyntheticDefaultImports": false,
 		"outDir": "lib",
 		"declaration": true,
 		"skipLibCheck": true
