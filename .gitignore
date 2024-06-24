@@ -9,6 +9,7 @@ packages/*/docsTemp/
 *.tsbuildinfo
 .turbo/
 .next/**
+vite.config.ts.timestamp*
 
 # Testing Output
 coverage/
