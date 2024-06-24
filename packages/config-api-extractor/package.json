@@ -8,9 +8,6 @@
 		"LICENSE",
 		"README.md"
 	],
-	"scripts": {
-		"release": "yarn npm publish --tolerate-republish --access public"
-	},
 	"exports": {
 		"./api-extractor.json": "./api-extractor.json",
 		"./package.json": "./package.json"

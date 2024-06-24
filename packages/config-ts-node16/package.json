@@ -6,9 +6,6 @@
 		"./esm": "./tsconfig.esm.json",
 		"./cjs": "./tsconfig.cjs.json"
 	},
-	"scripts": {
-		"release": "yarn npm publish --tolerate-republish --access public"
-	},
 	"dependencies": {
 		"@essex/tsconfig-base": "workspace:^"
 	}

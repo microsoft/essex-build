@@ -12,8 +12,7 @@
     "build": "npm-run-all -p transpile -s crlf perms",
     "build:scripts": "yarn build",
     "clean": "rimraf lib",
-    "check-deps": "essex check-deps --ignore @essex/api-extractor-config",
-    "release": "yarn npm publish --tolerate-republish --access public"
+    "check-deps": "essex check-deps --ignore @essex/api-extractor-config"
   },
   "main": "lib/index.mjs",
   "type": "module",

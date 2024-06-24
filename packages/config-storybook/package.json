@@ -4,8 +4,7 @@
 	"scripts": {
 		"clean": "rimraf dist",
 		"build": "tsc -b .",
-		"build:sbconfig": "yarn build",
-		"release": "yarn npm publish --tolerate-republish --access public"
+		"build:sbconfig": "yarn build"
 	},
 	"exports": {
 		".": "./lib/index.js",

@@ -7,8 +7,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "clean": "rimraf lib",
-    "build": "tsc --emitDeclarationOnly && swc src -d lib --strip-leading-paths",
-    "release": "yarn npm publish --tolerate-republish --access public"
+    "build": "tsc --emitDeclarationOnly && swc src -d lib --strip-leading-paths"
   },
   "repository": {
     "type": "git",
