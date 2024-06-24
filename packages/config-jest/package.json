@@ -26,19 +26,19 @@
   },
   "dependencies": {
     "@essex/swc-opts": "workspace:^",
-    "@swc/core": "1.5.7",
+    "@swc/core": "1.6.5",
     "@swc/jest": "^0.2.36",
-    "@types/jest": "^29.5.5",
+    "@types/jest": "^29.5.12",
     "identity-obj-proxy": "^3.0.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@essex/tsconfig-node": "workspace:^",
-    "@swc/cli": "^0.3.12",
-    "@types/lodash": "^4.14.198",
-    "@types/node": "^20.6.1",
+    "@swc/cli": "^0.3.14",
+    "@types/lodash": "^4.17.5",
+    "@types/node": "^20.14.8",
     "rimraf": "^5.0.7",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.2"
   },
   "peerDependencies": {
     "jest": "*"
