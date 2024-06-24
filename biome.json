@@ -44,7 +44,7 @@
 		"formatter": {
 			"semicolons": "asNeeded",
 			"quoteStyle": "single",
-			"trailingComma": "all"
+			"trailingCommas": "all"
 		}
 	},
 	"formatter": {
