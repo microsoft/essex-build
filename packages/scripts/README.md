@@ -87,6 +87,8 @@ To view detailed options, run `essex <command> --help` or `essex --help`
 
 # Release Process
 
+First, you should define an environment variable in your shell called `NPM_AUTH_TOKEN`, which has publication permissions into the @essex/ namespace. You can get this by running `npm login` and then copying the token from `~/.npmrc`.
+
 Each PR should generate a change file in `.yarn/versions`. These are used to calculate semver. When it's time for a release, do the following:
 
 * Cut a new branch `release/<date>` or `release/vX.Y.Z`, where the version aligns with the next release of @essex/scripts.
