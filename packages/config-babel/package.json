@@ -1,14 +1,13 @@
 {
   "name": "@essex/babel-config",
-  "version": "21.0.1",
+  "version": "21.0.2",
   "license": "MIT",
   "author": "Chris Trevino <chtrevin@microsoft.com>",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "clean": "rimraf lib",
-    "build": "tsc --emitDeclarationOnly && swc src -d lib --strip-leading-paths",
-    "release": "yarn npm publish --tolerate-republish --access public"
+    "build": "tsc --emitDeclarationOnly && swc src -d lib --strip-leading-paths"
   },
   "repository": {
     "type": "git",

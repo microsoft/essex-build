@@ -1,6 +1,6 @@
 {
   "name": "@essex/swc-opts",
-  "version": "21.0.1",
+  "version": "21.0.2",
   "description": "shared utility for generating swc configuration",
   "license": "MIT",
   "main": "lib/index.js",
@@ -9,8 +9,7 @@
   "author": "Chris Trevino <chtrevin@microsoft.com>",
   "scripts": {
     "build": "tsc -b .",
-    "clean": "rimraf lib",
-    "release": "yarn npm publish --tolerate-republish --access public"
+    "clean": "rimraf lib"
   },
   "dependencies": {
     "@swc/core": "1.6.5",

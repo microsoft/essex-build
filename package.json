@@ -8,7 +8,7 @@
 	],
 	"packageManager": "yarn@4.3.1",
 	"scripts": {
-		"_release_packages": "turbo run release",
+		"_release_packages": "yarn workspaces foreach -A npm publish --tolerate-republish --access public",
 		"_version_cut": "yarn version apply --all",
 		"_check_packages": "turbo run check",
 		"_fix_packages": "turbo run fix",

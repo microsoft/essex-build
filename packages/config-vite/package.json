@@ -1,7 +1,7 @@
 {
   "name": "@essex/vite-config",
   "repository": "https://github.com/microsoft/essex-alpha-build-infra/",
-  "version": "20.0.1",
+  "version": "21.0.0",
   "license": "MIT",
   "type": "module",
   "main": "lib/index.js",
@@ -9,8 +9,7 @@
   "scripts": {
     "clean": "rimraf lib",
     "build": "tsc -b .",
-    "build:vite-config": "yarn build",
-    "release": "yarn npm publish --tolerate-republish --access public"
+    "build:vite-config": "yarn build"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.1",

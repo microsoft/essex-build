@@ -21,9 +21,6 @@
 			"dependsOn": ["check", "build", "test", "check-deps"],
 			"outputs": ["dist/**", "lib/**"]
 		},
-		"release": {
-			"cache": false
-		},
 		"clean": {
 			"cache": false
 		},
