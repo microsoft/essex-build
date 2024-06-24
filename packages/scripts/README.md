@@ -84,3 +84,15 @@ To view detailed options, run `essex <command> --help` or `essex --help`
 	}
 }
 ```
+
+# Release Process
+
+Each PR should generate a change file in `.yarn/versions`. These are used to calculate semver. When it's time for a release, do the following:
+
+* Cut a new branch `release/<date>` or `release/vX.Y.Z`, where the version aligns with the next release of @essex/scripts.
+* Run `yarn release`. Internally, this will:
+    * Run `yarn version apply --all` to bump the versions of all affected packages using the semver documents.
+		* Run `ci`
+		* Run `yarn publish` to publish the latest versions of all packages.
+* Commit all changes and push the branch.
+* Create a PR for the release branch.

@@ -16,7 +16,8 @@
 			"package.json",
 			"storybook-static",
 			"tsconfig.cjs.json",
-			"tsconfig.esm.json"
+			"tsconfig.esm.json",
+			"vite.config.ts.timestamp*"
 		]
 	},
 	"organizeImports": {
