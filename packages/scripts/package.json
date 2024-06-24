@@ -1,6 +1,6 @@
 {
   "name": "@essex/scripts",
-  "version": "26.0.1",
+  "version": "27.0.0",
   "description": "A set of scripts to make a essex javascript engineer's life easier",
   "repository": "https://github.com/microsoft/essex-alpha-build-infra/",
   "author": "David Tittsworth <datittsw@microsoft.com>",

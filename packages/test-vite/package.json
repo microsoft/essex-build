@@ -1,6 +1,6 @@
 {
   "name": "@essex/test-webapp-vite",
-  "version": "21.0.0",
+  "version": "21.0.1",
   "private": true,
   "type": "module",
   "scripts": {
